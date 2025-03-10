@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "butika-extension", "butika-extension\butika-extension.vbproj", "{220549FD-193C-485D-BB97-99B8D95F9A12}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{220549FD-193C-485D-BB97-99B8D95F9A12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220549FD-193C-485D-BB97-99B8D95F9A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220549FD-193C-485D-BB97-99B8D95F9A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220549FD-193C-485D-BB97-99B8D95F9A12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F4E2C48A-E498-4C93-8A7D-746C118731E4}
+	EndGlobalSection
+EndGlobal
