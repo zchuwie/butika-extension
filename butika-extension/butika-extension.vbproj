@@ -3,16 +3,27 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
-    <RootNamespace>butika_extension</RootNamespace>
-    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>butika</RootNamespace>
+    <StartupObject>butika.My.MyApplication</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.Cryptography" Version="2.5.1" />
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.1" />
+    <PackageReference Include="Microsoft.SqlServer.Server" Version="1.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
+    <PackageReference Include="System.Security.Cryptography.Cng" Version="5.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Encoding" Version="4.3.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,6 +39,16 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\drug_images\" />
+    <Folder Include="Resources\prescription_images\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\Customers\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\InventoryCustodian\" />
+    <Folder Include="Views\Pharmacist\" />
   </ItemGroup>
 
 </Project>

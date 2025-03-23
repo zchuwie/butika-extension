@@ -1,0 +1,35 @@
+﻿Imports butika.Helpers
+
+Namespace Models
+
+    Public Class Medicine
+        Public Property MedicineID As Integer
+        Public Property MedicineName As String
+        Public Property MedicineBrand As String
+        Public Property MedicineDosage As String
+        Public Property MedicineManufacturer As String
+        Public Property MedicineDescription As String
+        Public Property MedicinePrice As Decimal
+        Public Property MedicineImageName As String
+        Public Property MedicineType As String
+        Public Property MedicinePrescription As Integer
+        Public Property MedicineStock As Integer
+        Public Property MedicineExpirationDate As DateTime
+        Public Property MedicineFullName As String
+        Public Property MedicineTickBox As Boolean
+
+        Public ReadOnly Property MedicineImagePath As String
+            Get
+                Return GetImagePath.DrugPathName + "\\" + MedicineImageName
+            End Get
+        End Property
+
+        Public ReadOnly Property FormattedMedicineName As String
+            Get
+                Return HelperMethod.RemoveCommaAndCapitalizeWords(MedicineName)
+            End Get
+        End Property
+    End Class
+
+
+End Namespace
