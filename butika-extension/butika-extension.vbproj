@@ -11,6 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="ViewModels\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <None Remove="ViewModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
@@ -34,6 +40,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
     </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -46,11 +57,18 @@
   <ItemGroup>
     <Folder Include="Resources\drug_images\" />
     <Folder Include="Resources\prescription_images\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\Customers\" />
+    <Folder Include="Views\Customer\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\InventoryCustodian\" />
     <Folder Include="Views\Pharmacist\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
