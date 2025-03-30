@@ -39,6 +39,16 @@ Partial Class MedicinePanel_InventoryCustodian
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Panel1 = New Panel()
         Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -54,23 +64,29 @@ Partial Class MedicinePanel_InventoryCustodian
         nameSortingBtn = New Guna.UI2.WinForms.Guna2Button()
         addMedicineBtn = New Guna.UI2.WinForms.Guna2Button()
         selectMedicineBtn = New Guna.UI2.WinForms.Guna2Button()
-        FlowLayoutPanel1 = New FlowLayoutPanel()
+        MedicineBarsDisplay = New FlowLayoutPanel()
+        MedicineBars6 = New MedicineBars()
         MedicineBars1 = New MedicineBars()
         MedicineBars2 = New MedicineBars()
         MedicineBars3 = New MedicineBars()
         MedicineBars4 = New MedicineBars()
         MedicineBars5 = New MedicineBars()
-        MedicineBars6 = New MedicineBars()
         MedicineBars7 = New MedicineBars()
         MedicineBars8 = New MedicineBars()
         MedicineBars9 = New MedicineBars()
         MedicineBars10 = New MedicineBars()
+        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         SortingPanel.SuspendLayout()
         Panel6.SuspendLayout()
         Panel5.SuspendLayout()
         Panel4.SuspendLayout()
         Panel3.SuspendLayout()
-        FlowLayoutPanel1.SuspendLayout()
+        MedicineBarsDisplay.SuspendLayout()
+        CType(Guna2PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -126,6 +142,7 @@ Partial Class MedicinePanel_InventoryCustodian
         Guna2TextBox2.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         Guna2TextBox2.Font = New Font("Century Gothic", 9F)
         Guna2TextBox2.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        Guna2TextBox2.IconRightSize = New Size(15, 15)
         Guna2TextBox2.Location = New Point(456, 27)
         Guna2TextBox2.Margin = New Padding(3, 4, 3, 4)
         Guna2TextBox2.Name = "Guna2TextBox2"
@@ -141,7 +158,7 @@ Partial Class MedicinePanel_InventoryCustodian
         SortingPanel.Controls.Add(Panel5)
         SortingPanel.Controls.Add(Panel4)
         SortingPanel.Controls.Add(Panel3)
-        SortingPanel.Location = New Point(64, 119)
+        SortingPanel.Location = New Point(64, 112)
         SortingPanel.Name = "SortingPanel"
         SortingPanel.Size = New Size(901, 30)
         SortingPanel.TabIndex = 5
@@ -281,7 +298,7 @@ Partial Class MedicinePanel_InventoryCustodian
         addMedicineBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         addMedicineBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         addMedicineBtn.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        addMedicineBtn.Font = New Font("Century Gothic", 8F, FontStyle.Bold)
+        addMedicineBtn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         addMedicineBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         addMedicineBtn.Image = CType(resources.GetObject("addMedicineBtn.Image"), Image)
         addMedicineBtn.ImageSize = New Size(25, 25)
@@ -304,11 +321,11 @@ Partial Class MedicinePanel_InventoryCustodian
         selectMedicineBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         selectMedicineBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         selectMedicineBtn.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        selectMedicineBtn.Font = New Font("Century Gothic", 8F, FontStyle.Bold)
+        selectMedicineBtn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         selectMedicineBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         selectMedicineBtn.Image = CType(resources.GetObject("selectMedicineBtn.Image"), Image)
         selectMedicineBtn.ImageSize = New Size(25, 25)
-        selectMedicineBtn.Location = New Point(550, 646)
+        selectMedicineBtn.Location = New Point(568, 646)
         selectMedicineBtn.Name = "selectMedicineBtn"
         selectMedicineBtn.Padding = New Padding(10, 0, 0, 0)
         selectMedicineBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges16
@@ -316,27 +333,36 @@ Partial Class MedicinePanel_InventoryCustodian
         selectMedicineBtn.TabIndex = 7
         selectMedicineBtn.Text = "Select Medicine"
         ' 
-        ' FlowLayoutPanel1
+        ' MedicineBarsDisplay
         ' 
-        FlowLayoutPanel1.Controls.Add(MedicineBars1)
-        FlowLayoutPanel1.Controls.Add(MedicineBars2)
-        FlowLayoutPanel1.Controls.Add(MedicineBars3)
-        FlowLayoutPanel1.Controls.Add(MedicineBars4)
-        FlowLayoutPanel1.Controls.Add(MedicineBars5)
-        FlowLayoutPanel1.Controls.Add(MedicineBars6)
-        FlowLayoutPanel1.Controls.Add(MedicineBars7)
-        FlowLayoutPanel1.Controls.Add(MedicineBars8)
-        FlowLayoutPanel1.Controls.Add(MedicineBars9)
-        FlowLayoutPanel1.Controls.Add(MedicineBars10)
-        FlowLayoutPanel1.Location = New Point(64, 155)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(901, 458)
-        FlowLayoutPanel1.TabIndex = 8
+        MedicineBarsDisplay.Controls.Add(MedicineBars6)
+        MedicineBarsDisplay.Controls.Add(MedicineBars1)
+        MedicineBarsDisplay.Controls.Add(MedicineBars2)
+        MedicineBarsDisplay.Controls.Add(MedicineBars3)
+        MedicineBarsDisplay.Controls.Add(MedicineBars4)
+        MedicineBarsDisplay.Controls.Add(MedicineBars5)
+        MedicineBarsDisplay.Controls.Add(MedicineBars7)
+        MedicineBarsDisplay.Controls.Add(MedicineBars8)
+        MedicineBarsDisplay.Controls.Add(MedicineBars9)
+        MedicineBarsDisplay.Controls.Add(MedicineBars10)
+        MedicineBarsDisplay.Location = New Point(64, 148)
+        MedicineBarsDisplay.Name = "MedicineBarsDisplay"
+        MedicineBarsDisplay.Size = New Size(901, 458)
+        MedicineBarsDisplay.TabIndex = 8
+        ' 
+        ' MedicineBars6
+        ' 
+        MedicineBars6.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
+        MedicineBars6.Location = New Point(0, 0)
+        MedicineBars6.Margin = New Padding(0, 0, 0, 5)
+        MedicineBars6.Name = "MedicineBars6"
+        MedicineBars6.Size = New Size(896, 41)
+        MedicineBars6.TabIndex = 5
         ' 
         ' MedicineBars1
         ' 
         MedicineBars1.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        MedicineBars1.Location = New Point(0, 0)
+        MedicineBars1.Location = New Point(0, 46)
         MedicineBars1.Margin = New Padding(0, 0, 0, 5)
         MedicineBars1.Name = "MedicineBars1"
         MedicineBars1.Size = New Size(896, 41)
@@ -345,7 +371,7 @@ Partial Class MedicinePanel_InventoryCustodian
         ' MedicineBars2
         ' 
         MedicineBars2.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        MedicineBars2.Location = New Point(0, 46)
+        MedicineBars2.Location = New Point(0, 92)
         MedicineBars2.Margin = New Padding(0, 0, 0, 5)
         MedicineBars2.Name = "MedicineBars2"
         MedicineBars2.Size = New Size(896, 41)
@@ -354,7 +380,7 @@ Partial Class MedicinePanel_InventoryCustodian
         ' MedicineBars3
         ' 
         MedicineBars3.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        MedicineBars3.Location = New Point(0, 92)
+        MedicineBars3.Location = New Point(0, 138)
         MedicineBars3.Margin = New Padding(0, 0, 0, 5)
         MedicineBars3.Name = "MedicineBars3"
         MedicineBars3.Size = New Size(896, 41)
@@ -363,7 +389,7 @@ Partial Class MedicinePanel_InventoryCustodian
         ' MedicineBars4
         ' 
         MedicineBars4.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        MedicineBars4.Location = New Point(0, 138)
+        MedicineBars4.Location = New Point(0, 184)
         MedicineBars4.Margin = New Padding(0, 0, 0, 5)
         MedicineBars4.Name = "MedicineBars4"
         MedicineBars4.Size = New Size(896, 41)
@@ -372,20 +398,11 @@ Partial Class MedicinePanel_InventoryCustodian
         ' MedicineBars5
         ' 
         MedicineBars5.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        MedicineBars5.Location = New Point(0, 184)
+        MedicineBars5.Location = New Point(0, 230)
         MedicineBars5.Margin = New Padding(0, 0, 0, 5)
         MedicineBars5.Name = "MedicineBars5"
         MedicineBars5.Size = New Size(896, 41)
         MedicineBars5.TabIndex = 4
-        ' 
-        ' MedicineBars6
-        ' 
-        MedicineBars6.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        MedicineBars6.Location = New Point(0, 230)
-        MedicineBars6.Margin = New Padding(0, 0, 0, 5)
-        MedicineBars6.Name = "MedicineBars6"
-        MedicineBars6.Size = New Size(896, 41)
-        MedicineBars6.TabIndex = 5
         ' 
         ' MedicineBars7
         ' 
@@ -420,8 +437,115 @@ Partial Class MedicinePanel_InventoryCustodian
         MedicineBars10.Location = New Point(0, 414)
         MedicineBars10.Margin = New Padding(0, 0, 0, 5)
         MedicineBars10.Name = "MedicineBars10"
-        MedicineBars10.Size = New Size(896, 41)
+        MedicineBars10.Size = New Size(896, 63)
         MedicineBars10.TabIndex = 9
+        ' 
+        ' Guna2Button1
+        ' 
+        Guna2Button1.CustomizableEdges = CustomizableEdges17
+        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button1.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
+        Guna2Button1.Font = New Font("Segoe UI", 9F)
+        Guna2Button1.ForeColor = Color.White
+        Guna2Button1.Image = CType(resources.GetObject("Guna2Button1.Image"), Image)
+        Guna2Button1.Location = New Point(913, 27)
+        Guna2Button1.Name = "Guna2Button1"
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        Guna2Button1.Size = New Size(52, 41)
+        Guna2Button1.TabIndex = 9
+        ' 
+        ' Guna2PictureBox1
+        ' 
+        Guna2PictureBox1.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        Guna2PictureBox1.CustomizableEdges = CustomizableEdges19
+        Guna2PictureBox1.FillColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
+        Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), Image)
+        Guna2PictureBox1.ImageRotate = 0F
+        Guna2PictureBox1.Location = New Point(840, 37)
+        Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Guna2PictureBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        Guna2PictureBox1.Size = New Size(32, 20)
+        Guna2PictureBox1.SizeMode = PictureBoxSizeMode.CenterImage
+        Guna2PictureBox1.TabIndex = 10
+        Guna2PictureBox1.TabStop = False
+        ' 
+        ' Guna2Button2
+        ' 
+        Guna2Button2.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        Guna2Button2.BorderRadius = 8
+        Guna2Button2.BorderThickness = 1
+        Guna2Button2.CustomizableEdges = CustomizableEdges21
+        Guna2Button2.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button2.Enabled = False
+        Guna2Button2.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Guna2Button2.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        Guna2Button2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), Image)
+        Guna2Button2.ImageSize = New Size(25, 25)
+        Guna2Button2.Location = New Point(358, 646)
+        Guna2Button2.Name = "Guna2Button2"
+        Guna2Button2.Padding = New Padding(10, 0, 0, 0)
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        Guna2Button2.Size = New Size(189, 47)
+        Guna2Button2.TabIndex = 11
+        Guna2Button2.Text = "Select All"
+        Guna2Button2.Visible = False
+        ' 
+        ' Guna2Button3
+        ' 
+        Guna2Button3.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        Guna2Button3.BorderRadius = 8
+        Guna2Button3.BorderThickness = 1
+        Guna2Button3.CustomizableEdges = CustomizableEdges23
+        Guna2Button3.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button3.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button3.Enabled = False
+        Guna2Button3.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Guna2Button3.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        Guna2Button3.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        Guna2Button3.Image = CType(resources.GetObject("Guna2Button3.Image"), Image)
+        Guna2Button3.ImageSize = New Size(25, 25)
+        Guna2Button3.Location = New Point(568, 646)
+        Guna2Button3.Name = "Guna2Button3"
+        Guna2Button3.Padding = New Padding(10, 0, 0, 0)
+        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        Guna2Button3.Size = New Size(189, 47)
+        Guna2Button3.TabIndex = 12
+        Guna2Button3.Text = "Cancel"
+        Guna2Button3.Visible = False
+        ' 
+        ' Guna2Button4
+        ' 
+        Guna2Button4.BorderColor = Color.FromArgb(CByte(142), CByte(11), CByte(0))
+        Guna2Button4.BorderRadius = 8
+        Guna2Button4.BorderThickness = 1
+        Guna2Button4.CustomizableEdges = CustomizableEdges25
+        Guna2Button4.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button4.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button4.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button4.Enabled = False
+        Guna2Button4.FillColor = Color.FromArgb(CByte(224), CByte(81), CByte(70))
+        Guna2Button4.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        Guna2Button4.ForeColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
+        Guna2Button4.Image = CType(resources.GetObject("Guna2Button4.Image"), Image)
+        Guna2Button4.ImageSize = New Size(25, 25)
+        Guna2Button4.Location = New Point(776, 646)
+        Guna2Button4.Name = "Guna2Button4"
+        Guna2Button4.Padding = New Padding(10, 0, 0, 0)
+        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges26
+        Guna2Button4.Size = New Size(189, 47)
+        Guna2Button4.TabIndex = 13
+        Guna2Button4.Text = "Archive Selected"
+        Guna2Button4.Visible = False
         ' 
         ' MedicinePanel_InventoryCustodian
         ' 
@@ -429,7 +553,10 @@ Partial Class MedicinePanel_InventoryCustodian
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         ClientSize = New Size(1006, 720)
-        Controls.Add(FlowLayoutPanel1)
+        Controls.Add(Guna2Button2)
+        Controls.Add(Guna2PictureBox1)
+        Controls.Add(Guna2Button1)
+        Controls.Add(MedicineBarsDisplay)
         Controls.Add(selectMedicineBtn)
         Controls.Add(addMedicineBtn)
         Controls.Add(SortingPanel)
@@ -437,6 +564,8 @@ Partial Class MedicinePanel_InventoryCustodian
         Controls.Add(Guna2HtmlLabel1)
         Controls.Add(Guna2TextBox1)
         Controls.Add(Panel1)
+        Controls.Add(Guna2Button4)
+        Controls.Add(Guna2Button3)
         FormBorderStyle = FormBorderStyle.None
         Name = "MedicinePanel_InventoryCustodian"
         StartPosition = FormStartPosition.CenterScreen
@@ -446,7 +575,8 @@ Partial Class MedicinePanel_InventoryCustodian
         Panel5.ResumeLayout(False)
         Panel4.ResumeLayout(False)
         Panel3.ResumeLayout(False)
-        FlowLayoutPanel1.ResumeLayout(False)
+        MedicineBarsDisplay.ResumeLayout(False)
+        CType(Guna2PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -466,7 +596,7 @@ Partial Class MedicinePanel_InventoryCustodian
     Friend WithEvents nameSortingBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents addMedicineBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents selectMedicineBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents MedicineBarsDisplay As FlowLayoutPanel
     Friend WithEvents MedicineBars1 As MedicineBars
     Friend WithEvents MedicineBars2 As MedicineBars
     Friend WithEvents MedicineBars3 As MedicineBars
@@ -477,4 +607,9 @@ Partial Class MedicinePanel_InventoryCustodian
     Friend WithEvents MedicineBars8 As MedicineBars
     Friend WithEvents MedicineBars9 As MedicineBars
     Friend WithEvents MedicineBars10 As MedicineBars
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
 End Class
