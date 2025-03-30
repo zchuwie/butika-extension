@@ -30,6 +30,7 @@ Partial Class MainPage
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1262, 673)
+        FormBorderStyle = FormBorderStyle.None
         Name = "MainPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "MainPage"
