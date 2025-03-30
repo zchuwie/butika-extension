@@ -267,7 +267,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel13.AutoSize = False
         Guna2HtmlLabel13.BackColor = Color.Transparent
-        Guna2HtmlLabel13.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel13.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel13.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel13.Location = New Point(44, 10)
         Guna2HtmlLabel13.Name = "Guna2HtmlLabel13"
@@ -348,7 +348,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel16.AutoSize = False
         Guna2HtmlLabel16.BackColor = Color.Transparent
-        Guna2HtmlLabel16.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel16.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel16.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel16.Location = New Point(44, 10)
         Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
@@ -467,7 +467,7 @@ Partial Class ViewMedicineBars
         Guna2HtmlLabel15.Anchor = AnchorStyles.Top
         Guna2HtmlLabel15.AutoSize = False
         Guna2HtmlLabel15.BackColor = Color.Transparent
-        Guna2HtmlLabel15.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel15.Font = New Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Guna2HtmlLabel15.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel15.Location = New Point(550, 376)
         Guna2HtmlLabel15.Name = "Guna2HtmlLabel15"
@@ -527,7 +527,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel14.AutoSize = False
         Guna2HtmlLabel14.BackColor = Color.Transparent
-        Guna2HtmlLabel14.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel14.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel14.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel14.Location = New Point(44, 10)
         Guna2HtmlLabel14.Name = "Guna2HtmlLabel14"
@@ -544,7 +544,7 @@ Partial Class ViewMedicineBars
         expdate_datetime.Checked = True
         expdate_datetime.CustomizableEdges = CustomizableEdges31
         expdate_datetime.FillColor = Color.White
-        expdate_datetime.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        expdate_datetime.Font = New Font("Segoe UI Semibold", 8F, FontStyle.Bold)
         expdate_datetime.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         expdate_datetime.Format = DateTimePickerFormat.Short
         expdate_datetime.Location = New Point(239, 490)
@@ -609,7 +609,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel11.AutoSize = False
         Guna2HtmlLabel11.BackColor = Color.Transparent
-        Guna2HtmlLabel11.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel11.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel11.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel11.Location = New Point(44, 10)
         Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
@@ -656,7 +656,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel12.AutoSize = False
         Guna2HtmlLabel12.BackColor = Color.Transparent
-        Guna2HtmlLabel12.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel12.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel12.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel12.Location = New Point(43, 11)
         Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
@@ -771,7 +771,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel9.AutoSize = False
         Guna2HtmlLabel9.BackColor = Color.Transparent
-        Guna2HtmlLabel9.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel9.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel9.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel9.Location = New Point(44, 10)
         Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
@@ -823,7 +823,7 @@ Partial Class ViewMedicineBars
         Guna2HtmlLabel8.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel8.Location = New Point(24, 370)
         Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Guna2HtmlLabel8.Size = New Size(159, 21)
+        Guna2HtmlLabel8.Size = New Size(133, 19)
         Guna2HtmlLabel8.TabIndex = 56
         Guna2HtmlLabel8.Text = "Medicine Specifics"
         ' 
@@ -879,7 +879,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel7.AutoSize = False
         Guna2HtmlLabel7.BackColor = Color.Transparent
-        Guna2HtmlLabel7.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel7.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel7.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel7.Location = New Point(44, 10)
         Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
@@ -966,7 +966,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel6.AutoSize = False
         Guna2HtmlLabel6.BackColor = Color.Transparent
-        Guna2HtmlLabel6.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel6.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel6.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel6.Location = New Point(44, 10)
         Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
@@ -1026,7 +1026,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel5.AutoSize = False
         Guna2HtmlLabel5.BackColor = Color.Transparent
-        Guna2HtmlLabel5.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel5.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel5.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel5.Location = New Point(44, 10)
         Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
@@ -1113,7 +1113,7 @@ Partial Class ViewMedicineBars
         ' 
         Guna2HtmlLabel4.AutoSize = False
         Guna2HtmlLabel4.BackColor = Color.Transparent
-        Guna2HtmlLabel4.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel4.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel4.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel4.Location = New Point(44, 10)
         Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
@@ -1156,7 +1156,7 @@ Partial Class ViewMedicineBars
         Guna2HtmlLabel3.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel3.Location = New Point(24, 99)
         Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Guna2HtmlLabel3.Size = New Size(166, 21)
+        Guna2HtmlLabel3.Size = New Size(139, 19)
         Guna2HtmlLabel3.TabIndex = 41
         Guna2HtmlLabel3.Text = "General Information"
         ' 
@@ -1181,7 +1181,7 @@ Partial Class ViewMedicineBars
         ' 
         medicine_added_date_lbl.AutoSize = False
         medicine_added_date_lbl.BackColor = Color.Transparent
-        medicine_added_date_lbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        medicine_added_date_lbl.Font = New Font("Segoe UI", 9F)
         medicine_added_date_lbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medicine_added_date_lbl.Location = New Point(24, 46)
         medicine_added_date_lbl.Name = "medicine_added_date_lbl"
@@ -1196,7 +1196,7 @@ Partial Class ViewMedicineBars
         medicine_id_lbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medicine_id_lbl.Location = New Point(24, 22)
         medicine_id_lbl.Name = "medicine_id_lbl"
-        medicine_id_lbl.Size = New Size(146, 21)
+        medicine_id_lbl.Size = New Size(122, 19)
         medicine_id_lbl.TabIndex = 37
         medicine_id_lbl.Text = "Medicine ID Here"
         ' 
@@ -1279,7 +1279,7 @@ Partial Class ViewMedicineBars
         ' 
         medicine_updated_date_lbl.AutoSize = False
         medicine_updated_date_lbl.BackColor = Color.Transparent
-        medicine_updated_date_lbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        medicine_updated_date_lbl.Font = New Font("Segoe UI", 9F)
         medicine_updated_date_lbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medicine_updated_date_lbl.Location = New Point(239, 46)
         medicine_updated_date_lbl.Name = "medicine_updated_date_lbl"
@@ -1341,7 +1341,7 @@ Partial Class ViewMedicineBars
         ' 
         ' ViewMedicineBars
         ' 
-        AutoScaleDimensions = New SizeF(8F, 16F)
+        AutoScaleDimensions = New SizeF(6F, 14F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Controls.Add(cancel_update_btn)

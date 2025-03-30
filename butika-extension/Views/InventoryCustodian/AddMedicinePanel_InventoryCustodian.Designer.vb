@@ -311,7 +311,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel13.AutoSize = False
         Guna2HtmlLabel13.BackColor = Color.Transparent
-        Guna2HtmlLabel13.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel13.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel13.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel13.Location = New Point(44, 10)
         Guna2HtmlLabel13.Name = "Guna2HtmlLabel13"
@@ -392,7 +392,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel16.AutoSize = False
         Guna2HtmlLabel16.BackColor = Color.Transparent
-        Guna2HtmlLabel16.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel16.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel16.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel16.Location = New Point(44, 10)
         Guna2HtmlLabel16.Name = "Guna2HtmlLabel16"
@@ -511,7 +511,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2HtmlLabel15.Anchor = AnchorStyles.Top
         Guna2HtmlLabel15.AutoSize = False
         Guna2HtmlLabel15.BackColor = Color.Transparent
-        Guna2HtmlLabel15.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel15.Font = New Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Guna2HtmlLabel15.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel15.Location = New Point(549, 377)
         Guna2HtmlLabel15.Name = "Guna2HtmlLabel15"
@@ -571,7 +571,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel14.AutoSize = False
         Guna2HtmlLabel14.BackColor = Color.Transparent
-        Guna2HtmlLabel14.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel14.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel14.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel14.Location = New Point(44, 10)
         Guna2HtmlLabel14.Name = "Guna2HtmlLabel14"
@@ -588,14 +588,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         expdate_datetime.Checked = True
         expdate_datetime.CustomizableEdges = CustomizableEdges31
         expdate_datetime.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        expdate_datetime.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        expdate_datetime.Font = New Font("Segoe UI Semibold", 8F, FontStyle.Bold)
         expdate_datetime.Format = DateTimePickerFormat.Short
-        expdate_datetime.Location = New Point(238, 491)
+        expdate_datetime.Location = New Point(237, 491)
         expdate_datetime.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         expdate_datetime.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         expdate_datetime.Name = "expdate_datetime"
         expdate_datetime.ShadowDecoration.CustomizableEdges = CustomizableEdges32
-        expdate_datetime.Size = New Size(265, 36)
+        expdate_datetime.Size = New Size(266, 36)
         expdate_datetime.TabIndex = 27
         expdate_datetime.TextOffset = New Point(10, 0)
         expdate_datetime.Value = New Date(2025, 3, 30, 15, 55, 35, 357)
@@ -652,7 +652,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel11.AutoSize = False
         Guna2HtmlLabel11.BackColor = Color.Transparent
-        Guna2HtmlLabel11.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel11.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel11.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel11.Location = New Point(44, 10)
         Guna2HtmlLabel11.Name = "Guna2HtmlLabel11"
@@ -699,11 +699,11 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel12.AutoSize = False
         Guna2HtmlLabel12.BackColor = Color.Transparent
-        Guna2HtmlLabel12.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel12.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel12.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel12.Location = New Point(43, 11)
         Guna2HtmlLabel12.Name = "Guna2HtmlLabel12"
-        Guna2HtmlLabel12.Size = New Size(100, 18)
+        Guna2HtmlLabel12.Size = New Size(124, 18)
         Guna2HtmlLabel12.TabIndex = 19
         Guna2HtmlLabel12.Text = "Description"
         ' 
@@ -813,7 +813,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel9.AutoSize = False
         Guna2HtmlLabel9.BackColor = Color.Transparent
-        Guna2HtmlLabel9.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel9.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel9.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel9.Location = New Point(44, 10)
         Guna2HtmlLabel9.Name = "Guna2HtmlLabel9"
@@ -865,7 +865,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2HtmlLabel8.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel8.Location = New Point(23, 371)
         Guna2HtmlLabel8.Name = "Guna2HtmlLabel8"
-        Guna2HtmlLabel8.Size = New Size(159, 21)
+        Guna2HtmlLabel8.Size = New Size(133, 19)
         Guna2HtmlLabel8.TabIndex = 23
         Guna2HtmlLabel8.Text = "Medicine Specifics"
         ' 
@@ -921,7 +921,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel7.AutoSize = False
         Guna2HtmlLabel7.BackColor = Color.Transparent
-        Guna2HtmlLabel7.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel7.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel7.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel7.Location = New Point(44, 10)
         Guna2HtmlLabel7.Name = "Guna2HtmlLabel7"
@@ -1008,7 +1008,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel6.AutoSize = False
         Guna2HtmlLabel6.BackColor = Color.Transparent
-        Guna2HtmlLabel6.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel6.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel6.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel6.Location = New Point(44, 10)
         Guna2HtmlLabel6.Name = "Guna2HtmlLabel6"
@@ -1068,7 +1068,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel5.AutoSize = False
         Guna2HtmlLabel5.BackColor = Color.Transparent
-        Guna2HtmlLabel5.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel5.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel5.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel5.Location = New Point(44, 10)
         Guna2HtmlLabel5.Name = "Guna2HtmlLabel5"
@@ -1155,7 +1155,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel4.AutoSize = False
         Guna2HtmlLabel4.BackColor = Color.Transparent
-        Guna2HtmlLabel4.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel4.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2HtmlLabel4.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel4.Location = New Point(44, 10)
         Guna2HtmlLabel4.Name = "Guna2HtmlLabel4"
@@ -1198,7 +1198,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2HtmlLabel3.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel3.Location = New Point(23, 100)
         Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Guna2HtmlLabel3.Size = New Size(166, 21)
+        Guna2HtmlLabel3.Size = New Size(139, 19)
         Guna2HtmlLabel3.TabIndex = 14
         Guna2HtmlLabel3.Text = "General Information"
         ' 
@@ -1223,7 +1223,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2HtmlLabel2.AutoSize = False
         Guna2HtmlLabel2.BackColor = Color.Transparent
-        Guna2HtmlLabel2.Font = New Font("Century Gothic", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel2.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Guna2HtmlLabel2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel2.Location = New Point(23, 47)
         Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
@@ -1233,12 +1233,13 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         ' Guna2HtmlLabel1
         ' 
+        Guna2HtmlLabel1.AutoSize = False
         Guna2HtmlLabel1.BackColor = Color.Transparent
         Guna2HtmlLabel1.Font = New Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Guna2HtmlLabel1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2HtmlLabel1.Location = New Point(23, 23)
         Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Guna2HtmlLabel1.Size = New Size(120, 21)
+        Guna2HtmlLabel1.Size = New Size(299, 19)
         Guna2HtmlLabel1.TabIndex = 10
         Guna2HtmlLabel1.Text = "Add Medicine"
         ' 
@@ -1331,7 +1332,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         ' AddMedicinePanel_InventoryCustodian
         ' 
-        AutoScaleDimensions = New SizeF(8F, 16F)
+        AutoScaleDimensions = New SizeF(6F, 14F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         ClientSize = New Size(734, 645)
