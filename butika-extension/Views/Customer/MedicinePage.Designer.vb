@@ -256,7 +256,7 @@ Partial Class MedicinePage
         ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         FormBorderStyle = FormBorderStyle.None
         Name = "MedicinePage"
-        StartPosition = FormStartPosition.CenterParent
+        StartPosition = FormStartPosition.CenterScreen
         Text = "MedicinePage"
         OTCUnderline.ResumeLayout(False)
         PrescUnderline.ResumeLayout(False)
