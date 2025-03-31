@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MainPage
+Partial Class CartPage
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -26,49 +26,45 @@ Partial Class MainPage
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        sidebar = New Guna.UI2.WinForms.Guna2Panel()
-        MainPanel = New Guna.UI2.WinForms.Guna2Panel()
+        MedPanel = New Guna.UI2.WinForms.Guna2Panel()
+        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         SuspendLayout()
         ' 
-        ' sidebar
+        ' MedPanel
         ' 
-        sidebar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        sidebar.CustomizableEdges = CustomizableEdges1
-        sidebar.Dock = DockStyle.Left
-        sidebar.Location = New Point(0, 0)
-        sidebar.Name = "sidebar"
-        sidebar.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        sidebar.Size = New Size(60, 720)
-        sidebar.TabIndex = 1
+        MedPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        MedPanel.CustomizableEdges = CustomizableEdges1
+        MedPanel.Location = New Point(23, 72)
+        MedPanel.Name = "MedPanel"
+        MedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        MedPanel.Size = New Size(833, 621)
+        MedPanel.TabIndex = 1
         ' 
-        ' MainPanel
+        ' Guna2Panel1
         ' 
-        MainPanel.BackColor = Color.Transparent
-        MainPanel.BorderColor = Color.FromArgb(CByte(20), CByte(66), CByte(60))
-        MainPanel.CustomizableEdges = CustomizableEdges3
-        MainPanel.Dock = DockStyle.Fill
-        MainPanel.Location = New Point(60, 0)
-        MainPanel.Name = "MainPanel"
-        MainPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        MainPanel.Size = New Size(1220, 720)
-        MainPanel.TabIndex = 2
+        Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Panel1.CustomizableEdges = CustomizableEdges3
+        Guna2Panel1.Location = New Point(930, 36)
+        Guna2Panel1.Name = "Guna2Panel1"
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Panel1.Size = New Size(254, 621)
+        Guna2Panel1.TabIndex = 2
         ' 
-        ' MainPage
+        ' CartPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(1280, 720)
-        Controls.Add(MainPanel)
-        Controls.Add(sidebar)
+        ClientSize = New Size(1220, 720)
+        Controls.Add(Guna2Panel1)
+        Controls.Add(MedPanel)
         FormBorderStyle = FormBorderStyle.None
-        Margin = New Padding(3, 2, 3, 2)
-        Name = "MainPage"
+        Name = "CartPage"
         StartPosition = FormStartPosition.CenterScreen
-        Text = "MainPage"
+        Text = "CartPage"
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents sidebar As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents MainPanel As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents MedPanel As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class
