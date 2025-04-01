@@ -22,84 +22,91 @@ Partial Class CartPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges41 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges42 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges43 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges44 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges45 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges46 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges49 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges50 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges47 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges48 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges53 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges54 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges51 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges52 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges55 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges56 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges59 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges60 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges57 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges58 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         MedPanel = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        OrderPanel = New Guna.UI2.WinForms.Guna2Panel()
+        BtnsPanel = New Guna.UI2.WinForms.Guna2Panel()
         CartSubtext = New Label()
         ShoppingCart = New Label()
         MedIcon = New PictureBox()
-        Label1 = New Label()
-        Label2 = New Label()
-        PictureBox1 = New PictureBox()
+        YourOrderSubtext = New Label()
+        YourOrders = New Label()
+        YourOrderIcon = New PictureBox()
         ReadyUnderline = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         PendingUnderline = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         AllItemsUnderline = New Guna.UI2.WinForms.Guna2Panel()
         Ready = New Label()
         Pending = New Label()
         AllItems = New Label()
         DeclinedUnderline = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Declined = New Label()
         SelectAllBtn = New RoundedButton()
-        RoundedButton1 = New RoundedButton()
+        DeleteBtn = New RoundedButton()
+        SeeDetailsBtn = New RoundedButton()
+        DiscountLbl = New Label()
+        TotalPriceLbl = New Label()
+        IndicationLbl = New Label()
+        ProductLbl = New Label()
+        PriceLbl = New Label()
+        QuantityLbl = New Label()
+        TotalLbl = New Label()
+        SelectLbl = New Label()
+        MedPanel.SuspendLayout()
+        BtnsPanel.SuspendLayout()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        ReadyUnderline.SuspendLayout()
-        PendingUnderline.SuspendLayout()
-        DeclinedUnderline.SuspendLayout()
+        CType(YourOrderIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' MedPanel
         ' 
         MedPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedPanel.CustomizableEdges = CustomizableEdges41
+        MedPanel.Controls.Add(SelectLbl)
+        MedPanel.Controls.Add(TotalLbl)
+        MedPanel.Controls.Add(QuantityLbl)
+        MedPanel.Controls.Add(PriceLbl)
+        MedPanel.Controls.Add(ProductLbl)
+        MedPanel.Controls.Add(IndicationLbl)
+        MedPanel.CustomizableEdges = CustomizableEdges15
         MedPanel.Location = New Point(23, 181)
         MedPanel.Name = "MedPanel"
-        MedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges42
+        MedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         MedPanel.Size = New Size(833, 500)
         MedPanel.TabIndex = 1
         ' 
-        ' Guna2Panel1
+        ' OrderPanel
         ' 
-        Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel1.CustomizableEdges = CustomizableEdges43
-        Guna2Panel1.Location = New Point(895, 120)
-        Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges44
-        Guna2Panel1.Size = New Size(289, 335)
-        Guna2Panel1.TabIndex = 2
+        OrderPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        OrderPanel.CustomizableEdges = CustomizableEdges17
+        OrderPanel.Location = New Point(895, 120)
+        OrderPanel.Name = "OrderPanel"
+        OrderPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        OrderPanel.Size = New Size(289, 335)
+        OrderPanel.TabIndex = 2
         ' 
-        ' Guna2Panel2
+        ' BtnsPanel
         ' 
-        Guna2Panel2.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel2.CustomizableEdges = CustomizableEdges45
-        Guna2Panel2.Location = New Point(895, 563)
-        Guna2Panel2.Name = "Guna2Panel2"
-        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges46
-        Guna2Panel2.Size = New Size(289, 118)
-        Guna2Panel2.TabIndex = 3
+        BtnsPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        BtnsPanel.Controls.Add(SeeDetailsBtn)
+        BtnsPanel.Controls.Add(DeleteBtn)
+        BtnsPanel.CustomizableEdges = CustomizableEdges19
+        BtnsPanel.Location = New Point(895, 563)
+        BtnsPanel.Name = "BtnsPanel"
+        BtnsPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        BtnsPanel.Size = New Size(289, 118)
+        BtnsPanel.TabIndex = 3
         ' 
         ' CartSubtext
         ' 
@@ -133,92 +140,68 @@ Partial Class CartPage
         MedIcon.TabIndex = 12
         MedIcon.TabStop = False
         ' 
-        ' Label1
+        ' YourOrderSubtext
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Century Gothic", 6.75F)
-        Label1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label1.Location = New Point(942, 86)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(108, 13)
-        Label1.TabIndex = 14
-        Label1.Text = "Check out your orders."
+        YourOrderSubtext.AutoSize = True
+        YourOrderSubtext.Font = New Font("Century Gothic", 6.75F)
+        YourOrderSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        YourOrderSubtext.Location = New Point(942, 86)
+        YourOrderSubtext.Name = "YourOrderSubtext"
+        YourOrderSubtext.Size = New Size(108, 13)
+        YourOrderSubtext.TabIndex = 14
+        YourOrderSubtext.Text = "Check out your orders."
         ' 
-        ' Label2
+        ' YourOrders
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Century Gothic", 15F, FontStyle.Bold)
-        Label2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label2.Location = New Point(938, 64)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(123, 23)
-        Label2.TabIndex = 13
-        Label2.Text = "Your Orders"
+        YourOrders.AutoSize = True
+        YourOrders.Font = New Font("Century Gothic", 15F, FontStyle.Bold)
+        YourOrders.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        YourOrders.Location = New Point(938, 64)
+        YourOrders.Name = "YourOrders"
+        YourOrders.Size = New Size(123, 23)
+        YourOrders.TabIndex = 13
+        YourOrders.Text = "Your Orders"
         ' 
-        ' PictureBox1
+        ' YourOrderIcon
         ' 
-        PictureBox1.Image = My.Resources.Resources.orderBasket
-        PictureBox1.Location = New Point(895, 60)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(38, 45)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 15
-        PictureBox1.TabStop = False
+        YourOrderIcon.Image = My.Resources.Resources.orderBasket
+        YourOrderIcon.Location = New Point(895, 60)
+        YourOrderIcon.Name = "YourOrderIcon"
+        YourOrderIcon.Size = New Size(38, 45)
+        YourOrderIcon.SizeMode = PictureBoxSizeMode.Zoom
+        YourOrderIcon.TabIndex = 15
+        YourOrderIcon.TabStop = False
         ' 
         ' ReadyUnderline
         ' 
         ReadyUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ReadyUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ReadyUnderline.Controls.Add(Guna2Panel3)
-        ReadyUnderline.CustomizableEdges = CustomizableEdges49
+        ReadyUnderline.CustomizableEdges = CustomizableEdges21
         ReadyUnderline.Location = New Point(196, 158)
         ReadyUnderline.Name = "ReadyUnderline"
-        ReadyUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges50
+        ReadyUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         ReadyUnderline.Size = New Size(42, 4)
         ReadyUnderline.TabIndex = 20
-        ' 
-        ' Guna2Panel3
-        ' 
-        Guna2Panel3.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel3.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel3.CustomizableEdges = CustomizableEdges47
-        Guna2Panel3.Location = New Point(176, 0)
-        Guna2Panel3.Name = "Guna2Panel3"
-        Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges48
-        Guna2Panel3.Size = New Size(64, 4)
-        Guna2Panel3.TabIndex = 3
         ' 
         ' PendingUnderline
         ' 
         PendingUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PendingUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PendingUnderline.Controls.Add(Guna2Panel4)
-        PendingUnderline.CustomizableEdges = CustomizableEdges53
+        PendingUnderline.CustomizableEdges = CustomizableEdges23
         PendingUnderline.Location = New Point(124, 157)
         PendingUnderline.Name = "PendingUnderline"
-        PendingUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges54
+        PendingUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         PendingUnderline.Size = New Size(55, 4)
         PendingUnderline.TabIndex = 17
-        ' 
-        ' Guna2Panel4
-        ' 
-        Guna2Panel4.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel4.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel4.CustomizableEdges = CustomizableEdges51
-        Guna2Panel4.Location = New Point(176, 0)
-        Guna2Panel4.Name = "Guna2Panel4"
-        Guna2Panel4.ShadowDecoration.CustomizableEdges = CustomizableEdges52
-        Guna2Panel4.Size = New Size(64, 4)
-        Guna2Panel4.TabIndex = 3
         ' 
         ' AllItemsUnderline
         ' 
         AllItemsUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllItemsUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        AllItemsUnderline.CustomizableEdges = CustomizableEdges55
+        AllItemsUnderline.CustomizableEdges = CustomizableEdges25
         AllItemsUnderline.Location = New Point(44, 157)
         AllItemsUnderline.Name = "AllItemsUnderline"
-        AllItemsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges56
+        AllItemsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         AllItemsUnderline.Size = New Size(62, 4)
         AllItemsUnderline.TabIndex = 16
         ' 
@@ -259,24 +242,12 @@ Partial Class CartPage
         ' 
         DeclinedUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         DeclinedUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DeclinedUnderline.Controls.Add(Guna2Panel6)
-        DeclinedUnderline.CustomizableEdges = CustomizableEdges59
+        DeclinedUnderline.CustomizableEdges = CustomizableEdges27
         DeclinedUnderline.Location = New Point(252, 158)
         DeclinedUnderline.Name = "DeclinedUnderline"
-        DeclinedUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges60
+        DeclinedUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         DeclinedUnderline.Size = New Size(60, 4)
         DeclinedUnderline.TabIndex = 22
-        ' 
-        ' Guna2Panel6
-        ' 
-        Guna2Panel6.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel6.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel6.CustomizableEdges = CustomizableEdges57
-        Guna2Panel6.Location = New Point(176, 0)
-        Guna2Panel6.Name = "Guna2Panel6"
-        Guna2Panel6.ShadowDecoration.CustomizableEdges = CustomizableEdges58
-        Guna2Panel6.Size = New Size(64, 4)
-        Guna2Panel6.TabIndex = 3
         ' 
         ' Declined
         ' 
@@ -302,18 +273,119 @@ Partial Class CartPage
         SelectAllBtn.Text = "Select All"
         SelectAllBtn.UseVisualStyleBackColor = False
         ' 
-        ' RoundedButton1
+        ' DeleteBtn
         ' 
-        RoundedButton1.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        RoundedButton1.CornerRadius = 6
-        RoundedButton1.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        RoundedButton1.ForeColor = Color.White
-        RoundedButton1.Location = New Point(900, 600)
-        RoundedButton1.Name = "RoundedButton1"
-        RoundedButton1.Size = New Size(94, 33)
-        RoundedButton1.TabIndex = 25
-        RoundedButton1.Text = "Select All"
-        RoundedButton1.UseVisualStyleBackColor = False
+        DeleteBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        DeleteBtn.CornerRadius = 6
+        DeleteBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        DeleteBtn.ForeColor = Color.White
+        DeleteBtn.Location = New Point(14, 23)
+        DeleteBtn.Name = "DeleteBtn"
+        DeleteBtn.Size = New Size(253, 30)
+        DeleteBtn.TabIndex = 25
+        DeleteBtn.Text = "Delete"
+        DeleteBtn.UseVisualStyleBackColor = False
+        ' 
+        ' SeeDetailsBtn
+        ' 
+        SeeDetailsBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SeeDetailsBtn.CornerRadius = 6
+        SeeDetailsBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        SeeDetailsBtn.ForeColor = Color.White
+        SeeDetailsBtn.Location = New Point(14, 69)
+        SeeDetailsBtn.Name = "SeeDetailsBtn"
+        SeeDetailsBtn.Size = New Size(253, 30)
+        SeeDetailsBtn.TabIndex = 26
+        SeeDetailsBtn.Text = "See Details"
+        SeeDetailsBtn.UseVisualStyleBackColor = False
+        ' 
+        ' DiscountLbl
+        ' 
+        DiscountLbl.AutoSize = True
+        DiscountLbl.Font = New Font("Century Gothic", 11F, FontStyle.Bold)
+        DiscountLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        DiscountLbl.Location = New Point(895, 484)
+        DiscountLbl.Name = "DiscountLbl"
+        DiscountLbl.Size = New Size(75, 18)
+        DiscountLbl.TabIndex = 25
+        DiscountLbl.Text = "Discount:"
+        ' 
+        ' TotalPriceLbl
+        ' 
+        TotalPriceLbl.AutoSize = True
+        TotalPriceLbl.Font = New Font("Century Gothic", 11F, FontStyle.Bold)
+        TotalPriceLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        TotalPriceLbl.Location = New Point(895, 523)
+        TotalPriceLbl.Name = "TotalPriceLbl"
+        TotalPriceLbl.Size = New Size(87, 18)
+        TotalPriceLbl.TabIndex = 27
+        TotalPriceLbl.Text = "Total Price:"
+        ' 
+        ' IndicationLbl
+        ' 
+        IndicationLbl.AutoSize = True
+        IndicationLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        IndicationLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        IndicationLbl.Location = New Point(28, 22)
+        IndicationLbl.Name = "IndicationLbl"
+        IndicationLbl.Size = New Size(69, 15)
+        IndicationLbl.TabIndex = 19
+        IndicationLbl.Text = "INDICATION"
+        ' 
+        ' ProductLbl
+        ' 
+        ProductLbl.AutoSize = True
+        ProductLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        ProductLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProductLbl.Location = New Point(226, 22)
+        ProductLbl.Name = "ProductLbl"
+        ProductLbl.Size = New Size(58, 15)
+        ProductLbl.TabIndex = 20
+        ProductLbl.Text = "PRODUCT"
+        ' 
+        ' PriceLbl
+        ' 
+        PriceLbl.AutoSize = True
+        PriceLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        PriceLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        PriceLbl.Location = New Point(405, 22)
+        PriceLbl.Name = "PriceLbl"
+        PriceLbl.Size = New Size(37, 15)
+        PriceLbl.TabIndex = 21
+        PriceLbl.Text = "PRICE"
+        ' 
+        ' QuantityLbl
+        ' 
+        QuantityLbl.AutoSize = True
+        QuantityLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        QuantityLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        QuantityLbl.Location = New Point(544, 22)
+        QuantityLbl.Name = "QuantityLbl"
+        QuantityLbl.Size = New Size(59, 15)
+        QuantityLbl.TabIndex = 22
+        QuantityLbl.Text = "QUANTITY"
+        ' 
+        ' TotalLbl
+        ' 
+        TotalLbl.AutoSize = True
+        TotalLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        TotalLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        TotalLbl.Location = New Point(660, 22)
+        TotalLbl.Name = "TotalLbl"
+        TotalLbl.Size = New Size(39, 15)
+        TotalLbl.TabIndex = 23
+        TotalLbl.Text = "TOTAL"
+        ' 
+        ' SelectLbl
+        ' 
+        SelectLbl.AutoSize = True
+        SelectLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        SelectLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SelectLbl.Location = New Point(755, 22)
+        SelectLbl.Name = "SelectLbl"
+        SelectLbl.Size = New Size(43, 15)
+        SelectLbl.TabIndex = 24
+        SelectLbl.Text = "SELECT"
         ' 
         ' CartPage
         ' 
@@ -321,7 +393,8 @@ Partial Class CartPage
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1220, 720)
-        Controls.Add(RoundedButton1)
+        Controls.Add(TotalPriceLbl)
+        Controls.Add(DiscountLbl)
         Controls.Add(SelectAllBtn)
         Controls.Add(DeclinedUnderline)
         Controls.Add(Declined)
@@ -331,48 +404,54 @@ Partial Class CartPage
         Controls.Add(Ready)
         Controls.Add(Pending)
         Controls.Add(AllItems)
-        Controls.Add(Label1)
-        Controls.Add(Label2)
-        Controls.Add(PictureBox1)
-        Controls.Add(Guna2Panel2)
+        Controls.Add(YourOrderSubtext)
+        Controls.Add(YourOrders)
+        Controls.Add(YourOrderIcon)
+        Controls.Add(BtnsPanel)
         Controls.Add(CartSubtext)
         Controls.Add(ShoppingCart)
         Controls.Add(MedIcon)
-        Controls.Add(Guna2Panel1)
+        Controls.Add(OrderPanel)
         Controls.Add(MedPanel)
         FormBorderStyle = FormBorderStyle.None
         Name = "CartPage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "CartPage"
+        MedPanel.ResumeLayout(False)
+        MedPanel.PerformLayout()
+        BtnsPanel.ResumeLayout(False)
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        ReadyUnderline.ResumeLayout(False)
-        PendingUnderline.ResumeLayout(False)
-        DeclinedUnderline.ResumeLayout(False)
+        CType(YourOrderIcon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents MedPanel As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents OrderPanel As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents BtnsPanel As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents CartSubtext As Label
     Friend WithEvents ShoppingCart As Label
     Friend WithEvents MedIcon As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents YourOrderSubtext As Label
+    Friend WithEvents YourOrders As Label
+    Friend WithEvents YourOrderIcon As PictureBox
     Friend WithEvents ReadyUnderline As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents PendingUnderline As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents AllItemsUnderline As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Ready As Label
     Friend WithEvents Pending As Label
     Friend WithEvents AllItems As Label
     Friend WithEvents DeclinedUnderline As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Declined As Label
     Friend WithEvents SelectAllBtn As RoundedButton
-    Friend WithEvents RoundedButton1 As RoundedButton
+    Friend WithEvents DeleteBtn As RoundedButton
+    Friend WithEvents SeeDetailsBtn As RoundedButton
+    Friend WithEvents DiscountLbl As Label
+    Friend WithEvents TotalPriceLbl As Label
+    Friend WithEvents SelectLbl As Label
+    Friend WithEvents TotalLbl As Label
+    Friend WithEvents QuantityLbl As Label
+    Friend WithEvents PriceLbl As Label
+    Friend WithEvents ProductLbl As Label
+    Friend WithEvents IndicationLbl As Label
 End Class

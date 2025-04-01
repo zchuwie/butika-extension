@@ -33,7 +33,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.butika.MedicinePage
+            Me.MainForm = Global.butika.Settings
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

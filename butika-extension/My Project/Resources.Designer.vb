@@ -129,5 +129,35 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property verifyImage() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("verifyImage", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property verifyPending() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("verifyPending", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property verifyVerified() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("verifyVerified", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace

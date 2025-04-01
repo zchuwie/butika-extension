@@ -22,20 +22,16 @@ Partial Class MedicinePage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         MedPanel = New Guna.UI2.WinForms.Guna2Panel()
         Medicines = New Label()
         MedSubtext = New Label()
@@ -48,9 +44,7 @@ Partial Class MedicinePage
         MedSearch = New Guna.UI2.WinForms.Guna2TextBox()
         AllMedsUnderline = New Guna.UI2.WinForms.Guna2Panel()
         OTCUnderline = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         PrescUnderline = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         MedIcon = New PictureBox()
         ManuDown = New PictureBox()
         PriceDown = New PictureBox()
@@ -60,8 +54,6 @@ Partial Class MedicinePage
         TypeUp = New PictureBox()
         SearchIcon = New PictureBox()
         Information = New PictureBox()
-        OTCUnderline.SuspendLayout()
-        PrescUnderline.SuspendLayout()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(ManuDown, ComponentModel.ISupportInitialize).BeginInit()
         CType(PriceDown, ComponentModel.ISupportInitialize).BeginInit()
@@ -77,10 +69,10 @@ Partial Class MedicinePage
         ' 
         MedPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedPanel.BorderThickness = 1
-        MedPanel.CustomizableEdges = CustomizableEdges15
+        MedPanel.CustomizableEdges = CustomizableEdges1
         MedPanel.Location = New Point(34, 132)
         MedPanel.Name = "MedPanel"
-        MedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        MedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         MedPanel.Size = New Size(1174, 549)
         MedPanel.TabIndex = 0
         ' 
@@ -177,7 +169,7 @@ Partial Class MedicinePage
         MedSearch.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         MedSearch.BackgroundImageLayout = ImageLayout.None
         MedSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedSearch.CustomizableEdges = CustomizableEdges17
+        MedSearch.CustomizableEdges = CustomizableEdges3
         MedSearch.DefaultText = ""
         MedSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         MedSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -192,7 +184,7 @@ Partial Class MedicinePage
         MedSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedSearch.PlaceholderText = "Search"
         MedSearch.SelectedText = ""
-        MedSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        MedSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         MedSearch.Size = New Size(289, 26)
         MedSearch.TabIndex = 8
         ' 
@@ -200,10 +192,10 @@ Partial Class MedicinePage
         ' 
         AllMedsUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllMedsUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        AllMedsUnderline.CustomizableEdges = CustomizableEdges19
+        AllMedsUnderline.CustomizableEdges = CustomizableEdges5
         AllMedsUnderline.Location = New Point(55, 116)
         AllMedsUnderline.Name = "AllMedsUnderline"
-        AllMedsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        AllMedsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         AllMedsUnderline.Size = New Size(62, 4)
         AllMedsUnderline.TabIndex = 1
         ' 
@@ -211,47 +203,23 @@ Partial Class MedicinePage
         ' 
         OTCUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OTCUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        OTCUnderline.Controls.Add(Guna2Panel1)
-        OTCUnderline.CustomizableEdges = CustomizableEdges23
+        OTCUnderline.CustomizableEdges = CustomizableEdges7
         OTCUnderline.Location = New Point(133, 116)
         OTCUnderline.Name = "OTCUnderline"
-        OTCUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        OTCUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         OTCUnderline.Size = New Size(115, 4)
         OTCUnderline.TabIndex = 2
-        ' 
-        ' Guna2Panel1
-        ' 
-        Guna2Panel1.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel1.CustomizableEdges = CustomizableEdges21
-        Guna2Panel1.Location = New Point(176, 0)
-        Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges22
-        Guna2Panel1.Size = New Size(64, 4)
-        Guna2Panel1.TabIndex = 3
         ' 
         ' PrescUnderline
         ' 
         PrescUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PrescUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PrescUnderline.Controls.Add(Guna2Panel3)
-        PrescUnderline.CustomizableEdges = CustomizableEdges27
+        PrescUnderline.CustomizableEdges = CustomizableEdges9
         PrescUnderline.Location = New Point(264, 117)
         PrescUnderline.Name = "PrescUnderline"
-        PrescUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges28
+        PrescUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         PrescUnderline.Size = New Size(120, 4)
         PrescUnderline.TabIndex = 4
-        ' 
-        ' Guna2Panel3
-        ' 
-        Guna2Panel3.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel3.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel3.CustomizableEdges = CustomizableEdges25
-        Guna2Panel3.Location = New Point(176, 0)
-        Guna2Panel3.Name = "Guna2Panel3"
-        Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges26
-        Guna2Panel3.Size = New Size(64, 4)
-        Guna2Panel3.TabIndex = 3
         ' 
         ' MedIcon
         ' 
@@ -376,8 +344,6 @@ Partial Class MedicinePage
         Name = "MedicinePage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "MedicinePage"
-        OTCUnderline.ResumeLayout(False)
-        PrescUnderline.ResumeLayout(False)
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(ManuDown, ComponentModel.ISupportInitialize).EndInit()
         CType(PriceDown, ComponentModel.ISupportInitialize).EndInit()
@@ -403,9 +369,7 @@ Partial Class MedicinePage
     Friend WithEvents MedSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents AllMedsUnderline As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents OTCUnderline As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents PrescUnderline As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents MedIcon As PictureBox
     Friend WithEvents SearchIcon As PictureBox
     Friend WithEvents ManuDown As PictureBox
