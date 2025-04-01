@@ -55,7 +55,7 @@ Partial Class PrescriptionPage
         ' 
         ' MedIcon
         ' 
-        MedIcon.Image = My.Resources.Resources.medIcon
+        MedIcon.Image = My.Resources.Resources.prescription
         MedIcon.Location = New Point(40, 46)
         MedIcon.Name = "MedIcon"
         MedIcon.Size = New Size(67, 57)
@@ -72,6 +72,7 @@ Partial Class PrescriptionPage
         ' 
         ' PrescInfoPanel
         ' 
+        PrescInfoPanel.AutoScroll = True
         PrescInfoPanel.Location = New Point(378, 32)
         PrescInfoPanel.Name = "PrescInfoPanel"
         PrescInfoPanel.Size = New Size(796, 568)
@@ -94,6 +95,7 @@ Partial Class PrescriptionPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1204, 681)
         Controls.Add(DeleteApprovalBtn)

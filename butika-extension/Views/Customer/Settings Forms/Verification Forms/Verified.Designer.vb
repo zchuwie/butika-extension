@@ -28,7 +28,9 @@ Partial Class Verified
         VerifySubtext = New Label()
         VerifyAccount = New Label()
         ProgBar = New Panel()
+        VerifiedIcon = New PictureBox()
         CType(VerifiedImg, ComponentModel.ISupportInitialize).BeginInit()
+        CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' VerifiedImg
@@ -67,7 +69,7 @@ Partial Class Verified
         VerifySubtext.AutoSize = True
         VerifySubtext.Font = New Font("Century Gothic", 9.75F)
         VerifySubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifySubtext.Location = New Point(84, 54)
+        VerifySubtext.Location = New Point(89, 54)
         VerifySubtext.Name = "VerifySubtext"
         VerifySubtext.Size = New Size(136, 17)
         VerifySubtext.TabIndex = 86
@@ -94,12 +96,23 @@ Partial Class Verified
         ProgBar.Size = New Size(700, 2)
         ProgBar.TabIndex = 84
         ' 
+        ' VerifiedIcon
+        ' 
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Location = New Point(31, 24)
+        VerifiedIcon.Name = "VerifiedIcon"
+        VerifiedIcon.Size = New Size(51, 53)
+        VerifiedIcon.SizeMode = PictureBoxSizeMode.Zoom
+        VerifiedIcon.TabIndex = 90
+        VerifiedIcon.TabStop = False
+        ' 
         ' Verified
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(753, 520)
+        Controls.Add(VerifiedIcon)
         Controls.Add(VerifiedImg)
         Controls.Add(Phase3Txt)
         Controls.Add(ProgBar3)
@@ -110,6 +123,7 @@ Partial Class Verified
         Name = "Verified"
         Text = "Verified"
         CType(VerifiedImg, ComponentModel.ISupportInitialize).EndInit()
+        CType(VerifiedIcon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -120,4 +134,5 @@ Partial Class Verified
     Friend WithEvents VerifySubtext As Label
     Friend WithEvents VerifyAccount As Label
     Friend WithEvents ProgBar As Panel
+    Friend WithEvents VerifiedIcon As PictureBox
 End Class

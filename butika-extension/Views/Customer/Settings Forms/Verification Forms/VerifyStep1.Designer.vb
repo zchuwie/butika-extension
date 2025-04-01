@@ -26,10 +26,11 @@ Partial Class VerifyStep1
         VerifyAccount = New Label()
         VerifyProgBar = New Panel()
         idImage = New PictureBox()
-        SubmitIdImgBtn = New RoundedButton()
         ProgBar1 = New Panel()
         Phase1Txt = New Label()
+        VerifiedIcon = New PictureBox()
         CType(idImage, ComponentModel.ISupportInitialize).BeginInit()
+        CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' VerifyProfileSubtext
@@ -37,7 +38,7 @@ Partial Class VerifyStep1
         VerifyProfileSubtext.AutoSize = True
         VerifyProfileSubtext.Font = New Font("Century Gothic", 9.75F)
         VerifyProfileSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifyProfileSubtext.Location = New Point(85, 53)
+        VerifyProfileSubtext.Location = New Point(89, 54)
         VerifyProfileSubtext.Name = "VerifyProfileSubtext"
         VerifyProfileSubtext.Size = New Size(136, 17)
         VerifyProfileSubtext.TabIndex = 41
@@ -48,7 +49,7 @@ Partial Class VerifyStep1
         VerifyAccount.AutoSize = True
         VerifyAccount.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         VerifyAccount.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifyAccount.Location = New Point(80, 28)
+        VerifyAccount.Location = New Point(83, 29)
         VerifyAccount.Name = "VerifyAccount"
         VerifyAccount.Size = New Size(184, 28)
         VerifyAccount.TabIndex = 40
@@ -75,19 +76,6 @@ Partial Class VerifyStep1
         idImage.TabIndex = 42
         idImage.TabStop = False
         ' 
-        ' SubmitIdImgBtn
-        ' 
-        SubmitIdImgBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        SubmitIdImgBtn.CornerRadius = 6
-        SubmitIdImgBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        SubmitIdImgBtn.ForeColor = Color.White
-        SubmitIdImgBtn.Location = New Point(314, 404)
-        SubmitIdImgBtn.Name = "SubmitIdImgBtn"
-        SubmitIdImgBtn.Size = New Size(142, 36)
-        SubmitIdImgBtn.TabIndex = 72
-        SubmitIdImgBtn.Text = "Submit Photo of ID"
-        SubmitIdImgBtn.UseVisualStyleBackColor = False
-        ' 
         ' ProgBar1
         ' 
         ProgBar1.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
@@ -108,15 +96,25 @@ Partial Class VerifyStep1
         Phase1Txt.TabIndex = 83
         Phase1Txt.Text = "Submit ID Photo"
         ' 
+        ' VerifiedIcon
+        ' 
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Location = New Point(31, 24)
+        VerifiedIcon.Name = "VerifiedIcon"
+        VerifiedIcon.Size = New Size(51, 53)
+        VerifiedIcon.SizeMode = PictureBoxSizeMode.Zoom
+        VerifiedIcon.TabIndex = 91
+        VerifiedIcon.TabStop = False
+        ' 
         ' VerifyStep1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(753, 520)
+        Controls.Add(VerifiedIcon)
         Controls.Add(Phase1Txt)
         Controls.Add(ProgBar1)
-        Controls.Add(SubmitIdImgBtn)
         Controls.Add(idImage)
         Controls.Add(VerifyProfileSubtext)
         Controls.Add(VerifyAccount)
@@ -125,6 +123,7 @@ Partial Class VerifyStep1
         Name = "VerifyStep1"
         Text = "VerifyStep1"
         CType(idImage, ComponentModel.ISupportInitialize).EndInit()
+        CType(VerifiedIcon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -136,4 +135,5 @@ Partial Class VerifyStep1
     Friend WithEvents SubmitIdImgBtn As RoundedButton
     Friend WithEvents ProgBar1 As Panel
     Friend WithEvents Phase1Txt As Label
+    Friend WithEvents VerifiedIcon As PictureBox
 End Class

@@ -32,8 +32,10 @@ Partial Class AccountSettings
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        CancelBtn = New RoundedButton()
-        SaveBtn = New RoundedButton()
+        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         LastName = New Label()
         MiddleInitial = New Label()
         FirstName = New Label()
@@ -43,7 +45,6 @@ Partial Class AccountSettings
         EditProfileSubtext = New Label()
         EditProfile = New Label()
         EditProfilePanel = New Panel()
-        CancelBtnOutline = New RoundedButton()
         ContactPanel = New Panel()
         Contact = New Label()
         ContactSubtext = New Label()
@@ -55,34 +56,11 @@ Partial Class AccountSettings
         VerifySubtext = New Label()
         Verify = New Label()
         VerifyPanel = New Panel()
-        VerifyAccBtn = New RoundedButton()
+        BirthdayPicker = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Birthdate = New Label()
+        Username = New Label()
+        UsernameTxtbox = New Guna.UI2.WinForms.Guna2TextBox()
         SuspendLayout()
-        ' 
-        ' CancelBtn
-        ' 
-        CancelBtn.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        CancelBtn.CornerRadius = 6
-        CancelBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        CancelBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        CancelBtn.Location = New Point(556, 742)
-        CancelBtn.Name = "CancelBtn"
-        CancelBtn.Size = New Size(75, 33)
-        CancelBtn.TabIndex = 53
-        CancelBtn.Text = "Cancel"
-        CancelBtn.UseVisualStyleBackColor = False
-        ' 
-        ' SaveBtn
-        ' 
-        SaveBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        SaveBtn.CornerRadius = 6
-        SaveBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        SaveBtn.ForeColor = Color.White
-        SaveBtn.Location = New Point(649, 741)
-        SaveBtn.Name = "SaveBtn"
-        SaveBtn.Size = New Size(77, 35)
-        SaveBtn.TabIndex = 52
-        SaveBtn.Text = "Save"
-        SaveBtn.UseVisualStyleBackColor = False
         ' 
         ' LastName
         ' 
@@ -132,6 +110,7 @@ Partial Class AccountSettings
         LastNameTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         LastNameTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         LastNameTxtbox.Location = New Point(31, 232)
+        LastNameTxtbox.Margin = New Padding(3, 4, 3, 4)
         LastNameTxtbox.Name = "LastNameTxtbox"
         LastNameTxtbox.PlaceholderText = ""
         LastNameTxtbox.SelectedText = ""
@@ -154,6 +133,7 @@ Partial Class AccountSettings
         MiddleInitialTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MiddleInitialTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         MiddleInitialTxtbox.Location = New Point(31, 171)
+        MiddleInitialTxtbox.Margin = New Padding(3, 4, 3, 4)
         MiddleInitialTxtbox.Name = "MiddleInitialTxtbox"
         MiddleInitialTxtbox.PlaceholderText = ""
         MiddleInitialTxtbox.SelectedText = ""
@@ -176,6 +156,7 @@ Partial Class AccountSettings
         FirstNameTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         FirstNameTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         FirstNameTxtbox.Location = New Point(31, 112)
+        FirstNameTxtbox.Margin = New Padding(3, 4, 3, 4)
         FirstNameTxtbox.Name = "FirstNameTxtbox"
         FirstNameTxtbox.PlaceholderText = ""
         FirstNameTxtbox.SelectedText = ""
@@ -215,23 +196,10 @@ Partial Class AccountSettings
         EditProfilePanel.Size = New Size(700, 2)
         EditProfilePanel.TabIndex = 36
         ' 
-        ' CancelBtnOutline
-        ' 
-        CancelBtnOutline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        CancelBtnOutline.CornerRadius = 6
-        CancelBtnOutline.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        CancelBtnOutline.ForeColor = Color.White
-        CancelBtnOutline.Location = New Point(555, 741)
-        CancelBtnOutline.Name = "CancelBtnOutline"
-        CancelBtnOutline.Size = New Size(77, 35)
-        CancelBtnOutline.TabIndex = 54
-        CancelBtnOutline.Text = "Save"
-        CancelBtnOutline.UseVisualStyleBackColor = False
-        ' 
         ' ContactPanel
         ' 
         ContactPanel.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ContactPanel.Location = New Point(27, 358)
+        ContactPanel.Location = New Point(27, 508)
         ContactPanel.Name = "ContactPanel"
         ContactPanel.RightToLeft = RightToLeft.No
         ContactPanel.Size = New Size(700, 2)
@@ -242,7 +210,7 @@ Partial Class AccountSettings
         Contact.AutoSize = True
         Contact.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         Contact.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Contact.Location = New Point(28, 306)
+        Contact.Location = New Point(28, 444)
         Contact.Name = "Contact"
         Contact.Size = New Size(105, 28)
         Contact.TabIndex = 46
@@ -254,7 +222,7 @@ Partial Class AccountSettings
         ContactSubtext.AutoSize = True
         ContactSubtext.Font = New Font("Century Gothic", 9.75F)
         ContactSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ContactSubtext.Location = New Point(29, 331)
+        ContactSubtext.Location = New Point(29, 481)
         ContactSubtext.Name = "ContactSubtext"
         ContactSubtext.Size = New Size(163, 17)
         ContactSubtext.TabIndex = 47
@@ -274,7 +242,8 @@ Partial Class AccountSettings
         EmailTxtbox.Font = New Font("Century Gothic", 9.75F)
         EmailTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EmailTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        EmailTxtbox.Location = New Point(29, 401)
+        EmailTxtbox.Location = New Point(29, 551)
+        EmailTxtbox.Margin = New Padding(3, 4, 3, 4)
         EmailTxtbox.Name = "EmailTxtbox"
         EmailTxtbox.PlaceholderText = ""
         EmailTxtbox.SelectedText = ""
@@ -296,7 +265,8 @@ Partial Class AccountSettings
         MobileNumberTxtbox.Font = New Font("Century Gothic", 9.75F)
         MobileNumberTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MobileNumberTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        MobileNumberTxtbox.Location = New Point(29, 460)
+        MobileNumberTxtbox.Location = New Point(29, 610)
+        MobileNumberTxtbox.Margin = New Padding(3, 4, 3, 4)
         MobileNumberTxtbox.Name = "MobileNumberTxtbox"
         MobileNumberTxtbox.PlaceholderText = ""
         MobileNumberTxtbox.SelectedText = ""
@@ -309,7 +279,7 @@ Partial Class AccountSettings
         EmailAddress.AutoSize = True
         EmailAddress.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         EmailAddress.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        EmailAddress.Location = New Point(29, 382)
+        EmailAddress.Location = New Point(29, 532)
         EmailAddress.Name = "EmailAddress"
         EmailAddress.Size = New Size(104, 16)
         EmailAddress.TabIndex = 50
@@ -320,7 +290,7 @@ Partial Class AccountSettings
         MobileNumber.AutoSize = True
         MobileNumber.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         MobileNumber.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MobileNumber.Location = New Point(29, 441)
+        MobileNumber.Location = New Point(29, 591)
         MobileNumber.Name = "MobileNumber"
         MobileNumber.Size = New Size(112, 16)
         MobileNumber.TabIndex = 51
@@ -331,7 +301,7 @@ Partial Class AccountSettings
         VerifyText.AutoSize = True
         VerifyText.Font = New Font("Century Gothic", 9.75F)
         VerifyText.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifyText.Location = New Point(28, 606)
+        VerifyText.Location = New Point(29, 738)
         VerifyText.Name = "VerifyText"
         VerifyText.Size = New Size(411, 17)
         VerifyText.TabIndex = 60
@@ -342,7 +312,7 @@ Partial Class AccountSettings
         VerifySubtext.AutoSize = True
         VerifySubtext.Font = New Font("Century Gothic", 9.75F)
         VerifySubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifySubtext.Location = New Point(31, 566)
+        VerifySubtext.Location = New Point(32, 698)
         VerifySubtext.Name = "VerifySubtext"
         VerifySubtext.Size = New Size(136, 17)
         VerifySubtext.TabIndex = 57
@@ -353,7 +323,7 @@ Partial Class AccountSettings
         Verify.AutoSize = True
         Verify.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         Verify.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Verify.Location = New Point(29, 538)
+        Verify.Location = New Point(32, 661)
         Verify.Name = "Verify"
         Verify.Size = New Size(79, 28)
         Verify.TabIndex = 56
@@ -363,38 +333,87 @@ Partial Class AccountSettings
         ' VerifyPanel
         ' 
         VerifyPanel.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifyPanel.Location = New Point(26, 590)
+        VerifyPanel.Location = New Point(27, 722)
         VerifyPanel.Name = "VerifyPanel"
         VerifyPanel.RightToLeft = RightToLeft.No
         VerifyPanel.Size = New Size(700, 2)
         VerifyPanel.TabIndex = 55
         ' 
-        ' VerifyAccBtn
+        ' BirthdayPicker
         ' 
-        VerifyAccBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifyAccBtn.CornerRadius = 6
-        VerifyAccBtn.Font = New Font("Century Gothic", 8.75F, FontStyle.Bold)
-        VerifyAccBtn.ForeColor = Color.White
-        VerifyAccBtn.Location = New Point(29, 630)
-        VerifyAccBtn.Name = "VerifyAccBtn"
-        VerifyAccBtn.Size = New Size(149, 29)
-        VerifyAccBtn.TabIndex = 61
-        VerifyAccBtn.Text = "Verify Account"
-        VerifyAccBtn.UseVisualStyleBackColor = False
+        BirthdayPicker.Checked = True
+        BirthdayPicker.CustomizableEdges = CustomizableEdges11
+        BirthdayPicker.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        BirthdayPicker.Font = New Font("Segoe UI", 9F)
+        BirthdayPicker.Format = DateTimePickerFormat.Long
+        BirthdayPicker.Location = New Point(32, 368)
+        BirthdayPicker.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        BirthdayPicker.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        BirthdayPicker.Name = "BirthdayPicker"
+        BirthdayPicker.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        BirthdayPicker.Size = New Size(229, 36)
+        BirthdayPicker.TabIndex = 62
+        BirthdayPicker.Value = New Date(2025, 4, 1, 21, 50, 14, 885)
+        ' 
+        ' Birthdate
+        ' 
+        Birthdate.AutoSize = True
+        Birthdate.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Birthdate.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Birthdate.Location = New Point(32, 349)
+        Birthdate.Name = "Birthdate"
+        Birthdate.Size = New Size(66, 16)
+        Birthdate.TabIndex = 63
+        Birthdate.Text = "Birthdate"
+        ' 
+        ' Username
+        ' 
+        Username.AutoSize = True
+        Username.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Username.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Username.Location = New Point(32, 280)
+        Username.Name = "Username"
+        Username.Size = New Size(79, 16)
+        Username.TabIndex = 65
+        Username.Text = "Last Name:"
+        ' 
+        ' UsernameTxtbox
+        ' 
+        UsernameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        UsernameTxtbox.CustomizableEdges = CustomizableEdges13
+        UsernameTxtbox.DefaultText = ""
+        UsernameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
+        UsernameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
+        UsernameTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        UsernameTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        UsernameTxtbox.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        UsernameTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        UsernameTxtbox.Font = New Font("Century Gothic", 9.75F)
+        UsernameTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        UsernameTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        UsernameTxtbox.Location = New Point(32, 299)
+        UsernameTxtbox.Margin = New Padding(3, 4, 3, 4)
+        UsernameTxtbox.Name = "UsernameTxtbox"
+        UsernameTxtbox.PlaceholderText = ""
+        UsernameTxtbox.SelectedText = ""
+        UsernameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        UsernameTxtbox.Size = New Size(229, 27)
+        UsernameTxtbox.TabIndex = 64
         ' 
         ' AccountSettings
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
+        AccessibleRole = AccessibleRole.None
+        AutoScaleMode = AutoScaleMode.None
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(753, 788)
-        Controls.Add(VerifyAccBtn)
+        Controls.Add(Username)
+        Controls.Add(UsernameTxtbox)
+        Controls.Add(Birthdate)
+        Controls.Add(BirthdayPicker)
         Controls.Add(VerifyText)
         Controls.Add(VerifySubtext)
         Controls.Add(Verify)
         Controls.Add(VerifyPanel)
-        Controls.Add(CancelBtn)
-        Controls.Add(SaveBtn)
         Controls.Add(MobileNumber)
         Controls.Add(EmailAddress)
         Controls.Add(MobileNumberTxtbox)
@@ -411,7 +430,6 @@ Partial Class AccountSettings
         Controls.Add(EditProfileSubtext)
         Controls.Add(EditProfile)
         Controls.Add(EditProfilePanel)
-        Controls.Add(CancelBtnOutline)
         FormBorderStyle = FormBorderStyle.None
         Name = "AccountSettings"
         Text = "AccountSettings"
@@ -443,4 +461,8 @@ Partial Class AccountSettings
     Friend WithEvents Verify As Label
     Friend WithEvents VerifyPanel As Panel
     Friend WithEvents VerifyAccBtn As RoundedButton
+    Friend WithEvents BirthdayPicker As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents Birthdate As Label
+    Friend WithEvents Username As Label
+    Friend WithEvents UsernameTxtbox As Guna.UI2.WinForms.Guna2TextBox
 End Class

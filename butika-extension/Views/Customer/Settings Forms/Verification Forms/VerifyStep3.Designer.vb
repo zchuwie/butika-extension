@@ -28,7 +28,9 @@ Partial Class VerifyStep3
         ProgBar = New Panel()
         Phase3Txt = New Label()
         VerifyPendingImg = New PictureBox()
+        VerifiedIcon = New PictureBox()
         CType(VerifyPendingImg, ComponentModel.ISupportInitialize).BeginInit()
+        CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' ProgBar3
@@ -45,7 +47,7 @@ Partial Class VerifyStep3
         VerifySubtext.AutoSize = True
         VerifySubtext.Font = New Font("Century Gothic", 9.75F)
         VerifySubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifySubtext.Location = New Point(79, 53)
+        VerifySubtext.Location = New Point(89, 54)
         VerifySubtext.Name = "VerifySubtext"
         VerifySubtext.Size = New Size(136, 17)
         VerifySubtext.TabIndex = 80
@@ -56,7 +58,7 @@ Partial Class VerifyStep3
         VerifyProfile.AutoSize = True
         VerifyProfile.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         VerifyProfile.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifyProfile.Location = New Point(78, 28)
+        VerifyProfile.Location = New Point(83, 29)
         VerifyProfile.Name = "VerifyProfile"
         VerifyProfile.Size = New Size(184, 28)
         VerifyProfile.TabIndex = 79
@@ -94,12 +96,23 @@ Partial Class VerifyStep3
         VerifyPendingImg.TabIndex = 83
         VerifyPendingImg.TabStop = False
         ' 
+        ' VerifiedIcon
+        ' 
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Location = New Point(31, 24)
+        VerifiedIcon.Name = "VerifiedIcon"
+        VerifiedIcon.Size = New Size(51, 53)
+        VerifiedIcon.SizeMode = PictureBoxSizeMode.Zoom
+        VerifiedIcon.TabIndex = 91
+        VerifiedIcon.TabStop = False
+        ' 
         ' VerifyStep3
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(753, 520)
+        Controls.Add(VerifiedIcon)
         Controls.Add(VerifyPendingImg)
         Controls.Add(Phase3Txt)
         Controls.Add(ProgBar3)
@@ -110,6 +123,7 @@ Partial Class VerifyStep3
         Name = "VerifyStep3"
         Text = "VerifyStep3"
         CType(VerifyPendingImg, ComponentModel.ISupportInitialize).EndInit()
+        CType(VerifiedIcon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -120,4 +134,5 @@ Partial Class VerifyStep3
     Friend WithEvents ProgBar As Panel
     Friend WithEvents Phase3Txt As Label
     Friend WithEvents VerifyPendingImg As PictureBox
+    Friend WithEvents VerifiedIcon As PictureBox
 End Class

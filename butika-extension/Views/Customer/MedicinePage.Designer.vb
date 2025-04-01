@@ -67,6 +67,7 @@ Partial Class MedicinePage
         ' 
         ' MedPanel
         ' 
+        MedPanel.AutoScroll = True
         MedPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedPanel.BorderThickness = 1
         MedPanel.CustomizableEdges = CustomizableEdges1
