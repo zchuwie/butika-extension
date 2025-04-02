@@ -24,18 +24,18 @@ Partial Class Settings
     Private Sub InitializeComponent()
         ShoppingCart = New Label()
         AccountBtnPanel = New Panel()
+        MedIcon = New PictureBox()
         Medicines = New Label()
         MedSubtext = New Label()
         SecurityBtnPanel = New Panel()
+        PictureBox1 = New PictureBox()
         SecurityLbl = New Label()
         SecuritySubtext = New Label()
         Divider = New Panel()
         SettingsPanel = New Panel()
-        MedIcon = New PictureBox()
-        PictureBox1 = New PictureBox()
         AccountBtnPanel.SuspendLayout()
-        SecurityBtnPanel.SuspendLayout()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
+        SecurityBtnPanel.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -44,7 +44,7 @@ Partial Class Settings
         ShoppingCart.AutoSize = True
         ShoppingCart.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         ShoppingCart.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ShoppingCart.Location = New Point(38, 49)
+        ShoppingCart.Location = New Point(33, 49)
         ShoppingCart.Name = "ShoppingCart"
         ShoppingCart.Size = New Size(100, 28)
         ShoppingCart.TabIndex = 11
@@ -56,10 +56,20 @@ Partial Class Settings
         AccountBtnPanel.Controls.Add(MedIcon)
         AccountBtnPanel.Controls.Add(Medicines)
         AccountBtnPanel.Controls.Add(MedSubtext)
-        AccountBtnPanel.Location = New Point(38, 85)
+        AccountBtnPanel.Location = New Point(34, 80)
         AccountBtnPanel.Name = "AccountBtnPanel"
         AccountBtnPanel.Size = New Size(171, 50)
         AccountBtnPanel.TabIndex = 12
+        ' 
+        ' MedIcon
+        ' 
+        MedIcon.Image = My.Resources.Resources.editProfileUnpressed
+        MedIcon.Location = New Point(11, 8)
+        MedIcon.Name = "MedIcon"
+        MedIcon.Size = New Size(37, 35)
+        MedIcon.SizeMode = PictureBoxSizeMode.Zoom
+        MedIcon.TabIndex = 17
+        MedIcon.TabStop = False
         ' 
         ' Medicines
         ' 
@@ -88,10 +98,20 @@ Partial Class Settings
         SecurityBtnPanel.Controls.Add(PictureBox1)
         SecurityBtnPanel.Controls.Add(SecurityLbl)
         SecurityBtnPanel.Controls.Add(SecuritySubtext)
-        SecurityBtnPanel.Location = New Point(38, 136)
+        SecurityBtnPanel.Location = New Point(34, 131)
         SecurityBtnPanel.Name = "SecurityBtnPanel"
         SecurityBtnPanel.Size = New Size(171, 50)
         SecurityBtnPanel.TabIndex = 13
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.EditSecurityUnpressed
+        PictureBox1.Location = New Point(11, 7)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(37, 35)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox1.TabIndex = 18
+        PictureBox1.TabStop = False
         ' 
         ' SecurityLbl
         ' 
@@ -132,26 +152,6 @@ Partial Class Settings
         SettingsPanel.Size = New Size(753, 520)
         SettingsPanel.TabIndex = 13
         ' 
-        ' MedIcon
-        ' 
-        MedIcon.Image = My.Resources.Resources.editProfileUnpressed
-        MedIcon.Location = New Point(11, 8)
-        MedIcon.Name = "MedIcon"
-        MedIcon.Size = New Size(37, 35)
-        MedIcon.SizeMode = PictureBoxSizeMode.Zoom
-        MedIcon.TabIndex = 17
-        MedIcon.TabStop = False
-        ' 
-        ' PictureBox1
-        ' 
-        PictureBox1.Image = My.Resources.Resources.EditSecurityUnpressed
-        PictureBox1.Location = New Point(11, 7)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(37, 35)
-        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox1.TabIndex = 18
-        PictureBox1.TabStop = False
-        ' 
         ' Settings
         ' 
         AutoScaleDimensions = New SizeF(6F, 13F)
@@ -169,9 +169,9 @@ Partial Class Settings
         Text = "Settings"
         AccountBtnPanel.ResumeLayout(False)
         AccountBtnPanel.PerformLayout()
+        CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         SecurityBtnPanel.ResumeLayout(False)
         SecurityBtnPanel.PerformLayout()
-        CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

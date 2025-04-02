@@ -33,12 +33,13 @@ Partial Class MedicinePage
         Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         MedPanel = New Guna.UI2.WinForms.Guna2Panel()
+        ManuComBox = New ComboBox()
+        Manufacturer = New Label()
         Medicines = New Label()
         MedSubtext = New Label()
         AllMeds = New Label()
         OverTheCounter = New Label()
         NeedsPrescription = New Label()
-        Manufacturer = New Label()
         Price = New Label()
         Type = New Label()
         MedSearch = New Guna.UI2.WinForms.Guna2TextBox()
@@ -54,6 +55,7 @@ Partial Class MedicinePage
         TypeUp = New PictureBox()
         SearchIcon = New PictureBox()
         Information = New PictureBox()
+        MedPanel.SuspendLayout()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(ManuDown, ComponentModel.ISupportInitialize).BeginInit()
         CType(PriceDown, ComponentModel.ISupportInitialize).BeginInit()
@@ -70,12 +72,38 @@ Partial Class MedicinePage
         MedPanel.AutoScroll = True
         MedPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedPanel.BorderThickness = 1
+        MedPanel.Controls.Add(ManuComBox)
+        MedPanel.Cursor = Cursors.Hand
         MedPanel.CustomizableEdges = CustomizableEdges1
-        MedPanel.Location = New Point(34, 132)
+        MedPanel.Location = New Point(49, 132)
         MedPanel.Name = "MedPanel"
         MedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        MedPanel.Size = New Size(1174, 549)
+        MedPanel.Size = New Size(1121, 549)
         MedPanel.TabIndex = 0
+        ' 
+        ' ManuComBox
+        ' 
+        ManuComBox.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        ManuComBox.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        ManuComBox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ManuComBox.FormattingEnabled = True
+        ManuComBox.Items.AddRange(New Object() {"test1", "test2", "test3", "test4", "test5"})
+        ManuComBox.Location = New Point(760, 22)
+        ManuComBox.Name = "ManuComBox"
+        ManuComBox.Size = New Size(121, 24)
+        ManuComBox.TabIndex = 1
+        ManuComBox.Text = "Manufacturer"
+        ' 
+        ' Manufacturer
+        ' 
+        Manufacturer.AutoSize = True
+        Manufacturer.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        Manufacturer.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Manufacturer.Location = New Point(835, 103)
+        Manufacturer.Name = "Manufacturer"
+        Manufacturer.Size = New Size(95, 16)
+        Manufacturer.TabIndex = 5
+        Manufacturer.Text = "Manufacturer"
         ' 
         ' Medicines
         ' 
@@ -102,6 +130,7 @@ Partial Class MedicinePage
         ' AllMeds
         ' 
         AllMeds.AutoSize = True
+        AllMeds.Cursor = Cursors.Hand
         AllMeds.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         AllMeds.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllMeds.Location = New Point(55, 98)
@@ -113,6 +142,7 @@ Partial Class MedicinePage
         ' OverTheCounter
         ' 
         OverTheCounter.AutoSize = True
+        OverTheCounter.Cursor = Cursors.Hand
         OverTheCounter.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         OverTheCounter.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OverTheCounter.Location = New Point(131, 98)
@@ -124,6 +154,7 @@ Partial Class MedicinePage
         ' NeedsPrescription
         ' 
         NeedsPrescription.AutoSize = True
+        NeedsPrescription.Cursor = Cursors.Hand
         NeedsPrescription.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         NeedsPrescription.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         NeedsPrescription.Location = New Point(260, 98)
@@ -132,23 +163,12 @@ Partial Class MedicinePage
         NeedsPrescription.TabIndex = 4
         NeedsPrescription.Text = "Needs Prescription"
         ' 
-        ' Manufacturer
-        ' 
-        Manufacturer.AutoSize = True
-        Manufacturer.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        Manufacturer.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Manufacturer.Location = New Point(878, 105)
-        Manufacturer.Name = "Manufacturer"
-        Manufacturer.Size = New Size(95, 16)
-        Manufacturer.TabIndex = 5
-        Manufacturer.Text = "Manufacturer"
-        ' 
         ' Price
         ' 
         Price.AutoSize = True
         Price.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Price.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Price.Location = New Point(1006, 105)
+        Price.Location = New Point(976, 104)
         Price.Name = "Price"
         Price.Size = New Size(39, 16)
         Price.TabIndex = 6
@@ -159,7 +179,7 @@ Partial Class MedicinePage
         Type.AutoSize = True
         Type.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Type.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Type.Location = New Point(1083, 105)
+        Type.Location = New Point(1053, 104)
         Type.Name = "Type"
         Type.Size = New Size(38, 16)
         Type.TabIndex = 7
@@ -180,7 +200,7 @@ Partial Class MedicinePage
         MedSearch.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         MedSearch.Font = New Font("Century Gothic", 9.75F)
         MedSearch.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        MedSearch.Location = New Point(905, 44)
+        MedSearch.Location = New Point(875, 43)
         MedSearch.Name = "MedSearch"
         MedSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedSearch.PlaceholderText = "Search"
@@ -194,33 +214,36 @@ Partial Class MedicinePage
         AllMedsUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllMedsUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllMedsUnderline.CustomizableEdges = CustomizableEdges5
-        AllMedsUnderline.Location = New Point(55, 116)
+        AllMedsUnderline.Location = New Point(55, 115)
         AllMedsUnderline.Name = "AllMedsUnderline"
         AllMedsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         AllMedsUnderline.Size = New Size(62, 4)
         AllMedsUnderline.TabIndex = 1
+        AllMedsUnderline.Visible = False
         ' 
         ' OTCUnderline
         ' 
         OTCUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OTCUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OTCUnderline.CustomizableEdges = CustomizableEdges7
-        OTCUnderline.Location = New Point(133, 116)
+        OTCUnderline.Location = New Point(133, 115)
         OTCUnderline.Name = "OTCUnderline"
         OTCUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         OTCUnderline.Size = New Size(115, 4)
         OTCUnderline.TabIndex = 2
+        OTCUnderline.Visible = False
         ' 
         ' PrescUnderline
         ' 
         PrescUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PrescUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PrescUnderline.CustomizableEdges = CustomizableEdges9
-        PrescUnderline.Location = New Point(264, 117)
+        PrescUnderline.Location = New Point(264, 116)
         PrescUnderline.Name = "PrescUnderline"
         PrescUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         PrescUnderline.Size = New Size(120, 4)
         PrescUnderline.TabIndex = 4
+        PrescUnderline.Visible = False
         ' 
         ' MedIcon
         ' 
@@ -235,7 +258,7 @@ Partial Class MedicinePage
         ' ManuDown
         ' 
         ManuDown.Image = My.Resources.Resources.down
-        ManuDown.Location = New Point(976, 104)
+        ManuDown.Location = New Point(946, 103)
         ManuDown.Name = "ManuDown"
         ManuDown.Size = New Size(17, 17)
         ManuDown.SizeMode = PictureBoxSizeMode.Zoom
@@ -245,7 +268,7 @@ Partial Class MedicinePage
         ' PriceDown
         ' 
         PriceDown.Image = My.Resources.Resources.down
-        PriceDown.Location = New Point(1051, 105)
+        PriceDown.Location = New Point(1021, 104)
         PriceDown.Name = "PriceDown"
         PriceDown.Size = New Size(17, 17)
         PriceDown.SizeMode = PictureBoxSizeMode.Zoom
@@ -255,7 +278,7 @@ Partial Class MedicinePage
         ' TypeDown
         ' 
         TypeDown.Image = My.Resources.Resources.down
-        TypeDown.Location = New Point(1127, 105)
+        TypeDown.Location = New Point(1097, 104)
         TypeDown.Name = "TypeDown"
         TypeDown.Size = New Size(17, 17)
         TypeDown.SizeMode = PictureBoxSizeMode.Zoom
@@ -265,7 +288,7 @@ Partial Class MedicinePage
         ' ManuUp
         ' 
         ManuUp.Image = My.Resources.Resources.up
-        ManuUp.Location = New Point(976, 81)
+        ManuUp.Location = New Point(946, 80)
         ManuUp.Name = "ManuUp"
         ManuUp.Size = New Size(17, 17)
         ManuUp.SizeMode = PictureBoxSizeMode.Zoom
@@ -275,7 +298,7 @@ Partial Class MedicinePage
         ' PriceUp
         ' 
         PriceUp.Image = My.Resources.Resources.up
-        PriceUp.Location = New Point(1051, 82)
+        PriceUp.Location = New Point(1021, 81)
         PriceUp.Name = "PriceUp"
         PriceUp.Size = New Size(17, 17)
         PriceUp.SizeMode = PictureBoxSizeMode.Zoom
@@ -285,7 +308,7 @@ Partial Class MedicinePage
         ' TypeUp
         ' 
         TypeUp.Image = My.Resources.Resources.up
-        TypeUp.Location = New Point(1127, 82)
+        TypeUp.Location = New Point(1097, 81)
         TypeUp.Name = "TypeUp"
         TypeUp.Size = New Size(17, 17)
         TypeUp.SizeMode = PictureBoxSizeMode.Zoom
@@ -295,7 +318,7 @@ Partial Class MedicinePage
         ' SearchIcon
         ' 
         SearchIcon.Image = My.Resources.Resources.search
-        SearchIcon.Location = New Point(1170, 49)
+        SearchIcon.Location = New Point(1140, 48)
         SearchIcon.Name = "SearchIcon"
         SearchIcon.Size = New Size(17, 17)
         SearchIcon.SizeMode = PictureBoxSizeMode.Zoom
@@ -305,7 +328,7 @@ Partial Class MedicinePage
         ' Information
         ' 
         Information.Image = My.Resources.Resources.information
-        Information.Location = New Point(1177, 105)
+        Information.Location = New Point(1147, 104)
         Information.Name = "Information"
         Information.Size = New Size(17, 17)
         Information.SizeMode = PictureBoxSizeMode.Zoom
@@ -318,6 +341,7 @@ Partial Class MedicinePage
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1220, 720)
+        Controls.Add(Manufacturer)
         Controls.Add(Information)
         Controls.Add(SearchIcon)
         Controls.Add(TypeUp)
@@ -332,7 +356,6 @@ Partial Class MedicinePage
         Controls.Add(MedSearch)
         Controls.Add(Type)
         Controls.Add(Price)
-        Controls.Add(Manufacturer)
         Controls.Add(NeedsPrescription)
         Controls.Add(OverTheCounter)
         Controls.Add(AllMeds)
@@ -345,6 +368,7 @@ Partial Class MedicinePage
         Name = "MedicinePage"
         StartPosition = FormStartPosition.CenterScreen
         Text = "MedicinePage"
+        MedPanel.ResumeLayout(False)
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(ManuDown, ComponentModel.ISupportInitialize).EndInit()
         CType(PriceDown, ComponentModel.ISupportInitialize).EndInit()
@@ -380,4 +404,6 @@ Partial Class MedicinePage
     Friend WithEvents PriceUp As PictureBox
     Friend WithEvents TypeUp As PictureBox
     Friend WithEvents Information As PictureBox
+    Friend WithEvents ManuCombo As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents ManuComBox As ComboBox
 End Class
