@@ -55,7 +55,7 @@ Partial Class MedicineBars
         Guna2CustomGradientPanel1.Margin = New Padding(7, 6, 7, 6)
         Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
         Guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2CustomGradientPanel1.Size = New Size(784, 31)
+        Guna2CustomGradientPanel1.Size = New Size(930, 41)
         Guna2CustomGradientPanel1.TabIndex = 0
         ' 
         ' Guna2CustomCheckBox1
@@ -68,7 +68,7 @@ Partial Class MedicineBars
         Guna2CustomCheckBox1.CheckedState.FillColor = Color.FromArgb(CByte(30), CByte(30), CByte(30))
         Guna2CustomCheckBox1.CheckMarkColor = Color.FromArgb(CByte(30), CByte(30), CByte(30))
         Guna2CustomCheckBox1.CustomizableEdges = CustomizableEdges1
-        Guna2CustomCheckBox1.Location = New Point(747, 8)
+        Guna2CustomCheckBox1.Location = New Point(890, 12)
         Guna2CustomCheckBox1.Margin = New Padding(3, 2, 3, 2)
         Guna2CustomCheckBox1.Name = "Guna2CustomCheckBox1"
         Guna2CustomCheckBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
@@ -85,9 +85,9 @@ Partial Class MedicineBars
         ' 
         Guna2HtmlLabel3.AutoSize = False
         Guna2HtmlLabel3.BackColor = Color.Transparent
-        Guna2HtmlLabel3.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel3.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
         Guna2HtmlLabel3.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2HtmlLabel3.Location = New Point(615, 8)
+        Guna2HtmlLabel3.Location = New Point(703, 12)
         Guna2HtmlLabel3.Margin = New Padding(3, 2, 3, 2)
         Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Guna2HtmlLabel3.Size = New Size(112, 14)
@@ -98,9 +98,9 @@ Partial Class MedicineBars
         ' 
         Guna2HtmlLabel2.AutoSize = False
         Guna2HtmlLabel2.BackColor = Color.Transparent
-        Guna2HtmlLabel2.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel2.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
         Guna2HtmlLabel2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2HtmlLabel2.Location = New Point(494, 8)
+        Guna2HtmlLabel2.Location = New Point(565, 12)
         Guna2HtmlLabel2.Margin = New Padding(3, 2, 3, 2)
         Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
         Guna2HtmlLabel2.Size = New Size(42, 14)
@@ -111,9 +111,9 @@ Partial Class MedicineBars
         ' 
         Guna2HtmlLabel1.AutoSize = False
         Guna2HtmlLabel1.BackColor = Color.Transparent
-        Guna2HtmlLabel1.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Guna2HtmlLabel1.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
         Guna2HtmlLabel1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2HtmlLabel1.Location = New Point(246, 8)
+        Guna2HtmlLabel1.Location = New Point(287, 12)
         Guna2HtmlLabel1.Margin = New Padding(3, 2, 3, 2)
         Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
         Guna2HtmlLabel1.Size = New Size(232, 14)
@@ -124,9 +124,9 @@ Partial Class MedicineBars
         ' 
         medicineName.AutoSize = False
         medicineName.BackColor = Color.Transparent
-        medicineName.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        medicineName.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
         medicineName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineName.Location = New Point(18, 8)
+        medicineName.Location = New Point(18, 12)
         medicineName.Margin = New Padding(3, 2, 3, 2)
         medicineName.Name = "medicineName"
         medicineName.Size = New Size(211, 14)
@@ -141,7 +141,7 @@ Partial Class MedicineBars
         Controls.Add(Guna2CustomGradientPanel1)
         Margin = New Padding(0, 0, 0, 4)
         Name = "MedicineBars"
-        Size = New Size(784, 31)
+        Size = New Size(930, 41)
         Guna2CustomGradientPanel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
