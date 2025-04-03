@@ -66,6 +66,9 @@ Namespace My.Resources
         Friend ReadOnly Property cart() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("cart", resourceCulture)
+        Friend ReadOnly Property butika() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("butika", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -76,6 +79,9 @@ Namespace My.Resources
         Friend ReadOnly Property down() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("down", resourceCulture)
+        Friend ReadOnly Property ddashboard_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ddashboard_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -86,6 +92,9 @@ Namespace My.Resources
         Friend ReadOnly Property editProfileUnpressed() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("editProfileUnpressed", resourceCulture)
+        Friend ReadOnly Property ddashboard_icon1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ddashboard_icon1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -96,6 +105,9 @@ Namespace My.Resources
         Friend ReadOnly Property EditSecurityUnpressed() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("EditSecurityUnpressed", resourceCulture)
+        Friend ReadOnly Property dmedicine_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dmedicine_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -106,6 +118,9 @@ Namespace My.Resources
         Friend ReadOnly Property information() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("information", resourceCulture)
+        Friend ReadOnly Property dprescription_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dprescription_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -116,6 +131,9 @@ Namespace My.Resources
         Friend ReadOnly Property medIcon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("medIcon", resourceCulture)
+        Friend ReadOnly Property dtransactions_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("dtransactions_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -126,6 +144,9 @@ Namespace My.Resources
         Friend ReadOnly Property orderBasket() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("orderBasket", resourceCulture)
+        Friend ReadOnly Property greenbglogo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("greenbglogo", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -136,6 +157,9 @@ Namespace My.Resources
         Friend ReadOnly Property prescription() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("prescription", resourceCulture)
+        Friend ReadOnly Property ldashboard_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ldashboard_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -146,6 +170,9 @@ Namespace My.Resources
         Friend ReadOnly Property pressedCart() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pressedCart", resourceCulture)
+        Friend ReadOnly Property lmedicines_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lmedicines_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -156,6 +183,9 @@ Namespace My.Resources
         Friend ReadOnly Property pressedHome() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pressedHome", resourceCulture)
+        Friend ReadOnly Property logolandscapegreen() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logolandscapegreen", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -166,6 +196,9 @@ Namespace My.Resources
         Friend ReadOnly Property pressedLogout() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pressedLogout", resourceCulture)
+        Friend ReadOnly Property lprescription_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("lprescription_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -256,6 +289,9 @@ Namespace My.Resources
         Friend ReadOnly Property verifyVerified() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("verifyVerified", resourceCulture)
+        Friend ReadOnly Property ltransaction_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ltransaction_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

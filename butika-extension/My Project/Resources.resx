@@ -177,5 +177,40 @@
   </data>
   <data name="pressedSettings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pressedSettings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="greenbglogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\greenbglogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="butika" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\butika.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ddashboard_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\ddashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logolandscapegreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\logolandscapegreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ddashboard_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\ddashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dmedicine_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\dmedicine_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dprescription_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\dprescription_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dtransactions_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\dtransactions_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ldashboard_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\ldashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lmedicines_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\lmedicines_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lprescription_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\lprescription_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ltransaction_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\ltransaction_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

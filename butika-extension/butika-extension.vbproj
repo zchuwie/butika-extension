@@ -60,7 +60,6 @@
     <Folder Include="Resources\prescription_images\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\InventoryCustodian\" />
-    <Folder Include="Views\Pharmacist\" />
   </ItemGroup>
 
   <ItemGroup>
