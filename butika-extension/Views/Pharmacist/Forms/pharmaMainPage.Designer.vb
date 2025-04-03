@@ -35,16 +35,16 @@ Partial Class pharmaMainPage
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         mainPanel = New Panel()
         sidebarPanel = New Panel()
+        PictureBox1 = New PictureBox()
         logoutBtn = New Guna.UI2.WinForms.Guna2Button()
         prescriptionBtn = New Guna.UI2.WinForms.Guna2Button()
         medicineBtn = New Guna.UI2.WinForms.Guna2Button()
         transactionBtn = New Guna.UI2.WinForms.Guna2Button()
         dashboardBtn = New Guna.UI2.WinForms.Guna2Button()
-        PictureBox2 = New PictureBox()
         separator2 = New Panel()
         separator3 = New Panel()
         sidebarPanel.SuspendLayout()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' mainPanel
@@ -60,12 +60,12 @@ Partial Class pharmaMainPage
         ' sidebarPanel
         ' 
         sidebarPanel.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        sidebarPanel.Controls.Add(PictureBox1)
         sidebarPanel.Controls.Add(logoutBtn)
         sidebarPanel.Controls.Add(prescriptionBtn)
         sidebarPanel.Controls.Add(medicineBtn)
         sidebarPanel.Controls.Add(transactionBtn)
         sidebarPanel.Controls.Add(dashboardBtn)
-        sidebarPanel.Controls.Add(PictureBox2)
         sidebarPanel.Controls.Add(separator2)
         sidebarPanel.Controls.Add(separator3)
         sidebarPanel.Dock = DockStyle.Left
@@ -73,6 +73,16 @@ Partial Class pharmaMainPage
         sidebarPanel.Name = "sidebarPanel"
         sidebarPanel.Size = New Size(237, 720)
         sidebarPanel.TabIndex = 2
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.Image = My.Resources.Resources.logolandscapegreen
+        PictureBox1.Location = New Point(10, 12)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(219, 54)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 8
+        PictureBox1.TabStop = False
         ' 
         ' logoutBtn
         ' 
@@ -184,7 +194,7 @@ Partial Class pharmaMainPage
         dashboardBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         dashboardBtn.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         dashboardBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        dashboardBtn.Image = CType(resources.GetObject("dashboardBtn.Image"), Image)
+        dashboardBtn.Image = My.Resources.Resources.ddashboard_icon
         dashboardBtn.ImageAlign = HorizontalAlignment.Left
         dashboardBtn.ImageOffset = New Point(35, 0)
         dashboardBtn.ImageSize = New Size(25, 25)
@@ -198,17 +208,6 @@ Partial Class pharmaMainPage
         dashboardBtn.Text = "Dashboard"
         dashboardBtn.TextAlign = HorizontalAlignment.Left
         dashboardBtn.TextOffset = New Point(50, 0)
-        ' 
-        ' PictureBox2
-        ' 
-        PictureBox2.ErrorImage = Nothing
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(10, 12)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(219, 54)
-        PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox2.TabIndex = 2
-        PictureBox2.TabStop = False
         ' 
         ' separator2
         ' 
@@ -239,7 +238,7 @@ Partial Class pharmaMainPage
         Name = "pharmaMainPage"
         Text = "pharmaMainPage"
         sidebarPanel.ResumeLayout(False)
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -250,7 +249,7 @@ Partial Class pharmaMainPage
     Friend WithEvents medicineBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents transactionBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents dashboardBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents separator2 As Panel
     Friend WithEvents separator3 As Panel
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

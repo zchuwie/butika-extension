@@ -134,7 +134,7 @@
   <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB8AAAAfCAYAAAAfrhY5AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAAZpJREFUWEftl9FNwzAQhjtCR+gIHaEb0A3IBu0GjEA3gA0YIVKciEeL2FFiFykj
+        DAAACwwBP0AiyAAAAZpJREFUWEftl9FNwzAQhjtCR+gIHaEb0A3IBu0GjEA3gA0YIVKciEeL2FFiFykj
         ZATQH+rKOVzLTh2e+KT/yec7+/znKKvq3DyVWn4RPa/+AkfhUe8t39DY5DAtTrQwVHXNA41dlELVr9cD
         dPJI1xel7D6O1u3zQstsEal6T2vj5nva/qXEWrGbFM9bvqFBi0nJx0lxUGoxmIBKNW+Vli8phGe0i+Oi
         tDY+PX4tntDx1E90fWQpx9uXcrYc2CdEu+j6HKiXnC0HE8cryen6HIJaDsgpB7o+h6CWG2zH3zvjg1tu
@@ -144,7 +144,7 @@
         8e37Br9nvdVNzpMsAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="goTransacPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAVCAYAAABc6S4mAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAG1JREFUSEtjYCARiDrZ9os52fwXc7KpR5ejCoAaDsPUt0TM0XrBqCVEg1FLSAI4
@@ -155,7 +155,7 @@
   <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAeCAYAAADdGWXmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAARNJREFUSEvdlkEOgjAURHsEbqw3gBuxKK67oCRSFhyBI2hKxPz+dOJUwIUvmc3v
+        DAAACwwBP0AiyAAAARNJREFUSEvdlkEOgjAURHsEbqw3gBuxKK67oCRSFhyBI2hKxPz+dOJUwIUvmc3v
         YyqCoDHGmNs0XGzoly74x9F59dZxH9NNvtbCGbFjfzXdSWeUyWLkYD3Vg0n6/3mzH16zeJdkFg6Pvftm
         PVUb+ubM39l622ukpNdKoHooiYDqoSQCqgdJ8dkp10oiexKQpAtKInsSkKQLSiJ7EpCE5gjKRxKaIygf
         SWiOoHwkoTmC8pGE5gjKRxKaIygfSXJeGtmTgCRdUBLZk4CkPe882ZNASQRUDyURUD02DPMmxSe9XmeQ
@@ -163,7 +163,7 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="PictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="goMedPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAVCAYAAABc6S4mAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAG1JREFUSEtjYCARiDrZ9os52fwXc7KpR5ejCoAaDsPUt0TM0XrBqCVEg1FLSAI4
@@ -174,7 +174,7 @@
   <data name="PictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAmlJREFUWEe9V+1t2zAQzQgZoSNkhIzQDeoNkg3SDdoNnA08AlFRRn4SlWjIpAJo
+        DAAACwwBP0AiyAAAAmlJREFUWEe9V+1t2zAQzQgZoSNkhIzQDeoNkg3SDdoNnA08AlFRRn4SlWjIpAJo
         BI+Q4h3vZOYSK9ZXH0BYtI68D747nm5uJmIf6wcb65ONvtu3hyf9fnHYtr43jfuGZ/yW0b/l40XeRXcH
         Wb1+FuAhKzpBORRoA2yTDERUMF8sKmXrfyllxnTu1gbf9cqD70g2epfLzjLCOHdr23qnPSWF0Xc21r/P
         BtQ/YZiWIyPCYYe99P6DQIihRG82dZDBzRW84LP91JOFxvYDQfEnzk7I8z8G64KjW0mpNb2+NIykdQ9i
@@ -187,7 +187,7 @@
         aPS6RcG9QvK6qTY4DvkmHH3nTwWUCg9o3lSbqZ7/A4fIWNe5kcPSAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="goPrescriptPage.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAVCAYAAABc6S4mAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAW
         JQAAFiUBSVIk8AAAAG1JREFUSEtjYCARiDrZ9os52fwXc7KpR5ejCoAaDsPUt0TM0XrBqCVEg1FLSAI4
@@ -195,4 +195,7 @@
         bAAAHDjkFBRcN/MAAAAASUVORK5CYII=
 </value>
   </data>
+  <metadata name="infoManagerIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

@@ -22,6 +22,7 @@ Partial Class pharmaDashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaDashboard))
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -49,46 +50,47 @@ Partial Class pharmaDashboard
         Label3 = New Label()
         PictureBox1 = New PictureBox()
         viewreportPnl = New Guna.UI2.WinForms.Guna2Panel()
-        PictureBox2 = New PictureBox()
+        goTransacPage = New PictureBox()
         viewreportLbl = New Label()
         miniMedicine = New Guna.UI2.WinForms.Guna2Panel()
         totalMedsLbl = New Label()
         Label4 = New Label()
         PictureBox3 = New PictureBox()
         Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        PictureBox4 = New PictureBox()
+        goMedPage = New PictureBox()
         Label5 = New Label()
         miniprescription = New Guna.UI2.WinForms.Guna2Panel()
         totalPrescriptLbl = New Label()
         Label7 = New Label()
         PictureBox5 = New PictureBox()
         Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
-        PictureBox6 = New PictureBox()
+        goPrescriptPage = New PictureBox()
         Label8 = New Label()
         Label1 = New Label()
         Label6 = New Label()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Label9 = New Label()
-        Label10 = New Label()
-        Label11 = New Label()
-        Label12 = New Label()
-        Label13 = New Label()
         Guna2Separator2 = New Guna.UI2.WinForms.Guna2Separator()
+        Label13 = New Label()
+        Label12 = New Label()
+        Label11 = New Label()
+        Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Guna2Separator3 = New Guna.UI2.WinForms.Guna2Separator()
+        Label10 = New Label()
+        Label9 = New Label()
+        infoManagerIcon = New ToolTip(components)
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         minitransaction.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         viewreportPnl.SuspendLayout()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(goTransacPage, ComponentModel.ISupportInitialize).BeginInit()
         miniMedicine.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel3.SuspendLayout()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
+        CType(goMedPage, ComponentModel.ISupportInitialize).BeginInit()
         miniprescription.SuspendLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel5.SuspendLayout()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        CType(goPrescriptPage, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel1.SuspendLayout()
         Guna2Panel2.SuspendLayout()
         SuspendLayout()
@@ -102,6 +104,7 @@ Partial Class pharmaDashboard
         ' 
         ' infoIcon
         ' 
+        infoIcon.Cursor = Cursors.Hand
         infoIcon.Image = CType(resources.GetObject("infoIcon.Image"), Image)
         infoIcon.Location = New Point(988, 34)
         infoIcon.Name = "infoIcon"
@@ -199,7 +202,7 @@ Partial Class pharmaDashboard
         ' 
         viewreportPnl.BackColor = Color.Transparent
         viewreportPnl.BorderRadius = 15
-        viewreportPnl.Controls.Add(PictureBox2)
+        viewreportPnl.Controls.Add(goTransacPage)
         viewreportPnl.Controls.Add(viewreportLbl)
         CustomizableEdges1.TopLeft = False
         CustomizableEdges1.TopRight = False
@@ -212,15 +215,16 @@ Partial Class pharmaDashboard
         viewreportPnl.Size = New Size(220, 38)
         viewreportPnl.TabIndex = 0
         ' 
-        ' PictureBox2
+        ' goTransacPage
         ' 
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(180, 8)
-        PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(24, 21)
-        PictureBox2.SizeMode = PictureBoxSizeMode.AutoSize
-        PictureBox2.TabIndex = 49
-        PictureBox2.TabStop = False
+        goTransacPage.Cursor = Cursors.Hand
+        goTransacPage.Image = CType(resources.GetObject("goTransacPage.Image"), Image)
+        goTransacPage.Location = New Point(180, 8)
+        goTransacPage.Name = "goTransacPage"
+        goTransacPage.Size = New Size(24, 21)
+        goTransacPage.SizeMode = PictureBoxSizeMode.AutoSize
+        goTransacPage.TabIndex = 49
+        goTransacPage.TabStop = False
         ' 
         ' viewreportLbl
         ' 
@@ -289,7 +293,7 @@ Partial Class pharmaDashboard
         ' 
         Guna2Panel3.BackColor = Color.Transparent
         Guna2Panel3.BorderRadius = 15
-        Guna2Panel3.Controls.Add(PictureBox4)
+        Guna2Panel3.Controls.Add(goMedPage)
         Guna2Panel3.Controls.Add(Label5)
         CustomizableEdges5.TopLeft = False
         CustomizableEdges5.TopRight = False
@@ -302,15 +306,16 @@ Partial Class pharmaDashboard
         Guna2Panel3.Size = New Size(220, 38)
         Guna2Panel3.TabIndex = 0
         ' 
-        ' PictureBox4
+        ' goMedPage
         ' 
-        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(180, 8)
-        PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(24, 21)
-        PictureBox4.SizeMode = PictureBoxSizeMode.AutoSize
-        PictureBox4.TabIndex = 49
-        PictureBox4.TabStop = False
+        goMedPage.Cursor = Cursors.Hand
+        goMedPage.Image = CType(resources.GetObject("goMedPage.Image"), Image)
+        goMedPage.Location = New Point(180, 8)
+        goMedPage.Name = "goMedPage"
+        goMedPage.Size = New Size(24, 21)
+        goMedPage.SizeMode = PictureBoxSizeMode.AutoSize
+        goMedPage.TabIndex = 49
+        goMedPage.TabStop = False
         ' 
         ' Label5
         ' 
@@ -379,7 +384,7 @@ Partial Class pharmaDashboard
         ' 
         Guna2Panel5.BackColor = Color.Transparent
         Guna2Panel5.BorderRadius = 15
-        Guna2Panel5.Controls.Add(PictureBox6)
+        Guna2Panel5.Controls.Add(goPrescriptPage)
         Guna2Panel5.Controls.Add(Label8)
         CustomizableEdges9.TopLeft = False
         CustomizableEdges9.TopRight = False
@@ -392,15 +397,16 @@ Partial Class pharmaDashboard
         Guna2Panel5.Size = New Size(220, 38)
         Guna2Panel5.TabIndex = 0
         ' 
-        ' PictureBox6
+        ' goPrescriptPage
         ' 
-        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
-        PictureBox6.Location = New Point(180, 8)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(24, 21)
-        PictureBox6.SizeMode = PictureBoxSizeMode.AutoSize
-        PictureBox6.TabIndex = 49
-        PictureBox6.TabStop = False
+        goPrescriptPage.Cursor = Cursors.Hand
+        goPrescriptPage.Image = CType(resources.GetObject("goPrescriptPage.Image"), Image)
+        goPrescriptPage.Location = New Point(180, 8)
+        goPrescriptPage.Name = "goPrescriptPage"
+        goPrescriptPage.Size = New Size(24, 21)
+        goPrescriptPage.SizeMode = PictureBoxSizeMode.AutoSize
+        goPrescriptPage.TabIndex = 49
+        goPrescriptPage.TabStop = False
         ' 
         ' Label8
         ' 
@@ -452,6 +458,47 @@ Partial Class pharmaDashboard
         Guna2Panel1.Size = New Size(680, 347)
         Guna2Panel1.TabIndex = 52
         ' 
+        ' Guna2Separator2
+        ' 
+        Guna2Separator2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Separator2.Location = New Point(17, 49)
+        Guna2Separator2.Name = "Guna2Separator2"
+        Guna2Separator2.Size = New Size(646, 10)
+        Guna2Separator2.TabIndex = 54
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        Label13.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Label13.Location = New Point(486, 18)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(152, 16)
+        Label13.TabIndex = 2
+        Label13.Text = "Amount of Transaction"
+        ' 
+        ' Label12
+        ' 
+        Label12.AutoSize = True
+        Label12.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        Label12.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Label12.Location = New Point(265, 18)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(132, 16)
+        Label12.TabIndex = 1
+        Label12.Text = "Date of Transaction"
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        Label11.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Label11.Location = New Point(48, 18)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(99, 16)
+        Label11.TabIndex = 0
+        Label11.Text = "Transaction ID"
+        ' 
         ' Guna2Panel2
         ' 
         Guna2Panel2.AutoScroll = True
@@ -468,16 +515,13 @@ Partial Class pharmaDashboard
         Guna2Panel2.Size = New Size(246, 498)
         Guna2Panel2.TabIndex = 53
         ' 
-        ' Label9
+        ' Guna2Separator3
         ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        Label9.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label9.Location = New Point(23, 24)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(100, 16)
-        Label9.TabIndex = 0
-        Label9.Text = "Prescription ID"
+        Guna2Separator3.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Separator3.Location = New Point(14, 57)
+        Guna2Separator3.Name = "Guna2Separator3"
+        Guna2Separator3.Size = New Size(220, 10)
+        Guna2Separator3.TabIndex = 55
         ' 
         ' Label10
         ' 
@@ -490,54 +534,16 @@ Partial Class pharmaDashboard
         Label10.TabIndex = 1
         Label10.Text = "Status"
         ' 
-        ' Label11
+        ' Label9
         ' 
-        Label11.AutoSize = True
-        Label11.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        Label11.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label11.Location = New Point(48, 18)
-        Label11.Name = "Label11"
-        Label11.Size = New Size(99, 16)
-        Label11.TabIndex = 0
-        Label11.Text = "Transaction ID"
-        ' 
-        ' Label12
-        ' 
-        Label12.AutoSize = True
-        Label12.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        Label12.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label12.Location = New Point(265, 18)
-        Label12.Name = "Label12"
-        Label12.Size = New Size(132, 16)
-        Label12.TabIndex = 1
-        Label12.Text = "Date of Transaction"
-        ' 
-        ' Label13
-        ' 
-        Label13.AutoSize = True
-        Label13.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        Label13.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label13.Location = New Point(486, 18)
-        Label13.Name = "Label13"
-        Label13.Size = New Size(152, 16)
-        Label13.TabIndex = 2
-        Label13.Text = "Amount of Transaction"
-        ' 
-        ' Guna2Separator2
-        ' 
-        Guna2Separator2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Separator2.Location = New Point(17, 49)
-        Guna2Separator2.Name = "Guna2Separator2"
-        Guna2Separator2.Size = New Size(646, 10)
-        Guna2Separator2.TabIndex = 54
-        ' 
-        ' Guna2Separator3
-        ' 
-        Guna2Separator3.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Separator3.Location = New Point(14, 57)
-        Guna2Separator3.Name = "Guna2Separator3"
-        Guna2Separator3.Size = New Size(220, 10)
-        Guna2Separator3.TabIndex = 55
+        Label9.AutoSize = True
+        Label9.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        Label9.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Label9.Location = New Point(23, 24)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(100, 16)
+        Label9.TabIndex = 0
+        Label9.Text = "Prescription ID"
         ' 
         ' pharmaDashboard
         ' 
@@ -566,19 +572,19 @@ Partial Class pharmaDashboard
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         viewreportPnl.ResumeLayout(False)
         viewreportPnl.PerformLayout()
-        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
+        CType(goTransacPage, ComponentModel.ISupportInitialize).EndInit()
         miniMedicine.ResumeLayout(False)
         miniMedicine.PerformLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         Guna2Panel3.ResumeLayout(False)
         Guna2Panel3.PerformLayout()
-        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
+        CType(goMedPage, ComponentModel.ISupportInitialize).EndInit()
         miniprescription.ResumeLayout(False)
         miniprescription.PerformLayout()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         Guna2Panel5.ResumeLayout(False)
         Guna2Panel5.PerformLayout()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        CType(goPrescriptPage, ComponentModel.ISupportInitialize).EndInit()
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
         Guna2Panel2.ResumeLayout(False)
@@ -598,20 +604,20 @@ Partial Class pharmaDashboard
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents viewreportLbl As Label
-    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents goTransacPage As PictureBox
     Friend WithEvents miniMedicine As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents totalMedsLbl As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents goMedPage As PictureBox
     Friend WithEvents Label5 As Label
     Friend WithEvents miniprescription As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents totalPrescriptLbl As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents goPrescriptPage As PictureBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
@@ -624,4 +630,5 @@ Partial Class pharmaDashboard
     Friend WithEvents Guna2Separator2 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents Label13 As Label
     Friend WithEvents Guna2Separator3 As Guna.UI2.WinForms.Guna2Separator
+    Friend WithEvents infoManagerIcon As ToolTip
 End Class

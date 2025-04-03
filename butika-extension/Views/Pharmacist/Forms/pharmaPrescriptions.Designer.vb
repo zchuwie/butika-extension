@@ -22,17 +22,18 @@ Partial Class pharmaPrescriptions
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        components = New ComponentModel.Container()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaPrescriptions))
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Label4 = New Label()
         Label3 = New Label()
@@ -45,10 +46,11 @@ Partial Class pharmaPrescriptions
         medicineSearch = New Guna.UI2.WinForms.Guna2TextBox()
         prescriptionsLbl = New Label()
         pendingPnl = New Guna.UI2.WinForms.Guna2Panel()
-        Label5 = New Label()
+        pendingLbl = New Label()
         declinedPnl = New Guna.UI2.WinForms.Guna2Panel()
-        Label6 = New Label()
+        declineLbl = New Label()
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
+        infoManagerIcon = New ToolTip(components)
         Guna2Panel2.SuspendLayout()
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -60,12 +62,12 @@ Partial Class pharmaPrescriptions
         Guna2Panel2.Controls.Add(Label3)
         Guna2Panel2.Controls.Add(Label2)
         Guna2Panel2.Controls.Add(Label1)
-        Guna2Panel2.CustomizableEdges = CustomizableEdges11
+        Guna2Panel2.CustomizableEdges = CustomizableEdges1
         Guna2Panel2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Panel2.Location = New Point(36, 141)
         Guna2Panel2.Margin = New Padding(3, 3, 3, 0)
         Guna2Panel2.Name = "Guna2Panel2"
-        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Panel2.Size = New Size(972, 37)
         Guna2Panel2.TabIndex = 27
         ' 
@@ -128,17 +130,18 @@ Partial Class pharmaPrescriptions
         ' 
         ' allprescriptPnl
         ' 
-        allprescriptPnl.CustomizableEdges = CustomizableEdges13
+        allprescriptPnl.CustomizableEdges = CustomizableEdges3
         allprescriptPnl.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         allprescriptPnl.Location = New Point(39, 121)
         allprescriptPnl.Name = "allprescriptPnl"
-        allprescriptPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        allprescriptPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         allprescriptPnl.Size = New Size(118, 3)
         allprescriptPnl.TabIndex = 26
         ' 
         ' allprescriptLbl
         ' 
         allprescriptLbl.AutoSize = True
+        allprescriptLbl.Cursor = Cursors.Hand
         allprescriptLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         allprescriptLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         allprescriptLbl.Location = New Point(36, 97)
@@ -149,6 +152,7 @@ Partial Class pharmaPrescriptions
         ' 
         ' infoIcon
         ' 
+        infoIcon.Cursor = Cursors.Hand
         infoIcon.Image = CType(resources.GetObject("infoIcon.Image"), Image)
         infoIcon.Location = New Point(988, 34)
         infoIcon.Name = "infoIcon"
@@ -162,7 +166,7 @@ Partial Class pharmaPrescriptions
         medicineSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medicineSearch.BorderRadius = 4
         medicineSearch.BorderThickness = 2
-        medicineSearch.CustomizableEdges = CustomizableEdges15
+        medicineSearch.CustomizableEdges = CustomizableEdges5
         medicineSearch.DefaultText = ""
         medicineSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         medicineSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -179,7 +183,7 @@ Partial Class pharmaPrescriptions
         medicineSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medicineSearch.PlaceholderText = "Search medicines"
         medicineSearch.SelectedText = ""
-        medicineSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        medicineSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         medicineSearch.Size = New Size(225, 34)
         medicineSearch.TabIndex = 22
         ' 
@@ -196,45 +200,47 @@ Partial Class pharmaPrescriptions
         ' 
         ' pendingPnl
         ' 
-        pendingPnl.CustomizableEdges = CustomizableEdges17
+        pendingPnl.CustomizableEdges = CustomizableEdges7
         pendingPnl.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         pendingPnl.Location = New Point(173, 121)
         pendingPnl.Name = "pendingPnl"
-        pendingPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        pendingPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         pendingPnl.Size = New Size(68, 3)
         pendingPnl.TabIndex = 30
         ' 
-        ' Label5
+        ' pendingLbl
         ' 
-        Label5.AutoSize = True
-        Label5.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label5.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label5.Location = New Point(169, 97)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(80, 19)
-        Label5.TabIndex = 29
-        Label5.Text = "Pendings"
+        pendingLbl.AutoSize = True
+        pendingLbl.Cursor = Cursors.Hand
+        pendingLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        pendingLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        pendingLbl.Location = New Point(169, 97)
+        pendingLbl.Name = "pendingLbl"
+        pendingLbl.Size = New Size(80, 19)
+        pendingLbl.TabIndex = 29
+        pendingLbl.Text = "Pendings"
         ' 
         ' declinedPnl
         ' 
-        declinedPnl.CustomizableEdges = CustomizableEdges19
+        declinedPnl.CustomizableEdges = CustomizableEdges9
         declinedPnl.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         declinedPnl.Location = New Point(260, 121)
         declinedPnl.Name = "declinedPnl"
-        declinedPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        declinedPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         declinedPnl.Size = New Size(69, 3)
         declinedPnl.TabIndex = 32
         ' 
-        ' Label6
+        ' declineLbl
         ' 
-        Label6.AutoSize = True
-        Label6.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label6.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label6.Location = New Point(255, 97)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(79, 19)
-        Label6.TabIndex = 31
-        Label6.Text = "Declined"
+        declineLbl.AutoSize = True
+        declineLbl.Cursor = Cursors.Hand
+        declineLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        declineLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        declineLbl.Location = New Point(255, 97)
+        declineLbl.Name = "declineLbl"
+        declineLbl.Size = New Size(79, 19)
+        declineLbl.TabIndex = 31
+        declineLbl.Text = "Declined"
         ' 
         ' Guna2Separator1
         ' 
@@ -251,9 +257,9 @@ Partial Class pharmaPrescriptions
         ClientSize = New Size(1043, 720)
         Controls.Add(Guna2Separator1)
         Controls.Add(declinedPnl)
-        Controls.Add(Label6)
+        Controls.Add(declineLbl)
         Controls.Add(pendingPnl)
-        Controls.Add(Label5)
+        Controls.Add(pendingLbl)
         Controls.Add(Guna2Panel2)
         Controls.Add(medicinesPnl)
         Controls.Add(allprescriptPnl)
@@ -283,8 +289,9 @@ Partial Class pharmaPrescriptions
     Friend WithEvents medicineSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents prescriptionsLbl As Label
     Friend WithEvents pendingPnl As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label5 As Label
+    Friend WithEvents pendingLbl As Label
     Friend WithEvents declinedPnl As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label6 As Label
+    Friend WithEvents declineLbl As Label
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
+    Friend WithEvents infoManagerIcon As ToolTip
 End Class
