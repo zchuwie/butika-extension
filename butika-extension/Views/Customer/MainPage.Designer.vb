@@ -28,7 +28,17 @@ Partial Class MainPage
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         sidebar = New Guna.UI2.WinForms.Guna2Panel()
-        PictureBox6 = New PictureBox()
+        pressedSettingsPanel = New Panel()
+        pressedSettings = New PictureBox()
+        PressedNotifPanel = New Panel()
+        PressedNotif = New PictureBox()
+        PressedCartPanel = New Panel()
+        PressedCart = New PictureBox()
+        pressedPillsPanel = New Panel()
+        pressedPills = New PictureBox()
+        pressedHomePanel = New Panel()
+        pressedHome = New PictureBox()
+        SettingsBtn = New PictureBox()
         HomePageBtn = New PictureBox()
         PictureBox5 = New PictureBox()
         MedPageBtn = New PictureBox()
@@ -36,7 +46,17 @@ Partial Class MainPage
         CartPageBtn = New PictureBox()
         MainPanel = New Guna.UI2.WinForms.Guna2Panel()
         sidebar.SuspendLayout()
-        CType(PictureBox6, ComponentModel.ISupportInitialize).BeginInit()
+        pressedSettingsPanel.SuspendLayout()
+        CType(pressedSettings, ComponentModel.ISupportInitialize).BeginInit()
+        PressedNotifPanel.SuspendLayout()
+        CType(PressedNotif, ComponentModel.ISupportInitialize).BeginInit()
+        PressedCartPanel.SuspendLayout()
+        CType(PressedCart, ComponentModel.ISupportInitialize).BeginInit()
+        pressedPillsPanel.SuspendLayout()
+        CType(pressedPills, ComponentModel.ISupportInitialize).BeginInit()
+        pressedHomePanel.SuspendLayout()
+        CType(pressedHome, ComponentModel.ISupportInitialize).BeginInit()
+        CType(SettingsBtn, ComponentModel.ISupportInitialize).BeginInit()
         CType(HomePageBtn, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(MedPageBtn, ComponentModel.ISupportInitialize).BeginInit()
@@ -47,7 +67,12 @@ Partial Class MainPage
         ' sidebar
         ' 
         sidebar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        sidebar.Controls.Add(PictureBox6)
+        sidebar.Controls.Add(pressedSettingsPanel)
+        sidebar.Controls.Add(PressedNotifPanel)
+        sidebar.Controls.Add(PressedCartPanel)
+        sidebar.Controls.Add(pressedPillsPanel)
+        sidebar.Controls.Add(pressedHomePanel)
+        sidebar.Controls.Add(SettingsBtn)
         sidebar.Controls.Add(HomePageBtn)
         sidebar.Controls.Add(PictureBox5)
         sidebar.Controls.Add(MedPageBtn)
@@ -61,16 +86,121 @@ Partial Class MainPage
         sidebar.Size = New Size(70, 720)
         sidebar.TabIndex = 1
         ' 
-        ' PictureBox6
+        ' pressedSettingsPanel
         ' 
-        PictureBox6.Cursor = Cursors.Hand
-        PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), Image)
-        PictureBox6.Location = New Point(12, 650)
-        PictureBox6.Name = "PictureBox6"
-        PictureBox6.Size = New Size(45, 40)
-        PictureBox6.SizeMode = PictureBoxSizeMode.Zoom
-        PictureBox6.TabIndex = 5
-        PictureBox6.TabStop = False
+        pressedSettingsPanel.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        pressedSettingsPanel.Controls.Add(pressedSettings)
+        pressedSettingsPanel.Location = New Point(0, 636)
+        pressedSettingsPanel.Name = "pressedSettingsPanel"
+        pressedSettingsPanel.Size = New Size(71, 67)
+        pressedSettingsPanel.TabIndex = 2
+        pressedSettingsPanel.Visible = False
+        ' 
+        ' pressedSettings
+        ' 
+        pressedSettings.Cursor = Cursors.Hand
+        pressedSettings.Image = My.Resources.Resources.pressedSettings
+        pressedSettings.Location = New Point(12, 13)
+        pressedSettings.Name = "pressedSettings"
+        pressedSettings.Size = New Size(45, 40)
+        pressedSettings.SizeMode = PictureBoxSizeMode.Zoom
+        pressedSettings.TabIndex = 1
+        pressedSettings.TabStop = False
+        ' 
+        ' PressedNotifPanel
+        ' 
+        PressedNotifPanel.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        PressedNotifPanel.Controls.Add(PressedNotif)
+        PressedNotifPanel.Location = New Point(0, 219)
+        PressedNotifPanel.Name = "PressedNotifPanel"
+        PressedNotifPanel.Size = New Size(71, 67)
+        PressedNotifPanel.TabIndex = 1
+        PressedNotifPanel.Visible = False
+        ' 
+        ' PressedNotif
+        ' 
+        PressedNotif.Cursor = Cursors.Hand
+        PressedNotif.Image = My.Resources.Resources.pressedNotif
+        PressedNotif.Location = New Point(12, 13)
+        PressedNotif.Name = "PressedNotif"
+        PressedNotif.Size = New Size(45, 40)
+        PressedNotif.SizeMode = PictureBoxSizeMode.Zoom
+        PressedNotif.TabIndex = 1
+        PressedNotif.TabStop = False
+        ' 
+        ' PressedCartPanel
+        ' 
+        PressedCartPanel.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        PressedCartPanel.Controls.Add(PressedCart)
+        PressedCartPanel.Location = New Point(0, 149)
+        PressedCartPanel.Name = "PressedCartPanel"
+        PressedCartPanel.Size = New Size(71, 71)
+        PressedCartPanel.TabIndex = 1
+        PressedCartPanel.Visible = False
+        ' 
+        ' PressedCart
+        ' 
+        PressedCart.Cursor = Cursors.Hand
+        PressedCart.Image = My.Resources.Resources.pressedCart
+        PressedCart.Location = New Point(12, 13)
+        PressedCart.Name = "PressedCart"
+        PressedCart.Size = New Size(45, 40)
+        PressedCart.SizeMode = PictureBoxSizeMode.Zoom
+        PressedCart.TabIndex = 1
+        PressedCart.TabStop = False
+        ' 
+        ' pressedPillsPanel
+        ' 
+        pressedPillsPanel.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        pressedPillsPanel.Controls.Add(pressedPills)
+        pressedPillsPanel.Location = New Point(0, 79)
+        pressedPillsPanel.Name = "pressedPillsPanel"
+        pressedPillsPanel.Size = New Size(71, 70)
+        pressedPillsPanel.TabIndex = 1
+        pressedPillsPanel.Visible = False
+        ' 
+        ' pressedPills
+        ' 
+        pressedPills.Cursor = Cursors.Hand
+        pressedPills.Image = My.Resources.Resources.pressedPills
+        pressedPills.Location = New Point(12, 13)
+        pressedPills.Name = "pressedPills"
+        pressedPills.Size = New Size(45, 40)
+        pressedPills.SizeMode = PictureBoxSizeMode.Zoom
+        pressedPills.TabIndex = 1
+        pressedPills.TabStop = False
+        ' 
+        ' pressedHomePanel
+        ' 
+        pressedHomePanel.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        pressedHomePanel.Controls.Add(pressedHome)
+        pressedHomePanel.Location = New Point(0, 12)
+        pressedHomePanel.Name = "pressedHomePanel"
+        pressedHomePanel.Size = New Size(71, 68)
+        pressedHomePanel.TabIndex = 0
+        pressedHomePanel.Visible = False
+        ' 
+        ' pressedHome
+        ' 
+        pressedHome.Cursor = Cursors.Hand
+        pressedHome.Image = My.Resources.Resources.pressedHome
+        pressedHome.Location = New Point(12, 13)
+        pressedHome.Name = "pressedHome"
+        pressedHome.Size = New Size(45, 40)
+        pressedHome.SizeMode = PictureBoxSizeMode.Zoom
+        pressedHome.TabIndex = 1
+        pressedHome.TabStop = False
+        ' 
+        ' SettingsBtn
+        ' 
+        SettingsBtn.Cursor = Cursors.Hand
+        SettingsBtn.Image = CType(resources.GetObject("SettingsBtn.Image"), Image)
+        SettingsBtn.Location = New Point(12, 650)
+        SettingsBtn.Name = "SettingsBtn"
+        SettingsBtn.Size = New Size(45, 40)
+        SettingsBtn.SizeMode = PictureBoxSizeMode.Zoom
+        SettingsBtn.TabIndex = 5
+        SettingsBtn.TabStop = False
         ' 
         ' HomePageBtn
         ' 
@@ -153,7 +283,17 @@ Partial Class MainPage
         StartPosition = FormStartPosition.CenterScreen
         Text = "MainPage"
         sidebar.ResumeLayout(False)
-        CType(PictureBox6, ComponentModel.ISupportInitialize).EndInit()
+        pressedSettingsPanel.ResumeLayout(False)
+        CType(pressedSettings, ComponentModel.ISupportInitialize).EndInit()
+        PressedNotifPanel.ResumeLayout(False)
+        CType(PressedNotif, ComponentModel.ISupportInitialize).EndInit()
+        PressedCartPanel.ResumeLayout(False)
+        CType(PressedCart, ComponentModel.ISupportInitialize).EndInit()
+        pressedPillsPanel.ResumeLayout(False)
+        CType(pressedPills, ComponentModel.ISupportInitialize).EndInit()
+        pressedHomePanel.ResumeLayout(False)
+        CType(pressedHome, ComponentModel.ISupportInitialize).EndInit()
+        CType(SettingsBtn, ComponentModel.ISupportInitialize).EndInit()
         CType(HomePageBtn, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(MedPageBtn, ComponentModel.ISupportInitialize).EndInit()
@@ -165,9 +305,19 @@ Partial Class MainPage
     Friend WithEvents sidebar As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents MainPanel As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents HomePageBtn As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents SettingsBtn As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PrescPageBtn As PictureBox
     Friend WithEvents CartPageBtn As PictureBox
     Friend WithEvents MedPageBtn As PictureBox
+    Friend WithEvents pressedHomePanel As Panel
+    Friend WithEvents pressedPillsPanel As Panel
+    Friend WithEvents pressedPills As PictureBox
+    Friend WithEvents pressedHome As PictureBox
+    Friend WithEvents PressedNotifPanel As Panel
+    Friend WithEvents PressedNotif As PictureBox
+    Friend WithEvents PressedCartPanel As Panel
+    Friend WithEvents PressedCart As PictureBox
+    Friend WithEvents pressedSettingsPanel As Panel
+    Friend WithEvents pressedSettings As PictureBox
 End Class

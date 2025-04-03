@@ -147,6 +147,7 @@ Partial Class Settings
         ' SettingsPanel
         ' 
         SettingsPanel.AutoScroll = True
+        SettingsPanel.BorderStyle = BorderStyle.FixedSingle
         SettingsPanel.Location = New Point(253, 38)
         SettingsPanel.Name = "SettingsPanel"
         SettingsPanel.Size = New Size(753, 520)

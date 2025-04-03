@@ -65,17 +65,19 @@ Partial Class PrescriptionPage
         ' 
         ' PrescListPanel
         ' 
+        PrescListPanel.BorderStyle = BorderStyle.FixedSingle
         PrescListPanel.Location = New Point(40, 120)
         PrescListPanel.Name = "PrescListPanel"
-        PrescListPanel.Size = New Size(311, 480)
+        PrescListPanel.Size = New Size(311, 519)
         PrescListPanel.TabIndex = 13
         ' 
         ' PrescInfoPanel
         ' 
         PrescInfoPanel.AutoScroll = True
+        PrescInfoPanel.BorderStyle = BorderStyle.FixedSingle
         PrescInfoPanel.Location = New Point(378, 32)
         PrescInfoPanel.Name = "PrescInfoPanel"
-        PrescInfoPanel.Size = New Size(796, 568)
+        PrescInfoPanel.Size = New Size(796, 607)
         PrescInfoPanel.TabIndex = 14
         ' 
         ' DeleteApprovalBtn
@@ -84,7 +86,7 @@ Partial Class PrescriptionPage
         DeleteApprovalBtn.CornerRadius = 6
         DeleteApprovalBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         DeleteApprovalBtn.ForeColor = Color.White
-        DeleteApprovalBtn.Location = New Point(1008, 617)
+        DeleteApprovalBtn.Location = New Point(1008, 655)
         DeleteApprovalBtn.Name = "DeleteApprovalBtn"
         DeleteApprovalBtn.Size = New Size(166, 35)
         DeleteApprovalBtn.TabIndex = 26
@@ -97,7 +99,7 @@ Partial Class PrescriptionPage
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(1204, 681)
+        ClientSize = New Size(1210, 720)
         Controls.Add(DeleteApprovalBtn)
         Controls.Add(PrescInfoPanel)
         Controls.Add(PrescListPanel)
