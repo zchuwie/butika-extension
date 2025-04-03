@@ -60,7 +60,6 @@
     <Folder Include="Views\Customer\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\InventoryCustodian\" />
-    <Folder Include="Views\Pharmacist\" />
   </ItemGroup>
 
   <ItemGroup>
