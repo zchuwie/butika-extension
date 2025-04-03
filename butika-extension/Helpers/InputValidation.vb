@@ -1,6 +1,6 @@
 ﻿Imports System.Text.RegularExpressions
 
-Namespace Helper
+Namespace Helpers
     Public Module InputValidation
         Public Function isEmailValid(ByVal email As String) As Boolean
             Dim regex As New Regex("^[\w\.-]+@[a-zA-Z\d-]+\.[a-zA-Z]{2,}$")
