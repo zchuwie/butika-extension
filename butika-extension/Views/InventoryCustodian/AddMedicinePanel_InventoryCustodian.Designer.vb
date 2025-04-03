@@ -216,7 +216,9 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' LabelPanel
         ' 
         LabelPanel.BackgroundImageLayout = ImageLayout.Zoom
+        LabelPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         LabelPanel.BorderRadius = 10
+        LabelPanel.BorderThickness = 1
         LabelPanel.Controls.Add(Guna2CustomGradientPanel13)
         LabelPanel.Controls.Add(prescription_cbox)
         LabelPanel.Controls.Add(Guna2CustomGradientPanel17)
@@ -722,6 +724,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         description_txtbox.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         description_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         description_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        description_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         description_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         description_txtbox.Location = New Point(3, 37)
         description_txtbox.Margin = New Padding(3, 4, 3, 4)

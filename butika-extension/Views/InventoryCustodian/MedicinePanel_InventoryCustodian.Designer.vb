@@ -66,9 +66,9 @@ Partial Class MedicinePanel_InventoryCustodian
         selectMedicineBtn = New Guna.UI2.WinForms.Guna2Button()
         Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        selectAllBtn = New Guna.UI2.WinForms.Guna2Button()
+        cancelBtn = New Guna.UI2.WinForms.Guna2Button()
+        archiveBtn = New Guna.UI2.WinForms.Guna2Button()
         MedicineBarsDisplay = New FlowLayoutPanel()
         MedicineBars1 = New MedicineBars()
         MedicineBars2 = New MedicineBars()
@@ -96,7 +96,7 @@ Partial Class MedicinePanel_InventoryCustodian
         Panel1.Location = New Point(31, 68)
         Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(814, 2)
+        Panel1.Size = New Size(955, 1)
         Panel1.TabIndex = 0
         ' 
         ' Guna2TextBox1
@@ -380,83 +380,83 @@ Partial Class MedicinePanel_InventoryCustodian
         Guna2PictureBox1.TabIndex = 10
         Guna2PictureBox1.TabStop = False
         ' 
-        ' Guna2Button2
+        ' selectAllBtn
         ' 
-        Guna2Button2.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        Guna2Button2.BorderRadius = 8
-        Guna2Button2.BorderThickness = 1
-        Guna2Button2.CustomizableEdges = CustomizableEdges21
-        Guna2Button2.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button2.Enabled = False
-        Guna2Button2.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2Button2.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
-        Guna2Button2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        Guna2Button2.Image = CType(resources.GetObject("Guna2Button2.Image"), Image)
-        Guna2Button2.ImageSize = New Size(25, 25)
-        Guna2Button2.Location = New Point(455, 648)
-        Guna2Button2.Margin = New Padding(3, 2, 3, 2)
-        Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.Padding = New Padding(9, 0, 0, 0)
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges22
-        Guna2Button2.Size = New Size(165, 44)
-        Guna2Button2.TabIndex = 11
-        Guna2Button2.Text = "Select All"
-        Guna2Button2.Visible = False
+        selectAllBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        selectAllBtn.BorderRadius = 8
+        selectAllBtn.BorderThickness = 1
+        selectAllBtn.CustomizableEdges = CustomizableEdges21
+        selectAllBtn.DisabledState.BorderColor = Color.DarkGray
+        selectAllBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        selectAllBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        selectAllBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        selectAllBtn.Enabled = False
+        selectAllBtn.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        selectAllBtn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        selectAllBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        selectAllBtn.Image = CType(resources.GetObject("selectAllBtn.Image"), Image)
+        selectAllBtn.ImageSize = New Size(25, 25)
+        selectAllBtn.Location = New Point(455, 648)
+        selectAllBtn.Margin = New Padding(3, 2, 3, 2)
+        selectAllBtn.Name = "selectAllBtn"
+        selectAllBtn.Padding = New Padding(9, 0, 0, 0)
+        selectAllBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        selectAllBtn.Size = New Size(165, 44)
+        selectAllBtn.TabIndex = 11
+        selectAllBtn.Text = "Select All"
+        selectAllBtn.Visible = False
         ' 
-        ' Guna2Button3
+        ' cancelBtn
         ' 
-        Guna2Button3.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        Guna2Button3.BorderRadius = 8
-        Guna2Button3.BorderThickness = 1
-        Guna2Button3.CustomizableEdges = CustomizableEdges23
-        Guna2Button3.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button3.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button3.Enabled = False
-        Guna2Button3.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2Button3.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
-        Guna2Button3.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        Guna2Button3.Image = CType(resources.GetObject("Guna2Button3.Image"), Image)
-        Guna2Button3.ImageSize = New Size(25, 25)
-        Guna2Button3.Location = New Point(639, 648)
-        Guna2Button3.Margin = New Padding(3, 2, 3, 2)
-        Guna2Button3.Name = "Guna2Button3"
-        Guna2Button3.Padding = New Padding(9, 0, 0, 0)
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges24
-        Guna2Button3.Size = New Size(165, 44)
-        Guna2Button3.TabIndex = 12
-        Guna2Button3.Text = "Cancel"
-        Guna2Button3.Visible = False
+        cancelBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        cancelBtn.BorderRadius = 8
+        cancelBtn.BorderThickness = 1
+        cancelBtn.CustomizableEdges = CustomizableEdges23
+        cancelBtn.DisabledState.BorderColor = Color.DarkGray
+        cancelBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        cancelBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        cancelBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        cancelBtn.Enabled = False
+        cancelBtn.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        cancelBtn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        cancelBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        cancelBtn.Image = CType(resources.GetObject("cancelBtn.Image"), Image)
+        cancelBtn.ImageSize = New Size(25, 25)
+        cancelBtn.Location = New Point(639, 648)
+        cancelBtn.Margin = New Padding(3, 2, 3, 2)
+        cancelBtn.Name = "cancelBtn"
+        cancelBtn.Padding = New Padding(9, 0, 0, 0)
+        cancelBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        cancelBtn.Size = New Size(165, 44)
+        cancelBtn.TabIndex = 12
+        cancelBtn.Text = "Cancel"
+        cancelBtn.Visible = False
         ' 
-        ' Guna2Button4
+        ' archiveBtn
         ' 
-        Guna2Button4.BorderColor = Color.FromArgb(CByte(142), CByte(11), CByte(0))
-        Guna2Button4.BorderRadius = 8
-        Guna2Button4.BorderThickness = 1
-        Guna2Button4.CustomizableEdges = CustomizableEdges25
-        Guna2Button4.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button4.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button4.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button4.Enabled = False
-        Guna2Button4.FillColor = Color.FromArgb(CByte(224), CByte(81), CByte(70))
-        Guna2Button4.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
-        Guna2Button4.ForeColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        Guna2Button4.Image = CType(resources.GetObject("Guna2Button4.Image"), Image)
-        Guna2Button4.ImageSize = New Size(25, 25)
-        Guna2Button4.Location = New Point(821, 648)
-        Guna2Button4.Margin = New Padding(3, 2, 3, 2)
-        Guna2Button4.Name = "Guna2Button4"
-        Guna2Button4.Padding = New Padding(9, 0, 0, 0)
-        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges26
-        Guna2Button4.Size = New Size(165, 44)
-        Guna2Button4.TabIndex = 13
-        Guna2Button4.Text = "Archive Selected"
-        Guna2Button4.Visible = False
+        archiveBtn.BorderColor = Color.FromArgb(CByte(142), CByte(11), CByte(0))
+        archiveBtn.BorderRadius = 8
+        archiveBtn.BorderThickness = 1
+        archiveBtn.CustomizableEdges = CustomizableEdges25
+        archiveBtn.DisabledState.BorderColor = Color.DarkGray
+        archiveBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        archiveBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        archiveBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        archiveBtn.Enabled = False
+        archiveBtn.FillColor = Color.FromArgb(CByte(224), CByte(81), CByte(70))
+        archiveBtn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
+        archiveBtn.ForeColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
+        archiveBtn.Image = CType(resources.GetObject("archiveBtn.Image"), Image)
+        archiveBtn.ImageSize = New Size(25, 25)
+        archiveBtn.Location = New Point(821, 648)
+        archiveBtn.Margin = New Padding(3, 2, 3, 2)
+        archiveBtn.Name = "archiveBtn"
+        archiveBtn.Padding = New Padding(9, 0, 0, 0)
+        archiveBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges26
+        archiveBtn.Size = New Size(165, 44)
+        archiveBtn.TabIndex = 13
+        archiveBtn.Text = "Archive Selected"
+        archiveBtn.Visible = False
         ' 
         ' MedicineBarsDisplay
         ' 
@@ -471,7 +471,7 @@ Partial Class MedicinePanel_InventoryCustodian
         MedicineBarsDisplay.Controls.Add(MedicineBars9)
         MedicineBarsDisplay.Controls.Add(MedicineBars10)
         MedicineBarsDisplay.Controls.Add(MedicineBars11)
-        MedicineBarsDisplay.Location = New Point(56, 111)
+        MedicineBarsDisplay.Location = New Point(56, 118)
         MedicineBarsDisplay.Margin = New Padding(3, 2, 3, 2)
         MedicineBarsDisplay.Name = "MedicineBarsDisplay"
         MedicineBarsDisplay.Size = New Size(930, 502)
@@ -582,7 +582,7 @@ Partial Class MedicinePanel_InventoryCustodian
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         ClientSize = New Size(1032, 720)
-        Controls.Add(Guna2Button2)
+        Controls.Add(selectAllBtn)
         Controls.Add(Guna2PictureBox1)
         Controls.Add(Guna2Button1)
         Controls.Add(MedicineBarsDisplay)
@@ -593,8 +593,8 @@ Partial Class MedicinePanel_InventoryCustodian
         Controls.Add(Guna2HtmlLabel1)
         Controls.Add(Guna2TextBox1)
         Controls.Add(Panel1)
-        Controls.Add(Guna2Button4)
-        Controls.Add(Guna2Button3)
+        Controls.Add(archiveBtn)
+        Controls.Add(cancelBtn)
         FormBorderStyle = FormBorderStyle.None
         Margin = New Padding(3, 2, 3, 2)
         Name = "MedicinePanel_InventoryCustodian"
@@ -628,9 +628,9 @@ Partial Class MedicinePanel_InventoryCustodian
     Friend WithEvents selectMedicineBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents selectAllBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents cancelBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents archiveBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents MedicineBarsDisplay As FlowLayoutPanel
     Friend WithEvents MedicineBars1 As MedicineBars
     Friend WithEvents MedicineBars2 As MedicineBars

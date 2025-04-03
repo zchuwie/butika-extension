@@ -92,7 +92,7 @@ Partial Class InventoryCustodian_MainPanel
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Button2.Size = New Size(248, 36)
         Guna2Button2.TabIndex = 2
-        Guna2Button2.Text = "Guna2Button2"
+        Guna2Button2.Text = "Reserve Button"
         ' 
         ' dashboard_medicine_btn
         ' 

@@ -193,7 +193,7 @@
         mAiKRWTefGrW8DzSpPz3j9bzct2BwTmNvHLHxiP8aywt/xPM/wbwFIfOhSucUwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Guna2Button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="selectAllBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAPZJREFUSEvtlNERgjAMhh2BB1p5dIQSHCDEQWQENnAFNsANHIkRGEGveEDNWciB
@@ -203,7 +203,7 @@
         +k9pn9FmK8G78a0kG4TfWfX/ugEtzTpsq8rLugAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Guna2Button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="cancelBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAg5JREFUSEutlt1xAiEQx6+EezjQx5TgY0YwA1hI0kHSgZZgB2cHpgNLsARKuBLM
@@ -218,7 +218,7 @@
         c+52hIVQZe0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Guna2Button4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="archiveBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAFsAAABbCAYAAAAcNvmZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAqJJREFUeF7tnNFx2zAMhjNCRsgIGaEbtBu0G8QbxBs4G7gbeISM0BEyAi8iSMh9
