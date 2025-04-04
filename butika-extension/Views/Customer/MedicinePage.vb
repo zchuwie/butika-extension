@@ -1,4 +1,14 @@
-﻿Public Class MedicinePage
+﻿Imports butika.Models
+
+Public Class MedicinePage
+    Private account As New Account()
+    Dim accountRep As New AccountRepository()
+    Public Sub New(account As Account)
+
+        InitializeComponent()
+        Me.account = account
+
+    End Sub
     Private Sub MedicinePage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub

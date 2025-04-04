@@ -1643,7 +1643,7 @@
   <data name="adminBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWkAAAEjCAYAAADwuPBEAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DgAACw4BQL7hQQAAFWhJREFUeF7t3U9vXNd5x3G/BK26dtbtwqt004UaoN3UQLwpmm7qwKsCaRC5QNUA
+        DQAACw0B7QfALAAAFWhJREFUeF7t3U9vXNd5x3G/BK26dtbtwqt004UaoN3UQLwpmm7qwKsCaRC5QNUA
         Cmo7TasWcByFWUiBbYgWnUaWETEABVCCbA/MESVAATQNh7JIqoBegl4CO8/Mc53RzW+GnD/3zjnn+f6A
         DyxyyCH5yPPj0bn3zrxEdDq93pmdw73Xukf9H3QP+pd2Dx9v3jva73UPHz8bvO/54M/HAGZjjx17DA3+
         3DH22Bo+xp72z9pjzh9+hPxxHjzrvWz/s+we7V/1/4nk/2QAmtM92n82XBD93/7rg7df8YcniRr77T38
@@ -1740,7 +1740,7 @@
   <data name="inveBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWkAAAElCAYAAAAm4RNZAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAG8tJREFUeF7t3UuPHOd1xnF/BK2yltfJQitnk4ViINnEgb0J4mxiQ6sATmApQGQD
+        DgAACw4BQL7hQQAAG8tJREFUeF7t3UuPHOd1xnF/BK2yltfJQitnk4ViINnEgb0J4mxiQ6sATmApQGQD
         CmIrceIEkGR5shgFkixalKIbTBqgAVKQrYHYpATQgCfmUBY5CsCPwI8w6Wd0XqBUebrn0nW6q/r8D/AD
         OX2py3nnfaamurrnC5Svvf39h67fu/212eHBt2d3D56/ee/jyzcO7+zP7n18f37bg/n/jwCcjeaO5tD8
         /3uiuXU8xz49eFRzLqYfRf3/+uj+/sP6Zrl5eOeV+Cay32QA8swO79w/PiD63zvfmH/9SExPqmrpp/fx
@@ -1865,7 +1865,7 @@
   <data name="pharmaBtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAWkAAAEjCAYAAADwuPBEAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAFldJREFUeF7t3U2PHNd1xnF9BK2yltfJQitnk4ViINlEgbUJ4mwiQ6sATmAqQCQB
+        DgAACw4BQL7hQQAAFldJREFUeF7t3U2PHNd1xnF9BK2yltfJQitnk4ViINlEgbUJ4mwiQ6sATmAqQCQB
         EiIpcaIEoGSaGyoQFVIiBTESRBoYAyShl4HYfAEoQBNzhubMMAA/Aj/CpJ/mKblcfnpeml1dt+75H+AH
         cXq6u6rOqJ+5c29V9xOUr/WNjSev7dx5brK7+dPJ9uaJGzt3L13f3dqY7Nx9ML3t4fTfewCORq8dvYam
         /14XvbZmr7H7m8/oNRcvP4r6/br1YOMp/c9yY3frTPxPZP8nA9Cfye7Wg9mA6P+2np9+/XS8PKmspd/e

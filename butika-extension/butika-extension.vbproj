@@ -14,8 +14,11 @@
 
 	<ItemGroup>
 		<Compile Remove="ViewModels\**" />
+		<Compile Remove="Views\Customers\**" />
 		<EmbeddedResource Remove="ViewModels\**" />
+		<EmbeddedResource Remove="Views\Customers\**" />
 		<None Remove="ViewModels\**" />
+		<None Remove="Views\Customers\**" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -83,8 +86,6 @@
     <Folder Include="Resources\drug_images\" />
     <Folder Include="Resources\admin_icons\" />
     <Folder Include="Resources\prescription_images\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\Customers\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\InventoryCustodian\" />
   </ItemGroup>

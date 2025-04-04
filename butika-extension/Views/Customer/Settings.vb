@@ -1,5 +1,10 @@
-﻿Public Class Settings
-    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles SettingsPanel.Paint
+﻿Imports butika.Models
 
+Public Class Settings
+    Private account As New Account()
+    Dim accountRep As New AccountRepository()
+    Public Sub New(account As Account)
+        InitializeComponent()
+        Me.account = account
     End Sub
 End Class

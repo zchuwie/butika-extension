@@ -12,6 +12,8 @@
         Public Property BirthDate As DateTime
         Public Property Status As String
         Public Property DateJoined As String
+        Public Property IsVerified As Boolean
+        Public Property VerificationImage As String
 
     End Class
 End Namespace

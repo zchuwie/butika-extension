@@ -1,4 +1,6 @@
-﻿Public Class MainPage
+﻿Imports butika.Models
+
+Public Class MainPage
 
 #Region "Functions"
     Function PressedPage(ByVal pHome As Boolean, pPills As Boolean, pCart As Boolean, pNotif As Boolean, pLogout As Boolean, pSettings As Boolean)
@@ -12,12 +14,13 @@
 
 #End Region
 
-    Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles sidebar.Paint
+    Private userID As Integer
+    Dim account As New Account()
+    Dim accountRep As New AccountRepository()
 
-    End Sub
-
-    Private Sub MainPage_Load(sender As Object, e As EventArgs)
-
+    Public Sub New(userID As Integer)
+        InitializeComponent()
+        Me.userID = userID
     End Sub
 
     'Home Page here
@@ -32,10 +35,11 @@
         PressedPage(True, False, False, False, False, False)
     End Sub
 
-    Private Sub MedPageBtn_Click(sender As Object, e As EventArgs) Handles MedPageBtn.Click, pressedPills.Click
+    Private Async Sub MedPageBtn_Click(sender As Object, e As EventArgs) Handles MedPageBtn.Click, pressedPills.Click
+        account = Await accountRep.populateDataThroughUserID(userID)
         MainPanel.Controls.Clear()
 
-        Dim f As New MedicinePage()
+        Dim f As New MedicinePage(account)
         f.TopLevel = False
         f.WindowState = FormWindowState.Maximized
         f.Visible = True
@@ -44,10 +48,11 @@
         PressedPage(False, True, False, False, False, False)
     End Sub
 
-    Private Sub CartPageBtn_Click(sender As Object, e As EventArgs) Handles CartPageBtn.Click, PressedCart.Click
+    Private Async Sub CartPageBtn_Click(sender As Object, e As EventArgs) Handles CartPageBtn.Click, PressedCart.Click
+        account = Await accountRep.populateDataThroughUserID(userID)
         MainPanel.Controls.Clear()
 
-        Dim f As New CartPage()
+        Dim f As New CartPage(account)
         f.TopLevel = False
         f.WindowState = FormWindowState.Maximized
         f.Visible = True
@@ -56,10 +61,12 @@
         PressedPage(False, False, True, False, False, False)
     End Sub
 
-    Private Sub PrescPageBtn_Click(sender As Object, e As EventArgs) Handles PrescPageBtn.Click, PressedNotif.Click
+    Private Async Sub PrescPageBtn_Click(sender As Object, e As EventArgs) Handles PrescPageBtn.Click, PressedNotif.Click
+        account = Await accountRep.populateDataThroughUserID(userID)
         MainPanel.Controls.Clear()
 
-        Dim f As New PrescriptionPage()
+
+        Dim f As New PrescriptionPage(account)
         f.TopLevel = False
         f.WindowState = FormWindowState.Maximized
         f.Visible = True
@@ -68,10 +75,11 @@
         PressedPage(False, False, False, True, False, False)
     End Sub
 
-    Private Sub SettingsBtn_Click(sender As Object, e As EventArgs) Handles SettingsBtn.Click, pressedSettings.Click
+    Private Async Sub SettingsBtn_Click(sender As Object, e As EventArgs) Handles SettingsBtn.Click, pressedSettings.Click
+        account = Await accountRep.populateDataThroughUserID(userID)
         MainPanel.Controls.Clear()
 
-        Dim f As New Settings()
+        Dim f As New Settings(account)
         f.TopLevel = False
         f.WindowState = FormWindowState.Maximized
         f.Visible = True
