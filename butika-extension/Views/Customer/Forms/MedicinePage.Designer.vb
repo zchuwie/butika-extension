@@ -30,9 +30,6 @@ Partial Class MedicinePage
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        MedPanel = New Guna.UI2.WinForms.Guna2Panel()
         ManuComBox = New ComboBox()
         Medicines = New Label()
         MedSubtext = New Label()
@@ -48,23 +45,13 @@ Partial Class MedicinePage
         Information = New PictureBox()
         ComboBox1 = New ComboBox()
         ComboBox2 = New ComboBox()
+        MedPanel = New FlowLayoutPanel()
+        MedItem1 = New medItem()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(SearchIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(Information, ComponentModel.ISupportInitialize).BeginInit()
+        MedPanel.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' MedPanel
-        ' 
-        MedPanel.AutoScroll = True
-        MedPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedPanel.BorderThickness = 1
-        MedPanel.Cursor = Cursors.Hand
-        MedPanel.CustomizableEdges = CustomizableEdges1
-        MedPanel.Location = New Point(49, 132)
-        MedPanel.Name = "MedPanel"
-        MedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        MedPanel.Size = New Size(1121, 549)
-        MedPanel.TabIndex = 0
         ' 
         ' ManuComBox
         ' 
@@ -142,7 +129,7 @@ Partial Class MedicinePage
         MedSearch.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         MedSearch.BackgroundImageLayout = ImageLayout.None
         MedSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedSearch.CustomizableEdges = CustomizableEdges3
+        MedSearch.CustomizableEdges = CustomizableEdges1
         MedSearch.DefaultText = ""
         MedSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         MedSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -157,7 +144,7 @@ Partial Class MedicinePage
         MedSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedSearch.PlaceholderText = "Search"
         MedSearch.SelectedText = ""
-        MedSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        MedSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         MedSearch.Size = New Size(289, 26)
         MedSearch.TabIndex = 8
         ' 
@@ -165,10 +152,10 @@ Partial Class MedicinePage
         ' 
         AllMedsUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllMedsUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        AllMedsUnderline.CustomizableEdges = CustomizableEdges5
+        AllMedsUnderline.CustomizableEdges = CustomizableEdges3
         AllMedsUnderline.Location = New Point(55, 115)
         AllMedsUnderline.Name = "AllMedsUnderline"
-        AllMedsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        AllMedsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         AllMedsUnderline.Size = New Size(62, 4)
         AllMedsUnderline.TabIndex = 1
         AllMedsUnderline.Visible = False
@@ -177,10 +164,10 @@ Partial Class MedicinePage
         ' 
         OTCUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OTCUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        OTCUnderline.CustomizableEdges = CustomizableEdges7
+        OTCUnderline.CustomizableEdges = CustomizableEdges5
         OTCUnderline.Location = New Point(133, 115)
         OTCUnderline.Name = "OTCUnderline"
-        OTCUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        OTCUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         OTCUnderline.Size = New Size(115, 4)
         OTCUnderline.TabIndex = 2
         OTCUnderline.Visible = False
@@ -189,10 +176,10 @@ Partial Class MedicinePage
         ' 
         PrescUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PrescUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PrescUnderline.CustomizableEdges = CustomizableEdges9
+        PrescUnderline.CustomizableEdges = CustomizableEdges7
         PrescUnderline.Location = New Point(264, 116)
         PrescUnderline.Name = "PrescUnderline"
-        PrescUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        PrescUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         PrescUnderline.Size = New Size(120, 4)
         PrescUnderline.TabIndex = 4
         PrescUnderline.Visible = False
@@ -253,12 +240,32 @@ Partial Class MedicinePage
         ComboBox2.TabIndex = 17
         ComboBox2.Text = "Type"
         ' 
+        ' MedPanel
+        ' 
+        MedPanel.Controls.Add(MedItem1)
+        MedPanel.Location = New Point(49, 132)
+        MedPanel.Name = "MedPanel"
+        MedPanel.Padding = New Padding(10)
+        MedPanel.Size = New Size(1121, 549)
+        MedPanel.TabIndex = 0
+        MedPanel.UseWaitCursor = True
+        ' 
+        ' MedItem1
+        ' 
+        MedItem1.BackColor = Color.WhiteSmoke
+        MedItem1.CornerRadius = 8
+        MedItem1.Location = New Point(13, 13)
+        MedItem1.Name = "MedItem1"
+        MedItem1.Size = New Size(143, 158)
+        MedItem1.TabIndex = 0
+        ' 
         ' MedicinePage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1220, 720)
+        Controls.Add(MedPanel)
         Controls.Add(ComboBox2)
         Controls.Add(ComboBox1)
         Controls.Add(ManuComBox)
@@ -273,7 +280,6 @@ Partial Class MedicinePage
         Controls.Add(AllMeds)
         Controls.Add(MedSubtext)
         Controls.Add(Medicines)
-        Controls.Add(MedPanel)
         Controls.Add(MedIcon)
         ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         FormBorderStyle = FormBorderStyle.None
@@ -283,11 +289,10 @@ Partial Class MedicinePage
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(SearchIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(Information, ComponentModel.ISupportInitialize).EndInit()
+        MedPanel.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents MedPanel As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Medicines As Label
     Friend WithEvents MedSubtext As Label
     Friend WithEvents AllMeds As Label
@@ -304,4 +309,6 @@ Partial Class MedicinePage
     Friend WithEvents ManuComBox As ComboBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents MedPanel As FlowLayoutPanel
+    Friend WithEvents MedItem1 As medItem
 End Class

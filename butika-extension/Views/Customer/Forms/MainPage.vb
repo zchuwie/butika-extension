@@ -1,4 +1,6 @@
-﻿Public Class MainPage
+﻿Imports Guna.UI2.WinForms
+
+Public Class MainPage
 
 
 
@@ -13,6 +15,11 @@
         form.Show()
     End Sub
 
+    Private Sub BtnColorChange(button As Guna2Button, fillcolor As Color, image As Image)
+        button.FillColor = fillcolor
+        button.Image = image
+    End Sub
+
 #End Region
 
     Private Sub Guna2Panel1_Paint(sender As Object, e As PaintEventArgs) Handles sidebar.Paint
@@ -21,113 +28,89 @@
 
     Private Sub MainPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OpenFormInPanel(New HomePage(Me))
+
+        BtnColorChange(HomeBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedHome)
+        BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
+        BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)
+        BtnColorChange(PrescBtn, Color.FromArgb(22, 66, 60), My.Resources.notif)
+
+        BtnColorChange(LogoutBtn, Color.FromArgb(22, 66, 60), My.Resources.logout1)
+        BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
 
-    'Home Page here
-    Private Sub HomePageBtn_Click(sender As Object, e As EventArgs)
-        'Dim f As New Form()
-        'f.TopLevel = False
-        'f.WindowState = FormWindowState.Maximized
-        'f.FormBorderStyle = Windows.Forms.FormBorderStyle.None
-        'f.Visible = True
-        'Panel1.Controls.Add(f)
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles HomeBtn.Click
+        OpenFormInPanel(New HomePage(Me))
 
+        BtnColorChange(HomeBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedHome)
+        BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
+        BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)
+        BtnColorChange(PrescBtn, Color.FromArgb(22, 66, 60), My.Resources.notif)
+
+        BtnColorChange(LogoutBtn, Color.FromArgb(22, 66, 60), My.Resources.logout1)
+        BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
 
-    Private Sub MedPageBtn_Click(sender As Object, e As EventArgs)
-        MainPanel.Controls.Clear()
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles MedicineBtn.Click
+        OpenFormInPanel(New MedicinePage())
 
-        Dim f As New MedicinePage
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
+        BtnColorChange(HomeBtn, Color.FromArgb(22, 66, 60), My.Resources.home)
+        BtnColorChange(MedicineBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedPills)
+        BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)
+        BtnColorChange(PrescBtn, Color.FromArgb(22, 66, 60), My.Resources.notif)
 
+        BtnColorChange(LogoutBtn, Color.FromArgb(22, 66, 60), My.Resources.logout1)
+        BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
 
-    Private Sub CartPageBtn_Click(sender As Object, e As EventArgs)
-        MainPanel.Controls.Clear()
+    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles CartBtn.Click
+        OpenFormInPanel(New CartPage())
 
-        Dim f As New CartPage
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
+        BtnColorChange(HomeBtn, Color.FromArgb(22, 66, 60), My.Resources.home)
+        BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
+        BtnColorChange(CartBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedCart)
+        BtnColorChange(PrescBtn, Color.FromArgb(22, 66, 60), My.Resources.notif)
 
+        BtnColorChange(LogoutBtn, Color.FromArgb(22, 66, 60), My.Resources.logout1)
+        BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
 
-    Private Sub PrescPageBtn_Click(sender As Object, e As EventArgs)
-        MainPanel.Controls.Clear()
+    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles PrescBtn.Click
+        OpenFormInPanel(New PrescriptionPage())
 
-        Dim f As New PrescriptionPage
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
+        BtnColorChange(HomeBtn, Color.FromArgb(22, 66, 60), My.Resources.home)
+        BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
+        BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)
+        BtnColorChange(PrescBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedNotif)
 
+        BtnColorChange(LogoutBtn, Color.FromArgb(22, 66, 60), My.Resources.logout1)
+        BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
 
-    Private Sub SettingsBtn_Click(sender As Object, e As EventArgs)
-        MainPanel.Controls.Clear()
-
-        Dim f As New Settings
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
-
-    End Sub
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-
-    End Sub
-
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
-        MainPanel.Controls.Clear()
-
-        Dim f As New MedicinePage()
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
-
-    End Sub
-
-    Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
-        MainPanel.Controls.Clear()
-
-        Dim f As New CartPage()
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
-
-    End Sub
-
-    Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
-        MainPanel.Controls.Clear()
-
-        Dim f As New PrescriptionPage()
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
-
-    End Sub
-
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles LogoutBtn.Click
         'logout here
+
+        BtnColorChange(HomeBtn, Color.FromArgb(22, 66, 60), My.Resources.home)
+        BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
+        BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)
+        BtnColorChange(PrescBtn, Color.FromArgb(22, 66, 60), My.Resources.notif)
+
+        BtnColorChange(LogoutBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedLogout1)
+        BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
 
-    Private Sub Guna2Button6_Click(sender As Object, e As EventArgs) Handles Guna2Button6.Click
-        MainPanel.Controls.Clear()
+    Private Sub Guna2Button6_Click(sender As Object, e As EventArgs) Handles SettingsBtn.Click
+        OpenFormInPanel(New Settings())
 
-        Dim f As New Settings()
-        f.TopLevel = False
-        f.WindowState = FormWindowState.Maximized
-        f.Visible = True
-        MainPanel.Controls.Add(f)
+        BtnColorChange(HomeBtn, Color.FromArgb(22, 66, 60), My.Resources.home)
+        BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
+        BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)
+        BtnColorChange(PrescBtn, Color.FromArgb(22, 66, 60), My.Resources.notif)
 
+        BtnColorChange(LogoutBtn, Color.FromArgb(22, 66, 60), My.Resources.logout1)
+        BtnColorChange(SettingsBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedSettings)
     End Sub
 
+    Private Sub MainPanel_Paint(sender As Object, e As PaintEventArgs) Handles MainPanel.Paint
+
+    End Sub
 End Class

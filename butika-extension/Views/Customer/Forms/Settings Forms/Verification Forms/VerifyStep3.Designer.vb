@@ -36,10 +36,10 @@ Partial Class VerifyStep3
         ' ProgBar3
         ' 
         ProgBar3.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ProgBar3.Location = New Point(489, 98)
+        ProgBar3.Location = New Point(595, 99)
         ProgBar3.Name = "ProgBar3"
         ProgBar3.RightToLeft = RightToLeft.No
-        ProgBar3.Size = New Size(233, 7)
+        ProgBar3.Size = New Size(287, 7)
         ProgBar3.TabIndex = 81
         ' 
         ' VerifySubtext
@@ -71,7 +71,7 @@ Partial Class VerifyStep3
         ProgBar.Location = New Point(22, 101)
         ProgBar.Name = "ProgBar"
         ProgBar.RightToLeft = RightToLeft.No
-        ProgBar.Size = New Size(700, 2)
+        ProgBar.Size = New Size(860, 2)
         ProgBar.TabIndex = 78
         ' 
         ' Phase3Txt
@@ -79,7 +79,7 @@ Partial Class VerifyStep3
         Phase3Txt.AutoSize = True
         Phase3Txt.Font = New Font("Century Gothic", 8.75F)
         Phase3Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Phase3Txt.Location = New Point(546, 108)
+        Phase3Txt.Location = New Point(683, 109)
         Phase3Txt.Name = "Phase3Txt"
         Phase3Txt.Size = New Size(129, 17)
         Phase3Txt.TabIndex = 82
@@ -89,7 +89,7 @@ Partial Class VerifyStep3
         ' 
         VerifyPendingImg.Image = My.Resources.Resources.verifyPending
         VerifyPendingImg.InitialImage = My.Resources.Resources.verifyImage
-        VerifyPendingImg.Location = New Point(217, 183)
+        VerifyPendingImg.Location = New Point(298, 237)
         VerifyPendingImg.Name = "VerifyPendingImg"
         VerifyPendingImg.Size = New Size(312, 160)
         VerifyPendingImg.SizeMode = PictureBoxSizeMode.Zoom
@@ -111,7 +111,7 @@ Partial Class VerifyStep3
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(753, 520)
+        ClientSize = New Size(915, 649)
         Controls.Add(VerifiedIcon)
         Controls.Add(VerifyPendingImg)
         Controls.Add(Phase3Txt)

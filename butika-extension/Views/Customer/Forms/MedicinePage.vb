@@ -1,4 +1,16 @@
-﻿Public Class MedicinePage
+﻿Imports Guna.UI2.WinForms
+
+Public Class MedicinePage
+
+#Region "Functions"
+    Private Sub underlineFilter(ByVal med As Boolean, ByVal otc As Boolean, ByVal presc As Boolean)
+        AllMedsUnderline.Visible = med
+        OTCUnderline.Visible = otc
+        PrescUnderline.Visible = presc
+    End Sub
+
+#End Region
+
     Private Sub MedicinePage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
@@ -8,20 +20,14 @@
     End Sub
 
     Private Sub AllMeds_Click(sender As Object, e As EventArgs) Handles AllMeds.Click
-        AllMedsUnderline.Visible = True
-        OTCUnderline.Visible = False
-        PrescUnderline.Visible = False
+        underlineFilter(True, False, False)
     End Sub
 
     Private Sub OverTheCounter_Click(sender As Object, e As EventArgs) Handles OverTheCounter.Click
-        AllMedsUnderline.Visible = False
-        OTCUnderline.Visible = True
-        PrescUnderline.Visible = False
+        underlineFilter(False, True, False)
     End Sub
 
     Private Sub NeedsPrescription_Click(sender As Object, e As EventArgs) Handles NeedsPrescription.Click
-        AllMedsUnderline.Visible = False
-        OTCUnderline.Visible = False
-        PrescUnderline.Visible = True
+        underlineFilter(False, False, True)
     End Sub
 End Class

@@ -37,7 +37,7 @@ Partial Class Verified
         ' 
         VerifiedImg.Image = My.Resources.Resources.verifyVerified
         VerifiedImg.InitialImage = Nothing
-        VerifiedImg.Location = New Point(244, 182)
+        VerifiedImg.Location = New Point(317, 252)
         VerifiedImg.Name = "VerifiedImg"
         VerifiedImg.Size = New Size(273, 136)
         VerifiedImg.SizeMode = PictureBoxSizeMode.Zoom
@@ -49,7 +49,7 @@ Partial Class Verified
         Phase3Txt.AutoSize = True
         Phase3Txt.Font = New Font("Century Gothic", 8.75F)
         Phase3Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Phase3Txt.Location = New Point(542, 109)
+        Phase3Txt.Location = New Point(681, 109)
         Phase3Txt.Name = "Phase3Txt"
         Phase3Txt.Size = New Size(143, 17)
         Phase3Txt.TabIndex = 88
@@ -58,10 +58,10 @@ Partial Class Verified
         ' ProgBar3
         ' 
         ProgBar3.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ProgBar3.Location = New Point(494, 99)
+        ProgBar3.Location = New Point(600, 99)
         ProgBar3.Name = "ProgBar3"
         ProgBar3.RightToLeft = RightToLeft.No
-        ProgBar3.Size = New Size(233, 7)
+        ProgBar3.Size = New Size(287, 7)
         ProgBar3.TabIndex = 87
         ' 
         ' VerifySubtext
@@ -93,7 +93,7 @@ Partial Class Verified
         ProgBar.Location = New Point(27, 102)
         ProgBar.Name = "ProgBar"
         ProgBar.RightToLeft = RightToLeft.No
-        ProgBar.Size = New Size(700, 2)
+        ProgBar.Size = New Size(860, 2)
         ProgBar.TabIndex = 84
         ' 
         ' VerifiedIcon
@@ -111,7 +111,7 @@ Partial Class Verified
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(753, 520)
+        ClientSize = New Size(915, 649)
         Controls.Add(VerifiedIcon)
         Controls.Add(VerifiedImg)
         Controls.Add(Phase3Txt)

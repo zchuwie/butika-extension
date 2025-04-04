@@ -63,6 +63,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property add() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("add", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property addPressed() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("addPressed", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property butika() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("butika", resourceCulture)
@@ -153,6 +173,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property editProfilePressed() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("editProfilePressed", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property editProfileUnpressed() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("editProfileUnpressed", resourceCulture)
@@ -163,9 +193,39 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property editProfileUnpressed1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("editProfileUnpressed1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property EditSecurityPressed() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("EditSecurityPressed", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property EditSecurityUnpressed() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("EditSecurityUnpressed", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property EditSecurityUnpressed1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("EditSecurityUnpressed1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -243,6 +303,26 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property logout1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logout1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property logout2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("logout2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property lprescription_icon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("lprescription_icon", resourceCulture)
@@ -266,6 +346,26 @@ Namespace My.Resources
         Friend ReadOnly Property medIcon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("medIcon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property minus() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("minus", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property minusPressed() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("minusPressed", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -336,6 +436,16 @@ Namespace My.Resources
         Friend ReadOnly Property pressedLogout() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("pressedLogout", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property pressedLogout1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("pressedLogout1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

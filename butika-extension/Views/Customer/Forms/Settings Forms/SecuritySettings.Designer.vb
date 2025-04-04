@@ -22,12 +22,16 @@ Partial Class SecuritySettings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         DeactivateSubtext = New Label()
         DeactivateAccount = New Label()
         DeactivateDivider = New Panel()
@@ -41,11 +45,10 @@ Partial Class SecuritySettings
         Security = New Label()
         SecurityDivider = New Panel()
         ChangePassword = New Label()
-        VerifyAccBtn = New RoundedButton()
+        DeactivateAccBtn = New RoundedButton()
         VerifyText = New Label()
-        CancelBtn = New RoundedButton()
-        SaveBtn = New RoundedButton()
-        CancelBtnOutline = New RoundedButton()
+        SaveBtn = New Guna.UI2.WinForms.Guna2Button()
+        CancelBtn = New Guna.UI2.WinForms.Guna2Button()
         SuspendLayout()
         ' 
         ' DeactivateSubtext
@@ -77,7 +80,7 @@ Partial Class SecuritySettings
         DeactivateDivider.Location = New Point(23, 429)
         DeactivateDivider.Name = "DeactivateDivider"
         DeactivateDivider.RightToLeft = RightToLeft.No
-        DeactivateDivider.Size = New Size(700, 2)
+        DeactivateDivider.Size = New Size(860, 2)
         DeactivateDivider.TabIndex = 61
         ' 
         ' ConfirmPasswordLbl
@@ -85,7 +88,7 @@ Partial Class SecuritySettings
         ConfirmPasswordLbl.AutoSize = True
         ConfirmPasswordLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ConfirmPasswordLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ConfirmPasswordLbl.Location = New Point(27, 284)
+        ConfirmPasswordLbl.Location = New Point(27, 283)
         ConfirmPasswordLbl.Name = "ConfirmPasswordLbl"
         ConfirmPasswordLbl.Size = New Size(191, 16)
         ConfirmPasswordLbl.TabIndex = 60
@@ -96,7 +99,7 @@ Partial Class SecuritySettings
         NewPasswordLbl.AutoSize = True
         NewPasswordLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         NewPasswordLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        NewPasswordLbl.Location = New Point(27, 223)
+        NewPasswordLbl.Location = New Point(27, 222)
         NewPasswordLbl.Name = "NewPasswordLbl"
         NewPasswordLbl.Size = New Size(172, 16)
         NewPasswordLbl.TabIndex = 59
@@ -107,7 +110,7 @@ Partial Class SecuritySettings
         OldPasswordLbl.AutoSize = True
         OldPasswordLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         OldPasswordLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        OldPasswordLbl.Location = New Point(27, 164)
+        OldPasswordLbl.Location = New Point(27, 163)
         OldPasswordLbl.Name = "OldPasswordLbl"
         OldPasswordLbl.Size = New Size(167, 16)
         OldPasswordLbl.TabIndex = 58
@@ -116,7 +119,7 @@ Partial Class SecuritySettings
         ' ConfirmPasswordTxtbox
         ' 
         ConfirmPasswordTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ConfirmPasswordTxtbox.CustomizableEdges = CustomizableEdges7
+        ConfirmPasswordTxtbox.CustomizableEdges = CustomizableEdges13
         ConfirmPasswordTxtbox.DefaultText = ""
         ConfirmPasswordTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         ConfirmPasswordTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -127,18 +130,18 @@ Partial Class SecuritySettings
         ConfirmPasswordTxtbox.Font = New Font("Century Gothic", 9.75F)
         ConfirmPasswordTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ConfirmPasswordTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        ConfirmPasswordTxtbox.Location = New Point(28, 303)
+        ConfirmPasswordTxtbox.Location = New Point(28, 302)
         ConfirmPasswordTxtbox.Name = "ConfirmPasswordTxtbox"
         ConfirmPasswordTxtbox.PlaceholderText = ""
         ConfirmPasswordTxtbox.SelectedText = ""
-        ConfirmPasswordTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        ConfirmPasswordTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         ConfirmPasswordTxtbox.Size = New Size(229, 27)
         ConfirmPasswordTxtbox.TabIndex = 57
         ' 
         ' NewPasswordTxtbox
         ' 
         NewPasswordTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        NewPasswordTxtbox.CustomizableEdges = CustomizableEdges9
+        NewPasswordTxtbox.CustomizableEdges = CustomizableEdges15
         NewPasswordTxtbox.DefaultText = ""
         NewPasswordTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         NewPasswordTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -149,18 +152,18 @@ Partial Class SecuritySettings
         NewPasswordTxtbox.Font = New Font("Century Gothic", 9.75F)
         NewPasswordTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         NewPasswordTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        NewPasswordTxtbox.Location = New Point(27, 242)
+        NewPasswordTxtbox.Location = New Point(27, 241)
         NewPasswordTxtbox.Name = "NewPasswordTxtbox"
         NewPasswordTxtbox.PlaceholderText = ""
         NewPasswordTxtbox.SelectedText = ""
-        NewPasswordTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        NewPasswordTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         NewPasswordTxtbox.Size = New Size(229, 27)
         NewPasswordTxtbox.TabIndex = 56
         ' 
         ' OldPasswordTxtbox
         ' 
         OldPasswordTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        OldPasswordTxtbox.CustomizableEdges = CustomizableEdges11
+        OldPasswordTxtbox.CustomizableEdges = CustomizableEdges17
         OldPasswordTxtbox.DefaultText = ""
         OldPasswordTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         OldPasswordTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -171,11 +174,11 @@ Partial Class SecuritySettings
         OldPasswordTxtbox.Font = New Font("Century Gothic", 9.75F)
         OldPasswordTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OldPasswordTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        OldPasswordTxtbox.Location = New Point(25, 183)
+        OldPasswordTxtbox.Location = New Point(25, 182)
         OldPasswordTxtbox.Name = "OldPasswordTxtbox"
         OldPasswordTxtbox.PlaceholderText = ""
         OldPasswordTxtbox.SelectedText = ""
-        OldPasswordTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        OldPasswordTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges18
         OldPasswordTxtbox.Size = New Size(229, 27)
         OldPasswordTxtbox.TabIndex = 55
         ' 
@@ -208,7 +211,7 @@ Partial Class SecuritySettings
         SecurityDivider.Location = New Point(27, 98)
         SecurityDivider.Name = "SecurityDivider"
         SecurityDivider.RightToLeft = RightToLeft.No
-        SecurityDivider.Size = New Size(700, 2)
+        SecurityDivider.Size = New Size(860, 2)
         SecurityDivider.TabIndex = 52
         ' 
         ' ChangePassword
@@ -216,86 +219,86 @@ Partial Class SecuritySettings
         ChangePassword.AutoSize = True
         ChangePassword.Font = New Font("Century Gothic", 13F, FontStyle.Bold)
         ChangePassword.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ChangePassword.Location = New Point(27, 130)
+        ChangePassword.Location = New Point(27, 129)
         ChangePassword.Name = "ChangePassword"
         ChangePassword.Size = New Size(169, 22)
         ChangePassword.TabIndex = 68
         ChangePassword.Text = "Change Password"
         ChangePassword.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' VerifyAccBtn
+        ' DeactivateAccBtn
         ' 
-        VerifyAccBtn.BackColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
-        VerifyAccBtn.CornerRadius = 6
-        VerifyAccBtn.Font = New Font("Century Gothic", 8.75F, FontStyle.Bold)
-        VerifyAccBtn.ForeColor = Color.White
-        VerifyAccBtn.Location = New Point(29, 479)
-        VerifyAccBtn.Name = "VerifyAccBtn"
-        VerifyAccBtn.Size = New Size(149, 29)
-        VerifyAccBtn.TabIndex = 70
-        VerifyAccBtn.Text = "Deactivate Account"
-        VerifyAccBtn.UseVisualStyleBackColor = False
+        DeactivateAccBtn.BackColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
+        DeactivateAccBtn.CornerRadius = 6
+        DeactivateAccBtn.Font = New Font("Century Gothic", 8.75F, FontStyle.Bold)
+        DeactivateAccBtn.ForeColor = Color.White
+        DeactivateAccBtn.Location = New Point(29, 478)
+        DeactivateAccBtn.Name = "DeactivateAccBtn"
+        DeactivateAccBtn.Size = New Size(149, 29)
+        DeactivateAccBtn.TabIndex = 70
+        DeactivateAccBtn.Text = "Deactivate Account"
+        DeactivateAccBtn.UseVisualStyleBackColor = False
         ' 
         ' VerifyText
         ' 
         VerifyText.AutoSize = True
         VerifyText.Font = New Font("Century Gothic", 9.75F)
         VerifyText.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        VerifyText.Location = New Point(28, 455)
+        VerifyText.Location = New Point(28, 454)
         VerifyText.Name = "VerifyText"
         VerifyText.Size = New Size(613, 17)
         VerifyText.TabIndex = 69
         VerifyText.Text = "If for some reason, you may need to deactivate your account, please press the button below."
         ' 
-        ' CancelBtn
-        ' 
-        CancelBtn.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        CancelBtn.CornerRadius = 6
-        CancelBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        CancelBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        CancelBtn.Location = New Point(557, 611)
-        CancelBtn.Name = "CancelBtn"
-        CancelBtn.Size = New Size(75, 33)
-        CancelBtn.TabIndex = 72
-        CancelBtn.Text = "Cancel"
-        CancelBtn.UseVisualStyleBackColor = False
-        ' 
         ' SaveBtn
         ' 
-        SaveBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        SaveBtn.CornerRadius = 6
+        SaveBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SaveBtn.BorderRadius = 6
+        SaveBtn.BorderThickness = 1
+        SaveBtn.CustomizableEdges = CustomizableEdges19
+        SaveBtn.DisabledState.BorderColor = Color.DarkGray
+        SaveBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        SaveBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        SaveBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        SaveBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SaveBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         SaveBtn.ForeColor = Color.White
-        SaveBtn.Location = New Point(650, 610)
+        SaveBtn.Location = New Point(798, 611)
         SaveBtn.Name = "SaveBtn"
-        SaveBtn.Size = New Size(77, 35)
-        SaveBtn.TabIndex = 71
+        SaveBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        SaveBtn.Size = New Size(81, 35)
+        SaveBtn.TabIndex = 80
         SaveBtn.Text = "Save"
-        SaveBtn.UseVisualStyleBackColor = False
         ' 
-        ' CancelBtnOutline
+        ' CancelBtn
         ' 
-        CancelBtnOutline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        CancelBtnOutline.CornerRadius = 6
-        CancelBtnOutline.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        CancelBtnOutline.ForeColor = Color.White
-        CancelBtnOutline.Location = New Point(556, 610)
-        CancelBtnOutline.Name = "CancelBtnOutline"
-        CancelBtnOutline.Size = New Size(77, 35)
-        CancelBtnOutline.TabIndex = 73
-        CancelBtnOutline.Text = "Save"
-        CancelBtnOutline.UseVisualStyleBackColor = False
+        CancelBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelBtn.BorderRadius = 6
+        CancelBtn.BorderThickness = 1
+        CancelBtn.CustomizableEdges = CustomizableEdges21
+        CancelBtn.DisabledState.BorderColor = Color.DarkGray
+        CancelBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        CancelBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        CancelBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        CancelBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        CancelBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        CancelBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelBtn.Location = New Point(711, 611)
+        CancelBtn.Name = "CancelBtn"
+        CancelBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        CancelBtn.Size = New Size(81, 35)
+        CancelBtn.TabIndex = 79
+        CancelBtn.Text = "Cancel"
         ' 
         ' SecuritySettings
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(753, 675)
-        Controls.Add(CancelBtn)
+        ClientSize = New Size(915, 675)
         Controls.Add(SaveBtn)
-        Controls.Add(CancelBtnOutline)
-        Controls.Add(VerifyAccBtn)
+        Controls.Add(CancelBtn)
+        Controls.Add(DeactivateAccBtn)
         Controls.Add(VerifyText)
         Controls.Add(ChangePassword)
         Controls.Add(DeactivateSubtext)
@@ -329,9 +332,8 @@ Partial Class SecuritySettings
     Friend WithEvents Security As Label
     Friend WithEvents SecurityDivider As Panel
     Friend WithEvents ChangePassword As Label
-    Friend WithEvents VerifyAccBtn As RoundedButton
+    Friend WithEvents DeactivateAccBtn As RoundedButton
     Friend WithEvents VerifyText As Label
-    Friend WithEvents CancelBtn As RoundedButton
-    Friend WithEvents SaveBtn As RoundedButton
-    Friend WithEvents CancelBtnOutline As RoundedButton
+    Friend WithEvents SaveBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
 End Class

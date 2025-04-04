@@ -39,12 +39,12 @@ Partial Class MainPage
         Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         sidebar = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Button6 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        SettingsBtn = New Guna.UI2.WinForms.Guna2Button()
+        LogoutBtn = New Guna.UI2.WinForms.Guna2Button()
+        PrescBtn = New Guna.UI2.WinForms.Guna2Button()
+        CartBtn = New Guna.UI2.WinForms.Guna2Button()
+        MedicineBtn = New Guna.UI2.WinForms.Guna2Button()
+        HomeBtn = New Guna.UI2.WinForms.Guna2Button()
         MainPanel = New Guna.UI2.WinForms.Guna2Panel()
         sidebar.SuspendLayout()
         SuspendLayout()
@@ -52,12 +52,12 @@ Partial Class MainPage
         ' sidebar
         ' 
         sidebar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        sidebar.Controls.Add(Guna2Button6)
-        sidebar.Controls.Add(Guna2Button5)
-        sidebar.Controls.Add(Guna2Button4)
-        sidebar.Controls.Add(Guna2Button3)
-        sidebar.Controls.Add(Guna2Button2)
-        sidebar.Controls.Add(Guna2Button1)
+        sidebar.Controls.Add(SettingsBtn)
+        sidebar.Controls.Add(LogoutBtn)
+        sidebar.Controls.Add(PrescBtn)
+        sidebar.Controls.Add(CartBtn)
+        sidebar.Controls.Add(MedicineBtn)
+        sidebar.Controls.Add(HomeBtn)
         sidebar.CustomizableEdges = CustomizableEdges13
         sidebar.Dock = DockStyle.Left
         sidebar.Location = New Point(0, 0)
@@ -66,127 +66,127 @@ Partial Class MainPage
         sidebar.Size = New Size(70, 720)
         sidebar.TabIndex = 1
         ' 
-        ' Guna2Button6
+        ' SettingsBtn
         ' 
-        Guna2Button6.BackColor = Color.Red
-        Guna2Button6.CustomizableEdges = CustomizableEdges1
-        Guna2Button6.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button6.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button6.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button6.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button6.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Button6.Font = New Font("Segoe UI", 9F)
-        Guna2Button6.ForeColor = Color.White
-        Guna2Button6.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
-        Guna2Button6.Image = My.Resources.Resources.settings
-        Guna2Button6.ImageSize = New Size(43, 43)
-        Guna2Button6.Location = New Point(0, 644)
-        Guna2Button6.Name = "Guna2Button6"
-        Guna2Button6.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Button6.Size = New Size(70, 76)
-        Guna2Button6.TabIndex = 10
-        Guna2Button6.TextAlign = HorizontalAlignment.Left
+        SettingsBtn.BackColor = Color.Red
+        SettingsBtn.CustomizableEdges = CustomizableEdges1
+        SettingsBtn.DisabledState.BorderColor = Color.DarkGray
+        SettingsBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        SettingsBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        SettingsBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        SettingsBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SettingsBtn.Font = New Font("Segoe UI", 9F)
+        SettingsBtn.ForeColor = Color.White
+        SettingsBtn.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
+        SettingsBtn.Image = My.Resources.Resources.settings
+        SettingsBtn.ImageSize = New Size(43, 43)
+        SettingsBtn.Location = New Point(0, 644)
+        SettingsBtn.Name = "SettingsBtn"
+        SettingsBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        SettingsBtn.Size = New Size(70, 76)
+        SettingsBtn.TabIndex = 10
+        SettingsBtn.TextAlign = HorizontalAlignment.Left
         ' 
-        ' Guna2Button5
+        ' LogoutBtn
         ' 
-        Guna2Button5.BackgroundImageLayout = ImageLayout.Zoom
-        Guna2Button5.CustomizableEdges = CustomizableEdges3
-        Guna2Button5.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button5.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button5.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button5.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Button5.Font = New Font("Segoe UI", 9F)
-        Guna2Button5.ForeColor = Color.White
-        Guna2Button5.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
-        Guna2Button5.Image = My.Resources.Resources.logout
-        Guna2Button5.ImageSize = New Size(43, 43)
-        Guna2Button5.Location = New Point(0, 564)
-        Guna2Button5.Name = "Guna2Button5"
-        Guna2Button5.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2Button5.Size = New Size(70, 76)
-        Guna2Button5.TabIndex = 9
-        Guna2Button5.TextAlign = HorizontalAlignment.Left
+        LogoutBtn.BackgroundImageLayout = ImageLayout.Zoom
+        LogoutBtn.CustomizableEdges = CustomizableEdges3
+        LogoutBtn.DisabledState.BorderColor = Color.DarkGray
+        LogoutBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        LogoutBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        LogoutBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        LogoutBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        LogoutBtn.Font = New Font("Segoe UI", 9F)
+        LogoutBtn.ForeColor = Color.White
+        LogoutBtn.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
+        LogoutBtn.Image = My.Resources.Resources.logout1
+        LogoutBtn.ImageSize = New Size(66, 66)
+        LogoutBtn.Location = New Point(0, 564)
+        LogoutBtn.Name = "LogoutBtn"
+        LogoutBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        LogoutBtn.Size = New Size(70, 76)
+        LogoutBtn.TabIndex = 9
+        LogoutBtn.TextAlign = HorizontalAlignment.Left
         ' 
-        ' Guna2Button4
+        ' PrescBtn
         ' 
-        Guna2Button4.CustomizableEdges = CustomizableEdges5
-        Guna2Button4.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button4.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button4.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button4.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Button4.Font = New Font("Segoe UI", 9F)
-        Guna2Button4.ForeColor = Color.White
-        Guna2Button4.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
-        Guna2Button4.Image = My.Resources.Resources.notif
-        Guna2Button4.ImageSize = New Size(43, 43)
-        Guna2Button4.Location = New Point(0, 240)
-        Guna2Button4.Name = "Guna2Button4"
-        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        Guna2Button4.Size = New Size(70, 76)
-        Guna2Button4.TabIndex = 8
-        Guna2Button4.TextAlign = HorizontalAlignment.Left
+        PrescBtn.CustomizableEdges = CustomizableEdges5
+        PrescBtn.DisabledState.BorderColor = Color.DarkGray
+        PrescBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        PrescBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        PrescBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        PrescBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        PrescBtn.Font = New Font("Segoe UI", 9F)
+        PrescBtn.ForeColor = Color.White
+        PrescBtn.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
+        PrescBtn.Image = My.Resources.Resources.notif
+        PrescBtn.ImageSize = New Size(43, 43)
+        PrescBtn.Location = New Point(0, 240)
+        PrescBtn.Name = "PrescBtn"
+        PrescBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        PrescBtn.Size = New Size(70, 76)
+        PrescBtn.TabIndex = 8
+        PrescBtn.TextAlign = HorizontalAlignment.Left
         ' 
-        ' Guna2Button3
+        ' CartBtn
         ' 
-        Guna2Button3.CustomizableEdges = CustomizableEdges7
-        Guna2Button3.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button3.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button3.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Button3.Font = New Font("Segoe UI", 9F)
-        Guna2Button3.ForeColor = Color.White
-        Guna2Button3.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
-        Guna2Button3.Image = My.Resources.Resources.cart1
-        Guna2Button3.ImageSize = New Size(43, 43)
-        Guna2Button3.Location = New Point(0, 160)
-        Guna2Button3.Name = "Guna2Button3"
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges8
-        Guna2Button3.Size = New Size(70, 76)
-        Guna2Button3.TabIndex = 7
-        Guna2Button3.TextAlign = HorizontalAlignment.Left
+        CartBtn.CustomizableEdges = CustomizableEdges7
+        CartBtn.DisabledState.BorderColor = Color.DarkGray
+        CartBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        CartBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        CartBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        CartBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CartBtn.Font = New Font("Segoe UI", 9F)
+        CartBtn.ForeColor = Color.White
+        CartBtn.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
+        CartBtn.Image = My.Resources.Resources.cart1
+        CartBtn.ImageSize = New Size(43, 43)
+        CartBtn.Location = New Point(0, 160)
+        CartBtn.Name = "CartBtn"
+        CartBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        CartBtn.Size = New Size(70, 76)
+        CartBtn.TabIndex = 7
+        CartBtn.TextAlign = HorizontalAlignment.Left
         ' 
-        ' Guna2Button2
+        ' MedicineBtn
         ' 
-        Guna2Button2.CustomizableEdges = CustomizableEdges9
-        Guna2Button2.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Button2.Font = New Font("Segoe UI", 9F)
-        Guna2Button2.ForeColor = Color.White
-        Guna2Button2.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
-        Guna2Button2.Image = My.Resources.Resources.pills
-        Guna2Button2.ImageSize = New Size(43, 43)
-        Guna2Button2.Location = New Point(0, 80)
-        Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges10
-        Guna2Button2.Size = New Size(70, 76)
-        Guna2Button2.TabIndex = 6
-        Guna2Button2.TextAlign = HorizontalAlignment.Left
+        MedicineBtn.CustomizableEdges = CustomizableEdges9
+        MedicineBtn.DisabledState.BorderColor = Color.DarkGray
+        MedicineBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        MedicineBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        MedicineBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        MedicineBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        MedicineBtn.Font = New Font("Segoe UI", 9F)
+        MedicineBtn.ForeColor = Color.White
+        MedicineBtn.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
+        MedicineBtn.Image = My.Resources.Resources.pills
+        MedicineBtn.ImageSize = New Size(43, 43)
+        MedicineBtn.Location = New Point(0, 80)
+        MedicineBtn.Name = "MedicineBtn"
+        MedicineBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        MedicineBtn.Size = New Size(70, 76)
+        MedicineBtn.TabIndex = 6
+        MedicineBtn.TextAlign = HorizontalAlignment.Left
         ' 
-        ' Guna2Button1
+        ' HomeBtn
         ' 
-        Guna2Button1.CustomizableEdges = CustomizableEdges11
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Button1.Font = New Font("Segoe UI", 9F)
-        Guna2Button1.ForeColor = Color.White
-        Guna2Button1.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
-        Guna2Button1.Image = My.Resources.Resources.home
-        Guna2Button1.ImageSize = New Size(42, 42)
-        Guna2Button1.Location = New Point(0, 0)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges12
-        Guna2Button1.Size = New Size(70, 76)
-        Guna2Button1.TabIndex = 0
-        Guna2Button1.TextAlign = HorizontalAlignment.Left
+        HomeBtn.CustomizableEdges = CustomizableEdges11
+        HomeBtn.DisabledState.BorderColor = Color.DarkGray
+        HomeBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        HomeBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        HomeBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        HomeBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        HomeBtn.Font = New Font("Segoe UI", 9F)
+        HomeBtn.ForeColor = Color.White
+        HomeBtn.HoverState.FillColor = Color.FromArgb(CByte(47), CByte(135), CByte(123))
+        HomeBtn.Image = My.Resources.Resources.home
+        HomeBtn.ImageSize = New Size(42, 42)
+        HomeBtn.Location = New Point(0, 0)
+        HomeBtn.Name = "HomeBtn"
+        HomeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        HomeBtn.Size = New Size(70, 76)
+        HomeBtn.TabIndex = 0
+        HomeBtn.TextAlign = HorizontalAlignment.Left
         ' 
         ' MainPanel
         ' 
@@ -219,10 +219,10 @@ Partial Class MainPage
 
     Friend WithEvents sidebar As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents MainPanel As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button6 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents HomeBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents PrescBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CartBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents MedicineBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents SettingsBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents LogoutBtn As Guna.UI2.WinForms.Guna2Button
 End Class

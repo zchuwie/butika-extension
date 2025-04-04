@@ -22,18 +22,18 @@ Partial Class CartPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges73 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges74 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges75 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges76 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges77 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges78 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges79 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges80 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges81 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges82 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges83 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges84 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         SelectLbl = New Label()
         TotalLbl = New Label()
         QuantityLbl = New Label()
@@ -61,10 +61,12 @@ Partial Class CartPage
         SelectAllBtn = New RoundedButton()
         DiscountLbl = New Label()
         TotalPriceLbl = New Label()
-        FlowLayoutPanel1 = New FlowLayoutPanel()
+        CartPanel = New FlowLayoutPanel()
+        CartItem1 = New cartItem()
         BtnsPanel.SuspendLayout()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(YourOrderIcon, ComponentModel.ISupportInitialize).BeginInit()
+        CartPanel.SuspendLayout()
         SuspendLayout()
         ' 
         ' SelectLbl
@@ -72,7 +74,7 @@ Partial Class CartPage
         SelectLbl.AutoSize = True
         SelectLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         SelectLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        SelectLbl.Location = New Point(784, 211)
+        SelectLbl.Location = New Point(764, 186)
         SelectLbl.Name = "SelectLbl"
         SelectLbl.Size = New Size(43, 15)
         SelectLbl.TabIndex = 24
@@ -83,7 +85,7 @@ Partial Class CartPage
         TotalLbl.AutoSize = True
         TotalLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         TotalLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        TotalLbl.Location = New Point(689, 211)
+        TotalLbl.Location = New Point(648, 186)
         TotalLbl.Name = "TotalLbl"
         TotalLbl.Size = New Size(39, 15)
         TotalLbl.TabIndex = 23
@@ -94,7 +96,7 @@ Partial Class CartPage
         QuantityLbl.AutoSize = True
         QuantityLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         QuantityLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        QuantityLbl.Location = New Point(573, 211)
+        QuantityLbl.Location = New Point(534, 186)
         QuantityLbl.Name = "QuantityLbl"
         QuantityLbl.Size = New Size(59, 15)
         QuantityLbl.TabIndex = 22
@@ -105,7 +107,7 @@ Partial Class CartPage
         PriceLbl.AutoSize = True
         PriceLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         PriceLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PriceLbl.Location = New Point(434, 211)
+        PriceLbl.Location = New Point(425, 186)
         PriceLbl.Name = "PriceLbl"
         PriceLbl.Size = New Size(37, 15)
         PriceLbl.TabIndex = 21
@@ -116,7 +118,7 @@ Partial Class CartPage
         ProductLbl.AutoSize = True
         ProductLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         ProductLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ProductLbl.Location = New Point(255, 211)
+        ProductLbl.Location = New Point(239, 186)
         ProductLbl.Name = "ProductLbl"
         ProductLbl.Size = New Size(58, 15)
         ProductLbl.TabIndex = 20
@@ -127,7 +129,7 @@ Partial Class CartPage
         IndicationLbl.AutoSize = True
         IndicationLbl.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         IndicationLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        IndicationLbl.Location = New Point(57, 211)
+        IndicationLbl.Location = New Point(53, 186)
         IndicationLbl.Name = "IndicationLbl"
         IndicationLbl.Size = New Size(69, 15)
         IndicationLbl.TabIndex = 19
@@ -137,10 +139,11 @@ Partial Class CartPage
         ' 
         OrderPanel.AutoScroll = True
         OrderPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        OrderPanel.CustomizableEdges = CustomizableEdges73
+        OrderPanel.BorderThickness = 1
+        OrderPanel.CustomizableEdges = CustomizableEdges13
         OrderPanel.Location = New Point(895, 120)
         OrderPanel.Name = "OrderPanel"
-        OrderPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges74
+        OrderPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         OrderPanel.Size = New Size(289, 335)
         OrderPanel.TabIndex = 2
         ' 
@@ -149,10 +152,10 @@ Partial Class CartPage
         BtnsPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         BtnsPanel.Controls.Add(SeeDetailsBtn)
         BtnsPanel.Controls.Add(DeleteBtn)
-        BtnsPanel.CustomizableEdges = CustomizableEdges75
+        BtnsPanel.CustomizableEdges = CustomizableEdges15
         BtnsPanel.Location = New Point(895, 563)
         BtnsPanel.Name = "BtnsPanel"
-        BtnsPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges76
+        BtnsPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         BtnsPanel.Size = New Size(289, 118)
         BtnsPanel.TabIndex = 3
         ' 
@@ -250,41 +253,45 @@ Partial Class CartPage
         ' 
         ReadyUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ReadyUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ReadyUnderline.CustomizableEdges = CustomizableEdges77
-        ReadyUnderline.Location = New Point(196, 158)
+        ReadyUnderline.CustomizableEdges = CustomizableEdges17
+        ReadyUnderline.Location = New Point(196, 139)
         ReadyUnderline.Name = "ReadyUnderline"
-        ReadyUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges78
+        ReadyUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges18
         ReadyUnderline.Size = New Size(42, 4)
         ReadyUnderline.TabIndex = 20
+        ReadyUnderline.Visible = False
         ' 
         ' PendingUnderline
         ' 
         PendingUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PendingUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PendingUnderline.CustomizableEdges = CustomizableEdges79
-        PendingUnderline.Location = New Point(124, 157)
+        PendingUnderline.CustomizableEdges = CustomizableEdges19
+        PendingUnderline.Location = New Point(124, 139)
         PendingUnderline.Name = "PendingUnderline"
-        PendingUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges80
+        PendingUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges20
         PendingUnderline.Size = New Size(55, 4)
         PendingUnderline.TabIndex = 17
+        PendingUnderline.Visible = False
         ' 
         ' AllItemsUnderline
         ' 
         AllItemsUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllItemsUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        AllItemsUnderline.CustomizableEdges = CustomizableEdges81
-        AllItemsUnderline.Location = New Point(44, 157)
+        AllItemsUnderline.CustomizableEdges = CustomizableEdges21
+        AllItemsUnderline.Location = New Point(44, 139)
         AllItemsUnderline.Name = "AllItemsUnderline"
-        AllItemsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges82
+        AllItemsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         AllItemsUnderline.Size = New Size(62, 4)
         AllItemsUnderline.TabIndex = 16
+        AllItemsUnderline.Visible = False
         ' 
         ' Ready
         ' 
         Ready.AutoSize = True
+        Ready.Cursor = Cursors.Hand
         Ready.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Ready.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Ready.Location = New Point(193, 139)
+        Ready.Location = New Point(193, 121)
         Ready.Name = "Ready"
         Ready.Size = New Size(49, 16)
         Ready.TabIndex = 21
@@ -293,9 +300,10 @@ Partial Class CartPage
         ' Pending
         ' 
         Pending.AutoSize = True
+        Pending.Cursor = Cursors.Hand
         Pending.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Pending.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Pending.Location = New Point(121, 139)
+        Pending.Location = New Point(121, 121)
         Pending.Name = "Pending"
         Pending.Size = New Size(60, 16)
         Pending.TabIndex = 19
@@ -304,9 +312,10 @@ Partial Class CartPage
         ' AllItems
         ' 
         AllItems.AutoSize = True
+        AllItems.Cursor = Cursors.Hand
         AllItems.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         AllItems.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        AllItems.Location = New Point(44, 139)
+        AllItems.Location = New Point(44, 121)
         AllItems.Name = "AllItems"
         AllItems.Size = New Size(63, 16)
         AllItems.TabIndex = 18
@@ -316,19 +325,21 @@ Partial Class CartPage
         ' 
         DeclinedUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         DeclinedUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DeclinedUnderline.CustomizableEdges = CustomizableEdges83
-        DeclinedUnderline.Location = New Point(252, 158)
+        DeclinedUnderline.CustomizableEdges = CustomizableEdges23
+        DeclinedUnderline.Location = New Point(252, 139)
         DeclinedUnderline.Name = "DeclinedUnderline"
-        DeclinedUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges84
+        DeclinedUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         DeclinedUnderline.Size = New Size(60, 4)
         DeclinedUnderline.TabIndex = 22
+        DeclinedUnderline.Visible = False
         ' 
         ' Declined
         ' 
         Declined.AutoSize = True
+        Declined.Cursor = Cursors.Hand
         Declined.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Declined.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Declined.Location = New Point(249, 139)
+        Declined.Location = New Point(249, 121)
         Declined.Name = "Declined"
         Declined.Size = New Size(65, 16)
         Declined.TabIndex = 23
@@ -340,7 +351,7 @@ Partial Class CartPage
         SelectAllBtn.CornerRadius = 6
         SelectAllBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         SelectAllBtn.ForeColor = Color.White
-        SelectAllBtn.Location = New Point(756, 139)
+        SelectAllBtn.Location = New Point(756, 121)
         SelectAllBtn.Name = "SelectAllBtn"
         SelectAllBtn.Size = New Size(94, 33)
         SelectAllBtn.TabIndex = 24
@@ -369,12 +380,26 @@ Partial Class CartPage
         TotalPriceLbl.TabIndex = 27
         TotalPriceLbl.Text = "Total Price:"
         ' 
-        ' FlowLayoutPanel1
+        ' CartPanel
         ' 
-        FlowLayoutPanel1.Location = New Point(32, 190)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(818, 491)
-        FlowLayoutPanel1.TabIndex = 28
+        CartPanel.BorderStyle = BorderStyle.FixedSingle
+        CartPanel.Controls.Add(CartItem1)
+        CartPanel.FlowDirection = FlowDirection.TopDown
+        CartPanel.Location = New Point(32, 172)
+        CartPanel.Name = "CartPanel"
+        CartPanel.Padding = New Padding(23, 40, 23, 0)
+        CartPanel.Size = New Size(818, 509)
+        CartPanel.TabIndex = 28
+        ' 
+        ' CartItem1
+        ' 
+        CartItem1.BackColor = Color.WhiteSmoke
+        CartItem1.BorderStyle = BorderStyle.FixedSingle
+        CartItem1.CornerRadius = 20
+        CartItem1.Location = New Point(26, 43)
+        CartItem1.Name = "CartItem1"
+        CartItem1.Size = New Size(764, 134)
+        CartItem1.TabIndex = 0
         ' 
         ' CartPage
         ' 
@@ -388,7 +413,7 @@ Partial Class CartPage
         Controls.Add(PriceLbl)
         Controls.Add(ProductLbl)
         Controls.Add(IndicationLbl)
-        Controls.Add(FlowLayoutPanel1)
+        Controls.Add(CartPanel)
         Controls.Add(TotalPriceLbl)
         Controls.Add(DiscountLbl)
         Controls.Add(SelectAllBtn)
@@ -415,6 +440,7 @@ Partial Class CartPage
         BtnsPanel.ResumeLayout(False)
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(YourOrderIcon, ComponentModel.ISupportInitialize).EndInit()
+        CartPanel.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -445,5 +471,7 @@ Partial Class CartPage
     Friend WithEvents PriceLbl As Label
     Friend WithEvents ProductLbl As Label
     Friend WithEvents IndicationLbl As Label
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents CartPanel As FlowLayoutPanel
+    Friend WithEvents MedItem1 As cartItem
+    Friend WithEvents CartItem1 As cartItem
 End Class

@@ -25,10 +25,12 @@ Partial Class PrescriptionPage
         MedSubtext = New Label()
         Medicines = New Label()
         MedIcon = New PictureBox()
-        PrescListPanel = New Panel()
         PrescInfoPanel = New Panel()
         DeleteApprovalBtn = New RoundedButton()
+        FlowLayoutPanel1 = New FlowLayoutPanel()
+        PrescItem1 = New prescItem()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
+        FlowLayoutPanel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' MedSubtext
@@ -63,14 +65,6 @@ Partial Class PrescriptionPage
         MedIcon.TabIndex = 12
         MedIcon.TabStop = False
         ' 
-        ' PrescListPanel
-        ' 
-        PrescListPanel.BorderStyle = BorderStyle.FixedSingle
-        PrescListPanel.Location = New Point(40, 120)
-        PrescListPanel.Name = "PrescListPanel"
-        PrescListPanel.Size = New Size(311, 519)
-        PrescListPanel.TabIndex = 13
-        ' 
         ' PrescInfoPanel
         ' 
         PrescInfoPanel.AutoScroll = True
@@ -93,6 +87,25 @@ Partial Class PrescriptionPage
         DeleteApprovalBtn.Text = "Delete Approval"
         DeleteApprovalBtn.UseVisualStyleBackColor = False
         ' 
+        ' FlowLayoutPanel1
+        ' 
+        FlowLayoutPanel1.Controls.Add(PrescItem1)
+        FlowLayoutPanel1.FlowDirection = FlowDirection.TopDown
+        FlowLayoutPanel1.Location = New Point(40, 120)
+        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        FlowLayoutPanel1.Padding = New Padding(18, 15, 18, 0)
+        FlowLayoutPanel1.Size = New Size(311, 519)
+        FlowLayoutPanel1.TabIndex = 27
+        ' 
+        ' PrescItem1
+        ' 
+        PrescItem1.BackColor = Color.WhiteSmoke
+        PrescItem1.CornerRadius = 8
+        PrescItem1.Location = New Point(21, 18)
+        PrescItem1.Name = "PrescItem1"
+        PrescItem1.Size = New Size(272, 98)
+        PrescItem1.TabIndex = 0
+        ' 
         ' PrescriptionPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -100,9 +113,9 @@ Partial Class PrescriptionPage
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1210, 720)
+        Controls.Add(FlowLayoutPanel1)
         Controls.Add(DeleteApprovalBtn)
         Controls.Add(PrescInfoPanel)
-        Controls.Add(PrescListPanel)
         Controls.Add(MedSubtext)
         Controls.Add(Medicines)
         Controls.Add(MedIcon)
@@ -110,6 +123,7 @@ Partial Class PrescriptionPage
         Name = "PrescriptionPage"
         Text = "PrescriptionPage"
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
+        FlowLayoutPanel1.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -117,7 +131,8 @@ Partial Class PrescriptionPage
     Friend WithEvents MedSubtext As Label
     Friend WithEvents Medicines As Label
     Friend WithEvents MedIcon As PictureBox
-    Friend WithEvents PrescListPanel As Panel
     Friend WithEvents PrescInfoPanel As Panel
     Friend WithEvents DeleteApprovalBtn As RoundedButton
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents PrescItem1 As prescItem
 End Class

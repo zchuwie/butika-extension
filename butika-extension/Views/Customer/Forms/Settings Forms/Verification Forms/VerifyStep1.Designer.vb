@@ -29,6 +29,7 @@ Partial Class VerifyStep1
         ProgBar1 = New Panel()
         Phase1Txt = New Label()
         VerifiedIcon = New PictureBox()
+        SubmitIdBtn = New RoundedButton()
         CType(idImage, ComponentModel.ISupportInitialize).BeginInit()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -62,14 +63,14 @@ Partial Class VerifyStep1
         VerifyProgBar.Location = New Point(24, 101)
         VerifyProgBar.Name = "VerifyProgBar"
         VerifyProgBar.RightToLeft = RightToLeft.No
-        VerifyProgBar.Size = New Size(700, 2)
+        VerifyProgBar.Size = New Size(860, 2)
         VerifyProgBar.TabIndex = 39
         ' 
         ' idImage
         ' 
         idImage.Image = My.Resources.Resources.verifyImage
         idImage.InitialImage = My.Resources.Resources.verifyImage
-        idImage.Location = New Point(193, 138)
+        idImage.Location = New Point(260, 186)
         idImage.Name = "idImage"
         idImage.Size = New Size(377, 253)
         idImage.SizeMode = PictureBoxSizeMode.StretchImage
@@ -82,7 +83,7 @@ Partial Class VerifyStep1
         ProgBar1.Location = New Point(23, 99)
         ProgBar1.Name = "ProgBar1"
         ProgBar1.RightToLeft = RightToLeft.No
-        ProgBar1.Size = New Size(233, 7)
+        ProgBar1.Size = New Size(287, 7)
         ProgBar1.TabIndex = 73
         ' 
         ' Phase1Txt
@@ -90,7 +91,7 @@ Partial Class VerifyStep1
         Phase1Txt.AutoSize = True
         Phase1Txt.Font = New Font("Century Gothic", 8.75F)
         Phase1Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Phase1Txt.Location = New Point(79, 108)
+        Phase1Txt.Location = New Point(111, 109)
         Phase1Txt.Name = "Phase1Txt"
         Phase1Txt.Size = New Size(102, 17)
         Phase1Txt.TabIndex = 83
@@ -106,12 +107,26 @@ Partial Class VerifyStep1
         VerifiedIcon.TabIndex = 91
         VerifiedIcon.TabStop = False
         ' 
+        ' SubmitIdBtn
+        ' 
+        SubmitIdBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SubmitIdBtn.CornerRadius = 8
+        SubmitIdBtn.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
+        SubmitIdBtn.ForeColor = Color.White
+        SubmitIdBtn.Location = New Point(371, 454)
+        SubmitIdBtn.Name = "SubmitIdBtn"
+        SubmitIdBtn.Size = New Size(157, 38)
+        SubmitIdBtn.TabIndex = 97
+        SubmitIdBtn.Text = "Submit Photo of ID"
+        SubmitIdBtn.UseVisualStyleBackColor = False
+        ' 
         ' VerifyStep1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(753, 520)
+        ClientSize = New Size(915, 649)
+        Controls.Add(SubmitIdBtn)
         Controls.Add(VerifiedIcon)
         Controls.Add(Phase1Txt)
         Controls.Add(ProgBar1)
@@ -136,4 +151,5 @@ Partial Class VerifyStep1
     Friend WithEvents ProgBar1 As Panel
     Friend WithEvents Phase1Txt As Label
     Friend WithEvents VerifiedIcon As PictureBox
+    Friend WithEvents SubmitIdBtn As RoundedButton
 End Class
