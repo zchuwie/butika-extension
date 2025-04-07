@@ -31,12 +31,27 @@ Public Class Login
             Dim userID As Integer = Await accountRep.Login(username, password)
 
             If userID = 1 Then
-                Dim dashboard As New AdminLogin()
+                Dim dashboard As New adminPage()
                 dashboard.Show()
                 Me.Hide()
                 Return
             End If
-            If userID <> 0 AndAlso userID <> 1 Then
+
+            If userID = 2 Then
+                Dim dashboard As New InventoryCustodian_MainPanel()
+                dashboard.Show()
+                Me.Hide()
+                Return
+            End If
+
+            If userID = 3 Then
+                Dim dashboard As New pharmaMainPage()
+                dashboard.Show()
+                Me.Hide()
+                Return
+            End If
+
+            If userID <> 0 Then
                 Dim customer As New MainPage(userID)
                 customer.Show()
                 Me.Hide()

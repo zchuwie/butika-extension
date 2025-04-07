@@ -36,7 +36,7 @@ Partial Class Signup
         RoundedPanel1 = New RoundedPanel()
         signUpTxtBtn = New Label()
         Guna2HtmlLabel8 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        loginBtn = New Guna.UI2.WinForms.Guna2Button()
+        signUpBtn = New Guna.UI2.WinForms.Guna2Button()
         Guna2HtmlLabel7 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         ConfirmPasswordTxtBox = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2HtmlLabel6 = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -60,7 +60,7 @@ Partial Class Signup
         RoundedPanel1.BottomRightRadius = 0
         RoundedPanel1.Controls.Add(signUpTxtBtn)
         RoundedPanel1.Controls.Add(Guna2HtmlLabel8)
-        RoundedPanel1.Controls.Add(loginBtn)
+        RoundedPanel1.Controls.Add(signUpBtn)
         RoundedPanel1.Controls.Add(Guna2HtmlLabel7)
         RoundedPanel1.Controls.Add(ConfirmPasswordTxtBox)
         RoundedPanel1.Controls.Add(Guna2HtmlLabel6)
@@ -102,23 +102,23 @@ Partial Class Signup
         Guna2HtmlLabel8.TabIndex = 28
         Guna2HtmlLabel8.Text = "Already have one?"
         ' 
-        ' loginBtn
+        ' signUpBtn
         ' 
-        loginBtn.BorderRadius = 20
-        loginBtn.CustomizableEdges = CustomizableEdges1
-        loginBtn.DisabledState.BorderColor = Color.DarkGray
-        loginBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        loginBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        loginBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        loginBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        loginBtn.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        loginBtn.ForeColor = Color.White
-        loginBtn.Location = New Point(264, 598)
-        loginBtn.Name = "loginBtn"
-        loginBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        loginBtn.Size = New Size(180, 45)
-        loginBtn.TabIndex = 27
-        loginBtn.Text = "Sign Up"
+        signUpBtn.BorderRadius = 20
+        signUpBtn.CustomizableEdges = CustomizableEdges1
+        signUpBtn.DisabledState.BorderColor = Color.DarkGray
+        signUpBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        signUpBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        signUpBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        signUpBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        signUpBtn.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        signUpBtn.ForeColor = Color.White
+        signUpBtn.Location = New Point(264, 598)
+        signUpBtn.Name = "signUpBtn"
+        signUpBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        signUpBtn.Size = New Size(180, 45)
+        signUpBtn.TabIndex = 27
+        signUpBtn.Text = "Sign Up"
         ' 
         ' Guna2HtmlLabel7
         ' 
@@ -339,7 +339,7 @@ Partial Class Signup
     Friend WithEvents usernameTxtBox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel4 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2HtmlLabel7 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents loginBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents signUpBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2HtmlLabel8 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents signUpTxtBtn As Label
