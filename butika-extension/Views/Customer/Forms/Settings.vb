@@ -1,4 +1,5 @@
-﻿Imports Guna.UI2.WinForms
+﻿Imports butika.Models
+Imports Guna.UI2.WinForms
 
 Public Class Settings
 #Region "Functions"
@@ -22,6 +23,13 @@ Public Class Settings
     End Sub
 
 #End Region
+
+    Dim account As New Account()
+
+    Public Sub New(account As Account)
+        InitializeComponent()
+        Me.account = account
+    End Sub
 
     Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles SettingsPanel.Paint
 

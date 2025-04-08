@@ -1,12 +1,14 @@
 ﻿Imports butika.Models
 
-Namespace Model
+Namespace Models
     Public Class Cart
         Public Property Medicine As Medicine
         Public Property CartID As Integer
         Public Property UserID As Integer
         Public Property Quantity As Integer
-        Public Property CartDate As DateTime?
-        Public Property CartStatus As String
+        Public Property isTicked As Boolean
+        Public Property isApproved As Integer
+        Public Property Prescription As Prescription
+
     End Class
 End Namespace

@@ -22,42 +22,43 @@ Partial Class MedicinePageView
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        MedImg = New PictureBox()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        medicineImageBox = New PictureBox()
         Manufacturer = New Label()
         MedName = New Label()
-        Desc = New Label()
-        Label1 = New Label()
+        labelDescription = New Label()
+        Description = New Label()
+        labelDosage = New Label()
         Dosage = New Label()
-        Label2 = New Label()
         Divider = New Panel()
-        DecreaseBtn = New Guna.UI2.WinForms.Guna2Button()
+        closeBtn = New Guna.UI2.WinForms.Guna2Button()
         Price = New Label()
         StockLbl = New Label()
         Stock = New Label()
         IncreaseBtn = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        DecreaseBtn = New Guna.UI2.WinForms.Guna2Button()
         Quantity = New Guna.UI2.WinForms.Guna2TextBox()
         QuantityLbl = New Label()
         BuyNowBtn = New RoundedButton()
         AddToCartBtn = New RoundedButton()
-        CType(MedImg, ComponentModel.ISupportInitialize).BeginInit()
+        CType(medicineImageBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' MedImg
+        ' medicineImageBox
         ' 
-        MedImg.Location = New Point(22, 26)
-        MedImg.Name = "MedImg"
-        MedImg.Size = New Size(221, 211)
-        MedImg.TabIndex = 1
-        MedImg.TabStop = False
+        medicineImageBox.Location = New Point(22, 26)
+        medicineImageBox.Name = "medicineImageBox"
+        medicineImageBox.Size = New Size(221, 211)
+        medicineImageBox.SizeMode = PictureBoxSizeMode.Zoom
+        medicineImageBox.TabIndex = 1
+        medicineImageBox.TabStop = False
         ' 
         ' Manufacturer
         ' 
@@ -83,52 +84,52 @@ Partial Class MedicinePageView
         MedName.Text = "Medicine Name"
         MedName.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Desc
+        ' labelDescription
         ' 
-        Desc.AutoSize = True
-        Desc.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        Desc.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Desc.Location = New Point(255, 82)
-        Desc.Name = "Desc"
-        Desc.Size = New Size(80, 16)
-        Desc.TabIndex = 5
-        Desc.Text = "Description"
-        Desc.TextAlign = ContentAlignment.MiddleLeft
+        labelDescription.AutoSize = True
+        labelDescription.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        labelDescription.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        labelDescription.Location = New Point(255, 82)
+        labelDescription.Name = "labelDescription"
+        labelDescription.Size = New Size(80, 16)
+        labelDescription.TabIndex = 5
+        labelDescription.Text = "Description"
+        labelDescription.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Label1
+        ' Description
         ' 
-        Label1.Font = New Font("Century Gothic", 9.75F)
-        Label1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label1.Location = New Point(256, 102)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(236, 78)
-        Label1.TabIndex = 6
-        Label1.Text = "This medicine is the best because it is the best. This is the best because it has alll the things you need for a medicine."
+        Description.Font = New Font("Century Gothic", 9.75F)
+        Description.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Description.Location = New Point(256, 102)
+        Description.Name = "Description"
+        Description.Size = New Size(236, 78)
+        Description.TabIndex = 6
+        Description.Text = "This medicine is the best because it is the best. This is the best because it has alll the things you need for a medicine."
+        ' 
+        ' labelDosage
+        ' 
+        labelDosage.AutoSize = True
+        labelDosage.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        labelDosage.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        labelDosage.ImageAlign = ContentAlignment.BottomLeft
+        labelDosage.LiveSetting = Automation.AutomationLiveSetting.Polite
+        labelDosage.Location = New Point(255, 191)
+        labelDosage.Name = "labelDosage"
+        labelDosage.Size = New Size(60, 16)
+        labelDosage.TabIndex = 7
+        labelDosage.Text = "Dosage:"
+        labelDosage.TextAlign = ContentAlignment.MiddleLeft
+        labelDosage.UseMnemonic = False
         ' 
         ' Dosage
         ' 
-        Dosage.AutoSize = True
-        Dosage.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        Dosage.Font = New Font("Century Gothic", 9.75F)
         Dosage.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Dosage.ImageAlign = ContentAlignment.BottomLeft
-        Dosage.LiveSetting = Automation.AutomationLiveSetting.Polite
-        Dosage.Location = New Point(255, 191)
+        Dosage.Location = New Point(312, 191)
         Dosage.Name = "Dosage"
-        Dosage.Size = New Size(60, 16)
-        Dosage.TabIndex = 7
-        Dosage.Text = "Dosage:"
-        Dosage.TextAlign = ContentAlignment.MiddleLeft
-        Dosage.UseMnemonic = False
-        ' 
-        ' Label2
-        ' 
-        Label2.Font = New Font("Century Gothic", 9.75F)
-        Label2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label2.Location = New Point(312, 191)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(210, 52)
-        Label2.TabIndex = 8
-        Label2.Text = "Uminom ka ng 1 pc. everyday."
+        Dosage.Size = New Size(210, 52)
+        Dosage.TabIndex = 8
+        Dosage.Text = "Uminom ka ng 1 pc. everyday."
         ' 
         ' Divider
         ' 
@@ -138,25 +139,25 @@ Partial Class MedicinePageView
         Divider.Size = New Size(2, 228)
         Divider.TabIndex = 9
         ' 
-        ' DecreaseBtn
+        ' closeBtn
         ' 
-        DecreaseBtn.AutoRoundedCorners = True
-        DecreaseBtn.Cursor = Cursors.Hand
-        DecreaseBtn.CustomizableEdges = CustomizableEdges17
-        DecreaseBtn.DisabledState.BorderColor = Color.DarkGray
-        DecreaseBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        DecreaseBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        DecreaseBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        DecreaseBtn.FillColor = Color.Transparent
-        DecreaseBtn.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold)
-        DecreaseBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DecreaseBtn.ImageSize = New Size(30, 30)
-        DecreaseBtn.Location = New Point(698, 5)
-        DecreaseBtn.Name = "DecreaseBtn"
-        DecreaseBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges18
-        DecreaseBtn.Size = New Size(31, 30)
-        DecreaseBtn.TabIndex = 11
-        DecreaseBtn.Text = "X"
+        closeBtn.AutoRoundedCorners = True
+        closeBtn.Cursor = Cursors.Hand
+        closeBtn.CustomizableEdges = CustomizableEdges1
+        closeBtn.DisabledState.BorderColor = Color.DarkGray
+        closeBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        closeBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        closeBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        closeBtn.FillColor = Color.Transparent
+        closeBtn.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold)
+        closeBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        closeBtn.ImageSize = New Size(30, 30)
+        closeBtn.Location = New Point(698, 5)
+        closeBtn.Name = "closeBtn"
+        closeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        closeBtn.Size = New Size(31, 30)
+        closeBtn.TabIndex = 11
+        closeBtn.Text = "X"
         ' 
         ' Price
         ' 
@@ -198,7 +199,7 @@ Partial Class MedicinePageView
         ' 
         IncreaseBtn.AutoRoundedCorners = True
         IncreaseBtn.Cursor = Cursors.Hand
-        IncreaseBtn.CustomizableEdges = CustomizableEdges19
+        IncreaseBtn.CustomizableEdges = CustomizableEdges3
         IncreaseBtn.DisabledState.BorderColor = Color.DarkGray
         IncreaseBtn.DisabledState.CustomBorderColor = Color.DarkGray
         IncreaseBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -211,36 +212,36 @@ Partial Class MedicinePageView
         IncreaseBtn.ImageSize = New Size(18, 18)
         IncreaseBtn.Location = New Point(683, 115)
         IncreaseBtn.Name = "IncreaseBtn"
-        IncreaseBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        IncreaseBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         IncreaseBtn.Size = New Size(30, 30)
         IncreaseBtn.TabIndex = 17
         ' 
-        ' Guna2Button1
+        ' DecreaseBtn
         ' 
-        Guna2Button1.AutoRoundedCorners = True
-        Guna2Button1.Cursor = Cursors.Hand
-        Guna2Button1.CustomizableEdges = CustomizableEdges21
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.Transparent
-        Guna2Button1.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold)
-        Guna2Button1.ForeColor = Color.White
-        Guna2Button1.HoverState.Image = My.Resources.Resources.minusPressed
-        Guna2Button1.Image = My.Resources.Resources.minus
-        Guna2Button1.ImageSize = New Size(18, 18)
-        Guna2Button1.Location = New Point(615, 115)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges22
-        Guna2Button1.Size = New Size(30, 30)
-        Guna2Button1.TabIndex = 16
+        DecreaseBtn.AutoRoundedCorners = True
+        DecreaseBtn.Cursor = Cursors.Hand
+        DecreaseBtn.CustomizableEdges = CustomizableEdges5
+        DecreaseBtn.DisabledState.BorderColor = Color.DarkGray
+        DecreaseBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        DecreaseBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        DecreaseBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        DecreaseBtn.FillColor = Color.Transparent
+        DecreaseBtn.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold)
+        DecreaseBtn.ForeColor = Color.White
+        DecreaseBtn.HoverState.Image = My.Resources.Resources.minusPressed
+        DecreaseBtn.Image = My.Resources.Resources.minus
+        DecreaseBtn.ImageSize = New Size(18, 18)
+        DecreaseBtn.Location = New Point(615, 115)
+        DecreaseBtn.Name = "DecreaseBtn"
+        DecreaseBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        DecreaseBtn.Size = New Size(30, 30)
+        DecreaseBtn.TabIndex = 16
         ' 
         ' Quantity
         ' 
         Quantity.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Quantity.Cursor = Cursors.Hand
-        Quantity.CustomizableEdges = CustomizableEdges23
+        Quantity.CustomizableEdges = CustomizableEdges7
         Quantity.DefaultText = ""
         Quantity.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         Quantity.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -254,9 +255,10 @@ Partial Class MedicinePageView
         Quantity.Name = "Quantity"
         Quantity.PlaceholderText = ""
         Quantity.SelectedText = ""
-        Quantity.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        Quantity.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Quantity.Size = New Size(39, 30)
         Quantity.TabIndex = 15
+        Quantity.TextAlign = HorizontalAlignment.Center
         ' 
         ' QuantityLbl
         ' 
@@ -306,41 +308,41 @@ Partial Class MedicinePageView
         Controls.Add(QuantityLbl)
         Controls.Add(Quantity)
         Controls.Add(IncreaseBtn)
-        Controls.Add(Guna2Button1)
+        Controls.Add(DecreaseBtn)
         Controls.Add(Stock)
         Controls.Add(StockLbl)
         Controls.Add(Price)
-        Controls.Add(DecreaseBtn)
+        Controls.Add(closeBtn)
         Controls.Add(Divider)
-        Controls.Add(Dosage)
-        Controls.Add(Label1)
-        Controls.Add(Desc)
+        Controls.Add(labelDosage)
+        Controls.Add(Description)
+        Controls.Add(labelDescription)
         Controls.Add(Manufacturer)
         Controls.Add(MedName)
-        Controls.Add(MedImg)
-        Controls.Add(Label2)
+        Controls.Add(medicineImageBox)
+        Controls.Add(Dosage)
         FormBorderStyle = FormBorderStyle.None
         Name = "MedicinePageView"
         Text = "MedicinePageView"
-        CType(MedImg, ComponentModel.ISupportInitialize).EndInit()
+        CType(medicineImageBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents MedImg As PictureBox
+    Friend WithEvents medicineImageBox As PictureBox
     Friend WithEvents Manufacturer As Label
     Friend WithEvents MedName As Label
-    Friend WithEvents Desc As Label
-    Friend WithEvents Label1 As Label
+    Friend WithEvents labelDescription As Label
+    Friend WithEvents Description As Label
+    Friend WithEvents labelDosage As Label
     Friend WithEvents Dosage As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Divider As Panel
-    Friend WithEvents DecreaseBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents closeBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Price As Label
     Friend WithEvents StockLbl As Label
     Friend WithEvents Stock As Label
     Friend WithEvents IncreaseBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents DecreaseBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Quantity As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents QuantityLbl As Label
     Friend WithEvents BuyNowBtn As RoundedButton

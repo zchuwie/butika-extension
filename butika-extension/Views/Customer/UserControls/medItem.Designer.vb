@@ -22,26 +22,28 @@ Partial Class medItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        MedImg = New PictureBox()
+        medImg = New PictureBox()
         MedName = New Label()
         Manufacturer = New Label()
-        CType(MedImg, ComponentModel.ISupportInitialize).BeginInit()
+        itemIdentifier = New Panel()
+        CType(medImg, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' MedImg
+        ' medImg
         ' 
-        MedImg.Location = New Point(13, 13)
-        MedImg.Name = "MedImg"
-        MedImg.Size = New Size(117, 74)
-        MedImg.TabIndex = 0
-        MedImg.TabStop = False
+        medImg.Location = New Point(13, 13)
+        medImg.Name = "medImg"
+        medImg.Size = New Size(117, 98)
+        medImg.SizeMode = PictureBoxSizeMode.Zoom
+        medImg.TabIndex = 0
+        medImg.TabStop = False
         ' 
         ' MedName
         ' 
         MedName.AutoSize = True
         MedName.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         MedName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedName.Location = New Point(33, 97)
+        MedName.Location = New Point(33, 114)
         MedName.Name = "MedName"
         MedName.Size = New Size(79, 16)
         MedName.TabIndex = 1
@@ -53,30 +55,39 @@ Partial Class medItem
         Manufacturer.AutoSize = True
         Manufacturer.Font = New Font("Century Gothic", 9.75F)
         Manufacturer.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Manufacturer.Location = New Point(26, 117)
+        Manufacturer.Location = New Point(25, 130)
         Manufacturer.Name = "Manufacturer"
         Manufacturer.Size = New Size(94, 17)
         Manufacturer.TabIndex = 2
         Manufacturer.Text = "Manufacturer"
         Manufacturer.TextAlign = ContentAlignment.MiddleCenter
         ' 
+        ' itemIdentifier
+        ' 
+        itemIdentifier.Location = New Point(125, 139)
+        itemIdentifier.Name = "itemIdentifier"
+        itemIdentifier.Size = New Size(8, 8)
+        itemIdentifier.TabIndex = 3
+        ' 
         ' medItem
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(itemIdentifier)
         Controls.Add(Manufacturer)
         Controls.Add(MedName)
-        Controls.Add(MedImg)
+        Controls.Add(medImg)
         CornerRadius = 8
         Name = "medItem"
         Size = New Size(143, 158)
-        CType(MedImg, ComponentModel.ISupportInitialize).EndInit()
+        CType(medImg, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents MedImg As PictureBox
+    Friend WithEvents medImg As PictureBox
     Friend WithEvents MedName As Label
     Friend WithEvents Manufacturer As Label
+    Public WithEvents itemIdentifier As Panel
 
 End Class

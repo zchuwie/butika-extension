@@ -112,7 +112,7 @@ Public Class AccountRepository
         Try
             Using conn = DatabaseConnection.GetConnection()
                 Await conn.OpenAsync()
-                Dim query As String = "SELECT * FROM userAccount WHERE user_id = @user_id"
+                Dim query As String = "SELECT *, user_id As UserID FROM userAccount WHERE user_id = @user_id"
                 Dim result = Await conn.QueryFirstOrDefaultAsync(Of Account)(query, New With {.user_id = userID})
 
                 ' If result is not nothing, populate the Account object

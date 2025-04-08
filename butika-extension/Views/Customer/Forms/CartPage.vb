@@ -1,4 +1,6 @@
-﻿Public Class CartPage
+﻿Imports butika.Models
+
+Public Class CartPage
 
 #Region "Functions"
     Private Sub underlineFilter(ByVal all As Boolean, ByVal pending As Boolean, ByVal ready As Boolean, ByVal declined As Boolean)
@@ -9,6 +11,14 @@
     End Sub
 
 #End Region
+
+    Dim account As New Account()
+
+    Public Sub New(account As Account)
+        Me.account = account
+        InitializeComponent()
+
+    End Sub
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
 
     End Sub
