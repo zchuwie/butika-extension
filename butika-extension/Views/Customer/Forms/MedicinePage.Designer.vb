@@ -45,12 +45,10 @@ Partial Class MedicinePage
         Information = New PictureBox()
         ComboBox1 = New ComboBox()
         ComboBox2 = New ComboBox()
-        MedPanel = New FlowLayoutPanel()
-        MedItem1 = New medItem()
+        MedicineDisplayPanel = New FlowLayoutPanel()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(SearchIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(Information, ComponentModel.ISupportInitialize).BeginInit()
-        MedPanel.SuspendLayout()
         SuspendLayout()
         ' 
         ' ManuComBox
@@ -240,24 +238,14 @@ Partial Class MedicinePage
         ComboBox2.TabIndex = 17
         ComboBox2.Text = "Type"
         ' 
-        ' MedPanel
+        ' MedicineDisplayPanel
         ' 
-        MedPanel.Controls.Add(MedItem1)
-        MedPanel.Location = New Point(49, 132)
-        MedPanel.Name = "MedPanel"
-        MedPanel.Padding = New Padding(10)
-        MedPanel.Size = New Size(1121, 549)
-        MedPanel.TabIndex = 0
-        MedPanel.UseWaitCursor = True
-        ' 
-        ' MedItem1
-        ' 
-        MedItem1.BackColor = Color.WhiteSmoke
-        MedItem1.CornerRadius = 8
-        MedItem1.Location = New Point(13, 13)
-        MedItem1.Name = "MedItem1"
-        MedItem1.Size = New Size(143, 158)
-        MedItem1.TabIndex = 0
+        MedicineDisplayPanel.AutoScroll = True
+        MedicineDisplayPanel.Location = New Point(49, 132)
+        MedicineDisplayPanel.Name = "MedicineDisplayPanel"
+        MedicineDisplayPanel.Padding = New Padding(10)
+        MedicineDisplayPanel.Size = New Size(1121, 549)
+        MedicineDisplayPanel.TabIndex = 0
         ' 
         ' MedicinePage
         ' 
@@ -265,7 +253,7 @@ Partial Class MedicinePage
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1220, 720)
-        Controls.Add(MedPanel)
+        Controls.Add(MedicineDisplayPanel)
         Controls.Add(ComboBox2)
         Controls.Add(ComboBox1)
         Controls.Add(ManuComBox)
@@ -289,7 +277,6 @@ Partial Class MedicinePage
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(SearchIcon, ComponentModel.ISupportInitialize).EndInit()
         CType(Information, ComponentModel.ISupportInitialize).EndInit()
-        MedPanel.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -309,6 +296,6 @@ Partial Class MedicinePage
     Friend WithEvents ManuComBox As ComboBox
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents MedPanel As FlowLayoutPanel
+    Friend WithEvents MedicineDisplayPanel As FlowLayoutPanel
     Friend WithEvents MedItem1 As medItem
 End Class

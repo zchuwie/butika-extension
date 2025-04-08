@@ -1,9 +1,11 @@
-﻿Public Class HomePage
-    Private mainCustomerPage As MainPage
+﻿Imports butika.Models
 
-    Public Sub New(mainForm As MainPage)
+Public Class HomePage
+    Dim account As New Account()
+
+    Public Sub New(account As Account)
         InitializeComponent()
-        Me.mainCustomerPage = mainForm
+        Me.account = account
     End Sub
 
 
