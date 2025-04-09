@@ -39,7 +39,7 @@ Partial Class cartItem
         ' 
         medicineImageBox.BackColor = Color.White
         medicineImageBox.Image = My.Resources.Resources.pressedPills
-        medicineImageBox.Location = New Point(83, 17)
+        medicineImageBox.Location = New Point(69, 19)
         medicineImageBox.Name = "medicineImageBox"
         medicineImageBox.Size = New Size(100, 100)
         medicineImageBox.SizeMode = PictureBoxSizeMode.Zoom
@@ -53,10 +53,11 @@ Partial Class cartItem
         CustomizableEdges1.BottomRight = False
         CustomizableEdges1.TopRight = False
         indicatorPanel.CustomizableEdges = CustomizableEdges1
+        indicatorPanel.Dock = DockStyle.Left
         indicatorPanel.Location = New Point(0, 0)
         indicatorPanel.Name = "indicatorPanel"
         indicatorPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        indicatorPanel.Size = New Size(54, 135)
+        indicatorPanel.Size = New Size(54, 134)
         indicatorPanel.TabIndex = 1
         ' 
         ' Price
@@ -64,7 +65,7 @@ Partial Class cartItem
         Price.AutoSize = True
         Price.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
         Price.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Price.Location = New Point(353, 60)
+        Price.Location = New Point(359, 60)
         Price.Name = "Price"
         Price.Size = New Size(66, 18)
         Price.TabIndex = 2
@@ -75,7 +76,7 @@ Partial Class cartItem
         Total.AutoSize = True
         Total.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
         Total.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Total.Location = New Point(588, 60)
+        Total.Location = New Point(614, 60)
         Total.Name = "Total"
         Total.Size = New Size(46, 18)
         Total.TabIndex = 3
@@ -91,7 +92,8 @@ Partial Class cartItem
         SelectItem.CheckedState.FillColor = Color.White
         SelectItem.CheckMarkColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SelectItem.Cursor = Cursors.Hand
-        SelectItem.Location = New Point(721, 56)
+        SelectItem.Location = New Point(711, 60)
+        SelectItem.Margin = New Padding(5, 15, 5, 15)
         SelectItem.Name = "SelectItem"
         SelectItem.Size = New Size(15, 14)
         SelectItem.TabIndex = 6
@@ -103,12 +105,11 @@ Partial Class cartItem
         ' 
         ' MedicineName
         ' 
-        MedicineName.AutoSize = True
         MedicineName.Font = New Font("Century Gothic", 11.75F, FontStyle.Bold)
         MedicineName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedicineName.Location = New Point(192, 51)
+        MedicineName.Location = New Point(175, 34)
         MedicineName.Name = "MedicineName"
-        MedicineName.Size = New Size(139, 19)
+        MedicineName.Size = New Size(152, 52)
         MedicineName.TabIndex = 7
         MedicineName.Text = " Medicine Name"
         MedicineName.TextAlign = ContentAlignment.MiddleLeft
@@ -118,7 +119,7 @@ Partial Class cartItem
         Manufacturer.AutoSize = True
         Manufacturer.Font = New Font("Century Gothic", 8.75F)
         Manufacturer.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Manufacturer.Location = New Point(198, 72)
+        Manufacturer.Location = New Point(175, 86)
         Manufacturer.Name = "Manufacturer"
         Manufacturer.Size = New Size(89, 17)
         Manufacturer.TabIndex = 8
@@ -130,7 +131,7 @@ Partial Class cartItem
         Quantity.AutoSize = True
         Quantity.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
         Quantity.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Quantity.Location = New Point(468, 60)
+        Quantity.Location = New Point(509, 60)
         Quantity.Name = "Quantity"
         Quantity.Size = New Size(70, 18)
         Quantity.TabIndex = 9
@@ -150,7 +151,7 @@ Partial Class cartItem
         Controls.Add(indicatorPanel)
         Controls.Add(medicineImageBox)
         Name = "cartItem"
-        Size = New Size(764, 134)
+        Size = New Size(755, 134)
         CType(medicineImageBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

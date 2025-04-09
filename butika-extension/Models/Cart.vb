@@ -8,7 +8,7 @@ Namespace Models
         Public Property Quantity As Integer
         Public Property isTicked As Boolean
         Public Property isApproved As Integer
-        Public Property Prescription As Prescription
+        Public Property PrescriptionID As Integer
 
     End Class
 End Namespace
