@@ -1,4 +1,6 @@
-﻿Public Class UIHelper
+﻿Imports Guna.UI2.WinForms
+
+Public Class UIHelper
     ' This centers a single control inside a panel
     Public Shared Sub CenterControlInPanel(pnl As Panel, ctrl As Control)
         If pnl IsNot Nothing AndAlso ctrl IsNot Nothing Then
@@ -16,5 +18,12 @@
                 CenterControlInPanel(CType(ctrl.Parent, Panel), ctrl)
             End If
         Next
+    End Sub
+
+    ' change button color and assets
+    Public Shared Sub BtnColorChange(btn As Guna2Button, forecolor As Color, fillcolor As Color, image As Image)
+        btn.FillColor = fillcolor
+        btn.ForeColor = forecolor
+        btn.Image = image
     End Sub
 End Class
