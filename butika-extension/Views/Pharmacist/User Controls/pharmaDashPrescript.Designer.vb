@@ -56,7 +56,7 @@ Partial Class pharmaDashPrescript
         Controls.Add(Label2)
         Controls.Add(Label1)
         Name = "pharmaDashPrescript"
-        Size = New Size(246, 35)
+        Size = New Size(240, 35)
         ResumeLayout(False)
         PerformLayout()
     End Sub

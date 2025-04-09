@@ -22,8 +22,8 @@ Partial Class pharmaMedItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         dosageLbl = New Label()
         manufacturerLbl = New Label()
@@ -41,12 +41,12 @@ Partial Class pharmaMedItem
         Guna2Panel1.Controls.Add(manufacturerLbl)
         Guna2Panel1.Controls.Add(mednameLbl)
         Guna2Panel1.Controls.Add(medIdLbl)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges3
+        Guna2Panel1.CustomizableEdges = CustomizableEdges1
         Guna2Panel1.Dock = DockStyle.Fill
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2Panel1.Size = New Size(972, 37)
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Panel1.Size = New Size(970, 37)
         Guna2Panel1.TabIndex = 0
         ' 
         ' dosageLbl
@@ -65,7 +65,7 @@ Partial Class pharmaMedItem
         manufacturerLbl.AutoSize = True
         manufacturerLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         manufacturerLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        manufacturerLbl.Location = New Point(618, 10)
+        manufacturerLbl.Location = New Point(565, 10)
         manufacturerLbl.Name = "manufacturerLbl"
         manufacturerLbl.Size = New Size(95, 16)
         manufacturerLbl.TabIndex = 2
@@ -76,7 +76,7 @@ Partial Class pharmaMedItem
         mednameLbl.AutoSize = True
         mednameLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         mednameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        mednameLbl.Location = New Point(296, 10)
+        mednameLbl.Location = New Point(249, 10)
         mednameLbl.Name = "mednameLbl"
         mednameLbl.Size = New Size(111, 16)
         mednameLbl.TabIndex = 1
@@ -99,8 +99,9 @@ Partial Class pharmaMedItem
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
+        Cursor = Cursors.Hand
         Name = "pharmaMedItem"
-        Size = New Size(972, 37)
+        Size = New Size(970, 37)
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
         ResumeLayout(False)

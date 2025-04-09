@@ -20,14 +20,20 @@
     End Sub
 
     Private Sub goTransacPage_Click(sender As Object, e As EventArgs) Handles goTransacPage.Click
+        UIHelper.BtnColorChange(mainPage.dashboardBtn, Color.FromArgb(220, 229, 219), Color.FromArgb(22, 66, 60), My.Resources.ldashboard_icon)
+        UIHelper.BtnColorChange(mainPage.transactionBtn, Color.FromArgb(22, 66, 60), Color.FromArgb(220, 229, 219), My.Resources.dtransactions_icon)
         OpenFormInPanel(New pharmaTransactions())
     End Sub
 
     Private Sub goMedPage_Click(sender As Object, e As EventArgs) Handles goMedPage.Click
+        UIHelper.BtnColorChange(mainPage.dashboardBtn, Color.FromArgb(220, 229, 219), Color.FromArgb(22, 66, 60), My.Resources.ldashboard_icon)
+        UIHelper.BtnColorChange(mainPage.medicineBtn, Color.FromArgb(22, 66, 60), Color.FromArgb(220, 229, 219), My.Resources.dmedicine_icon)
         OpenFormInPanel(New pharmaMedicines())
     End Sub
 
     Private Sub goPrescriptPage_Click(sender As Object, e As EventArgs) Handles goPrescriptPage.Click
+        UIHelper.BtnColorChange(mainPage.dashboardBtn, Color.FromArgb(220, 229, 219), Color.FromArgb(22, 66, 60), My.Resources.ldashboard_icon)
+        UIHelper.BtnColorChange(mainPage.prescriptionBtn, Color.FromArgb(22, 66, 60), Color.FromArgb(220, 229, 219), My.Resources.dprescription_icon)
         OpenFormInPanel(New pharmaPrescriptions())
     End Sub
 End Class
