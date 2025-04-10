@@ -25,26 +25,26 @@ Partial Class ViewMedicineBar
         Dim CustomizableEdges95 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges96 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewMedicineBar))
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ViewMedicineBar))
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -120,6 +120,8 @@ Partial Class ViewMedicineBar
         Dim CustomizableEdges93 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges94 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        medstatus_indicator = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        addimage_btn = New Guna.UI2.WinForms.Guna2PictureBox()
         cancel_update_btn = New Guna.UI2.WinForms.Guna2Button()
         medicine_updated_date_lbl = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Guna2CustomGradientPanel13 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -132,10 +134,8 @@ Partial Class ViewMedicineBar
         Guna2PictureBox11 = New Guna.UI2.WinForms.Guna2PictureBox()
         Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         stock_txtbox = New Guna.UI2.WinForms.Guna2TextBox()
-        clearimage_btn = New Guna.UI2.WinForms.Guna2Button()
         exit_btn = New Guna.UI2.WinForms.Guna2Button()
         Guna2PictureBox10 = New Guna.UI2.WinForms.Guna2PictureBox()
-        addimage_btn = New Guna.UI2.WinForms.Guna2Button()
         Guna2HtmlLabel15 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Guna2CustomGradientPanel15 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Guna2CustomGradientPanel16 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -187,6 +187,7 @@ Partial Class ViewMedicineBar
         medicine_name_txtbox = New Guna.UI2.WinForms.Guna2TextBox()
         save_update_btn = New Guna.UI2.WinForms.Guna2Button()
         Guna2CustomGradientPanel1.SuspendLayout()
+        CType(addimage_btn, ComponentModel.ISupportInitialize).BeginInit()
         Guna2CustomGradientPanel13.SuspendLayout()
         prescription_combobox.SuspendLayout()
         CType(Guna2PictureBox8, ComponentModel.ISupportInitialize).BeginInit()
@@ -224,16 +225,16 @@ Partial Class ViewMedicineBar
         Guna2CustomGradientPanel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2CustomGradientPanel1.BorderRadius = 10
         Guna2CustomGradientPanel1.BorderThickness = 1
+        Guna2CustomGradientPanel1.Controls.Add(medstatus_indicator)
+        Guna2CustomGradientPanel1.Controls.Add(addimage_btn)
         Guna2CustomGradientPanel1.Controls.Add(cancel_update_btn)
         Guna2CustomGradientPanel1.Controls.Add(medicine_updated_date_lbl)
         Guna2CustomGradientPanel1.Controls.Add(Guna2CustomGradientPanel13)
         Guna2CustomGradientPanel1.Controls.Add(prescription_cbox)
         Guna2CustomGradientPanel1.Controls.Add(Guna2CustomGradientPanel17)
         Guna2CustomGradientPanel1.Controls.Add(stock_txtbox)
-        Guna2CustomGradientPanel1.Controls.Add(clearimage_btn)
         Guna2CustomGradientPanel1.Controls.Add(exit_btn)
         Guna2CustomGradientPanel1.Controls.Add(Guna2PictureBox10)
-        Guna2CustomGradientPanel1.Controls.Add(addimage_btn)
         Guna2CustomGradientPanel1.Controls.Add(Guna2HtmlLabel15)
         Guna2CustomGradientPanel1.Controls.Add(Guna2CustomGradientPanel15)
         Guna2CustomGradientPanel1.Controls.Add(expdate_datetime)
@@ -268,13 +269,41 @@ Partial Class ViewMedicineBar
         Guna2CustomGradientPanel1.Size = New Size(734, 645)
         Guna2CustomGradientPanel1.TabIndex = 0
         ' 
+        ' medstatus_indicator
+        ' 
+        medstatus_indicator.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        medstatus_indicator.BorderRadius = 8
+        medstatus_indicator.BorderThickness = 1
+        medstatus_indicator.CustomizableEdges = CustomizableEdges1
+        medstatus_indicator.Location = New Point(24, 18)
+        medstatus_indicator.Name = "medstatus_indicator"
+        medstatus_indicator.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        medstatus_indicator.Size = New Size(85, 48)
+        medstatus_indicator.TabIndex = 144
+        ' 
+        ' addimage_btn
+        ' 
+        addimage_btn.BackgroundImageLayout = ImageLayout.None
+        addimage_btn.BorderRadius = 8
+        addimage_btn.BorderStyle = BorderStyle.FixedSingle
+        addimage_btn.CustomizableEdges = CustomizableEdges3
+        addimage_btn.ImageRotate = 0F
+        addimage_btn.InitialImage = CType(resources.GetObject("addimage_btn.InitialImage"), Image)
+        addimage_btn.Location = New Point(551, 404)
+        addimage_btn.Name = "addimage_btn"
+        addimage_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        addimage_btn.Size = New Size(130, 130)
+        addimage_btn.SizeMode = PictureBoxSizeMode.Zoom
+        addimage_btn.TabIndex = 143
+        addimage_btn.TabStop = False
+        ' 
         ' cancel_update_btn
         ' 
         cancel_update_btn.Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
         cancel_update_btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         cancel_update_btn.BorderRadius = 8
         cancel_update_btn.BorderThickness = 1
-        cancel_update_btn.CustomizableEdges = CustomizableEdges1
+        cancel_update_btn.CustomizableEdges = CustomizableEdges5
         cancel_update_btn.DisabledState.BorderColor = Color.DarkGray
         cancel_update_btn.DisabledState.CustomBorderColor = Color.DarkGray
         cancel_update_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -288,7 +317,7 @@ Partial Class ViewMedicineBar
         cancel_update_btn.Location = New Point(323, 580)
         cancel_update_btn.Name = "cancel_update_btn"
         cancel_update_btn.Padding = New Padding(10, 0, 0, 0)
-        cancel_update_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        cancel_update_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         cancel_update_btn.Size = New Size(189, 47)
         cancel_update_btn.TabIndex = 142
         cancel_update_btn.Text = "Cancel Update"
@@ -300,7 +329,7 @@ Partial Class ViewMedicineBar
         medicine_updated_date_lbl.BackColor = Color.Transparent
         medicine_updated_date_lbl.Font = New Font("Segoe UI", 9F)
         medicine_updated_date_lbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicine_updated_date_lbl.Location = New Point(239, 46)
+        medicine_updated_date_lbl.Location = New Point(355, 47)
         medicine_updated_date_lbl.Name = "medicine_updated_date_lbl"
         medicine_updated_date_lbl.Size = New Size(189, 19)
         medicine_updated_date_lbl.TabIndex = 140
@@ -310,14 +339,14 @@ Partial Class ViewMedicineBar
         ' 
         Guna2CustomGradientPanel13.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel13.Controls.Add(prescription_combobox)
-        Guna2CustomGradientPanel13.CustomizableEdges = CustomizableEdges7
+        Guna2CustomGradientPanel13.CustomizableEdges = CustomizableEdges11
         Guna2CustomGradientPanel13.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel13.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel13.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel13.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel13.Location = New Point(262, 446)
         Guna2CustomGradientPanel13.Name = "Guna2CustomGradientPanel13"
-        Guna2CustomGradientPanel13.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        Guna2CustomGradientPanel13.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         Guna2CustomGradientPanel13.Size = New Size(161, 36)
         Guna2CustomGradientPanel13.TabIndex = 138
         ' 
@@ -328,27 +357,27 @@ Partial Class ViewMedicineBar
         prescription_combobox.BorderThickness = 1
         prescription_combobox.Controls.Add(Guna2PictureBox8)
         prescription_combobox.Controls.Add(Guna2HtmlLabel13)
-        prescription_combobox.CustomizableEdges = CustomizableEdges5
+        prescription_combobox.CustomizableEdges = CustomizableEdges9
         prescription_combobox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         prescription_combobox.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         prescription_combobox.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         prescription_combobox.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         prescription_combobox.Location = New Point(0, 0)
         prescription_combobox.Name = "prescription_combobox"
-        prescription_combobox.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        prescription_combobox.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         prescription_combobox.Size = New Size(231, 36)
         prescription_combobox.TabIndex = 0
         ' 
         ' Guna2PictureBox8
         ' 
         Guna2PictureBox8.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        Guna2PictureBox8.CustomizableEdges = CustomizableEdges3
+        Guna2PictureBox8.CustomizableEdges = CustomizableEdges7
         Guna2PictureBox8.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox8.Image = CType(resources.GetObject("Guna2PictureBox8.Image"), Image)
         Guna2PictureBox8.ImageRotate = 0F
         Guna2PictureBox8.Location = New Point(12, 9)
         Guna2PictureBox8.Name = "Guna2PictureBox8"
-        Guna2PictureBox8.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2PictureBox8.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2PictureBox8.Size = New Size(20, 18)
         Guna2PictureBox8.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox8.TabIndex = 17
@@ -372,18 +401,19 @@ Partial Class ViewMedicineBar
         prescription_cbox.BackColor = Color.Transparent
         prescription_cbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         prescription_cbox.BorderRadius = 7
-        prescription_cbox.CustomizableEdges = CustomizableEdges9
+        prescription_cbox.CustomizableEdges = CustomizableEdges13
         prescription_cbox.DrawMode = DrawMode.OwnerDrawFixed
         prescription_cbox.DropDownStyle = ComboBoxStyle.DropDownList
         prescription_cbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        prescription_cbox.FocusedColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        prescription_cbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        prescription_cbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        prescription_cbox.FocusedColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        prescription_cbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        prescription_cbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         prescription_cbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        prescription_cbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         prescription_cbox.ItemHeight = 30
         prescription_cbox.Location = New Point(417, 446)
         prescription_cbox.Name = "prescription_cbox"
-        prescription_cbox.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        prescription_cbox.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         prescription_cbox.Size = New Size(87, 36)
         prescription_cbox.TabIndex = 139
         ' 
@@ -391,14 +421,14 @@ Partial Class ViewMedicineBar
         ' 
         Guna2CustomGradientPanel17.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel17.Controls.Add(Guna2CustomGradientPanel18)
-        Guna2CustomGradientPanel17.CustomizableEdges = CustomizableEdges15
+        Guna2CustomGradientPanel17.CustomizableEdges = CustomizableEdges19
         Guna2CustomGradientPanel17.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel17.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel17.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel17.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel17.Location = New Point(24, 447)
         Guna2CustomGradientPanel17.Name = "Guna2CustomGradientPanel17"
-        Guna2CustomGradientPanel17.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        Guna2CustomGradientPanel17.ShadowDecoration.CustomizableEdges = CustomizableEdges20
         Guna2CustomGradientPanel17.Size = New Size(85, 36)
         Guna2CustomGradientPanel17.TabIndex = 136
         ' 
@@ -409,27 +439,27 @@ Partial Class ViewMedicineBar
         Guna2CustomGradientPanel18.BorderThickness = 1
         Guna2CustomGradientPanel18.Controls.Add(Guna2PictureBox11)
         Guna2CustomGradientPanel18.Controls.Add(Guna2HtmlLabel16)
-        Guna2CustomGradientPanel18.CustomizableEdges = CustomizableEdges13
+        Guna2CustomGradientPanel18.CustomizableEdges = CustomizableEdges17
         Guna2CustomGradientPanel18.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel18.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel18.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel18.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel18.Location = New Point(0, 0)
         Guna2CustomGradientPanel18.Name = "Guna2CustomGradientPanel18"
-        Guna2CustomGradientPanel18.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        Guna2CustomGradientPanel18.ShadowDecoration.CustomizableEdges = CustomizableEdges18
         Guna2CustomGradientPanel18.Size = New Size(402, 36)
         Guna2CustomGradientPanel18.TabIndex = 0
         ' 
         ' Guna2PictureBox11
         ' 
         Guna2PictureBox11.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        Guna2PictureBox11.CustomizableEdges = CustomizableEdges11
+        Guna2PictureBox11.CustomizableEdges = CustomizableEdges15
         Guna2PictureBox11.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox11.Image = CType(resources.GetObject("Guna2PictureBox11.Image"), Image)
         Guna2PictureBox11.ImageRotate = 0F
         Guna2PictureBox11.Location = New Point(12, 9)
         Guna2PictureBox11.Name = "Guna2PictureBox11"
-        Guna2PictureBox11.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        Guna2PictureBox11.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         Guna2PictureBox11.Size = New Size(20, 18)
         Guna2PictureBox11.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox11.TabIndex = 17
@@ -452,54 +482,32 @@ Partial Class ViewMedicineBar
         stock_txtbox.Anchor = AnchorStyles.Top
         stock_txtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         stock_txtbox.BorderRadius = 7
-        stock_txtbox.CustomizableEdges = CustomizableEdges17
+        stock_txtbox.CustomizableEdges = CustomizableEdges21
         stock_txtbox.DefaultText = ""
         stock_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         stock_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
         stock_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         stock_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         stock_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        stock_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        stock_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        stock_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        stock_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         stock_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        stock_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        stock_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         stock_txtbox.Location = New Point(98, 447)
         stock_txtbox.Margin = New Padding(3, 4, 3, 4)
         stock_txtbox.Name = "stock_txtbox"
+        stock_txtbox.Padding = New Padding(5, 0, 0, 0)
         stock_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         stock_txtbox.PlaceholderText = "Enter quantity"
         stock_txtbox.SelectedText = ""
-        stock_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        stock_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         stock_txtbox.Size = New Size(150, 36)
         stock_txtbox.TabIndex = 137
         stock_txtbox.TextOffset = New Point(5, 0)
         ' 
-        ' clearimage_btn
-        ' 
-        clearimage_btn.Anchor = AnchorStyles.Top
-        clearimage_btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        clearimage_btn.BorderRadius = 7
-        clearimage_btn.BorderThickness = 1
-        clearimage_btn.CustomizableEdges = CustomizableEdges19
-        clearimage_btn.DisabledState.BorderColor = Color.DarkGray
-        clearimage_btn.DisabledState.CustomBorderColor = Color.DarkGray
-        clearimage_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        clearimage_btn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        clearimage_btn.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        clearimage_btn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        clearimage_btn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        clearimage_btn.Image = CType(resources.GetObject("clearimage_btn.Image"), Image)
-        clearimage_btn.ImageSize = New Size(14, 17)
-        clearimage_btn.Location = New Point(671, 404)
-        clearimage_btn.Name = "clearimage_btn"
-        clearimage_btn.Padding = New Padding(10, 0, 0, 0)
-        clearimage_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
-        clearimage_btn.Size = New Size(42, 35)
-        clearimage_btn.TabIndex = 135
-        ' 
         ' exit_btn
         ' 
-        exit_btn.CustomizableEdges = CustomizableEdges21
+        exit_btn.CustomizableEdges = CustomizableEdges23
         exit_btn.DisabledState.BorderColor = Color.DarkGray
         exit_btn.DisabledState.CustomBorderColor = Color.DarkGray
         exit_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -510,7 +518,7 @@ Partial Class ViewMedicineBar
         exit_btn.Image = CType(resources.GetObject("exit_btn.Image"), Image)
         exit_btn.Location = New Point(668, 18)
         exit_btn.Name = "exit_btn"
-        exit_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        exit_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         exit_btn.Size = New Size(48, 39)
         exit_btn.TabIndex = 134
         ' 
@@ -518,40 +526,17 @@ Partial Class ViewMedicineBar
         ' 
         Guna2PictureBox10.Anchor = AnchorStyles.Top
         Guna2PictureBox10.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        Guna2PictureBox10.CustomizableEdges = CustomizableEdges23
+        Guna2PictureBox10.CustomizableEdges = CustomizableEdges25
         Guna2PictureBox10.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox10.Image = CType(resources.GetObject("Guna2PictureBox10.Image"), Image)
         Guna2PictureBox10.ImageRotate = 0F
-        Guna2PictureBox10.Location = New Point(524, 376)
+        Guna2PictureBox10.Location = New Point(548, 376)
         Guna2PictureBox10.Name = "Guna2PictureBox10"
-        Guna2PictureBox10.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        Guna2PictureBox10.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         Guna2PictureBox10.Size = New Size(20, 18)
         Guna2PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox10.TabIndex = 120
         Guna2PictureBox10.TabStop = False
-        ' 
-        ' addimage_btn
-        ' 
-        addimage_btn.Anchor = AnchorStyles.Top
-        addimage_btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        addimage_btn.BorderRadius = 8
-        addimage_btn.BorderThickness = 1
-        addimage_btn.CustomizableEdges = CustomizableEdges25
-        addimage_btn.DisabledState.BorderColor = Color.DarkGray
-        addimage_btn.DisabledState.CustomBorderColor = Color.DarkGray
-        addimage_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        addimage_btn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        addimage_btn.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        addimage_btn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
-        addimage_btn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        addimage_btn.Image = CType(resources.GetObject("addimage_btn.Image"), Image)
-        addimage_btn.ImageSize = New Size(23, 25)
-        addimage_btn.Location = New Point(527, 404)
-        addimage_btn.Name = "addimage_btn"
-        addimage_btn.Padding = New Padding(10, 0, 0, 0)
-        addimage_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges26
-        addimage_btn.Size = New Size(130, 130)
-        addimage_btn.TabIndex = 133
         ' 
         ' Guna2HtmlLabel15
         ' 
@@ -560,7 +545,7 @@ Partial Class ViewMedicineBar
         Guna2HtmlLabel15.BackColor = Color.Transparent
         Guna2HtmlLabel15.Font = New Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Guna2HtmlLabel15.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2HtmlLabel15.Location = New Point(550, 376)
+        Guna2HtmlLabel15.Location = New Point(574, 376)
         Guna2HtmlLabel15.Name = "Guna2HtmlLabel15"
         Guna2HtmlLabel15.Size = New Size(54, 18)
         Guna2HtmlLabel15.TabIndex = 122
@@ -635,7 +620,7 @@ Partial Class ViewMedicineBar
         expdate_datetime.Checked = True
         expdate_datetime.CustomizableEdges = CustomizableEdges33
         expdate_datetime.FillColor = Color.White
-        expdate_datetime.Font = New Font("Segoe UI Semibold", 8F, FontStyle.Bold)
+        expdate_datetime.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         expdate_datetime.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         expdate_datetime.Format = DateTimePickerFormat.Short
         expdate_datetime.Location = New Point(239, 490)
@@ -768,10 +753,10 @@ Partial Class ViewMedicineBar
         description_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         description_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         description_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        description_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        description_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        description_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
+        description_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         description_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        description_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        description_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         description_txtbox.Location = New Point(3, 37)
         description_txtbox.Margin = New Padding(3, 4, 3, 4)
         description_txtbox.Multiline = True
@@ -795,13 +780,14 @@ Partial Class ViewMedicineBar
         dosage_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         dosage_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         dosage_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        dosage_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        dosage_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        dosage_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        dosage_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         dosage_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        dosage_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        dosage_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         dosage_txtbox.Location = New Point(351, 404)
         dosage_txtbox.Margin = New Padding(3, 4, 3, 4)
         dosage_txtbox.Name = "dosage_txtbox"
+        dosage_txtbox.Padding = New Padding(5, 0, 0, 0)
         dosage_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         dosage_txtbox.PlaceholderText = "in ml/mg"
         dosage_txtbox.SelectedText = ""
@@ -891,13 +877,14 @@ Partial Class ViewMedicineBar
         price_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         price_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         price_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        price_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        price_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        price_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        price_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         price_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        price_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        price_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         price_txtbox.Location = New Point(98, 404)
         price_txtbox.Margin = New Padding(3, 4, 3, 4)
         price_txtbox.Name = "price_txtbox"
+        price_txtbox.Padding = New Padding(5, 0, 0, 0)
         price_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         price_txtbox.PlaceholderText = "in Pesos"
         price_txtbox.SelectedText = ""
@@ -990,18 +977,19 @@ Partial Class ViewMedicineBar
         medtype_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         medtype_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         medtype_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        medtype_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        medtype_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold)
+        medtype_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        medtype_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         medtype_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        medtype_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        medtype_txtbox.Location = New Point(174, 265)
+        medtype_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        medtype_txtbox.Location = New Point(185, 265)
         medtype_txtbox.Margin = New Padding(3, 4, 3, 4)
         medtype_txtbox.Name = "medtype_txtbox"
+        medtype_txtbox.Padding = New Padding(10, 0, 0, 0)
         medtype_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         medtype_txtbox.PlaceholderText = "Enter type here"
         medtype_txtbox.SelectedText = ""
         medtype_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges64
-        medtype_txtbox.Size = New Size(309, 36)
+        medtype_txtbox.Size = New Size(298, 36)
         medtype_txtbox.TabIndex = 127
         medtype_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -1137,18 +1125,19 @@ Partial Class ViewMedicineBar
         brand_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         brand_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         brand_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        brand_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        brand_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold)
+        brand_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        brand_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         brand_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        brand_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        brand_txtbox.Location = New Point(174, 222)
+        brand_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        brand_txtbox.Location = New Point(185, 222)
         brand_txtbox.Margin = New Padding(3, 4, 3, 4)
         brand_txtbox.Name = "brand_txtbox"
+        brand_txtbox.Padding = New Padding(10, 0, 0, 0)
         brand_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         brand_txtbox.PlaceholderText = "Enter brand here"
         brand_txtbox.SelectedText = ""
         brand_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges78
-        brand_txtbox.Size = New Size(309, 36)
+        brand_txtbox.Size = New Size(298, 36)
         brand_txtbox.TabIndex = 125
         brand_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -1224,18 +1213,19 @@ Partial Class ViewMedicineBar
         manufacturer_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         manufacturer_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         manufacturer_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        manufacturer_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        manufacturer_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold)
+        manufacturer_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        manufacturer_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         manufacturer_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        manufacturer_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        manufacturer_txtbox.Location = New Point(174, 178)
+        manufacturer_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        manufacturer_txtbox.Location = New Point(185, 178)
         manufacturer_txtbox.Margin = New Padding(3, 4, 3, 4)
         manufacturer_txtbox.Name = "manufacturer_txtbox"
+        manufacturer_txtbox.Padding = New Padding(10, 0, 0, 0)
         manufacturer_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         manufacturer_txtbox.PlaceholderText = "Enter manufacturer here"
         manufacturer_txtbox.SelectedText = ""
         manufacturer_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges86
-        manufacturer_txtbox.Size = New Size(309, 36)
+        manufacturer_txtbox.Size = New Size(298, 36)
         manufacturer_txtbox.TabIndex = 118
         manufacturer_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -1275,7 +1265,7 @@ Partial Class ViewMedicineBar
         medicine_added_date_lbl.BackColor = Color.Transparent
         medicine_added_date_lbl.Font = New Font("Segoe UI", 9F)
         medicine_added_date_lbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicine_added_date_lbl.Location = New Point(24, 46)
+        medicine_added_date_lbl.Location = New Point(140, 47)
         medicine_added_date_lbl.Name = "medicine_added_date_lbl"
         medicine_added_date_lbl.Size = New Size(189, 19)
         medicine_added_date_lbl.TabIndex = 110
@@ -1286,7 +1276,7 @@ Partial Class ViewMedicineBar
         medicine_id_lbl.BackColor = Color.Transparent
         medicine_id_lbl.Font = New Font("Century Gothic", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         medicine_id_lbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicine_id_lbl.Location = New Point(24, 22)
+        medicine_id_lbl.Location = New Point(140, 23)
         medicine_id_lbl.Name = "medicine_id_lbl"
         medicine_id_lbl.Size = New Size(122, 19)
         medicine_id_lbl.TabIndex = 109
@@ -1352,18 +1342,19 @@ Partial Class ViewMedicineBar
         medicine_name_txtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         medicine_name_txtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         medicine_name_txtbox.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        medicine_name_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        medicine_name_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold)
+        medicine_name_txtbox.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        medicine_name_txtbox.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold)
         medicine_name_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        medicine_name_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        medicine_name_txtbox.Location = New Point(174, 133)
+        medicine_name_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        medicine_name_txtbox.Location = New Point(185, 133)
         medicine_name_txtbox.Margin = New Padding(3, 4, 3, 4)
         medicine_name_txtbox.Name = "medicine_name_txtbox"
+        medicine_name_txtbox.Padding = New Padding(20, 0, 0, 0)
         medicine_name_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         medicine_name_txtbox.PlaceholderText = "Enter medicine name here"
         medicine_name_txtbox.SelectedText = ""
         medicine_name_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges92
-        medicine_name_txtbox.Size = New Size(309, 36)
+        medicine_name_txtbox.Size = New Size(298, 36)
         medicine_name_txtbox.TabIndex = 115
         medicine_name_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -1407,6 +1398,7 @@ Partial Class ViewMedicineBar
         Text = "ViewMedicineBar"
         Guna2CustomGradientPanel1.ResumeLayout(False)
         Guna2CustomGradientPanel1.PerformLayout()
+        CType(addimage_btn, ComponentModel.ISupportInitialize).EndInit()
         Guna2CustomGradientPanel13.ResumeLayout(False)
         prescription_combobox.ResumeLayout(False)
         CType(Guna2PictureBox8, ComponentModel.ISupportInitialize).EndInit()
@@ -1453,10 +1445,8 @@ Partial Class ViewMedicineBar
     Friend WithEvents Guna2PictureBox11 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel16 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents stock_txtbox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents clearimage_btn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents exit_btn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox10 As Guna.UI2.WinForms.Guna2PictureBox
-    Friend WithEvents addimage_btn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2HtmlLabel15 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CustomGradientPanel15 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Guna2CustomGradientPanel16 As Guna.UI2.WinForms.Guna2CustomGradientPanel
@@ -1507,4 +1497,6 @@ Partial Class ViewMedicineBar
     Friend WithEvents edit_medicine_btn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents medicine_name_txtbox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents save_update_btn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents addimage_btn As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents medstatus_indicator As Guna.UI2.WinForms.Guna2CustomGradientPanel
 End Class

@@ -21,5 +21,18 @@ Namespace Helpers
             Dim regex As New Regex("^[a-zA-Z]+(?: [a-zA-Z]+(?:\.?)*)*$")
             Return regex.IsMatch(name) AndAlso Not String.IsNullOrEmpty(name)
         End Function
+
+        Public Function IsValidDecimalInput(input As String, ByRef cleanedValue As Decimal) As Boolean
+            Dim cleanedString As String = input.Trim().Replace("₱", "").Replace("$", "").Replace(",", "")
+
+            Dim validFormat As Boolean = System.Text.RegularExpressions.Regex.IsMatch(cleanedString, "^\d+(\.\d{1,2})?$")
+
+            If validFormat Then
+                Decimal.TryParse(cleanedString, cleanedValue)
+                Return True
+            End If
+
+            Return False
+        End Function
     End Module
 End Namespace
