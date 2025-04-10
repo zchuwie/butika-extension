@@ -50,6 +50,8 @@ Partial Class AccountSettings
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         LastName = New Label()
         MiddleInitial = New Label()
         FirstName = New Label()
@@ -81,6 +83,7 @@ Partial Class AccountSettings
         SaveProfileBtn = New Guna.UI2.WinForms.Guna2Button()
         CancelProfileBtn = New Guna.UI2.WinForms.Guna2Button()
         VerifyButton = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         SuspendLayout()
         ' 
         ' LastName
@@ -445,7 +448,7 @@ Partial Class AccountSettings
         CancelContactBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         CancelContactBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         CancelContactBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        CancelContactBtn.Location = New Point(683, 562)
+        CancelContactBtn.Location = New Point(683, 547)
         CancelContactBtn.Name = "CancelContactBtn"
         CancelContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         CancelContactBtn.Size = New Size(81, 35)
@@ -466,7 +469,7 @@ Partial Class AccountSettings
         SaveContactBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SaveContactBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         SaveContactBtn.ForeColor = Color.White
-        SaveContactBtn.Location = New Point(770, 562)
+        SaveContactBtn.Location = New Point(770, 547)
         SaveContactBtn.Name = "SaveContactBtn"
         SaveContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges18
         SaveContactBtn.Size = New Size(81, 35)
@@ -487,7 +490,7 @@ Partial Class AccountSettings
         EditProfileBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EditProfileBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         EditProfileBtn.ForeColor = Color.White
-        EditProfileBtn.Location = New Point(769, 315)
+        EditProfileBtn.Location = New Point(769, 282)
         EditProfileBtn.Name = "EditProfileBtn"
         EditProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
         EditProfileBtn.Size = New Size(81, 35)
@@ -507,7 +510,7 @@ Partial Class AccountSettings
         EditContactBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EditContactBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         EditContactBtn.ForeColor = Color.White
-        EditContactBtn.Location = New Point(769, 517)
+        EditContactBtn.Location = New Point(769, 502)
         EditContactBtn.Name = "EditContactBtn"
         EditContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         EditContactBtn.Size = New Size(81, 35)
@@ -527,7 +530,7 @@ Partial Class AccountSettings
         SaveProfileBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SaveProfileBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         SaveProfileBtn.ForeColor = Color.White
-        SaveProfileBtn.Location = New Point(770, 364)
+        SaveProfileBtn.Location = New Point(770, 331)
         SaveProfileBtn.Name = "SaveProfileBtn"
         SaveProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         SaveProfileBtn.Size = New Size(81, 35)
@@ -548,7 +551,7 @@ Partial Class AccountSettings
         CancelProfileBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         CancelProfileBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         CancelProfileBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        CancelProfileBtn.Location = New Point(683, 364)
+        CancelProfileBtn.Location = New Point(683, 331)
         CancelProfileBtn.Name = "CancelProfileBtn"
         CancelProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         CancelProfileBtn.Size = New Size(81, 35)
@@ -569,12 +572,33 @@ Partial Class AccountSettings
         VerifyButton.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         VerifyButton.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         VerifyButton.ForeColor = Color.White
-        VerifyButton.Location = New Point(26, 709)
+        VerifyButton.Location = New Point(26, 714)
         VerifyButton.Name = "VerifyButton"
         VerifyButton.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         VerifyButton.Size = New Size(149, 29)
         VerifyButton.TabIndex = 86
         VerifyButton.Text = "Verify Account"
+        ' 
+        ' Guna2Button1
+        ' 
+        Guna2Button1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Button1.BorderRadius = 6
+        Guna2Button1.BorderThickness = 1
+        Guna2Button1.CustomizableEdges = CustomizableEdges29
+        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
+        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        Guna2Button1.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        Guna2Button1.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        Guna2Button1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Button1.Location = New Point(560, 824)
+        Guna2Button1.Name = "Guna2Button1"
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges30
+        Guna2Button1.Size = New Size(81, 35)
+        Guna2Button1.TabIndex = 87
+        Guna2Button1.Text = "Cancel"
+        Guna2Button1.Visible = False
         ' 
         ' AccountSettings
         ' 
@@ -584,6 +608,7 @@ Partial Class AccountSettings
         AutoSizeMode = AutoSizeMode.GrowAndShrink
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(915, 788)
+        Controls.Add(Guna2Button1)
         Controls.Add(VerifyButton)
         Controls.Add(SaveProfileBtn)
         Controls.Add(CancelProfileBtn)
@@ -653,4 +678,5 @@ Partial Class AccountSettings
     Friend WithEvents SaveProfileBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents CancelProfileBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents VerifyButton As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
 End Class

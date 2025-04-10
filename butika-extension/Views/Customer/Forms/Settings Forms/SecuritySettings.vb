@@ -76,4 +76,16 @@ Public Class SecuritySettings
             End If
         End If
     End Sub
+
+    Private Sub EditSecurityBtn_Click(sender As Object, e As EventArgs) Handles EditSecurityBtn.Click
+        EditSecurityBtn.Visible = False
+        CancelBtn.Visible = True
+        SaveBtn.Visible = True
+
+
+    End Sub
+
+    Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
+
+    End Sub
 End Class

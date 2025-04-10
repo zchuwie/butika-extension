@@ -36,6 +36,8 @@ Partial Class SecuritySettings
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         DeactivateSubtext = New Label()
         DeactivateAccount = New Label()
         DeactivateDivider = New Panel()
@@ -54,6 +56,7 @@ Partial Class SecuritySettings
         CancelBtn = New Guna.UI2.WinForms.Guna2Button()
         EditSecurityBtn = New Guna.UI2.WinForms.Guna2Button()
         DeacBtn = New Guna.UI2.WinForms.Guna2Button()
+        CancelContactBtn = New Guna.UI2.WinForms.Guna2Button()
         SuspendLayout()
         ' 
         ' DeactivateSubtext
@@ -325,12 +328,33 @@ Partial Class SecuritySettings
         DeacBtn.TabIndex = 82
         DeacBtn.Text = "Deactivate Account"
         ' 
+        ' CancelContactBtn
+        ' 
+        CancelContactBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelContactBtn.BorderRadius = 6
+        CancelContactBtn.BorderThickness = 1
+        CancelContactBtn.CustomizableEdges = CustomizableEdges15
+        CancelContactBtn.DisabledState.BorderColor = Color.DarkGray
+        CancelContactBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        CancelContactBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        CancelContactBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        CancelContactBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        CancelContactBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        CancelContactBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelContactBtn.Location = New Point(638, 592)
+        CancelContactBtn.Name = "CancelContactBtn"
+        CancelContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        CancelContactBtn.Size = New Size(81, 35)
+        CancelContactBtn.TabIndex = 83
+        CancelContactBtn.Text = "Cancel"
+        CancelContactBtn.Visible = False
+        ' 
         ' SecuritySettings
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
-        AutoScaleMode = AutoScaleMode.Font
+        AutoScaleMode = AutoScaleMode.None
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(915, 595)
+        Controls.Add(CancelContactBtn)
         Controls.Add(DeacBtn)
         Controls.Add(EditSecurityBtn)
         Controls.Add(SaveBtn)
@@ -373,4 +397,5 @@ Partial Class SecuritySettings
     Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents EditSecurityBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents DeacBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents CancelContactBtn As Guna.UI2.WinForms.Guna2Button
 End Class
