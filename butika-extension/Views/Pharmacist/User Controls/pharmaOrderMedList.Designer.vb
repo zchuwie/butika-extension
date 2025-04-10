@@ -25,8 +25,8 @@ Partial Class pharmaOrderMedList
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
-        mednameLbl = New Label()
         quantityLbl = New Label()
+        mednameLbl = New Label()
         Guna2Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -42,19 +42,8 @@ Partial Class pharmaOrderMedList
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
         Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Panel1.Size = New Size(498, 35)
+        Guna2Panel1.Size = New Size(490, 35)
         Guna2Panel1.TabIndex = 0
-        ' 
-        ' mednameLbl
-        ' 
-        mednameLbl.AutoSize = True
-        mednameLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        mednameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        mednameLbl.Location = New Point(20, 9)
-        mednameLbl.Name = "mednameLbl"
-        mednameLbl.Size = New Size(111, 16)
-        mednameLbl.TabIndex = 0
-        mednameLbl.Text = "Medicine Name"
         ' 
         ' quantityLbl
         ' 
@@ -67,14 +56,26 @@ Partial Class pharmaOrderMedList
         quantityLbl.TabIndex = 1
         quantityLbl.Text = "Quantity"
         ' 
+        ' mednameLbl
+        ' 
+        mednameLbl.AutoSize = True
+        mednameLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        mednameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        mednameLbl.Location = New Point(20, 9)
+        mednameLbl.Name = "mednameLbl"
+        mednameLbl.Size = New Size(111, 16)
+        mednameLbl.TabIndex = 0
+        mednameLbl.Text = "Medicine Name"
+        ' 
         ' pharmaOrderMedList
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
+        Cursor = Cursors.Hand
         Name = "pharmaOrderMedList"
-        Size = New Size(498, 35)
+        Size = New Size(490, 35)
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
         ResumeLayout(False)

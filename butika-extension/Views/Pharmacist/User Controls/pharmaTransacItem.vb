@@ -20,6 +20,7 @@ Public Class pharmaTransacItem
         AddHandler Guna2Panel1.Click, Sub(sender, e) Call pharmaMedItem_Click(sender, e)
     End Sub
     Private Sub pharmaMedItem_Click(sender As Object, e As EventArgs) Handles MyBase.Click
-
+        Dim viewtransac As New pharmaViewTransaction(transactions)
+        viewtransac.ShowDialog()
     End Sub
 End Class
