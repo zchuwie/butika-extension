@@ -8,28 +8,35 @@ Imports System.Data.SqlClient
 Public Class AccountRepository
 
     ' returns the userID of the user  when logged in
-    Public Async Function Login(username As String, password As String) As Task(Of Integer)
+    Public Async Function Login(username As String, password As String) As Task(Of (Integer, Integer))
         Using conn = DatabaseConnection.GetConnection()
             Try
                 Await conn.OpenAsync()
 
                 Dim hash As New PasswordHashing(password)
-                Dim query As String = "SELECT user_id FROM userAccount WHERE username = @username AND password = @password"
+                Dim query As String = "SELECT user_id, userType FROM userAccount WHERE username = @username AND password = @password"
 
-                ' Use Dapper to execute the query with parameters
-                Dim result As Integer? = Await conn.ExecuteScalarAsync(Of Integer?)(query, New With {
+                ' Use Dapper to execute the query with parameters and return both user_id and userType
+                Dim result = Await conn.QuerySingleOrDefaultAsync(Of (Integer, Integer))(query, New With {
                 Key .username = username,
                 Key .password = hash.hashCombinedDisplay
             })
 
-                Return If(result.HasValue, result.Value, 0)
+                If result.Equals((0, 0)) Then
+                    ' Return default values if no result found
+                    Return (0, 0)
+                End If
+
+                ' Return the user_id and userType
+                Return result
             Catch ex As Exception
                 MessageBox.Show("Username or password incorrect. Try again.")
                 Console.WriteLine("Login error: " & ex.Message)
-                Return 0
+                Return (0, 0) ' Return default tuple on error
             End Try
         End Using
     End Function
+
 
     ' this function is used to register a new user
     Public Async Function Signup(acc As Account) As Task(Of Boolean)
