@@ -77,6 +77,10 @@ Public Class Signup
             Return
         End If
 
+
+        Dim userID As Integer = Await AdminRepository.GetLastInsertedUserID()
+        Dim signupLogged As Boolean = Await AdminRepository.AddSignupLogAsync(userID)
+
         MessageBox.Show("Account created successfully")
 
         Dim login As New Login()

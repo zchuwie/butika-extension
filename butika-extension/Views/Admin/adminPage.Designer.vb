@@ -161,6 +161,7 @@ Partial Class adminPage
         adminDashboard.HoverState.Image = CType(resources.GetObject("resource.Image3"), Image)
         adminDashboard.Image = CType(resources.GetObject("adminDashboard.Image"), Image)
         adminDashboard.ImageSize = New Size(40, 40)
+        adminDashboard.IndicateFocus = True
         adminDashboard.Location = New Point(0, 64)
         adminDashboard.Name = "adminDashboard"
         adminDashboard.ShadowDecoration.CustomizableEdges = CustomizableEdges10
@@ -170,11 +171,11 @@ Partial Class adminPage
         ' adminLogo
         ' 
         adminLogo.CustomizableEdges = CustomizableEdges11
-        adminLogo.DisabledState.BorderColor = Color.DarkGray
-        adminLogo.DisabledState.CustomBorderColor = Color.DarkGray
-        adminLogo.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        adminLogo.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        adminLogo.DisabledState.FillColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminLogo.DisabledState.ForeColor = Color.White
+        adminLogo.DisabledState.Image = CType(resources.GetObject("resource.Image4"), Image)
         adminLogo.Dock = DockStyle.Top
+        adminLogo.Enabled = False
         adminLogo.FillColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         adminLogo.Font = New Font("Segoe UI", 9F)
         adminLogo.ForeColor = Color.White
@@ -183,6 +184,7 @@ Partial Class adminPage
         adminLogo.ImageSize = New Size(50, 50)
         adminLogo.Location = New Point(0, 0)
         adminLogo.Name = "adminLogo"
+        adminLogo.PressedColor = Color.Empty
         adminLogo.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         adminLogo.Size = New Size(64, 64)
         adminLogo.TabIndex = 2
