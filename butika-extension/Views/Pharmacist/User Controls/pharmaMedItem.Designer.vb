@@ -100,6 +100,7 @@ Partial Class pharmaMedItem
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
         Cursor = Cursors.Hand
+        Margin = New Padding(0, 3, 0, 0)
         Name = "pharmaMedItem"
         Size = New Size(970, 37)
         Guna2Panel1.ResumeLayout(False)

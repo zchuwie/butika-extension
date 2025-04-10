@@ -5,11 +5,9 @@ Imports Org.BouncyCastle.Math
 Imports PdfSharp
 
 Public Class pharmaViewMedicine
-    Dim account As New Account()
     Dim medicine As New Medicine()
     Public Sub New(medicine As Medicine)
         Me.medicine = medicine
-        Me.account = account
 
         InitializeComponent()
         LoadMedicine()

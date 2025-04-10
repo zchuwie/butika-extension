@@ -49,6 +49,7 @@ Partial Class pharmaMedicines
         ' 
         ' Guna2Panel2
         ' 
+        Guna2Panel2.BackColor = Color.Transparent
         Guna2Panel2.BorderRadius = 10
         Guna2Panel2.Controls.Add(Label4)
         Guna2Panel2.Controls.Add(Label3)
@@ -114,11 +115,13 @@ Partial Class pharmaMedicines
         ' flpMedicine
         ' 
         flpMedicine.AutoScroll = True
+        flpMedicine.FlowDirection = FlowDirection.TopDown
         flpMedicine.Location = New Point(36, 181)
         flpMedicine.Margin = New Padding(0)
         flpMedicine.Name = "flpMedicine"
         flpMedicine.Size = New Size(972, 527)
         flpMedicine.TabIndex = 0
+        flpMedicine.WrapContents = False
         ' 
         ' Guna2Panel1
         ' 

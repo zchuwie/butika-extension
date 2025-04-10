@@ -23,17 +23,17 @@ Partial Class pharmaTransactions
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaTransactions))
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         transactionLbl = New Label()
         useridSearch = New Guna.UI2.WinForms.Guna2TextBox()
         transacidSearch = New Guna.UI2.WinForms.Guna2TextBox()
@@ -48,7 +48,7 @@ Partial Class pharmaTransactions
         Label1 = New Label()
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         infoManagerIcon = New ToolTip(components)
-        FlowLayoutPanel1 = New FlowLayoutPanel()
+        flpTransaction = New FlowLayoutPanel()
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel2.SuspendLayout()
         SuspendLayout()
@@ -69,7 +69,7 @@ Partial Class pharmaTransactions
         useridSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         useridSearch.BorderRadius = 4
         useridSearch.BorderThickness = 2
-        useridSearch.CustomizableEdges = CustomizableEdges1
+        useridSearch.CustomizableEdges = CustomizableEdges21
         useridSearch.DefaultText = ""
         useridSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         useridSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -86,7 +86,7 @@ Partial Class pharmaTransactions
         useridSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         useridSearch.PlaceholderText = "User ID"
         useridSearch.SelectedText = ""
-        useridSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        useridSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         useridSearch.Size = New Size(91, 34)
         useridSearch.TabIndex = 1
         ' 
@@ -95,7 +95,7 @@ Partial Class pharmaTransactions
         transacidSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         transacidSearch.BorderRadius = 4
         transacidSearch.BorderThickness = 2
-        transacidSearch.CustomizableEdges = CustomizableEdges3
+        transacidSearch.CustomizableEdges = CustomizableEdges23
         transacidSearch.DefaultText = ""
         transacidSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         transacidSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -112,7 +112,7 @@ Partial Class pharmaTransactions
         transacidSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         transacidSearch.PlaceholderText = "Transaction ID"
         transacidSearch.SelectedText = ""
-        transacidSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        transacidSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         transacidSearch.Size = New Size(137, 34)
         transacidSearch.TabIndex = 2
         ' 
@@ -121,7 +121,7 @@ Partial Class pharmaTransactions
         usernameSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         usernameSearch.BorderRadius = 4
         usernameSearch.BorderThickness = 2
-        usernameSearch.CustomizableEdges = CustomizableEdges5
+        usernameSearch.CustomizableEdges = CustomizableEdges25
         usernameSearch.DefaultText = ""
         usernameSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         usernameSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -138,7 +138,7 @@ Partial Class pharmaTransactions
         usernameSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         usernameSearch.PlaceholderText = "Username"
         usernameSearch.SelectedText = ""
-        usernameSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        usernameSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         usernameSearch.Size = New Size(114, 34)
         usernameSearch.TabIndex = 3
         ' 
@@ -167,11 +167,11 @@ Partial Class pharmaTransactions
         ' 
         ' Guna2Panel1
         ' 
-        Guna2Panel1.CustomizableEdges = CustomizableEdges7
+        Guna2Panel1.CustomizableEdges = CustomizableEdges27
         Guna2Panel1.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Panel1.Location = New Point(39, 124)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         Guna2Panel1.Size = New Size(70, 3)
         Guna2Panel1.TabIndex = 8
         ' 
@@ -182,12 +182,12 @@ Partial Class pharmaTransactions
         Guna2Panel2.Controls.Add(Label3)
         Guna2Panel2.Controls.Add(Label2)
         Guna2Panel2.Controls.Add(Label1)
-        Guna2Panel2.CustomizableEdges = CustomizableEdges9
+        Guna2Panel2.CustomizableEdges = CustomizableEdges29
         Guna2Panel2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Panel2.Location = New Point(36, 144)
         Guna2Panel2.Margin = New Padding(3, 3, 3, 0)
         Guna2Panel2.Name = "Guna2Panel2"
-        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges30
         Guna2Panel2.Size = New Size(972, 37)
         Guna2Panel2.TabIndex = 9
         ' 
@@ -246,13 +246,14 @@ Partial Class pharmaTransactions
         Guna2Separator1.Size = New Size(1019, 10)
         Guna2Separator1.TabIndex = 11
         ' 
-        ' FlowLayoutPanel1
+        ' flpTransaction
         ' 
-        FlowLayoutPanel1.Location = New Point(36, 181)
-        FlowLayoutPanel1.Margin = New Padding(3, 0, 3, 3)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(972, 527)
-        FlowLayoutPanel1.TabIndex = 0
+        flpTransaction.AutoScroll = True
+        flpTransaction.Location = New Point(36, 181)
+        flpTransaction.Margin = New Padding(3, 0, 3, 3)
+        flpTransaction.Name = "flpTransaction"
+        flpTransaction.Size = New Size(972, 527)
+        flpTransaction.TabIndex = 0
         ' 
         ' pharmaTransactions
         ' 
@@ -262,7 +263,7 @@ Partial Class pharmaTransactions
         AutoSize = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1043, 720)
-        Controls.Add(FlowLayoutPanel1)
+        Controls.Add(flpTransaction)
         Controls.Add(Guna2Separator1)
         Controls.Add(Guna2Panel2)
         Controls.Add(Guna2Panel1)
@@ -296,5 +297,5 @@ Partial Class pharmaTransactions
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents infoManagerIcon As ToolTip
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents flpTransaction As FlowLayoutPanel
 End Class

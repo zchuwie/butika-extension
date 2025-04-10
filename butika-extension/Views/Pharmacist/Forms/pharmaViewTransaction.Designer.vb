@@ -26,7 +26,6 @@ Partial Class pharmaViewTransaction
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaViewTransaction))
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         closeBtn = New Guna.UI2.WinForms.Guna2Button()
-        Panel1 = New Panel()
         username = New Label()
         transactionid = New Label()
         totalamount = New Label()
@@ -34,6 +33,7 @@ Partial Class pharmaViewTransaction
         Label3 = New Label()
         Label2 = New Label()
         Label1 = New Label()
+        flpItems = New FlowLayoutPanel()
         SuspendLayout()
         ' 
         ' closeBtn
@@ -53,13 +53,6 @@ Partial Class pharmaViewTransaction
         closeBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         closeBtn.Size = New Size(35, 35)
         closeBtn.TabIndex = 17
-        ' 
-        ' Panel1
-        ' 
-        Panel1.Location = New Point(170, 145)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(498, 268)
-        Panel1.TabIndex = 16
         ' 
         ' username
         ' 
@@ -138,14 +131,22 @@ Partial Class pharmaViewTransaction
         Label1.TabIndex = 9
         Label1.Text = "Payment Summary"
         ' 
+        ' flpItems
+        ' 
+        flpItems.AutoScroll = True
+        flpItems.Location = New Point(170, 145)
+        flpItems.Name = "flpItems"
+        flpItems.Size = New Size(498, 268)
+        flpItems.TabIndex = 18
+        ' 
         ' pharmaViewTransaction
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(858, 507)
+        Controls.Add(flpItems)
         Controls.Add(closeBtn)
-        Controls.Add(Panel1)
         Controls.Add(username)
         Controls.Add(transactionid)
         Controls.Add(totalamount)
@@ -155,13 +156,13 @@ Partial Class pharmaViewTransaction
         Controls.Add(Label1)
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaViewTransaction"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "pharmaViewTransaction"
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents closeBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents username As Label
     Friend WithEvents transactionid As Label
     Friend WithEvents totalamount As Label
@@ -169,4 +170,5 @@ Partial Class pharmaViewTransaction
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents flpItems As FlowLayoutPanel
 End Class
