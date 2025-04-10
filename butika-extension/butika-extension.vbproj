@@ -79,7 +79,6 @@
 	<ItemGroup>
 		<Folder Include="Resources\drug_images\" />
 		<Folder Include="Resources\prescription_images\" />
-		<Folder Include="Views\Customer\" />
 		<Folder Include="Views\Admin\" />
 		<Folder Include="Views\Pharmacist\" />
 	</ItemGroup>
