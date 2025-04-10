@@ -105,6 +105,28 @@ Public Class AccountRepository
         End Using
     End Function
 
+    ' checks if the email is already taken
+    Public Async Function CheckDuplicateEmail(email As String) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "SELECT email FROM userAccount WHERE email = @email AND status = @status"
+
+                Dim result As String = Await conn.ExecuteScalarAsync(Of String)(query, New With {
+                .email = email,
+                .status = "active"
+            })
+
+                Return result IsNot Nothing
+
+            Catch ex As Exception
+                Console.WriteLine("Check email duplication error: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+
     ' since we only use userID, we need to fill up their information
     Public Async Function populateDataThroughUserID(userID As Integer) As Task(Of Account)
         Dim populateData As New Account()
@@ -127,49 +149,6 @@ Public Class AccountRepository
         End Try
 
         Return populateData
-    End Function
-
-    ' this function is used to update profile info from settings
-    Public Async Function UpdateProfileInfo(acc As Account) As Task(Of Boolean)
-
-        If acc Is Nothing Then
-            Return False
-        End If
-        Debug.WriteLine("firstname: " + acc.FirstName)
-        Using conn = DatabaseConnection.GetConnection()
-            Try
-                Await conn.OpenAsync()
-
-                Dim query As String = "
-                UPDATE userAccount 
-                SET 
-                    fullname = @fullname, 
-                    first_name = @first_name, 
-                    middle_initial = @middle_initial, 
-                    last_name = @last_name, 
-                    username = @username, 
-                    birthdate = @birthdate
-                WHERE user_id = @user_id;
-                "
-
-                Dim userID As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {
-                .fullname = acc.FirstName,
-                .first_name = acc.FirstName,
-                .middle_initial = acc.MiddleInitial,
-                .last_name = acc.LastName,
-                .username = acc.UserName,
-                .birthdate = acc.BirthDate,
-                .user_id = acc.UserID
-            })
-                If userID <> 0 Then
-                    Return True
-                End If
-
-            Catch ex As Exception
-                MessageBox.Show("Error updating info: " & ex.Message)
-                Return False
-            End Try
-        End Using
     End Function
 
 End Class

@@ -113,6 +113,7 @@ Public Class MainPage
         account = Await accountRepo.populateDataThroughUserID(userID)
         OpenFormInPanel(New Settings(account))
 
+        'debugging
         If account IsNot Nothing Then
             Debug.WriteLine("MAIN ACCOUNT LOADED:")
             Debug.WriteLine("MAIN First Name: " & account.FirstName)

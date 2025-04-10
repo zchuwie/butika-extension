@@ -34,6 +34,8 @@ Partial Class SecuritySettings
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         DeactivateSubtext = New Label()
         DeactivateAccount = New Label()
         DeactivateDivider = New Panel()
@@ -47,11 +49,11 @@ Partial Class SecuritySettings
         Security = New Label()
         SecurityDivider = New Panel()
         ChangePassword = New Label()
-        DeactivateAccBtn = New RoundedButton()
         VerifyText = New Label()
         SaveBtn = New Guna.UI2.WinForms.Guna2Button()
         CancelBtn = New Guna.UI2.WinForms.Guna2Button()
         EditSecurityBtn = New Guna.UI2.WinForms.Guna2Button()
+        DeacBtn = New Guna.UI2.WinForms.Guna2Button()
         SuspendLayout()
         ' 
         ' DeactivateSubtext
@@ -229,19 +231,6 @@ Partial Class SecuritySettings
         ChangePassword.Text = "Change Password"
         ChangePassword.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' DeactivateAccBtn
-        ' 
-        DeactivateAccBtn.BackColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
-        DeactivateAccBtn.CornerRadius = 6
-        DeactivateAccBtn.Font = New Font("Century Gothic", 8.75F, FontStyle.Bold)
-        DeactivateAccBtn.ForeColor = Color.White
-        DeactivateAccBtn.Location = New Point(29, 495)
-        DeactivateAccBtn.Name = "DeactivateAccBtn"
-        DeactivateAccBtn.Size = New Size(149, 29)
-        DeactivateAccBtn.TabIndex = 70
-        DeactivateAccBtn.Text = "Deactivate Account"
-        DeactivateAccBtn.UseVisualStyleBackColor = False
-        ' 
         ' VerifyText
         ' 
         VerifyText.AutoSize = True
@@ -315,16 +304,37 @@ Partial Class SecuritySettings
         EditSecurityBtn.TabIndex = 81
         EditSecurityBtn.Text = "Edit"
         ' 
+        ' DeacBtn
+        ' 
+        DeacBtn.BackColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
+        DeacBtn.BorderColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
+        DeacBtn.BorderRadius = 8
+        DeacBtn.BorderThickness = 1
+        DeacBtn.CustomizableEdges = CustomizableEdges13
+        DeacBtn.DisabledState.BorderColor = Color.DarkGray
+        DeacBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        DeacBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        DeacBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        DeacBtn.FillColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
+        DeacBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        DeacBtn.ForeColor = Color.White
+        DeacBtn.Location = New Point(29, 495)
+        DeacBtn.Name = "DeacBtn"
+        DeacBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        DeacBtn.Size = New Size(165, 32)
+        DeacBtn.TabIndex = 82
+        DeacBtn.Text = "Deactivate Account"
+        ' 
         ' SecuritySettings
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(915, 595)
+        Controls.Add(DeacBtn)
         Controls.Add(EditSecurityBtn)
         Controls.Add(SaveBtn)
         Controls.Add(CancelBtn)
-        Controls.Add(DeactivateAccBtn)
         Controls.Add(VerifyText)
         Controls.Add(ChangePassword)
         Controls.Add(DeactivateSubtext)
@@ -358,9 +368,9 @@ Partial Class SecuritySettings
     Friend WithEvents Security As Label
     Friend WithEvents SecurityDivider As Panel
     Friend WithEvents ChangePassword As Label
-    Friend WithEvents DeactivateAccBtn As RoundedButton
     Friend WithEvents VerifyText As Label
     Friend WithEvents SaveBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents EditSecurityBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents DeacBtn As Guna.UI2.WinForms.Guna2Button
 End Class
