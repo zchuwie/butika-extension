@@ -396,6 +396,25 @@ Public Class CartRepository
         End Using
     End Function
 
+    Public Async Function insertPrescriptionInUsersTicked(prescriptionID As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "UPDATE usersCart SET prescription_id = @prescription_id WHERE isTicked = 1 AND user_id = @user_id"
+
+                ' Execute the query using Dapper
+                Await conn.ExecuteAsync(query, New With {.prescription_id = prescriptionID, .user_id = account.UserID})
+
+                Return True
+            Catch ex As Exception
+                Debug.WriteLine("Error updating prescription_id: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+
+
 #End Region
 
 #Region "Stock Manipulation"
@@ -448,7 +467,7 @@ Public Class CartRepository
 
                 For Each items In itemsCart
                     Dim query As String = "UPDATE drug_inventory SET drug_stocks = drug_stocks - @drug_stocks WHERE drug_id = @drug_id"
-                    Await conn.ExecuteAsync(query, New With {.drug_stocks = items.Medicine.MedicineStock, Key .drug_id = items.CartID})
+                    Await conn.ExecuteAsync(query, New With {.drug_stocks = items.Quantity, Key .drug_id = items.Medicine.MedicineID})
                 Next
 
                 Debug.WriteLine("Successfully decreased stock.")

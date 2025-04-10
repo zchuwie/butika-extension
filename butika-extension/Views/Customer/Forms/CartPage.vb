@@ -107,134 +107,123 @@ Public Class CartPage
         selectOrDeselectBtn.Enabled = True
     End Sub
 
+#Region "Checkout"
     Private Async Sub CheckoutBtn_Click(sender As Object, e As EventArgs) Handles CheckoutBtn.Click
-        Dim transactRepo As New TransactionRepository(account)
         Dim cartRepo As New CartRepository(account)
+        Dim transactRepo As New TransactionRepository(account)
 
         CheckOutBtnText(True)
 
-        'gets the ticked items only
         Dim cartInfoInCheckout As List(Of Cart) = Await cartRepo.GetCartInfoForCheckOutPanel()
+        If Not ValidateCartSelection(cartInfoInCheckout) Then Exit Sub
 
-        If cartInfoInCheckout.Count = 0 Then
-            MessageBox.Show("Please select at least one item to checkout.")
+        If Await HasPendingPrescriptions(cartInfoInCheckout, cartRepo) Then
             CheckOutBtnText(False)
             Return
         End If
 
-        'checks if the ticked item is pending
-        Dim pending As Integer = 0
-        For Each item In cartInfoInCheckout
-            If item.isApproved = 0 Then
-                pending += 1
-            End If
-        Next
-
-        If pending > 0 Then
-            Dim result As DialogResult = MessageBox.Show("You have checked out an item that needs a prescription. Do you want to proceed to the prescription form?", "Prescription Needed", MessageBoxButtons.OKCancel)
-
-            If result = DialogResult.OK Then
-                Dim isAlreadyPrescribed As Boolean = Await cartRepo.IsPrescriptionAlreadySent()
-
-                ' Check if the cart already has a prescription, they can't make another one
-                If isAlreadyPrescribed Then
-                    MessageBox.Show("It seems that you have already submitted a form for the checked medicines...", "Please Wait")
-                    CheckOutBtnText(False)
-                    Return
-                End If
-
-                ' Open the prescription submission form
-                Using sf As New PrescriptionForm(account)
-                    sf.ShowDialog()
-                End Using
-
-                CheckOutBtnText(False)
-                Return
-            End If
-
-            If result = DialogResult.Cancel Then
-                MessageBox.Show("Have a good day ahead!", "Cancelled")
-                CheckoutBtn.Enabled = True
-                CheckoutBtn.Text = "Checkout"
-                Return
-            End If
-        End If
-
-        CheckOutBtnText(False)
-
-        'getting transaction in preparation for checkout
         Dim transactionID As String = Await transactRepo.GenerateUniqueTransactionID()
-        Dim insertInUserCheckout As Boolean = Await cartRepo.InsertIndividualTransactionToCheckout(transactionID, cartInfoInCheckout)
+        If Not Await ProcessCheckoutData(cartRepo, transactRepo, cartInfoInCheckout, transactionID) Then Exit Sub
 
-        If Not insertInUserCheckout Then
-            MessageBox.Show("Please try again.")
-            Console.WriteLine("Error inserting individual data from another table with transaction ID.")
-            CheckOutBtnText(False)
-            Return
-        End If
-
-        Dim updateCheckoutStatus As Boolean = Await cartRepo.UpdateAlreadyCheckoutStatus(cartInfoInCheckout)
-
-        If Not updateCheckoutStatus Then
-            MessageBox.Show("Please try again.")
-            Console.WriteLine("Error updating the values of alreadyCheckout to 1.")
-            CheckoutBtn.Enabled = True
-            CheckoutBtn.Text = "Checkout"
-            Return
-        End If
-
-        Dim insertedInUserTransaction As Boolean = Await transactRepo.InsertIntoUserTransaction(transactionID)
-
-        If Not insertedInUserTransaction Then
-            MessageBox.Show("Please try again.")
-            Console.WriteLine("Error inserting the transactionID with userID to userTransaction table.")
-            CheckoutBtn.Enabled = True
-            CheckoutBtn.Text = "Checkout"
-            Return
-        End If
-
-        Dim resultCheckout As DialogResult = MessageBox.Show("You have successfully checked out the item. Do you want to see the receipt?", "Checkout Successful", MessageBoxButtons.OKCancel)
-
-        'Polishing the receipt
-        Dim receipt As New Receipt(account)
         Dim getDataReceipt As List(Of Cart) = Await cartRepo.GetUserReceiptData()
         Dim totalItem As Decimal = getTotalSumOfItems(getDataReceipt)
 
-        'If resultCheckout = DialogResult.OK Then
-        '    receipt.AutoView()
-        'Else
-        '    MessageBox.Show("Have a good day ahead!", "Success", MessageBoxButtons.OK)
-        'End If
+        If Not Await ReduceStockAndClearCart(cartRepo) Then Exit Sub
 
-        'Reduce stock after checkout
+        CartPage_Load(sender, e) ' Refresh the cart view
+
+        If MessageBox.Show("You have successfully checked out the item. Do you want to see the receipt?", "Checkout Successful", MessageBoxButtons.OKCancel) = DialogResult.OK Then
+            Dim receipt As New Receipt(account)
+            receipt.AutoView()
+            receipt.PdfReceipt(getDataReceipt, totalItem, transactionID, account)
+        Else
+            MessageBox.Show("Have a good day ahead!", "Success", MessageBoxButtons.OK)
+        End If
+    End Sub
+
+    Private Function ValidateCartSelection(cartItems As List(Of Cart)) As Boolean
+        If cartItems.Count = 0 Then
+            MessageBox.Show("Please select at least one item to checkout.")
+            CheckOutBtnText(False)
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Async Function HasPendingPrescriptions(cartItems As List(Of Cart), cartRepo As CartRepository) As Task(Of Boolean)
+        If cartItems.Any(Function(item) item.isApproved = 0) Then
+            Dim result As DialogResult = MessageBox.Show(
+            "You have checked out an item that needs a prescription. Do you want to proceed to the prescription form?",
+            "Prescription Needed",
+            MessageBoxButtons.OKCancel
+        )
+
+            If result = DialogResult.OK Then
+                If Await cartRepo.IsPrescriptionAlreadySent() Then
+                    MessageBox.Show("It seems that you have already submitted a form for the checked medicines...", "Please Wait")
+                    Return True
+                End If
+
+                Using sf As New SubmitForm(account)
+                    sf.ShowDialog()
+                End Using
+
+                Return True
+            ElseIf result = DialogResult.Cancel Then
+                MessageBox.Show("Have a good day ahead!", "Cancelled")
+                CheckoutBtn.Enabled = True
+                CheckoutBtn.Text = "Checkout"
+                Return True
+            End If
+        End If
+        Return False
+    End Function
+
+    Private Async Function ProcessCheckoutData(cartRepo As CartRepository, transactRepo As TransactionRepository, cartItems As List(Of Cart), transactionID As String) As Task(Of Boolean)
+        If Not Await cartRepo.InsertIndividualTransactionToCheckout(transactionID, cartItems) Then
+            MessageBox.Show("Please try again.")
+            Debug.WriteLine("Error inserting individual data from another table with transaction ID.")
+            CheckOutBtnText(False)
+            Return False
+        End If
+
+        If Not Await cartRepo.UpdateAlreadyCheckoutStatus(cartItems) Then
+            MessageBox.Show("Please try again.")
+            Debug.WriteLine("Error updating the values of alreadyCheckout to 1.")
+            CheckOutBtnText(False)
+            Return False
+        End If
+
+        If Not Await transactRepo.InsertIntoUserTransaction(transactionID) Then
+            MessageBox.Show("Please try again.")
+            Debug.WriteLine("Error inserting the transactionID with userID to userTransaction table.")
+            CheckOutBtnText(False)
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Async Function ReduceStockAndClearCart(cartRepo As CartRepository) As Task(Of Boolean)
         Dim itemsToReduceStock As List(Of Cart) = Await cartRepo.GetInfoForStockReduce()
-
-        Dim isStockReduced As Boolean = Await cartRepo.ListOfStockToReduce(itemsToReduceStock)
-
-        If Not isStockReduced Then
+        If Not Await cartRepo.listOfStockToReduce(itemsToReduceStock) Then
             MessageBox.Show("Please try again.")
             Debug.WriteLine("Error reducing stock items from the usersCart table.")
             CheckOutBtnText(False)
-            Return
+            Return False
         End If
 
-        Dim deleteFromUserCart As Boolean = Await cartRepo.DeleteCheckoutItemFromUsersCart()
-
-        If Not deleteFromUserCart Then
+        If Not Await cartRepo.deleteCheckoutItemFromUsersCart() Then
             MessageBox.Show("Error processing your checkout.")
             Debug.WriteLine("Error deleting items from the usersCart table.")
-            CheckoutBtn.Enabled = True
-            CheckoutBtn.Text = "Checkout"
-            Return
+            CheckOutBtnText(False)
+            Return False
         End If
 
-        ' Clear the cart items from the UI
         CheckOutBtnText(False)
-        CartPage_Load(sender, e)
-
-        'receipt.PdfReceipt(getDataReceipt, totalItem, transactionID, account)
-
-    End Sub
+        Return True
+    End Function
+#End Region
 
     Private Function getTotalSumOfItems(totalItems As List(Of Cart)) As Decimal
         Dim itemList As New List(Of Decimal)()
@@ -250,13 +239,9 @@ Public Class CartPage
         Return totalSum
     End Function
 
-    Private Sub CheckOutBtnText(isCheckingOut As Boolean)
-        If Not isCheckingOut Then
-            CheckoutBtn.Text = "Checkout"
-            CheckoutBtn.Enabled = True
-        Else
-            CheckoutBtn.Text = "Checking Out..."
-            CheckoutBtn.Enabled = False
-        End If
+    Private Sub CheckOutBtnText(isProcessing As Boolean)
+        CheckoutBtn.Enabled = Not isProcessing
+        CheckoutBtn.Text = If(isProcessing, "Processing...", "Checkout")
     End Sub
+
 End Class
