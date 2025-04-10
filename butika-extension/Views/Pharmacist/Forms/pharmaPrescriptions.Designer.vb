@@ -39,7 +39,6 @@ Partial Class pharmaPrescriptions
         Label3 = New Label()
         Label2 = New Label()
         Label1 = New Label()
-        medicinesPnl = New Panel()
         allprescriptPnl = New Guna.UI2.WinForms.Guna2Panel()
         allprescriptLbl = New Label()
         infoIcon = New PictureBox()
@@ -51,6 +50,7 @@ Partial Class pharmaPrescriptions
         declineLbl = New Label()
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         infoManagerIcon = New ToolTip(components)
+        FlowLayoutPanel1 = New FlowLayoutPanel()
         Guna2Panel2.SuspendLayout()
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -118,15 +118,6 @@ Partial Class pharmaPrescriptions
         Label1.Size = New Size(112, 18)
         Label1.TabIndex = 0
         Label1.Text = "Prescription ID"
-        ' 
-        ' medicinesPnl
-        ' 
-        medicinesPnl.AutoScroll = True
-        medicinesPnl.Location = New Point(36, 178)
-        medicinesPnl.Margin = New Padding(3, 0, 3, 3)
-        medicinesPnl.Name = "medicinesPnl"
-        medicinesPnl.Size = New Size(972, 527)
-        medicinesPnl.TabIndex = 28
         ' 
         ' allprescriptPnl
         ' 
@@ -249,19 +240,28 @@ Partial Class pharmaPrescriptions
         Guna2Separator1.Size = New Size(1019, 10)
         Guna2Separator1.TabIndex = 33
         ' 
+        ' FlowLayoutPanel1
+        ' 
+        FlowLayoutPanel1.Location = New Point(36, 178)
+        FlowLayoutPanel1.Margin = New Padding(3, 0, 3, 3)
+        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        FlowLayoutPanel1.Size = New Size(972, 530)
+        FlowLayoutPanel1.TabIndex = 0
+        ' 
         ' pharmaPrescriptions
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1043, 720)
+        Controls.Add(FlowLayoutPanel1)
         Controls.Add(Guna2Separator1)
         Controls.Add(declinedPnl)
         Controls.Add(declineLbl)
         Controls.Add(pendingPnl)
         Controls.Add(pendingLbl)
         Controls.Add(Guna2Panel2)
-        Controls.Add(medicinesPnl)
         Controls.Add(allprescriptPnl)
         Controls.Add(allprescriptLbl)
         Controls.Add(infoIcon)
@@ -282,7 +282,6 @@ Partial Class pharmaPrescriptions
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents medicinesPnl As Panel
     Friend WithEvents allprescriptPnl As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents allprescriptLbl As Label
     Friend WithEvents infoIcon As PictureBox
@@ -294,4 +293,5 @@ Partial Class pharmaPrescriptions
     Friend WithEvents declineLbl As Label
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents infoManagerIcon As ToolTip
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

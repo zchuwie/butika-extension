@@ -23,24 +23,24 @@ Partial Class pharmaMedicines
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaMedicines))
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
         Label1 = New Label()
+        flpMedicine = New FlowLayoutPanel()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         allmedsLbl = New Label()
         infoIcon = New PictureBox()
         medicineSearch = New Guna.UI2.WinForms.Guna2TextBox()
         medicinesLbl = New Label()
-        medicinesPnl = New Panel()
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         infoManagerIcon = New ToolTip(components)
         Guna2Panel2.SuspendLayout()
@@ -49,17 +49,18 @@ Partial Class pharmaMedicines
         ' 
         ' Guna2Panel2
         ' 
+        Guna2Panel2.BackColor = Color.Transparent
         Guna2Panel2.BorderRadius = 10
         Guna2Panel2.Controls.Add(Label4)
         Guna2Panel2.Controls.Add(Label3)
         Guna2Panel2.Controls.Add(Label2)
         Guna2Panel2.Controls.Add(Label1)
-        Guna2Panel2.CustomizableEdges = CustomizableEdges13
+        Guna2Panel2.CustomizableEdges = CustomizableEdges1
         Guna2Panel2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Panel2.Location = New Point(36, 144)
         Guna2Panel2.Margin = New Padding(3, 3, 3, 0)
         Guna2Panel2.Name = "Guna2Panel2"
-        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Panel2.Size = New Size(972, 37)
         Guna2Panel2.TabIndex = 19
         ' 
@@ -81,7 +82,7 @@ Partial Class pharmaMedicines
         Label3.BackColor = Color.Transparent
         Label3.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold)
         Label3.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Label3.Location = New Point(618, 10)
+        Label3.Location = New Point(565, 10)
         Label3.Name = "Label3"
         Label3.Size = New Size(107, 18)
         Label3.TabIndex = 2
@@ -93,7 +94,7 @@ Partial Class pharmaMedicines
         Label2.BackColor = Color.Transparent
         Label2.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold)
         Label2.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Label2.Location = New Point(296, 10)
+        Label2.Location = New Point(249, 10)
         Label2.Name = "Label2"
         Label2.Size = New Size(128, 18)
         Label2.TabIndex = 1
@@ -111,13 +112,24 @@ Partial Class pharmaMedicines
         Label1.TabIndex = 0
         Label1.Text = "Medicine ID"
         ' 
+        ' flpMedicine
+        ' 
+        flpMedicine.AutoScroll = True
+        flpMedicine.FlowDirection = FlowDirection.TopDown
+        flpMedicine.Location = New Point(36, 181)
+        flpMedicine.Margin = New Padding(0)
+        flpMedicine.Name = "flpMedicine"
+        flpMedicine.Size = New Size(972, 527)
+        flpMedicine.TabIndex = 0
+        flpMedicine.WrapContents = False
+        ' 
         ' Guna2Panel1
         ' 
-        Guna2Panel1.CustomizableEdges = CustomizableEdges15
+        Guna2Panel1.CustomizableEdges = CustomizableEdges3
         Guna2Panel1.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Panel1.Location = New Point(39, 124)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Panel1.Size = New Size(105, 3)
         Guna2Panel1.TabIndex = 18
         ' 
@@ -149,7 +161,7 @@ Partial Class pharmaMedicines
         medicineSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medicineSearch.BorderRadius = 4
         medicineSearch.BorderThickness = 2
-        medicineSearch.CustomizableEdges = CustomizableEdges17
+        medicineSearch.CustomizableEdges = CustomizableEdges5
         medicineSearch.DefaultText = ""
         medicineSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         medicineSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -166,7 +178,7 @@ Partial Class pharmaMedicines
         medicineSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medicineSearch.PlaceholderText = "Search medicines"
         medicineSearch.SelectedText = ""
-        medicineSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        medicineSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         medicineSearch.Size = New Size(225, 34)
         medicineSearch.TabIndex = 14
         ' 
@@ -181,15 +193,6 @@ Partial Class pharmaMedicines
         medicinesLbl.TabIndex = 11
         medicinesLbl.Text = "MEDICINES"
         ' 
-        ' medicinesPnl
-        ' 
-        medicinesPnl.AutoScroll = True
-        medicinesPnl.Location = New Point(36, 181)
-        medicinesPnl.Margin = New Padding(3, 0, 3, 3)
-        medicinesPnl.Name = "medicinesPnl"
-        medicinesPnl.Size = New Size(972, 527)
-        medicinesPnl.TabIndex = 20
-        ' 
         ' Guna2Separator1
         ' 
         Guna2Separator1.Location = New Point(12, 73)
@@ -203,6 +206,7 @@ Partial Class pharmaMedicines
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1043, 720)
+        Controls.Add(flpMedicine)
         Controls.Add(Guna2Separator1)
         Controls.Add(Guna2Panel2)
         Controls.Add(Guna2Panel1)
@@ -210,7 +214,6 @@ Partial Class pharmaMedicines
         Controls.Add(infoIcon)
         Controls.Add(medicineSearch)
         Controls.Add(medicinesLbl)
-        Controls.Add(medicinesPnl)
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaMedicines"
         Text = "pharmaMedicine"
@@ -231,7 +234,8 @@ Partial Class pharmaMedicines
     Friend WithEvents infoIcon As PictureBox
     Friend WithEvents medicineSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents medicinesLbl As Label
-    Friend WithEvents medicinesPnl As Panel
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents infoManagerIcon As ToolTip
+    Friend WithEvents medicinesPnl As Panel
+    Friend WithEvents flpMedicine As FlowLayoutPanel
 End Class

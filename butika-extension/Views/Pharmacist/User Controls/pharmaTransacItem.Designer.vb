@@ -22,8 +22,8 @@ Partial Class pharmaTransacItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         dateLbl = New Label()
         transacIdLbl = New Label()
@@ -41,12 +41,12 @@ Partial Class pharmaTransacItem
         Guna2Panel1.Controls.Add(transacIdLbl)
         Guna2Panel1.Controls.Add(usernameLbl)
         Guna2Panel1.Controls.Add(userIdLbl)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges3
+        Guna2Panel1.CustomizableEdges = CustomizableEdges1
         Guna2Panel1.Dock = DockStyle.Fill
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2Panel1.Size = New Size(972, 37)
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Panel1.Size = New Size(964, 37)
         Guna2Panel1.TabIndex = 1
         ' 
         ' dateLbl
@@ -99,8 +99,9 @@ Partial Class pharmaTransacItem
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
+        Cursor = Cursors.Hand
         Name = "pharmaTransacItem"
-        Size = New Size(972, 37)
+        Size = New Size(964, 37)
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
         ResumeLayout(False)
