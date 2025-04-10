@@ -8,10 +8,10 @@ Public Class adminDashboard
     Private adminPage As adminPage
     Public Sub New(adminPage As adminPage)
         InitializeComponent()
-        Me.adminPage = adminPage ' Store the reference to the parent form
+        Me.adminPage = adminPage
     End Sub
 
-    Private currentPeriod As String = "week" ' Start with week
+    Private currentPeriod As String = "week"
 
     Private Async Sub adminDashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Await LoadUserGrowthAsync(currentPeriod)
@@ -87,47 +87,39 @@ Public Class adminDashboard
     Private Async Function LoadUserStatusChartAsync() As Task
         userStatusPie.Series.Clear()
 
-        ' Fetch active/inactive user status data asynchronously
         Dim data = Await AdminRepository.GetActiveInactiveUserStatusAsync()
 
-        ' Create a new series for the user status pie chart
         Dim series As New Series("User Status") With {
         .ChartType = SeriesChartType.Pie,
         .IsValueShownAsLabel = True
     }
 
-        ' Add data points for active and inactive users
         series.Points.AddXY("Active", data.activeCount)
         series.Points.AddXY("Inactive", data.inactiveCount)
 
-        ' Add the series to the pie chart and update
         userStatusPie.Series.Add(series)
         userStatusPie.Update()
     End Function
 
 
     Public Sub ShowFormInPanel(form As Form)
-        adminPage.ShowFormInPanel(form) ' Call the ShowFormInPanel method from AdminPage
+        adminPage.ShowFormInPanel(form)
     End Sub
 
-    ' Event handler for alluserShow button click
     Private Sub alluserShow_Click(sender As Object, e As EventArgs) Handles alluserShow.Click
-        ShowFormInPanel(New adminUser()) ' Replace with your form for showing all users
+        ShowFormInPanel(New adminUser())
     End Sub
 
-    ' Event handler for activeShow button click
     Private Sub activeShow_Click(sender As Object, e As EventArgs) Handles activeShow.Click
-        ShowFormInPanel(New adminUser()) ' Replace with your form for showing active users
+        ShowFormInPanel(New adminUser())
     End Sub
 
-    ' Event handler for discountShow button click
     Private Sub discountShow_Click(sender As Object, e As EventArgs) Handles discountShow.Click
-        ShowFormInPanel(New adminDiscount()) ' Replace with your form for showing discounted users
+        ShowFormInPanel(New adminDiscounts())
     End Sub
 
-    ' Event handler for signupShow button click
     Private Sub signupShow_Click(sender As Object, e As EventArgs) Handles signupShow.Click
-        ShowFormInPanel(New adminLogs()) ' Replace with your form for showing signup data
+        ShowFormInPanel(New adminLogs())
     End Sub
 
 
