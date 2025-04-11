@@ -22,8 +22,8 @@ Partial Class AddMedicinePanel_InventoryCustodian
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges91 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges92 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges89 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges90 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -47,74 +47,72 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges31 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges32 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges37 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges38 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges35 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges36 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges33 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges34 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges43 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges44 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges39 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges40 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges31 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges32 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges41 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges42 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges45 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges46 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges51 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges52 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges37 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges38 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges39 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges40 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges43 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges44 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges49 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges50 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges47 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges48 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges53 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges54 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges59 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges60 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges45 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges46 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges51 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges52 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges57 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges58 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges55 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges56 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges61 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges62 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges67 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges68 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges53 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges54 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges59 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges60 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges65 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges66 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges63 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges64 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges73 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges74 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges61 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges62 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges71 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges72 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges69 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges70 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges75 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges76 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges81 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges82 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges67 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges68 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges73 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges74 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges79 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges80 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges77 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges78 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges75 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges76 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges81 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges82 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges83 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges84 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges85 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges86 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges87 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges88 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges89 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges90 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         LabelPanel = New Guna.UI2.WinForms.Guna2GradientPanel()
         Guna2CustomGradientPanel13 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         prescription_combobox = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -126,7 +124,6 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2PictureBox11 = New Guna.UI2.WinForms.Guna2PictureBox()
         Guna2HtmlLabel16 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         stock_txtbox = New Guna.UI2.WinForms.Guna2TextBox()
-        clearimage_btn = New Guna.UI2.WinForms.Guna2Button()
         exit_btn = New Guna.UI2.WinForms.Guna2Button()
         Guna2PictureBox10 = New Guna.UI2.WinForms.Guna2PictureBox()
         addimage_btn = New Guna.UI2.WinForms.Guna2Button()
@@ -223,7 +220,6 @@ Partial Class AddMedicinePanel_InventoryCustodian
         LabelPanel.Controls.Add(prescription_cbox)
         LabelPanel.Controls.Add(Guna2CustomGradientPanel17)
         LabelPanel.Controls.Add(stock_txtbox)
-        LabelPanel.Controls.Add(clearimage_btn)
         LabelPanel.Controls.Add(exit_btn)
         LabelPanel.Controls.Add(Guna2PictureBox10)
         LabelPanel.Controls.Add(addimage_btn)
@@ -252,12 +248,12 @@ Partial Class AddMedicinePanel_InventoryCustodian
         LabelPanel.Controls.Add(clear_fields_btn)
         LabelPanel.Controls.Add(add_medicine_btn)
         LabelPanel.Controls.Add(medicine_name_txtbox)
-        LabelPanel.CustomizableEdges = CustomizableEdges91
+        LabelPanel.CustomizableEdges = CustomizableEdges89
         LabelPanel.Dock = DockStyle.Fill
         LabelPanel.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         LabelPanel.Location = New Point(0, 0)
         LabelPanel.Name = "LabelPanel"
-        LabelPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges92
+        LabelPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges90
         LabelPanel.Size = New Size(734, 645)
         LabelPanel.TabIndex = 0
         ' 
@@ -429,32 +425,9 @@ Partial Class AddMedicinePanel_InventoryCustodian
         stock_txtbox.TabIndex = 32
         stock_txtbox.TextOffset = New Point(5, 0)
         ' 
-        ' clearimage_btn
-        ' 
-        clearimage_btn.Anchor = AnchorStyles.Top
-        clearimage_btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        clearimage_btn.BorderRadius = 7
-        clearimage_btn.BorderThickness = 1
-        clearimage_btn.CustomizableEdges = CustomizableEdges17
-        clearimage_btn.DisabledState.BorderColor = Color.DarkGray
-        clearimage_btn.DisabledState.CustomBorderColor = Color.DarkGray
-        clearimage_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        clearimage_btn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        clearimage_btn.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        clearimage_btn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        clearimage_btn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        clearimage_btn.Image = CType(resources.GetObject("clearimage_btn.Image"), Image)
-        clearimage_btn.ImageSize = New Size(14, 17)
-        clearimage_btn.Location = New Point(670, 405)
-        clearimage_btn.Name = "clearimage_btn"
-        clearimage_btn.Padding = New Padding(10, 0, 0, 0)
-        clearimage_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges18
-        clearimage_btn.Size = New Size(42, 35)
-        clearimage_btn.TabIndex = 30
-        ' 
         ' exit_btn
         ' 
-        exit_btn.CustomizableEdges = CustomizableEdges19
+        exit_btn.CustomizableEdges = CustomizableEdges17
         exit_btn.DisabledState.BorderColor = Color.DarkGray
         exit_btn.DisabledState.CustomBorderColor = Color.DarkGray
         exit_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -465,7 +438,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         exit_btn.Image = CType(resources.GetObject("exit_btn.Image"), Image)
         exit_btn.Location = New Point(667, 19)
         exit_btn.Name = "exit_btn"
-        exit_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        exit_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges18
         exit_btn.Size = New Size(48, 39)
         exit_btn.TabIndex = 29
         ' 
@@ -473,13 +446,13 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2PictureBox10.Anchor = AnchorStyles.Top
         Guna2PictureBox10.BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        Guna2PictureBox10.CustomizableEdges = CustomizableEdges21
+        Guna2PictureBox10.CustomizableEdges = CustomizableEdges19
         Guna2PictureBox10.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox10.Image = CType(resources.GetObject("Guna2PictureBox10.Image"), Image)
         Guna2PictureBox10.ImageRotate = 0F
         Guna2PictureBox10.Location = New Point(523, 377)
         Guna2PictureBox10.Name = "Guna2PictureBox10"
-        Guna2PictureBox10.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        Guna2PictureBox10.ShadowDecoration.CustomizableEdges = CustomizableEdges20
         Guna2PictureBox10.Size = New Size(20, 18)
         Guna2PictureBox10.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox10.TabIndex = 18
@@ -491,7 +464,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         addimage_btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         addimage_btn.BorderRadius = 8
         addimage_btn.BorderThickness = 1
-        addimage_btn.CustomizableEdges = CustomizableEdges23
+        addimage_btn.CustomizableEdges = CustomizableEdges21
         addimage_btn.DisabledState.BorderColor = Color.DarkGray
         addimage_btn.DisabledState.CustomBorderColor = Color.DarkGray
         addimage_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -504,7 +477,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         addimage_btn.Location = New Point(526, 405)
         addimage_btn.Name = "addimage_btn"
         addimage_btn.Padding = New Padding(10, 0, 0, 0)
-        addimage_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        addimage_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         addimage_btn.Size = New Size(130, 130)
         addimage_btn.TabIndex = 28
         ' 
@@ -525,14 +498,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2CustomGradientPanel15.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel15.Controls.Add(Guna2CustomGradientPanel16)
-        Guna2CustomGradientPanel15.CustomizableEdges = CustomizableEdges29
+        Guna2CustomGradientPanel15.CustomizableEdges = CustomizableEdges27
         Guna2CustomGradientPanel15.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel15.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel15.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel15.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel15.Location = New Point(23, 491)
         Guna2CustomGradientPanel15.Name = "Guna2CustomGradientPanel15"
-        Guna2CustomGradientPanel15.ShadowDecoration.CustomizableEdges = CustomizableEdges30
+        Guna2CustomGradientPanel15.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         Guna2CustomGradientPanel15.Size = New Size(240, 36)
         Guna2CustomGradientPanel15.TabIndex = 27
         ' 
@@ -543,27 +516,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel16.BorderThickness = 1
         Guna2CustomGradientPanel16.Controls.Add(Guna2PictureBox9)
         Guna2CustomGradientPanel16.Controls.Add(Guna2HtmlLabel14)
-        Guna2CustomGradientPanel16.CustomizableEdges = CustomizableEdges27
+        Guna2CustomGradientPanel16.CustomizableEdges = CustomizableEdges25
         Guna2CustomGradientPanel16.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel16.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel16.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel16.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel16.Location = New Point(0, 0)
         Guna2CustomGradientPanel16.Name = "Guna2CustomGradientPanel16"
-        Guna2CustomGradientPanel16.ShadowDecoration.CustomizableEdges = CustomizableEdges28
+        Guna2CustomGradientPanel16.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         Guna2CustomGradientPanel16.Size = New Size(258, 36)
         Guna2CustomGradientPanel16.TabIndex = 0
         ' 
         ' Guna2PictureBox9
         ' 
         Guna2PictureBox9.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox9.CustomizableEdges = CustomizableEdges25
+        Guna2PictureBox9.CustomizableEdges = CustomizableEdges23
         Guna2PictureBox9.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox9.Image = CType(resources.GetObject("Guna2PictureBox9.Image"), Image)
         Guna2PictureBox9.ImageRotate = 0F
         Guna2PictureBox9.Location = New Point(12, 9)
         Guna2PictureBox9.Name = "Guna2PictureBox9"
-        Guna2PictureBox9.ShadowDecoration.CustomizableEdges = CustomizableEdges26
+        Guna2PictureBox9.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         Guna2PictureBox9.Size = New Size(20, 18)
         Guna2PictureBox9.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox9.TabIndex = 17
@@ -588,7 +561,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         expdate_datetime.BorderRadius = 7
         expdate_datetime.BorderThickness = 1
         expdate_datetime.Checked = True
-        expdate_datetime.CustomizableEdges = CustomizableEdges31
+        expdate_datetime.CustomizableEdges = CustomizableEdges29
         expdate_datetime.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         expdate_datetime.Font = New Font("Segoe UI Semibold", 8F, FontStyle.Bold)
         expdate_datetime.Format = DateTimePickerFormat.Short
@@ -596,7 +569,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         expdate_datetime.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         expdate_datetime.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         expdate_datetime.Name = "expdate_datetime"
-        expdate_datetime.ShadowDecoration.CustomizableEdges = CustomizableEdges32
+        expdate_datetime.ShadowDecoration.CustomizableEdges = CustomizableEdges30
         expdate_datetime.Size = New Size(266, 36)
         expdate_datetime.TabIndex = 27
         expdate_datetime.TextOffset = New Point(10, 0)
@@ -606,14 +579,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2CustomGradientPanel10.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel10.Controls.Add(Guna2CustomGradientPanel11)
-        Guna2CustomGradientPanel10.CustomizableEdges = CustomizableEdges37
+        Guna2CustomGradientPanel10.CustomizableEdges = CustomizableEdges35
         Guna2CustomGradientPanel10.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel10.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel10.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel10.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel10.Location = New Point(261, 405)
         Guna2CustomGradientPanel10.Name = "Guna2CustomGradientPanel10"
-        Guna2CustomGradientPanel10.ShadowDecoration.CustomizableEdges = CustomizableEdges38
+        Guna2CustomGradientPanel10.ShadowDecoration.CustomizableEdges = CustomizableEdges36
         Guna2CustomGradientPanel10.Size = New Size(101, 36)
         Guna2CustomGradientPanel10.TabIndex = 19
         ' 
@@ -624,27 +597,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel11.BorderThickness = 1
         Guna2CustomGradientPanel11.Controls.Add(Guna2PictureBox6)
         Guna2CustomGradientPanel11.Controls.Add(Guna2HtmlLabel11)
-        Guna2CustomGradientPanel11.CustomizableEdges = CustomizableEdges35
+        Guna2CustomGradientPanel11.CustomizableEdges = CustomizableEdges33
         Guna2CustomGradientPanel11.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel11.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel11.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel11.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel11.Location = New Point(0, 0)
         Guna2CustomGradientPanel11.Name = "Guna2CustomGradientPanel11"
-        Guna2CustomGradientPanel11.ShadowDecoration.CustomizableEdges = CustomizableEdges36
+        Guna2CustomGradientPanel11.ShadowDecoration.CustomizableEdges = CustomizableEdges34
         Guna2CustomGradientPanel11.Size = New Size(402, 36)
         Guna2CustomGradientPanel11.TabIndex = 0
         ' 
         ' Guna2PictureBox6
         ' 
         Guna2PictureBox6.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox6.CustomizableEdges = CustomizableEdges33
+        Guna2PictureBox6.CustomizableEdges = CustomizableEdges31
         Guna2PictureBox6.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox6.Image = CType(resources.GetObject("Guna2PictureBox6.Image"), Image)
         Guna2PictureBox6.ImageRotate = 0F
         Guna2PictureBox6.Location = New Point(12, 9)
         Guna2PictureBox6.Name = "Guna2PictureBox6"
-        Guna2PictureBox6.ShadowDecoration.CustomizableEdges = CustomizableEdges34
+        Guna2PictureBox6.ShadowDecoration.CustomizableEdges = CustomizableEdges32
         Guna2PictureBox6.Size = New Size(20, 18)
         Guna2PictureBox6.SizeMode = PictureBoxSizeMode.CenterImage
         Guna2PictureBox6.TabIndex = 17
@@ -671,27 +644,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel12.Controls.Add(Guna2PictureBox7)
         Guna2CustomGradientPanel12.Controls.Add(Guna2HtmlLabel12)
         Guna2CustomGradientPanel12.Controls.Add(description_txtbox)
-        Guna2CustomGradientPanel12.CustomizableEdges = CustomizableEdges43
+        Guna2CustomGradientPanel12.CustomizableEdges = CustomizableEdges41
         Guna2CustomGradientPanel12.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel12.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel12.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel12.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel12.Location = New Point(494, 134)
         Guna2CustomGradientPanel12.Name = "Guna2CustomGradientPanel12"
-        Guna2CustomGradientPanel12.ShadowDecoration.CustomizableEdges = CustomizableEdges44
+        Guna2CustomGradientPanel12.ShadowDecoration.CustomizableEdges = CustomizableEdges42
         Guna2CustomGradientPanel12.Size = New Size(221, 168)
         Guna2CustomGradientPanel12.TabIndex = 25
         ' 
         ' Guna2PictureBox7
         ' 
         Guna2PictureBox7.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox7.CustomizableEdges = CustomizableEdges39
+        Guna2PictureBox7.CustomizableEdges = CustomizableEdges37
         Guna2PictureBox7.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox7.Image = CType(resources.GetObject("Guna2PictureBox7.Image"), Image)
         Guna2PictureBox7.ImageRotate = 0F
         Guna2PictureBox7.Location = New Point(11, 10)
         Guna2PictureBox7.Name = "Guna2PictureBox7"
-        Guna2PictureBox7.ShadowDecoration.CustomizableEdges = CustomizableEdges40
+        Guna2PictureBox7.ShadowDecoration.CustomizableEdges = CustomizableEdges38
         Guna2PictureBox7.Size = New Size(20, 18)
         Guna2PictureBox7.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox7.TabIndex = 18
@@ -715,7 +688,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         description_txtbox.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         description_txtbox.BorderColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         description_txtbox.BorderRadius = 10
-        description_txtbox.CustomizableEdges = CustomizableEdges41
+        description_txtbox.CustomizableEdges = CustomizableEdges39
         description_txtbox.DefaultText = ""
         description_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         description_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -733,7 +706,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         description_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         description_txtbox.PlaceholderText = "Enter description here"
         description_txtbox.SelectedText = ""
-        description_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges42
+        description_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges40
         description_txtbox.Size = New Size(215, 127)
         description_txtbox.TabIndex = 0
         ' 
@@ -742,7 +715,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         dosage_txtbox.Anchor = AnchorStyles.Top
         dosage_txtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         dosage_txtbox.BorderRadius = 7
-        dosage_txtbox.CustomizableEdges = CustomizableEdges45
+        dosage_txtbox.CustomizableEdges = CustomizableEdges43
         dosage_txtbox.DefaultText = ""
         dosage_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         dosage_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -759,7 +732,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         dosage_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         dosage_txtbox.PlaceholderText = "in ml/mg"
         dosage_txtbox.SelectedText = ""
-        dosage_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges46
+        dosage_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges44
         dosage_txtbox.Size = New Size(153, 36)
         dosage_txtbox.TabIndex = 20
         dosage_txtbox.TextOffset = New Point(5, 0)
@@ -768,14 +741,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2CustomGradientPanel8.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel8.Controls.Add(Guna2CustomGradientPanel9)
-        Guna2CustomGradientPanel8.CustomizableEdges = CustomizableEdges51
+        Guna2CustomGradientPanel8.CustomizableEdges = CustomizableEdges49
         Guna2CustomGradientPanel8.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel8.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel8.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel8.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel8.Location = New Point(23, 405)
         Guna2CustomGradientPanel8.Name = "Guna2CustomGradientPanel8"
-        Guna2CustomGradientPanel8.ShadowDecoration.CustomizableEdges = CustomizableEdges52
+        Guna2CustomGradientPanel8.ShadowDecoration.CustomizableEdges = CustomizableEdges50
         Guna2CustomGradientPanel8.Size = New Size(85, 36)
         Guna2CustomGradientPanel8.TabIndex = 17
         ' 
@@ -786,27 +759,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel9.BorderThickness = 1
         Guna2CustomGradientPanel9.Controls.Add(Guna2PictureBox5)
         Guna2CustomGradientPanel9.Controls.Add(Guna2HtmlLabel9)
-        Guna2CustomGradientPanel9.CustomizableEdges = CustomizableEdges49
+        Guna2CustomGradientPanel9.CustomizableEdges = CustomizableEdges47
         Guna2CustomGradientPanel9.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel9.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel9.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel9.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel9.Location = New Point(0, 0)
         Guna2CustomGradientPanel9.Name = "Guna2CustomGradientPanel9"
-        Guna2CustomGradientPanel9.ShadowDecoration.CustomizableEdges = CustomizableEdges50
+        Guna2CustomGradientPanel9.ShadowDecoration.CustomizableEdges = CustomizableEdges48
         Guna2CustomGradientPanel9.Size = New Size(402, 36)
         Guna2CustomGradientPanel9.TabIndex = 0
         ' 
         ' Guna2PictureBox5
         ' 
         Guna2PictureBox5.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox5.CustomizableEdges = CustomizableEdges47
+        Guna2PictureBox5.CustomizableEdges = CustomizableEdges45
         Guna2PictureBox5.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox5.Image = CType(resources.GetObject("Guna2PictureBox5.Image"), Image)
         Guna2PictureBox5.ImageRotate = 0F
         Guna2PictureBox5.Location = New Point(12, 9)
         Guna2PictureBox5.Name = "Guna2PictureBox5"
-        Guna2PictureBox5.ShadowDecoration.CustomizableEdges = CustomizableEdges48
+        Guna2PictureBox5.ShadowDecoration.CustomizableEdges = CustomizableEdges46
         Guna2PictureBox5.Size = New Size(20, 18)
         Guna2PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox5.TabIndex = 17
@@ -838,7 +811,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         price_txtbox.Anchor = AnchorStyles.Top
         price_txtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         price_txtbox.BorderRadius = 7
-        price_txtbox.CustomizableEdges = CustomizableEdges53
+        price_txtbox.CustomizableEdges = CustomizableEdges51
         price_txtbox.DefaultText = ""
         price_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         price_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -855,7 +828,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         price_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         price_txtbox.PlaceholderText = "in Pesos"
         price_txtbox.SelectedText = ""
-        price_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges54
+        price_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges52
         price_txtbox.Size = New Size(150, 36)
         price_txtbox.TabIndex = 18
         price_txtbox.TextOffset = New Point(5, 0)
@@ -876,14 +849,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2CustomGradientPanel6.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel6.Controls.Add(Guna2CustomGradientPanel7)
-        Guna2CustomGradientPanel6.CustomizableEdges = CustomizableEdges59
+        Guna2CustomGradientPanel6.CustomizableEdges = CustomizableEdges57
         Guna2CustomGradientPanel6.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel6.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel6.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel6.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel6.Location = New Point(23, 266)
         Guna2CustomGradientPanel6.Name = "Guna2CustomGradientPanel6"
-        Guna2CustomGradientPanel6.ShadowDecoration.CustomizableEdges = CustomizableEdges60
+        Guna2CustomGradientPanel6.ShadowDecoration.CustomizableEdges = CustomizableEdges58
         Guna2CustomGradientPanel6.Size = New Size(166, 36)
         Guna2CustomGradientPanel6.TabIndex = 21
         ' 
@@ -894,27 +867,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel7.BorderThickness = 1
         Guna2CustomGradientPanel7.Controls.Add(Guna2PictureBox4)
         Guna2CustomGradientPanel7.Controls.Add(Guna2HtmlLabel7)
-        Guna2CustomGradientPanel7.CustomizableEdges = CustomizableEdges57
+        Guna2CustomGradientPanel7.CustomizableEdges = CustomizableEdges55
         Guna2CustomGradientPanel7.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel7.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel7.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel7.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel7.Location = New Point(0, 0)
         Guna2CustomGradientPanel7.Name = "Guna2CustomGradientPanel7"
-        Guna2CustomGradientPanel7.ShadowDecoration.CustomizableEdges = CustomizableEdges58
+        Guna2CustomGradientPanel7.ShadowDecoration.CustomizableEdges = CustomizableEdges56
         Guna2CustomGradientPanel7.Size = New Size(402, 36)
         Guna2CustomGradientPanel7.TabIndex = 0
         ' 
         ' Guna2PictureBox4
         ' 
         Guna2PictureBox4.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox4.CustomizableEdges = CustomizableEdges55
+        Guna2PictureBox4.CustomizableEdges = CustomizableEdges53
         Guna2PictureBox4.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox4.Image = CType(resources.GetObject("Guna2PictureBox4.Image"), Image)
         Guna2PictureBox4.ImageRotate = 0F
         Guna2PictureBox4.Location = New Point(12, 9)
         Guna2PictureBox4.Name = "Guna2PictureBox4"
-        Guna2PictureBox4.ShadowDecoration.CustomizableEdges = CustomizableEdges56
+        Guna2PictureBox4.ShadowDecoration.CustomizableEdges = CustomizableEdges54
         Guna2PictureBox4.Size = New Size(20, 18)
         Guna2PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox4.TabIndex = 17
@@ -937,7 +910,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         medtype_txtbox.Anchor = AnchorStyles.Top
         medtype_txtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         medtype_txtbox.BorderRadius = 7
-        medtype_txtbox.CustomizableEdges = CustomizableEdges61
+        medtype_txtbox.CustomizableEdges = CustomizableEdges59
         medtype_txtbox.DefaultText = ""
         medtype_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         medtype_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -948,14 +921,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         medtype_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         medtype_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         medtype_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        medtype_txtbox.Location = New Point(173, 266)
+        medtype_txtbox.Location = New Point(183, 266)
         medtype_txtbox.Margin = New Padding(3, 4, 3, 4)
         medtype_txtbox.Name = "medtype_txtbox"
         medtype_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         medtype_txtbox.PlaceholderText = "Enter type here"
         medtype_txtbox.SelectedText = ""
-        medtype_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges62
-        medtype_txtbox.Size = New Size(309, 36)
+        medtype_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges60
+        medtype_txtbox.Size = New Size(299, 36)
         medtype_txtbox.TabIndex = 22
         medtype_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -963,14 +936,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2CustomGradientPanel4.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel4.Controls.Add(Guna2CustomGradientPanel5)
-        Guna2CustomGradientPanel4.CustomizableEdges = CustomizableEdges67
+        Guna2CustomGradientPanel4.CustomizableEdges = CustomizableEdges65
         Guna2CustomGradientPanel4.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel4.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel4.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel4.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel4.Location = New Point(23, 223)
         Guna2CustomGradientPanel4.Name = "Guna2CustomGradientPanel4"
-        Guna2CustomGradientPanel4.ShadowDecoration.CustomizableEdges = CustomizableEdges68
+        Guna2CustomGradientPanel4.ShadowDecoration.CustomizableEdges = CustomizableEdges66
         Guna2CustomGradientPanel4.Size = New Size(166, 36)
         Guna2CustomGradientPanel4.TabIndex = 19
         ' 
@@ -981,27 +954,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel5.BorderThickness = 1
         Guna2CustomGradientPanel5.Controls.Add(Guna2PictureBox3)
         Guna2CustomGradientPanel5.Controls.Add(Guna2HtmlLabel6)
-        Guna2CustomGradientPanel5.CustomizableEdges = CustomizableEdges65
+        Guna2CustomGradientPanel5.CustomizableEdges = CustomizableEdges63
         Guna2CustomGradientPanel5.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel5.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel5.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel5.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel5.Location = New Point(0, 0)
         Guna2CustomGradientPanel5.Name = "Guna2CustomGradientPanel5"
-        Guna2CustomGradientPanel5.ShadowDecoration.CustomizableEdges = CustomizableEdges66
+        Guna2CustomGradientPanel5.ShadowDecoration.CustomizableEdges = CustomizableEdges64
         Guna2CustomGradientPanel5.Size = New Size(402, 36)
         Guna2CustomGradientPanel5.TabIndex = 0
         ' 
         ' Guna2PictureBox3
         ' 
         Guna2PictureBox3.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox3.CustomizableEdges = CustomizableEdges63
+        Guna2PictureBox3.CustomizableEdges = CustomizableEdges61
         Guna2PictureBox3.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox3.Image = CType(resources.GetObject("Guna2PictureBox3.Image"), Image)
         Guna2PictureBox3.ImageRotate = 0F
         Guna2PictureBox3.Location = New Point(12, 9)
         Guna2PictureBox3.Name = "Guna2PictureBox3"
-        Guna2PictureBox3.ShadowDecoration.CustomizableEdges = CustomizableEdges64
+        Guna2PictureBox3.ShadowDecoration.CustomizableEdges = CustomizableEdges62
         Guna2PictureBox3.Size = New Size(20, 18)
         Guna2PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox3.TabIndex = 17
@@ -1023,14 +996,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         Guna2CustomGradientPanel1.Anchor = AnchorStyles.Top
         Guna2CustomGradientPanel1.Controls.Add(Guna2CustomGradientPanel3)
-        Guna2CustomGradientPanel1.CustomizableEdges = CustomizableEdges73
+        Guna2CustomGradientPanel1.CustomizableEdges = CustomizableEdges71
         Guna2CustomGradientPanel1.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Guna2CustomGradientPanel1.Location = New Point(23, 179)
         Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = CustomizableEdges74
+        Guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = CustomizableEdges72
         Guna2CustomGradientPanel1.Size = New Size(166, 36)
         Guna2CustomGradientPanel1.TabIndex = 17
         ' 
@@ -1041,27 +1014,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel3.BorderThickness = 1
         Guna2CustomGradientPanel3.Controls.Add(Guna2PictureBox2)
         Guna2CustomGradientPanel3.Controls.Add(Guna2HtmlLabel5)
-        Guna2CustomGradientPanel3.CustomizableEdges = CustomizableEdges71
+        Guna2CustomGradientPanel3.CustomizableEdges = CustomizableEdges69
         Guna2CustomGradientPanel3.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel3.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel3.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel3.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel3.Location = New Point(0, 0)
         Guna2CustomGradientPanel3.Name = "Guna2CustomGradientPanel3"
-        Guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = CustomizableEdges72
+        Guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = CustomizableEdges70
         Guna2CustomGradientPanel3.Size = New Size(402, 36)
         Guna2CustomGradientPanel3.TabIndex = 0
         ' 
         ' Guna2PictureBox2
         ' 
         Guna2PictureBox2.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox2.CustomizableEdges = CustomizableEdges69
+        Guna2PictureBox2.CustomizableEdges = CustomizableEdges67
         Guna2PictureBox2.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), Image)
         Guna2PictureBox2.ImageRotate = 0F
         Guna2PictureBox2.Location = New Point(12, 9)
         Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Guna2PictureBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges70
+        Guna2PictureBox2.ShadowDecoration.CustomizableEdges = CustomizableEdges68
         Guna2PictureBox2.Size = New Size(20, 18)
         Guna2PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox2.TabIndex = 17
@@ -1084,7 +1057,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         brand_txtbox.Anchor = AnchorStyles.Top
         brand_txtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         brand_txtbox.BorderRadius = 7
-        brand_txtbox.CustomizableEdges = CustomizableEdges75
+        brand_txtbox.CustomizableEdges = CustomizableEdges73
         brand_txtbox.DefaultText = ""
         brand_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         brand_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -1095,14 +1068,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         brand_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         brand_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         brand_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        brand_txtbox.Location = New Point(173, 223)
+        brand_txtbox.Location = New Point(183, 223)
         brand_txtbox.Margin = New Padding(3, 4, 3, 4)
         brand_txtbox.Name = "brand_txtbox"
         brand_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         brand_txtbox.PlaceholderText = "Enter brand here"
         brand_txtbox.SelectedText = ""
-        brand_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges76
-        brand_txtbox.Size = New Size(309, 36)
+        brand_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges74
+        brand_txtbox.Size = New Size(299, 36)
         brand_txtbox.TabIndex = 20
         brand_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -1110,14 +1083,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         ' 
         FixedPanel.Anchor = AnchorStyles.Top
         FixedPanel.Controls.Add(Guna2CustomGradientPanel2)
-        FixedPanel.CustomizableEdges = CustomizableEdges81
+        FixedPanel.CustomizableEdges = CustomizableEdges79
         FixedPanel.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         FixedPanel.FillColor2 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         FixedPanel.FillColor3 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         FixedPanel.FillColor4 = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         FixedPanel.Location = New Point(23, 134)
         FixedPanel.Name = "FixedPanel"
-        FixedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges82
+        FixedPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges80
         FixedPanel.Size = New Size(166, 36)
         FixedPanel.TabIndex = 15
         ' 
@@ -1128,27 +1101,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel2.BorderThickness = 1
         Guna2CustomGradientPanel2.Controls.Add(Guna2PictureBox1)
         Guna2CustomGradientPanel2.Controls.Add(Guna2HtmlLabel4)
-        Guna2CustomGradientPanel2.CustomizableEdges = CustomizableEdges79
+        Guna2CustomGradientPanel2.CustomizableEdges = CustomizableEdges77
         Guna2CustomGradientPanel2.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel2.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel2.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel2.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2CustomGradientPanel2.Location = New Point(0, 0)
         Guna2CustomGradientPanel2.Name = "Guna2CustomGradientPanel2"
-        Guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = CustomizableEdges80
+        Guna2CustomGradientPanel2.ShadowDecoration.CustomizableEdges = CustomizableEdges78
         Guna2CustomGradientPanel2.Size = New Size(402, 36)
         Guna2CustomGradientPanel2.TabIndex = 0
         ' 
         ' Guna2PictureBox1
         ' 
         Guna2PictureBox1.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2PictureBox1.CustomizableEdges = CustomizableEdges77
+        Guna2PictureBox1.CustomizableEdges = CustomizableEdges75
         Guna2PictureBox1.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), Image)
         Guna2PictureBox1.ImageRotate = 0F
         Guna2PictureBox1.Location = New Point(12, 9)
         Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Guna2PictureBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges78
+        Guna2PictureBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges76
         Guna2PictureBox1.Size = New Size(20, 18)
         Guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         Guna2PictureBox1.TabIndex = 17
@@ -1171,7 +1144,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         manufacturer_txtbox.Anchor = AnchorStyles.Top
         manufacturer_txtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         manufacturer_txtbox.BorderRadius = 7
-        manufacturer_txtbox.CustomizableEdges = CustomizableEdges83
+        manufacturer_txtbox.CustomizableEdges = CustomizableEdges81
         manufacturer_txtbox.DefaultText = ""
         manufacturer_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         manufacturer_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -1182,14 +1155,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         manufacturer_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         manufacturer_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         manufacturer_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        manufacturer_txtbox.Location = New Point(173, 179)
+        manufacturer_txtbox.Location = New Point(183, 179)
         manufacturer_txtbox.Margin = New Padding(3, 4, 3, 4)
         manufacturer_txtbox.Name = "manufacturer_txtbox"
         manufacturer_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         manufacturer_txtbox.PlaceholderText = "Enter manufacturer here"
         manufacturer_txtbox.SelectedText = ""
-        manufacturer_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges84
-        manufacturer_txtbox.Size = New Size(309, 36)
+        manufacturer_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges82
+        manufacturer_txtbox.Size = New Size(299, 36)
         manufacturer_txtbox.TabIndex = 18
         manufacturer_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -1252,7 +1225,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         clear_fields_btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         clear_fields_btn.BorderRadius = 8
         clear_fields_btn.BorderThickness = 1
-        clear_fields_btn.CustomizableEdges = CustomizableEdges85
+        clear_fields_btn.CustomizableEdges = CustomizableEdges83
         clear_fields_btn.DisabledState.BorderColor = Color.DarkGray
         clear_fields_btn.DisabledState.CustomBorderColor = Color.DarkGray
         clear_fields_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -1265,7 +1238,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         clear_fields_btn.Location = New Point(23, 581)
         clear_fields_btn.Name = "clear_fields_btn"
         clear_fields_btn.Padding = New Padding(10, 0, 0, 0)
-        clear_fields_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges86
+        clear_fields_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges84
         clear_fields_btn.Size = New Size(189, 47)
         clear_fields_btn.TabIndex = 9
         clear_fields_btn.Text = "Clear All Fields"
@@ -1276,7 +1249,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         add_medicine_btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         add_medicine_btn.BorderRadius = 8
         add_medicine_btn.BorderThickness = 1
-        add_medicine_btn.CustomizableEdges = CustomizableEdges87
+        add_medicine_btn.CustomizableEdges = CustomizableEdges85
         add_medicine_btn.DisabledState.BorderColor = Color.DarkGray
         add_medicine_btn.DisabledState.CustomBorderColor = Color.DarkGray
         add_medicine_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -1289,7 +1262,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         add_medicine_btn.Location = New Point(526, 581)
         add_medicine_btn.Name = "add_medicine_btn"
         add_medicine_btn.Padding = New Padding(10, 0, 0, 0)
-        add_medicine_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges88
+        add_medicine_btn.ShadowDecoration.CustomizableEdges = CustomizableEdges86
         add_medicine_btn.Size = New Size(189, 47)
         add_medicine_btn.TabIndex = 8
         add_medicine_btn.Text = "Add Medicine"
@@ -1299,7 +1272,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         medicine_name_txtbox.Anchor = AnchorStyles.Top
         medicine_name_txtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         medicine_name_txtbox.BorderRadius = 7
-        medicine_name_txtbox.CustomizableEdges = CustomizableEdges89
+        medicine_name_txtbox.CustomizableEdges = CustomizableEdges87
         medicine_name_txtbox.DefaultText = ""
         medicine_name_txtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         medicine_name_txtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -1310,14 +1283,14 @@ Partial Class AddMedicinePanel_InventoryCustodian
         medicine_name_txtbox.Font = New Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         medicine_name_txtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
         medicine_name_txtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        medicine_name_txtbox.Location = New Point(173, 134)
+        medicine_name_txtbox.Location = New Point(183, 134)
         medicine_name_txtbox.Margin = New Padding(3, 4, 3, 4)
         medicine_name_txtbox.Name = "medicine_name_txtbox"
         medicine_name_txtbox.PlaceholderForeColor = Color.FromArgb(CByte(92), CByte(123), CByte(119))
         medicine_name_txtbox.PlaceholderText = "Enter medicine name here"
         medicine_name_txtbox.SelectedText = ""
-        medicine_name_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges90
-        medicine_name_txtbox.Size = New Size(309, 36)
+        medicine_name_txtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges88
+        medicine_name_txtbox.Size = New Size(299, 36)
         medicine_name_txtbox.TabIndex = 16
         medicine_name_txtbox.TextOffset = New Point(5, 0)
         ' 
@@ -1435,7 +1408,6 @@ Partial Class AddMedicinePanel_InventoryCustodian
     Friend WithEvents Guna2PictureBox10 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel15 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents exit_btn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents clearimage_btn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2CustomGradientPanel17 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Guna2CustomGradientPanel18 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Guna2PictureBox11 As Guna.UI2.WinForms.Guna2PictureBox

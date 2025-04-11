@@ -22,41 +22,41 @@ Partial Class MedicineBars
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        medicinebar_bg = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Guna2CustomCheckBox1 = New Guna.UI2.WinForms.Guna2CustomCheckBox()
-        Guna2HtmlLabel3 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Guna2HtmlLabel2 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        expirationDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        stockQuantity = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        manufacturerName = New Guna.UI2.WinForms.Guna2HtmlLabel()
         medicineName = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Guna2CustomGradientPanel1.SuspendLayout()
+        medicinebar_bg.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Guna2CustomGradientPanel1
+        ' medicinebar_bg
         ' 
-        Guna2CustomGradientPanel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        Guna2CustomGradientPanel1.BorderRadius = 6
-        Guna2CustomGradientPanel1.BorderThickness = 1
-        Guna2CustomGradientPanel1.Controls.Add(Guna2CustomCheckBox1)
-        Guna2CustomGradientPanel1.Controls.Add(Guna2HtmlLabel3)
-        Guna2CustomGradientPanel1.Controls.Add(Guna2HtmlLabel2)
-        Guna2CustomGradientPanel1.Controls.Add(Guna2HtmlLabel1)
-        Guna2CustomGradientPanel1.Controls.Add(medicineName)
-        Guna2CustomGradientPanel1.CustomizableEdges = CustomizableEdges3
-        Guna2CustomGradientPanel1.Enabled = False
-        Guna2CustomGradientPanel1.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2CustomGradientPanel1.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2CustomGradientPanel1.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2CustomGradientPanel1.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2CustomGradientPanel1.Location = New Point(0, 0)
-        Guna2CustomGradientPanel1.Margin = New Padding(7, 6, 7, 6)
-        Guna2CustomGradientPanel1.Name = "Guna2CustomGradientPanel1"
-        Guna2CustomGradientPanel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2CustomGradientPanel1.Size = New Size(930, 41)
-        Guna2CustomGradientPanel1.TabIndex = 0
+        medicinebar_bg.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        medicinebar_bg.BorderRadius = 6
+        medicinebar_bg.BorderThickness = 1
+        medicinebar_bg.Controls.Add(Guna2CustomCheckBox1)
+        medicinebar_bg.Controls.Add(expirationDate)
+        medicinebar_bg.Controls.Add(stockQuantity)
+        medicinebar_bg.Controls.Add(manufacturerName)
+        medicinebar_bg.Controls.Add(medicineName)
+        medicinebar_bg.CustomizableEdges = CustomizableEdges7
+        medicinebar_bg.Enabled = False
+        medicinebar_bg.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        medicinebar_bg.FillColor2 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        medicinebar_bg.FillColor3 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        medicinebar_bg.FillColor4 = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        medicinebar_bg.Location = New Point(0, 0)
+        medicinebar_bg.Margin = New Padding(7, 6, 7, 6)
+        medicinebar_bg.Name = "medicinebar_bg"
+        medicinebar_bg.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        medicinebar_bg.Size = New Size(905, 41)
+        medicinebar_bg.TabIndex = 0
         ' 
         ' Guna2CustomCheckBox1
         ' 
@@ -67,11 +67,11 @@ Partial Class MedicineBars
         Guna2CustomCheckBox1.CheckedState.BorderThickness = 0
         Guna2CustomCheckBox1.CheckedState.FillColor = Color.FromArgb(CByte(30), CByte(30), CByte(30))
         Guna2CustomCheckBox1.CheckMarkColor = Color.FromArgb(CByte(30), CByte(30), CByte(30))
-        Guna2CustomCheckBox1.CustomizableEdges = CustomizableEdges1
-        Guna2CustomCheckBox1.Location = New Point(890, 12)
+        Guna2CustomCheckBox1.CustomizableEdges = CustomizableEdges5
+        Guna2CustomCheckBox1.Location = New Point(857, 12)
         Guna2CustomCheckBox1.Margin = New Padding(3, 2, 3, 2)
         Guna2CustomCheckBox1.Name = "Guna2CustomCheckBox1"
-        Guna2CustomCheckBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2CustomCheckBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2CustomCheckBox1.Size = New Size(17, 14)
         Guna2CustomCheckBox1.TabIndex = 4
         Guna2CustomCheckBox1.Text = "Guna2CustomCheckBox1"
@@ -81,44 +81,44 @@ Partial Class MedicineBars
         Guna2CustomCheckBox1.UncheckedState.FillColor = Color.FromArgb(CByte(125), CByte(137), CByte(149))
         Guna2CustomCheckBox1.Visible = False
         ' 
-        ' Guna2HtmlLabel3
+        ' expirationDate
         ' 
-        Guna2HtmlLabel3.AutoSize = False
-        Guna2HtmlLabel3.BackColor = Color.Transparent
-        Guna2HtmlLabel3.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
-        Guna2HtmlLabel3.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2HtmlLabel3.Location = New Point(703, 12)
-        Guna2HtmlLabel3.Margin = New Padding(3, 2, 3, 2)
-        Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
-        Guna2HtmlLabel3.Size = New Size(112, 14)
-        Guna2HtmlLabel3.TabIndex = 3
-        Guna2HtmlLabel3.Text = "2999/12/31"
+        expirationDate.AutoSize = False
+        expirationDate.BackColor = Color.Transparent
+        expirationDate.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
+        expirationDate.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        expirationDate.Location = New Point(703, 12)
+        expirationDate.Margin = New Padding(3, 2, 3, 2)
+        expirationDate.Name = "expirationDate"
+        expirationDate.Size = New Size(112, 14)
+        expirationDate.TabIndex = 3
+        expirationDate.Text = "2999/12/31"
         ' 
-        ' Guna2HtmlLabel2
+        ' stockQuantity
         ' 
-        Guna2HtmlLabel2.AutoSize = False
-        Guna2HtmlLabel2.BackColor = Color.Transparent
-        Guna2HtmlLabel2.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
-        Guna2HtmlLabel2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2HtmlLabel2.Location = New Point(565, 12)
-        Guna2HtmlLabel2.Margin = New Padding(3, 2, 3, 2)
-        Guna2HtmlLabel2.Name = "Guna2HtmlLabel2"
-        Guna2HtmlLabel2.Size = New Size(42, 14)
-        Guna2HtmlLabel2.TabIndex = 2
-        Guna2HtmlLabel2.Text = "00"
+        stockQuantity.AutoSize = False
+        stockQuantity.BackColor = Color.Transparent
+        stockQuantity.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
+        stockQuantity.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        stockQuantity.Location = New Point(565, 12)
+        stockQuantity.Margin = New Padding(3, 2, 3, 2)
+        stockQuantity.Name = "stockQuantity"
+        stockQuantity.Size = New Size(42, 14)
+        stockQuantity.TabIndex = 2
+        stockQuantity.Text = "00"
         ' 
-        ' Guna2HtmlLabel1
+        ' manufacturerName
         ' 
-        Guna2HtmlLabel1.AutoSize = False
-        Guna2HtmlLabel1.BackColor = Color.Transparent
-        Guna2HtmlLabel1.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
-        Guna2HtmlLabel1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2HtmlLabel1.Location = New Point(287, 12)
-        Guna2HtmlLabel1.Margin = New Padding(3, 2, 3, 2)
-        Guna2HtmlLabel1.Name = "Guna2HtmlLabel1"
-        Guna2HtmlLabel1.Size = New Size(232, 14)
-        Guna2HtmlLabel1.TabIndex = 1
-        Guna2HtmlLabel1.Text = "Manufacturer Name Here"
+        manufacturerName.AutoSize = False
+        manufacturerName.BackColor = Color.Transparent
+        manufacturerName.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
+        manufacturerName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        manufacturerName.Location = New Point(287, 12)
+        manufacturerName.Margin = New Padding(3, 2, 3, 2)
+        manufacturerName.Name = "manufacturerName"
+        manufacturerName.Size = New Size(232, 14)
+        manufacturerName.TabIndex = 1
+        manufacturerName.Text = "Manufacturer Name Here"
         ' 
         ' medicineName
         ' 
@@ -138,19 +138,19 @@ Partial Class MedicineBars
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
-        Controls.Add(Guna2CustomGradientPanel1)
+        Controls.Add(medicinebar_bg)
         Margin = New Padding(0, 0, 0, 4)
         Name = "MedicineBars"
-        Size = New Size(930, 41)
-        Guna2CustomGradientPanel1.ResumeLayout(False)
+        Size = New Size(907, 41)
+        medicinebar_bg.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents Guna2CustomGradientPanel1 As Guna.UI2.WinForms.Guna2CustomGradientPanel
+    Friend WithEvents medicinebar_bg As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents medicineName As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel3 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel2 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents expirationDate As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents stockQuantity As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents manufacturerName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Guna2CustomCheckBox1 As Guna.UI2.WinForms.Guna2CustomCheckBox
 
 End Class

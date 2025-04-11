@@ -15,6 +15,8 @@ Namespace Models
         Public Property MedicinePrescription As Integer
         Public Property MedicineStock As Integer
         Public Property MedicineExpirationDate As DateTime
+        Public Property MedicineDateAdded As DateTime
+        Public Property MedicineLastUpdated As DateTime
         Public Property MedicineFullName As String
         Public Property MedicineTickBox As Boolean
 

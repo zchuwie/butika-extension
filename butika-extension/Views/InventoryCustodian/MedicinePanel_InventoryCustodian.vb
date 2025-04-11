@@ -1,8 +1,10 @@
-﻿Public Class MedicinePanel_InventoryCustodian
+﻿Imports butika.Models
+
+Public Class MedicinePanel_InventoryCustodian
 
 
-    Private Sub MedicinePanel_InventoryCustodian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Private Async Sub MedicinePanel_InventoryCustodian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Await loadMedicineBars()
     End Sub
 
     Private Sub selectMedicineBtn_Click(sender As Object, e As EventArgs) Handles selectMedicineBtn.Click
@@ -41,11 +43,33 @@
 
     Private Sub addMedicineBtn_Click(sender As Object, e As EventArgs) Handles addMedicineBtn.Click
         Dim frm As New AddMedicinePanel_InventoryCustodian()
-        frm.Show()
+        frm.ShowDialog()
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         Dim frm As New MedicineIndicators()
-        frm.Show()
+        frm.ShowDialog()
     End Sub
+
+
+    Private Async Function loadMedicineBars() As Task
+        MedicineBarsDisplay.Controls.Clear()
+
+        Dim medicineRepo As New MedicineRepository()
+        Dim medicines As List(Of Medicine) = Await medicineRepo.medicineBars()
+
+        Dim batchSize As Integer = 5
+
+        For i As Integer = 0 To medicines.Count - 1 Step batchSize
+            Dim batch = medicines.Skip(i).Take(batchSize).ToList()
+
+            For Each med In batch
+                Dim control As New MedicineBars(med)
+                MedicineBarsDisplay.Controls.Add(control)
+            Next
+
+            Await Task.Delay(50)
+        Next
+    End Function
+
 End Class
