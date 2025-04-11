@@ -41,12 +41,14 @@ Partial Public Class adminPage
 
     ' Event handler for adminDiscount button click
     Private Sub adminDiscount_Click(sender As Object, e As EventArgs) Handles adminDiscount.Click
-        ShowFormInPanel(New adminDiscount)
+        ShowFormInPanel(New adminDiscounts)
     End Sub
 
     ' Event handler for adminExit button click
     Private Sub adminExit_Click(sender As Object, e As EventArgs) Handles adminExit.Click
-        Close()
+        Dim loginForm As New Login()
+        loginForm.Show()
+        Me.Close()
     End Sub
 
     Private Sub ToggleLabelVisibilityByName(labelName As String, visible As Boolean)

@@ -45,9 +45,13 @@ Partial Class adminUser
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         copyTimer = New Timer(components)
-        Label30 = New Label()
-        ComboBox2 = New ComboBox()
         showAllBtn = New Guna.UI2.WinForms.Guna2Button()
         searchText = New TextBox()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
@@ -95,34 +99,20 @@ Partial Class adminUser
         adminUserText = New RoundedButton()
         adminDashboardText = New RoundedButton()
         AddressText = New TextBox()
+        Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
+        Label4 = New Label()
+        Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Guna2Button5 = New Guna.UI2.WinForms.Guna2Button()
+        Label3 = New Label()
         CType(userAccTable, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel2.SuspendLayout()
         Guna2Panel1.SuspendLayout()
         Guna2Panel5.SuspendLayout()
+        Guna2Panel3.SuspendLayout()
         SuspendLayout()
         ' 
         ' copyTimer
         ' 
-        ' 
-        ' Label30
-        ' 
-        Label30.AutoSize = True
-        Label30.Font = New Font("Century Gothic", 8F)
-        Label30.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Label30.Location = New Point(624, 17)
-        Label30.Name = "Label30"
-        Label30.Size = New Size(43, 16)
-        Label30.TabIndex = 88
-        Label30.Text = "Status:"
-        ' 
-        ' ComboBox2
-        ' 
-        ComboBox2.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        ComboBox2.FormattingEnabled = True
-        ComboBox2.Location = New Point(624, 33)
-        ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(93, 25)
-        ComboBox2.TabIndex = 87
         ' 
         ' showAllBtn
         ' 
@@ -134,7 +124,7 @@ Partial Class adminUser
         showAllBtn.FillColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         showAllBtn.Font = New Font("Century Gothic", 9F)
         showAllBtn.ForeColor = Color.White
-        showAllBtn.Location = New Point(520, 34)
+        showAllBtn.Location = New Point(623, 34)
         showAllBtn.Name = "showAllBtn"
         showAllBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         showAllBtn.Size = New Size(94, 23)
@@ -156,9 +146,11 @@ Partial Class adminUser
         Guna2Button2.CustomizableEdges = CustomizableEdges3
         Guna2Button2.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Guna2Button2.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
         Guna2Button2.DisabledState.Font = New Font("Century Gothic", 9F)
         Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button2.DisabledState.Image = CType(resources.GetObject("resource.Image"), Image)
+        Guna2Button2.Enabled = False
         Guna2Button2.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
         Guna2Button2.Font = New Font("Century Gothic", 9F)
         Guna2Button2.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
@@ -190,7 +182,7 @@ Partial Class adminUser
         textCopyIndicator2.AutoSize = True
         textCopyIndicator2.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         textCopyIndicator2.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        textCopyIndicator2.Location = New Point(924, 289)
+        textCopyIndicator2.Location = New Point(890, 289)
         textCopyIndicator2.Name = "textCopyIndicator2"
         textCopyIndicator2.Size = New Size(64, 13)
         textCopyIndicator2.TabIndex = 84
@@ -202,7 +194,7 @@ Partial Class adminUser
         textCopyIndicator.AutoSize = True
         textCopyIndicator.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         textCopyIndicator.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        textCopyIndicator.Location = New Point(924, 266)
+        textCopyIndicator.Location = New Point(864, 266)
         textCopyIndicator.Name = "textCopyIndicator"
         textCopyIndicator.Size = New Size(64, 13)
         textCopyIndicator.TabIndex = 83
@@ -419,7 +411,7 @@ Partial Class adminUser
         NumberText.Font = New Font("Century Gothic", 9F)
         NumberText.Location = New Point(753, 648)
         NumberText.Name = "NumberText"
-        NumberText.Size = New Size(278, 22)
+        NumberText.Size = New Size(201, 22)
         NumberText.TabIndex = 68
         ' 
         ' Label18
@@ -517,9 +509,9 @@ Partial Class adminUser
         Label9.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label9.Location = New Point(749, 230)
         Label9.Name = "Label9"
-        Label9.Size = New Size(114, 13)
+        Label9.Size = New Size(153, 13)
         Label9.TabIndex = 55
-        Label9.Text = "Hover and click to copy"
+        Label9.Text = "Hover and click the text to copy"
         ' 
         ' Label8
         ' 
@@ -561,9 +553,11 @@ Partial Class adminUser
         Guna2Button1.CustomizableEdges = CustomizableEdges7
         Guna2Button1.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Guna2Button1.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
         Guna2Button1.DisabledState.Font = New Font("Century Gothic", 9F)
         Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button1.DisabledState.Image = CType(resources.GetObject("resource.Image1"), Image)
+        Guna2Button1.Enabled = False
         Guna2Button1.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
         Guna2Button1.Font = New Font("Century Gothic", 9F)
         Guna2Button1.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
@@ -766,8 +760,95 @@ Partial Class adminUser
         AddressText.Font = New Font("Century Gothic", 9F)
         AddressText.Location = New Point(753, 601)
         AddressText.Name = "AddressText"
-        AddressText.Size = New Size(278, 22)
+        AddressText.Size = New Size(201, 22)
         AddressText.TabIndex = 98
+        ' 
+        ' Guna2Panel3
+        ' 
+        Guna2Panel3.BorderColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
+        Guna2Panel3.BorderRadius = 20
+        Guna2Panel3.BorderThickness = 1
+        Guna2Panel3.Controls.Add(Label4)
+        Guna2Panel3.Controls.Add(Guna2Button4)
+        Guna2Panel3.Controls.Add(Guna2Button5)
+        Guna2Panel3.Controls.Add(Label3)
+        Guna2Panel3.CustomizableEdges = CustomizableEdges23
+        Guna2Panel3.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Guna2Panel3.Location = New Point(970, 214)
+        Guna2Panel3.Name = "Guna2Panel3"
+        Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        Guna2Panel3.Size = New Size(205, 457)
+        Guna2Panel3.TabIndex = 99
+        Guna2Panel3.Visible = False
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Century Gothic", 9.25F)
+        Label4.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Label4.Location = New Point(11, 10)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(108, 17)
+        Label4.TabIndex = 6
+        Label4.Text = "Other Accounts"
+        ' 
+        ' Guna2Button4
+        ' 
+        Guna2Button4.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Guna2Button4.BorderRadius = 10
+        Guna2Button4.CustomizableEdges = CustomizableEdges19
+        Guna2Button4.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button4.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button4.DisabledState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        Guna2Button4.DisabledState.Font = New Font("Century Gothic", 9F)
+        Guna2Button4.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button4.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
+        Guna2Button4.Font = New Font("Century Gothic", 6.75F)
+        Guna2Button4.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button4.ImageAlign = HorizontalAlignment.Left
+        Guna2Button4.Location = New Point(122, 87)
+        Guna2Button4.Name = "Guna2Button4"
+        Guna2Button4.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        Guna2Button4.Size = New Size(55, 19)
+        Guna2Button4.TabIndex = 5
+        Guna2Button4.Text = "Show"
+        ' 
+        ' Guna2Button5
+        ' 
+        Guna2Button5.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Guna2Button5.BorderRadius = 10
+        Guna2Button5.CustomizableEdges = CustomizableEdges21
+        Guna2Button5.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button5.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button5.DisabledState.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Guna2Button5.DisabledState.Font = New Font("Century Gothic", 9F)
+        Guna2Button5.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button5.Enabled = False
+        Guna2Button5.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Guna2Button5.Font = New Font("Century Gothic", 9F)
+        Guna2Button5.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Guna2Button5.Image = CType(resources.GetObject("Guna2Button5.Image"), Image)
+        Guna2Button5.ImageAlign = HorizontalAlignment.Left
+        Guna2Button5.Location = New Point(3, 42)
+        Guna2Button5.Name = "Guna2Button5"
+        Guna2Button5.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        Guna2Button5.Size = New Size(174, 29)
+        Guna2Button5.TabIndex = 2
+        Guna2Button5.Text = "Inventory Custodian"
+        Guna2Button5.TextAlign = HorizontalAlignment.Right
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        Label3.Font = New Font("Century Gothic", 30F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Label3.Location = New Point(66, 75)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(64, 47)
+        Label3.TabIndex = 2
+        Label3.Text = "35"
+        Label3.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' adminUser
         ' 
@@ -775,13 +856,12 @@ Partial Class adminUser
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(231), CByte(245), CByte(240))
         ClientSize = New Size(1204, 714)
+        Controls.Add(Guna2Panel3)
         Controls.Add(AddressText)
         Controls.Add(adminDiscountText)
         Controls.Add(adminLogsText)
         Controls.Add(adminUserText)
         Controls.Add(adminDashboardText)
-        Controls.Add(Label30)
-        Controls.Add(ComboBox2)
         Controls.Add(showAllBtn)
         Controls.Add(searchText)
         Controls.Add(textCopyIndicator2)
@@ -826,14 +906,14 @@ Partial Class adminUser
         Guna2Panel1.PerformLayout()
         Guna2Panel5.ResumeLayout(False)
         Guna2Panel5.PerformLayout()
+        Guna2Panel3.ResumeLayout(False)
+        Guna2Panel3.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents copyTimer As Timer
     Friend WithEvents searchBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label30 As Label
-    Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents showAllBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents searchText As TextBox
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
@@ -885,4 +965,9 @@ Partial Class adminUser
     Friend WithEvents inactiveShow As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents activeShow As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents AddressText As TextBox
+    Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2Button5 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
 End Class

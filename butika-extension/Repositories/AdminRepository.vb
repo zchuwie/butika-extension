@@ -69,7 +69,6 @@ Public Class AdminRepository
                 Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
                     While Await reader.ReadAsync()
                         If reader("Email") IsNot DBNull.Value Then
-                            ' Only add rows if no column is null
                             dt.Rows.Add(reader("ID"), reader("username"), reader("Email"), reader("Status"))
                         End If
                     End While
@@ -84,7 +83,6 @@ Public Class AdminRepository
     ' === Add column for user activity ===
     Public Shared Async Function AddActivityLogAsync(userID As Integer, userType As Integer) As Task(Of Boolean)
         Try
-            ' Construct the activity message based on userType
             Dim activityMessage As String = String.Empty
 
             Select Case userType
@@ -98,23 +96,19 @@ Public Class AdminRepository
                     activityMessage = "User logged in"
             End Select
 
-            ' Construct SQL query to insert new log
             Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) 
                                VALUES (@Activity, @UserID, @DateTime)"
 
-            ' Prepare parameters
             Dim parameters As New With {
             Key .Activity = activityMessage,
             Key .UserID = userID,
             Key .DateTime = DateTime.Now
         }
 
-            ' Execute the query using Dapper
             Using conn As SqlConnection = DatabaseConnection.GetConnection()
                 Await conn.OpenAsync()
                 Dim rowsAffected = Await conn.ExecuteAsync(query, parameters)
 
-                ' If one row is affected, return true (success)
                 If rowsAffected = 1 Then
                     Return True
                 Else
@@ -129,26 +123,21 @@ Public Class AdminRepository
 
     Public Shared Async Function AddSignupLogAsync(userID As Integer) As Task(Of Boolean)
         Try
-            ' Construct the activity message for customer signup
             Dim activityMessage As String = "Customer signed up"
 
-            ' Construct SQL query to insert new log
             Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) 
                                VALUES (@Activity, @UserID, @DateTime)"
 
-            ' Prepare parameters
             Dim parameters As New With {
             Key .Activity = activityMessage,
             Key .UserID = userID,
             Key .DateTime = DateTime.Now
         }
 
-            ' Execute the query using Dapper
             Using conn As SqlConnection = DatabaseConnection.GetConnection()
                 Await conn.OpenAsync()
                 Dim rowsAffected = Await conn.ExecuteAsync(query, parameters)
 
-                ' If one row is affected, return true (success)
                 If rowsAffected = 1 Then
                     Return True
                 Else
@@ -163,10 +152,8 @@ Public Class AdminRepository
 
     Public Shared Async Function GetLastInsertedUserID() As Task(Of Integer)
         Try
-            ' SQL query to get the last inserted userID (assuming user_id is auto-incremented)
             Dim query As String = "SELECT TOP 1 user_id FROM userAccount ORDER BY user_id DESC"
 
-            ' Execute the query and return the last inserted userID
             Using conn As SqlConnection = DatabaseConnection.GetConnection()
                 Await conn.OpenAsync()
                 Dim userID As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query)
@@ -174,7 +161,7 @@ Public Class AdminRepository
             End Using
         Catch ex As Exception
             Console.WriteLine("Error while getting last inserted userID: " & ex.Message)
-            Return 0 ' Return 0 if there was an error
+            Return 0
         End Try
     End Function
 
@@ -202,7 +189,6 @@ Public Class AdminRepository
                 Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
                     While Await reader.ReadAsync()
                         If reader("Action") IsNot DBNull.Value AndAlso reader("Date") IsNot DBNull.Value AndAlso reader("ID") <> 1 Then
-                            ' Only add rows if no column is null
                             dt.Rows.Add(reader("ID"), reader("Username"), reader("Action"), reader("Date"))
                         End If
                     End While
@@ -242,12 +228,9 @@ Public Class AdminRepository
         End Select
 
         Try
-            ' Fetch results using the QueryAsync function
             Dim results = Await QueryAsync(Of GrowthResult)(query)
 
-            ' Loop through the results and add valid data points to the dataset
             For Each row In results
-                ' Ensure that both Period and Total are not null
                 If Not String.IsNullOrEmpty(row.Period) Then
                     dataset.DataPoints.Add(row.Period, row.Total)
                 End If
@@ -288,16 +271,14 @@ Public Class AdminRepository
         FROM useraccount"
 
         Try
-            ' Using Dapper for async execution
             Using conn As SqlConnection = DatabaseConnection.GetConnection()
                 Await conn.OpenAsync()
                 Dim result = Await conn.QueryFirstOrDefaultAsync(Of UserStatus)(query)
-                ' Return active and inactive counts as a tuple
                 Return (result.Active, result.Inactive)
             End Using
         Catch ex As Exception
             MessageBox.Show("Error loading user status: " & ex.Message)
-            Return (0, 0) ' Return default values if an error occurs
+            Return (0, 0)
         End Try
     End Function
 
@@ -318,6 +299,7 @@ Public Class AdminRepository
     End Class
 #End Region
 
+#Region "User Account"
     Public Shared Async Function GetActiveUsers() As Task(Of Integer)
         Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount where status='active'")
     End Function
@@ -329,7 +311,6 @@ Public Class AdminRepository
     Public Shared Async Function GetUserFullData(Optional statusFilter As String = "") As Task(Of DataTable)
         Dim dt As New DataTable()
 
-        ' Only add the columns that should appear in the DataGridView
         dt.Columns.Add("ID", GetType(Integer))
         dt.Columns.Add("Username", GetType(String))
         dt.Columns.Add("Email", GetType(String))
@@ -339,7 +320,6 @@ Public Class AdminRepository
         dt.Columns.Add("Date_Joined", GetType(DateTime))
         dt.Columns.Add("Type", GetType(Integer))
 
-        ' Include the extra columns in the query for data collection, but not in the DataTable shown.
         Dim baseQuery As String = "SELECT user_id AS ID, username AS Username, email AS Email, status AS Status, birthdate AS Birth_Date, contact AS Contact, date_joined as Date_Joined, userType as Type FROM useraccount"
 
         If Not String.IsNullOrWhiteSpace(statusFilter) Then
@@ -379,18 +359,17 @@ Public Class AdminRepository
                 Await conn.OpenAsync()
 
                 Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
-                    dt.Load(reader) ' Load all the data from reader into DataTable
+                    dt.Load(reader)
                 End Using
             End Using
         Catch ex As Exception
             Console.WriteLine("Error retrieving user details: " & ex.Message)
         End Try
 
-        ' If DataTable has rows, return the first row (you can customize this based on your needs)
         If dt.Rows.Count > 0 Then
             Return dt.Rows(0)
         Else
-            Return Nothing ' Return nothing if no data found
+            Return Nothing
         End If
     End Function
 
@@ -419,12 +398,119 @@ Public Class AdminRepository
             Using conn As SqlConnection = DatabaseConnection.GetConnection(),
               cmd As New SqlCommand(query, conn)
 
-                ' Add parameters to prevent SQL injection
                 cmd.Parameters.AddWithValue("@Email", updatedEmail)
                 cmd.Parameters.AddWithValue("@Contact", updatedPhone)
                 cmd.Parameters.AddWithValue("@UserId", userId)
 
-                ' Open the connection and execute the query
+                Await conn.OpenAsync()
+                Await cmd.ExecuteNonQueryAsync()
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Database Error: " & ex.Message)
+        End Try
+    End Function
+#End Region
+
+#Region "User Logs"
+    Public Shared Async Function GetAllUserActivityDataAsync() As Task(Of DataTable)
+        Dim dt As New DataTable()
+        dt.Columns.Add("ID", GetType(Integer))
+        dt.Columns.Add("Username", GetType(String))
+        dt.Columns.Add("UserType", GetType(Integer))
+        dt.Columns.Add("Action", GetType(String))
+        dt.Columns.Add("Date", GetType(DateTime))
+
+        Dim query As String = "
+        SELECT ua.user_id AS ID, 
+               ua.username AS Username, 
+               ua.userType AS UserType,
+               al.activity AS Action, 
+               al._datetime AS Date 
+        FROM useraccount ua
+        INNER JOIN activity_log al ON ua.user_id = al.user_id
+        ORDER BY al._datetime DESC"
+
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+                  cmd As New SqlCommand(query, conn)
+                Await conn.OpenAsync()
+                Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
+                    While Await reader.ReadAsync()
+                        If reader("Action") IsNot DBNull.Value AndAlso reader("Date") IsNot DBNull.Value Then
+                            dt.Rows.Add(reader("ID"), reader("Username"), reader("UserType"), reader("Action"), reader("Date"))
+                        End If
+                    End While
+                End Using
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Database Error: " & ex.Message)
+        End Try
+        Return dt
+    End Function
+#End Region
+
+#Region "Discount"
+    Public Shared Async Function GetCustomerUserFullData(Optional statusFilter As Boolean? = Nothing) As Task(Of DataTable)
+        Dim dt As New DataTable()
+
+        dt.Columns.Add("ID", GetType(Integer))
+        dt.Columns.Add("Username", GetType(String))
+        dt.Columns.Add("Fullname", GetType(String))
+        dt.Columns.Add("Email", GetType(String))
+        dt.Columns.Add("Birth_Date", GetType(DateTime))
+        dt.Columns.Add("Contact", GetType(String))
+        dt.Columns.Add("Date_Joined", GetType(DateTime))
+        dt.Columns.Add("IsVerified", GetType(Boolean))
+
+        Dim baseQuery As String = "
+        SELECT ua.user_id AS ID, 
+               ua.username AS Username, 
+               ua.fullname AS Fullname, 
+               ua.email AS Email, 
+               ua.birthdate AS Birth_Date, 
+               ua.contact AS Contact, 
+               ua.date_joined AS Date_Joined, 
+               ua.isVerified AS IsVerified 
+        FROM useraccount ua
+        WHERE ua.userType = 0"
+
+        If statusFilter.HasValue Then
+            baseQuery &= " AND ua.isVerified = @isVerified"
+        End If
+
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(baseQuery, conn)
+
+                If statusFilter.HasValue Then
+                    cmd.Parameters.AddWithValue("@isVerified", statusFilter.Value)
+                End If
+
+                Await conn.OpenAsync()
+                Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
+                    While Await reader.ReadAsync()
+                        dt.Rows.Add(reader("ID"), reader("Username"), reader("Fullname"), reader("Email"),
+                                reader("Birth_Date"), reader("Contact"), reader("Date_Joined"),
+                                Convert.ToBoolean(reader("IsVerified")))
+                    End While
+                End Using
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Database Error: " & ex.Message)
+        End Try
+
+        Return dt
+    End Function
+
+    Public Shared Async Function UpdateUserVerificationStatusAsync(userId As Integer, isVerified As Boolean) As Task
+        Dim query As String = "UPDATE useraccount SET isVerified = @isVerified WHERE user_id = @userId"
+
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@userId", userId)
+                cmd.Parameters.AddWithValue("@isVerified", isVerified)
+
                 Await conn.OpenAsync()
                 Await cmd.ExecuteNonQueryAsync()
             End Using
@@ -433,8 +519,28 @@ Public Class AdminRepository
         End Try
     End Function
 
+    Public Shared Async Function GetUserVerificationStatusAsync(userId As Integer) As Task(Of Boolean)
+        Dim query As String = "SELECT isVerified FROM useraccount WHERE user_id = @userId"
 
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@userId", userId)
 
+                Await conn.OpenAsync()
+
+                Dim result As Object = Await cmd.ExecuteScalarAsync()
+                If result IsNot DBNull.Value Then
+                    Return Convert.ToBoolean(result)
+                End If
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Database Error: " & ex.Message)
+        End Try
+
+        Return False
+    End Function
+#End Region
 
 
 End Class
