@@ -35,11 +35,12 @@ Partial Class Verified
         ' 
         ' VerifiedImg
         ' 
-        VerifiedImg.Image = My.Resources.Resources.verifyVerified
+        VerifiedImg.ErrorImage = My.Resources.Resources.verifyVerified1
+        VerifiedImg.Image = My.Resources.Resources.verifyVerified3
         VerifiedImg.InitialImage = Nothing
-        VerifiedImg.Location = New Point(317, 252)
+        VerifiedImg.Location = New Point(211, 201)
         VerifiedImg.Name = "VerifiedImg"
-        VerifiedImg.Size = New Size(273, 136)
+        VerifiedImg.Size = New Size(495, 254)
         VerifiedImg.SizeMode = PictureBoxSizeMode.Zoom
         VerifiedImg.TabIndex = 89
         VerifiedImg.TabStop = False
@@ -48,7 +49,7 @@ Partial Class Verified
         ' 
         Phase3Txt.AutoSize = True
         Phase3Txt.Font = New Font("Century Gothic", 8.75F)
-        Phase3Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Phase3Txt.ForeColor = Color.White
         Phase3Txt.Location = New Point(681, 109)
         Phase3Txt.Name = "Phase3Txt"
         Phase3Txt.Size = New Size(143, 17)
@@ -57,7 +58,7 @@ Partial Class Verified
         ' 
         ' ProgBar3
         ' 
-        ProgBar3.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar3.BackColor = Color.White
         ProgBar3.Location = New Point(600, 99)
         ProgBar3.Name = "ProgBar3"
         ProgBar3.RightToLeft = RightToLeft.No
@@ -68,7 +69,7 @@ Partial Class Verified
         ' 
         VerifySubtext.AutoSize = True
         VerifySubtext.Font = New Font("Century Gothic", 9.75F)
-        VerifySubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifySubtext.ForeColor = Color.White
         VerifySubtext.Location = New Point(89, 54)
         VerifySubtext.Name = "VerifySubtext"
         VerifySubtext.Size = New Size(136, 17)
@@ -79,7 +80,7 @@ Partial Class Verified
         ' 
         VerifyAccount.AutoSize = True
         VerifyAccount.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        VerifyAccount.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyAccount.ForeColor = Color.White
         VerifyAccount.Location = New Point(83, 29)
         VerifyAccount.Name = "VerifyAccount"
         VerifyAccount.Size = New Size(184, 28)
@@ -89,7 +90,7 @@ Partial Class Verified
         ' 
         ' ProgBar
         ' 
-        ProgBar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar.BackColor = Color.White
         ProgBar.Location = New Point(27, 102)
         ProgBar.Name = "ProgBar"
         ProgBar.RightToLeft = RightToLeft.No
@@ -98,7 +99,7 @@ Partial Class Verified
         ' 
         ' VerifiedIcon
         ' 
-        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon___Copy
         VerifiedIcon.Location = New Point(31, 24)
         VerifiedIcon.Name = "VerifiedIcon"
         VerifiedIcon.Size = New Size(51, 53)
@@ -110,7 +111,7 @@ Partial Class Verified
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
         Controls.Add(VerifiedIcon)
         Controls.Add(VerifiedImg)
@@ -121,6 +122,7 @@ Partial Class Verified
         Controls.Add(ProgBar)
         FormBorderStyle = FormBorderStyle.None
         Name = "Verified"
+        SizeGripStyle = SizeGripStyle.Hide
         Text = "Verified"
         CType(VerifiedImg, ComponentModel.ISupportInitialize).EndInit()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).EndInit()

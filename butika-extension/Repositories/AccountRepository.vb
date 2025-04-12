@@ -5,6 +5,7 @@ Imports Dapper
 Imports butika.Models
 Imports System.Data.SqlClient
 Imports System.Security.Policy
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class AccountRepository
 
@@ -134,7 +135,7 @@ Public Class AccountRepository
         Try
             Using conn = DatabaseConnection.GetConnection()
                 Await conn.OpenAsync()
-                Dim query As String = "SELECT *, user_id As UserID FROM userAccount WHERE user_id = @user_id"
+                Dim query As String = "SELECT *, last_name As LastName, first_name As FirstName, middle_initial As MiddleInitial, user_id As UserID FROM userAccount WHERE user_id = @user_id"
                 Dim result = Await conn.QueryFirstOrDefaultAsync(Of Account)(query, New With {.user_id = userID})
 
                 ' If result is not nothing, populate the Account object
@@ -149,6 +150,84 @@ Public Class AccountRepository
         End Try
 
         Return populateData
+    End Function
+
+    Public Async Function UpdateProfileInfo(acc As Account) As Task(Of Boolean)
+        If acc Is Nothing Then
+            Return False
+        End If
+
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "
+                UPDATE userAccount 
+                SET 
+                    fullname = @fullname, 
+                    first_name = @first_name, 
+                    middle_initial = @middle_initial, 
+                    last_name = @last_name, 
+                    username = @username, 
+                    birthdate = @birthdate
+                WHERE user_id = @user_id;
+                "
+
+                Dim result As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {
+                .fullname = acc.FirstName + "" + acc.MiddleInitial + "" + acc.LastName,
+                .first_name = acc.FirstName,
+                .middle_initial = acc.MiddleInitial,
+                .last_name = acc.LastName,
+                .username = acc.UserName,
+                .birthdate = acc.BirthDate,
+                .user_id = acc.UserID
+            })
+                If result <> 0 Then
+                    'Return Await InsertHashingData(Hash, userID)
+                    MessageBox.Show("Success.")
+                End If
+
+            Catch ex As Exception
+                MessageBox.Show("Error updating info: " & ex.Message)
+            End Try
+        End Using
+    End Function
+
+    Public Async Function UpdateContactInfo(acc As Account) As Task(Of Boolean)
+        If acc Is Nothing Then
+            Return False
+        End If
+
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "
+                 UPDATE userAccount 
+                 SET 
+                     email = @email, 
+                     contact = @contact
+                 WHERE user_id = @user_id;
+                 "
+
+                Debug.WriteLine("userid: " + acc.UserID.ToString())
+
+                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
+                     .email = acc.Email,
+                     .contact = acc.Contact,
+                     .user_id = acc.UserID
+                 })
+
+                If Not result Then
+                    MessageBox.Show("An error occured. Try again.")
+                    Return False
+                End If
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error updating contact: " & ex.Message)
+            End Try
+        End Using
     End Function
 
 End Class

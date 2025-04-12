@@ -53,7 +53,7 @@ Partial Class VerifyStep2
         ' 
         VerifySubtext.AutoSize = True
         VerifySubtext.Font = New Font("Century Gothic", 9.75F)
-        VerifySubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifySubtext.ForeColor = Color.White
         VerifySubtext.Location = New Point(89, 54)
         VerifySubtext.Name = "VerifySubtext"
         VerifySubtext.Size = New Size(136, 17)
@@ -64,7 +64,7 @@ Partial Class VerifyStep2
         ' 
         VerifyAccount.AutoSize = True
         VerifyAccount.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        VerifyAccount.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyAccount.ForeColor = Color.White
         VerifyAccount.Location = New Point(83, 29)
         VerifyAccount.Name = "VerifyAccount"
         VerifyAccount.Size = New Size(184, 28)
@@ -74,7 +74,7 @@ Partial Class VerifyStep2
         ' 
         ' ProgBar
         ' 
-        ProgBar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar.BackColor = Color.White
         ProgBar.Location = New Point(23, 105)
         ProgBar.Name = "ProgBar"
         ProgBar.RightToLeft = RightToLeft.No
@@ -83,7 +83,7 @@ Partial Class VerifyStep2
         ' 
         ' ProgBar2
         ' 
-        ProgBar2.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar2.BackColor = Color.White
         ProgBar2.Location = New Point(310, 102)
         ProgBar2.Name = "ProgBar2"
         ProgBar2.RightToLeft = RightToLeft.No
@@ -94,7 +94,7 @@ Partial Class VerifyStep2
         ' 
         Phase2Txt.AutoSize = True
         Phase2Txt.Font = New Font("Century Gothic", 8.75F)
-        Phase2Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Phase2Txt.ForeColor = Color.White
         Phase2Txt.Location = New Point(402, 112)
         Phase2Txt.Name = "Phase2Txt"
         Phase2Txt.Size = New Size(112, 17)
@@ -104,7 +104,7 @@ Partial Class VerifyStep2
         ' Verify2Direction
         ' 
         Verify2Direction.Font = New Font("Century Gothic", 15.75F)
-        Verify2Direction.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Verify2Direction.ForeColor = Color.White
         Verify2Direction.Location = New Point(305, 211)
         Verify2Direction.Name = "Verify2Direction"
         Verify2Direction.Size = New Size(301, 60)
@@ -216,7 +216,7 @@ Partial Class VerifyStep2
         ' 
         RefreshCodeLbl.AutoSize = True
         RefreshCodeLbl.Font = New Font("Century Gothic", 8.75F)
-        RefreshCodeLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        RefreshCodeLbl.ForeColor = Color.White
         RefreshCodeLbl.Location = New Point(332, 427)
         RefreshCodeLbl.Name = "RefreshCodeLbl"
         RefreshCodeLbl.Size = New Size(200, 17)
@@ -227,7 +227,7 @@ Partial Class VerifyStep2
         ' 
         RefreshCodeBtn.AutoSize = True
         RefreshCodeBtn.Font = New Font("Century Gothic", 8.75F, FontStyle.Bold)
-        RefreshCodeBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        RefreshCodeBtn.ForeColor = Color.White
         RefreshCodeBtn.Location = New Point(530, 427)
         RefreshCodeBtn.Name = "RefreshCodeBtn"
         RefreshCodeBtn.Size = New Size(49, 16)
@@ -256,7 +256,7 @@ Partial Class VerifyStep2
         ' 
         ' VerifiedIcon
         ' 
-        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon___Copy
         VerifiedIcon.Location = New Point(31, 24)
         VerifiedIcon.Name = "VerifiedIcon"
         VerifiedIcon.Size = New Size(51, 53)
@@ -266,10 +266,10 @@ Partial Class VerifyStep2
         ' 
         ' EnterCodeBtn
         ' 
-        EnterCodeBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        EnterCodeBtn.BackColor = Color.White
         EnterCodeBtn.CornerRadius = 8
         EnterCodeBtn.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
-        EnterCodeBtn.ForeColor = Color.White
+        EnterCodeBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EnterCodeBtn.Location = New Point(394, 361)
         EnterCodeBtn.Name = "EnterCodeBtn"
         EnterCodeBtn.Size = New Size(119, 30)
@@ -281,7 +281,7 @@ Partial Class VerifyStep2
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
         Controls.Add(EnterCodeBtn)
         Controls.Add(VerifiedIcon)

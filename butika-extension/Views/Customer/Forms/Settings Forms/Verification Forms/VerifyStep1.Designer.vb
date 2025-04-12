@@ -41,7 +41,7 @@ Partial Class VerifyStep1
         ' 
         VerifyProfileSubtext.AutoSize = True
         VerifyProfileSubtext.Font = New Font("Century Gothic", 9.75F)
-        VerifyProfileSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyProfileSubtext.ForeColor = Color.White
         VerifyProfileSubtext.Location = New Point(89, 54)
         VerifyProfileSubtext.Name = "VerifyProfileSubtext"
         VerifyProfileSubtext.Size = New Size(136, 17)
@@ -52,7 +52,7 @@ Partial Class VerifyStep1
         ' 
         VerifyAccount.AutoSize = True
         VerifyAccount.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        VerifyAccount.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyAccount.ForeColor = Color.White
         VerifyAccount.Location = New Point(83, 29)
         VerifyAccount.Name = "VerifyAccount"
         VerifyAccount.Size = New Size(184, 28)
@@ -62,7 +62,7 @@ Partial Class VerifyStep1
         ' 
         ' VerifyProgBar
         ' 
-        VerifyProgBar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyProgBar.BackColor = Color.White
         VerifyProgBar.Location = New Point(24, 101)
         VerifyProgBar.Name = "VerifyProgBar"
         VerifyProgBar.RightToLeft = RightToLeft.No
@@ -72,7 +72,7 @@ Partial Class VerifyStep1
         ' idImage
         ' 
         idImage.Cursor = Cursors.Hand
-        idImage.Image = My.Resources.Resources.verifyImage
+        idImage.Image = My.Resources.Resources.verifyImage1
         idImage.InitialImage = My.Resources.Resources.verifyImage
         idImage.Location = New Point(262, 180)
         idImage.Name = "idImage"
@@ -83,7 +83,7 @@ Partial Class VerifyStep1
         ' 
         ' ProgBar1
         ' 
-        ProgBar1.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar1.BackColor = Color.White
         ProgBar1.Location = New Point(23, 99)
         ProgBar1.Name = "ProgBar1"
         ProgBar1.RightToLeft = RightToLeft.No
@@ -94,7 +94,7 @@ Partial Class VerifyStep1
         ' 
         Phase1Txt.AutoSize = True
         Phase1Txt.Font = New Font("Century Gothic", 8.75F)
-        Phase1Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Phase1Txt.ForeColor = Color.White
         Phase1Txt.Location = New Point(111, 109)
         Phase1Txt.Name = "Phase1Txt"
         Phase1Txt.Size = New Size(102, 17)
@@ -103,7 +103,7 @@ Partial Class VerifyStep1
         ' 
         ' VerifiedIcon
         ' 
-        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon___Copy
         VerifiedIcon.Location = New Point(31, 24)
         VerifiedIcon.Name = "VerifiedIcon"
         VerifiedIcon.Size = New Size(51, 53)
@@ -113,10 +113,10 @@ Partial Class VerifyStep1
         ' 
         ' SubmitIdBtn
         ' 
-        SubmitIdBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SubmitIdBtn.BackColor = Color.White
         SubmitIdBtn.CornerRadius = 8
         SubmitIdBtn.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
-        SubmitIdBtn.ForeColor = Color.White
+        SubmitIdBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SubmitIdBtn.Location = New Point(369, 440)
         SubmitIdBtn.Name = "SubmitIdBtn"
         SubmitIdBtn.Size = New Size(157, 38)
@@ -140,7 +140,7 @@ Partial Class VerifyStep1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
         Controls.Add(SubmitIdBtn)
         Controls.Add(VerifiedIcon)

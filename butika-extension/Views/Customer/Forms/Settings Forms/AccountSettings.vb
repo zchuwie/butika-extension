@@ -93,6 +93,7 @@ Public Class AccountSettings
         Dim lastName As String = LastNameTxtbox.Text
         Dim username As String = UsernameTxtbox.Text
         Dim birthday As Date = BirthdayPicker.Value
+        Dim userId As Integer = account.UserID
 
         If String.IsNullOrEmpty(firstName) OrElse String.IsNullOrEmpty(midName) OrElse
        String.IsNullOrEmpty(lastName) OrElse String.IsNullOrEmpty(username) OrElse String.IsNullOrEmpty(birthday) Then
@@ -113,44 +114,17 @@ Public Class AccountSettings
             .MiddleInitial = midName,
             .LastName = lastName,
             .UserName = username,
-            .BirthDate = birthday
+            .BirthDate = birthday,
+            .UserID = userId
         }
 
-        Using conn = DatabaseConnection.GetConnection()
-            Try
-                Await conn.OpenAsync()
+        Dim updateProfileSuccess = Await accountRep.UpdateProfileInfo(newProfileInfo)
+        If updateProfileSuccess Then
+            MessageBox.Show("An error occured. Try again.")
+            FillUpProfileInfo()
+            Return
+        End If
 
-                Dim query As String = "
-                UPDATE userAccount 
-                SET 
-                    fullname = @fullname, 
-                    first_name = @first_name, 
-                    middle_initial = @middle_initial, 
-                    last_name = @last_name, 
-                    username = @username, 
-                    birthdate = @birthdate
-                WHERE user_id = @user_id;
-                "
-
-                Dim result As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {
-                .fullname = newProfileInfo.FirstName + "" + newProfileInfo.MiddleInitial + "" + newProfileInfo.LastName,
-                .first_name = newProfileInfo.FirstName,
-                .middle_initial = newProfileInfo.MiddleInitial,
-                .last_name = newProfileInfo.LastName,
-                .username = newProfileInfo.UserName,
-                .birthdate = newProfileInfo.BirthDate,
-                .user_id = account.UserID
-            })
-                If Not result Then
-                    MessageBox.Show("An error occured. Try again.")
-                    FillUpProfileInfo()
-                    Return
-                End If
-
-            Catch ex As Exception
-                MessageBox.Show("Error updating info: " & ex.Message)
-            End Try
-        End Using
 
         MessageBox.Show("Profile updated successfully")
     End Function
@@ -189,39 +163,12 @@ Public Class AccountSettings
             .Contact = contact
         }
 
-        Using conn = DatabaseConnection.GetConnection()
-            Try
-                Await conn.OpenAsync()
-
-                Dim query As String = "
-                 UPDATE userAccount 
-                 SET 
-                     email = @email, 
-                     contact = @contact
-                 WHERE user_id = @user_id;
-                 "
-
-                Debug.WriteLine("userid: " + account.UserID.ToString())
-
-                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
-                     .email = newContactInfo.Email,
-                     .contact = newContactInfo.Contact,
-                     .user_id = account.UserID
-                 })
-
-                If Not result Then
-                    MessageBox.Show("An error occured. Try again.")
-                    FillUpContactInfo()
-                    Return
-                End If
-
-
-            Catch ex As Exception
-                MessageBox.Show("Error updating contact: " & ex.Message)
-            End Try
-        End Using
-
-
+        Dim updateContactSuccess = Await accountRep.UpdateProfileInfo(newContactInfo)
+        If updateContactSuccess Then
+            MessageBox.Show("An error occured. Try again.")
+            FillUpProfileInfo()
+            Return
+        End If
 
         MessageBox.Show("Contact updated successfully")
     End Function
@@ -268,6 +215,8 @@ Public Class AccountSettings
 
         End If
 
+
+        account = Await accountRep.populateDataThroughUserID(account.UserID)
         FillUpProfileInfo()
     End Sub
 
@@ -298,7 +247,7 @@ Public Class AccountSettings
             MessageBox.Show("An error occurred: " & ex.Message)
             Console.Write(ex)
         End Try
-
+        account = Await accountRep.populateDataThroughUserID(account.UserID)
         FillUpContactInfo()
     End Sub
 
