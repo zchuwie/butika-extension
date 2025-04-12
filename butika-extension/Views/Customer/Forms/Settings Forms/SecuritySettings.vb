@@ -6,6 +6,7 @@ Imports Dapper
 
 Public Class SecuritySettings
     Dim account As New Account()
+    Dim storedPass As String = account.Password
 
     Public Sub New(account As Account)
         InitializeComponent()
@@ -59,33 +60,40 @@ Public Class SecuritySettings
         End If
     End Sub
 
-    Private Async Sub DeacBtn_Click(sender As Object, e As EventArgs) Handles DeacBtn.Click
-        If MessageBox.Show("Your account will be deactivated, and you'll not be able to log in.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            If MessageBox.Show("This action cannot be reverted/reversed.", "Are you really sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-                Await DeactivateAccountFunc()
-                Dim login As New Login()
-                Me.Close()
-                login.Show()
-                '            Login Login = New Login()
-                '            MainPage mp = New MainPage()
-                '            Admin_ admin = New Admin_(account)
-                '            admin.Admin_AddUserLog("User_InformationUpdated")
-                '            mp.Close()
-                '            this.Close()
-                '            Login.Show()
-            End If
+    'just in case someone needs this structure (double messagebox)
+    'Private Async Sub DeacBtn_Click(sender As Object, e As EventArgs)
+    '    If MessageBox.Show("Your account will be deactivated, and you'll not be able to log in.", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+    '        If MessageBox.Show("This action cannot be reverted/reversed.", "Are you really sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+    '            Await DeactivateAccountFunc()
+    '            Dim login As New Login
+    '            Close()
+    '            login.Show()
+    '            '            Login Login = New Login()
+    '            '            MainPage mp = New MainPage()
+    '            '            Admin_ admin = New Admin_(account)
+    '            '            admin.Admin_AddUserLog("User_InformationUpdated")
+    '            '            mp.Close()
+    '            '            this.Close()
+    '            '            Login.Show()
+    '        End If
+    '    End If
+    'End Sub
+
+    Private Sub EditSecurityBtn_Click(sender As Object, e As EventArgs)
+        AdjustVisibility(False, True, True, True, True, True)
+
+    End Sub
+
+    Private Sub CancelBtn_Click(sender As Object, e As EventArgs)
+        AdjustVisibility(True, False, False, False, False, False)
+    End Sub
+
+    'only adjust visibility here if there is no error (remember to show error via something ie. msgbox)
+    Private Sub SaveBtn_Click(sender As Object, e As EventArgs)
+        AdjustVisibility(True, False, False, False, False, False)
+
+        If storedPass = OldPasswordTxtbox.Text.Trim Then
+            NewPasswordTxtbox
         End If
-    End Sub
-
-    Private Sub EditSecurityBtn_Click(sender As Object, e As EventArgs) Handles EditSecurityBtn.Click
-        EditSecurityBtn.Visible = False
-        CancelBtn.Visible = True
-        SaveBtn.Visible = True
-
-
-    End Sub
-
-    Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
-
     End Sub
 End Class

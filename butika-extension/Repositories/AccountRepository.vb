@@ -230,6 +230,41 @@ Public Class AccountRepository
         End Using
     End Function
 
+    Public Async Function UpdatePassword(acc As Account) As Task(Of Boolean)
+        If acc Is Nothing Then
+            Return False
+        End If
+
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "
+                 UPDATE userAccount 
+                 SET
+                     password = @password
+                 WHERE user_id = @user_id;
+                 "
+
+                Debug.WriteLine("userid: " + acc.UserID.ToString())
+
+                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
+                     .password = acc.Password,
+                     .user_id = acc.UserID
+                 })
+
+                If Not result Then
+                    MessageBox.Show("An error occured. Try again.")
+                    Return False
+                End If
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error updating contact: " & ex.Message)
+            End Try
+        End Using
+    End Function
+
 End Class
 
 
