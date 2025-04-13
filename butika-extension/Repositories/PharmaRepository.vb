@@ -58,4 +58,6 @@ Public Class PharmaRepository
             Return result.ToList()
         End Using
     End Function
+
+    ' pang display sa mga porescriptions
 End Class

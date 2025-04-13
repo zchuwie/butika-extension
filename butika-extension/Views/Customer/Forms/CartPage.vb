@@ -134,8 +134,8 @@ Public Class CartPage
 
         If MessageBox.Show("You have successfully checked out the item. Do you want to see the receipt?", "Checkout Successful", MessageBoxButtons.OKCancel) = DialogResult.OK Then
             Dim receipt As New Receipt(account)
-            receipt.AutoView()
             receipt.PdfReceipt(getDataReceipt, totalItem, transactionID, account)
+            receipt.OpenPDF()
         Else
             MessageBox.Show("Have a good day ahead!", "Success", MessageBoxButtons.OK)
         End If

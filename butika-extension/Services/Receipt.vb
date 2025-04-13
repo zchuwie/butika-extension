@@ -14,31 +14,31 @@ Friend Class Receipt
         Me.account = account
     End Sub
 
+    'variables
+    Dim boldtexts As New XFont("Arial", 25, XFontStyleEx.Bold)
+    Dim totalbold As New XFont("Arial", 30, XFontStyleEx.Bold)
+    Dim tablebold As New XFont("Arial", 15, XFontStyleEx.Bold)
+    Dim regtexts As New XFont("Arial", 15, XFontStyleEx.Regular)
+    Dim smalltexts As New XFont("Arial", 10, XFontStyleEx.Regular)
+
+    Dim logo As XImage = XImage.FromFile("greenbglogo.png")
+    Dim envelope As XImage = XImage.FromFile("envelope.png")
+
+    Dim darkgreen As XBrush = New XSolidBrush(XColor.FromArgb(22, 66, 60))
+    Dim white As XBrush = New XSolidBrush(XColor.FromArgb(255, 255, 255))
+
+    Dim pagewidth As Double = 450
+    Dim pageheight As Double = 842
+    Dim columnWidth As Double = 125
+    Dim rowHeight As Double = 20
+    Dim tableTop As Double = 310
+    Dim col1 As Double = 40, col2 As Double = 175, col3 As Double = 250, col4 As Double = 350
+
+    Dim itemsOnPage As Integer = 0
+
     Public Sub PdfReceipt(itemReceipt As List(Of Cart), totalPrice As Decimal, transactionID As String, acc As Account)
         Dim filepath As String = Path.Combine(documentPath, $"ORID_{transactionID}.pdf")
         fullPath = Path.GetFullPath(filepath)
-
-        'variables
-        Dim boldtexts As New XFont("Arial", 25, XFontStyleEx.Bold)
-        Dim totalbold As New XFont("Arial", 30, XFontStyleEx.Bold)
-        Dim tablebold As New XFont("Arial", 15, XFontStyleEx.Bold)
-        Dim regtexts As New XFont("Arial", 15, XFontStyleEx.Regular)
-        Dim smalltexts As New XFont("Arial", 10, XFontStyleEx.Regular)
-
-        Dim logo As XImage = XImage.FromFile("greenbglogo.png")
-        Dim envelope As XImage = XImage.FromFile("envelope.png")
-
-        Dim darkgreen As XBrush = New XSolidBrush(XColor.FromArgb(22, 66, 60))
-        Dim white As XBrush = New XSolidBrush(XColor.FromArgb(255, 255, 255))
-
-        Dim pagewidth As Double = 450
-        Dim pageheight As Double = 842
-        Dim columnWidth As Double = 125
-        Dim rowHeight As Double = 20
-        Dim tableTop As Double = 310
-        Dim col1 As Double = 40, col2 As Double = 175, col3 As Double = 250, col4 As Double = 350
-
-        Dim itemsOnPage As Integer = 0
 
         'qrgenerator
         Dim qrCodeImage As XImage
@@ -60,7 +60,7 @@ Friend Class Receipt
         Dim gfx As XGraphics = XGraphics.FromPdfPage(newpage)
 
         'function
-        Header(gfx, newpage, boldtexts, white, pagewidth, acc)
+        Header(gfx, newpage, pagewidth, acc)
         tableTop += rowHeight
         For i As Integer = 0 To itemReceipt.Count - 1
             If itemsOnPage >= 15 Then
@@ -73,7 +73,7 @@ Friend Class Receipt
 
                 tableTop = 310 + rowHeight
                 itemsOnPage = 0
-                Header(gfx, newpage, boldtexts, white, pagewidth, acc)
+                Header(gfx, newpage, pagewidth, acc)
             End If
 
             Dim item As Cart = itemReceipt(i)
@@ -88,45 +88,53 @@ Friend Class Receipt
             tableTop += rowHeight
             itemsOnPage += 1
         Next
-        Total(gfx, tableTop, totalPrice, totalbold, darkgreen)
+        Total(gfx, tableTop, totalPrice)
         Footer(gfx, newpage, qrCodeImage, transactionID)
 
         document.Save(filepath)
     End Sub
 
-    Public Sub AutoView()
-        System.Diagnostics.Process.Start(fullPath)
+    Public Sub OpenPDF()
+        Try
+            Dim psi As New ProcessStartInfo With {
+            .FileName = fullPath,
+            .UseShellExecute = True
+        }
+            Process.Start(psi)
+        Catch ex As Exception
+            MessageBox.Show("Failed to open PDF: " & ex.Message)
+        End Try
     End Sub
 
-    Private Sub Header(graphics As XGraphics, page As PdfPage, boldtexts As XFont, white As XBrush, pagewidth As Double, acc As Account)
-        graphics.DrawRectangle(New XSolidBrush(XColor.FromArgb(22, 66, 60)), 0, 0, pagewidth, 240)
+    Sub Header(graphics As XGraphics, page As PdfPage, pagewidth As Double, acc As Account)
+        graphics.DrawRectangle(darkgreen, 0, 0, pagewidth, 240)
         graphics.DrawString($"Your receipt is here, {acc.UserName}!", boldtexts, white, New XRect(50, 15, pagewidth - 100, 30), XStringFormats.Center)
 
         Dim logo As XImage = XImage.FromFile("greenbglogo.png")
         graphics.DrawImage(logo, (pagewidth / 3) + 5, 45, 150, 150)
 
-        graphics.DrawString($"We received your order. {DateTime.Now:d}", boldtexts, white, New XRect(50, 185, pagewidth - 100, 50), XStringFormats.Center)
+        graphics.DrawString($"We received your order. {DateTime.Now:d}", tablebold, white, New XRect(50, 185, pagewidth - 100, 50), XStringFormats.Center)
         graphics.DrawString("Thank you for using our system! We hope to improve your health easier.", boldtexts, white, New XRect(50, 200, pagewidth - 100, 50), XStringFormats.Center)
 
-        graphics.DrawString("PAYMENT SUMMARY", boldtexts, New XSolidBrush(XColor.FromArgb(22, 66, 60)), New XRect(30, 260, pagewidth - 100, 30), XStringFormats.TopLeft)
-        graphics.DrawString("Item", boldtexts, New XSolidBrush(XColor.FromArgb(22, 66, 60)), New XRect(40, 290, 125, 20), XStringFormats.TopLeft)
-        graphics.DrawString("Quantity", boldtexts, New XSolidBrush(XColor.FromArgb(22, 66, 60)), New XRect(175, 290, 125, 20), XStringFormats.TopLeft)
-        graphics.DrawString("Price", boldtexts, New XSolidBrush(XColor.FromArgb(22, 66, 60)), New XRect(250, 290, 70, 20), XStringFormats.TopRight)
-        graphics.DrawString("Total Price", boldtexts, New XSolidBrush(XColor.FromArgb(22, 66, 60)), New XRect(350, 290, 70, 20), XStringFormats.TopRight)
+        graphics.DrawString("PAYMENT SUMMARY", tablebold, darkgreen, New XRect(30, 260, pagewidth - 100, 30), XStringFormats.TopLeft)
+        graphics.DrawString("Item", tablebold, darkgreen, New XRect(40, 290, 125, 20), XStringFormats.TopLeft)
+        graphics.DrawString("Quantity", tablebold, darkgreen, New XRect(175, 290, 125, 20), XStringFormats.TopLeft)
+        graphics.DrawString("Price", tablebold, darkgreen, New XRect(250, 290, 70, 20), XStringFormats.TopRight)
+        graphics.DrawString("Total Price", tablebold, darkgreen, New XRect(350, 290, 70, 20), XStringFormats.TopRight)
     End Sub
 
-    Private Sub Total(graphics As XGraphics, tableTop As Double, totalAmount As Decimal, totalbold As XFont, darkgreen As XBrush)
+    Private Sub Total(graphics As XGraphics, tableTop As Double, totalAmount As Decimal)
         graphics.DrawString("TOTAL", totalbold, darkgreen, New XRect(30, tableTop + 20, 150, 40), XStringFormats.TopLeft)
         graphics.DrawString($"Php {totalAmount:0.00}", totalbold, darkgreen, New XRect(270, tableTop + 20, 150, 40), XStringFormats.TopRight)
     End Sub
 
     Private Sub Footer(graphics As XGraphics, page As PdfPage, qrCodeImage As XImage, transactionID As String)
-        graphics.DrawRectangle(New XSolidBrush(XColor.FromArgb(22, 66, 60)), 0, 700, 450, 90)
+        graphics.DrawRectangle(darkgreen, 0, 700, 450, 90)
 
         graphics.DrawImage(qrCodeImage, 70, 700, 90, 90)
-        graphics.DrawString("Any questions?", New XFont("Arial", 25, XFontStyleEx.Bold), New XSolidBrush(XColor.FromArgb(255, 255, 255)), New XRect(118, 725, 320, 40), XStringFormats.Center)
-        graphics.DrawString("Reach us out through: butikaimnida@gmail.com", New XFont("Arial", 10, XFontStyleEx.Regular), New XSolidBrush(XColor.FromArgb(255, 255, 255)), New XRect(115, 743, 330, 40), XStringFormats.Center)
+        graphics.DrawString("Any questions?", boldtexts, white, New XRect(118, 725, 320, 40), XStringFormats.Center)
+        graphics.DrawString("Reach us out through: butikaimnida@gmail.com", smalltexts, white, New XRect(115, 743, 330, 40), XStringFormats.Center)
 
-        graphics.DrawString($"TransactionID: {transactionID}", New XFont("Arial", 15, XFontStyleEx.Bold), New XSolidBrush(XColor.FromArgb(22, 66, 60)), New XRect(50, 795, 350, 40), XStringFormats.Center)
+        graphics.DrawString($"TransactionID: {transactionID}", tablebold, darkgreen, New XRect(50, 795, 350, 40), XStringFormats.Center)
     End Sub
 End Class
