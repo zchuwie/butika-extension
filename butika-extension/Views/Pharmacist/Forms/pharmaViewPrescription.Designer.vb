@@ -34,8 +34,8 @@ Partial Class pharmaViewPrescription
         Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Label2 = New Label()
         displayToApproved = New ListBox()
-        PictureBox1 = New PictureBox()
-        birefinfoTxt = New TextBox()
+        prescriptImage = New PictureBox()
+        briefinfoTxt = New TextBox()
         contactTxt = New TextBox()
         clinicTxt = New TextBox()
         doctornameTxt = New TextBox()
@@ -67,7 +67,7 @@ Partial Class pharmaViewPrescription
         statusLbl = New Label()
         Label1 = New Label()
         closeBtn = New Guna.UI2.WinForms.Guna2Button()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(prescriptImage, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' prescriptNumLbl
@@ -86,6 +86,7 @@ Partial Class pharmaViewPrescription
         Guna2Button2.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         Guna2Button2.BorderRadius = 6
         Guna2Button2.BorderThickness = 1
+        Guna2Button2.Cursor = Cursors.Hand
         Guna2Button2.CustomizableEdges = CustomizableEdges1
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
@@ -107,6 +108,7 @@ Partial Class pharmaViewPrescription
         Guna2Button1.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         Guna2Button1.BorderRadius = 6
         Guna2Button1.BorderThickness = 3
+        Guna2Button1.Cursor = Cursors.Hand
         Guna2Button1.CustomizableEdges = CustomizableEdges3
         Guna2Button1.DisabledState.BorderColor = Color.DarkGray
         Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
@@ -136,6 +138,7 @@ Partial Class pharmaViewPrescription
         ' displayToApproved
         ' 
         displayToApproved.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        displayToApproved.Enabled = False
         displayToApproved.Font = New Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         displayToApproved.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         displayToApproved.FormattingEnabled = True
@@ -144,29 +147,31 @@ Partial Class pharmaViewPrescription
         displayToApproved.Size = New Size(255, 164)
         displayToApproved.TabIndex = 80
         ' 
-        ' PictureBox1
+        ' prescriptImage
         ' 
-        PictureBox1.Location = New Point(36, 247)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(196, 136)
-        PictureBox1.TabIndex = 79
-        PictureBox1.TabStop = False
+        prescriptImage.Location = New Point(36, 247)
+        prescriptImage.Name = "prescriptImage"
+        prescriptImage.Size = New Size(196, 136)
+        prescriptImage.TabIndex = 79
+        prescriptImage.TabStop = False
         ' 
-        ' birefinfoTxt
+        ' briefinfoTxt
         ' 
-        birefinfoTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        birefinfoTxt.BorderStyle = BorderStyle.FixedSingle
-        birefinfoTxt.Location = New Point(424, 418)
-        birefinfoTxt.Multiline = True
-        birefinfoTxt.Name = "birefinfoTxt"
-        birefinfoTxt.ReadOnly = True
-        birefinfoTxt.Size = New Size(294, 95)
-        birefinfoTxt.TabIndex = 78
+        briefinfoTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        briefinfoTxt.BorderStyle = BorderStyle.FixedSingle
+        briefinfoTxt.Enabled = False
+        briefinfoTxt.Location = New Point(424, 418)
+        briefinfoTxt.Multiline = True
+        briefinfoTxt.Name = "briefinfoTxt"
+        briefinfoTxt.ReadOnly = True
+        briefinfoTxt.Size = New Size(294, 95)
+        briefinfoTxt.TabIndex = 78
         ' 
         ' contactTxt
         ' 
         contactTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         contactTxt.BorderStyle = BorderStyle.FixedSingle
+        contactTxt.Enabled = False
         contactTxt.Location = New Point(499, 329)
         contactTxt.Name = "contactTxt"
         contactTxt.ReadOnly = True
@@ -177,6 +182,7 @@ Partial Class pharmaViewPrescription
         ' 
         clinicTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         clinicTxt.BorderStyle = BorderStyle.FixedSingle
+        clinicTxt.Enabled = False
         clinicTxt.Location = New Point(499, 300)
         clinicTxt.Name = "clinicTxt"
         clinicTxt.ReadOnly = True
@@ -187,6 +193,7 @@ Partial Class pharmaViewPrescription
         ' 
         doctornameTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         doctornameTxt.BorderStyle = BorderStyle.FixedSingle
+        doctornameTxt.Enabled = False
         doctornameTxt.Location = New Point(499, 271)
         doctornameTxt.Name = "doctornameTxt"
         doctornameTxt.ReadOnly = True
@@ -197,6 +204,7 @@ Partial Class pharmaViewPrescription
         ' 
         patientageTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         patientageTxt.BorderStyle = BorderStyle.FixedSingle
+        patientageTxt.Enabled = False
         patientageTxt.Location = New Point(496, 193)
         patientageTxt.Name = "patientageTxt"
         patientageTxt.ReadOnly = True
@@ -207,6 +215,7 @@ Partial Class pharmaViewPrescription
         ' 
         patientnameTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         patientnameTxt.BorderStyle = BorderStyle.FixedSingle
+        patientnameTxt.Enabled = False
         patientnameTxt.Location = New Point(496, 164)
         patientnameTxt.Name = "patientnameTxt"
         patientnameTxt.ReadOnly = True
@@ -400,7 +409,7 @@ Partial Class pharmaViewPrescription
         remarksLbl.Name = "remarksLbl"
         remarksLbl.Size = New Size(66, 19)
         remarksLbl.TabIndex = 54
-        remarksLbl.Text = "Remarks"
+        remarksLbl.Text = "Pending"
         ' 
         ' Label6
         ' 
@@ -420,9 +429,9 @@ Partial Class pharmaViewPrescription
         reviewdateLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         reviewdateLbl.Location = New Point(302, 51)
         reviewdateLbl.Name = "reviewdateLbl"
-        reviewdateLbl.Size = New Size(43, 19)
+        reviewdateLbl.Size = New Size(66, 19)
         reviewdateLbl.TabIndex = 52
-        reviewdateLbl.Text = "Date"
+        reviewdateLbl.Text = "Pending"
         ' 
         ' Label4
         ' 
@@ -453,9 +462,9 @@ Partial Class pharmaViewPrescription
         statusLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         statusLbl.Location = New Point(88, 55)
         statusLbl.Name = "statusLbl"
-        statusLbl.Size = New Size(124, 21)
+        statusLbl.Size = New Size(74, 21)
         statusLbl.TabIndex = 49
-        statusLbl.Text = "Status Update"
+        statusLbl.Text = "Pending"
         ' 
         ' Label1
         ' 
@@ -497,8 +506,8 @@ Partial Class pharmaViewPrescription
         Controls.Add(Guna2Button1)
         Controls.Add(Label2)
         Controls.Add(displayToApproved)
-        Controls.Add(PictureBox1)
-        Controls.Add(birefinfoTxt)
+        Controls.Add(prescriptImage)
+        Controls.Add(briefinfoTxt)
         Controls.Add(contactTxt)
         Controls.Add(clinicTxt)
         Controls.Add(doctornameTxt)
@@ -533,7 +542,7 @@ Partial Class pharmaViewPrescription
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaViewPrescription"
         Text = "pharmaViewPrescription"
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(prescriptImage, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -543,8 +552,8 @@ Partial Class pharmaViewPrescription
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label2 As Label
     Friend WithEvents displayToApproved As ListBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents birefinfoTxt As TextBox
+    Friend WithEvents prescriptImage As PictureBox
+    Friend WithEvents briefinfoTxt As TextBox
     Friend WithEvents contactTxt As TextBox
     Friend WithEvents clinicTxt As TextBox
     Friend WithEvents doctornameTxt As TextBox

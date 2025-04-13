@@ -12,6 +12,12 @@
         Public Property PrescriptionImageName As String
         Public Property PrescriptionDate As String
         Public Property PrescriptionRemarks As String
+
+        Public ReadOnly Property PresciptImagePath As String
+            Get
+                Return GetImagePath.PrescriptionPathName + "\\" + PrescriptionImageName
+            End Get
+        End Property
     End Class
 
 End Namespace

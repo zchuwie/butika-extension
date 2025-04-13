@@ -60,4 +60,25 @@ Public Class PharmaRepository
     End Function
 
     ' pang display sa mga porescriptions
+    Public Async Function GetAllPrescriptions() As Task(Of List(Of Prescription))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT 
+                    prescription_id AS PrescriptionId,
+                    patient_name AS PatientName,
+                    patient_age AS PatientAge,
+                    user_concern AS PatientConcern,
+                    doc_name AS DoctorName,
+                    doc_contact AS DoctorContact,
+                    clinic AS DoctorPlace,
+                    prescription_image AS PrescriptionImageName,
+                    prescription_date AS PrescriptionDate
+                FROM userprescriptionform"
+            Dim result = Await conn.QueryAsync(Of Prescription)(query)
+            Return result.ToList()
+        End Using
+    End Function
+
+    ' pangdisplay sa 
 End Class

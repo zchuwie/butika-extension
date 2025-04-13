@@ -55,6 +55,7 @@ Partial Class pharmaReviewRemarks
         cancelBtn.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         cancelBtn.BorderRadius = 6
         cancelBtn.BorderThickness = 1
+        cancelBtn.Cursor = Cursors.Hand
         cancelBtn.CustomizableEdges = CustomizableEdges1
         cancelBtn.DisabledState.BorderColor = Color.DarkGray
         cancelBtn.DisabledState.CustomBorderColor = Color.DarkGray
@@ -76,6 +77,7 @@ Partial Class pharmaReviewRemarks
         finishBtn.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         finishBtn.BorderRadius = 6
         finishBtn.BorderThickness = 3
+        finishBtn.Cursor = Cursors.Hand
         finishBtn.CustomizableEdges = CustomizableEdges3
         finishBtn.DisabledState.BorderColor = Color.DarkGray
         finishBtn.DisabledState.CustomBorderColor = Color.DarkGray
@@ -261,6 +263,7 @@ Partial Class pharmaReviewRemarks
         Controls.Add(usernameLbl)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Cursor = Cursors.Hand
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaReviewRemarks"
         Text = "pharmaReviewRemarks"

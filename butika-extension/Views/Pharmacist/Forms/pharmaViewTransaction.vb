@@ -5,12 +5,9 @@ Public Class pharmaViewTransaction
     Public Sub New(transac As Transaction)
         Me.transactions = transac
 
-        InitializeComponent()
-        LoadTransaction()
-    End Sub
-    Public Sub LoadTransaction()
         username.Text = transactions.Account.UserName
         transactionid.Text = transactions.TransactionID
+        InitializeComponent()
     End Sub
     Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
         Me.Close()

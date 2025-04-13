@@ -50,7 +50,7 @@ Partial Class pharmaPrescriptions
         declineLbl = New Label()
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         infoManagerIcon = New ToolTip(components)
-        FlowLayoutPanel1 = New FlowLayoutPanel()
+        flpPrescript = New FlowLayoutPanel()
         Guna2Panel2.SuspendLayout()
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -204,7 +204,7 @@ Partial Class pharmaPrescriptions
         pendingLbl.AutoSize = True
         pendingLbl.Cursor = Cursors.Hand
         pendingLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        pendingLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        pendingLbl.ForeColor = Color.Gray
         pendingLbl.Location = New Point(169, 97)
         pendingLbl.Name = "pendingLbl"
         pendingLbl.Size = New Size(80, 19)
@@ -226,7 +226,7 @@ Partial Class pharmaPrescriptions
         declineLbl.AutoSize = True
         declineLbl.Cursor = Cursors.Hand
         declineLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        declineLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        declineLbl.ForeColor = Color.Gray
         declineLbl.Location = New Point(255, 97)
         declineLbl.Name = "declineLbl"
         declineLbl.Size = New Size(79, 19)
@@ -240,13 +240,13 @@ Partial Class pharmaPrescriptions
         Guna2Separator1.Size = New Size(1019, 10)
         Guna2Separator1.TabIndex = 33
         ' 
-        ' FlowLayoutPanel1
+        ' flpPrescript
         ' 
-        FlowLayoutPanel1.Location = New Point(36, 178)
-        FlowLayoutPanel1.Margin = New Padding(3, 0, 3, 3)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(972, 530)
-        FlowLayoutPanel1.TabIndex = 0
+        flpPrescript.Location = New Point(36, 178)
+        flpPrescript.Margin = New Padding(3, 0, 3, 3)
+        flpPrescript.Name = "flpPrescript"
+        flpPrescript.Size = New Size(972, 530)
+        flpPrescript.TabIndex = 0
         ' 
         ' pharmaPrescriptions
         ' 
@@ -255,7 +255,7 @@ Partial Class pharmaPrescriptions
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1043, 720)
-        Controls.Add(FlowLayoutPanel1)
+        Controls.Add(flpPrescript)
         Controls.Add(Guna2Separator1)
         Controls.Add(declinedPnl)
         Controls.Add(declineLbl)
@@ -293,5 +293,5 @@ Partial Class pharmaPrescriptions
     Friend WithEvents declineLbl As Label
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents infoManagerIcon As ToolTip
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents flpPrescript As FlowLayoutPanel
 End Class
