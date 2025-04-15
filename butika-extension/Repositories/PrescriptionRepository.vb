@@ -40,7 +40,7 @@ Public Class PrescriptionRepository
                 .prescription_image = prescription.PrescriptionImageName,
                 .prescription_date = DateTime.Parse(prescription.PrescriptionDate),
                 .user_id = account.UserID
-            }
+                }
 
                 Dim result As Integer = Await conn.ExecuteAsync(sql, parameters)
 

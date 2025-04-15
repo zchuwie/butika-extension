@@ -22,46 +22,47 @@ Partial Class pharmaDashPrescript
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
-        Label2 = New Label()
+        usernameLbl = New Label()
+        statusLbl = New Label()
         SuspendLayout()
         ' 
-        ' Label1
+        ' usernameLbl
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
-        Label1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label1.Location = New Point(23, 10)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(90, 16)
-        Label1.TabIndex = 0
-        Label1.Text = "Prescription ID"
+        usernameLbl.AutoSize = True
+        usernameLbl.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
+        usernameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        usernameLbl.Location = New Point(23, 10)
+        usernameLbl.Name = "usernameLbl"
+        usernameLbl.Size = New Size(66, 16)
+        usernameLbl.TabIndex = 0
+        usernameLbl.Text = "Username"
         ' 
-        ' Label2
+        ' statusLbl
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
-        Label2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label2.Location = New Point(163, 10)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(67, 16)
-        Label2.TabIndex = 1
-        Label2.Text = "Approved"
+        statusLbl.AutoSize = True
+        statusLbl.Cursor = Cursors.Hand
+        statusLbl.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
+        statusLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        statusLbl.Location = New Point(148, 10)
+        statusLbl.Name = "statusLbl"
+        statusLbl.Size = New Size(67, 16)
+        statusLbl.TabIndex = 1
+        statusLbl.Text = "Approved"
         ' 
         ' pharmaDashPrescript
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Controls.Add(Label2)
-        Controls.Add(Label1)
+        Controls.Add(statusLbl)
+        Controls.Add(usernameLbl)
         Name = "pharmaDashPrescript"
         Size = New Size(240, 35)
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents usernameLbl As Label
+    Friend WithEvents statusLbl As Label
 
 End Class

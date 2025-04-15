@@ -36,6 +36,8 @@ Partial Class pharmaReviewRemarks
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         cancelBtn = New Guna.UI2.WinForms.Guna2Button()
         finishBtn = New Guna.UI2.WinForms.Guna2Button()
         otherBtn = New Guna.UI2.WinForms.Guna2Button()
@@ -48,6 +50,8 @@ Partial Class pharmaReviewRemarks
         usernameLbl = New Label()
         Label2 = New Label()
         Label1 = New Label()
+        Label3 = New Label()
+        otherTxt = New Guna.UI2.WinForms.Guna2TextBox()
         SuspendLayout()
         ' 
         ' cancelBtn
@@ -55,6 +59,7 @@ Partial Class pharmaReviewRemarks
         cancelBtn.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         cancelBtn.BorderRadius = 6
         cancelBtn.BorderThickness = 1
+        cancelBtn.Cursor = Cursors.Hand
         cancelBtn.CustomizableEdges = CustomizableEdges1
         cancelBtn.DisabledState.BorderColor = Color.DarkGray
         cancelBtn.DisabledState.CustomBorderColor = Color.DarkGray
@@ -64,7 +69,7 @@ Partial Class pharmaReviewRemarks
         cancelBtn.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
         cancelBtn.ForeColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         cancelBtn.HoverState.FillColor = Color.Red
-        cancelBtn.Location = New Point(127, 213)
+        cancelBtn.Location = New Point(121, 269)
         cancelBtn.Name = "cancelBtn"
         cancelBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         cancelBtn.Size = New Size(107, 34)
@@ -76,6 +81,7 @@ Partial Class pharmaReviewRemarks
         finishBtn.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         finishBtn.BorderRadius = 6
         finishBtn.BorderThickness = 3
+        finishBtn.Cursor = Cursors.Hand
         finishBtn.CustomizableEdges = CustomizableEdges3
         finishBtn.DisabledState.BorderColor = Color.DarkGray
         finishBtn.DisabledState.CustomBorderColor = Color.DarkGray
@@ -84,7 +90,7 @@ Partial Class pharmaReviewRemarks
         finishBtn.FillColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
         finishBtn.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
         finishBtn.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        finishBtn.Location = New Point(256, 213)
+        finishBtn.Location = New Point(250, 269)
         finishBtn.Name = "finishBtn"
         finishBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         finishBtn.Size = New Size(107, 34)
@@ -243,12 +249,50 @@ Partial Class pharmaReviewRemarks
         Label1.TabIndex = 48
         Label1.Text = "Remarks Review"
         ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
+        Label3.ForeColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
+        Label3.Location = New Point(90, 221)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(85, 16)
+        Label3.TabIndex = 60
+        Label3.Text = "Other reason:"
+        ' 
+        ' otherTxt
+        ' 
+        otherTxt.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
+        otherTxt.BorderRadius = 6
+        otherTxt.BorderThickness = 3
+        otherTxt.CustomizableEdges = CustomizableEdges15
+        otherTxt.DefaultText = ""
+        otherTxt.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
+        otherTxt.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
+        otherTxt.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        otherTxt.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        otherTxt.Enabled = False
+        otherTxt.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        otherTxt.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        otherTxt.Font = New Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        otherTxt.ForeColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
+        otherTxt.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
+        otherTxt.Location = New Point(182, 212)
+        otherTxt.Name = "otherTxt"
+        otherTxt.PlaceholderText = ""
+        otherTxt.SelectedText = ""
+        otherTxt.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        otherTxt.Size = New Size(200, 38)
+        otherTxt.TabIndex = 61
+        ' 
         ' pharmaReviewRemarks
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(485, 276)
+        ClientSize = New Size(485, 336)
+        Controls.Add(otherTxt)
+        Controls.Add(Label3)
         Controls.Add(cancelBtn)
         Controls.Add(finishBtn)
         Controls.Add(otherBtn)
@@ -261,6 +305,7 @@ Partial Class pharmaReviewRemarks
         Controls.Add(usernameLbl)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Cursor = Cursors.Hand
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaReviewRemarks"
         Text = "pharmaReviewRemarks"
@@ -280,4 +325,6 @@ Partial Class pharmaReviewRemarks
     Friend WithEvents usernameLbl As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents otherTxt As Guna.UI2.WinForms.Guna2TextBox
 End Class

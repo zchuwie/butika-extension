@@ -13,13 +13,13 @@ Public Class pharmaTransacItem
         ClickAll()
     End Sub
     Private Sub ClickAll()
-        AddHandler userIdLbl.Click, Sub(sender, e) Call pharmaMedItem_Click(sender, e)
-        AddHandler usernameLbl.Click, Sub(sender, e) Call pharmaMedItem_Click(sender, e)
-        AddHandler transacIdLbl.Click, Sub(sender, e) Call pharmaMedItem_Click(sender, e)
-        AddHandler dateLbl.Click, Sub(sender, e) Call pharmaMedItem_Click(sender, e)
-        AddHandler Guna2Panel1.Click, Sub(sender, e) Call pharmaMedItem_Click(sender, e)
+        AddHandler userIdLbl.Click, Sub(sender, e) Call pharmaTransacItem_Click(sender, e)
+        AddHandler usernameLbl.Click, Sub(sender, e) Call pharmaTransacItem_Click(sender, e)
+        AddHandler transacIdLbl.Click, Sub(sender, e) Call pharmaTransacItem_Click(sender, e)
+        AddHandler dateLbl.Click, Sub(sender, e) Call pharmaTransacItem_Click(sender, e)
+        AddHandler Guna2Panel1.Click, Sub(sender, e) Call pharmaTransacItem_Click(sender, e)
     End Sub
-    Private Sub pharmaMedItem_Click(sender As Object, e As EventArgs) Handles MyBase.Click
+    Private Sub pharmaTransacItem_Click(sender As Object, e As EventArgs) Handles MyBase.Click
         Dim viewtransac As New pharmaViewTransaction(transactions)
         viewtransac.ShowDialog()
     End Sub

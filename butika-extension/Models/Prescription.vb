@@ -10,8 +10,17 @@
         Public Property DoctorPlace As String
         Public Property DoctorContact As String
         Public Property PrescriptionImageName As String
-        Public Property PrescriptionDate As String
+        Public Property PrescriptionDate As DateTime?
         Public Property PrescriptionRemarks As String
+        Public Property PrescriptReviewDate As DateTime?
+        Public Property PrescriptionStatus As Integer
+        Public Property Account As Account
+
+        Public ReadOnly Property PresciptImagePath As String
+            Get
+                Return GetImagePath.PrescriptionPathName + "\\" + PrescriptionImageName
+            End Get
+        End Property
     End Class
 
 End Namespace

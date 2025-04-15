@@ -32,8 +32,6 @@ Partial Class pharmaPrescriptions
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Label4 = New Label()
         Label3 = New Label()
@@ -42,7 +40,6 @@ Partial Class pharmaPrescriptions
         allprescriptPnl = New Guna.UI2.WinForms.Guna2Panel()
         allprescriptLbl = New Label()
         infoIcon = New PictureBox()
-        medicineSearch = New Guna.UI2.WinForms.Guna2TextBox()
         prescriptionsLbl = New Label()
         pendingPnl = New Guna.UI2.WinForms.Guna2Panel()
         pendingLbl = New Label()
@@ -50,7 +47,7 @@ Partial Class pharmaPrescriptions
         declineLbl = New Label()
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         infoManagerIcon = New ToolTip(components)
-        FlowLayoutPanel1 = New FlowLayoutPanel()
+        flpPrescript = New FlowLayoutPanel()
         Guna2Panel2.SuspendLayout()
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -152,32 +149,6 @@ Partial Class pharmaPrescriptions
         infoIcon.TabIndex = 23
         infoIcon.TabStop = False
         ' 
-        ' medicineSearch
-        ' 
-        medicineSearch.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineSearch.BorderRadius = 4
-        medicineSearch.BorderThickness = 2
-        medicineSearch.CustomizableEdges = CustomizableEdges5
-        medicineSearch.DefaultText = ""
-        medicineSearch.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        medicineSearch.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        medicineSearch.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        medicineSearch.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        medicineSearch.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        medicineSearch.FocusedState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineSearch.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
-        medicineSearch.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineSearch.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineSearch.IconRight = CType(resources.GetObject("medicineSearch.IconRight"), Image)
-        medicineSearch.Location = New Point(783, 97)
-        medicineSearch.Name = "medicineSearch"
-        medicineSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineSearch.PlaceholderText = "Search medicines"
-        medicineSearch.SelectedText = ""
-        medicineSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        medicineSearch.Size = New Size(225, 34)
-        medicineSearch.TabIndex = 22
-        ' 
         ' prescriptionsLbl
         ' 
         prescriptionsLbl.AutoSize = True
@@ -191,11 +162,11 @@ Partial Class pharmaPrescriptions
         ' 
         ' pendingPnl
         ' 
-        pendingPnl.CustomizableEdges = CustomizableEdges7
+        pendingPnl.CustomizableEdges = CustomizableEdges5
         pendingPnl.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         pendingPnl.Location = New Point(173, 121)
         pendingPnl.Name = "pendingPnl"
-        pendingPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        pendingPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         pendingPnl.Size = New Size(68, 3)
         pendingPnl.TabIndex = 30
         ' 
@@ -204,7 +175,7 @@ Partial Class pharmaPrescriptions
         pendingLbl.AutoSize = True
         pendingLbl.Cursor = Cursors.Hand
         pendingLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        pendingLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        pendingLbl.ForeColor = Color.Gray
         pendingLbl.Location = New Point(169, 97)
         pendingLbl.Name = "pendingLbl"
         pendingLbl.Size = New Size(80, 19)
@@ -213,11 +184,11 @@ Partial Class pharmaPrescriptions
         ' 
         ' declinedPnl
         ' 
-        declinedPnl.CustomizableEdges = CustomizableEdges9
+        declinedPnl.CustomizableEdges = CustomizableEdges7
         declinedPnl.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         declinedPnl.Location = New Point(260, 121)
         declinedPnl.Name = "declinedPnl"
-        declinedPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        declinedPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         declinedPnl.Size = New Size(69, 3)
         declinedPnl.TabIndex = 32
         ' 
@@ -226,7 +197,7 @@ Partial Class pharmaPrescriptions
         declineLbl.AutoSize = True
         declineLbl.Cursor = Cursors.Hand
         declineLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        declineLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        declineLbl.ForeColor = Color.Gray
         declineLbl.Location = New Point(255, 97)
         declineLbl.Name = "declineLbl"
         declineLbl.Size = New Size(79, 19)
@@ -240,13 +211,13 @@ Partial Class pharmaPrescriptions
         Guna2Separator1.Size = New Size(1019, 10)
         Guna2Separator1.TabIndex = 33
         ' 
-        ' FlowLayoutPanel1
+        ' flpPrescript
         ' 
-        FlowLayoutPanel1.Location = New Point(36, 178)
-        FlowLayoutPanel1.Margin = New Padding(3, 0, 3, 3)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Size = New Size(972, 530)
-        FlowLayoutPanel1.TabIndex = 0
+        flpPrescript.Location = New Point(36, 178)
+        flpPrescript.Margin = New Padding(3, 0, 3, 3)
+        flpPrescript.Name = "flpPrescript"
+        flpPrescript.Size = New Size(972, 530)
+        flpPrescript.TabIndex = 0
         ' 
         ' pharmaPrescriptions
         ' 
@@ -255,7 +226,7 @@ Partial Class pharmaPrescriptions
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1043, 720)
-        Controls.Add(FlowLayoutPanel1)
+        Controls.Add(flpPrescript)
         Controls.Add(Guna2Separator1)
         Controls.Add(declinedPnl)
         Controls.Add(declineLbl)
@@ -265,7 +236,6 @@ Partial Class pharmaPrescriptions
         Controls.Add(allprescriptPnl)
         Controls.Add(allprescriptLbl)
         Controls.Add(infoIcon)
-        Controls.Add(medicineSearch)
         Controls.Add(prescriptionsLbl)
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaPrescriptions"
@@ -285,7 +255,6 @@ Partial Class pharmaPrescriptions
     Friend WithEvents allprescriptPnl As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents allprescriptLbl As Label
     Friend WithEvents infoIcon As PictureBox
-    Friend WithEvents medicineSearch As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents prescriptionsLbl As Label
     Friend WithEvents pendingPnl As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents pendingLbl As Label
@@ -293,5 +262,5 @@ Partial Class pharmaPrescriptions
     Friend WithEvents declineLbl As Label
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents infoManagerIcon As ToolTip
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents flpPrescript As FlowLayoutPanel
 End Class

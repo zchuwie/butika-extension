@@ -24,22 +24,22 @@ Partial Class pharmaDashboard
     Private Sub InitializeComponent()
         components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaDashboard))
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges31 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges32 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         infoIcon = New PictureBox()
         dashboardLbl = New Label()
@@ -158,12 +158,12 @@ Partial Class pharmaDashboard
         minitransaction.Controls.Add(Label3)
         minitransaction.Controls.Add(PictureBox1)
         minitransaction.Controls.Add(viewreportPnl)
-        minitransaction.CustomizableEdges = CustomizableEdges19
+        minitransaction.CustomizableEdges = CustomizableEdges3
         minitransaction.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         minitransaction.Location = New Point(40, 147)
         minitransaction.Margin = New Padding(5)
         minitransaction.Name = "minitransaction"
-        minitransaction.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        minitransaction.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         minitransaction.ShadowDecoration.Depth = 5
         minitransaction.Size = New Size(220, 135)
         minitransaction.TabIndex = 48
@@ -206,14 +206,14 @@ Partial Class pharmaDashboard
         viewreportPnl.BorderRadius = 15
         viewreportPnl.Controls.Add(goTransacPage)
         viewreportPnl.Controls.Add(viewreportLbl)
-        CustomizableEdges17.TopLeft = False
-        CustomizableEdges17.TopRight = False
-        viewreportPnl.CustomizableEdges = CustomizableEdges17
+        CustomizableEdges1.TopLeft = False
+        CustomizableEdges1.TopRight = False
+        viewreportPnl.CustomizableEdges = CustomizableEdges1
         viewreportPnl.Dock = DockStyle.Bottom
         viewreportPnl.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         viewreportPnl.Location = New Point(0, 97)
         viewreportPnl.Name = "viewreportPnl"
-        viewreportPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        viewreportPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         viewreportPnl.Size = New Size(220, 38)
         viewreportPnl.TabIndex = 0
         ' 
@@ -249,12 +249,12 @@ Partial Class pharmaDashboard
         miniMedicine.Controls.Add(Label4)
         miniMedicine.Controls.Add(PictureBox3)
         miniMedicine.Controls.Add(Guna2Panel3)
-        miniMedicine.CustomizableEdges = CustomizableEdges23
+        miniMedicine.CustomizableEdges = CustomizableEdges7
         miniMedicine.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         miniMedicine.Location = New Point(270, 147)
         miniMedicine.Margin = New Padding(5)
         miniMedicine.Name = "miniMedicine"
-        miniMedicine.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        miniMedicine.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         miniMedicine.ShadowDecoration.Depth = 5
         miniMedicine.Size = New Size(220, 135)
         miniMedicine.TabIndex = 49
@@ -297,14 +297,14 @@ Partial Class pharmaDashboard
         Guna2Panel3.BorderRadius = 15
         Guna2Panel3.Controls.Add(goMedPage)
         Guna2Panel3.Controls.Add(Label5)
-        CustomizableEdges21.TopLeft = False
-        CustomizableEdges21.TopRight = False
-        Guna2Panel3.CustomizableEdges = CustomizableEdges21
+        CustomizableEdges5.TopLeft = False
+        CustomizableEdges5.TopRight = False
+        Guna2Panel3.CustomizableEdges = CustomizableEdges5
         Guna2Panel3.Dock = DockStyle.Bottom
         Guna2Panel3.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2Panel3.Location = New Point(0, 97)
         Guna2Panel3.Name = "Guna2Panel3"
-        Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2Panel3.Size = New Size(220, 38)
         Guna2Panel3.TabIndex = 0
         ' 
@@ -340,12 +340,12 @@ Partial Class pharmaDashboard
         miniprescription.Controls.Add(Label7)
         miniprescription.Controls.Add(PictureBox5)
         miniprescription.Controls.Add(Guna2Panel5)
-        miniprescription.CustomizableEdges = CustomizableEdges27
+        miniprescription.CustomizableEdges = CustomizableEdges11
         miniprescription.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         miniprescription.Location = New Point(500, 147)
         miniprescription.Margin = New Padding(5)
         miniprescription.Name = "miniprescription"
-        miniprescription.ShadowDecoration.CustomizableEdges = CustomizableEdges28
+        miniprescription.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         miniprescription.ShadowDecoration.Depth = 5
         miniprescription.Size = New Size(220, 135)
         miniprescription.TabIndex = 49
@@ -388,14 +388,14 @@ Partial Class pharmaDashboard
         Guna2Panel5.BorderRadius = 15
         Guna2Panel5.Controls.Add(goPrescriptPage)
         Guna2Panel5.Controls.Add(Label8)
-        CustomizableEdges25.TopLeft = False
-        CustomizableEdges25.TopRight = False
-        Guna2Panel5.CustomizableEdges = CustomizableEdges25
+        CustomizableEdges9.TopLeft = False
+        CustomizableEdges9.TopRight = False
+        Guna2Panel5.CustomizableEdges = CustomizableEdges9
         Guna2Panel5.Dock = DockStyle.Bottom
         Guna2Panel5.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2Panel5.Location = New Point(0, 97)
         Guna2Panel5.Name = "Guna2Panel5"
-        Guna2Panel5.ShadowDecoration.CustomizableEdges = CustomizableEdges26
+        Guna2Panel5.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         Guna2Panel5.Size = New Size(220, 38)
         Guna2Panel5.TabIndex = 0
         ' 
@@ -454,15 +454,16 @@ Partial Class pharmaDashboard
         Guna2Panel1.Controls.Add(Label13)
         Guna2Panel1.Controls.Add(Label12)
         Guna2Panel1.Controls.Add(Label11)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges29
+        Guna2Panel1.CustomizableEdges = CustomizableEdges13
         Guna2Panel1.Location = New Point(40, 338)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges30
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         Guna2Panel1.Size = New Size(680, 347)
         Guna2Panel1.TabIndex = 52
         ' 
         ' flpTransac
         ' 
+        flpTransac.AutoScroll = True
         flpTransac.Location = New Point(3, 65)
         flpTransac.Name = "flpTransac"
         flpTransac.Size = New Size(674, 279)
@@ -519,15 +520,16 @@ Partial Class pharmaDashboard
         Guna2Panel2.Controls.Add(Guna2Separator3)
         Guna2Panel2.Controls.Add(Label10)
         Guna2Panel2.Controls.Add(Label9)
-        Guna2Panel2.CustomizableEdges = CustomizableEdges31
+        Guna2Panel2.CustomizableEdges = CustomizableEdges15
         Guna2Panel2.Location = New Point(762, 187)
         Guna2Panel2.Name = "Guna2Panel2"
-        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges32
+        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         Guna2Panel2.Size = New Size(246, 498)
         Guna2Panel2.TabIndex = 53
         ' 
         ' flpPrescript
         ' 
+        flpPrescript.AutoScroll = True
         flpPrescript.Location = New Point(3, 73)
         flpPrescript.Name = "flpPrescript"
         flpPrescript.Size = New Size(240, 422)
@@ -546,7 +548,7 @@ Partial Class pharmaDashboard
         Label10.AutoSize = True
         Label10.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Label10.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label10.Location = New Point(163, 24)
+        Label10.Location = New Point(149, 24)
         Label10.Name = "Label10"
         Label10.Size = New Size(45, 16)
         Label10.TabIndex = 1
@@ -559,9 +561,9 @@ Partial Class pharmaDashboard
         Label9.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Label9.Location = New Point(23, 24)
         Label9.Name = "Label9"
-        Label9.Size = New Size(100, 16)
+        Label9.Size = New Size(46, 16)
         Label9.TabIndex = 0
-        Label9.Text = "Prescription ID"
+        Label9.Text = "Name"
         ' 
         ' pharmaDashboard
         ' 

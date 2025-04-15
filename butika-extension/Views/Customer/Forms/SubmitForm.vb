@@ -88,7 +88,7 @@ Public Class SubmitForm
         Dim isImageSaved As Boolean = insertImageIntoFolder()
 
         If Not isImageSaved Then
-            Console.WriteLine("Image has not been saved.")
+            Debug.WriteLine("Image has not been saved.")
             SubmitBtn.Enabled = True
             Return
         End If
@@ -96,7 +96,7 @@ Public Class SubmitForm
         Dim isFormSuccess As Boolean = Await prescriptRepo.InsertPrescriptionDetails(prescription)
 
         If Not isFormSuccess Then
-            Console.WriteLine("Failed inserting the prescription form in db.")
+            Debug.WriteLine("Failed inserting the prescription form in db.")
             SubmitBtn.Enabled = True
             Return
         End If
@@ -104,7 +104,7 @@ Public Class SubmitForm
         Dim prescriptionID As Integer = Await prescriptRepo.getPrescriptionID()
 
         If prescriptionID = 0 Then
-            Console.WriteLine("Empty set of prescription error")
+            Debug.WriteLine("Empty set of prescription error")
             SubmitBtn.Enabled = True
             Return
         End If
