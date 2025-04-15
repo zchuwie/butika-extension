@@ -5,60 +5,60 @@ Imports butika.Models
 Imports Dapper
 
 Public Class SecuritySettings
+    Dim accountRep As New AccountRepository()
     Dim account As New Account()
-    Dim storedPass As String = account.Password
-
     Public Sub New(account As Account)
         InitializeComponent()
         Me.account = account
+
     End Sub
 
-#Region "Functions"
-    Private Async Function DeactivateAccountFunc() As Task
-
-        Using conn = DatabaseConnection.GetConnection()
-            Try
-                Await conn.OpenAsync()
-
-                Dim query As String = "
-                 UPDATE userAccount 
-                 SET 
-                        status = @status
-                 WHERE user_id = @user_id;
-                 "
-
-                Debug.WriteLine("userid: " + account.UserID.ToString())
-
-                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
-                     .status = "inactive",
-                     .user_id = account.UserID
-                 })
-
-                If Not result Then
-                    MessageBox.Show("An error occured. Try again.")
-                    Return
-                End If
-
-
-            Catch ex As Exception
-                MessageBox.Show("Error deactivating account: " & ex.Message)
-            End Try
-        End Using
-
-        MessageBox.Show("Account deactivated successfully")
-    End Function
-
-#End Region
-
-    Private Sub SecuritySettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub SecuritySettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If account IsNot Nothing Then
             Debug.WriteLine("SecurityLoad LOADED:")
             Debug.WriteLine("SecurityLoad First Name: " & account.FirstName)
             Debug.WriteLine("SecurityLoad User ID: " & account.UserID)
         Else
             Debug.WriteLine("Account is null or empty.")
+            Debug.WriteLine("old pass from load is: " & account.Password)
         End If
+
+        Me.account = Await accountRep.populateDataThroughUserID(account.UserID)
     End Sub
+
+#Region "Functions"
+    Private Async Function EditPasswordApproval() As Task
+        Dim newPass As String = NewPasswordTxtbox.Text
+        Dim confNewPass As String = ConfirmPasswordTxtbox.Text
+
+        If String.IsNullOrEmpty(newPass) OrElse String.IsNullOrEmpty(confNewPass) Then
+            MessageBox.Show("Please fill in all fields.")
+            Return
+        End If
+
+        If Not InputValidation.isPasswordValid(newPass) OrElse Not InputValidation.isPasswordValid(confNewPass) Then
+            MessageBox.Show("Invalid password format.")
+            Return
+        End If
+
+        If Not newPass <> confNewPass Then
+            MessageBox.Show("Password must be the same.")
+            Return
+        End If
+
+        Dim newPasswordInfo As New Account With {
+            .Password = newPass
+        }
+
+        Dim updatePasswordSuccess = Await accountRep.UpdatePassword(newPasswordInfo)
+        If updatePasswordSuccess Then
+            MessageBox.Show("An error occured. Try again.")
+            Return
+        End If
+
+        MessageBox.Show("Password updated successfully")
+    End Function
+#End Region
 
     'just in case someone needs this structure (double messagebox)
     'Private Async Sub DeacBtn_Click(sender As Object, e As EventArgs)
@@ -79,21 +79,63 @@ Public Class SecuritySettings
     '    End If
     'End Sub
 
-    Private Sub EditSecurityBtn_Click(sender As Object, e As EventArgs)
-        AdjustVisibility(False, True, True, True, True, True)
 
-    End Sub
 
-    Private Sub CancelBtn_Click(sender As Object, e As EventArgs)
-        AdjustVisibility(True, False, False, False, False, False)
+    Private Sub OldPasswordTxtbox_KeyDown(sender As Object, e As KeyEventArgs) Handles OldPasswordTxtbox.KeyDown
+        If e.KeyCode = Keys.Enter Then
+
+            Dim storedOldHash As String
+            Dim oldPassHash As New PasswordHashing(OldPasswordTxtbox.Text)
+            storedOldHash = oldPassHash.hashCombinedDisplay
+
+            If storedOldHash <> account.Password Then
+                MsgBox("Wrong password. Try again.")
+            Else
+                OldPasswordTxtbox.Enabled = False
+                NewPasswordTxtbox.Enabled = True
+                ConfirmPasswordTxtbox.Enabled = True
+
+                SaveBtn.Visible = True
+                CancelBtn.Visible = True
+            End If
+
+        End If
     End Sub
 
     'only adjust visibility here if there is no error (remember to show error via something ie. msgbox)
-    Private Sub SaveBtn_Click(sender As Object, e As EventArgs)
-        AdjustVisibility(True, False, False, False, False, False)
+    Private Async Sub SaveBtn_Click(sender As Object, e As EventArgs) Handles SaveBtn.Click
+        Try
+            Await EditPasswordApproval()
 
-        If storedPass = OldPasswordTxtbox.Text.Trim Then
-            NewPasswordTxtbox
-        End If
+            OldPasswordTxtbox.Text = ""
+            OldPasswordTxtbox.Enabled = true
+            NewPasswordTxtbox.Enabled = False
+            ConfirmPasswordTxtbox.Enabled = False
+
+            SaveBtn.Visible = False
+            CancelBtn.Visible = False
+        Catch ex As Exception
+            MessageBox.Show("An error occurred: " & ex.Message)
+            Console.Write(ex)
+        End Try
+    End Sub
+
+    Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
+        OldPasswordTxtbox.Enabled = True
+        NewPasswordTxtbox.Enabled = False
+        ConfirmPasswordTxtbox.Enabled = False
+
+        NewPasswordTxtbox.Text = ""
+        ConfirmPasswordTxtbox.Text = ""
+        OldPasswordTxtbox.Text = ""
+
+        SaveBtn.Visible = False
+        CancelBtn.Visible = False
+
+
+    End Sub
+
+    Private Sub OldPasswordTxtbox_TextChanged(sender As Object, e As EventArgs) Handles OldPasswordTxtbox.TextChanged
+        'storedOldPass = oldPassHash.ToString
     End Sub
 End Class

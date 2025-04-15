@@ -48,6 +48,9 @@ Public Class AccountRepository
                 Dim query As String = "
                 INSERT INTO userAccount (username, email, password, status, date_joined) 
                 VALUES (@username, @email, @password, @status, @date_joined);
+
+                INSERT INTO hashing (hashSalt, hashPass, isPassword) 
+                VALUES (
                 SELECT CAST(SCOPE_IDENTITY() AS INT);
                 "
 
@@ -57,7 +60,8 @@ Public Class AccountRepository
                 .password = hash.hashCombinedDisplay,
                 .status = "active",
                 .date_joined = acc.DateJoined()
-            })
+                })
+
                 If userID <> 0 Then
                     Return Await InsertHashingData(hash, userID)
                 End If
@@ -74,6 +78,24 @@ Public Class AccountRepository
         Using conn = DatabaseConnection.GetConnection()
             Dim query As String = "INSERT INTO hashing (hashSalt, hashPass, isPasswordChanged, user_id) " &
                           "VALUES (@hashSalt, @hashPass, 0, @userID)"
+            Dim rows As Integer = Await conn.ExecuteAsync(query, New With {
+                    .hashSalt = hash.hashSaltDisplay,
+                    .hashPass = hash.hashPasswordDisplay,
+                    .userID = userID
+                    })
+
+            Return rows > 0
+        End Using
+    End Function
+
+    'updates the hashing table upon updating the password
+    Private Async Function UpdateHashingData(hash As PasswordHashing, userID As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Dim query As String = "UPDATE hashing 
+                                   SET hashSalt = @hashSalt, 
+                                       hashPass = @hashPass, 
+                                       isPasswordChanged = @isPasswordChanged,
+                                   WHERE hashing_id = @user_id"
             Dim rows As Integer = Await conn.ExecuteAsync(query, New With {
                     .hashSalt = hash.hashSaltDisplay,
                     .hashPass = hash.hashPasswordDisplay,
@@ -231,27 +253,37 @@ Public Class AccountRepository
     End Function
 
     Public Async Function UpdatePassword(acc As Account) As Task(Of Boolean)
-        If acc Is Nothing Then
-            Return False
-        End If
 
         Using conn = DatabaseConnection.GetConnection()
             Try
                 Await conn.OpenAsync()
 
+                Dim hash As New PasswordHashing(acc.Password)
+
                 Dim query As String = "
                  UPDATE userAccount 
-                 SET
-                     password = @password
+                 SET 
+                        password = @pasword
                  WHERE user_id = @user_id;
+
+                 UPDATE hashing 
+                 SET
+                        hashSalt = @hashSalt,
+                        hashPass = @hashPass,
+                        isPasswordChanged = @isPasswordChanged
+                 WHERE hashing_id = @hashing_id;
                  "
 
                 Debug.WriteLine("userid: " + acc.UserID.ToString())
 
                 Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
-                     .password = acc.Password,
+                     .password = hash.hashCombinedDisplay,
                      .user_id = acc.UserID
                  })
+
+                If result <> 0 Then
+                    Return Await UpdateHashingData(hash, acc.UserID)
+                End If
 
                 If Not result Then
                     MessageBox.Show("An error occured. Try again.")
@@ -260,9 +292,11 @@ Public Class AccountRepository
 
 
             Catch ex As Exception
-                MessageBox.Show("Error updating contact: " & ex.Message)
+                MessageBox.Show("Error deactivating account: " & ex.Message)
             End Try
         End Using
+
+        MessageBox.Show("Account deactivated successfully")
     End Function
 
 End Class
