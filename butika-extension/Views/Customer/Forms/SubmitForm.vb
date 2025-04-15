@@ -1,5 +1,6 @@
 ﻿Imports System.IO
 Imports butika.Models
+Imports PdfSharp.Snippets.Drawing
 
 Public Class SubmitForm
 
@@ -18,7 +19,7 @@ Public Class SubmitForm
             If openFileDialog.ShowDialog() = DialogResult.OK Then
                 selectedImagePath = openFileDialog.FileName ' Get the selected image's path
                 prescriptionImageLbl.Text = Path.GetFileName(selectedImagePath) ' Set the file name in the label
-                imageName = Path.GetFileName(selectedImagePath)
+                imageName = account.UserName + Path.GetFileName(selectedImagePath)
 
                 If Not String.IsNullOrWhiteSpace(selectedImagePath) Then
                     clickAnywhereLbl.SendToBack()
@@ -31,36 +32,6 @@ Public Class SubmitForm
         End Using
     End Sub
 
-    Private Function insertImageIntoFolder() As Boolean
-        If String.IsNullOrEmpty(selectedImagePath) Then
-            Console.WriteLine("No image selected.")
-            Return False
-        End If
-
-        Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
-        Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.PrescriptionPathName)
-        Dim destinationPath As String = Path.Combine(destinationFolder, imageName)
-
-        Try
-            If Not Directory.Exists(destinationFolder) Then
-                Console.WriteLine("Folder doesn't exist, creating...")
-                Directory.CreateDirectory(destinationFolder)
-            End If
-
-            If Not File.Exists(selectedImagePath) Then
-                Console.WriteLine("Image file does not exist.")
-                Return False
-            End If
-
-            File.Copy(selectedImagePath, destinationPath, True) ' Overwrite the existing file
-
-            Console.WriteLine($"Image saved successfully to {destinationPath}!")
-            Return True
-        Catch ex As Exception
-            Console.WriteLine("Error inserting image into the folder: " & ex.Message)
-            Return False
-        End Try
-    End Function
 
     Private Async Sub SubmitBtn_Click(sender As Object, e As EventArgs) Handles SubmitBtn.Click
         Dim prescriptRepo As New PrescriptionRepository(account)
@@ -85,7 +56,9 @@ Public Class SubmitForm
         .PrescriptionDate = dateSubmitted.ToString("yyyy-MM-dd HH:mm")
         }
 
-        Dim isImageSaved As Boolean = insertImageIntoFolder()
+        Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
+        Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.PrescriptionPathName)
+        Dim isImageSaved As Boolean = ImageInsertion.SaveImageToFolder(selectedImagePath, imageName, destinationFolder)
 
         If Not isImageSaved Then
             Debug.WriteLine("Image has not been saved.")

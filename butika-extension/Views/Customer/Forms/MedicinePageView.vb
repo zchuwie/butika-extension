@@ -19,7 +19,7 @@ Public Class MedicinePageView
     Public Sub LoadMedicine()
         MedName.Text = medicine.FormattedMedicineName
         Manufacturer.Text = medicine.MedicineManufacturer
-        Price.Text = medicine.MedicinePrice.ToString("C")
+        Price.Text = "₱" + medicine.MedicinePrice.ToString()
         Description.Text = medicine.MedicineDescription
         medicineImageBox.Image = Image.FromFile(medicine.MedicineImagePath)
         Dosage.Text = medicine.MedicineDosage
@@ -40,23 +40,21 @@ Public Class MedicinePageView
             Return
         End If
 
-        Dim medQuantityFromBox As Integer
-
-        If Integer.TryParse(Quantity.Text, medQuantityFromBox) Then
-            Debug.WriteLine("Quantity entered: " & medQuantityFromBox)
+        If Integer.TryParse(Quantity.Text, medicineQuantity) Then
+            Debug.WriteLine("Quantity entered: " & medicineQuantity)
         Else
             MessageBox.Show("Please enter a valid number.")
             AddToCartBtn.Enabled = True
             Return
         End If
 
-        If medicine.MedicineStock < medQuantityFromBox Then
+        If medicine.MedicineStock < medicineQuantity Then
             MessageBox.Show("Not enough stock available. Please reduce the quantity.", "Stock Limit", MessageBoxButtons.OK)
             AddToCartBtn.Enabled = True
             Return
         End If
 
-        Dim isAddedToCart As Boolean = Await cartRepo.AddToCart(medicine.MedicineID, medQuantityFromBox)
+        Dim isAddedToCart As Boolean = Await cartRepo.AddToCart(medicine.MedicineID, medicineQuantity)
 
         If Not isAddedToCart Then
             MessageBox.Show("Error inserting the items in the cart.", "Error", MessageBoxButtons.OK)
@@ -73,7 +71,7 @@ Public Class MedicinePageView
         medicineQuantity += 1
         Quantity.Text = medicineQuantity.ToString()
 
-        Price.Text = Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+        Price.Text = "₱" + Convert.ToString(medicine.MedicinePrice * medicineQuantity)
     End Sub
 
     Private Sub DecreaseBtn_Click(sender As Object, e As EventArgs) Handles DecreaseBtn.Click
@@ -81,9 +79,58 @@ Public Class MedicinePageView
             medicineQuantity -= 1
             Quantity.Text = medicineQuantity.ToString()
 
-            Price.Text = Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+            Price.Text = "₱" + Convert.ToString(medicine.MedicinePrice * medicineQuantity)
         Else
             MessageBox.Show("Quantity cannot be less than 1.")
         End If
+    End Sub
+
+    Private Async Sub BuyNowBtn_Click(sender As Object, e As EventArgs) Handles BuyNowBtn.Click
+        Dim transactRepo As New TransactionRepository(account)
+        Dim cartRepo As New CartRepository(account)
+
+        If medicine.MedicinePrescription = 1 Then
+            Dim addToCart As Boolean = Await cartRepo.AddToCart(medicine.MedicineID, medicineQuantity)
+
+            If Not addToCart Then
+                MessageBox.Show("Cannot add to cart. Try Again")
+                Return
+            End If
+
+            Dim result As DialogResult = MessageBox.Show(
+            "You have checked out an item that needs a prescription. Do you want to proceed to the prescription form?",
+            "Prescription Needed",
+            MessageBoxButtons.OKCancel)
+
+            If result = DialogResult.No Then
+                MessageBox.Show("Understandable.. Have a good day!")
+                Return
+            End If
+
+            Dim sf As New SubmitForm(account)
+            sf.ShowDialog()
+            Return
+
+        End If
+
+        Dim uniqueTransactionID As String = Await transactRepo.GenerateUniqueTransactionID()
+        Dim buyItem As Boolean = Await cartRepo.buyIndividualItem(medicine.MedicineID, medicineQuantity, uniqueTransactionID)
+
+        If Not buyItem Then
+            MessageBox.Show("Cannot buy an item due to unexpected error", "Error", MessageBoxButtons.OK)
+            Return
+        End If
+
+        Dim insertIntoTransaction = Await transactRepo.InsertIntoUserTransaction(uniqueTransactionID)
+
+        If Not insertIntoTransaction Then
+            MessageBox.Show("Cannot insert into transaction due to unexpected error", "Error", MessageBoxButtons.OK)
+            Return
+        End If
+
+        MessageBox.Show("Your item have been successfully bought")
+
+
+
     End Sub
 End Class

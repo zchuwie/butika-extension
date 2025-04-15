@@ -16,7 +16,7 @@ Public Class MedicineBars
         medicineName.Text = med.FormattedMedicineName
         manufacturerName.Text = HelperMethod.CapitalizeEachFirstWord(med.MedicineManufacturer)
         stockQuantity.Text = med.MedicineStock.ToString()
-        expirationDate.Text = med.MedicineExpirationDate.ToShortDateString()
+        expirationDate.Text = med.MedicineExpirationDate.ToString()
 
         Me.MedicineInfo = med
 

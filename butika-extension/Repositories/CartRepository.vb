@@ -282,8 +282,6 @@ Public Class CartRepository
         End Using
     End Function
 
-
-
 #End Region
 
 #Region "Checkout"
@@ -531,7 +529,7 @@ Public Class CartRepository
 
 #End Region
 
-#Region "Delete checkout items"
+#Region "Delete items"
     Public Async Function deleteCheckoutItemFromUsersCart() As Task(Of Boolean)
         Using conn = DatabaseConnection.GetConnection()
             Try
@@ -548,8 +546,49 @@ Public Class CartRepository
         End Using
     End Function
 
+    Public Async Function deleteTickedItemFromUsersCart() As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+                Dim query As String = "DELETE FROM usersCart WHERE user_id = @user_id AND isTicked = 1"
+
+                Await conn.ExecuteAsync(query, New With {.user_id = account.UserID})
+
+                Return True
+            Catch ex As Exception
+                Debug.WriteLine("Error while removing checkout items from cart: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+
 #End Region
 
+#Region "Buy Now"
+    Public Async Function buyIndividualItem(drug_id As Integer, quantity As Integer, transaction_id As String) As Task(Of Boolean)
+        Dim conn = DatabaseConnection.GetConnection()
 
+        Using conn
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "INSERT INTO usersCheckout (drug_id, transaction_id, quantity) VALUES (@drug_id, @transaction_id, @quantity);"
+
+                Dim parameters = New With {
+                .drug_id = drug_id,
+                .transaction_id = transaction_id,
+                .quantity = quantity
+                }
+
+                Dim result As Integer = Await conn.ExecuteAsync(query, parameters)
+                Return result > 0
+
+            Catch ex As Exception
+                Debug.WriteLine("Updating checkbox state failed, bruh: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+#End Region
 
 End Class
