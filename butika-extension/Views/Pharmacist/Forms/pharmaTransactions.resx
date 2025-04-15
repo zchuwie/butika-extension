@@ -118,27 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="useridSearch.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAPlJREFUOE+tk80NwjAMhTtCDzhwZASOqHGR4w4CG8AGsAFsABvABh2hI3QERgC9
-        NkEkCnDhk3J5/mnslxaFpxQpjfLeaN0b5Qcp36nhlprVOuRkKWU5RxE5vhvlq1E+DMeFRvUxrRkIhcbZ
-        fibLeRqfiN19bAARwVxhgByfkIPR4oByN3X2FokJfh+PqdpdFICI+SIxw7hIe45ELAnXisQM2TxysIPb
-        SEwopVoMS5PEtomwZOd5wyh3cCPVB4yzFz/7HtYFHY1xs9GqZN53gh3jwXL8A/GzhuZp3Qt4TQ1v8RUU
-        kFab4K1/dd8bfONvDX7+MJ8gqTYY8QnLi2ineq3xDgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="transacidSearch.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAPlJREFUOE+tk80NwjAMhTtCDzhwZASOqHGR4w4CG8AGsAFsABvABh2hI3QERgC9
-        NkEkCnDhk3J5/mnslxaFpxQpjfLeaN0b5Qcp36nhlprVOuRkKWU5RxE5vhvlq1E+DMeFRvUxrRkIhcbZ
-        fibLeRqfiN19bAARwVxhgByfkIPR4oByN3X2FokJfh+PqdpdFICI+SIxw7hIe45ELAnXisQM2TxysIPb
-        SEwopVoMS5PEtomwZOd5wyh3cCPVB4yzFz/7HtYFHY1xs9GqZN53gh3jwXL8A/GzhuZp3Qt4TQ1v8RUU
-        kFab4K1/dd8bfONvDX7+MJ8gqTYY8QnLi2ineq3xDgAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="usernameSearch.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAPlJREFUOE+tk80NwjAMhTtCDzhwZASOqHGR4w4CG8AGsAFsABvABh2hI3QERgC9

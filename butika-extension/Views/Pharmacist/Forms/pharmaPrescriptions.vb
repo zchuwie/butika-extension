@@ -24,12 +24,12 @@ Public Class pharmaPrescriptions
             declineLbl.ForeColor = Color.Gray
         End If
     End Sub
-    Private Sub pharmaPrescriptions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub pharmaPrescriptions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         infoManagerIcon.SetToolTip(infoIcon, "Access all pending, declined, and approved prescriptions. Click on a pending prescription to review and determine whether to approve or decline it.")
         infoManagerIcon.ShowAlways = True
 
         changeFilter(True, False, False)
-        LoadAllPrescriptions()
+        Await LoadAllPrescriptions()
     End Sub
     Public Async Function LoadAllPrescriptions() As Task
         flpPrescript.Controls.Clear()
