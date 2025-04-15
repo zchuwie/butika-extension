@@ -32,6 +32,8 @@ Partial Class pharmaPrescriptions
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Label4 = New Label()
         Label3 = New Label()
@@ -48,6 +50,7 @@ Partial Class pharmaPrescriptions
         Guna2Separator1 = New Guna.UI2.WinForms.Guna2Separator()
         infoManagerIcon = New ToolTip(components)
         flpPrescript = New FlowLayoutPanel()
+        sortBtn = New Guna.UI2.WinForms.Guna2Button()
         Guna2Panel2.SuspendLayout()
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -219,6 +222,24 @@ Partial Class pharmaPrescriptions
         flpPrescript.Size = New Size(972, 530)
         flpPrescript.TabIndex = 0
         ' 
+        ' sortBtn
+        ' 
+        sortBtn.CustomizableEdges = CustomizableEdges9
+        sortBtn.DisabledState.BorderColor = Color.DarkGray
+        sortBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        sortBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        sortBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        sortBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        sortBtn.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        sortBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        sortBtn.Image = My.Resources.Resources.sorticon
+        sortBtn.Location = New Point(858, 101)
+        sortBtn.Name = "sortBtn"
+        sortBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        sortBtn.Size = New Size(150, 34)
+        sortBtn.TabIndex = 34
+        sortBtn.Text = "Ascending Date"
+        ' 
         ' pharmaPrescriptions
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -226,6 +247,7 @@ Partial Class pharmaPrescriptions
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1043, 720)
+        Controls.Add(sortBtn)
         Controls.Add(flpPrescript)
         Controls.Add(Guna2Separator1)
         Controls.Add(declinedPnl)
@@ -263,4 +285,5 @@ Partial Class pharmaPrescriptions
     Friend WithEvents Guna2Separator1 As Guna.UI2.WinForms.Guna2Separator
     Friend WithEvents infoManagerIcon As ToolTip
     Friend WithEvents flpPrescript As FlowLayoutPanel
+    Friend WithEvents sortBtn As Guna.UI2.WinForms.Guna2Button
 End Class

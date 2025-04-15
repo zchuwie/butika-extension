@@ -5,14 +5,14 @@ Public Class pharmaViewTransaction
     Public Sub New(transac As Transaction)
         Me.transactions = transac
 
-        username.Text = transactions.Account.UserName
-        transactionid.Text = transactions.TransactionID
         InitializeComponent()
     End Sub
     Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
         Me.Close()
     End Sub
     Public Async Function LoadAllOrderMeds() As Task
+        username.Text = transactions.Account.UserName
+        transactionid.Text = transactions.TransactionID
         flpItems.Controls.Clear()
 
         Dim transacRepo As New PharmaRepository()
