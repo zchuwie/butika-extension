@@ -59,26 +59,64 @@ Public Class PharmaRepository
         End Using
     End Function
 
-    ' pang display sa mga porescriptions
+    ' pang display sa mga prescriptions
     Public Async Function GetAllPrescriptions() As Task(Of List(Of Prescription))
         Using conn = DatabaseConnection.GetConnection()
             Await conn.OpenAsync()
             Dim query = "
                 SELECT 
-                    prescription_id AS PrescriptionId,
-                    patient_name AS PatientName,
-                    patient_age AS PatientAge,
-                    user_concern AS PatientConcern,
-                    doc_name AS DoctorName,
-                    doc_contact AS DoctorContact,
-                    clinic AS DoctorPlace,
-                    prescription_image AS PrescriptionImageName,
-                    prescription_date AS PrescriptionDate
-                FROM userprescriptionform"
-            Dim result = Await conn.QueryAsync(Of Prescription)(query)
+                    up.prescription_id AS PrescriptionId,
+                    up.user_id AS UserID,
+                    up.user_id AS UserID,
+                    up.patient_name AS PatientName,
+                    up.patient_age AS PatientAge,
+                    up.user_concern AS PatientConcern,
+                    up.doc_name AS DoctorName,
+                    up.doc_contact AS DoctorContact,
+                    up.clinic AS DoctorPlace,
+                    up.prescription_image AS PrescriptionImageName,
+                    up.remarks AS PrescriptionRemarks,
+                    up.status AS PrescriptionStatus,
+                    up.review_date AS PrescriptReviewDate,
+                    up.prescription_date AS PrescriptionDate,
+                    ua.username AS UserName
+                FROM userprescriptionform up
+                LEFT JOIN useraccount ua ON up.user_id = ua.user_id"
+            Dim result = Await conn.QueryAsync(Of Prescription, Account, Prescription)(
+                query,
+                Function(pres, acc)
+                    pres.Account = acc
+                    Return pres
+                End Function,
+                splitOn:="UserName"
+            )
             Return result.ToList()
         End Using
     End Function
 
-    ' pangdisplay sa 
+    ' pangapprove sa prescription
+    Public Async Function UpdateRemarks(prescription As Prescription) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+
+            Dim sql As String = "
+            UPDATE userprescriptionform
+            SET remarks = @remarks,
+                review_date = @review_date,
+                status = @status
+            WHERE user_id = @user_id AND prescription_id = @prescription_id
+            "
+
+            Dim param = New With {
+            .remarks = prescription.PrescriptionRemarks,
+            .status = prescription.PrescriptionStatus,
+            .review_date = DateTime.Now,
+            .user_id = prescription.Account.UserID,
+            .prescription_id = prescription.PrescriptionId
+            }
+
+            Dim result As Integer = Await conn.ExecuteAsync(sql, param)
+            Return result > 0
+        End Using
+    End Function
 End Class

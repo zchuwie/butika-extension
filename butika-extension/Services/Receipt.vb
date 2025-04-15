@@ -114,7 +114,7 @@ Friend Class Receipt
         graphics.DrawImage(logo, (pagewidth / 3) + 5, 45, 150, 150)
 
         graphics.DrawString($"We received your order. {DateTime.Now:d}", tablebold, white, New XRect(50, 185, pagewidth - 100, 50), XStringFormats.Center)
-        graphics.DrawString("Thank you for using our system! We hope to improve your health easier.", boldtexts, white, New XRect(50, 200, pagewidth - 100, 50), XStringFormats.Center)
+        graphics.DrawString("Thank you for using our system! We hope to improve your health easier.", smalltexts, white, New XRect(50, 200, pagewidth - 100, 50), XStringFormats.Center)
 
         graphics.DrawString("PAYMENT SUMMARY", tablebold, darkgreen, New XRect(30, 260, pagewidth - 100, 30), XStringFormats.TopLeft)
         graphics.DrawString("Item", tablebold, darkgreen, New XRect(40, 290, 125, 20), XStringFormats.TopLeft)
