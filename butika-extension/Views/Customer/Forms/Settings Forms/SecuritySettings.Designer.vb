@@ -88,6 +88,7 @@ Partial Class SecuritySettings
         ConfirmPasswordTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
         ConfirmPasswordTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         ConfirmPasswordTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        ConfirmPasswordTxtbox.Enabled = False
         ConfirmPasswordTxtbox.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         ConfirmPasswordTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         ConfirmPasswordTxtbox.Font = New Font("Century Gothic", 9.75F)
@@ -110,6 +111,7 @@ Partial Class SecuritySettings
         NewPasswordTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
         NewPasswordTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         NewPasswordTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        NewPasswordTxtbox.Enabled = False
         NewPasswordTxtbox.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         NewPasswordTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         NewPasswordTxtbox.Font = New Font("Century Gothic", 9.75F)
