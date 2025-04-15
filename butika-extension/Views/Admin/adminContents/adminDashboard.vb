@@ -18,7 +18,7 @@ Public Class adminDashboard
         Await LoadUserDataAsync()
         Await LoadUserActivityAsync()
         Await LoadDiscountChartAsync()
-        Await LoadUserStatusChartAsync()
+        'Await LoadUserStatusChartAsync()
         Await LoadUserSummaryAsync()
 
 
@@ -37,7 +37,7 @@ Public Class adminDashboard
 
     Private Async Function LoadUserSummaryAsync() As Task
         customerNum.Text = (Await AdminRepository.GetUserCountAsync()).ToString()
-        activeNum.Text = (Await AdminRepository.GetActiveUserCountAsync()).ToString()
+        'activeNum.Text = (Await AdminRepository.GetActiveUserCountAsync()).ToString()
         pendingNum.Text = (Await AdminRepository.GetPendingDiscountCountAsync()).ToString()
         signupNum.Text = (Await AdminRepository.GetNewSignupCountAsync()).ToString()
     End Function
@@ -84,22 +84,22 @@ Public Class adminDashboard
         discountStatusPie.Update()
     End Function
 
-    Private Async Function LoadUserStatusChartAsync() As Task
-        userStatusPie.Series.Clear()
+    'Private Async Function LoadUserStatusChartAsync() As Task
+    'userStatusPie.Series.Clear()
 
-        Dim data = Await AdminRepository.GetActiveInactiveUserStatusAsync()
+    'Dim data = Await AdminRepository.GetActiveInactiveUserStatusAsync()
 
-        Dim series As New Series("User Status") With {
-        .ChartType = SeriesChartType.Pie,
-        .IsValueShownAsLabel = True
-    }
+    'Dim series As New Series("User Status") With {
+    '.ChartType = SeriesChartType.Pie,
+    '.IsValueShownAsLabel = True
+    '}
 
-        series.Points.AddXY("Active", data.activeCount)
-        series.Points.AddXY("Inactive", data.inactiveCount)
+    '   series.Points.AddXY("Active", data.activeCount)
+    '   series.Points.AddXY("Inactive", data.inactiveCount)
 
-        userStatusPie.Series.Add(series)
-        userStatusPie.Update()
-    End Function
+    '  userStatusPie.Series.Add(series)
+    ' userStatusPie.Update()
+    'End Function
 
 
     Public Sub ShowFormInPanel(form As Form)

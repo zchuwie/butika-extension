@@ -96,11 +96,10 @@ Public Class AccountRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "SELECT username FROM userAccount WHERE username = @username AND status = @status"
+                Dim query As String = "SELECT username FROM userAccount WHERE username = @username"
 
                 Dim result As String = Await conn.ExecuteScalarAsync(Of String)(query, New With {
-                .username = username,
-                .status = "active"
+                .username = username
             })
 
                 Return result IsNot Nothing

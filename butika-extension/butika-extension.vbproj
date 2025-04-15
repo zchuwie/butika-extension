@@ -79,7 +79,6 @@
 	<ItemGroup>
 		<Folder Include="Resources\drug_images\" />
 		<Folder Include="Resources\prescription_images\" />
-		<Folder Include="Views\Admin\" />
 		<Folder Include="Views\Pharmacist\" />
 	</ItemGroup>
 
@@ -87,7 +86,6 @@
     <Folder Include="Resources\drug_images\" />
     <Folder Include="Resources\admin_icons\" />
     <Folder Include="Resources\prescription_images\" />
-    <Folder Include="Views\Admin\" />
     <Folder Include="Views\InventoryCustodian\" />
   </ItemGroup>
 
