@@ -94,17 +94,17 @@ Public Class AccountRepository
     End Function
 
     'updates the hashing table upon updating the password
-    Private Async Function UpdateHashingData(hash As PasswordHashing, userID As Integer) As Task(Of Boolean)
+    Public Async Function UpdateHashingData(hash As PasswordHashing, userID As Integer) As Task(Of Boolean)
         Using conn = DatabaseConnection.GetConnection()
             Dim query As String = "UPDATE hashing 
                                    SET hashSalt = @hashSalt, 
                                        hashPass = @hashPass, 
-                                       isPasswordChanged = @isPasswordChanged,
-                                   WHERE hashing_id = @user_id"
+                                       isPasswordChanged = isPasswordChanged + 1
+                                   WHERE hashing_id = @user_ID"
             Dim rows As Integer = Await conn.ExecuteAsync(query, New With {
                     .hashSalt = hash.hashSaltDisplay,
                     .hashPass = hash.hashPasswordDisplay,
-                    .userID = userID
+                    .user_ID = userID
                     })
 
             Return rows > 0
@@ -264,34 +264,32 @@ Public Class AccountRepository
                 Dim query As String = "
                  UPDATE userAccount 
                  SET 
-                        password = @pasword
+                        password = @password
                  WHERE user_id = @user_id;
-
-                 UPDATE hashing 
-                 SET
-                        hashSalt = @hashSalt,
-                        hashPass = @hashPass,
-                        isPasswordChanged = @isPasswordChanged
-                 WHERE hashing_id = @hashing_id;
                  "
 
-                Debug.WriteLine("userid: " + acc.UserID.ToString())
+                Debug.WriteLine("password userid: " + acc.UserID.ToString())
 
                 Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
                      .password = hash.hashCombinedDisplay,
                      .user_id = acc.UserID
                  })
 
-                Return result <> 0
+                If result <> 0 Then
+                    Await UpdateHashingData(hash, acc.UserID)
+                End If
+
+                If Not result Then
+                    MessageBox.Show("An error occured. Try again.")
+                End If
 
 
             Catch ex As Exception
-                MessageBox.Show("Error updating contact: " & ex.Message)
-                Return False
+                MessageBox.Show("Error updating password: " & ex.Message)
             End Try
         End Using
 
-        MessageBox.Show("Account deactivated successfully")
+        MessageBox.Show("Password updated successfully")
     End Function
 
 End Class
