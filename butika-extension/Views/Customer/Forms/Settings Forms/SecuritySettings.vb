@@ -41,7 +41,7 @@ Public Class SecuritySettings
             Return
         End If
 
-        If Not newPass <> confNewPass Then
+        If newPass <> confNewPass Then
             MessageBox.Show("Password must be the same.")
             Return
         End If
@@ -50,13 +50,57 @@ Public Class SecuritySettings
             .Password = newPass
         }
 
-        Dim updatePasswordSuccess = Await accountRep.UpdatePassword(newPasswordInfo)
-        If updatePasswordSuccess Then
-            MessageBox.Show("An error occured. Try again.")
-            Return
-        End If
+        'Dim updatePasswordSuccess = Await accountRep.UpdatePassword(newPasswordInfo)
 
-        MessageBox.Show("Password updated successfully")
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim hash As New PasswordHashing(newPasswordInfo.Password)
+
+                Dim query As String = "
+                 UPDATE userAccount 
+                 SET 
+                        password = @password
+                 WHERE user_id = @user_id;
+                 "
+
+                Debug.WriteLine("password userid: " + newPasswordInfo.UserID.ToString())
+
+                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
+                     .password = hash.hashCombinedDisplay,
+                     .user_id = account.UserID
+                 })
+
+                If result <> 0 Then
+                    Await accountRep.UpdateHashingData(hash, account.UserID)
+                End If
+
+                If Not result Then
+                    MessageBox.Show("An error occured. Try again.")
+                End If
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error updating password: " & ex.Message)
+            End Try
+        End Using
+
+        'If updatePasswordSuccess Then
+        '    MessageBox.Show("An error occured. Try again.")
+        '    Return
+        'End If
+
+        MsgBox("Password updated successfully")
+        OldPasswordTxtbox.Text = ""
+        NewPasswordTxtbox.Text = ""
+        ConfirmPasswordTxtbox.Text = ""
+        OldPasswordTxtbox.Enabled = True
+        NewPasswordTxtbox.Enabled = False
+        ConfirmPasswordTxtbox.Enabled = False
+
+        SaveBtn.Visible = False
+        CancelBtn.Visible = False
     End Function
 #End Region
 
@@ -78,7 +122,6 @@ Public Class SecuritySettings
     '        End If
     '    End If
     'End Sub
-
 
 
     Private Sub OldPasswordTxtbox_KeyDown(sender As Object, e As KeyEventArgs) Handles OldPasswordTxtbox.KeyDown
@@ -107,17 +150,12 @@ Public Class SecuritySettings
         Try
             Await EditPasswordApproval()
 
-            OldPasswordTxtbox.Text = ""
-            OldPasswordTxtbox.Enabled = true
-            NewPasswordTxtbox.Enabled = False
-            ConfirmPasswordTxtbox.Enabled = False
-
-            SaveBtn.Visible = False
-            CancelBtn.Visible = False
         Catch ex As Exception
             MessageBox.Show("An error occurred: " & ex.Message)
             Console.Write(ex)
         End Try
+
+        account = Await accountRep.populateDataThroughUserID(account.UserID)
     End Sub
 
     Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
