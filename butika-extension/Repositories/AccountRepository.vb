@@ -138,7 +138,7 @@ Public Class AccountRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "SELECT email FROM userAccount WHERE email = @email AND status = @status"
+                Dim query As String = "SELECT email FROM userAccount WHERE email = @email"
 
                 Dim result As String = Await conn.ExecuteScalarAsync(Of String)(query, New With {
                 .email = email,
@@ -163,6 +163,29 @@ Public Class AccountRepository
                 Await conn.OpenAsync()
                 Dim query As String = "SELECT *, last_name As LastName, first_name As FirstName, middle_initial As MiddleInitial, user_id As UserID FROM userAccount WHERE user_id = @user_id"
                 Dim result = Await conn.QueryFirstOrDefaultAsync(Of Account)(query, New With {.user_id = userID})
+
+                ' If result is not nothing, populate the Account object
+                If result IsNot Nothing Then
+                    populateData = result
+                End If
+            End Using
+
+        Catch ex As Exception
+            Debug.WriteLine("Error populating user data: " & ex.Message)
+            Return Nothing
+        End Try
+
+        Return populateData
+    End Function
+
+    Public Async Function populateDataThroughEmail(email As String) As Task(Of Account)
+        Dim populateData As New Account()
+
+        Try
+            Using conn = DatabaseConnection.GetConnection()
+                Await conn.OpenAsync()
+                Dim query As String = "SELECT *, last_name As LastName, first_name As FirstName, middle_initial As MiddleInitial, user_id As UserID FROM userAccount WHERE email = @email"
+                Dim result = Await conn.QueryFirstOrDefaultAsync(Of Account)(query, New With {.email = email})
 
                 ' If result is not nothing, populate the Account object
                 If result IsNot Nothing Then
@@ -277,19 +300,16 @@ Public Class AccountRepository
 
                 If result <> 0 Then
                     Await UpdateHashingData(hash, acc.UserID)
+                    Return True
                 End If
 
-                If Not result Then
-                    MessageBox.Show("An error occured. Try again.")
-                End If
-
+                Return False
 
             Catch ex As Exception
-                MessageBox.Show("Error updating password: " & ex.Message)
+                Debug.WriteLine("Error updating password: " & ex.Message)
+                Return False
             End Try
         End Using
-
-        MessageBox.Show("Password updated successfully")
     End Function
 
 End Class

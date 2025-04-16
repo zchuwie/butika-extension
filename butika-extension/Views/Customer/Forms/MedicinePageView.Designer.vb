@@ -48,6 +48,7 @@ Partial Class MedicinePageView
         QuantityLbl = New Label()
         BuyNowBtn = New RoundedButton()
         AddToCartBtn = New RoundedButton()
+        originalPrice = New Label()
         CType(medicineImageBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -190,9 +191,9 @@ Partial Class MedicinePageView
         Stock.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Stock.Location = New Point(591, 84)
         Stock.Name = "Stock"
-        Stock.Size = New Size(22, 17)
+        Stock.Size = New Size(15, 17)
         Stock.TabIndex = 14
-        Stock.Text = "99"
+        Stock.Text = "0"
         Stock.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' IncreaseBtn
@@ -298,11 +299,25 @@ Partial Class MedicinePageView
         AddToCartBtn.Text = "Add To Cart"
         AddToCartBtn.UseVisualStyleBackColor = False
         ' 
+        ' originalPrice
+        ' 
+        originalPrice.AutoSize = True
+        originalPrice.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold Or FontStyle.Strikeout, GraphicsUnit.Point, CByte(0))
+        originalPrice.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        originalPrice.Location = New Point(547, 30)
+        originalPrice.Name = "originalPrice"
+        originalPrice.Size = New Size(29, 15)
+        originalPrice.TabIndex = 29
+        originalPrice.Text = "PHP"
+        originalPrice.TextAlign = ContentAlignment.MiddleLeft
+        originalPrice.Visible = False
+        ' 
         ' MedicinePageView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(734, 269)
+        Controls.Add(originalPrice)
         Controls.Add(BuyNowBtn)
         Controls.Add(AddToCartBtn)
         Controls.Add(QuantityLbl)
@@ -347,4 +362,5 @@ Partial Class MedicinePageView
     Friend WithEvents QuantityLbl As Label
     Friend WithEvents BuyNowBtn As RoundedButton
     Friend WithEvents AddToCartBtn As RoundedButton
+    Friend WithEvents originalPrice As Label
 End Class

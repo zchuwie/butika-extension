@@ -16,8 +16,16 @@ Public Class cartItem
         medicineImageBox.Image = Image.FromFile(cart.Medicine.MedicineImagePath)
         Quantity.Text = cart.Quantity.ToString()
         SelectItem.Checked = cart.isTicked
-        Total.Text = "₱" + (cart.Medicine.MedicinePrice * cart.Quantity).ToString()
-        Price.Text = "₱" + cart.Medicine.MedicinePrice.ToString()
+
+        If account.IsVerified = 1 Then
+            Total.Text = "₱" & (cart.Medicine.DiscountedPrice * cart.Quantity).ToString()
+            Price.Text = "₱" & cart.Medicine.DiscountedPrice.ToString()
+        Else
+            Total.Text = "₱" & (cart.Medicine.MedicinePrice * cart.Quantity).ToString()
+            Price.Text = "₱" & cart.Medicine.MedicinePrice.ToString()
+        End If
+
+
         CheckIndicatorPanel()
 
         SelectItem.Checked = cart.isTicked

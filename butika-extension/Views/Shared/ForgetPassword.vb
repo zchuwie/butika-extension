@@ -1,11 +1,14 @@
 ﻿Imports butika.Models
 Imports butika.Helpers
+Imports butika.Services
 
 Public Class ForgetPassword
     Private verificationStep As Integer = 1
     Private remainingTime As Integer = 59
     Private labelArray As Label()
-    Private account As Account = New Account()
+    Dim account As New Account()
+    Dim accountRepo As New AccountRepository()
+    Dim verificationCode As String
 
 #Region "UI with Logic Bind"
     Private Sub backToLogin_Click(sender As Object, e As EventArgs) Handles backToLogin.Click
@@ -14,20 +17,40 @@ Public Class ForgetPassword
         Me.Close()
     End Sub
 
-    Private Sub getVerificationBtn_Click(sender As Object, e As EventArgs) Handles getVerificationBtn.Click
+    Private Async Sub getVerificationBtn_Click(sender As Object, e As EventArgs) Handles getVerificationBtn.Click
         verificationStep = 2
+        getVerificationBtn.Enabled = False
+        getVerificationBtn.Text = "Loading"
 
         Dim userEmail As String = verificationEmailTxtBox.Text
         Dim isEmailValid As Boolean = InputValidation.isEmailValid(userEmail)
+        Dim doesEmailExists As Boolean = Await accountRepo.CheckDuplicateEmail(userEmail)
 
         If Not isEmailValid Then
             invalidEmailLabel.Visible = True
             Debug.WriteLine("Email is not valid input")
+            getVerificationBtn.Enabled = True
+            Return
+        End If
+
+        If Not doesEmailExists Then
+            MessageBox.Show("You have no record of your email in the database.")
+            getVerificationBtn.Enabled = True
             Return
         End If
 
         emailLabel.Text = userEmail
         invalidEmailLabel.Visible = False
+
+        account = Await accountRepo.populateDataThroughEmail(userEmail)
+        Dim emailVerification As New EmailVerification(account)
+
+        verificationCode = Await emailVerification.SendVerificationCodeForPassword()
+
+        getVerificationBtn.Enabled = True
+        getVerificationBtn.Text = "Get a verification code"
+
+
         changeTextSidePanel()
         ShowOnlyPanel(verifyPanel)
 
@@ -37,12 +60,44 @@ Public Class ForgetPassword
         verificationStep = 3
 
         emailLabel.Text = account.Email
+        Dim code As String = codeTxtBox.Text
+
+        If Not code = verificationCode Then
+            MessageBox.Show("Your input is incorrect. Try again.")
+            Return
+        End If
+
         changeTextSidePanel()
         ShowOnlyPanel(passwordPanel)
     End Sub
 
-    Private Sub passwordChangeBtn_Click(sender As Object, e As EventArgs) Handles passwordChangeBtn.Click
+    Private Async Sub passwordChangeBtn_Click(sender As Object, e As EventArgs) Handles passwordChangeBtn.Click
         verificationStep = 4
+
+        Dim password As String = passwordTxtBox.Text
+        Dim confirmPassword As String = confirmPassTxtBox.Text
+
+        Dim isPasswordValid As Boolean = InputValidation.isPasswordValid(password)
+
+        If Not isPasswordValid Then
+            MessageBox.Show("Make sure your password contains 8 characters, a capital letter, a number, and a symbol")
+            Return
+        End If
+
+        If Not password.Equals(confirmPassword) Then
+            MessageBox.Show("Your password does not match.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        account.Password = confirmPassword
+
+        Dim isPasswordUpdated As Boolean = Await accountRepo.UpdatePassword(account)
+
+        If Not isPasswordUpdated Then
+            MessageBox.Show("An error occurred updating your password. Try again")
+            Return
+        End If
+
         changeTextSidePanel()
         ShowOnlyPanel(successPanel)
 
@@ -91,10 +146,21 @@ Public Class ForgetPassword
         End If
     End Sub
 
-    Private Sub resendLabel_Click(sender As Object, e As EventArgs) Handles resendLabel.Click
+    Private Async Sub resendLabel_Click(sender As Object, e As EventArgs) Handles resendLabel.Click
+        resendLabel.Enabled = False
+        resendLabel.ForeColor = Color.Gray
+
+        Dim emailVerification As New EmailVerification(account)
+        verificationCode = Await emailVerification.SendVerificationCodeForPassword()
+
         ongoingOtpPanel.Visible = True
         clickToResendPanel.Visible = False
         codeTimer.Start()
+
+        resendLabel.Enabled = True
+        resendLabel.ForeColor = Color.FromArgb(22, 66, 60)
+
+
     End Sub
 
     Private Sub verificationEmailTxtBox_TextChanged(sender As Object, e As EventArgs) Handles verificationEmailTxtBox.TextChanged
