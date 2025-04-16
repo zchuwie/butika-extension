@@ -73,7 +73,7 @@ Partial Class pharmaOrderMedList
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
-        Cursor = Cursors.Hand
+        Cursor = Cursors.Default
         Name = "pharmaOrderMedList"
         Size = New Size(490, 35)
         Guna2Panel1.ResumeLayout(False)

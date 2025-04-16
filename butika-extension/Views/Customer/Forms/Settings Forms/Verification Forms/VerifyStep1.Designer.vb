@@ -22,6 +22,8 @@ Partial Class VerifyStep1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         VerifyProfileSubtext = New Label()
         VerifyAccount = New Label()
         VerifyProgBar = New Panel()
@@ -30,6 +32,7 @@ Partial Class VerifyStep1
         Phase1Txt = New Label()
         VerifiedIcon = New PictureBox()
         SubmitIdBtn = New RoundedButton()
+        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         CType(idImage, ComponentModel.ISupportInitialize).BeginInit()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -38,7 +41,7 @@ Partial Class VerifyStep1
         ' 
         VerifyProfileSubtext.AutoSize = True
         VerifyProfileSubtext.Font = New Font("Century Gothic", 9.75F)
-        VerifyProfileSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyProfileSubtext.ForeColor = Color.White
         VerifyProfileSubtext.Location = New Point(89, 54)
         VerifyProfileSubtext.Name = "VerifyProfileSubtext"
         VerifyProfileSubtext.Size = New Size(136, 17)
@@ -49,7 +52,7 @@ Partial Class VerifyStep1
         ' 
         VerifyAccount.AutoSize = True
         VerifyAccount.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        VerifyAccount.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyAccount.ForeColor = Color.White
         VerifyAccount.Location = New Point(83, 29)
         VerifyAccount.Name = "VerifyAccount"
         VerifyAccount.Size = New Size(184, 28)
@@ -59,7 +62,7 @@ Partial Class VerifyStep1
         ' 
         ' VerifyProgBar
         ' 
-        VerifyProgBar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyProgBar.BackColor = Color.White
         VerifyProgBar.Location = New Point(24, 101)
         VerifyProgBar.Name = "VerifyProgBar"
         VerifyProgBar.RightToLeft = RightToLeft.No
@@ -68,18 +71,19 @@ Partial Class VerifyStep1
         ' 
         ' idImage
         ' 
-        idImage.Image = My.Resources.Resources.verifyImage
+        idImage.Cursor = Cursors.Hand
+        idImage.Image = My.Resources.Resources.verifyImage1
         idImage.InitialImage = My.Resources.Resources.verifyImage
-        idImage.Location = New Point(260, 186)
+        idImage.Location = New Point(262, 180)
         idImage.Name = "idImage"
-        idImage.Size = New Size(377, 253)
-        idImage.SizeMode = PictureBoxSizeMode.StretchImage
+        idImage.Size = New Size(377, 242)
+        idImage.SizeMode = PictureBoxSizeMode.Zoom
         idImage.TabIndex = 42
         idImage.TabStop = False
         ' 
         ' ProgBar1
         ' 
-        ProgBar1.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar1.BackColor = Color.White
         ProgBar1.Location = New Point(23, 99)
         ProgBar1.Name = "ProgBar1"
         ProgBar1.RightToLeft = RightToLeft.No
@@ -90,7 +94,7 @@ Partial Class VerifyStep1
         ' 
         Phase1Txt.AutoSize = True
         Phase1Txt.Font = New Font("Century Gothic", 8.75F)
-        Phase1Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Phase1Txt.ForeColor = Color.White
         Phase1Txt.Location = New Point(111, 109)
         Phase1Txt.Name = "Phase1Txt"
         Phase1Txt.Size = New Size(102, 17)
@@ -99,7 +103,7 @@ Partial Class VerifyStep1
         ' 
         ' VerifiedIcon
         ' 
-        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon___Copy
         VerifiedIcon.Location = New Point(31, 24)
         VerifiedIcon.Name = "VerifiedIcon"
         VerifiedIcon.Size = New Size(51, 53)
@@ -109,22 +113,34 @@ Partial Class VerifyStep1
         ' 
         ' SubmitIdBtn
         ' 
-        SubmitIdBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SubmitIdBtn.BackColor = Color.White
         SubmitIdBtn.CornerRadius = 8
         SubmitIdBtn.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
-        SubmitIdBtn.ForeColor = Color.White
-        SubmitIdBtn.Location = New Point(371, 454)
+        SubmitIdBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        SubmitIdBtn.Location = New Point(369, 440)
         SubmitIdBtn.Name = "SubmitIdBtn"
         SubmitIdBtn.Size = New Size(157, 38)
         SubmitIdBtn.TabIndex = 97
-        SubmitIdBtn.Text = "Submit Photo of ID"
+        SubmitIdBtn.Text = "Submit"
         SubmitIdBtn.UseVisualStyleBackColor = False
+        ' 
+        ' Guna2Panel1
+        ' 
+        Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Panel1.BorderRadius = 1
+        Guna2Panel1.BorderThickness = 1
+        Guna2Panel1.CustomizableEdges = CustomizableEdges1
+        Guna2Panel1.Location = New Point(255, 174)
+        Guna2Panel1.Name = "Guna2Panel1"
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Panel1.Size = New Size(392, 254)
+        Guna2Panel1.TabIndex = 98
         ' 
         ' VerifyStep1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
         Controls.Add(SubmitIdBtn)
         Controls.Add(VerifiedIcon)
@@ -134,8 +150,10 @@ Partial Class VerifyStep1
         Controls.Add(VerifyProfileSubtext)
         Controls.Add(VerifyAccount)
         Controls.Add(VerifyProgBar)
+        Controls.Add(Guna2Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "VerifyStep1"
+        StartPosition = FormStartPosition.CenterParent
         Text = "VerifyStep1"
         CType(idImage, ComponentModel.ISupportInitialize).EndInit()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).EndInit()
@@ -152,4 +170,5 @@ Partial Class VerifyStep1
     Friend WithEvents Phase1Txt As Label
     Friend WithEvents VerifiedIcon As PictureBox
     Friend WithEvents SubmitIdBtn As RoundedButton
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 End Class

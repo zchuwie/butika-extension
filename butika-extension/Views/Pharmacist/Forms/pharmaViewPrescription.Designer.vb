@@ -30,12 +30,11 @@ Partial Class pharmaViewPrescription
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaViewPrescription))
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         prescriptNumLbl = New Label()
-        Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Label2 = New Label()
+        declineBtn = New Guna.UI2.WinForms.Guna2Button()
+        approveBtn = New Guna.UI2.WinForms.Guna2Button()
         displayToApproved = New ListBox()
-        PictureBox1 = New PictureBox()
-        birefinfoTxt = New TextBox()
+        prescriptImage = New PictureBox()
+        briefinfoTxt = New TextBox()
         contactTxt = New TextBox()
         clinicTxt = New TextBox()
         doctornameTxt = New TextBox()
@@ -67,7 +66,9 @@ Partial Class pharmaViewPrescription
         statusLbl = New Label()
         Label1 = New Label()
         closeBtn = New Guna.UI2.WinForms.Guna2Button()
-        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        Label2 = New Label()
+        usernameLbl = New Label()
+        CType(prescriptImage, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' prescriptNumLbl
@@ -81,61 +82,53 @@ Partial Class pharmaViewPrescription
         prescriptNumLbl.TabIndex = 84
         prescriptNumLbl.Text = "1"
         ' 
-        ' Guna2Button2
+        ' declineBtn
         ' 
-        Guna2Button2.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
-        Guna2Button2.BorderRadius = 6
-        Guna2Button2.BorderThickness = 1
-        Guna2Button2.CustomizableEdges = CustomizableEdges1
-        Guna2Button2.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button2.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Guna2Button2.Font = New Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Guna2Button2.ForeColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
-        Guna2Button2.HoverState.FillColor = Color.Red
-        Guna2Button2.Location = New Point(507, 559)
-        Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Button2.Size = New Size(124, 45)
-        Guna2Button2.TabIndex = 83
-        Guna2Button2.Text = "Decline"
+        declineBtn.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
+        declineBtn.BorderRadius = 6
+        declineBtn.BorderThickness = 1
+        declineBtn.Cursor = Cursors.Hand
+        declineBtn.CustomizableEdges = CustomizableEdges1
+        declineBtn.DisabledState.BorderColor = Color.DarkGray
+        declineBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        declineBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        declineBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        declineBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        declineBtn.Font = New Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        declineBtn.ForeColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
+        declineBtn.HoverState.FillColor = Color.Red
+        declineBtn.Location = New Point(507, 559)
+        declineBtn.Name = "declineBtn"
+        declineBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        declineBtn.Size = New Size(124, 45)
+        declineBtn.TabIndex = 83
+        declineBtn.Text = "Decline"
         ' 
-        ' Guna2Button1
+        ' approveBtn
         ' 
-        Guna2Button1.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
-        Guna2Button1.BorderRadius = 6
-        Guna2Button1.BorderThickness = 3
-        Guna2Button1.CustomizableEdges = CustomizableEdges3
-        Guna2Button1.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button1.FillColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
-        Guna2Button1.Font = New Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Guna2Button1.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Guna2Button1.Location = New Point(658, 559)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2Button1.Size = New Size(124, 45)
-        Guna2Button1.TabIndex = 82
-        Guna2Button1.Text = "Approve"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(85, 295)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(107, 32)
-        Label2.TabIndex = 81
-        Label2.Text = "Click anywhere to " & vbCrLf & "upload"
-        Label2.TextAlign = ContentAlignment.MiddleCenter
+        approveBtn.BorderColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
+        approveBtn.BorderRadius = 6
+        approveBtn.BorderThickness = 3
+        approveBtn.Cursor = Cursors.Hand
+        approveBtn.CustomizableEdges = CustomizableEdges3
+        approveBtn.DisabledState.BorderColor = Color.DarkGray
+        approveBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        approveBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        approveBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        approveBtn.FillColor = Color.FromArgb(CByte(44), CByte(102), CByte(94))
+        approveBtn.Font = New Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        approveBtn.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        approveBtn.Location = New Point(658, 559)
+        approveBtn.Name = "approveBtn"
+        approveBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        approveBtn.Size = New Size(124, 45)
+        approveBtn.TabIndex = 82
+        approveBtn.Text = "Approve"
         ' 
         ' displayToApproved
         ' 
         displayToApproved.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        displayToApproved.Enabled = False
         displayToApproved.Font = New Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         displayToApproved.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         displayToApproved.FormattingEnabled = True
@@ -144,29 +137,31 @@ Partial Class pharmaViewPrescription
         displayToApproved.Size = New Size(255, 164)
         displayToApproved.TabIndex = 80
         ' 
-        ' PictureBox1
+        ' prescriptImage
         ' 
-        PictureBox1.Location = New Point(36, 247)
-        PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(196, 136)
-        PictureBox1.TabIndex = 79
-        PictureBox1.TabStop = False
+        prescriptImage.Location = New Point(36, 247)
+        prescriptImage.Name = "prescriptImage"
+        prescriptImage.Size = New Size(196, 136)
+        prescriptImage.TabIndex = 79
+        prescriptImage.TabStop = False
         ' 
-        ' birefinfoTxt
+        ' briefinfoTxt
         ' 
-        birefinfoTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        birefinfoTxt.BorderStyle = BorderStyle.FixedSingle
-        birefinfoTxt.Location = New Point(424, 418)
-        birefinfoTxt.Multiline = True
-        birefinfoTxt.Name = "birefinfoTxt"
-        birefinfoTxt.ReadOnly = True
-        birefinfoTxt.Size = New Size(294, 95)
-        birefinfoTxt.TabIndex = 78
+        briefinfoTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        briefinfoTxt.BorderStyle = BorderStyle.FixedSingle
+        briefinfoTxt.Enabled = False
+        briefinfoTxt.Location = New Point(424, 418)
+        briefinfoTxt.Multiline = True
+        briefinfoTxt.Name = "briefinfoTxt"
+        briefinfoTxt.ReadOnly = True
+        briefinfoTxt.Size = New Size(294, 95)
+        briefinfoTxt.TabIndex = 78
         ' 
         ' contactTxt
         ' 
         contactTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         contactTxt.BorderStyle = BorderStyle.FixedSingle
+        contactTxt.Enabled = False
         contactTxt.Location = New Point(499, 329)
         contactTxt.Name = "contactTxt"
         contactTxt.ReadOnly = True
@@ -177,6 +172,7 @@ Partial Class pharmaViewPrescription
         ' 
         clinicTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         clinicTxt.BorderStyle = BorderStyle.FixedSingle
+        clinicTxt.Enabled = False
         clinicTxt.Location = New Point(499, 300)
         clinicTxt.Name = "clinicTxt"
         clinicTxt.ReadOnly = True
@@ -187,6 +183,7 @@ Partial Class pharmaViewPrescription
         ' 
         doctornameTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         doctornameTxt.BorderStyle = BorderStyle.FixedSingle
+        doctornameTxt.Enabled = False
         doctornameTxt.Location = New Point(499, 271)
         doctornameTxt.Name = "doctornameTxt"
         doctornameTxt.ReadOnly = True
@@ -197,6 +194,7 @@ Partial Class pharmaViewPrescription
         ' 
         patientageTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         patientageTxt.BorderStyle = BorderStyle.FixedSingle
+        patientageTxt.Enabled = False
         patientageTxt.Location = New Point(496, 193)
         patientageTxt.Name = "patientageTxt"
         patientageTxt.ReadOnly = True
@@ -207,6 +205,7 @@ Partial Class pharmaViewPrescription
         ' 
         patientnameTxt.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         patientnameTxt.BorderStyle = BorderStyle.FixedSingle
+        patientnameTxt.Enabled = False
         patientnameTxt.Location = New Point(496, 164)
         patientnameTxt.Name = "patientnameTxt"
         patientnameTxt.ReadOnly = True
@@ -400,7 +399,7 @@ Partial Class pharmaViewPrescription
         remarksLbl.Name = "remarksLbl"
         remarksLbl.Size = New Size(66, 19)
         remarksLbl.TabIndex = 54
-        remarksLbl.Text = "Remarks"
+        remarksLbl.Text = "Pending"
         ' 
         ' Label6
         ' 
@@ -420,9 +419,9 @@ Partial Class pharmaViewPrescription
         reviewdateLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         reviewdateLbl.Location = New Point(302, 51)
         reviewdateLbl.Name = "reviewdateLbl"
-        reviewdateLbl.Size = New Size(43, 19)
+        reviewdateLbl.Size = New Size(66, 19)
         reviewdateLbl.TabIndex = 52
-        reviewdateLbl.Text = "Date"
+        reviewdateLbl.Text = "Pending"
         ' 
         ' Label4
         ' 
@@ -453,9 +452,9 @@ Partial Class pharmaViewPrescription
         statusLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         statusLbl.Location = New Point(88, 55)
         statusLbl.Name = "statusLbl"
-        statusLbl.Size = New Size(124, 21)
+        statusLbl.Size = New Size(74, 21)
         statusLbl.TabIndex = 49
-        statusLbl.Text = "Status Update"
+        statusLbl.Text = "Pending"
         ' 
         ' Label1
         ' 
@@ -486,19 +485,42 @@ Partial Class pharmaViewPrescription
         closeBtn.Size = New Size(35, 35)
         closeBtn.TabIndex = 47
         ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
+        Label2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Label2.Location = New Point(26, 76)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(52, 19)
+        Label2.TabIndex = 86
+        Label2.Text = "From:"
+        ' 
+        ' usernameLbl
+        ' 
+        usernameLbl.AutoSize = True
+        usernameLbl.Font = New Font("Century Gothic", 12F)
+        usernameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        usernameLbl.Location = New Point(88, 75)
+        usernameLbl.Name = "usernameLbl"
+        usernameLbl.Size = New Size(88, 21)
+        usernameLbl.TabIndex = 85
+        usernameLbl.Text = "Username"
+        ' 
         ' pharmaViewPrescription
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(808, 632)
-        Controls.Add(prescriptNumLbl)
-        Controls.Add(Guna2Button2)
-        Controls.Add(Guna2Button1)
         Controls.Add(Label2)
+        Controls.Add(usernameLbl)
+        Controls.Add(prescriptNumLbl)
+        Controls.Add(declineBtn)
+        Controls.Add(approveBtn)
         Controls.Add(displayToApproved)
-        Controls.Add(PictureBox1)
-        Controls.Add(birefinfoTxt)
+        Controls.Add(prescriptImage)
+        Controls.Add(briefinfoTxt)
         Controls.Add(contactTxt)
         Controls.Add(clinicTxt)
         Controls.Add(doctornameTxt)
@@ -533,18 +555,17 @@ Partial Class pharmaViewPrescription
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaViewPrescription"
         Text = "pharmaViewPrescription"
-        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(prescriptImage, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents prescriptNumLbl As Label
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents declineBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents approveBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents displayToApproved As ListBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents birefinfoTxt As TextBox
+    Friend WithEvents prescriptImage As PictureBox
+    Friend WithEvents briefinfoTxt As TextBox
     Friend WithEvents contactTxt As TextBox
     Friend WithEvents clinicTxt As TextBox
     Friend WithEvents doctornameTxt As TextBox
@@ -576,4 +597,6 @@ Partial Class pharmaViewPrescription
     Friend WithEvents statusLbl As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents closeBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents usernameLbl As Label
 End Class

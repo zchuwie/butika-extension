@@ -113,6 +113,15 @@ Public Class MainPage
         account = Await accountRepo.populateDataThroughUserID(userID)
         OpenFormInPanel(New Settings(account))
 
+        'debugging
+        If account IsNot Nothing Then
+            Debug.WriteLine("MAIN ACCOUNT LOADED:")
+            Debug.WriteLine("MAIN First Name: " & account.FirstName)
+            Debug.WriteLine("MAIN User ID: " & account.UserID)
+        Else
+            Debug.WriteLine("MAIN Account is null or empty.")
+        End If
+
         BtnColorChange(HomeBtn, Color.FromArgb(22, 66, 60), My.Resources.home)
         BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
         BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)

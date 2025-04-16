@@ -35,7 +35,7 @@ Partial Class VerifyStep3
         ' 
         ' ProgBar3
         ' 
-        ProgBar3.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar3.BackColor = Color.White
         ProgBar3.Location = New Point(595, 99)
         ProgBar3.Name = "ProgBar3"
         ProgBar3.RightToLeft = RightToLeft.No
@@ -46,7 +46,7 @@ Partial Class VerifyStep3
         ' 
         VerifySubtext.AutoSize = True
         VerifySubtext.Font = New Font("Century Gothic", 9.75F)
-        VerifySubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifySubtext.ForeColor = Color.White
         VerifySubtext.Location = New Point(89, 54)
         VerifySubtext.Name = "VerifySubtext"
         VerifySubtext.Size = New Size(136, 17)
@@ -57,7 +57,7 @@ Partial Class VerifyStep3
         ' 
         VerifyProfile.AutoSize = True
         VerifyProfile.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        VerifyProfile.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        VerifyProfile.ForeColor = Color.White
         VerifyProfile.Location = New Point(83, 29)
         VerifyProfile.Name = "VerifyProfile"
         VerifyProfile.Size = New Size(184, 28)
@@ -67,7 +67,7 @@ Partial Class VerifyStep3
         ' 
         ' ProgBar
         ' 
-        ProgBar.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        ProgBar.BackColor = Color.White
         ProgBar.Location = New Point(22, 101)
         ProgBar.Name = "ProgBar"
         ProgBar.RightToLeft = RightToLeft.No
@@ -78,8 +78,8 @@ Partial Class VerifyStep3
         ' 
         Phase3Txt.AutoSize = True
         Phase3Txt.Font = New Font("Century Gothic", 8.75F)
-        Phase3Txt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Phase3Txt.Location = New Point(683, 109)
+        Phase3Txt.ForeColor = Color.White
+        Phase3Txt.Location = New Point(673, 109)
         Phase3Txt.Name = "Phase3Txt"
         Phase3Txt.Size = New Size(129, 17)
         Phase3Txt.TabIndex = 82
@@ -87,18 +87,18 @@ Partial Class VerifyStep3
         ' 
         ' VerifyPendingImg
         ' 
-        VerifyPendingImg.Image = My.Resources.Resources.verifyPending
+        VerifyPendingImg.Image = My.Resources.Resources.verifyVerified3
         VerifyPendingImg.InitialImage = My.Resources.Resources.verifyImage
-        VerifyPendingImg.Location = New Point(298, 237)
+        VerifyPendingImg.Location = New Point(225, 187)
         VerifyPendingImg.Name = "VerifyPendingImg"
-        VerifyPendingImg.Size = New Size(312, 160)
+        VerifyPendingImg.Size = New Size(465, 277)
         VerifyPendingImg.SizeMode = PictureBoxSizeMode.Zoom
         VerifyPendingImg.TabIndex = 83
         VerifyPendingImg.TabStop = False
         ' 
         ' VerifiedIcon
         ' 
-        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon
+        VerifiedIcon.Image = My.Resources.Resources.VerifiedIcon___Copy
         VerifiedIcon.Location = New Point(31, 24)
         VerifiedIcon.Name = "VerifiedIcon"
         VerifiedIcon.Size = New Size(51, 53)
@@ -110,7 +110,7 @@ Partial Class VerifyStep3
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
         Controls.Add(VerifiedIcon)
         Controls.Add(VerifyPendingImg)

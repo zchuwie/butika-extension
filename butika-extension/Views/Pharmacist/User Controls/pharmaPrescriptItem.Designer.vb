@@ -64,6 +64,7 @@ Partial Class pharmaPrescriptItem
         ' 
         ' morePicture
         ' 
+        morePicture.Cursor = Cursors.Hand
         morePicture.Image = CType(resources.GetObject("morePicture.Image"), Image)
         morePicture.Location = New Point(858, 8)
         morePicture.Name = "morePicture"

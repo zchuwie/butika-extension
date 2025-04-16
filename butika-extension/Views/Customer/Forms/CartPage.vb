@@ -16,6 +16,7 @@ Public Class CartPage
     Dim panelSelected As Integer = -1
     Dim isSelected As Boolean = False
     Dim cartItems As New Stack(Of Cart)
+    Dim cartOfSelectedItem As New List(Of Cart)
 
     Public Sub New(account As Account)
         Me.account = account
@@ -50,6 +51,7 @@ Public Class CartPage
     Private Async Sub CartPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         underlineFilter(True, False, False, False)
         Await displayAllCartUser()
+        TotalPriceTxt.Text = "₱" + getTotalSumOfItems(cartOfSelectedItem).ToString()
     End Sub
 
     Private Async Function displayAllCartUser() As Task
@@ -134,8 +136,8 @@ Public Class CartPage
 
         If MessageBox.Show("You have successfully checked out the item. Do you want to see the receipt?", "Checkout Successful", MessageBoxButtons.OKCancel) = DialogResult.OK Then
             Dim receipt As New Receipt(account)
-            receipt.AutoView()
             receipt.PdfReceipt(getDataReceipt, totalItem, transactionID, account)
+            receipt.OpenPDF()
         Else
             MessageBox.Show("Have a good day ahead!", "Success", MessageBoxButtons.OK)
         End If
@@ -143,7 +145,7 @@ Public Class CartPage
 
     Private Function ValidateCartSelection(cartItems As List(Of Cart)) As Boolean
         If cartItems.Count = 0 Then
-            MessageBox.Show("Please select at least one item to checkout.")
+            MessageBox.Show("You already have inserted prescription for this/these medicine/s. Please wait for the approval.")
             CheckOutBtnText(False)
             Return False
         End If
@@ -244,4 +246,16 @@ Public Class CartPage
         CheckoutBtn.Text = If(isProcessing, "Processing...", "Checkout")
     End Sub
 
+    Private Async Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
+        Dim cartRepo As New CartRepository(account)
+        Dim isDeleted = Await cartRepo.deleteTickedItemFromUsersCart
+
+        If Not isDeleted Then
+            MessageBox.Show("An error occured. Try again", "Uh oh")
+            Return
+        End If
+
+        MessageBox.Show("Items have been deleted")
+        CartPage_Load(sender, e)
+    End Sub
 End Class

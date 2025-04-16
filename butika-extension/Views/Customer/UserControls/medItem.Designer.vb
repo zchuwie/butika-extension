@@ -40,31 +40,31 @@ Partial Class medItem
         ' 
         ' MedName
         ' 
-        MedName.AutoSize = True
+        MedName.Anchor = AnchorStyles.None
         MedName.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         MedName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedName.Location = New Point(33, 114)
+        MedName.Location = New Point(13, 114)
         MedName.Name = "MedName"
-        MedName.Size = New Size(79, 16)
+        MedName.Size = New Size(117, 18)
         MedName.TabIndex = 1
         MedName.Text = "Med Name"
-        MedName.TextAlign = ContentAlignment.MiddleCenter
+        MedName.TextAlign = ContentAlignment.TopCenter
         ' 
         ' Manufacturer
         ' 
-        Manufacturer.AutoSize = True
+        Manufacturer.Anchor = AnchorStyles.None
         Manufacturer.Font = New Font("Century Gothic", 9.75F)
         Manufacturer.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Manufacturer.Location = New Point(25, 130)
+        Manufacturer.Location = New Point(13, 132)
         Manufacturer.Name = "Manufacturer"
-        Manufacturer.Size = New Size(94, 17)
+        Manufacturer.Size = New Size(117, 25)
         Manufacturer.TabIndex = 2
         Manufacturer.Text = "Manufacturer"
-        Manufacturer.TextAlign = ContentAlignment.MiddleCenter
+        Manufacturer.TextAlign = ContentAlignment.TopCenter
         ' 
         ' itemIdentifier
         ' 
-        itemIdentifier.Location = New Point(125, 139)
+        itemIdentifier.Location = New Point(125, 159)
         itemIdentifier.Name = "itemIdentifier"
         itemIdentifier.Size = New Size(8, 8)
         itemIdentifier.TabIndex = 3
@@ -79,10 +79,9 @@ Partial Class medItem
         Controls.Add(medImg)
         CornerRadius = 8
         Name = "medItem"
-        Size = New Size(143, 158)
+        Size = New Size(143, 175)
         CType(medImg, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
-        PerformLayout()
     End Sub
 
     Friend WithEvents medImg As PictureBox

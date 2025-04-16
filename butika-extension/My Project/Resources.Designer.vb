@@ -523,9 +523,29 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property VerifiedIcon___Copy() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("VerifiedIcon - Copy", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property verifyImage() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("verifyImage", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property verifyImage1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("verifyImage1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -546,6 +566,36 @@ Namespace My.Resources
         Friend ReadOnly Property verifyVerified() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("verifyVerified", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property verifyVerified1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("verifyVerified1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property verifyVerified2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("verifyVerified2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property verifyVerified3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("verifyVerified3", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

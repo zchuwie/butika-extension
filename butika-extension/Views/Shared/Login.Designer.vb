@@ -23,12 +23,12 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         loginBtn = New Guna.UI2.WinForms.Guna2Button()
@@ -75,7 +75,7 @@ Partial Class Login
         ' loginBtn
         ' 
         loginBtn.BorderRadius = 20
-        loginBtn.CustomizableEdges = CustomizableEdges7
+        loginBtn.CustomizableEdges = CustomizableEdges1
         loginBtn.DisabledState.BorderColor = Color.DarkGray
         loginBtn.DisabledState.CustomBorderColor = Color.DarkGray
         loginBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -85,7 +85,7 @@ Partial Class Login
         loginBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         loginBtn.Location = New Point(200, 556)
         loginBtn.Name = "loginBtn"
-        loginBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        loginBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         loginBtn.Size = New Size(180, 45)
         loginBtn.TabIndex = 3
         loginBtn.Text = "Login"
@@ -123,7 +123,7 @@ Partial Class Login
         forgetPassTxtBtn.Location = New Point(83, 480)
         forgetPassTxtBtn.Name = "forgetPassTxtBtn"
         forgetPassTxtBtn.Size = New Size(120, 16)
-        forgetPassTxtBtn.TabIndex = 20
+        forgetPassTxtBtn.TabIndex = 2
         forgetPassTxtBtn.Text = "Forget Password?"
         ' 
         ' signUpTxtBtn
@@ -134,7 +134,7 @@ Partial Class Login
         signUpTxtBtn.Location = New Point(312, 617)
         signUpTxtBtn.Name = "signUpTxtBtn"
         signUpTxtBtn.Size = New Size(94, 16)
-        signUpTxtBtn.TabIndex = 19
+        signUpTxtBtn.TabIndex = 4
         signUpTxtBtn.Text = "Sign up here"
         ' 
         ' usernameTxtBox
@@ -142,7 +142,7 @@ Partial Class Login
         usernameTxtBox.BorderColor = Color.FromArgb(CByte(217), CByte(217), CByte(217))
         usernameTxtBox.BorderRadius = 10
         usernameTxtBox.BorderThickness = 0
-        usernameTxtBox.CustomizableEdges = CustomizableEdges9
+        usernameTxtBox.CustomizableEdges = CustomizableEdges3
         usernameTxtBox.DefaultText = ""
         usernameTxtBox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         usernameTxtBox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -159,16 +159,16 @@ Partial Class Login
         usernameTxtBox.Padding = New Padding(14)
         usernameTxtBox.PlaceholderText = ""
         usernameTxtBox.SelectedText = ""
-        usernameTxtBox.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        usernameTxtBox.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         usernameTxtBox.Size = New Size(424, 47)
-        usernameTxtBox.TabIndex = 17
+        usernameTxtBox.TabIndex = 0
         ' 
         ' passwordTxtBox
         ' 
         passwordTxtBox.BorderColor = Color.FromArgb(CByte(217), CByte(217), CByte(217))
         passwordTxtBox.BorderRadius = 10
         passwordTxtBox.BorderThickness = 0
-        passwordTxtBox.CustomizableEdges = CustomizableEdges11
+        passwordTxtBox.CustomizableEdges = CustomizableEdges5
         passwordTxtBox.DefaultText = ""
         passwordTxtBox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         passwordTxtBox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -185,9 +185,9 @@ Partial Class Login
         passwordTxtBox.Padding = New Padding(14)
         passwordTxtBox.PlaceholderText = ""
         passwordTxtBox.SelectedText = ""
-        passwordTxtBox.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        passwordTxtBox.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         passwordTxtBox.Size = New Size(424, 47)
-        passwordTxtBox.TabIndex = 16
+        passwordTxtBox.TabIndex = 1
         passwordTxtBox.UseSystemPasswordChar = True
         ' 
         ' Guna2HtmlLabel5

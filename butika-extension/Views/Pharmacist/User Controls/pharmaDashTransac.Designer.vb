@@ -30,6 +30,7 @@ Partial Class pharmaDashTransac
         ' transacIdLbl
         ' 
         transacIdLbl.AutoSize = True
+        transacIdLbl.Cursor = Cursors.Hand
         transacIdLbl.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         transacIdLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         transacIdLbl.Location = New Point(55, 10)
