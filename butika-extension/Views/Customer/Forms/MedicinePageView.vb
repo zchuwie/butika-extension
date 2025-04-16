@@ -1,4 +1,5 @@
-﻿Imports butika.Models
+﻿Imports System.Windows.Forms.VisualStyles
+Imports butika.Models
 
 Public Class MedicinePageView
 
@@ -19,7 +20,18 @@ Public Class MedicinePageView
     Public Sub LoadMedicine()
         MedName.Text = medicine.FormattedMedicineName
         Manufacturer.Text = medicine.MedicineManufacturer
-        Price.Text = "₱" + medicine.MedicinePrice.ToString()
+        Stock.Text = medicine.MedicineStock
+
+        If account.IsVerified = True Then
+            originalPrice.Text = "₱" + medicine.MedicinePrice.ToString()
+            Price.Text = "₱" + medicine.DiscountedPrice.ToString()
+            originalPrice.Visible = True
+        Else
+            Price.Text = "₱" + medicine.MedicinePrice.ToString()
+
+        End If
+
+
         Description.Text = medicine.MedicineDescription
         medicineImageBox.Image = Image.FromFile(medicine.MedicineImagePath)
         Dosage.Text = medicine.MedicineDosage
@@ -71,7 +83,13 @@ Public Class MedicinePageView
         medicineQuantity += 1
         Quantity.Text = medicineQuantity.ToString()
 
-        Price.Text = "₱" + Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+        If account.IsVerified = True Then
+            Price.Text = "₱" & Convert.ToString(medicine.DiscountedPrice * medicineQuantity)
+            originalPrice.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+        Else
+            Price.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+        End If
+
     End Sub
 
     Private Sub DecreaseBtn_Click(sender As Object, e As EventArgs) Handles DecreaseBtn.Click
@@ -79,7 +97,13 @@ Public Class MedicinePageView
             medicineQuantity -= 1
             Quantity.Text = medicineQuantity.ToString()
 
-            Price.Text = "₱" + Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+            If account.IsVerified = True Then
+                Price.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+                originalPrice.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+            Else
+                Price.Text = "₱" & Convert.ToString(medicine.DiscountedPrice * medicineQuantity)
+            End If
+
         Else
             MessageBox.Show("Quantity cannot be less than 1.")
         End If

@@ -222,6 +222,45 @@ Public Class CartRepository
         End Using
     End Function
 
+    Public Async Function GetCheckoutCart() As Task(Of Stack(Of Cart))
+        Dim cartStack As New Stack(Of Cart)()
+
+        Using conn = DatabaseConnection.GetConnection()
+            Dim sql As String = "
+                SELECT 
+                    cart.cart_id AS CartID, 
+                    cart.user_id AS UserID, 
+                    cart.Quantity, 
+                    cart.isTicked, 
+                    cart.isApproved,
+                    cart.Prescription_id As PrescriptionID,
+                    med.drug_id AS MedicineID,             
+                    med.drug_name AS MedicineName,          
+                    med.drug_brand AS MedicineBrand,        
+                    med.drug_manufacturer AS MedicineManufacturer,
+                    med.drug_price AS MedicinePrice
+                FROM usersCart cart
+                LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
+                WHERE cart.user_id = @user_id AND isTicked = 1"
+
+            Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
+            sql,
+            Function(cart, medicine)
+                cart.Medicine = medicine
+                Return cart
+            End Function,
+            param:=New With {.user_id = account.UserID},
+            splitOn:="MedicineID"
+        )
+
+            For Each cartItem In result
+                cartStack.Push(cartItem)
+            Next
+
+            Return cartStack
+        End Using
+    End Function
+
 #End Region
 
 #Region "Checkbox State"
@@ -306,7 +345,7 @@ Public Class CartRepository
                             med.drug_price AS MedicinePrice                            
                         FROM usersCart cart
                         LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                        WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isApproved != 2 AND cart.prescription_id = 0"
+                        WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isApproved != 2"
 
                 Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
                     sql,

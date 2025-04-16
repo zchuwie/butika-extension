@@ -85,6 +85,7 @@ Partial Class prescItem
         Controls.Add(PrescNo)
         Controls.Add(Status)
         CornerRadius = 8
+        Cursor = Cursors.Hand
         Name = "prescItem"
         Size = New Size(272, 98)
         ResumeLayout(False)

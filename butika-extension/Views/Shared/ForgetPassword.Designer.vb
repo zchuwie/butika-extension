@@ -52,6 +52,7 @@ Partial Class ForgetPassword
         VerificationStep2 = New Label()
         VerificationStep1 = New Label()
         verifyPanel = New Panel()
+        invalidCodeLabel = New Label()
         ongoingOtpPanel = New Panel()
         secondsTickingLabel = New Label()
         Label2 = New Label()
@@ -90,7 +91,6 @@ Partial Class ForgetPassword
         PictureBox1 = New PictureBox()
         codeTimer = New Timer(components)
         invalidEmailLabel = New Label()
-        invalidCodeLabel = New Label()
         sidePanel.SuspendLayout()
         backToLoginPanel.SuspendLayout()
         CType(backToLogin, ComponentModel.ISupportInitialize).BeginInit()
@@ -218,6 +218,19 @@ Partial Class ForgetPassword
         verifyPanel.Size = New Size(928, 720)
         verifyPanel.TabIndex = 29
         verifyPanel.Visible = False
+        ' 
+        ' invalidCodeLabel
+        ' 
+        invalidCodeLabel.AutoSize = True
+        invalidCodeLabel.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        invalidCodeLabel.ForeColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
+        invalidCodeLabel.Location = New Point(376, 297)
+        invalidCodeLabel.Name = "invalidCodeLabel"
+        invalidCodeLabel.Size = New Size(228, 17)
+        invalidCodeLabel.TabIndex = 43
+        invalidCodeLabel.Text = "You entered a wrong code. Try again." & vbCrLf
+        invalidCodeLabel.TextAlign = ContentAlignment.MiddleCenter
+        invalidCodeLabel.Visible = False
         ' 
         ' ongoingOtpPanel
         ' 
@@ -742,28 +755,15 @@ Partial Class ForgetPassword
         invalidEmailLabel.TextAlign = ContentAlignment.MiddleCenter
         invalidEmailLabel.Visible = False
         ' 
-        ' invalidCodeLabel
-        ' 
-        invalidCodeLabel.AutoSize = True
-        invalidCodeLabel.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        invalidCodeLabel.ForeColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
-        invalidCodeLabel.Location = New Point(376, 297)
-        invalidCodeLabel.Name = "invalidCodeLabel"
-        invalidCodeLabel.Size = New Size(228, 17)
-        invalidCodeLabel.TabIndex = 43
-        invalidCodeLabel.Text = "You entered a wrong code. Try again." & vbCrLf
-        invalidCodeLabel.TextAlign = ContentAlignment.MiddleCenter
-        invalidCodeLabel.Visible = False
-        ' 
         ' ForgetPassword
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(217), CByte(217), CByte(217))
         ClientSize = New Size(1278, 718)
-        Controls.Add(successPanel)
-        Controls.Add(passwordPanel)
         Controls.Add(verifyPanel)
+        Controls.Add(passwordPanel)
+        Controls.Add(successPanel)
         Controls.Add(sidePanel)
         Controls.Add(PictureBox1)
         Controls.Add(Label5)

@@ -40,11 +40,9 @@ Partial Class SubmitForm
         Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         CancelBtn = New Guna.UI2.WinForms.Guna2Button()
         SubmitBtn = New Guna.UI2.WinForms.Guna2Button()
-        DrugListLbl = New Label()
         DateSubmitted = New Label()
         DateLbl = New Label()
         PrescInfoLbl = New Label()
-        DrugListBox = New ListBox()
         imageView = New PictureBox()
         BriefInfoTextbox = New Guna.UI2.WinForms.Guna2TextBox()
         BriefInfoLbl = New Label()
@@ -68,11 +66,13 @@ Partial Class SubmitForm
         ' 
         ' CancelBtn
         ' 
+        CancelBtn.BorderRadius = 10
         CancelBtn.CustomizableEdges = CustomizableEdges1
         CancelBtn.DisabledState.BorderColor = Color.DarkGray
         CancelBtn.DisabledState.CustomBorderColor = Color.DarkGray
         CancelBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         CancelBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        CancelBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         CancelBtn.Font = New Font("Segoe UI", 9F)
         CancelBtn.ForeColor = Color.White
         CancelBtn.Location = New Point(238, 537)
@@ -84,11 +84,13 @@ Partial Class SubmitForm
         ' 
         ' SubmitBtn
         ' 
+        SubmitBtn.BorderRadius = 10
         SubmitBtn.CustomizableEdges = CustomizableEdges3
         SubmitBtn.DisabledState.BorderColor = Color.DarkGray
         SubmitBtn.DisabledState.CustomBorderColor = Color.DarkGray
         SubmitBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         SubmitBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        SubmitBtn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SubmitBtn.Font = New Font("Segoe UI", 9F)
         SubmitBtn.ForeColor = Color.White
         SubmitBtn.Location = New Point(407, 537)
@@ -97,18 +99,6 @@ Partial Class SubmitForm
         SubmitBtn.Size = New Size(138, 32)
         SubmitBtn.TabIndex = 56
         SubmitBtn.Text = "Submit"
-        ' 
-        ' DrugListLbl
-        ' 
-        DrugListLbl.AutoSize = True
-        DrugListLbl.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold)
-        DrugListLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DrugListLbl.Location = New Point(501, 369)
-        DrugListLbl.Name = "DrugListLbl"
-        DrugListLbl.Size = New Size(88, 19)
-        DrugListLbl.TabIndex = 55
-        DrugListLbl.Text = "Drug Lists:"
-        DrugListLbl.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' DateSubmitted
         ' 
@@ -146,16 +136,6 @@ Partial Class SubmitForm
         PrescInfoLbl.Text = "Prescription Information:"
         PrescInfoLbl.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' DrugListBox
-        ' 
-        DrugListBox.FormattingEnabled = True
-        DrugListBox.ItemHeight = 15
-        DrugListBox.Items.AddRange(New Object() {"ItemPrescriptionMed"})
-        DrugListBox.Location = New Point(501, 396)
-        DrugListBox.Name = "DrugListBox"
-        DrugListBox.Size = New Size(217, 94)
-        DrugListBox.TabIndex = 51
-        ' 
         ' imageView
         ' 
         imageView.BorderStyle = BorderStyle.FixedSingle
@@ -185,7 +165,7 @@ Partial Class SubmitForm
         BriefInfoTextbox.PlaceholderText = ""
         BriefInfoTextbox.SelectedText = ""
         BriefInfoTextbox.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        BriefInfoTextbox.Size = New Size(429, 105)
+        BriefInfoTextbox.Size = New Size(697, 105)
         BriefInfoTextbox.TabIndex = 49
         ' 
         ' BriefInfoLbl
@@ -432,11 +412,9 @@ Partial Class SubmitForm
         Controls.Add(prescriptionImageLbl)
         Controls.Add(CancelBtn)
         Controls.Add(SubmitBtn)
-        Controls.Add(DrugListLbl)
         Controls.Add(DateSubmitted)
         Controls.Add(DateLbl)
         Controls.Add(PrescInfoLbl)
-        Controls.Add(DrugListBox)
         Controls.Add(imageView)
         Controls.Add(BriefInfoTextbox)
         Controls.Add(BriefInfoLbl)
@@ -462,11 +440,9 @@ Partial Class SubmitForm
 
     Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents SubmitBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents DrugListLbl As Label
     Friend WithEvents DateSubmitted As Label
     Friend WithEvents DateLbl As Label
     Friend WithEvents PrescInfoLbl As Label
-    Friend WithEvents DrugListBox As ListBox
     Friend WithEvents imageView As PictureBox
     Friend WithEvents BriefInfoTextbox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents BriefInfoLbl As Label

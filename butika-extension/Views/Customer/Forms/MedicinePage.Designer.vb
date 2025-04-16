@@ -30,7 +30,6 @@ Partial Class MedicinePage
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        ManuComBox = New ComboBox()
         Medicines = New Label()
         MedSubtext = New Label()
         AllMeds = New Label()
@@ -43,26 +42,11 @@ Partial Class MedicinePage
         MedIcon = New PictureBox()
         SearchIcon = New PictureBox()
         Information = New PictureBox()
-        ComboBox1 = New ComboBox()
-        ComboBox2 = New ComboBox()
         MedicineDisplayPanel = New FlowLayoutPanel()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(SearchIcon, ComponentModel.ISupportInitialize).BeginInit()
         CType(Information, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' ManuComBox
-        ' 
-        ManuComBox.BackColor = Color.White
-        ManuComBox.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        ManuComBox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ManuComBox.FormattingEnabled = True
-        ManuComBox.Items.AddRange(New Object() {"test1", "test2", "test3", "test4", "test5"})
-        ManuComBox.Location = New Point(834, 100)
-        ManuComBox.Name = "ManuComBox"
-        ManuComBox.Size = New Size(121, 24)
-        ManuComBox.TabIndex = 1
-        ManuComBox.Text = "Manufacturer"
         ' 
         ' Medicines
         ' 
@@ -137,7 +121,7 @@ Partial Class MedicinePage
         MedSearch.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         MedSearch.Font = New Font("Century Gothic", 9.75F)
         MedSearch.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        MedSearch.Location = New Point(875, 43)
+        MedSearch.Location = New Point(852, 98)
         MedSearch.Name = "MedSearch"
         MedSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedSearch.PlaceholderText = "Search"
@@ -195,7 +179,7 @@ Partial Class MedicinePage
         ' SearchIcon
         ' 
         SearchIcon.Image = My.Resources.Resources.search
-        SearchIcon.Location = New Point(1140, 48)
+        SearchIcon.Location = New Point(1124, 102)
         SearchIcon.Name = "SearchIcon"
         SearchIcon.Size = New Size(17, 17)
         SearchIcon.SizeMode = PictureBoxSizeMode.Zoom
@@ -211,32 +195,6 @@ Partial Class MedicinePage
         Information.SizeMode = PictureBoxSizeMode.Zoom
         Information.TabIndex = 16
         Information.TabStop = False
-        ' 
-        ' ComboBox1
-        ' 
-        ComboBox1.BackColor = Color.White
-        ComboBox1.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        ComboBox1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ComboBox1.FormattingEnabled = True
-        ComboBox1.Items.AddRange(New Object() {"test1", "test2", "test3", "test4", "test5"})
-        ComboBox1.Location = New Point(961, 100)
-        ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(75, 24)
-        ComboBox1.TabIndex = 2
-        ComboBox1.Text = "Price"
-        ' 
-        ' ComboBox2
-        ' 
-        ComboBox2.BackColor = Color.White
-        ComboBox2.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        ComboBox2.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ComboBox2.FormattingEnabled = True
-        ComboBox2.Items.AddRange(New Object() {"test1", "test2", "test3", "test4", "test5"})
-        ComboBox2.Location = New Point(1042, 100)
-        ComboBox2.Name = "ComboBox2"
-        ComboBox2.Size = New Size(84, 24)
-        ComboBox2.TabIndex = 17
-        ComboBox2.Text = "Type"
         ' 
         ' MedicineDisplayPanel
         ' 
@@ -255,9 +213,6 @@ Partial Class MedicinePage
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1220, 720)
         Controls.Add(MedicineDisplayPanel)
-        Controls.Add(ComboBox2)
-        Controls.Add(ComboBox1)
-        Controls.Add(ManuComBox)
         Controls.Add(Information)
         Controls.Add(SearchIcon)
         Controls.Add(PrescUnderline)
@@ -294,9 +249,6 @@ Partial Class MedicinePage
     Friend WithEvents SearchIcon As PictureBox
     Friend WithEvents Information As PictureBox
     Friend WithEvents ManuCombo As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents ManuComBox As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents ComboBox2 As ComboBox
     Friend WithEvents MedicineDisplayPanel As FlowLayoutPanel
     Friend WithEvents MedItem1 As medItem
 End Class

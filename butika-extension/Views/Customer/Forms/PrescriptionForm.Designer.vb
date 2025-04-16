@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class PrescriptionForm
-    Inherits System.Windows.Forms.Form
+    Inherits UserControl
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
@@ -22,22 +22,6 @@ Partial Class PrescriptionForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         StatusLbl = New Label()
         PrescNo = New Label()
         Status = New Label()
@@ -48,17 +32,11 @@ Partial Class PrescriptionForm
         PatientInfoLbl = New Label()
         PatientNameLbl = New Label()
         PatientAgeLbl = New Label()
-        PatientNameTxtbox = New Guna.UI2.WinForms.Guna2TextBox()
-        PatientAgeTxtbox = New Guna.UI2.WinForms.Guna2TextBox()
-        ClinicTxtbox = New Guna.UI2.WinForms.Guna2TextBox()
-        DocNameTxtbox = New Guna.UI2.WinForms.Guna2TextBox()
         ClinicLbl = New Label()
         DocNameLbl = New Label()
         DocInfoLbl = New Label()
-        ContactTxtbox = New Guna.UI2.WinForms.Guna2TextBox()
         DocContactLbl = New Label()
         BriefInfoLbl = New Label()
-        BriefInfoTextbox = New Guna.UI2.WinForms.Guna2TextBox()
         PrescDigiCopy = New PictureBox()
         DrugListBox = New ListBox()
         DateLbl = New Label()
@@ -66,8 +44,12 @@ Partial Class PrescriptionForm
         DateSubmitted = New Label()
         PrescDigiCopyLbl = New Label()
         DrugListLbl = New Label()
-        SubmitBtn = New Guna.UI2.WinForms.Guna2Button()
-        CancelBtn = New Guna.UI2.WinForms.Guna2Button()
+        PatientName = New Label()
+        Age = New Label()
+        DoctorName = New Label()
+        Clinic = New Label()
+        Contact = New Label()
+        briefInfo = New Label()
         CType(PrescDigiCopy, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -191,90 +173,6 @@ Partial Class PrescriptionForm
         PatientAgeLbl.Text = "Age:"
         PatientAgeLbl.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' PatientNameTxtbox
-        ' 
-        PatientNameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PatientNameTxtbox.CustomizableEdges = CustomizableEdges1
-        PatientNameTxtbox.DefaultText = ""
-        PatientNameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        PatientNameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        PatientNameTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        PatientNameTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        PatientNameTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        PatientNameTxtbox.Font = New Font("Century Gothic", 9.75F)
-        PatientNameTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PatientNameTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        PatientNameTxtbox.Location = New Point(89, 129)
-        PatientNameTxtbox.Name = "PatientNameTxtbox"
-        PatientNameTxtbox.PlaceholderText = ""
-        PatientNameTxtbox.SelectedText = ""
-        PatientNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        PatientNameTxtbox.Size = New Size(229, 30)
-        PatientNameTxtbox.TabIndex = 15
-        ' 
-        ' PatientAgeTxtbox
-        ' 
-        PatientAgeTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PatientAgeTxtbox.CustomizableEdges = CustomizableEdges3
-        PatientAgeTxtbox.DefaultText = ""
-        PatientAgeTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        PatientAgeTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        PatientAgeTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        PatientAgeTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        PatientAgeTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        PatientAgeTxtbox.Font = New Font("Century Gothic", 9.75F)
-        PatientAgeTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PatientAgeTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        PatientAgeTxtbox.Location = New Point(89, 171)
-        PatientAgeTxtbox.Name = "PatientAgeTxtbox"
-        PatientAgeTxtbox.PlaceholderText = ""
-        PatientAgeTxtbox.SelectedText = ""
-        PatientAgeTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        PatientAgeTxtbox.Size = New Size(229, 30)
-        PatientAgeTxtbox.TabIndex = 16
-        ' 
-        ' ClinicTxtbox
-        ' 
-        ClinicTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ClinicTxtbox.CustomizableEdges = CustomizableEdges5
-        ClinicTxtbox.DefaultText = ""
-        ClinicTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        ClinicTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        ClinicTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        ClinicTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        ClinicTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        ClinicTxtbox.Font = New Font("Century Gothic", 9.75F)
-        ClinicTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ClinicTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        ClinicTxtbox.Location = New Point(123, 300)
-        ClinicTxtbox.Name = "ClinicTxtbox"
-        ClinicTxtbox.PlaceholderText = ""
-        ClinicTxtbox.SelectedText = ""
-        ClinicTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges6
-        ClinicTxtbox.Size = New Size(229, 30)
-        ClinicTxtbox.TabIndex = 21
-        ' 
-        ' DocNameTxtbox
-        ' 
-        DocNameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DocNameTxtbox.CustomizableEdges = CustomizableEdges7
-        DocNameTxtbox.DefaultText = ""
-        DocNameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        DocNameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        DocNameTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        DocNameTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        DocNameTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        DocNameTxtbox.Font = New Font("Century Gothic", 9.75F)
-        DocNameTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DocNameTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        DocNameTxtbox.Location = New Point(123, 256)
-        DocNameTxtbox.Name = "DocNameTxtbox"
-        DocNameTxtbox.PlaceholderText = ""
-        DocNameTxtbox.SelectedText = ""
-        DocNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges8
-        DocNameTxtbox.Size = New Size(229, 30)
-        DocNameTxtbox.TabIndex = 20
-        ' 
         ' ClinicLbl
         ' 
         ClinicLbl.AutoSize = True
@@ -311,27 +209,6 @@ Partial Class PrescriptionForm
         DocInfoLbl.Text = "Doctor's Information:"
         DocInfoLbl.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' ContactTxtbox
-        ' 
-        ContactTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ContactTxtbox.CustomizableEdges = CustomizableEdges9
-        ContactTxtbox.DefaultText = ""
-        ContactTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        ContactTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        ContactTxtbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        ContactTxtbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        ContactTxtbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        ContactTxtbox.Font = New Font("Century Gothic", 9.75F)
-        ContactTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ContactTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        ContactTxtbox.Location = New Point(123, 346)
-        ContactTxtbox.Name = "ContactTxtbox"
-        ContactTxtbox.PlaceholderText = ""
-        ContactTxtbox.SelectedText = ""
-        ContactTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges10
-        ContactTxtbox.Size = New Size(229, 30)
-        ContactTxtbox.TabIndex = 23
-        ' 
         ' DocContactLbl
         ' 
         DocContactLbl.AutoSize = True
@@ -355,27 +232,6 @@ Partial Class PrescriptionForm
         BriefInfoLbl.TabIndex = 24
         BriefInfoLbl.Text = "Brief Information:"
         BriefInfoLbl.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' BriefInfoTextbox
-        ' 
-        BriefInfoTextbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        BriefInfoTextbox.CustomizableEdges = CustomizableEdges11
-        BriefInfoTextbox.DefaultText = ""
-        BriefInfoTextbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        BriefInfoTextbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        BriefInfoTextbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        BriefInfoTextbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        BriefInfoTextbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        BriefInfoTextbox.Font = New Font("Century Gothic", 9.75F)
-        BriefInfoTextbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        BriefInfoTextbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        BriefInfoTextbox.Location = New Point(30, 437)
-        BriefInfoTextbox.Name = "BriefInfoTextbox"
-        BriefInfoTextbox.PlaceholderText = ""
-        BriefInfoTextbox.SelectedText = ""
-        BriefInfoTextbox.ShadowDecoration.CustomizableEdges = CustomizableEdges12
-        BriefInfoTextbox.Size = New Size(429, 105)
-        BriefInfoTextbox.TabIndex = 25
         ' 
         ' PrescDigiCopy
         ' 
@@ -457,45 +313,86 @@ Partial Class PrescriptionForm
         DrugListLbl.Text = "Drug Lists:"
         DrugListLbl.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' SubmitBtn
+        ' PatientName
         ' 
-        SubmitBtn.CustomizableEdges = CustomizableEdges13
-        SubmitBtn.DisabledState.BorderColor = Color.DarkGray
-        SubmitBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        SubmitBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        SubmitBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        SubmitBtn.Font = New Font("Segoe UI", 9F)
-        SubmitBtn.ForeColor = Color.White
-        SubmitBtn.Location = New Point(416, 578)
-        SubmitBtn.Name = "SubmitBtn"
-        SubmitBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges14
-        SubmitBtn.Size = New Size(138, 32)
-        SubmitBtn.TabIndex = 34
-        SubmitBtn.Text = "Submit"
+        PatientName.AutoSize = True
+        PatientName.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        PatientName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        PatientName.Location = New Point(106, 134)
+        PatientName.Name = "PatientName"
+        PatientName.Size = New Size(90, 16)
+        PatientName.TabIndex = 34
+        PatientName.Text = "PatientName"
+        PatientName.TextAlign = ContentAlignment.MiddleCenter
         ' 
-        ' CancelBtn
+        ' Age
         ' 
-        CancelBtn.CustomizableEdges = CustomizableEdges15
-        CancelBtn.DisabledState.BorderColor = Color.DarkGray
-        CancelBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        CancelBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        CancelBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        CancelBtn.Font = New Font("Segoe UI", 9F)
-        CancelBtn.ForeColor = Color.White
-        CancelBtn.Location = New Point(247, 578)
-        CancelBtn.Name = "CancelBtn"
-        CancelBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges16
-        CancelBtn.Size = New Size(138, 32)
-        CancelBtn.TabIndex = 35
-        CancelBtn.Text = "Cancel"
+        Age.AutoSize = True
+        Age.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Age.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Age.Location = New Point(106, 178)
+        Age.Name = "Age"
+        Age.Size = New Size(34, 16)
+        Age.TabIndex = 35
+        Age.Text = "Age"
+        Age.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' DoctorName
+        ' 
+        DoctorName.AutoSize = True
+        DoctorName.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DoctorName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        DoctorName.Location = New Point(106, 265)
+        DoctorName.Name = "DoctorName"
+        DoctorName.Size = New Size(88, 16)
+        DoctorName.TabIndex = 36
+        DoctorName.Text = "DoctorName"
+        DoctorName.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Clinic
+        ' 
+        Clinic.AutoSize = True
+        Clinic.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Clinic.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Clinic.Location = New Point(108, 308)
+        Clinic.Name = "Clinic"
+        Clinic.Size = New Size(45, 16)
+        Clinic.TabIndex = 37
+        Clinic.Text = "Clinic"
+        Clinic.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' Contact
+        ' 
+        Contact.AutoSize = True
+        Contact.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Contact.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Contact.Location = New Point(138, 356)
+        Contact.Name = "Contact"
+        Contact.Size = New Size(58, 16)
+        Contact.TabIndex = 38
+        Contact.Text = "Contact"
+        Contact.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' briefInfo
+        ' 
+        briefInfo.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        briefInfo.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        briefInfo.Location = New Point(29, 451)
+        briefInfo.Name = "briefInfo"
+        briefInfo.Size = New Size(445, 96)
+        briefInfo.TabIndex = 39
+        briefInfo.Text = "briefInfo"
         ' 
         ' PrescriptionForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(780, 631)
-        Controls.Add(CancelBtn)
-        Controls.Add(SubmitBtn)
+        Controls.Add(briefInfo)
+        Controls.Add(Contact)
+        Controls.Add(Clinic)
+        Controls.Add(DoctorName)
+        Controls.Add(Age)
+        Controls.Add(PatientName)
         Controls.Add(DrugListLbl)
         Controls.Add(PrescDigiCopyLbl)
         Controls.Add(DateSubmitted)
@@ -503,17 +400,11 @@ Partial Class PrescriptionForm
         Controls.Add(PrescInfoLbl)
         Controls.Add(DrugListBox)
         Controls.Add(PrescDigiCopy)
-        Controls.Add(BriefInfoTextbox)
         Controls.Add(BriefInfoLbl)
-        Controls.Add(ContactTxtbox)
         Controls.Add(DocContactLbl)
-        Controls.Add(ClinicTxtbox)
-        Controls.Add(DocNameTxtbox)
         Controls.Add(ClinicLbl)
         Controls.Add(DocNameLbl)
         Controls.Add(DocInfoLbl)
-        Controls.Add(PatientAgeTxtbox)
-        Controls.Add(PatientNameTxtbox)
         Controls.Add(PatientAgeLbl)
         Controls.Add(PatientNameLbl)
         Controls.Add(PatientInfoLbl)
@@ -524,9 +415,8 @@ Partial Class PrescriptionForm
         Controls.Add(Status)
         Controls.Add(StatusLbl)
         Controls.Add(PrescNo)
-        FormBorderStyle = FormBorderStyle.None
         Name = "PrescriptionForm"
-        Text = "PrescriptionForm"
+        Size = New Size(796, 607)
         CType(PrescDigiCopy, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -542,17 +432,11 @@ Partial Class PrescriptionForm
     Friend WithEvents PatientInfoLbl As Label
     Friend WithEvents PatientNameLbl As Label
     Friend WithEvents PatientAgeLbl As Label
-    Friend WithEvents PatientNameTxtbox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents PatientAgeTxtbox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents ClinicTxtbox As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents DocNameTxtbox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents ClinicLbl As Label
     Friend WithEvents DocNameLbl As Label
     Friend WithEvents DocInfoLbl As Label
-    Friend WithEvents ContactTxtbox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents DocContactLbl As Label
     Friend WithEvents BriefInfoLbl As Label
-    Friend WithEvents BriefInfoTextbox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents PrescDigiCopy As PictureBox
     Friend WithEvents DrugListBox As ListBox
     Friend WithEvents DateLbl As Label
@@ -560,6 +444,10 @@ Partial Class PrescriptionForm
     Friend WithEvents DateSubmitted As Label
     Friend WithEvents PrescDigiCopyLbl As Label
     Friend WithEvents DrugListLbl As Label
-    Friend WithEvents SubmitBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents CancelBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents PatientName As Label
+    Friend WithEvents Age As Label
+    Friend WithEvents DoctorName As Label
+    Friend WithEvents Clinic As Label
+    Friend WithEvents Contact As Label
+    Friend WithEvents briefInfo As Label
 End Class
