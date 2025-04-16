@@ -8,6 +8,23 @@ Public Class MedicinePage
         AllMedsUnderline.Visible = med
         OTCUnderline.Visible = otc
         PrescUnderline.Visible = presc
+        If med = True Then
+            AllMeds.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            AllMeds.ForeColor = Color.Gray
+        End If
+
+        If otc = True Then
+            OverTheCounter.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            OverTheCounter.ForeColor = Color.Gray
+        End If
+
+        If presc = True Then
+            NeedsPrescription.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            NeedsPrescription.ForeColor = Color.Gray
+        End If
     End Sub
 
 #End Region

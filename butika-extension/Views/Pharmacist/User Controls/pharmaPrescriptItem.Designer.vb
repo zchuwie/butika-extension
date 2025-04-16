@@ -22,11 +22,12 @@ Partial Class pharmaPrescriptItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaPrescriptItem))
         prescriptIdLbl = New Label()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        usernameLbl = New Label()
         morePicture = New PictureBox()
         dateLbl = New Label()
         patientLbl = New Label()
@@ -50,23 +51,35 @@ Partial Class pharmaPrescriptItem
         Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Panel1.BorderRadius = 10
         Guna2Panel1.BorderThickness = 3
+        Guna2Panel1.Controls.Add(usernameLbl)
         Guna2Panel1.Controls.Add(morePicture)
         Guna2Panel1.Controls.Add(dateLbl)
         Guna2Panel1.Controls.Add(patientLbl)
         Guna2Panel1.Controls.Add(prescriptIdLbl)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges1
+        Guna2Panel1.CustomizableEdges = CustomizableEdges3
         Guna2Panel1.Dock = DockStyle.Fill
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Panel1.Size = New Size(964, 37)
         Guna2Panel1.TabIndex = 2
+        ' 
+        ' usernameLbl
+        ' 
+        usernameLbl.AutoSize = True
+        usernameLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        usernameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        usernameLbl.Location = New Point(235, 12)
+        usernameLbl.Name = "usernameLbl"
+        usernameLbl.Size = New Size(71, 16)
+        usernameLbl.TabIndex = 5
+        usernameLbl.Text = "Username"
         ' 
         ' morePicture
         ' 
         morePicture.Cursor = Cursors.Hand
         morePicture.Image = CType(resources.GetObject("morePicture.Image"), Image)
-        morePicture.Location = New Point(858, 8)
+        morePicture.Location = New Point(871, 8)
         morePicture.Name = "morePicture"
         morePicture.Size = New Size(20, 20)
         morePicture.SizeMode = PictureBoxSizeMode.StretchImage
@@ -78,7 +91,7 @@ Partial Class pharmaPrescriptItem
         dateLbl.AutoSize = True
         dateLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         dateLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        dateLbl.Location = New Point(580, 10)
+        dateLbl.Location = New Point(617, 10)
         dateLbl.Name = "dateLbl"
         dateLbl.Size = New Size(129, 16)
         dateLbl.TabIndex = 3
@@ -89,7 +102,7 @@ Partial Class pharmaPrescriptItem
         patientLbl.AutoSize = True
         patientLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         patientLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        patientLbl.Location = New Point(301, 10)
+        patientLbl.Location = New Point(433, 10)
         patientLbl.Name = "patientLbl"
         patientLbl.Size = New Size(94, 16)
         patientLbl.TabIndex = 1
@@ -114,5 +127,6 @@ Partial Class pharmaPrescriptItem
     Friend WithEvents dateLbl As Label
     Friend WithEvents patientLbl As Label
     Friend WithEvents morePicture As PictureBox
+    Friend WithEvents usernameLbl As Label
 
 End Class
