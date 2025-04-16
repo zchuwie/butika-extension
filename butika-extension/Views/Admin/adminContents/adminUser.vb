@@ -1,4 +1,6 @@
-﻿Public Class adminUser
+﻿Imports butika.Helpers
+
+Public Class adminUser
 
     Private Sub copyTimer_Tick(sender As Object, e As EventArgs) Handles copyTimer.Tick
         textCopyIndicator.Visible = False
@@ -27,15 +29,17 @@
     End Sub
 
     Private Async Function LoadUserSummaryAsync() As Task
-        activeNum.Text = (Await AdminRepository.GetActiveUsers()).ToString()
-        inactiveNum.Text = (Await AdminRepository.GetInactiveUsers()).ToString()
+        customerNum.Text = (Await AdminRepository.GetCustomerCount()).ToString()
+        adminNum.Text = (Await AdminRepository.GetAdminCount()).ToString()
+        pharmacistNum.Text = (Await AdminRepository.GetPharmacistCount()).ToString()
+        custodianNum.Text = (Await AdminRepository.GetCustodianCount()).ToString()
     End Function
 
     Private Async Sub adminUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Await LoadUserSummaryAsync()
         Await LoadAllUserDataAsync()
 
-        UIHelper.CenterLabelsInPanels(activeNum, inactiveNum)
+        UIHelper.CenterLabelsInPanels(customerNum, adminNum, pharmacistNum, custodianNum)
     End Sub
 
     Private Async Function LoadAllUserDataAsync() As Task
@@ -43,22 +47,25 @@
         userAccTable.DataSource = dt
     End Function
 
-    Private Async Function LoadAllActiveUsers() As Task
-        Dim dt = Await AdminRepository.GetUserFullData("active")
+    Private Async Function LoadUserType(num As Integer) As Task
+        Dim dt = Await AdminRepository.GetUserFullData(num)
         userAccTable.DataSource = dt
     End Function
 
-    Private Async Function LoadAllInactiveUsers() As Task
-        Dim dt = Await AdminRepository.GetUserFullData("inactive")
-        userAccTable.DataSource = dt
-    End Function
-
-    Private Async Sub activeShow_Click(sender As Object, e As EventArgs) Handles activeShow.Click
-        Await LoadAllActiveUsers()
+    Private Async Sub customerShow_Click(sender As Object, e As EventArgs) Handles customerShow.Click
+        Await LoadUserType(0)
     End Sub
 
-    Private Async Sub inactiveShow_Click(sender As Object, e As EventArgs) Handles inactiveShow.Click
-        Await LoadAllInactiveUsers()
+    Private Async Sub adminShow_Click(sender As Object, e As EventArgs) Handles adminShow.Click
+        Await LoadUserType(1)
+    End Sub
+
+    Private Async Sub pharmacistShow_Click(sender As Object, e As EventArgs) Handles pharmacistShow.Click
+        Await LoadUserType(2)
+    End Sub
+
+    Private Async Sub custodianShow_Click(sender As Object, e As EventArgs) Handles custodianShow.Click
+        Await LoadUserType(3)
     End Sub
 
     Private Async Sub showAllBtn_Click(sender As Object, e As EventArgs) Handles showAllBtn.Click
@@ -67,15 +74,15 @@
 
     Private Async Sub userAccTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles userAccTable.CellClick
         If e.RowIndex >= 0 Then
-            Dim selectedRow As DataGridViewRow = userAccTable.Rows(e.RowIndex)
-            Dim selectedId As Integer = Convert.ToInt32(selectedRow.Cells("ID").Value)
+            Dim selectedRow = userAccTable.Rows(e.RowIndex)
+            Dim selectedId = Convert.ToInt32(selectedRow.Cells("ID").Value)
 
-            accountIdTxt.Text = selectedId.ToString()
+            accountIdTxt.Text = selectedId.ToString
 
-            Dim userDetails As DataRow = Await AdminRepository.GetUserDetailsById(selectedId)
+            Dim userDetails = Await AdminRepository.GetUserDetailsById(selectedId)
             If userDetails IsNot Nothing Then
 
-                usernameTxt.Text = userDetails("username").ToString()
+                usernameTxt.Text = userDetails("username").ToString
 
                 If userDetails("date_joined") IsNot DBNull.Value Then
                     data1.Text = Convert.ToDateTime(userDetails("date_joined")).ToString("yyyy-MM-dd")
@@ -84,25 +91,25 @@
                 End If
 
                 If userDetails("fullname") IsNot DBNull.Value Then
-                    data2.Text = userDetails("fullname").ToString()
+                    data2.Text = userDetails("fullname").ToString
                 Else
                     data2.Text = "N/A"
                 End If
 
                 If userDetails("first_name") IsNot DBNull.Value Then
-                    data3.Text = userDetails("first_name").ToString()
+                    data3.Text = userDetails("first_name").ToString
                 Else
                     data3.Text = "N/A"
                 End If
 
                 If userDetails("middle_initial") IsNot DBNull.Value Then
-                    data4.Text = userDetails("middle_initial").ToString()
+                    data4.Text = userDetails("middle_initial").ToString
                 Else
                     data4.Text = "N/A"
                 End If
 
                 If userDetails("last_name") IsNot DBNull.Value Then
-                    data5.Text = userDetails("last_name").ToString()
+                    data5.Text = userDetails("last_name").ToString
                 Else
                     data5.Text = "N/A"
                 End If
@@ -114,70 +121,19 @@
                 End If
 
                 If selectedRow.Cells("Email").Value IsNot DBNull.Value Then
-                    AddressText.Text = selectedRow.Cells("Email").Value.ToString()
+                    AddressText.Text = selectedRow.Cells("Email").Value.ToString
                 Else
                     AddressText.Text = "N/A"
                 End If
 
                 If selectedRow.Cells("Contact").Value IsNot DBNull.Value Then
-                    NumberText.Text = selectedRow.Cells("Contact").Value.ToString()
+                    NumberText.Text = selectedRow.Cells("Contact").Value.ToString
                 Else
                     NumberText.Text = "N/A"
                 End If
-
-                If userDetails IsNot Nothing Then
-
-                    usernameTxt.Text = userDetails("username").ToString()
-
-                    Dim status As String = If(userDetails("status") Is DBNull.Value, "-", userDetails("status").ToString())
-
-                    statusBtn.Text = status
-
-                    If status = "-" Then
-                        statusBtn.FillColor = ColorTranslator.FromHtml("#666666")
-                        statusBtn.Enabled = False
-                    ElseIf status.ToLower() = "active" Then
-                        statusBtn.FillColor = ColorTranslator.FromHtml("#6B9C89")
-                        statusBtn.Enabled = True
-                    Else
-                        statusBtn.FillColor = ColorTranslator.FromHtml("#E44040")
-                        statusBtn.Enabled = True
-                    End If
-                End If
-
             End If
         End If
-
-
     End Sub
-
-    Private Async Sub statusBtn_Click(sender As Object, e As EventArgs) Handles statusBtn.Click
-        If statusBtn.Text = "-" Then
-            MessageBox.Show("Cannot update status as it's not available.")
-            Return
-        End If
-
-        Dim newStatus As String
-        Dim newColor As String
-
-        If statusBtn.Text.ToLower() = "active" Then
-            newStatus = "inactive"
-            newColor = "#E44040"
-        Else
-            newStatus = "active"
-            newColor = "#6B9C89"
-        End If
-
-        Dim userId As Integer = Convert.ToInt32(accountIdTxt.Text)
-        Await AdminRepository.UpdateUserStatus(userId, newStatus)
-
-        statusBtn.Text = newStatus
-        statusBtn.FillColor = ColorTranslator.FromHtml(newColor)
-
-        Await LoadAllUsers()
-        Await LoadUserSummaryAsync()
-    End Sub
-
 
     Private Async Function LoadAllUsers() As Task
         Dim dt = Await AdminRepository.GetUserFullData()
@@ -189,27 +145,44 @@
     End Sub
 
     Private Async Sub searchText_TextChanged(sender As Object, e As EventArgs) Handles searchText.TextChanged
+        Await resetLabel("-")
+        AddressText.Text = ""
+        NumberText.Text = ""
+
         Dim searchTerm As String = searchText.Text.Trim()
+        If searchText.Text <> "Search" Then
+            If Not String.IsNullOrEmpty(searchTerm) Then
+                Dim dt As DataTable = CType(userAccTable.DataSource, DataTable)
 
-        If Not String.IsNullOrEmpty(searchTerm) Then
-            Dim dt As DataTable = CType(userAccTable.DataSource, DataTable)
+                Dim dv As New DataView(dt)
 
-            Dim dv As New DataView(dt)
+                Dim isNumeric As Boolean = Integer.TryParse(searchTerm, New Integer())
 
-            Dim isNumeric As Boolean = Integer.TryParse(searchTerm, New Integer())
+                If isNumeric Then
+                    dv.RowFilter = String.Format("ID = {0} OR Username LIKE '%{1}%' OR Email LIKE '%{1}%' OR Status LIKE '%{1}%'", searchTerm, searchTerm)
+                Else
+                    dv.RowFilter = String.Format("Username LIKE '%{0}%' OR Email LIKE '%{0}%' OR Status LIKE '%{0}%'", searchTerm)
+                End If
 
-            If isNumeric Then
-                dv.RowFilter = String.Format("ID = {0} OR Username LIKE '%{1}%' OR Email LIKE '%{1}%' OR Status LIKE '%{1}%'", searchTerm, searchTerm)
+                userAccTable.DataSource = dv.ToTable()
             Else
-                dv.RowFilter = String.Format("Username LIKE '%{0}%' OR Email LIKE '%{0}%' OR Status LIKE '%{0}%'", searchTerm)
+                Dim dt As DataTable = Await AdminRepository.GetUserFullData()
+                userAccTable.DataSource = dt
             End If
-
-            userAccTable.DataSource = dv.ToTable()
         Else
-            Dim dt As DataTable = Await AdminRepository.GetUserFullData()
-            userAccTable.DataSource = dt
         End If
     End Sub
+
+    Private Async Function resetLabel(labelChange As String) As Task
+        accountIdTxt.Text = labelChange
+        usernameTxt.Text = labelChange
+        data1.Text = labelChange
+        data2.Text = labelChange
+        data3.Text = labelChange
+        data4.Text = labelChange
+        data5.Text = labelChange
+        data6.Text = labelChange
+    End Function
 
     Private Sub AddressText_TextChanged(sender As Object, e As EventArgs) Handles AddressText.TextChanged
 
@@ -238,12 +211,80 @@
     End Sub
 
     Private Async Sub UpdateUserDetails()
-
         Dim userId As Integer = Convert.ToInt32(accountIdTxt.Text)
 
         Dim updatedEmail As String = AddressText.Text
         Dim updatedPhone As String = NumberText.Text
 
         Await AdminRepository.UpdateUserDetails(userId, updatedEmail, updatedPhone)
+    End Sub
+
+    Private Sub searchText_Enter(sender As Object, e As EventArgs) Handles searchText.Enter
+        searchText.Text = ""
+    End Sub
+
+    Private Sub searchText_Leave(sender As Object, e As EventArgs) Handles searchText.Leave
+        searchText.Text = "Search"
+    End Sub
+
+    Private Async Function userTypeIndicator(type As String) As Task
+        Dim dt = Await AdminRepository.GetUserFullData(type)
+        userAccTable.DataSource = dt
+    End Function
+
+    Private Async Function loadCreate() As Task
+
+
+        Await AdminRepository.AddNewAccount(9, 6, "green")
+    End Function
+
+    Dim createType As String
+    Dim createUserType As Integer
+
+    Private Sub adminAdd_Click(sender As Object, e As EventArgs) Handles adminAdd.Click
+        createType = "admin"
+        createLabel.Text = "Create " & createType & " account"
+        createUserType = 1
+        createPanel.Visible = True
+    End Sub
+
+    Private Sub pharmacistAdd_Click(sender As Object, e As EventArgs) Handles pharmacistAdd.Click
+        createType = "pharmacist"
+        createLabel.Text = "Create " & createType & " account"
+        createUserType = 2
+        createPanel.Visible = True
+    End Sub
+
+    Private Sub custodianAdd_Click(sender As Object, e As EventArgs) Handles custodianAdd.Click
+        createType = "custodian"
+        createLabel.Text = "Create " & createType & " account"
+        createUserType = 3
+        createPanel.Visible = True
+    End Sub
+
+    Private Async Sub createAccount_Click(sender As Object, e As EventArgs) Handles createAccount.Click
+        Dim accountRepo As New AccountRepository()
+
+        Dim username As String = createUsername.Text
+        Dim password As String = createPassword.Text
+
+        Dim hash As New PasswordHashing(password)
+
+        Dim isUsernameExists As Boolean = Await accountRepo.CheckDuplicate(username)
+
+        If isUsernameExists Then
+            MessageBox.Show("Username Exist")
+            Return
+        End If
+
+        Dim hashedPassword As String = hash.hashCombinedDisplay
+
+        Await AdminRepository.AddNewAccount(username, createUserType, hashedPassword)
+        createPanel.Visible = False
+        MessageBox.Show("okay na pookie", "Confirmation")
+    End Sub
+
+    Private Sub cancelAccount_Click(sender As Object, e As EventArgs) Handles cancelAccount.Click
+        createPanel.Visible = False
     End Sub
 End Class
