@@ -2,6 +2,7 @@
 
 Public Class pharmaViewTransaction
     Dim transactions As New Transaction()
+    Dim allOrderMeds As List(Of Transaction)
     Public Sub New(transac As Transaction)
         Me.transactions = transac
 
@@ -11,12 +12,15 @@ Public Class pharmaViewTransaction
         Me.Close()
     End Sub
     Public Async Function LoadAllOrderMeds() As Task
-        username.Text = transactions.Account.UserName
-        transactionid.Text = transactions.TransactionID
         flpItems.Controls.Clear()
 
         Dim transacRepo As New PharmaRepository()
-        Dim allOrderMeds As List(Of Transaction) = Await transacRepo.GetAllOrderMeds(transactions.TransactionID)
+        allOrderMeds = Await transacRepo.GetAllOrderMeds(transactions.TransactionID)
+
+        Dim totalItem As Decimal = getTotalSumOfItems(allOrderMeds)
+        totalamount.Text = $"Php {totalItem}"
+        username.Text = transactions.Account.UserName
+        transactionid.Text = transactions.TransactionID
 
         Dim batchSize As Integer = 5
 
@@ -33,7 +37,19 @@ Public Class pharmaViewTransaction
         Next
 
     End Function
+    Private Function getTotalSumOfItems(totalItems As List(Of Transaction)) As Decimal
+        Dim itemList As New List(Of Decimal)()
 
+        For Each item In totalItems
+            Dim itemPrice As Decimal = item.Medicine.MedicinePrice
+            Dim itemQuantity As Integer = item.Cart.Quantity
+            Dim totalItemPrice As Decimal = itemPrice * itemQuantity
+            itemList.Add(totalItemPrice)
+        Next
+
+        Dim totalSum As Decimal = itemList.Sum()
+        Return totalSum
+    End Function
     Private Async Sub pharmaViewTransaction_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Await LoadAllOrderMeds()
     End Sub

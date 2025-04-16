@@ -27,10 +27,10 @@ Partial Class PrescriptionPage
         MedIcon = New PictureBox()
         PrescInfoPanel = New Panel()
         DeleteApprovalBtn = New RoundedButton()
-        FlowLayoutPanel1 = New FlowLayoutPanel()
+        flpSidebar = New FlowLayoutPanel()
         PrescItem1 = New prescItem()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
-        FlowLayoutPanel1.SuspendLayout()
+        flpSidebar.SuspendLayout()
         SuspendLayout()
         ' 
         ' MedSubtext
@@ -38,7 +38,7 @@ Partial Class PrescriptionPage
         MedSubtext.AutoSize = True
         MedSubtext.Font = New Font("Century Gothic", 9.75F)
         MedSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedSubtext.Location = New Point(113, 84)
+        MedSubtext.Location = New Point(111, 62)
         MedSubtext.Name = "MedSubtext"
         MedSubtext.Size = New Size(191, 17)
         MedSubtext.TabIndex = 11
@@ -49,7 +49,7 @@ Partial Class PrescriptionPage
         Medicines.AutoSize = True
         Medicines.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         Medicines.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Medicines.Location = New Point(109, 54)
+        Medicines.Location = New Point(107, 32)
         Medicines.Name = "Medicines"
         Medicines.Size = New Size(155, 28)
         Medicines.TabIndex = 10
@@ -58,7 +58,7 @@ Partial Class PrescriptionPage
         ' MedIcon
         ' 
         MedIcon.Image = My.Resources.Resources.prescription
-        MedIcon.Location = New Point(40, 46)
+        MedIcon.Location = New Point(38, 24)
         MedIcon.Name = "MedIcon"
         MedIcon.Size = New Size(67, 57)
         MedIcon.SizeMode = PictureBoxSizeMode.Zoom
@@ -69,9 +69,9 @@ Partial Class PrescriptionPage
         ' 
         PrescInfoPanel.AutoScroll = True
         PrescInfoPanel.BorderStyle = BorderStyle.FixedSingle
-        PrescInfoPanel.Location = New Point(379, 32)
+        PrescInfoPanel.Location = New Point(355, 32)
         PrescInfoPanel.Name = "PrescInfoPanel"
-        PrescInfoPanel.Size = New Size(796, 607)
+        PrescInfoPanel.Size = New Size(843, 607)
         PrescInfoPanel.TabIndex = 14
         ' 
         ' DeleteApprovalBtn
@@ -87,15 +87,16 @@ Partial Class PrescriptionPage
         DeleteApprovalBtn.Text = "Delete Approval"
         DeleteApprovalBtn.UseVisualStyleBackColor = False
         ' 
-        ' FlowLayoutPanel1
+        ' flpSidebar
         ' 
-        FlowLayoutPanel1.Controls.Add(PrescItem1)
-        FlowLayoutPanel1.FlowDirection = FlowDirection.TopDown
-        FlowLayoutPanel1.Location = New Point(40, 120)
-        FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        FlowLayoutPanel1.Padding = New Padding(18, 15, 18, 0)
-        FlowLayoutPanel1.Size = New Size(311, 519)
-        FlowLayoutPanel1.TabIndex = 27
+        flpSidebar.BorderStyle = BorderStyle.FixedSingle
+        flpSidebar.Controls.Add(PrescItem1)
+        flpSidebar.FlowDirection = FlowDirection.TopDown
+        flpSidebar.Location = New Point(38, 97)
+        flpSidebar.Name = "flpSidebar"
+        flpSidebar.Padding = New Padding(18, 15, 18, 0)
+        flpSidebar.Size = New Size(311, 542)
+        flpSidebar.TabIndex = 27
         ' 
         ' PrescItem1
         ' 
@@ -113,7 +114,7 @@ Partial Class PrescriptionPage
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1210, 720)
-        Controls.Add(FlowLayoutPanel1)
+        Controls.Add(flpSidebar)
         Controls.Add(DeleteApprovalBtn)
         Controls.Add(PrescInfoPanel)
         Controls.Add(MedSubtext)
@@ -123,7 +124,7 @@ Partial Class PrescriptionPage
         Name = "PrescriptionPage"
         Text = "PrescriptionPage"
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
-        FlowLayoutPanel1.ResumeLayout(False)
+        flpSidebar.ResumeLayout(False)
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -133,6 +134,6 @@ Partial Class PrescriptionPage
     Friend WithEvents MedIcon As PictureBox
     Friend WithEvents PrescInfoPanel As Panel
     Friend WithEvents DeleteApprovalBtn As RoundedButton
-    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
+    Friend WithEvents flpSidebar As FlowLayoutPanel
     Friend WithEvents PrescItem1 As prescItem
 End Class

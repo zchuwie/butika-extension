@@ -69,7 +69,7 @@ Partial Class MedicinePage
         Medicines.AutoSize = True
         Medicines.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         Medicines.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Medicines.Location = New Point(96, 25)
+        Medicines.Location = New Point(121, 22)
         Medicines.Name = "Medicines"
         Medicines.Size = New Size(132, 28)
         Medicines.TabIndex = 0
@@ -80,7 +80,7 @@ Partial Class MedicinePage
         MedSubtext.AutoSize = True
         MedSubtext.Font = New Font("Century Gothic", 9.75F)
         MedSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedSubtext.Location = New Point(97, 55)
+        MedSubtext.Location = New Point(122, 52)
         MedSubtext.Name = "MedSubtext"
         MedSubtext.Size = New Size(222, 17)
         MedSubtext.TabIndex = 1
@@ -185,7 +185,7 @@ Partial Class MedicinePage
         ' MedIcon
         ' 
         MedIcon.Image = My.Resources.Resources.medIcon
-        MedIcon.Location = New Point(28, 17)
+        MedIcon.Location = New Point(49, 12)
         MedIcon.Name = "MedIcon"
         MedIcon.Size = New Size(67, 64)
         MedIcon.SizeMode = PictureBoxSizeMode.Zoom
@@ -241,6 +241,7 @@ Partial Class MedicinePage
         ' MedicineDisplayPanel
         ' 
         MedicineDisplayPanel.AutoScroll = True
+        MedicineDisplayPanel.BorderStyle = BorderStyle.FixedSingle
         MedicineDisplayPanel.Location = New Point(49, 132)
         MedicineDisplayPanel.Name = "MedicineDisplayPanel"
         MedicineDisplayPanel.Padding = New Padding(10)

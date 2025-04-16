@@ -3,11 +3,35 @@
 Public Class CartPage
 
 #Region "Functions"
-    Private Sub underlineFilter(ByVal all As Boolean, ByVal pending As Boolean, ByVal ready As Boolean, ByVal declined As Boolean)
+    Private Sub underlineFilter(all As Boolean, pending As Boolean, ready As Boolean, declined As Boolean)
         AllItemsUnderline.Visible = all
         PendingUnderline.Visible = pending
         ReadyUnderline.Visible = ready
         DeclinedUnderline.Visible = declined
+
+        If all = True Then
+            AllItems.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            AllItems.ForeColor = Color.Gray
+        End If
+
+        If pending = True Then
+            PendingLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            PendingLbl.ForeColor = Color.Gray
+        End If
+
+        If ready = True Then
+            ReadyLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            ReadyLbl.ForeColor = Color.Gray
+        End If
+
+        If declined = True Then
+            DeclinedLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            DeclinedLbl.ForeColor = Color.Gray
+        End If
     End Sub
 
 #End Region
@@ -23,7 +47,7 @@ Public Class CartPage
 
     End Sub
 
-    Private Async Sub Pending_Click(sender As Object, e As EventArgs) Handles Pending.Click
+    Private Async Sub Pending_Click(sender As Object, e As EventArgs) Handles PendingLbl.Click
         underlineFilter(False, True, False, False)
         Await displaySpecificCartUser(0)
         panelSelected = 0
@@ -35,13 +59,13 @@ Public Class CartPage
         panelSelected = -1
     End Sub
 
-    Private Async Sub Ready_Click(sender As Object, e As EventArgs) Handles Ready.Click
+    Private Async Sub Ready_Click(sender As Object, e As EventArgs) Handles ReadyLbl.Click
         underlineFilter(False, False, True, False)
         Await displaySpecificCartUser(1)
         panelSelected = 1
     End Sub
 
-    Private Async Sub Declined_Click(sender As Object, e As EventArgs) Handles Declined.Click
+    Private Async Sub Declined_Click(sender As Object, e As EventArgs) Handles DeclinedLbl.Click
         underlineFilter(False, False, False, True)
         Await displaySpecificCartUser(2)
         panelSelected = 2

@@ -39,6 +39,8 @@ Public Class PharmaRepository
                 uc.transaction_id AS TransactionID,
                 med.drug_id AS MedicineID,
                 med.drug_name AS MedicineName,
+                med.drug_manufacturer AS MedicineManufacturer,
+                med.drug_price AS MedicinePrice,
                 uc.quantity AS Quantity
             FROM userscheckout uc
             LEFT JOIN drug_inventory med ON uc.drug_id = med.drug_id
@@ -67,7 +69,6 @@ Public Class PharmaRepository
             Dim query = "
                 SELECT 
                     up.prescription_id AS PrescriptionId,
-                    up.user_id AS UserID,
                     up.user_id AS UserID,
                     up.patient_name AS PatientName,
                     up.patient_age AS PatientAge,
@@ -132,7 +133,7 @@ Public Class PharmaRepository
                     ut.transaction_date AS TransactionDate,
                     ut.user_id AS UserID,
                     ua.username AS UserName,
-                    ua.user_id AS AccountUserID
+                    ua.user_id AS UserID
                 FROM usertransaction ut
                 LEFT JOIN useraccount ua ON ut.user_id = ua.user_id
                 ORDER BY ut.transaction_date ASC
@@ -146,7 +147,7 @@ Public Class PharmaRepository
                 End Function,
                 splitOn:="UserName"
             )
-            Return result.ToList()
+            Return If(result?.ToList(), New List(Of Transaction)())
         End Using
     End Function
     Public Async Function SortDescendingDate() As Task(Of List(Of Transaction))
@@ -159,7 +160,7 @@ Public Class PharmaRepository
                     ut.transaction_date AS TransactionDate,
                     ut.user_id AS UserID,
                     ua.username AS UserName,
-                    ua.user_id AS AccountUserID
+                    ua.user_id AS UserID
                 FROM usertransaction ut
                 LEFT JOIN useraccount ua ON ut.user_id = ua.user_id
                 ORDER BY ut.transaction_date DESC
@@ -173,7 +174,7 @@ Public Class PharmaRepository
                 End Function,
                 splitOn:="UserName"
             )
-            Return result.ToList()
+            Return If(result?.ToList(), New List(Of Transaction)())
         End Using
     End Function
     ' pangsort sa prescriptions
@@ -273,7 +274,7 @@ Public Class PharmaRepository
                 New With {.transaction_id = $"%{transac}%"},
                 splitOn:="username"
                 )
-            Return result.ToList()
+            Return If(result?.ToList(), New List(Of Transaction)())
         End Using
     End Function
     Public Async Function SearchMedicine(medicine As String) As Task(Of List(Of Medicine))
