@@ -52,7 +52,7 @@ Public Class MedicinePanel_InventoryCustodian
     End Sub
 
 
-    Private Async Function loadMedicineBars() As Task
+    Public Async Function loadMedicineBars() As Task
         MedicineBarsDisplay.Controls.Clear()
 
         Dim medicineRepo As New MedicineRepository()

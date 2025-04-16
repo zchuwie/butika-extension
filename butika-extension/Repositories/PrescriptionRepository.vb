@@ -90,6 +90,28 @@ Public Class PrescriptionRepository
         End Using
     End Function
 
-
+    Public Async Function GetAllPrescriptions() As Task(Of List(Of Prescription))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT 
+                    prescription_id AS PrescriptionId,
+                    user_id AS UserID,
+                    patient_name AS PatientName,
+                    patient_age AS PatientAge,
+                    user_concern AS PatientConcern,
+                    doc_name AS DoctorName,
+                    doc_contact AS DoctorContact,
+                    clinic AS DoctorPlace,
+                    prescription_image AS PrescriptionImageName,
+                    remarks AS PrescriptionRemarks,
+                    status AS PrescriptionStatus,
+                    review_date AS PrescriptReviewDate,
+                    prescription_date AS PrescriptionDate
+                FROM userprescriptionform WHERE user_id = @user_id"
+            Dim result = Await conn.QueryAsync(Of Prescription)(query, New With {.user_id = account.UserID})
+            Return result.ToList()
+        End Using
+    End Function
 
 End Class

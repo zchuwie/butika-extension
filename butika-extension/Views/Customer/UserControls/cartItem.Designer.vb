@@ -57,7 +57,7 @@ Partial Class cartItem
         indicatorPanel.Location = New Point(0, 0)
         indicatorPanel.Name = "indicatorPanel"
         indicatorPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        indicatorPanel.Size = New Size(54, 134)
+        indicatorPanel.Size = New Size(54, 136)
         indicatorPanel.TabIndex = 1
         ' 
         ' Price
@@ -141,7 +141,6 @@ Partial Class cartItem
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BorderStyle = BorderStyle.FixedSingle
         Controls.Add(Quantity)
         Controls.Add(Manufacturer)
         Controls.Add(MedicineName)
@@ -151,7 +150,7 @@ Partial Class cartItem
         Controls.Add(indicatorPanel)
         Controls.Add(medicineImageBox)
         Name = "cartItem"
-        Size = New Size(755, 134)
+        Size = New Size(757, 136)
         CType(medicineImageBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()

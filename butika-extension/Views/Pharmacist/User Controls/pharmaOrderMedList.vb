@@ -6,7 +6,19 @@ Public Class pharmaOrderMedList
     Public Sub Initialize(transac As Transaction)
         Me.transactions = transac
 
-        mednameLbl.Text = transac.Medicine.FormattedMedicineName
+        Dim medName As String = transac.Medicine.FormattedMedicineName
+        Dim manufacturer As String = transac.Medicine.MedicineManufacturer
+
+        If medName.Length > 24 Then
+            medName = medName.Substring(0, 24) & "..."
+        End If
+
+        If manufacturer.Length > 15 Then
+            manufacturer = manufacturer.Substring(0, 15) & "..."
+        End If
+
+        mednameLbl.Text = medName
+        manufacturerLbl.Text = manufacturer
         quantityLbl.Text = transac.Cart.Quantity.ToString()
     End Sub
 End Class

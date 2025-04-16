@@ -1,8 +1,8 @@
 ﻿Imports System.IO
 Imports butika.Models
+Imports PdfSharp.Snippets.Drawing
 
 Public Class AddMedicinePanel_InventoryCustodian
-    Dim imagePathTextBox As String
     Private Sub exit_btn_Click(sender As Object, e As EventArgs) Handles exit_btn.Click
         Me.Close()
     End Sub
@@ -12,41 +12,20 @@ Public Class AddMedicinePanel_InventoryCustodian
         prescription_cbox.Items.Add("No")
     End Sub
 
+    Dim medicine As New Medicine
+    Dim imageName As String
+    Dim selectedImagePath As String
+
+
     Private Sub chooseImageButton_Click(sender As Object, e As EventArgs) Handles addimage_btn.Click
-        Using ofd As New OpenFileDialog()
-            ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png"
-            If ofd.ShowDialog() = DialogResult.OK Then
-                ' Get the selected image file path
-                Dim selectedImagePath As String = ofd.FileName
+        Using openFileDialog As New OpenFileDialog()
+            openFileDialog.Filter = "Image Files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg"
+            If openFileDialog.ShowDialog() = DialogResult.OK Then
+                selectedImagePath = openFileDialog.FileName ' Get the selected image's path
+                imageName = medicine.MedicineID.ToString() + Path.GetFileName(selectedImagePath)
 
-                ' Define the folder where the image will be saved (relative to the application folder)
-                Dim imageFolderPath As String = Path.Combine(Application.StartupPath, "drug_images")
-
-                ' Ensure the folder exists, create it if necessary
-                If Not Directory.Exists(imageFolderPath) Then
-                    Directory.CreateDirectory(imageFolderPath)
-                End If
-
-                ' Get the filename and extension of the selected image
-                Dim imageFileName As String = Path.GetFileName(selectedImagePath)
-                Dim targetImagePath As String = Path.Combine(imageFolderPath, imageFileName)
-
-                ' If the file already exists, append a number to make the name unique
-                Dim index As Integer = 1
-                While File.Exists(targetImagePath)
-                    targetImagePath = Path.Combine(imageFolderPath, Path.GetFileNameWithoutExtension(imageFileName) & $"({index})" & Path.GetExtension(imageFileName))
-                    index += 1
-                End While
-
-                ' Copy the selected image to the target folder
-                File.Copy(selectedImagePath, targetImagePath, overwrite:=False)
-
-                ' Optionally, show the image in a PictureBox (if you want to display the image in the form)
-                addimage_btn.Image = Image.FromFile(targetImagePath)
-
-                ' Store the path of the image in a textbox or hidden field (for use when saving to the database)
-                imagePathTextBox = imageFileName
             End If
+            addimage_btn.Image = Image.FromFile(selectedImagePath) ' Display the image in PictureBox
         End Using
     End Sub
 
@@ -97,8 +76,16 @@ Public Class AddMedicinePanel_InventoryCustodian
         .MedicinePrice = price,
         .MedicineStock = stock,
         .MedicineExpirationDate = expdate_datetime.Value,
-        .MedicineImageName = imagePathTextBox ' Assuming the image path is saved here
+        .MedicineImageName = imageName ' Assuming the image path is saved here
     }
+        Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
+        Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.DrugPathName)
+        Dim isImageSaved As Boolean = ImageInsertion.SaveImageToFolder(selectedImagePath, imageName, destinationFolder)
+
+        If Not isImageSaved Then
+            Debug.WriteLine("Image has not been saved.")
+            Return
+        End If
 
         ' Call the AddMedicine method from the MedicineRepository
         Dim repo As New MedicineRepository()
@@ -114,7 +101,8 @@ Public Class AddMedicinePanel_InventoryCustodian
         price_txtbox.Clear()
         stock_txtbox.Clear()
         expdate_datetime.Value = DateTime.Now
-        imagePathTextBox = ""
+        addimage_btn.Image = My.Resources.Group_78
+        imageName = ""
 
     End Sub
 

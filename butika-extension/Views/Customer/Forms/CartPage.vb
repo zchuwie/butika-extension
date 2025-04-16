@@ -3,11 +3,35 @@
 Public Class CartPage
 
 #Region "Functions"
-    Private Sub underlineFilter(ByVal all As Boolean, ByVal pending As Boolean, ByVal ready As Boolean, ByVal declined As Boolean)
+    Private Sub underlineFilter(all As Boolean, pending As Boolean, ready As Boolean, declined As Boolean)
         AllItemsUnderline.Visible = all
         PendingUnderline.Visible = pending
         ReadyUnderline.Visible = ready
         DeclinedUnderline.Visible = declined
+
+        If all = True Then
+            AllItems.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            AllItems.ForeColor = Color.Gray
+        End If
+
+        If pending = True Then
+            PendingLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            PendingLbl.ForeColor = Color.Gray
+        End If
+
+        If ready = True Then
+            ReadyLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            ReadyLbl.ForeColor = Color.Gray
+        End If
+
+        If declined = True Then
+            DeclinedLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        Else
+            DeclinedLbl.ForeColor = Color.Gray
+        End If
     End Sub
 
 #End Region
@@ -24,7 +48,7 @@ Public Class CartPage
 
     End Sub
 
-    Private Async Sub Pending_Click(sender As Object, e As EventArgs) Handles Pending.Click
+    Private Async Sub Pending_Click(sender As Object, e As EventArgs) Handles PendingLbl.Click
         underlineFilter(False, True, False, False)
         Await displaySpecificCartUser(0)
         panelSelected = 0
@@ -36,23 +60,52 @@ Public Class CartPage
         panelSelected = -1
     End Sub
 
-    Private Async Sub Ready_Click(sender As Object, e As EventArgs) Handles Ready.Click
+    Private Async Sub Ready_Click(sender As Object, e As EventArgs) Handles ReadyLbl.Click
         underlineFilter(False, False, True, False)
         Await displaySpecificCartUser(1)
         panelSelected = 1
     End Sub
 
-    Private Async Sub Declined_Click(sender As Object, e As EventArgs) Handles Declined.Click
+    Private Async Sub Declined_Click(sender As Object, e As EventArgs) Handles DeclinedLbl.Click
         underlineFilter(False, False, False, True)
         Await displaySpecificCartUser(2)
         panelSelected = 2
     End Sub
 
     Private Async Sub CartPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim cartRepo As New CartRepository(account)
         underlineFilter(True, False, False, False)
         Await displayAllCartUser()
-        TotalPriceTxt.Text = "₱" + getTotalSumOfItems(cartOfSelectedItem).ToString()
+        displayCheckoutPanel()
+
+        cartOfSelectedItem = Await cartRepo.GetCartInfoForCheckOutPanel()
+
+        If cartOfSelectedItem.Count = 0 Then
+            originalPrice.Visible = False
+        End If
+
+        If account.IsVerified = True Then
+            TotalPriceTxt.Text = "₱" & getTotalSumOfItems(cartOfSelectedItem, True).ToString()
+            Dim amountSaved As Decimal = getTotalSumOfItems(cartOfSelectedItem, False) - getTotalSumOfItems(cartOfSelectedItem, True).ToString()
+            originalPrice.Text = "You have saved " + "₱ " & amountSaved
+            originalPrice.Visible = True
+        Else
+            TotalPriceTxt.Text = "₱" & getTotalSumOfItems(cartOfSelectedItem, False).ToString()
+        End If
+
     End Sub
+
+    Function getTotalSumOfItems(cart As List(Of Cart), useDiscountedPrice As Boolean) As Decimal
+        Dim total As Decimal = 0
+
+        For Each item In cart
+            Dim price As Decimal = If(useDiscountedPrice, item.Medicine.DiscountedPrice, item.Medicine.MedicinePrice)
+            total += price * item.Quantity
+        Next
+
+        Return total
+    End Function
+
 
     Private Async Function displayAllCartUser() As Task
         CartPanel.Controls.Clear()
@@ -65,6 +118,20 @@ Public Class CartPage
             CartPanel.Controls.Add(cartItemControl)
         Next
     End Function
+
+    Private Async Sub displayCheckoutPanel()
+        OrderPanel.Controls.Clear()
+
+        Dim cartRepo As New CartRepository(account)
+
+        Dim checkoutCart As Stack(Of Cart) = Await cartRepo.GetCheckoutCart()
+
+        For Each item In checkoutCart
+            Dim cartItemControl As New checkoutItem(account)
+            cartItemControl.Initialize(item)
+            OrderPanel.Controls.Add(cartItemControl)
+        Next
+    End Sub
 
     Private Async Function displaySpecificCartUser(IsApproved As Integer) As Task
         CartPanel.Controls.Clear()
@@ -101,6 +168,8 @@ Public Class CartPage
         Else
             Await displayAllCartUser()
         End If
+
+        CartPage_Load(sender, e)
     End Sub
 
     Private Sub selectDeselectState()
@@ -231,11 +300,19 @@ Public Class CartPage
         Dim itemList As New List(Of Decimal)()
 
         For Each item In totalItems
-            Dim itemPrice As Decimal = item.Medicine.MedicinePrice
+            Dim itemPrice As Decimal
+
+            If account.IsVerified = 1 Then
+                itemPrice = item.Medicine.MedicinePrice
+            Else
+                itemPrice = item.Medicine.DiscountedPrice
+            End If
+
             Dim itemQuantity As Integer = item.Quantity
             Dim totalItemPrice As Decimal = itemPrice * itemQuantity
             itemList.Add(totalItemPrice)
         Next
+
 
         Dim totalSum As Decimal = itemList.Sum()
         Return totalSum
