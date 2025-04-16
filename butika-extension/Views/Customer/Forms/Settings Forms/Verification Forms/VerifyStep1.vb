@@ -1,5 +1,7 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel.Design
+Imports System.IO
 Imports butika.Models
+Imports Guna.UI2
 
 Public Class VerifyStep1
     Private userID As Integer
@@ -15,29 +17,54 @@ Public Class VerifyStep1
     Dim selectedImagePath As String
 
     Private Sub idImage_Click(sender As Object, e As EventArgs) Handles idImage.Click
-        Dim openFileDialog = New OpenFileDialog()
-        openFileDialog.Filter = "Image Files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg"
+        'Dim openFileDialog = New OpenFileDialog()
+        'openFileDialog.Filter = "Image Files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg"
 
-        If openFileDialog.ShowDialog() = DialogResult.OK Then
-            selectedImagePath = openFileDialog.FileName
-            imageName = Path.GetFileName(selectedImagePath).ToString()
+        'If openFileDialog.ShowDialog() = DialogResult.OK Then
+        '    selectedImagePath = openFileDialog.FileName
+        '    imageName = Path.GetFileName(selectedImagePath).ToString()
 
-            idImage.Image = Image.FromFile(selectedImagePath)
+        '    idImage.Image = Image.FromFile(selectedImagePath)
+        'End If
+
+        Using openFileDialog As New OpenFileDialog()
+            openFileDialog.Filter = "Image Files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg"
+            If openFileDialog.ShowDialog() = DialogResult.OK Then
+                selectedImagePath = openFileDialog.FileName ' Get the selected image's path
+                IdImgFileName.Text = Path.GetFileName(selectedImagePath) ' Set the file name in the label
+                imageName = account.UserName + Path.GetFileName(selectedImagePath)
+
+                If Not String.IsNullOrWhiteSpace(selectedImagePath) Then
+                    idImage.Image = Image.FromFile(selectedImagePath) ' Display the image in PictureBox
+                Else
+                    idImage.Image = My.Resources.verifyImage1
+                End If
+            End If
+        End Using
+    End Sub
+
+    Private Sub VerifyStep1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        IdImgFileName.Text = ""
+        idImage.Image = My.Resources.verifyImage1
+
+    End Sub
+
+    Private Sub CancelVerifyBtn_Click(sender As Object, e As EventArgs) Handles CancelVerifyBtn.Click
+        Me.Close()
+    End Sub
+
+    Private Sub SubmitIdBtn_Click(sender As Object, e As EventArgs) Handles SubmitIdBtn.Click
+        Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
+        Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.IdImgPathName)
+        Dim isImageSaved As Boolean = ImageInsertion.SaveImageToFolder(selectedImagePath, imageName, destinationFolder)
+
+        If Not isImageSaved Then
+            Debug.WriteLine("Image has not been saved.")
+            Return
         End If
 
-        'If (openFileDialog.ShowDialog() == DialogResult.OK) Then {
+        MessageBox.Show("You have successfully subitted your ID. Please proceed to the next step.", "Success", MessageBoxButtons.OK)
 
-        '            selectedImagePath = openFileDialog.FileName; // Get the selected image's path
-        '            prescriptionImageLbl.Text = Path.GetFileName(selectedImagePath); // Set the file name In the TextBox
-        '            imageName = Path.GetFileName(selectedImagePath).ToString();
-
-        '            If (!string.IsNullOrWhiteSpace(selectedImagePath)) Then {
-        '                clickAnywhereLbl.SendToBack();
-        '            } else {
-        '                clickAnywhereLbl.BringToFront();
-        '            }
-
-        '            imageView.Image = Image.FromFile(selectedImagePath); // Display the image In PictureBox
-
+        VerifyStep2.ShowDialog()
     End Sub
 End Class

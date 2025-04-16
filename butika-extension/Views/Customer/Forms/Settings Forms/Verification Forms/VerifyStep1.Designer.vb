@@ -24,6 +24,8 @@ Partial Class VerifyStep1
     Private Sub InitializeComponent()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         VerifyProfileSubtext = New Label()
         VerifyAccount = New Label()
         VerifyProgBar = New Panel()
@@ -33,6 +35,8 @@ Partial Class VerifyStep1
         VerifiedIcon = New PictureBox()
         SubmitIdBtn = New RoundedButton()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        IdImgFileName = New Label()
+        CancelVerifyBtn = New Guna.UI2.WinForms.Guna2Button()
         CType(idImage, ComponentModel.ISupportInitialize).BeginInit()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -117,7 +121,7 @@ Partial Class VerifyStep1
         SubmitIdBtn.CornerRadius = 8
         SubmitIdBtn.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
         SubmitIdBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        SubmitIdBtn.Location = New Point(369, 440)
+        SubmitIdBtn.Location = New Point(372, 473)
         SubmitIdBtn.Name = "SubmitIdBtn"
         SubmitIdBtn.Size = New Size(157, 38)
         SubmitIdBtn.TabIndex = 97
@@ -136,12 +140,46 @@ Partial Class VerifyStep1
         Guna2Panel1.Size = New Size(392, 254)
         Guna2Panel1.TabIndex = 98
         ' 
+        ' IdImgFileName
+        ' 
+        IdImgFileName.Font = New Font("Century Gothic", 8.75F)
+        IdImgFileName.ForeColor = Color.White
+        IdImgFileName.Location = New Point(255, 431)
+        IdImgFileName.Name = "IdImgFileName"
+        IdImgFileName.Size = New Size(392, 21)
+        IdImgFileName.TabIndex = 99
+        IdImgFileName.Text = "ID Image File Name"
+        IdImgFileName.TextAlign = ContentAlignment.MiddleCenter
+        ' 
+        ' CancelVerifyBtn
+        ' 
+        CancelVerifyBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelVerifyBtn.BorderRadius = 6
+        CancelVerifyBtn.BorderThickness = 1
+        CancelVerifyBtn.CustomizableEdges = CustomizableEdges3
+        CancelVerifyBtn.DisabledState.BorderColor = Color.DarkGray
+        CancelVerifyBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        CancelVerifyBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        CancelVerifyBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        CancelVerifyBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        CancelVerifyBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        CancelVerifyBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelVerifyBtn.Location = New Point(803, 587)
+        CancelVerifyBtn.Name = "CancelVerifyBtn"
+        CancelVerifyBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        CancelVerifyBtn.Size = New Size(81, 35)
+        CancelVerifyBtn.TabIndex = 100
+        CancelVerifyBtn.Text = "Cancel"
+        CancelVerifyBtn.Visible = False
+        ' 
         ' VerifyStep1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
+        Controls.Add(CancelVerifyBtn)
+        Controls.Add(IdImgFileName)
         Controls.Add(SubmitIdBtn)
         Controls.Add(VerifiedIcon)
         Controls.Add(Phase1Txt)
@@ -171,4 +209,6 @@ Partial Class VerifyStep1
     Friend WithEvents VerifiedIcon As PictureBox
     Friend WithEvents SubmitIdBtn As RoundedButton
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents IdImgFileName As Label
+    Friend WithEvents CancelVerifyBtn As Guna.UI2.WinForms.Guna2Button
 End Class

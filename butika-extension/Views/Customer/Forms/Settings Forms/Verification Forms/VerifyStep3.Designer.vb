@@ -87,7 +87,7 @@ Partial Class VerifyStep3
         ' 
         ' VerifyPendingImg
         ' 
-        VerifyPendingImg.Image = My.Resources.Resources.verifyVerified3
+        VerifyPendingImg.Image = My.Resources.Resources.verifyPending1
         VerifyPendingImg.InitialImage = My.Resources.Resources.verifyImage
         VerifyPendingImg.Location = New Point(225, 187)
         VerifyPendingImg.Name = "VerifyPendingImg"

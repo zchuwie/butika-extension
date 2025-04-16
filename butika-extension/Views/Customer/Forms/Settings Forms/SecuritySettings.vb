@@ -91,7 +91,8 @@ Public Class SecuritySettings
         '    Return
         'End If
 
-        MsgBox("Password updated successfully")
+        MessageBox.Show("Password updated successfully.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        'MsgBox("Password updated successfully")
         OldPasswordTxtbox.Text = ""
         NewPasswordTxtbox.Text = ""
         ConfirmPasswordTxtbox.Text = ""
@@ -132,7 +133,8 @@ Public Class SecuritySettings
             storedOldHash = oldPassHash.hashCombinedDisplay
 
             If storedOldHash <> account.Password Then
-                MsgBox("Wrong password. Try again.")
+                MessageBox.Show("Wrong password. Try again.", "Wrong Password", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+                'MsgBox("Wrong password. Try again.")
             Else
                 OldPasswordTxtbox.Enabled = False
                 NewPasswordTxtbox.Enabled = True

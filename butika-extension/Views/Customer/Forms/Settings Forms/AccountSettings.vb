@@ -163,15 +163,47 @@ Public Class AccountSettings
             .Contact = contact
         }
 
-        Dim updateContactSuccess = Await accountRep.UpdateProfileInfo(newContactInfo)
-        If updateContactSuccess Then
-            MessageBox.Show("An error occured. Try again.")
-            FillUpProfileInfo()
-            Return
-        End If
+        'Dim updateContactSuccess = Await accountRep.UpdateContactInfo(newContactInfo)
+
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "
+                 UPDATE userAccount 
+                 SET 
+                     email = @email, 
+                     contact = @contact
+                 WHERE user_id = @user_id;
+                 "
+
+                Debug.WriteLine("userid: " + account.UserID.ToString())
+
+                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
+                     .email = newContactInfo.Email,
+                     .contact = newContactInfo.Contact,
+                     .user_id = account.UserID
+                 })
+
+                'Return result <> 0
+
+
+            Catch ex As Exception
+                MessageBox.Show("Error updating contact: " & ex.Message)
+                'Return False
+                Return
+            End Try
+        End Using
+
+        'If updateContactSuccess Then
+        '    MessageBox.Show("An error occured. Try again.")
+        '    FillUpProfileInfo()
+        '    Return
+        'End If
 
         MessageBox.Show("Contact updated successfully")
     End Function
+
 #End Region
 
 #Region "Edit Profile"
@@ -259,7 +291,12 @@ Public Class AccountSettings
 #End Region
 
     Private Sub VerifyButton_Click(sender As Object, e As EventArgs) Handles VerifyButton.Click
-        Dim verify1 As New VerifyStep1(account)
-        verify1.ShowDialog()
+        If IsNothing(account.FirstName) Or IsNothing(account.MiddleInitial) Or IsNothing(account.LastName) Or IsNothing(account.UserName) Or IsNothing(account.BirthDate) Or IsNothing(account.Email) Or IsNothing(account.Contact) Then
+            MessageBox.Show("To verify your account, you must first fill in all your account information.", "Incomplete information?", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        Else
+            Dim verify1 As New VerifyStep1(account)
+            verify1.ShowDialog()
+        End If
+
     End Sub
 End Class
