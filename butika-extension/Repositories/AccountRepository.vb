@@ -53,8 +53,8 @@ Public Class AccountRepository
                 Dim hash As New PasswordHashing(acc.Password)
 
                 Dim query As String = "
-                INSERT INTO userAccount (username, email, password, date_joined) 
-                VALUES (@username, @email, @password, @date_joined);
+                INSERT INTO userAccount (username, email, password, date_joined, pendingVerify) 
+                VALUES (@username, @email, @password, @date_joined, @pendingVerify);
 
                 SELECT CAST(SCOPE_IDENTITY() AS INT);
                 "
@@ -63,7 +63,8 @@ Public Class AccountRepository
                 .username = acc.UserName,
                 .email = acc.Email,
                 .password = hash.hashCombinedDisplay,
-                .date_joined = acc.DateJoined
+                .date_joined = acc.DateJoined,
+                .pendingVerify = 0
             })
                 If userID <> 0 Then
                     Return Await InsertHashingData(hash, userID)
@@ -141,8 +142,7 @@ Public Class AccountRepository
                 Dim query As String = "SELECT email FROM userAccount WHERE email = @email"
 
                 Dim result As String = Await conn.ExecuteScalarAsync(Of String)(query, New With {
-                .email = email,
-                .status = "active"
+                .email = email
             })
 
                 Return result IsNot Nothing
@@ -300,6 +300,41 @@ Public Class AccountRepository
 
                 If result <> 0 Then
                     Await UpdateHashingData(hash, acc.UserID)
+                    Return True
+                End If
+
+                Return False
+
+            Catch ex As Exception
+                Debug.WriteLine("Error updating password: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+
+    Public Async Function SetPendingNum(acc As Account, ByVal value As Integer) As Task(Of Boolean)
+
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim hash As New PasswordHashing(acc.Password)
+
+                Dim query As String = "
+                 UPDATE userAccount 
+                 SET 
+                        pendingVerify = @pendingVerify
+                 WHERE user_id = @user_id;
+                 "
+
+                Debug.WriteLine("password userid: " + acc.UserID.ToString())
+
+                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
+                     .pendingVerify = value,
+                     .user_id = acc.UserID
+                 })
+
+                If result <> 0 Then
                     Return True
                 End If
 

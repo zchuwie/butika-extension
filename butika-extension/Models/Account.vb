@@ -13,6 +13,7 @@
         Public Property DateJoined As DateTime?
         Public Property IsVerified As Boolean
         Public Property ImageVerification As String
+        Public Property PendingVerify As Integer
 
     End Class
 End Namespace

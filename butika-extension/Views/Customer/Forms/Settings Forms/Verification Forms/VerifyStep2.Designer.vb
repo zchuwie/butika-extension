@@ -22,14 +22,16 @@ Partial Class VerifyStep2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         VerifySubtext = New Label()
         VerifyAccount = New Label()
         ProgBar = New Panel()
@@ -46,6 +48,7 @@ Partial Class VerifyStep2
         GoBackBtn = New Label()
         VerifiedIcon = New PictureBox()
         EnterCodeBtn = New RoundedButton()
+        GoBackToVerify1Btn = New Guna.UI2.WinForms.Guna2Button()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -116,7 +119,7 @@ Partial Class VerifyStep2
         ' 
         EmailCode1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EmailCode1.BorderRadius = 8
-        EmailCode1.CustomizableEdges = CustomizableEdges9
+        EmailCode1.CustomizableEdges = CustomizableEdges1
         EmailCode1.DefaultText = ""
         EmailCode1.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         EmailCode1.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -132,7 +135,7 @@ Partial Class VerifyStep2
         EmailCode1.Name = "EmailCode1"
         EmailCode1.PlaceholderText = ""
         EmailCode1.SelectedText = ""
-        EmailCode1.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        EmailCode1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         EmailCode1.Size = New Size(46, 60)
         EmailCode1.TabIndex = 85
         EmailCode1.TextAlign = HorizontalAlignment.Center
@@ -141,7 +144,7 @@ Partial Class VerifyStep2
         ' 
         EmailCode2.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EmailCode2.BorderRadius = 8
-        EmailCode2.CustomizableEdges = CustomizableEdges11
+        EmailCode2.CustomizableEdges = CustomizableEdges3
         EmailCode2.DefaultText = ""
         EmailCode2.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         EmailCode2.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -157,7 +160,7 @@ Partial Class VerifyStep2
         EmailCode2.Name = "EmailCode2"
         EmailCode2.PlaceholderText = ""
         EmailCode2.SelectedText = ""
-        EmailCode2.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        EmailCode2.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         EmailCode2.Size = New Size(46, 60)
         EmailCode2.TabIndex = 86
         EmailCode2.TextAlign = HorizontalAlignment.Center
@@ -166,7 +169,7 @@ Partial Class VerifyStep2
         ' 
         EmailCode3.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EmailCode3.BorderRadius = 8
-        EmailCode3.CustomizableEdges = CustomizableEdges13
+        EmailCode3.CustomizableEdges = CustomizableEdges5
         EmailCode3.DefaultText = ""
         EmailCode3.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         EmailCode3.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -182,7 +185,7 @@ Partial Class VerifyStep2
         EmailCode3.Name = "EmailCode3"
         EmailCode3.PlaceholderText = ""
         EmailCode3.SelectedText = ""
-        EmailCode3.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        EmailCode3.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         EmailCode3.Size = New Size(46, 60)
         EmailCode3.TabIndex = 87
         EmailCode3.TextAlign = HorizontalAlignment.Center
@@ -191,7 +194,7 @@ Partial Class VerifyStep2
         ' 
         EmailCode4.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EmailCode4.BorderRadius = 8
-        EmailCode4.CustomizableEdges = CustomizableEdges15
+        EmailCode4.CustomizableEdges = CustomizableEdges7
         EmailCode4.DefaultText = ""
         EmailCode4.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         EmailCode4.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -207,7 +210,7 @@ Partial Class VerifyStep2
         EmailCode4.Name = "EmailCode4"
         EmailCode4.PlaceholderText = ""
         EmailCode4.SelectedText = ""
-        EmailCode4.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        EmailCode4.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         EmailCode4.Size = New Size(46, 60)
         EmailCode4.TabIndex = 88
         EmailCode4.TextAlign = HorizontalAlignment.Center
@@ -277,12 +280,34 @@ Partial Class VerifyStep2
         EnterCodeBtn.Text = "Enter Code"
         EnterCodeBtn.UseVisualStyleBackColor = False
         ' 
+        ' GoBackToVerify1Btn
+        ' 
+        GoBackToVerify1Btn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        GoBackToVerify1Btn.BorderRadius = 6
+        GoBackToVerify1Btn.BorderThickness = 1
+        GoBackToVerify1Btn.CustomizableEdges = CustomizableEdges9
+        GoBackToVerify1Btn.DisabledState.BorderColor = Color.DarkGray
+        GoBackToVerify1Btn.DisabledState.CustomBorderColor = Color.DarkGray
+        GoBackToVerify1Btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        GoBackToVerify1Btn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        GoBackToVerify1Btn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        GoBackToVerify1Btn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        GoBackToVerify1Btn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        GoBackToVerify1Btn.Location = New Point(794, 587)
+        GoBackToVerify1Btn.Name = "GoBackToVerify1Btn"
+        GoBackToVerify1Btn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        GoBackToVerify1Btn.Size = New Size(90, 35)
+        GoBackToVerify1Btn.TabIndex = 101
+        GoBackToVerify1Btn.Text = "Go Back"
+        GoBackToVerify1Btn.Visible = False
+        ' 
         ' VerifyStep2
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
+        Controls.Add(GoBackToVerify1Btn)
         Controls.Add(EnterCodeBtn)
         Controls.Add(VerifiedIcon)
         Controls.Add(GoBackBtn)
@@ -323,4 +348,5 @@ Partial Class VerifyStep2
     Friend WithEvents GoBackBtn As Label
     Friend WithEvents VerifiedIcon As PictureBox
     Friend WithEvents EnterCodeBtn As RoundedButton
+    Friend WithEvents GoBackToVerify1Btn As Guna.UI2.WinForms.Guna2Button
 End Class
