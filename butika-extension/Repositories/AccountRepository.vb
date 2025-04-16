@@ -53,11 +53,9 @@ Public Class AccountRepository
                 Dim hash As New PasswordHashing(acc.Password)
 
                 Dim query As String = "
-                INSERT INTO userAccount (username, email, password, status, date_joined) 
-                VALUES (@username, @email, @password, @status, @date_joined);
+                INSERT INTO userAccount (username, email, password, date_joined) 
+                VALUES (@username, @email, @password, @date_joined);
 
-                INSERT INTO hashing (hashSalt, hashPass, isPassword) 
-                VALUES (
                 SELECT CAST(SCOPE_IDENTITY() AS INT);
                 "
 
@@ -65,13 +63,13 @@ Public Class AccountRepository
                 .username = acc.UserName,
                 .email = acc.Email,
                 .password = hash.hashCombinedDisplay,
-                .status = "active",
-                .date_joined = acc.DateJoined()
-                })
-
+                .date_joined = acc.DateJoined
+            })
                 If userID <> 0 Then
                     Return Await InsertHashingData(hash, userID)
                 End If
+
+                Return False
 
             Catch ex As Exception
                 MessageBox.Show("Error signing up: " & ex.Message)
@@ -119,11 +117,10 @@ Public Class AccountRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "SELECT username FROM userAccount WHERE username = @username AND status = @status"
+                Dim query As String = "SELECT username FROM userAccount WHERE username = @username"
 
                 Dim result As String = Await conn.ExecuteScalarAsync(Of String)(query, New With {
-                .username = username,
-                .status = "active"
+                .username = username
             })
 
                 Return result IsNot Nothing
@@ -211,13 +208,12 @@ Public Class AccountRepository
                 .birthdate = acc.BirthDate,
                 .user_id = acc.UserID
             })
-                If result <> 0 Then
-                    'Return Await InsertHashingData(Hash, userID)
-                    MessageBox.Show("Success.")
-                End If
+
+                Return result <> 0
 
             Catch ex As Exception
                 MessageBox.Show("Error updating info: " & ex.Message)
+                Return False
             End Try
         End Using
     End Function
@@ -247,14 +243,12 @@ Public Class AccountRepository
                      .user_id = acc.UserID
                  })
 
-                If Not result Then
-                    MessageBox.Show("An error occured. Try again.")
-                    Return False
-                End If
+                Return result <> 0
 
 
             Catch ex As Exception
                 MessageBox.Show("Error updating contact: " & ex.Message)
+                Return False
             End Try
         End Using
     End Function
@@ -288,18 +282,12 @@ Public Class AccountRepository
                      .user_id = acc.UserID
                  })
 
-                If result <> 0 Then
-                    Return Await UpdateHashingData(hash, acc.UserID)
-                End If
-
-                If Not result Then
-                    MessageBox.Show("An error occured. Try again.")
-                    Return False
-                End If
+                Return result <> 0
 
 
             Catch ex As Exception
-                MessageBox.Show("Error deactivating account: " & ex.Message)
+                MessageBox.Show("Error updating contact: " & ex.Message)
+                Return False
             End Try
         End Using
 
