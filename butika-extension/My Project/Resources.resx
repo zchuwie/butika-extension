@@ -121,6 +121,11 @@
   <data name="medIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medIcon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
+  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,6 +135,7 @@
   <data name="logout" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logout.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
   <data name="EditSecurityUnpressed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditSecurityUnpressed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -148,6 +154,9 @@
   <data name="ddashboard_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\ddashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sorticon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\sorticon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="editProfileUnpressed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editProfileUnpressed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,8 +166,13 @@
   <data name="verifyVerified3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verifyVerified3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+
   <data name="up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+
+  <data name="monthly" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\monthly.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+
   </data>
   <data name="EditSecurityPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditSecurityPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,14 +186,22 @@
   <data name="verifyImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verifyImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< inventory_custodian_BE2
   <data name="dprescription_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\dprescription_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="welcomehere" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\welcomehere.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
   <data name="dtransactions_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\dtransactions_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="greenbglogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\greenbglogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="account_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\account_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lmedicines_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\lmedicines_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,6 +263,12 @@
   <data name="logolandscapegreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\logolandscapegreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< inventory_custodian_BE2
+=======
+  <data name="logolandscapegreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\logolandscapegreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+>>>>>>> master
   <data name="editProfileUnpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editProfileUnpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -253,14 +281,22 @@
   <data name="ltransaction_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\ltransaction_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="verifyVerified1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verifyVerified1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VerifiedIcon - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VerifiedIcon - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< inventory_custodian_BE2
   <data name="pressedLogout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pressedLogout1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="EditSecurityUnpressed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditSecurityUnpressed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
   <data name="minusPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minusPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -274,13 +310,18 @@
   <data name="ldashboard_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\ldashboard_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="information" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\information.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dprescription_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\dprescription_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pills" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pills.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< inventory_custodian_BE2
   <data name="Group 78" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="dtransactions_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\elements\dtransactions_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> master
   </data>
 </root>

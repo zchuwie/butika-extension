@@ -36,7 +36,7 @@ Partial Class PrescriptionPage
         MedSubtext.AutoSize = True
         MedSubtext.Font = New Font("Century Gothic", 9.75F)
         MedSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedSubtext.Location = New Point(113, 84)
+        MedSubtext.Location = New Point(111, 62)
         MedSubtext.Name = "MedSubtext"
         MedSubtext.Size = New Size(191, 17)
         MedSubtext.TabIndex = 11
@@ -47,7 +47,7 @@ Partial Class PrescriptionPage
         Medicines.AutoSize = True
         Medicines.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         Medicines.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Medicines.Location = New Point(109, 54)
+        Medicines.Location = New Point(107, 32)
         Medicines.Name = "Medicines"
         Medicines.Size = New Size(155, 28)
         Medicines.TabIndex = 10
@@ -56,7 +56,7 @@ Partial Class PrescriptionPage
         ' MedIcon
         ' 
         MedIcon.Image = My.Resources.Resources.prescription
-        MedIcon.Location = New Point(40, 46)
+        MedIcon.Location = New Point(38, 24)
         MedIcon.Name = "MedIcon"
         MedIcon.Size = New Size(67, 57)
         MedIcon.SizeMode = PictureBoxSizeMode.Zoom
@@ -67,9 +67,9 @@ Partial Class PrescriptionPage
         ' 
         PrescInfoPanel.AutoScroll = True
         PrescInfoPanel.BorderStyle = BorderStyle.FixedSingle
-        PrescInfoPanel.Location = New Point(379, 32)
+        PrescInfoPanel.Location = New Point(355, 32)
         PrescInfoPanel.Name = "PrescInfoPanel"
-        PrescInfoPanel.Size = New Size(796, 607)
+        PrescInfoPanel.Size = New Size(843, 607)
         PrescInfoPanel.TabIndex = 14
         ' 
         ' DeleteApprovalBtn

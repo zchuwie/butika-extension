@@ -89,7 +89,6 @@ Partial Class MainPage
         ' 
         ' LogoutBtn
         ' 
-        LogoutBtn.BackgroundImageLayout = ImageLayout.Zoom
         LogoutBtn.CustomizableEdges = CustomizableEdges3
         LogoutBtn.DisabledState.BorderColor = Color.DarkGray
         LogoutBtn.DisabledState.CustomBorderColor = Color.DarkGray
