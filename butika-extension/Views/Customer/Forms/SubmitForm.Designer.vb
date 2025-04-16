@@ -22,22 +22,22 @@ Partial Class SubmitForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges31 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges32 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         CancelBtn = New Guna.UI2.WinForms.Guna2Button()
         SubmitBtn = New Guna.UI2.WinForms.Guna2Button()
         DrugListLbl = New Label()
@@ -68,7 +68,7 @@ Partial Class SubmitForm
         ' 
         ' CancelBtn
         ' 
-        CancelBtn.CustomizableEdges = CustomizableEdges17
+        CancelBtn.CustomizableEdges = CustomizableEdges1
         CancelBtn.DisabledState.BorderColor = Color.DarkGray
         CancelBtn.DisabledState.CustomBorderColor = Color.DarkGray
         CancelBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -77,14 +77,14 @@ Partial Class SubmitForm
         CancelBtn.ForeColor = Color.White
         CancelBtn.Location = New Point(238, 537)
         CancelBtn.Name = "CancelBtn"
-        CancelBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges18
+        CancelBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         CancelBtn.Size = New Size(138, 32)
         CancelBtn.TabIndex = 57
         CancelBtn.Text = "Cancel"
         ' 
         ' SubmitBtn
         ' 
-        SubmitBtn.CustomizableEdges = CustomizableEdges19
+        SubmitBtn.CustomizableEdges = CustomizableEdges3
         SubmitBtn.DisabledState.BorderColor = Color.DarkGray
         SubmitBtn.DisabledState.CustomBorderColor = Color.DarkGray
         SubmitBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -93,7 +93,7 @@ Partial Class SubmitForm
         SubmitBtn.ForeColor = Color.White
         SubmitBtn.Location = New Point(407, 537)
         SubmitBtn.Name = "SubmitBtn"
-        SubmitBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        SubmitBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         SubmitBtn.Size = New Size(138, 32)
         SubmitBtn.TabIndex = 56
         SubmitBtn.Text = "Submit"
@@ -169,7 +169,7 @@ Partial Class SubmitForm
         ' BriefInfoTextbox
         ' 
         BriefInfoTextbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        BriefInfoTextbox.CustomizableEdges = CustomizableEdges21
+        BriefInfoTextbox.CustomizableEdges = CustomizableEdges5
         BriefInfoTextbox.DefaultText = ""
         BriefInfoTextbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         BriefInfoTextbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -180,10 +180,11 @@ Partial Class SubmitForm
         BriefInfoTextbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         BriefInfoTextbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         BriefInfoTextbox.Location = New Point(21, 396)
+        BriefInfoTextbox.Multiline = True
         BriefInfoTextbox.Name = "BriefInfoTextbox"
         BriefInfoTextbox.PlaceholderText = ""
         BriefInfoTextbox.SelectedText = ""
-        BriefInfoTextbox.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        BriefInfoTextbox.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         BriefInfoTextbox.Size = New Size(429, 105)
         BriefInfoTextbox.TabIndex = 49
         ' 
@@ -202,7 +203,7 @@ Partial Class SubmitForm
         ' ContactTxtbox
         ' 
         ContactTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ContactTxtbox.CustomizableEdges = CustomizableEdges23
+        ContactTxtbox.CustomizableEdges = CustomizableEdges7
         ContactTxtbox.DefaultText = ""
         ContactTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         ContactTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -216,7 +217,7 @@ Partial Class SubmitForm
         ContactTxtbox.Name = "ContactTxtbox"
         ContactTxtbox.PlaceholderText = ""
         ContactTxtbox.SelectedText = ""
-        ContactTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges24
+        ContactTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         ContactTxtbox.Size = New Size(229, 30)
         ContactTxtbox.TabIndex = 47
         ' 
@@ -235,7 +236,7 @@ Partial Class SubmitForm
         ' ClinicTxtbox
         ' 
         ClinicTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ClinicTxtbox.CustomizableEdges = CustomizableEdges25
+        ClinicTxtbox.CustomizableEdges = CustomizableEdges9
         ClinicTxtbox.DefaultText = ""
         ClinicTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         ClinicTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -249,14 +250,14 @@ Partial Class SubmitForm
         ClinicTxtbox.Name = "ClinicTxtbox"
         ClinicTxtbox.PlaceholderText = ""
         ClinicTxtbox.SelectedText = ""
-        ClinicTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges26
+        ClinicTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         ClinicTxtbox.Size = New Size(229, 30)
         ClinicTxtbox.TabIndex = 45
         ' 
         ' DocNameTxtbox
         ' 
         DocNameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DocNameTxtbox.CustomizableEdges = CustomizableEdges27
+        DocNameTxtbox.CustomizableEdges = CustomizableEdges11
         DocNameTxtbox.DefaultText = ""
         DocNameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         DocNameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -270,7 +271,7 @@ Partial Class SubmitForm
         DocNameTxtbox.Name = "DocNameTxtbox"
         DocNameTxtbox.PlaceholderText = ""
         DocNameTxtbox.SelectedText = ""
-        DocNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges28
+        DocNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         DocNameTxtbox.Size = New Size(229, 30)
         DocNameTxtbox.TabIndex = 44
         ' 
@@ -313,7 +314,7 @@ Partial Class SubmitForm
         ' PatientAgeTxtbox
         ' 
         PatientAgeTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PatientAgeTxtbox.CustomizableEdges = CustomizableEdges29
+        PatientAgeTxtbox.CustomizableEdges = CustomizableEdges13
         PatientAgeTxtbox.DefaultText = ""
         PatientAgeTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         PatientAgeTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -327,14 +328,14 @@ Partial Class SubmitForm
         PatientAgeTxtbox.Name = "PatientAgeTxtbox"
         PatientAgeTxtbox.PlaceholderText = ""
         PatientAgeTxtbox.SelectedText = ""
-        PatientAgeTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges30
+        PatientAgeTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         PatientAgeTxtbox.Size = New Size(229, 30)
         PatientAgeTxtbox.TabIndex = 40
         ' 
         ' PatientNameTxtbox
         ' 
         PatientNameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        PatientNameTxtbox.CustomizableEdges = CustomizableEdges31
+        PatientNameTxtbox.CustomizableEdges = CustomizableEdges15
         PatientNameTxtbox.DefaultText = ""
         PatientNameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         PatientNameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -348,7 +349,7 @@ Partial Class SubmitForm
         PatientNameTxtbox.Name = "PatientNameTxtbox"
         PatientNameTxtbox.PlaceholderText = ""
         PatientNameTxtbox.SelectedText = ""
-        PatientNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges32
+        PatientNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         PatientNameTxtbox.Size = New Size(229, 30)
         PatientNameTxtbox.TabIndex = 39
         ' 

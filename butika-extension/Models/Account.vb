@@ -10,7 +10,6 @@
         Public Property Password As String
         Public Property Contact As String
         Public Property BirthDate As DateTime?
-        Public Property Status As String
         Public Property DateJoined As DateTime?
         Public Property IsVerified As Boolean
         Public Property ImageVerification As String

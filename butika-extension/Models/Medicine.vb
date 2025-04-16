@@ -14,9 +14,9 @@ Namespace Models
         Public Property MedicineType As String
         Public Property MedicinePrescription As Integer
         Public Property MedicineStock As Integer
-        Public Property MedicineExpirationDate As DateTime
-        Public Property MedicineDateAdded As DateTime
-        Public Property MedicineLastUpdated As DateTime
+        Public Property MedicineExpirationDate As DateTime?
+        Public Property MedicineDateAdded As DateTime?
+        Public Property MedicineLastUpdated As DateTime?
         Public Property MedicineFullName As String
         Public Property MedicineTickBox As Boolean
 
@@ -29,6 +29,12 @@ Namespace Models
         Public ReadOnly Property FormattedMedicineName As String
             Get
                 Return HelperMethod.RemoveCommaAndCapitalizeWords(MedicineName)
+            End Get
+        End Property
+
+        Public ReadOnly Property DiscountedPrice As Decimal
+            Get
+                Return MedicinePrice - (MedicinePrice * 0.2)
             End Get
         End Property
     End Class
