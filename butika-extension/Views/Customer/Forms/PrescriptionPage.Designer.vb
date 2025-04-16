@@ -67,7 +67,7 @@ Partial Class PrescriptionPage
         PrescInfoPanel.BorderStyle = BorderStyle.FixedSingle
         PrescInfoPanel.Location = New Point(388, 54)
         PrescInfoPanel.Name = "PrescInfoPanel"
-        PrescInfoPanel.Size = New Size(796, 607)
+        PrescInfoPanel.Size = New Size(843, 607)
         PrescInfoPanel.TabIndex = 14
         ' 
         ' prescriptionListPanel

@@ -6,6 +6,7 @@ Public Class pharmaPrescriptItem
         Me.prescription = prescript
 
         prescriptIdLbl.Text = prescript.PrescriptionId.ToString()
+        usernameLbl.Text = prescript.Account.UserName
         patientLbl.Text = prescript.PatientName
         dateLbl.Text = prescript.PrescriptionDate
     End Sub

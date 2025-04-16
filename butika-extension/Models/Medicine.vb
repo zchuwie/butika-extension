@@ -20,6 +20,7 @@ Namespace Models
         Public Property MedicineFullName As String
         Public Property MedicineTickBox As Boolean
 
+
         Public ReadOnly Property MedicineImagePath As String
             Get
                 Return GetImagePath.DrugPathName + "\\" + MedicineImageName
@@ -37,7 +38,14 @@ Namespace Models
                 Return MedicinePrice - (MedicinePrice * 0.2)
             End Get
         End Property
+
+
+        Public Property StockRequestStatus As String
+        Public Property StockRequestedDate As DateTime?
+        Public Property StockQuantityRequest As Integer
+        Public Property StockReportID As Integer
+        Public Property StockLastUpdated As DateTime?
+
+
     End Class
-
-
 End Namespace

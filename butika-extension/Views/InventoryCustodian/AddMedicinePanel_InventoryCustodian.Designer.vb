@@ -53,8 +53,6 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges35 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges36 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges33 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -113,6 +111,8 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Dim CustomizableEdges86 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges87 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges88 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         LabelPanel = New Guna.UI2.WinForms.Guna2GradientPanel()
         Guna2CustomGradientPanel13 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         prescription_combobox = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -132,7 +132,6 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2CustomGradientPanel16 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Guna2PictureBox9 = New Guna.UI2.WinForms.Guna2PictureBox()
         Guna2HtmlLabel14 = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        expdate_datetime = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Guna2CustomGradientPanel10 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Guna2CustomGradientPanel11 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Guna2PictureBox6 = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -177,6 +176,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         add_medicine_btn = New Guna.UI2.WinForms.Guna2Button()
         medicine_name_txtbox = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2HtmlLabel10 = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        expdate_datetime = New Guna.UI2.WinForms.Guna2DateTimePicker()
         LabelPanel.SuspendLayout()
         Guna2CustomGradientPanel13.SuspendLayout()
         prescription_combobox.SuspendLayout()
@@ -472,7 +472,7 @@ Partial Class AddMedicinePanel_InventoryCustodian
         addimage_btn.FillColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         addimage_btn.Font = New Font("Century Gothic", 7.8F, FontStyle.Bold)
         addimage_btn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        addimage_btn.Image = CType(resources.GetObject("addimage_btn.Image"), Image)
+        addimage_btn.Image = My.Resources.Resources.Group_78
         addimage_btn.ImageSize = New Size(23, 25)
         addimage_btn.Location = New Point(526, 405)
         addimage_btn.Name = "addimage_btn"
@@ -553,27 +553,6 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2HtmlLabel14.Size = New Size(152, 18)
         Guna2HtmlLabel14.TabIndex = 17
         Guna2HtmlLabel14.Text = "Expiration Date"
-        ' 
-        ' expdate_datetime
-        ' 
-        expdate_datetime.Anchor = AnchorStyles.Top
-        expdate_datetime.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
-        expdate_datetime.BorderRadius = 7
-        expdate_datetime.BorderThickness = 1
-        expdate_datetime.Checked = True
-        expdate_datetime.CustomizableEdges = CustomizableEdges29
-        expdate_datetime.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        expdate_datetime.Font = New Font("Segoe UI Semibold", 8F, FontStyle.Bold)
-        expdate_datetime.Format = DateTimePickerFormat.Short
-        expdate_datetime.Location = New Point(237, 491)
-        expdate_datetime.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        expdate_datetime.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        expdate_datetime.Name = "expdate_datetime"
-        expdate_datetime.ShadowDecoration.CustomizableEdges = CustomizableEdges30
-        expdate_datetime.Size = New Size(266, 36)
-        expdate_datetime.TabIndex = 27
-        expdate_datetime.TextOffset = New Point(10, 0)
-        expdate_datetime.Value = New Date(2025, 3, 30, 15, 55, 35, 357)
         ' 
         ' Guna2CustomGradientPanel10
         ' 
@@ -1306,6 +1285,27 @@ Partial Class AddMedicinePanel_InventoryCustodian
         Guna2HtmlLabel10.TabIndex = 17
         Guna2HtmlLabel10.Text = "Dosage"
         ' 
+        ' expdate_datetime
+        ' 
+        expdate_datetime.Anchor = AnchorStyles.Top
+        expdate_datetime.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(50))
+        expdate_datetime.BorderRadius = 7
+        expdate_datetime.BorderThickness = 1
+        expdate_datetime.Checked = True
+        expdate_datetime.CustomizableEdges = CustomizableEdges29
+        expdate_datetime.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        expdate_datetime.Font = New Font("Segoe UI Semibold", 8F, FontStyle.Bold)
+        expdate_datetime.Format = DateTimePickerFormat.Short
+        expdate_datetime.Location = New Point(237, 491)
+        expdate_datetime.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        expdate_datetime.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        expdate_datetime.Name = "expdate_datetime"
+        expdate_datetime.ShadowDecoration.CustomizableEdges = CustomizableEdges30
+        expdate_datetime.Size = New Size(266, 36)
+        expdate_datetime.TabIndex = 27
+        expdate_datetime.TextOffset = New Point(10, 0)
+        expdate_datetime.Value = New Date(2025, 3, 30, 15, 55, 35, 357)
+        ' 
         ' AddMedicinePanel_InventoryCustodian
         ' 
         AutoScaleDimensions = New SizeF(6F, 14F)
@@ -1403,7 +1403,6 @@ Partial Class AddMedicinePanel_InventoryCustodian
     Friend WithEvents Guna2CustomGradientPanel16 As Guna.UI2.WinForms.Guna2CustomGradientPanel
     Friend WithEvents Guna2PictureBox9 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel14 As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents expdate_datetime As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents addimage_btn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2PictureBox10 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel15 As Guna.UI2.WinForms.Guna2HtmlLabel
@@ -1418,4 +1417,5 @@ Partial Class AddMedicinePanel_InventoryCustodian
     Friend WithEvents Guna2PictureBox8 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2HtmlLabel13 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents prescription_cbox As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents expdate_datetime As Guna.UI2.WinForms.Guna2DateTimePicker
 End Class

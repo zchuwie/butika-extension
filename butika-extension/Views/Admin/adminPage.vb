@@ -44,6 +44,11 @@ Partial Public Class adminPage
         ShowFormInPanel(New adminDiscounts)
     End Sub
 
+    ' Event handler for adminDiscount button click
+    Private Sub adminStock_Click(sender As Object, e As EventArgs) Handles adminStock.Click
+        ShowFormInPanel(New adminStock)
+    End Sub
+
     ' Event handler for adminExit button click
     Private Sub adminExit_Click(sender As Object, e As EventArgs) Handles adminExit.Click
         Dim loginForm As New Login()

@@ -42,7 +42,7 @@ Public Class AdminRepository
     End Function
 
     Public Shared Async Function GetActiveUserCountAsync() As Task(Of Integer)
-        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount WHERE status = 'active'")
+        Return Await GetCountAsync("SELECT COUNT(report_id) FROM stockReport WHERE stockRequestStatus = 0")
     End Function
 
     Public Shared Async Function GetPendingDiscountCountAsync() As Task(Of Integer)
@@ -314,16 +314,15 @@ Public Class AdminRepository
         dt.Columns.Add("ID", GetType(Integer))
         dt.Columns.Add("Username", GetType(String))
         dt.Columns.Add("Email", GetType(String))
-        dt.Columns.Add("Status", GetType(String))
         dt.Columns.Add("Birth_Date", GetType(DateTime))
         dt.Columns.Add("Contact", GetType(String))
         dt.Columns.Add("Date_Joined", GetType(DateTime))
         dt.Columns.Add("Type", GetType(Integer))
 
-        Dim baseQuery As String = "SELECT user_id AS ID, username AS Username, email AS Email, status AS Status, birthdate AS Birth_Date, contact AS Contact, date_joined as Date_Joined, userType as Type FROM useraccount"
+        Dim baseQuery As String = "SELECT user_id AS ID, username AS Username, email AS Email, birthdate AS Birth_Date, contact AS Contact, date_joined as Date_Joined, userType as Type FROM useraccount"
 
         If Not String.IsNullOrWhiteSpace(statusFilter) Then
-            baseQuery &= " WHERE status = @status"
+            baseQuery &= " WHERE usertype = @usertype"
         End If
 
         Try
@@ -331,13 +330,13 @@ Public Class AdminRepository
               cmd As New SqlCommand(baseQuery, conn)
 
                 If Not String.IsNullOrWhiteSpace(statusFilter) Then
-                    cmd.Parameters.AddWithValue("@status", statusFilter)
+                    cmd.Parameters.AddWithValue("@usertype", statusFilter)
                 End If
 
                 Await conn.OpenAsync()
                 Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
                     While Await reader.ReadAsync()
-                        dt.Rows.Add(reader("ID"), reader("Username"), reader("Email"), reader("Status"), reader("Birth_Date"), reader("Contact"), reader("Date_Joined"), reader("Type"))
+                        dt.Rows.Add(reader("ID"), reader("Username"), reader("Email"), reader("Birth_Date"), reader("Contact"), reader("Date_Joined"), reader("Type"))
                     End While
                 End Using
             End Using
@@ -348,9 +347,25 @@ Public Class AdminRepository
         Return dt
     End Function
 
+    Public Shared Async Function GetCustomerCount() As Task(Of Integer)
+        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount WHERE usertype = 0")
+    End Function
+
+    Public Shared Async Function GetAdminCount() As Task(Of Integer)
+        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount WHERE usertype = 1")
+    End Function
+
+    Public Shared Async Function GetPharmacistCount() As Task(Of Integer)
+        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount WHERE usertype = 2")
+    End Function
+
+    Public Shared Async Function GetCustodianCount() As Task(Of Integer)
+        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount WHERE usertype = 3")
+    End Function
+
     Public Shared Async Function GetUserDetailsById(userId As Integer) As Task(Of DataRow)
         Dim dt As New DataTable()
-        Dim query As String = "SELECT user_id AS ID, username, email, status, birthdate, contact, date_joined, userType, fullname, first_name, last_name, middle_initial FROM useraccount WHERE user_id = @userId"
+        Dim query As String = "SELECT user_id AS ID, username, email, birthdate, contact, date_joined, userType, fullname, first_name, last_name, middle_initial FROM useraccount WHERE user_id = @userId"
 
         Try
             Using conn As SqlConnection = DatabaseConnection.GetConnection(),
@@ -373,24 +388,6 @@ Public Class AdminRepository
         End If
     End Function
 
-    Public Shared Async Function UpdateUserStatus(userId As Integer, newStatus As String) As Task
-        Dim query As String = "UPDATE useraccount SET status = @status WHERE user_id = @userId"
-
-        Try
-            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
-                  cmd As New SqlCommand(query, conn)
-
-                cmd.Parameters.AddWithValue("@status", newStatus)
-                cmd.Parameters.AddWithValue("@userId", userId)
-
-                Await conn.OpenAsync()
-                Await cmd.ExecuteNonQueryAsync()
-            End Using
-        Catch ex As Exception
-            Console.WriteLine("Error updating user status: " & ex.Message)
-        End Try
-    End Function
-
     Public Shared Async Function UpdateUserDetails(userId As Integer, updatedEmail As String, updatedPhone As String) As Task
         Dim query As String = "UPDATE useraccount SET email = @Email, contact = @Contact WHERE user_id = @UserId"
 
@@ -407,6 +404,29 @@ Public Class AdminRepository
             End Using
         Catch ex As Exception
             Console.WriteLine("Database Error: " & ex.Message)
+        End Try
+    End Function
+
+    Public Shared Async Function AddNewAccount(username As String, usertype As Integer, user_pw As String) As Task(Of Boolean)
+        Try
+            Dim query As String = "INSERT INTO useraccount (username, password, usertype) 
+                               VALUES (@Username, @Password, @UserType)"
+
+            Dim parameters As New With {
+            Key .Username = username,
+            Key .Password = user_pw,
+            Key .UserType = usertype
+        }
+
+            Using conn As SqlConnection = DatabaseConnection.GetConnection()
+                Await conn.OpenAsync()
+                Dim rowsAffected = Await conn.ExecuteAsync(query, parameters)
+
+                Return rowsAffected = 1
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Error while adding new account: " & ex.Message)
+            Return False
         End Try
     End Function
 #End Region
@@ -540,6 +560,10 @@ Public Class AdminRepository
 
         Return False
     End Function
+#End Region
+
+#Region "Stock"
+
 #End Region
 
 

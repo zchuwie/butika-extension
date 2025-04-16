@@ -116,8 +116,7 @@ Public Class MedicineRepository
             drug_piece = @MedicinePiece,
             drug_image = @MedicineImageName,
             drug_type = @MedicineType,
-            prescription_needed = @MedicinePrescription,
-            drug_stocks = @MedicineStock,
+            prescription_needed = @MedicinePrescription, 
             expiration_date = @MedicineExpirationDate,
             isSelected = @MedicineTickBox,
             date_updated = @MedicineLastUpdated
@@ -137,7 +136,6 @@ Public Class MedicineRepository
             medicine.MedicineImageName,
             medicine.MedicineType,
             medicine.MedicinePrescription,
-            medicine.MedicineStock,
             medicine.MedicineExpirationDate,
             medicine.MedicineTickBox,
             medicine.MedicineLastUpdated,
@@ -174,6 +172,66 @@ Public Class MedicineRepository
 
 
     End Function
+
+    Public Async Function SubmitStockRequest(medicine As Medicine) As Task
+        Using conn = DatabaseConnection.GetConnection
+            Await conn.OpenAsync()
+
+            Dim query As String = "
+            INSERT INTO stockReport (
+                stockRequestStatus, 
+                stockQuantityRequest, 
+                medicine_id, 
+                stockDateRequested
+            )
+            VALUES (
+                @Status, 
+                @Quantity, 
+                @MedicineID, 
+                @DateRequested
+            );"
+
+            Dim parameters = New With {
+                .Status = 0,
+                .Quantity = medicine.StockQuantityRequest,
+                .MedicineID = medicine.MedicineID,
+                .DateRequested = DateTime.Now
+            }
+
+            Await conn.ExecuteAsync(query, parameters)
+        End Using
+    End Function
+
+    Public Async Function IsDuplicateStockRequest(medicineId As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+
+            Dim query As String = "
+            SELECT COUNT(*) 
+            FROM stockReport 
+            WHERE medicine_id = @MedicineID AND stockRequestStatus = 0"
+
+            Dim count As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {.MedicineID = medicineId})
+
+            Return count > 0
+        End Using
+    End Function
+
+    Public Async Function IsStockRequestApproved(medicineId As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+
+            Dim query As String = "
+            SELECT COUNT(*) 
+            FROM stockReport 
+            WHERE medicine_id = @MedicineID AND stockRequestStatus = 0"
+
+            Dim count As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {.MedicineID = medicineId})
+
+            Return count > 0
+        End Using
+    End Function
+
 #End Region
 
 End Class

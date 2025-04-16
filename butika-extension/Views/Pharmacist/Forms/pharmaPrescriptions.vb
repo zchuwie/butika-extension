@@ -1,6 +1,8 @@
 ﻿Imports butika.Models
 
 Public Class pharmaPrescriptions
+    Dim prescriptRepo As New PharmaRepository()
+    Dim allPrescriptions As List(Of Prescription)
     Private Sub changeFilter(allprescript As Boolean, pending As Boolean, declined As Boolean)
         allprescriptPnl.Visible = allprescript
         pendingPnl.Visible = pending
@@ -32,21 +34,14 @@ Public Class pharmaPrescriptions
         Await LoadAllPrescriptions()
     End Sub
     Public Async Function LoadAllPrescriptions() As Task
-        flpPrescript.Controls.Clear()
-
-        Dim prescriptRepo As New PharmaRepository()
-        Dim allPrescriptions As List(Of Prescription) = Await prescriptRepo.GetAllPrescriptions()
+        allPrescriptions = Await prescriptRepo.GetAllPrescriptions()
 
         Dim batchSize As Integer = 5
 
         For i As Integer = 0 To allPrescriptions.Count - 1 Step batchSize
             Dim batch = allPrescriptions.Skip(i).Take(batchSize).ToList()
 
-            For Each indivPrescript In batch
-                Dim usc As New pharmaPrescriptItem()
-                usc.Initialize(indivPrescript)
-                flpPrescript.Controls.Add(usc)
-            Next
+            DisplayTransactions(allPrescriptions)
 
             Await Task.Delay(50)
         Next
@@ -63,5 +58,24 @@ Public Class pharmaPrescriptions
 
     Private Sub declineLbl_Click(sender As Object, e As EventArgs) Handles declineLbl.Click
         changeFilter(False, False, True)
+    End Sub
+
+    Private Async Sub sortBtn_Click(sender As Object, e As EventArgs) Handles sortBtn.Click
+        If sortBtn.Text = "Ascending Date" Then
+            sortBtn.Text = "Descending Date"
+            allPrescriptions = Await prescriptRepo.SortPrescriptionAsc()
+        ElseIf sortBtn.Text = "Descending Date" Then
+            sortBtn.Text = "Ascending Date"
+            allPrescriptions = Await prescriptRepo.SortPrescriptionDesc()
+        End If
+        DisplayTransactions(allPrescriptions)
+    End Sub
+    Private Sub DisplayTransactions(prescriptions As List(Of Prescription))
+        flpPrescript.Controls.Clear()
+        For Each indivPrescript In prescriptions
+            Dim usc As New pharmaPrescriptItem()
+            usc.Initialize(indivPrescript)
+            flpPrescript.Controls.Add(usc)
+        Next
     End Sub
 End Class

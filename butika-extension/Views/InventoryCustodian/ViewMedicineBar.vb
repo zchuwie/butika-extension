@@ -13,10 +13,16 @@ Public Class ViewMedicineBar
 
     Private Sub edit_medicine_btn_Click(sender As Object, e As EventArgs) Handles edit_medicine_btn.Click
         ToggleEditMode(True)
+        AddHandler stock_clickable.Click, AddressOf Guna2CustomGradientPanel18_Click
+        AddHandler edit_stock_btn.Click, AddressOf Guna2CustomGradientPanel18_Click
+        AddHandler stock_label.Click, AddressOf Guna2CustomGradientPanel18_Click
     End Sub
 
     Private Sub cancel_update_btn_Click(sender As Object, e As EventArgs) Handles cancel_update_btn.Click
         ToggleEditMode(False)
+        RemoveHandler stock_clickable.Click, AddressOf Guna2CustomGradientPanel18_Click
+        RemoveHandler edit_stock_btn.Click, AddressOf Guna2CustomGradientPanel18_Click
+        RemoveHandler stock_label.Click, AddressOf Guna2CustomGradientPanel18_Click
     End Sub
 
     Private Sub ToggleEditMode(enabled As Boolean)
@@ -27,7 +33,6 @@ Public Class ViewMedicineBar
         description_txtbox.ReadOnly = Not enabled
         price_txtbox.ReadOnly = Not enabled
         medtype_txtbox.ReadOnly = Not enabled
-        stock_txtbox.ReadOnly = Not enabled
         prescription_cbox.Enabled = enabled
         expdate_datetime.Enabled = enabled
         addimage_btn.Enabled = enabled
@@ -42,13 +47,22 @@ Public Class ViewMedicineBar
 
     Private Sub LoadMedicineData(sender As Object, e As EventArgs) Handles MyBase.Load
         ToggleEditMode(False)
+        RemoveHandler stock_clickable.Click, AddressOf Guna2CustomGradientPanel18_Click
+        RemoveHandler edit_stock_btn.Click, AddressOf Guna2CustomGradientPanel18_Click
+        RemoveHandler stock_label.Click, AddressOf Guna2CustomGradientPanel18_Click
 
         medicine_id_lbl.Text = "Medicine ID# " + MedicineInfo.MedicineID.ToString()
-        medicine_added_date_lbl.Text = "Date added: " + MedicineInfo.MedicineDateAdded
-        If MedicineInfo.MedicineLastUpdated = Nothing Then
-            medicine_updated_date_lbl.Text = ""
+
+        If MedicineInfo.MedicineDateAdded.HasValue Then
+            medicine_added_date_lbl.Text = "Date added: " & MedicineInfo.MedicineDateAdded.Value.ToString("yyyy-MM-dd HH:mm:ss")
         Else
-            medicine_updated_date_lbl.Text = "Last updated: " + MedicineInfo.MedicineLastUpdated.ToString("yyyy-MM-dd HH:mm:ss")
+            medicine_added_date_lbl.Text = DateTime.Now
+        End If
+
+        If MedicineInfo.MedicineLastUpdated.HasValue Then
+            medicine_updated_date_lbl.Text = "Last Updated: " & MedicineInfo.MedicineLastUpdated.Value.ToString("yyyy-MM-dd HH:mm:ss")
+        Else
+            medicine_updated_date_lbl.Text = DateTime.Now
         End If
 
 
@@ -63,7 +77,6 @@ Public Class ViewMedicineBar
             description_txtbox.Text = MedicineInfo.MedicineDescription
             price_txtbox.Text = MedicineInfo.MedicinePrice.ToString("F2")
             medtype_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineType)
-            stock_txtbox.Text = MedicineInfo.MedicineStock.ToString()
             expdate_datetime.Value = MedicineInfo.MedicineExpirationDate
 
             If MedicineInfo.MedicinePrescription = 0 Then
@@ -85,35 +98,43 @@ Public Class ViewMedicineBar
             ' Expired + Low stock
             medstatus_indicator.FillColor = Color.FromArgb(24, 36, 36)
             medstatus_indicator.FillColor2 = Color.FromArgb(24, 36, 36)
+            medstatus_indicator.FillColor3 = Color.FromArgb(24, 36, 36)
 
         ElseIf MedicineInfo.MedicineStock <= 30 AndAlso MedicineInfo.MedicineExpirationDate <= oneMonthFromNow Then
             ' Expiring soon + Medium stock
             medstatus_indicator.FillColor = Color.FromArgb(184, 129, 184)
             medstatus_indicator.FillColor2 = Color.FromArgb(184, 129, 184)
+            medstatus_indicator.FillColor3 = Color.FromArgb(184, 129, 184)
 
         ElseIf MedicineInfo.MedicineStock <= 10 AndAlso MedicineInfo.MedicineExpirationDate > oneMonthFromNow Then
             ' Good expiry + Critically low stock
             medstatus_indicator.FillColor = Color.FromArgb(194, 139, 62)
             medstatus_indicator.FillColor2 = Color.FromArgb(194, 139, 62)
+            medstatus_indicator.FillColor3 = Color.FromArgb(194, 139, 62)
 
         ElseIf MedicineInfo.MedicineStock <= 30 AndAlso MedicineInfo.MedicineExpirationDate > oneMonthFromNow Then
             ' Good expiry + Medium stock
             medstatus_indicator.FillColor = Color.FromArgb(255, 153, 102)
             medstatus_indicator.FillColor2 = Color.FromArgb(255, 153, 102)
+            medstatus_indicator.FillColor3 = Color.FromArgb(255, 153, 102)
 
         ElseIf MedicineInfo.MedicineStock > 30 AndAlso MedicineInfo.MedicineExpirationDate <= today Then
             ' Expired + High stock
             medstatus_indicator.FillColor = Color.FromArgb(229, 65, 65)
             medstatus_indicator.FillColor2 = Color.FromArgb(229, 65, 65)
+            medstatus_indicator.FillColor3 = Color.FromArgb(229, 65, 65)
 
         ElseIf MedicineInfo.MedicineStock > 30 AndAlso MedicineInfo.MedicineExpirationDate <= oneMonthFromNow Then
             ' Expiring soon + High stock
             medstatus_indicator.FillColor = Color.FromArgb(239, 239, 141)
             medstatus_indicator.FillColor2 = Color.FromArgb(239, 239, 141)
+            medstatus_indicator.FillColor3 = Color.FromArgb(239, 239, 141)
+
         ElseIf MedicineInfo.MedicineStock > 30 AndAlso MedicineInfo.MedicineExpirationDate > oneMonthFromNow Then
             ' Expiring soon + High stock
             medstatus_indicator.FillColor = Color.FromArgb(196, 218, 212)
             medstatus_indicator.FillColor2 = Color.FromArgb(196, 218, 212)
+            medstatus_indicator.FillColor3 = Color.FromArgb(196, 218, 212)
         End If
 
     End Sub
@@ -137,8 +158,7 @@ Public Class ViewMedicineBar
            String.IsNullOrWhiteSpace(manufacturer_txtbox.Text) OrElse
            String.IsNullOrWhiteSpace(description_txtbox.Text) OrElse
            String.IsNullOrWhiteSpace(price_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(medtype_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(stock_txtbox.Text) Then
+           String.IsNullOrWhiteSpace(medtype_txtbox.Text) Then
             MessageBox.Show("Please fill in all fields.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
@@ -147,13 +167,6 @@ Public Class ViewMedicineBar
         Dim price As Decimal
         If Not InputValidation.IsValidDecimalInput(price_txtbox.Text, price) Then
             MessageBox.Show("Invalid price format.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-
-        ' Stock validation
-        Dim stock As Integer
-        If Not Integer.TryParse(stock_txtbox.Text, stock) Then
-            MessageBox.Show("Invalid stock value.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
 
@@ -193,7 +206,6 @@ Public Class ViewMedicineBar
             .MedicinePrescription = prescription,
             .MedicinePrice = Math.Round(price, 2),
             .MedicineType = medtype_txtbox.Text,
-            .MedicineStock = stock,
             .MedicineExpirationDate = expdate_datetime.Value,
             .MedicineImageName = finalImageName,
             .MedicineLastUpdated = DateTime.Now
@@ -215,7 +227,13 @@ Public Class ViewMedicineBar
 
         MessageBox.Show("Medicine updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.DialogResult = DialogResult.OK
+
         Me.Close()
     End Sub
 
+    Private Sub Guna2CustomGradientPanel18_Click(sender As Object, e As EventArgs) Handles stock_clickable.Click, edit_stock_btn.Click, stock_label.Click
+        Dim stockForm As New StockRequestForm(MedicineInfo)
+        stockForm.ShowDialog()
+
+    End Sub
 End Class

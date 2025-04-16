@@ -221,9 +221,9 @@ Partial Class adminDashboard
         Label1.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label1.Location = New Point(33, 24)
         Label1.Name = "Label1"
-        Label1.Size = New Size(157, 23)
+        Label1.Size = New Size(132, 23)
         Label1.TabIndex = 1
-        Label1.Text = "Summary Cards"
+        Label1.Text = "Hello,  admin"
         ' 
         ' Guna2Panel2
         ' 
@@ -282,9 +282,9 @@ Partial Class adminDashboard
         Guna2Button2.Location = New Point(12, 10)
         Guna2Button2.Name = "Guna2Button2"
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges10
-        Guna2Button2.Size = New Size(118, 29)
+        Guna2Button2.Size = New Size(145, 29)
         Guna2Button2.TabIndex = 2
-        Guna2Button2.Text = "Active User"
+        Guna2Button2.Text = "Stock approved"
         Guna2Button2.TextAlign = HorizontalAlignment.Right
         ' 
         ' activeNum
@@ -825,9 +825,9 @@ Partial Class adminDashboard
         adminDashboardText.FlatStyle = FlatStyle.Flat
         adminDashboardText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         adminDashboardText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminDashboardText.Location = New Point(-4, 64)
+        adminDashboardText.Location = New Point(-22, 64)
         adminDashboardText.Name = "adminDashboardText"
-        adminDashboardText.Size = New Size(109, 64)
+        adminDashboardText.Size = New Size(151, 64)
         adminDashboardText.TabIndex = 12
         adminDashboardText.Text = "Dashboard"
         adminDashboardText.UseVisualStyleBackColor = False
@@ -840,9 +840,9 @@ Partial Class adminDashboard
         adminUserText.FlatStyle = FlatStyle.Flat
         adminUserText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         adminUserText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminUserText.Location = New Point(-9, 128)
+        adminUserText.Location = New Point(-27, 128)
         adminUserText.Name = "adminUserText"
-        adminUserText.Size = New Size(138, 64)
+        adminUserText.Size = New Size(180, 64)
         adminUserText.TabIndex = 13
         adminUserText.Text = "User Account"
         adminUserText.UseVisualStyleBackColor = False
@@ -855,9 +855,9 @@ Partial Class adminDashboard
         adminDiscountText.FlatStyle = FlatStyle.Flat
         adminDiscountText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         adminDiscountText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminDiscountText.Location = New Point(-8, 256)
+        adminDiscountText.Location = New Point(-26, 256)
         adminDiscountText.Name = "adminDiscountText"
-        adminDiscountText.Size = New Size(152, 64)
+        adminDiscountText.Size = New Size(194, 64)
         adminDiscountText.TabIndex = 15
         adminDiscountText.Text = "Discount Status"
         adminDiscountText.UseVisualStyleBackColor = False
@@ -870,9 +870,9 @@ Partial Class adminDashboard
         adminLogsText.FlatStyle = FlatStyle.Flat
         adminLogsText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         adminLogsText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminLogsText.Location = New Point(-6, 192)
+        adminLogsText.Location = New Point(-24, 192)
         adminLogsText.Name = "adminLogsText"
-        adminLogsText.Size = New Size(103, 64)
+        adminLogsText.Size = New Size(145, 64)
         adminLogsText.TabIndex = 14
         adminLogsText.Text = "User Logs"
         adminLogsText.UseVisualStyleBackColor = False
