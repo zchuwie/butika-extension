@@ -94,4 +94,43 @@ Public Class GetImagePath
             Return False
         End Try
     End Function
+
+    Public Shared ReadOnly Property VerifyIdPathName As String
+        Get
+            Return IdImgPathName()
+        End Get
+    End Property
+
+    Public Shared Function FindIdImageFolder(ByVal startFolder As String) As String
+        Dim currentFolder As String = startFolder
+
+        While currentFolder IsNot Nothing
+            Dim targetFolderPath As String = Path.Combine(currentFolder, "Resources", "id_images")
+
+            If Directory.Exists(targetFolderPath) Then
+                Return targetFolderPath
+            End If
+
+            currentFolder = Directory.GetParent(currentFolder)?.FullName
+        End While
+
+        Return Nothing
+    End Function
+
+    Public Shared Function IdImgPathName() As String
+        Try
+            Dim currentDirectory As String = Directory.GetCurrentDirectory()
+            Dim imageFolder As String = GetImagePath.FindIdImageFolder(currentDirectory)
+
+            If Not String.IsNullOrEmpty(imageFolder) Then
+                Return imageFolder
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            Console.WriteLine("Cannot find the folder: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class
