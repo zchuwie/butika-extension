@@ -32,7 +32,7 @@ Public Class VerifyStep1
             If openFileDialog.ShowDialog() = DialogResult.OK Then
                 selectedImagePath = openFileDialog.FileName ' Get the selected image's path
                 IdImgFileName.Text = Path.GetFileName(selectedImagePath) ' Set the file name in the label
-                imageName = account.UserName + Path.GetFileName(selectedImagePath)
+                imageName = "userid" + account.UserID.ToString + "_" + account.UserName + "_" + Path.GetFileName(selectedImagePath)
 
                 If Not String.IsNullOrWhiteSpace(selectedImagePath) Then
                     idImage.Image = Image.FromFile(selectedImagePath) ' Display the image in PictureBox
@@ -53,7 +53,7 @@ Public Class VerifyStep1
         Me.Close()
     End Sub
 
-    Private Sub SubmitIdBtn_Click(sender As Object, e As EventArgs) Handles SubmitIdBtn.Click
+    Private Async Sub SubmitIdBtn_Click(sender As Object, e As EventArgs) Handles SubmitIdBtn.Click
         Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
         Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.IdImgPathName)
         Dim isImageSaved As Boolean = ImageInsertion.SaveImageToFolder(selectedImagePath, imageName, destinationFolder)
@@ -63,8 +63,13 @@ Public Class VerifyStep1
             Return
         End If
 
-        MessageBox.Show("You have successfully subitted your ID. Please proceed to the next step.", "Success", MessageBoxButtons.OK)
+        MessageBox.Show("You have successfully subitted your ID. Please wait while your informatiaon is being verified.", "Success", MessageBoxButtons.OK)
 
-        VerifyStep2.ShowDialog()
+        Dim result As Boolean = Await accountRepo.SetPendingNum(account, 1)
+        If result = False Then
+            MsgBox("SetPendingNumToZero did not work properly [returned false]")
+        End If
+
+        Me.Close()
     End Sub
 End Class

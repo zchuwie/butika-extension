@@ -121,6 +121,7 @@ Partial Class VerifyStep3
         Controls.Add(ProgBar)
         FormBorderStyle = FormBorderStyle.None
         Name = "VerifyStep3"
+        StartPosition = FormStartPosition.CenterParent
         Text = "VerifyStep3"
         CType(VerifyPendingImg, ComponentModel.ISupportInitialize).EndInit()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).EndInit()

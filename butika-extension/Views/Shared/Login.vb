@@ -25,6 +25,7 @@ Public Class Login
     End Sub
 
     Private Async Function LoginApproval() As Task
+        loginBtn.Enabled = False
         Try
             Dim username As String = usernameTxtBox.Text
             Dim password As String = passwordTxtBox.Text
@@ -42,18 +43,21 @@ Public Class Login
                     Dim dashboard As New adminPage()
                     dashboard.Show()
                     Me.Hide()
+                    loginBtn.Enabled = True
                 ElseIf userType = 2 Then
                     ' Pharma user
                     Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType)
                     Dim dashboard As New pharmaMainPage()
                     dashboard.Show()
                     Me.Hide()
+                    loginBtn.Enabled = True
                 ElseIf userType = 3 Then
                     ' Inventory Custodian user
                     Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType)
                     Dim dashboard As New InventoryCustodian_MainPanel()
                     dashboard.Show()
                     Me.Hide()
+                    loginBtn.Enabled = True
                 Else
                     ' Regular user
                     Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType)
@@ -61,6 +65,7 @@ Public Class Login
                         Dim customer As New MainPage(userID)
                         customer.Show()
                         Me.Hide()
+                        loginBtn.Enabled = True
                     End If
                 End If
             Else
@@ -68,10 +73,12 @@ Public Class Login
                 MessageBox.Show("Your username or password is incorrect", "Incorrect", MessageBoxButtons.OK)
                 usernameTxtBox.Clear()
                 passwordTxtBox.Clear()
+                loginBtn.Enabled = True
             End If
         Catch ex As Exception
             Debug.WriteLine("Error during login: " & ex.Message)
             MessageBox.Show("An error occurred. Please try again.", "Error", MessageBoxButtons.OK)
+            loginBtn.Enabled = True
         End Try
     End Function
 

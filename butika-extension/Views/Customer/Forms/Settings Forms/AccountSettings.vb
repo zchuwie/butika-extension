@@ -290,12 +290,34 @@ Public Class AccountSettings
 
 #End Region
 
-    Private Sub VerifyButton_Click(sender As Object, e As EventArgs) Handles VerifyButton.Click
+    Private Async Sub VerifyButton_Click(sender As Object, e As EventArgs) Handles VerifyButton.Click
+        account = Await accountRep.populateDataThroughUserID(account.UserID)
         If IsNothing(account.FirstName) Or IsNothing(account.MiddleInitial) Or IsNothing(account.LastName) Or IsNothing(account.UserName) Or IsNothing(account.BirthDate) Or IsNothing(account.Email) Or IsNothing(account.Contact) Then
             MessageBox.Show("To verify your account, you must first fill in all your account information.", "Incomplete information?", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         Else
-            Dim verify1 As New VerifyStep1(account)
-            verify1.ShowDialog()
+            If account.IsVerified = False And account.PendingVerify = 0 Then 'if still not verified
+                Dim verify1 As New VerifyStep1(account)
+                verify1.ShowDialog()
+                If account.PendingVerify = 2 Then 'if declined
+                    If MessageBox.Show("Your verification has been declined. would you like to try verifying again?", "Declined Verification", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) = DialogResult.No Then
+                        Me.Close()
+                        verify1.Close()
+                    ElseIf DialogResult.Yes Then
+                        Me.Close()
+                        Dim result As Boolean = Await accountRep.SetPendingNum(account, 0)
+                        If result = False Then
+                            MsgBox("SetPendingNumToZero did not work properly [returned false]")
+                        End If
+                    End If
+                End If
+            ElseIf account.IsVerified = False And account.PendingVerify = 1 Then 'if pending
+                Dim verify3 As New VerifyStep3()
+                verify3.ShowDialog()
+            ElseIf account.IsVerified = True Then 'if verified
+                Dim verified As New Verified()
+                verified.ShowDialog()
+            End If
+
         End If
 
     End Sub
