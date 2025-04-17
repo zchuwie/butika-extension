@@ -109,10 +109,6 @@ Partial Class adminUser
         Label2 = New Label()
         Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Label1 = New Label()
-        adminDiscountText = New RoundedButton()
-        adminLogsText = New RoundedButton()
-        adminUserText = New RoundedButton()
-        adminDashboardText = New RoundedButton()
         AddressText = New TextBox()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         pharmacistAdd = New Guna.UI2.WinForms.Guna2Button()
@@ -137,6 +133,11 @@ Partial Class adminUser
         createUsername = New Guna.UI2.WinForms.Guna2TextBox()
         Label4 = New Label()
         createLabel = New Label()
+        adminStockText = New RoundedButton()
+        adminDiscountText = New RoundedButton()
+        adminLogsText = New RoundedButton()
+        adminUserText = New RoundedButton()
+        adminDashboardText = New RoundedButton()
         CType(userAccTable, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel1.SuspendLayout()
         Guna2Panel5.SuspendLayout()
@@ -181,7 +182,7 @@ Partial Class adminUser
         textCopyIndicator2.AutoSize = True
         textCopyIndicator2.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         textCopyIndicator2.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        textCopyIndicator2.Location = New Point(1036, 367)
+        textCopyIndicator2.Location = New Point(1024, 357)
         textCopyIndicator2.Name = "textCopyIndicator2"
         textCopyIndicator2.Size = New Size(64, 13)
         textCopyIndicator2.TabIndex = 84
@@ -317,6 +318,7 @@ Partial Class adminUser
         userAccTable.GridColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
         userAccTable.Location = New Point(13, 52)
         userAccTable.Name = "userAccTable"
+        userAccTable.ReadOnly = True
         userAccTable.RowHeadersVisible = False
         userAccTable.Size = New Size(792, 535)
         userAccTable.TabIndex = 4
@@ -333,7 +335,7 @@ Partial Class adminUser
         userAccTable.ThemeStyle.HeaderStyle.ForeColor = Color.White
         userAccTable.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         userAccTable.ThemeStyle.HeaderStyle.Height = 20
-        userAccTable.ThemeStyle.ReadOnly = False
+        userAccTable.ThemeStyle.ReadOnly = True
         userAccTable.ThemeStyle.RowsStyle.BackColor = Color.White
         userAccTable.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal
         userAccTable.ThemeStyle.RowsStyle.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
@@ -645,66 +647,6 @@ Partial Class adminUser
         Label1.TabIndex = 47
         Label1.Text = "Account"
         ' 
-        ' adminDiscountText
-        ' 
-        adminDiscountText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        adminDiscountText.CornerRadius = 60
-        adminDiscountText.FlatStyle = FlatStyle.Flat
-        adminDiscountText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        adminDiscountText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminDiscountText.Location = New Point(-8, 256)
-        adminDiscountText.Name = "adminDiscountText"
-        adminDiscountText.Size = New Size(152, 64)
-        adminDiscountText.TabIndex = 97
-        adminDiscountText.Text = "Discount Status"
-        adminDiscountText.UseVisualStyleBackColor = False
-        adminDiscountText.Visible = False
-        ' 
-        ' adminLogsText
-        ' 
-        adminLogsText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        adminLogsText.CornerRadius = 60
-        adminLogsText.FlatStyle = FlatStyle.Flat
-        adminLogsText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        adminLogsText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminLogsText.Location = New Point(-6, 192)
-        adminLogsText.Name = "adminLogsText"
-        adminLogsText.Size = New Size(103, 64)
-        adminLogsText.TabIndex = 96
-        adminLogsText.Text = "User Logs"
-        adminLogsText.UseVisualStyleBackColor = False
-        adminLogsText.Visible = False
-        ' 
-        ' adminUserText
-        ' 
-        adminUserText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        adminUserText.CornerRadius = 60
-        adminUserText.FlatStyle = FlatStyle.Flat
-        adminUserText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        adminUserText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminUserText.Location = New Point(-9, 128)
-        adminUserText.Name = "adminUserText"
-        adminUserText.Size = New Size(138, 64)
-        adminUserText.TabIndex = 95
-        adminUserText.Text = "User Account"
-        adminUserText.UseVisualStyleBackColor = False
-        adminUserText.Visible = False
-        ' 
-        ' adminDashboardText
-        ' 
-        adminDashboardText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        adminDashboardText.CornerRadius = 60
-        adminDashboardText.FlatStyle = FlatStyle.Flat
-        adminDashboardText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        adminDashboardText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminDashboardText.Location = New Point(-4, 64)
-        adminDashboardText.Name = "adminDashboardText"
-        adminDashboardText.Size = New Size(109, 64)
-        adminDashboardText.TabIndex = 94
-        adminDashboardText.Text = "Dashboard"
-        adminDashboardText.UseVisualStyleBackColor = False
-        adminDashboardText.Visible = False
-        ' 
         ' AddressText
         ' 
         AddressText.Font = New Font("Century Gothic", 9F)
@@ -973,7 +915,7 @@ Partial Class adminUser
         createPanel.Controls.Add(createLabel)
         createPanel.CustomizableEdges = CustomizableEdges43
         createPanel.FillColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
-        createPanel.Location = New Point(334, 25)
+        createPanel.Location = New Point(399, 202)
         createPanel.Name = "createPanel"
         createPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges44
         createPanel.Size = New Size(406, 290)
@@ -1103,21 +1045,97 @@ Partial Class adminUser
         createLabel.TabIndex = 3
         createLabel.Text = "Create an admin account"
         ' 
+        ' adminStockText
+        ' 
+        adminStockText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        adminStockText.CornerRadius = 60
+        adminStockText.FlatStyle = FlatStyle.Flat
+        adminStockText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        adminStockText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminStockText.Location = New Point(-28, 320)
+        adminStockText.Name = "adminStockText"
+        adminStockText.Size = New Size(194, 64)
+        adminStockText.TabIndex = 107
+        adminStockText.Text = "Stock Update"
+        adminStockText.UseVisualStyleBackColor = False
+        adminStockText.Visible = False
+        ' 
+        ' adminDiscountText
+        ' 
+        adminDiscountText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        adminDiscountText.CornerRadius = 60
+        adminDiscountText.FlatStyle = FlatStyle.Flat
+        adminDiscountText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        adminDiscountText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminDiscountText.Location = New Point(-26, 256)
+        adminDiscountText.Name = "adminDiscountText"
+        adminDiscountText.Size = New Size(194, 64)
+        adminDiscountText.TabIndex = 106
+        adminDiscountText.Text = "Discount Status"
+        adminDiscountText.UseVisualStyleBackColor = False
+        adminDiscountText.Visible = False
+        ' 
+        ' adminLogsText
+        ' 
+        adminLogsText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        adminLogsText.CornerRadius = 60
+        adminLogsText.FlatStyle = FlatStyle.Flat
+        adminLogsText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        adminLogsText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminLogsText.Location = New Point(-24, 192)
+        adminLogsText.Name = "adminLogsText"
+        adminLogsText.Size = New Size(145, 64)
+        adminLogsText.TabIndex = 105
+        adminLogsText.Text = "User Logs"
+        adminLogsText.UseVisualStyleBackColor = False
+        adminLogsText.Visible = False
+        ' 
+        ' adminUserText
+        ' 
+        adminUserText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        adminUserText.CornerRadius = 60
+        adminUserText.FlatStyle = FlatStyle.Flat
+        adminUserText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        adminUserText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminUserText.Location = New Point(-27, 128)
+        adminUserText.Name = "adminUserText"
+        adminUserText.Size = New Size(180, 64)
+        adminUserText.TabIndex = 104
+        adminUserText.Text = "User Account"
+        adminUserText.UseVisualStyleBackColor = False
+        adminUserText.Visible = False
+        ' 
+        ' adminDashboardText
+        ' 
+        adminDashboardText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        adminDashboardText.CornerRadius = 60
+        adminDashboardText.FlatStyle = FlatStyle.Flat
+        adminDashboardText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        adminDashboardText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminDashboardText.Location = New Point(-22, 64)
+        adminDashboardText.Name = "adminDashboardText"
+        adminDashboardText.Size = New Size(151, 64)
+        adminDashboardText.TabIndex = 103
+        adminDashboardText.Text = "Dashboard"
+        adminDashboardText.UseVisualStyleBackColor = False
+        adminDashboardText.Visible = False
+        ' 
         ' adminUser
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(231), CByte(245), CByte(240))
         ClientSize = New Size(1204, 693)
+        Controls.Add(adminStockText)
         Controls.Add(createPanel)
         Controls.Add(Guna2Panel3)
+        Controls.Add(adminDiscountText)
         Controls.Add(Guna2Panel4)
         Controls.Add(Guna2Panel2)
-        Controls.Add(AddressText)
-        Controls.Add(adminDiscountText)
         Controls.Add(adminLogsText)
-        Controls.Add(adminUserText)
+        Controls.Add(AddressText)
         Controls.Add(adminDashboardText)
+        Controls.Add(adminUserText)
         Controls.Add(showAllBtn)
         Controls.Add(searchText)
         Controls.Add(textCopyIndicator2)
@@ -1210,10 +1228,6 @@ Partial Class adminUser
     Friend WithEvents Label2 As Label
     Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents adminDiscountText As RoundedButton
-    Friend WithEvents adminLogsText As RoundedButton
-    Friend WithEvents adminUserText As RoundedButton
-    Friend WithEvents adminDashboardText As RoundedButton
     Friend WithEvents activeShow As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents AddressText As TextBox
     Friend WithEvents verifiedBtn As Guna.UI2.WinForms.Guna2Button
@@ -1242,4 +1256,9 @@ Partial Class adminUser
     Friend WithEvents Label5 As Label
     Friend WithEvents createAccount As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents cancelAccount As Label
+    Friend WithEvents adminStockText As RoundedButton
+    Friend WithEvents adminDiscountText As RoundedButton
+    Friend WithEvents adminLogsText As RoundedButton
+    Friend WithEvents adminUserText As RoundedButton
+    Friend WithEvents adminDashboardText As RoundedButton
 End Class

@@ -22,6 +22,9 @@ Partial Class adminPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminPage))
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -34,10 +37,8 @@ Partial Class adminPage
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(adminPage))
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         adminSidePanel = New Panel()
+        adminStock = New Guna.UI2.WinForms.Guna2Button()
         adminExit = New Guna.UI2.WinForms.Guna2Button()
         adminDiscount = New Guna.UI2.WinForms.Guna2Button()
         adminLogs = New Guna.UI2.WinForms.Guna2Button()
@@ -45,7 +46,6 @@ Partial Class adminPage
         adminDashboard = New Guna.UI2.WinForms.Guna2Button()
         adminLogo = New Guna.UI2.WinForms.Guna2Button()
         adminViewPanel = New Panel()
-        adminStock = New Guna.UI2.WinForms.Guna2Button()
         adminSidePanel.SuspendLayout()
         SuspendLayout()
         ' 
@@ -64,6 +64,28 @@ Partial Class adminPage
         adminSidePanel.Name = "adminSidePanel"
         adminSidePanel.Size = New Size(64, 720)
         adminSidePanel.TabIndex = 6
+        ' 
+        ' adminStock
+        ' 
+        adminStock.Cursor = Cursors.Hand
+        adminStock.CustomizableEdges = CustomizableEdges1
+        adminStock.DisabledState.BorderColor = Color.DarkGray
+        adminStock.DisabledState.CustomBorderColor = Color.DarkGray
+        adminStock.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        adminStock.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        adminStock.Dock = DockStyle.Top
+        adminStock.FillColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminStock.Font = New Font("Segoe UI", 9F)
+        adminStock.ForeColor = Color.White
+        adminStock.HoverState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        adminStock.HoverState.Image = CType(resources.GetObject("resource.Image"), Image)
+        adminStock.Image = CType(resources.GetObject("adminStock.Image"), Image)
+        adminStock.ImageSize = New Size(40, 40)
+        adminStock.Location = New Point(0, 320)
+        adminStock.Name = "adminStock"
+        adminStock.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        adminStock.Size = New Size(64, 64)
+        adminStock.TabIndex = 8
         ' 
         ' adminExit
         ' 
@@ -200,28 +222,6 @@ Partial Class adminPage
         adminViewPanel.Name = "adminViewPanel"
         adminViewPanel.Size = New Size(1216, 720)
         adminViewPanel.TabIndex = 5
-        ' 
-        ' adminStock
-        ' 
-        adminStock.Cursor = Cursors.Hand
-        adminStock.CustomizableEdges = CustomizableEdges1
-        adminStock.DisabledState.BorderColor = Color.DarkGray
-        adminStock.DisabledState.CustomBorderColor = Color.DarkGray
-        adminStock.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        adminStock.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        adminStock.Dock = DockStyle.Top
-        adminStock.FillColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        adminStock.Font = New Font("Segoe UI", 9F)
-        adminStock.ForeColor = Color.White
-        adminStock.HoverState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        adminStock.HoverState.Image = CType(resources.GetObject("resource.Image"), Image)
-        adminStock.Image = CType(resources.GetObject("adminStock.Image"), Image)
-        adminStock.ImageSize = New Size(40, 40)
-        adminStock.Location = New Point(0, 320)
-        adminStock.Name = "adminStock"
-        adminStock.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        adminStock.Size = New Size(64, 64)
-        adminStock.TabIndex = 8
         ' 
         ' adminPage
         ' 

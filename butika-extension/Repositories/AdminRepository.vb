@@ -38,7 +38,7 @@ Public Class AdminRepository
 
     ' === User Data Counts ===
     Public Shared Async Function GetUserCountAsync() As Task(Of Integer)
-        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount")
+        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount where usertype NOT IN (1, 2, 3)")
     End Function
 
     Public Shared Async Function GetActiveUserCountAsync() As Task(Of Integer)
@@ -50,7 +50,7 @@ Public Class AdminRepository
     End Function
 
     Public Shared Async Function GetNewSignupCountAsync() As Task(Of Integer)
-        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount WHERE date_joined >= DATEADD(DAY, -14, GETDATE())")
+        Return Await GetCountAsync("SELECT COUNT(user_id) FROM useraccount WHERE date_joined >= DATEADD(DAY, -14, GETDATE()) AND usertype NOT IN (1, 2, 3)")
     End Function
 
     ' === User DataTable ===
@@ -59,9 +59,8 @@ Public Class AdminRepository
         dt.Columns.Add("ID", GetType(Integer))
         dt.Columns.Add("username", GetType(String))
         dt.Columns.Add("Email", GetType(String))
-        dt.Columns.Add("Status", GetType(String))
 
-        Dim query As String = "SELECT user_id AS ID, username AS username, email AS Email, status AS Status FROM useraccount"
+        Dim query As String = "SELECT user_id AS ID, username AS username, email AS Email FROM useraccount"
         Try
             Using conn As SqlConnection = DatabaseConnection.GetConnection(),
                   cmd As New SqlCommand(query, conn)
@@ -69,7 +68,7 @@ Public Class AdminRepository
                 Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
                     While Await reader.ReadAsync()
                         If reader("Email") IsNot DBNull.Value Then
-                            dt.Rows.Add(reader("ID"), reader("username"), reader("Email"), reader("Status"))
+                            dt.Rows.Add(reader("ID"), reader("username"), reader("Email"))
                         End If
                     End While
                 End Using
@@ -263,24 +262,33 @@ Public Class AdminRepository
     End Function
 
     ' === User Status Pie Data ===
-    Public Shared Async Function GetActiveInactiveUserStatusAsync() As Task(Of (activeCount As Integer, inactiveCount As Integer))
+    Public Shared Async Function GetStockRequestStatusCountAsync() As Task(Of (pendingCount As Integer, approvedCount As Integer, declinedCount As Integer))
         Dim query = "
-        SELECT 
-            COUNT(CASE WHEN status = 'active' THEN 1 ELSE NULL END) AS Active,
-            COUNT(CASE WHEN status = 'inactive' THEN 1 ELSE NULL END) AS Inactive
-        FROM useraccount"
+    SELECT 
+        COUNT(CASE WHEN stockRequestStatus = 0 THEN 1 ELSE NULL END) AS Pending,
+        COUNT(CASE WHEN stockRequestStatus = 1 THEN 1 ELSE NULL END) AS Approved,
+        COUNT(CASE WHEN stockRequestStatus = 2 THEN 1 ELSE NULL END) AS Declined
+    FROM stockReport"
 
         Try
-            Using conn As SqlConnection = DatabaseConnection.GetConnection()
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+
                 Await conn.OpenAsync()
-                Dim result = Await conn.QueryFirstOrDefaultAsync(Of UserStatus)(query)
-                Return (result.Active, result.Inactive)
+
+                Dim result = Await cmd.ExecuteScalarAsync()
+
+                ' Assuming the result is a tuple, handle it accordingly
+                Return (pendingCount:=result("Pending"), approvedCount:=result("Approved"), declinedCount:=result("Declined"))
             End Using
         Catch ex As Exception
-            MessageBox.Show("Error loading user status: " & ex.Message)
-            Return (0, 0)
+            Console.WriteLine("Error fetching stock request status: " & ex.Message)
         End Try
+
+        ' Return a default value if the query fails or no data found
+        Return (0, 0, 0)
     End Function
+
 
     ' === Result Mapping Classes ===
     Private Class GrowthResult
@@ -560,11 +568,94 @@ Public Class AdminRepository
 
         Return False
     End Function
+
+
 #End Region
 
 #Region "Stock"
+    Public Shared Async Function GetStockReportDataAsync() As Task(Of DataTable)
+        Dim dt As New DataTable()
 
+        dt.Columns.Add("Medicine_ID", GetType(Integer))
+        dt.Columns.Add("Request_Status", GetType(String))
+        dt.Columns.Add("Requested_Quantity", GetType(Integer))
+        dt.Columns.Add("Request_Date", GetType(DateTime))
+        dt.Columns.Add("Date_Updated", GetType(DateTime))
+
+        Dim query As String = "
+        SELECT medicine_id, stockRequestStatus, stockQuantityRequest, stockDateRequested, stockDateUpdated
+        FROM stockReport
+    "
+
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+                  cmd As New SqlCommand(query, conn)
+                Await conn.OpenAsync()
+                Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
+                    While Await reader.ReadAsync()
+                        dt.Rows.Add(reader("medicine_id"),
+                                    reader("stockRequestStatus").ToString(),
+                                    Convert.ToInt32(reader("stockQuantityRequest")),
+                                    Convert.ToDateTime(reader("stockDateRequested")),
+                                    Convert.ToDateTime(reader("stockDateUpdated")))
+                    End While
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error loading stock report: " & ex.Message)
+        End Try
+
+        Return dt
+    End Function
+
+    Public Shared Async Function GetDrugInfoByIDAsync(drugId As Integer) As Task(Of DataRow)
+        Dim dt As New DataTable()
+
+        Dim query As String = "
+        SELECT drug_id, drug_name, drug_price, drug_manufacturer, drug_stocks, expiration_date
+        FROM drug_inventory
+        WHERE drug_id = @drugId
+    "
+
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@drugId", drugId)
+
+                Await conn.OpenAsync()
+                Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
+                    dt.Load(reader)
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error loading drug info: " & ex.Message)
+        End Try
+
+        If dt.Rows.Count > 0 Then
+            Return dt.Rows(0)
+        Else
+            Return Nothing
+        End If
+    End Function
 #End Region
 
+    Public Function GetVerificationImagePath(ID As String) As String
+        Dim imagePath As String = Nothing
+        Dim query As String = "SELECT image_verification FROM useraccount WHERE user_id = @ID"
+
+        Using conn As SqlConnection = DatabaseConnection.GetConnection()
+            Using cmd As New SqlCommand(query, conn)
+                cmd.Parameters.AddWithValue("@ID", ID)
+                conn.Open()
+
+                Dim result As Object = cmd.ExecuteScalar()
+                If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                    imagePath = result.ToString()
+                End If
+            End Using
+        End Using
+
+        Return imagePath
+    End Function
 
 End Class

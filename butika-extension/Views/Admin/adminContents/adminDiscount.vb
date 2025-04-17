@@ -1,6 +1,7 @@
 ﻿Imports System.Xml
 Imports butika.Configurations
 Imports Org.BouncyCastle.Crypto
+Imports System.IO
 
 Public Class adminDiscounts
     Private Async Sub adminDiscount_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,6 +22,38 @@ Public Class adminDiscounts
             Dim birthDate As DateTime
             Dim selectedId As Integer = Convert.ToInt32(selectedRow.Cells("ID").Value)
             Dim isVerified As Object = selectedRow.Cells("IsVerified").Value
+
+            Dim userId As String = discountTable.Rows(e.RowIndex).Cells("ID").Value.ToString()
+
+            Dim repo As New AdminRepository()
+            Dim relativePath As String = repo.GetVerificationImagePath(userId)
+
+            If Not String.IsNullOrEmpty(relativePath) Then
+                Dim basePath As String = "C:\Visual Basic\butika-extension\butika-extension\Resources\"
+                Dim fullPath As String = Path.Combine(basePath, relativePath)
+
+                If File.Exists(fullPath) Then
+                    Dim img As Image = Image.FromFile(fullPath)
+
+                    Dim aspectRatio As Double = img.Height / img.Width
+                    Dim targetWidth As Integer = 243
+                    Dim targetHeight As Integer = CInt(targetWidth * aspectRatio)
+
+                    verificationImage.SizeMode = PictureBoxSizeMode.Zoom
+                    verificationImage.Width = targetWidth
+                    verificationImage.Height = targetHeight
+                    verificationImage.Image = New Bitmap(img)
+                    verificationImage.Visible = True
+
+                    img.Dispose()
+                Else
+                    verificationImage.Image = Nothing
+                    verificationImage.Visible = False
+                End If
+            Else
+                verificationImage.Image = Nothing
+                verificationImage.Visible = False
+            End If
 
             If selectedRow.Cells("Birth_Date").Value IsNot DBNull.Value Then
                 birthDate = Convert.ToDateTime(selectedRow.Cells("Birth_Date").Value)
@@ -100,15 +133,23 @@ Public Class adminDiscounts
         Await AdminRepository.UpdateUserVerificationStatusAsync(userId, newStatus)
 
         If newStatus Then
-            statusBtn.Text = "Verified"
-            statusBtn.FillColor = ColorTranslator.FromHtml("#6B9C89")
+            Dim result As DialogResult = MessageBox.Show("Do you want to verify this customer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = DialogResult.Yes Then
+                statusBtn.Text = "Verified"
+                statusBtn.FillColor = ColorTranslator.FromHtml("#6B9C89")
+            End If
         Else
-            statusBtn.Text = "Not Verified"
-            statusBtn.FillColor = ColorTranslator.FromHtml("#E44040")
+            Dim result As DialogResult = MessageBox.Show("Do you want to remove verification of this customer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+            If result = DialogResult.Yes Then
+                statusBtn.Text = "Not Verified"
+                statusBtn.FillColor = ColorTranslator.FromHtml("#E44040")
+            End If
         End If
+
 
         Await ReloadCustomerDataAsync()
     End Sub
+
 
     Private Async Function ReloadCustomerDataAsync() As Task
 
@@ -116,5 +157,10 @@ Public Class adminDiscounts
         discountTable.DataSource = dt
     End Function
 
+    Private Sub verificationImage_Click(sender As Object, e As EventArgs) Handles verificationImage.Click
+        If verificationImage.Image IsNot Nothing Then
+            UIHelper.ShowCenteredImagePreview(verificationImage.Image, Me)
+        End If
+    End Sub
 
 End Class
