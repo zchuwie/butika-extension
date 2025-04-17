@@ -169,7 +169,7 @@
 
   <data name="up" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-
+</data>
   <data name="monthly" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\monthly.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 
@@ -186,13 +186,13 @@
   <data name="verifyImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\verifyImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< inventory_custodian_BE2
+
   <data name="dprescription_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\dprescription_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+</data>
   <data name="welcomehere" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\welcomehere.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> master
+
   </data>
   <data name="dtransactions_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\dtransactions_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -263,12 +263,11 @@
   <data name="logolandscapegreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\logolandscapegreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< inventory_custodian_BE2
-=======
+
   <data name="logolandscapegreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\logolandscapegreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
->>>>>>> master
+
   <data name="editProfileUnpressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\editProfileUnpressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -290,13 +289,12 @@
   <data name="VerifiedIcon - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VerifiedIcon - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< inventory_custodian_BE2
+
   <data name="pressedLogout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pressedLogout1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+</data>
   <data name="EditSecurityUnpressed1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditSecurityUnpressed1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> master
   </data>
   <data name="minusPressed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minusPressed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,12 +314,12 @@
   <data name="pills" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pills.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-<<<<<<< inventory_custodian_BE2
+
   <data name="Group 78" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Group 78.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-=======
+</data>
   <data name="dtransactions_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\elements\dtransactions_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
->>>>>>> master
+
   </data>
 </root>

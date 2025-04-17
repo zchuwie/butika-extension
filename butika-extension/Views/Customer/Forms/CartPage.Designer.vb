@@ -56,7 +56,7 @@ Partial Class CartPage
         PendingLbl = New Label()
         AllItems = New Label()
         DeclinedUnderline = New Guna.UI2.WinForms.Guna2Panel()
-        Declined = New Label()
+        DeclinedLbl = New Label()
         originalPrice = New Label()
         TotalPriceLbl = New Label()
         CartPanel = New FlowLayoutPanel()
@@ -186,7 +186,7 @@ Partial Class CartPage
         ' ShoppingCart
         ' 
         ShoppingCart.AutoSize = True
-        ShoppingCart.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
+        ShoppingCart.Font = New Font("Century Gothic", 18.0F, FontStyle.Bold)
         ShoppingCart.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ShoppingCart.Location = New Point(125, 22)
         ShoppingCart.Name = "ShoppingCart"
@@ -218,7 +218,7 @@ Partial Class CartPage
         ' YourOrders
         ' 
         YourOrders.AutoSize = True
-        YourOrders.Font = New Font("Century Gothic", 15F, FontStyle.Bold)
+        YourOrders.Font = New Font("Century Gothic", 15.0F, FontStyle.Bold)
         YourOrders.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         YourOrders.Location = New Point(938, 64)
         YourOrders.Name = "YourOrders"
@@ -348,7 +348,7 @@ Partial Class CartPage
         ' TotalPriceLbl
         ' 
         TotalPriceLbl.AutoSize = True
-        TotalPriceLbl.Font = New Font("Century Gothic", 11F, FontStyle.Bold)
+        TotalPriceLbl.Font = New Font("Century Gothic", 11.0F, FontStyle.Bold)
         TotalPriceLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         TotalPriceLbl.Location = New Point(895, 523)
         TotalPriceLbl.Name = "TotalPriceLbl"
@@ -370,7 +370,7 @@ Partial Class CartPage
         ' 
         ' TotalPriceTxt
         ' 
-        TotalPriceTxt.Font = New Font("Century Gothic", 11F, FontStyle.Bold)
+        TotalPriceTxt.Font = New Font("Century Gothic", 11.0F, FontStyle.Bold)
         TotalPriceTxt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         TotalPriceTxt.ImageAlign = ContentAlignment.MiddleRight
         TotalPriceTxt.Location = New Point(1020, 523)
@@ -408,7 +408,7 @@ Partial Class CartPage
         ' 
         ' CartPage
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1220, 720)
