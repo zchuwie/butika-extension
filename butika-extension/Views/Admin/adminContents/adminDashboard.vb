@@ -18,7 +18,7 @@ Public Class adminDashboard
         Await LoadUserDataAsync()
         Await LoadUserActivityAsync()
         Await LoadDiscountChartAsync()
-        'Await LoadUserStatusChartAsync()
+        Await LoadStockRequestStatusChartAsync()
         Await LoadUserSummaryAsync()
 
 
@@ -37,7 +37,7 @@ Public Class adminDashboard
 
     Private Async Function LoadUserSummaryAsync() As Task
         customerNum.Text = (Await AdminRepository.GetUserCountAsync()).ToString()
-        'activeNum.Text = (Await AdminRepository.GetActiveUserCountAsync()).ToString()
+        activeNum.Text = (Await AdminRepository.GetActiveUserCountAsync()).ToString()
         pendingNum.Text = (Await AdminRepository.GetPendingDiscountCountAsync()).ToString()
         signupNum.Text = (Await AdminRepository.GetNewSignupCountAsync()).ToString()
     End Function
@@ -84,22 +84,28 @@ Public Class adminDashboard
         discountStatusPie.Update()
     End Function
 
-    'Private Async Function LoadUserStatusChartAsync() As Task
-    'userStatusPie.Series.Clear()
+    Private Async Function LoadStockRequestStatusChartAsync() As Task
+        stockRequestStatusPie.Series.Clear()
 
-    'Dim data = Await AdminRepository.GetActiveInactiveUserStatusAsync()
+        ' Fetch stock request status counts
+        Dim data = Await AdminRepository.GetStockRequestStatusCountAsync()
 
-    'Dim series As New Series("User Status") With {
-    '.ChartType = SeriesChartType.Pie,
-    '.IsValueShownAsLabel = True
-    '}
+        ' Create a new series for the Pie chart
+        Dim series As New Series("Stock Request Status") With {
+        .ChartType = SeriesChartType.Pie,
+        .IsValueShownAsLabel = True
+    }
 
-    '   series.Points.AddXY("Active", data.activeCount)
-    '   series.Points.AddXY("Inactive", data.inactiveCount)
+        ' Add points based on the query result
+        series.Points.AddXY("Pending", data.pendingCount)
+        series.Points.AddXY("Approved", data.approvedCount)
+        series.Points.AddXY("Declined", data.declinedCount)
 
-    '  userStatusPie.Series.Add(series)
-    ' userStatusPie.Update()
-    'End Function
+        ' Add the series to the chart and update it
+        stockRequestStatusPie.Series.Add(series)
+        stockRequestStatusPie.Update()
+    End Function
+
 
 
     Public Sub ShowFormInPanel(form As Form)
@@ -111,7 +117,7 @@ Public Class adminDashboard
     End Sub
 
     Private Sub activeShow_Click(sender As Object, e As EventArgs) Handles activeShow.Click
-        ShowFormInPanel(New adminUser())
+        ShowFormInPanel(New adminStock())
     End Sub
 
     Private Sub discountShow_Click(sender As Object, e As EventArgs) Handles discountShow.Click
@@ -121,6 +127,5 @@ Public Class adminDashboard
     Private Sub signupShow_Click(sender As Object, e As EventArgs) Handles signupShow.Click
         ShowFormInPanel(New adminLogs())
     End Sub
-
 
 End Class

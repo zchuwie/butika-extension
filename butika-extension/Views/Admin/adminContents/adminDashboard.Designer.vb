@@ -120,11 +120,12 @@ Partial Class adminDashboard
         Label5 = New Label()
         Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
         Label3 = New Label()
-        userStatusPie = New DataVisualization.Charting.Chart()
+        stockRequestStatusPie = New DataVisualization.Charting.Chart()
         adminDashboardText = New RoundedButton()
         adminUserText = New RoundedButton()
         adminDiscountText = New RoundedButton()
         adminLogsText = New RoundedButton()
+        adminStockText = New RoundedButton()
         Guna2Panel1.SuspendLayout()
         Guna2Panel2.SuspendLayout()
         Guna2Panel3.SuspendLayout()
@@ -137,7 +138,7 @@ Partial Class adminDashboard
         Guna2Panel8.SuspendLayout()
         CType(discountStatusPie, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel9.SuspendLayout()
-        CType(userStatusPie, ComponentModel.ISupportInitialize).BeginInit()
+        CType(stockRequestStatusPie, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Guna2Panel1
@@ -356,9 +357,9 @@ Partial Class adminDashboard
         Guna2Button3.Location = New Point(12, 10)
         Guna2Button3.Name = "Guna2Button3"
         Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges16
-        Guna2Button3.Size = New Size(151, 29)
+        Guna2Button3.Size = New Size(99, 29)
         Guna2Button3.TabIndex = 2
-        Guna2Button3.Text = "Pending Discount"
+        Guna2Button3.Text = "Verified"
         Guna2Button3.TextAlign = HorizontalAlignment.Right
         ' 
         ' pendingNum
@@ -776,7 +777,7 @@ Partial Class adminDashboard
         Guna2Panel9.BorderRadius = 20
         Guna2Panel9.BorderThickness = 1
         Guna2Panel9.Controls.Add(Label3)
-        Guna2Panel9.Controls.Add(userStatusPie)
+        Guna2Panel9.Controls.Add(stockRequestStatusPie)
         Guna2Panel9.CustomizableEdges = CustomizableEdges35
         Guna2Panel9.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2Panel9.Location = New Point(903, 489)
@@ -793,30 +794,30 @@ Partial Class adminDashboard
         Label3.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label3.Location = New Point(17, 16)
         Label3.Name = "Label3"
-        Label3.Size = New Size(75, 17)
+        Label3.Size = New Size(85, 17)
         Label3.TabIndex = 6
-        Label3.Text = "User Status"
+        Label3.Text = "Stock Status"
         ' 
-        ' userStatusPie
+        ' stockRequestStatusPie
         ' 
-        userStatusPie.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        stockRequestStatusPie.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ChartArea2.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ChartArea2.Name = "ChartArea1"
-        userStatusPie.ChartAreas.Add(ChartArea2)
+        stockRequestStatusPie.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
-        userStatusPie.Legends.Add(Legend2)
-        userStatusPie.Location = New Point(17, 45)
-        userStatusPie.Name = "userStatusPie"
-        userStatusPie.Palette = DataVisualization.Charting.ChartColorPalette.None
-        userStatusPie.PaletteCustomColors = New Color() {Color.FromArgb(CByte(22), CByte(66), CByte(60)), Color.FromArgb(CByte(55), CByte(90), CByte(85)), Color.FromArgb(CByte(94), CByte(130), CByte(124)), Color.FromArgb(CByte(135), CByte(173), CByte(166)), Color.FromArgb(CByte(150), CByte(177), CByte(172)), Color.FromArgb(CByte(99), CByte(124), CByte(119)), Color.FromArgb(CByte(35), CByte(48), CByte(68)), Color.FromArgb(CByte(81), CByte(94), CByte(116))}
+        stockRequestStatusPie.Legends.Add(Legend2)
+        stockRequestStatusPie.Location = New Point(17, 45)
+        stockRequestStatusPie.Name = "stockRequestStatusPie"
+        stockRequestStatusPie.Palette = DataVisualization.Charting.ChartColorPalette.None
+        stockRequestStatusPie.PaletteCustomColors = New Color() {Color.FromArgb(CByte(22), CByte(66), CByte(60)), Color.FromArgb(CByte(55), CByte(90), CByte(85)), Color.FromArgb(CByte(94), CByte(130), CByte(124)), Color.FromArgb(CByte(135), CByte(173), CByte(166)), Color.FromArgb(CByte(150), CByte(177), CByte(172)), Color.FromArgb(CByte(99), CByte(124), CByte(119)), Color.FromArgb(CByte(35), CByte(48), CByte(68)), Color.FromArgb(CByte(81), CByte(94), CByte(116))}
         Series2.ChartArea = "ChartArea1"
         Series2.ChartType = DataVisualization.Charting.SeriesChartType.Pie
         Series2.Legend = "Legend1"
         Series2.Name = "Series1"
-        userStatusPie.Series.Add(Series2)
-        userStatusPie.Size = New Size(236, 138)
-        userStatusPie.TabIndex = 1
-        userStatusPie.Text = "Chart1"
+        stockRequestStatusPie.Series.Add(Series2)
+        stockRequestStatusPie.Size = New Size(236, 138)
+        stockRequestStatusPie.TabIndex = 1
+        stockRequestStatusPie.Text = "Chart1"
         ' 
         ' adminDashboardText
         ' 
@@ -878,12 +879,28 @@ Partial Class adminDashboard
         adminLogsText.UseVisualStyleBackColor = False
         adminLogsText.Visible = False
         ' 
+        ' adminStockText
+        ' 
+        adminStockText.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        adminStockText.CornerRadius = 60
+        adminStockText.FlatStyle = FlatStyle.Flat
+        adminStockText.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        adminStockText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        adminStockText.Location = New Point(-28, 320)
+        adminStockText.Name = "adminStockText"
+        adminStockText.Size = New Size(194, 64)
+        adminStockText.TabIndex = 16
+        adminStockText.Text = "Stock Update"
+        adminStockText.UseVisualStyleBackColor = False
+        adminStockText.Visible = False
+        ' 
         ' adminDashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 17F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(231), CByte(245), CByte(240))
         ClientSize = New Size(1204, 714)
+        Controls.Add(adminStockText)
         Controls.Add(adminDiscountText)
         Controls.Add(adminLogsText)
         Controls.Add(adminUserText)
@@ -921,7 +938,7 @@ Partial Class adminDashboard
         CType(discountStatusPie, ComponentModel.ISupportInitialize).EndInit()
         Guna2Panel9.ResumeLayout(False)
         Guna2Panel9.PerformLayout()
-        CType(userStatusPie, ComponentModel.ISupportInitialize).EndInit()
+        CType(stockRequestStatusPie, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -967,4 +984,6 @@ Partial Class adminDashboard
     Friend WithEvents adminUserText As RoundedButton
     Friend WithEvents adminDiscountText As RoundedButton
     Friend WithEvents adminLogsText As RoundedButton
+    Friend WithEvents stockRequestStatusPie As DataVisualization.Charting.Chart
+    Friend WithEvents adminStockText As RoundedButton
 End Class

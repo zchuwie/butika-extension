@@ -101,5 +101,11 @@ Partial Public Class adminPage
         ToggleLabelVisibilityByName("adminDiscountText", False)
     End Sub
 
+    Private Sub adminStock_MouseEnter(sender As Object, e As EventArgs) Handles adminStock.MouseEnter
+        ToggleLabelVisibilityByName("adminStockText", True)
+    End Sub
 
+    Private Sub adminStock_MouseLeave(sender As Object, e As EventArgs) Handles adminStock.MouseLeave
+        ToggleLabelVisibilityByName("adminStockText", False)
+    End Sub
 End Class
