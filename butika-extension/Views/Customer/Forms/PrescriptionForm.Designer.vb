@@ -38,7 +38,6 @@ Partial Class PrescriptionForm
         DocContactLbl = New Label()
         BriefInfoLbl = New Label()
         PrescDigiCopy = New PictureBox()
-        DrugListBox = New ListBox()
         DateLbl = New Label()
         PrescInfoLbl = New Label()
         DateSubmitted = New Label()
@@ -50,6 +49,7 @@ Partial Class PrescriptionForm
         Clinic = New Label()
         Contact = New Label()
         briefInfo = New Label()
+        itemsToApproved = New FlowLayoutPanel()
         CType(PrescDigiCopy, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -243,16 +243,6 @@ Partial Class PrescriptionForm
         PrescDigiCopy.TabIndex = 27
         PrescDigiCopy.TabStop = False
         ' 
-        ' DrugListBox
-        ' 
-        DrugListBox.FormattingEnabled = True
-        DrugListBox.ItemHeight = 15
-        DrugListBox.Items.AddRange(New Object() {"ItemPrescriptionMed"})
-        DrugListBox.Location = New Point(510, 437)
-        DrugListBox.Name = "DrugListBox"
-        DrugListBox.Size = New Size(217, 94)
-        DrugListBox.TabIndex = 28
-        ' 
         ' DateLbl
         ' 
         DateLbl.AutoSize = True
@@ -306,7 +296,7 @@ Partial Class PrescriptionForm
         DrugListLbl.AutoSize = True
         DrugListLbl.Font = New Font("Century Gothic", 12.75F, FontStyle.Bold)
         DrugListLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        DrugListLbl.Location = New Point(510, 410)
+        DrugListLbl.Location = New Point(449, 401)
         DrugListLbl.Name = "DrugListLbl"
         DrugListLbl.Size = New Size(88, 19)
         DrugListLbl.TabIndex = 33
@@ -375,18 +365,28 @@ Partial Class PrescriptionForm
         ' 
         ' briefInfo
         ' 
-        briefInfo.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        briefInfo.Font = New Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         briefInfo.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         briefInfo.Location = New Point(29, 451)
         briefInfo.Name = "briefInfo"
-        briefInfo.Size = New Size(445, 96)
+        briefInfo.Size = New Size(306, 96)
         briefInfo.TabIndex = 39
         briefInfo.Text = "briefInfo"
+        ' 
+        ' itemsToApproved
+        ' 
+        itemsToApproved.AutoScroll = True
+        itemsToApproved.FlowDirection = FlowDirection.TopDown
+        itemsToApproved.Location = New Point(449, 423)
+        itemsToApproved.Name = "itemsToApproved"
+        itemsToApproved.Size = New Size(278, 154)
+        itemsToApproved.TabIndex = 40
         ' 
         ' PrescriptionForm
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(itemsToApproved)
         Controls.Add(briefInfo)
         Controls.Add(Contact)
         Controls.Add(Clinic)
@@ -398,7 +398,6 @@ Partial Class PrescriptionForm
         Controls.Add(DateSubmitted)
         Controls.Add(DateLbl)
         Controls.Add(PrescInfoLbl)
-        Controls.Add(DrugListBox)
         Controls.Add(PrescDigiCopy)
         Controls.Add(BriefInfoLbl)
         Controls.Add(DocContactLbl)
@@ -416,7 +415,7 @@ Partial Class PrescriptionForm
         Controls.Add(StatusLbl)
         Controls.Add(PrescNo)
         Name = "PrescriptionForm"
-        Size = New Size(796, 607)
+        Size = New Size(780, 602)
         CType(PrescDigiCopy, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -438,7 +437,6 @@ Partial Class PrescriptionForm
     Friend WithEvents DocContactLbl As Label
     Friend WithEvents BriefInfoLbl As Label
     Friend WithEvents PrescDigiCopy As PictureBox
-    Friend WithEvents DrugListBox As ListBox
     Friend WithEvents DateLbl As Label
     Friend WithEvents PrescInfoLbl As Label
     Friend WithEvents DateSubmitted As Label
@@ -450,4 +448,5 @@ Partial Class PrescriptionForm
     Friend WithEvents Clinic As Label
     Friend WithEvents Contact As Label
     Friend WithEvents briefInfo As Label
+    Friend WithEvents itemsToApproved As FlowLayoutPanel
 End Class

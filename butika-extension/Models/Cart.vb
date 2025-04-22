@@ -9,5 +9,6 @@ Namespace Models
         Public Property isTicked As Boolean
         Public Property isApproved As Integer
         Public Property PrescriptionID As Integer
+        Public Property isDeleted As Boolean
     End Class
 End Namespace

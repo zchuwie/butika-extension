@@ -432,6 +432,7 @@ Partial Class SubmitForm
         Controls.Add(PatientInfoLbl)
         FormBorderStyle = FormBorderStyle.None
         Name = "SubmitForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "SubmitForm"
         CType(imageView, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

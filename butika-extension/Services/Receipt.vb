@@ -82,12 +82,53 @@ Friend Class Receipt
             End If
             gfx.DrawString($"{item.Medicine.MedicineName}", regtexts, darkgreen, New XRect(col1, tableTop, columnWidth, rowHeight), XStringFormats.TopLeft)
             gfx.DrawString($"{item.Quantity}", regtexts, darkgreen, New XRect(col2, tableTop, col3 - col2, rowHeight), XStringFormats.TopCenter)
-            gfx.DrawString($"{item.Medicine.MedicinePrice:0.00}", regtexts, darkgreen, New XRect(col3, tableTop, col4 - col3, rowHeight), XStringFormats.TopCenter)
-            gfx.DrawString($"{item.Medicine.MedicinePrice * item.Quantity}", regtexts, darkgreen, New XRect(col4, tableTop, 70, rowHeight), XStringFormats.TopRight)
+            gfx.DrawString($"{If(account.IsVerified, item.Medicine.DiscountedPrice, item.Medicine.MedicinePrice)}", regtexts, darkgreen, New XRect(col3, tableTop, col4 - col3, rowHeight), XStringFormats.TopCenter)
+            gfx.DrawString($"{If(account.IsVerified, item.Medicine.DiscountedPrice * item.Quantity, item.Medicine.MedicinePrice * item.Quantity)}", regtexts, darkgreen, New XRect(col4, tableTop, 70, rowHeight), XStringFormats.TopRight)
 
             tableTop += rowHeight
             itemsOnPage += 1
         Next
+        Total(gfx, tableTop, totalPrice)
+        Footer(gfx, newpage, qrCodeImage, transactionID)
+
+        document.Save(filepath)
+    End Sub
+
+    Public Sub PdfReceipt(item As Medicine, totalPrice As Decimal, quantity As Integer, transactionID As String, acc As Account)
+        Dim filepath As String = Path.Combine(documentPath, $"ORID_{transactionID}.pdf")
+        fullPath = Path.GetFullPath(filepath)
+
+        'qrgenerator
+        Dim qrCodeImage As XImage
+        Using qrGenerator As New QRCodeGenerator()
+            Dim qrCodeData As QRCodeData = qrGenerator.CreateQrCode($"Your TransactionID number: {transactionID}", QRCodeGenerator.ECCLevel.Q)
+            Using qrCode As New QRCode(qrCodeData)
+                Using qrBitmap As Bitmap = qrCode.GetGraphic(20)
+                    Using ms As New MemoryStream()
+                        qrBitmap.Save(ms, Imaging.ImageFormat.Png)
+                        qrCodeImage = XImage.FromStream(ms)
+                    End Using
+                End Using
+            End Using
+        End Using
+
+        Dim newpage As PdfPage = document.AddPage()
+        newpage.Width = XUnitPt.FromPoint(pagewidth)
+        newpage.Height = XUnitPt.FromPoint(pageheight)
+        Dim gfx As XGraphics = XGraphics.FromPdfPage(newpage)
+
+        'function
+        Header(gfx, newpage, pagewidth, acc)
+        tableTop += rowHeight
+
+        If item.MedicineName.Length > 15 Then
+            item.MedicineName = item.MedicineName.Substring(0, 15) & "..."
+        End If
+        gfx.DrawString($"{item.MedicineName}", regtexts, darkgreen, New XRect(col1, tableTop, columnWidth, rowHeight), XStringFormats.TopLeft)
+        gfx.DrawString($"{quantity}", regtexts, darkgreen, New XRect(col2, tableTop, col3 - col2, rowHeight), XStringFormats.TopCenter)
+        gfx.DrawString($"{If(account.IsVerified, item.DiscountedPrice, item.MedicinePrice)}", regtexts, darkgreen, New XRect(col3, tableTop, col4 - col3, rowHeight), XStringFormats.TopCenter)
+        gfx.DrawString($"{If(account.IsVerified, item.DiscountedPrice * quantity, item.MedicinePrice * quantity)}", regtexts, darkgreen, New XRect(col4, tableTop, 70, rowHeight), XStringFormats.TopRight)
+
         Total(gfx, tableTop, totalPrice)
         Footer(gfx, newpage, qrCodeImage, transactionID)
 

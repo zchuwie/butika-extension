@@ -11,6 +11,8 @@ Public Class cartItem
     Public Sub Initialize(cart As Cart)
         Me.cart = cart
 
+        isSent.Visible = If(cart.PrescriptionID <> 0, True, False)
+
         MedicineName.Text = cart.Medicine.FormattedMedicineName
         Manufacturer.Text = cart.Medicine.MedicineManufacturer
         medicineImageBox.Image = Image.FromFile(cart.Medicine.MedicineImagePath)

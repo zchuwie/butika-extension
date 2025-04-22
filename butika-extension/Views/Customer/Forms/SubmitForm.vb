@@ -8,8 +8,12 @@ Public Class SubmitForm
     Dim imageName As String
     Dim selectedImagePath As String
 
-    Public Sub New(account As Account)
+    Dim isDirect As Boolean
+    Public Property DidSubmitted As Boolean
+
+    Public Sub New(account As Account, isDirect As Boolean)
         Me.account = account
+        Me.isDirect = isDirect
         InitializeComponent()
     End Sub
 
@@ -79,6 +83,12 @@ Public Class SubmitForm
         If prescriptionID = 0 Then
             Debug.WriteLine("Empty set of prescription error")
             SubmitBtn.Enabled = True
+            Return
+        End If
+
+        If isDirect = True Then
+            DidSubmitted = True
+            Me.Close()
             Return
         End If
 

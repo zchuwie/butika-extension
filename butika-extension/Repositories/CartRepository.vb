@@ -1,6 +1,7 @@
 ﻿Imports butika.Configurations
 Imports butika.Models
 Imports Dapper
+Imports Microsoft.Identity.Client.Cache
 
 Public Class CartRepository
     Dim account As New Account()
@@ -48,6 +49,31 @@ Public Class CartRepository
         End Using
     End Function
 
+    Public Async Function AddToDirectCart(drugId As Integer, quantity As Integer) As Task(Of Integer)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "
+            INSERT INTO usersCart (drug_id, user_id, alreadyCheckout, quantity, isTicked, isApproved)
+            VALUES (@drug_id, @user_id, 0, @quantity, 0, 0);
+            SELECT CAST(SCOPE_IDENTITY() AS INT);
+            "
+
+                Dim insertedCartId As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {
+                .drug_id = drugId,
+                .user_id = account.UserID,
+                .quantity = quantity
+            })
+
+                Return insertedCartId
+            Catch ex As Exception
+                Debug.WriteLine("Error while adding to the cart: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+
     Public Async Function IsAlreadyExistInCart(drugId As Integer) As Task(Of Boolean)
         Using conn = DatabaseConnection.GetConnection()
             Try
@@ -55,7 +81,7 @@ Public Class CartRepository
 
                 Dim query As String = "
                 SELECT COUNT(*) FROM usersCart 
-                WHERE user_id = @user_id AND drug_id = @drug_id AND prescription_id = 0
+                WHERE user_id = @user_id AND drug_id = @drug_id AND prescription_id = 0 AND isDeleted = 0
             "
 
                 Dim result As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {
@@ -79,7 +105,7 @@ Public Class CartRepository
                 Dim query As String = "
                 UPDATE usersCart 
                 SET quantity = @newQuantity 
-                WHERE drug_id = @drug_id AND user_id = @user_id
+                WHERE drug_id = @drug_id AND user_id = @user_id AND isDeleted = 0 AND prescription_id = 0
             "
 
                 Dim rows As Integer = Await conn.ExecuteAsync(query, New With {
@@ -101,7 +127,7 @@ Public Class CartRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "SELECT quantity FROM usersCart WHERE user_id = @user_id AND drug_id = @drug_id"
+                Dim query As String = "SELECT quantity FROM usersCart WHERE user_id = @user_id AND drug_id = @drug_id AND isDeleted = 0"
 
                 ' Use Dapper to execute the query and get the quantity
                 Dim result As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {.user_id = account.UserID, .drug_id = drugId})
@@ -131,10 +157,11 @@ Public Class CartRepository
                 End If
             Catch ex As Exception
                 Debug.WriteLine("Error retrieving prescription status: " & ex.Message)
-                Return 1
+                Return -1
             End Try
         End Using
     End Function
+
 #End Region
 
 #Region "Display Items From Cart"
@@ -161,7 +188,7 @@ Public Class CartRepository
                     med.drug_image AS MedicineImageName
                 FROM usersCart cart
                 LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                WHERE cart.user_id = @user_id AND cart.isApproved <= 1"
+                WHERE cart.user_id = @user_id AND cart.isApproved <= 1 AND cart.isDeleted = 0"
 
             Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
             sql,
@@ -180,6 +207,7 @@ Public Class CartRepository
             Return cartStack
         End Using
     End Function
+
     Public Async Function GetUserCart(isApproved As Integer) As Task(Of Stack(Of Cart))
         Dim cartStack As New Stack(Of Cart)()
 
@@ -202,7 +230,7 @@ Public Class CartRepository
                     med.drug_image AS MedicineImageName
                 FROM usersCart cart
                 LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                WHERE cart.user_id = @user_id AND cart.isApproved = @isApproved"
+                WHERE cart.user_id = @user_id AND cart.isApproved = @isApproved AND cart.isDeleted = 0"
 
             Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
             sql,
@@ -241,7 +269,7 @@ Public Class CartRepository
                     med.drug_price AS MedicinePrice
                 FROM usersCart cart
                 LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                WHERE cart.user_id = @user_id AND isTicked = 1"
+                WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isDeleted = 0"
 
             Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
             sql,
@@ -261,6 +289,7 @@ Public Class CartRepository
         End Using
     End Function
 
+
 #End Region
 
 #Region "Checkbox State"
@@ -271,7 +300,7 @@ Public Class CartRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "UPDATE usersCart SET isTicked = @isTicked WHERE cart_id = @cart_id AND user_id = @user_id"
+                Dim query As String = "UPDATE usersCart SET isTicked = @isTicked WHERE cart_id = @cart_id AND user_id = @user_id AND isDeleted = 0"
 
                 Dim parameters = New With {
                 .isTicked = If(isTicked, 1, 0),
@@ -299,12 +328,12 @@ Public Class CartRepository
                     query = "
                     UPDATE usersCart 
                     SET isTicked = @isTicked 
-                    WHERE user_id = @user_id AND isApproved <> 2"
+                    WHERE user_id = @user_id AND isApproved <> 2 AND isDeleted = 0"
                 Else
                     query = "
                     UPDATE usersCart 
                     SET isTicked = @isTicked 
-                    WHERE user_id = @user_id AND isApproved = @whoToSelect"
+                    WHERE user_id = @user_id AND isApproved = @whoToSelect AND isDeleted = 0"
                 End If
 
                 Dim parameters = New With {
@@ -345,7 +374,7 @@ Public Class CartRepository
                             med.drug_price AS MedicinePrice                            
                         FROM usersCart cart
                         LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                        WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isApproved != 2"
+                        WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isApproved != 2 AND cart.isDeleted = 0"
 
                 Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
                     sql,
@@ -395,7 +424,7 @@ Public Class CartRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "UPDATE usersCart SET alreadyCheckout = 1 WHERE cart_id = @cart_id AND user_id = @user_id AND isTicked = 1 AND isApproved != 2"
+                Dim query As String = "UPDATE usersCart SET alreadyCheckout = 1 WHERE cart_id = @cart_id AND user_id = @user_id AND isTicked = 1 AND isApproved != 2 AND isDeleted = 0"
 
                 For Each checkout In userCheckouts
                     Await conn.ExecuteAsync(query, New With {
@@ -421,7 +450,7 @@ Public Class CartRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "SELECT COUNT(*) FROM usersCart WHERE user_id = @user_id AND isTicked = 1 AND prescription_id != 0 AND isApproved = 0"
+                Dim query As String = "SELECT COUNT(*) FROM usersCart WHERE user_id = @user_id AND isTicked = 1 AND prescription_id != 0 AND isApproved = 0 AND isDeleted = 0"
 
                 Dim result As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {.user_id = account.UserID})
 
@@ -438,7 +467,7 @@ Public Class CartRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "UPDATE usersCart SET prescription_id = @prescription_id WHERE isTicked = 1 AND user_id = @user_id"
+                Dim query As String = "UPDATE usersCart SET prescription_id = @prescription_id WHERE isTicked = 1 AND user_id = @user_id AND isDeleted = 0"
 
                 ' Execute the query using Dapper
                 Await conn.ExecuteAsync(query, New With {.prescription_id = prescriptionID, .user_id = account.UserID})
@@ -451,6 +480,23 @@ Public Class CartRepository
         End Using
     End Function
 
+    Public Async Function insertPrescriptionByCartID(prescriptionID As Integer, cartID As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "UPDATE usersCart SET prescription_id = @prescription_id WHERE cart_id = @cart_id AND isDeleted = 0"
+
+                ' Execute the query using Dapper
+                Await conn.ExecuteAsync(query, New With {.prescription_id = prescriptionID, .user_id = account.UserID, .cart_id = cartID})
+
+                Return True
+            Catch ex As Exception
+                Debug.WriteLine("Error updating prescription_id: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
 
 #End Region
 
@@ -474,7 +520,7 @@ Public Class CartRepository
                     med.drug_stocks AS MedicineStock
                 FROM usersCart cart
                 LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                WHERE cart.user_id = @user_id AND cart.isApproved = 1 AND cart.isTicked = 1 AND cart.alreadyCheckout = 1"
+                WHERE cart.user_id = @user_id AND cart.isApproved = 1 AND cart.isTicked = 1 AND cart.alreadyCheckout = 1 and isDeleted = 0"
 
                 Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
                 query,
@@ -517,7 +563,22 @@ Public Class CartRepository
         End Using
     End Function
 
+    Public Async Function itemStockToReduce(item As Integer, quantity As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
 
+                Dim query As String = "UPDATE drug_inventory SET drug_stocks = drug_stocks - @drug_stocks WHERE drug_id = @drug_id"
+                Await conn.ExecuteAsync(query, New With {.drug_stocks = quantity, Key .drug_id = item})
+                Debug.WriteLine("Successfully decreased stock.")
+                Return True
+
+            Catch ex As Exception
+                Debug.WriteLine("Error while decreasing stock: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
 
 #End Region
 
@@ -543,7 +604,8 @@ Public Class CartRepository
                 WHERE cart.user_id = @user_id 
                 AND cart.isTicked = 1 
                 AND cart.isApproved = 1
-                AND cart.alreadyCheckout = 1"
+                AND cart.alreadyCheckout = 1
+                AND cart.isDeleted = 0"
 
                 Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
                 query,
@@ -573,7 +635,7 @@ Public Class CartRepository
         Using conn = DatabaseConnection.GetConnection()
             Try
                 Await conn.OpenAsync()
-                Dim query As String = "DELETE FROM usersCart WHERE user_id = @user_id AND alreadyCheckout = 1"
+                Dim query As String = "UPDATE usersCart SET isDeleted = 1 WHERE user_id = @user_id AND alreadyCheckout = 1"
 
                 Await conn.ExecuteAsync(query, New With {.user_id = account.UserID})
 
@@ -589,7 +651,7 @@ Public Class CartRepository
         Using conn = DatabaseConnection.GetConnection()
             Try
                 Await conn.OpenAsync()
-                Dim query As String = "DELETE FROM usersCart WHERE user_id = @user_id AND isTicked = 1"
+                Dim query As String = "UPDATE usersCart SET isDeleted = 1 WHERE user_id = @user_id AND isTicked = 1"
 
                 Await conn.ExecuteAsync(query, New With {.user_id = account.UserID})
 
@@ -628,6 +690,99 @@ Public Class CartRepository
             End Try
         End Using
     End Function
+#End Region
+
+#Region "Dashboard Display"
+
+    Public Async Function getTotalTransactionsMade() As Task(Of Integer)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "SELECT COUNT(*) FROM userTransaction WHERE user_id = @user_id"
+                Dim result As Object = Await conn.ExecuteScalarAsync(query, New With {.user_id = account.UserID})
+
+                Return Convert.ToInt32(result)
+
+            Catch ex As Exception
+                MessageBox.Show("Error while getting the prescription: " & ex.Message)
+                Return 0
+            End Try
+        End Using
+    End Function
+
+    Public Async Function getTotalCartInProgress() As Task(Of Integer)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "SELECT COUNT(*) FROM usersCart WHERE user_id = @user_id AND alreadyCheckout = 0 AND isDeleted = 0 AND isApproved != 2"
+                Dim result As Object = Await conn.ExecuteScalarAsync(query, New With {.user_id = account.UserID})
+
+                Return Convert.ToInt32(result)
+
+            Catch ex As Exception
+                MessageBox.Show("Error while getting the prescription: " & ex.Message)
+                Return 0
+            End Try
+        End Using
+    End Function
+
+    Public Async Function getTotalPrescriptionMade() As Task(Of Integer)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "SELECT COUNT(*) FROM userPrescriptionForm WHERE user_id = @user_id"
+                Dim result As Object = Await conn.ExecuteScalarAsync(query, New With {.user_id = account.UserID})
+
+                Return Convert.ToInt32(result)
+
+            Catch ex As Exception
+                MessageBox.Show("Error while getting the prescription: " & ex.Message)
+                Return 0
+            End Try
+        End Using
+    End Function
+
+    Public Async Function getPendingCart() As Task(Of Integer)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "SELECT COUNT(*) FROM usersCart WHERE user_id = @user_id AND alreadyCheckout = 0 AND isDeleted = 0 AND isApproved = 0"
+                Dim result As Object = Await conn.ExecuteScalarAsync(query, New With {.user_id = account.UserID})
+
+                Return Convert.ToInt32(result)
+
+            Catch ex As Exception
+                MessageBox.Show("Error while getting the prescription: " & ex.Message)
+                Return 0
+            End Try
+        End Using
+    End Function
+
+    Public Async Function getCheckoutItem() As Task(Of Integer)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "select COUNT(*) from usertransaction ut RIGHT JOIN userscheckout uc ON ut.transaction_id = uc.transaction_id WHERE user_id = @user_id"
+                Dim result As Object = Await conn.ExecuteScalarAsync(query, New With {.user_id = account.UserID})
+
+                Return Convert.ToInt32(result)
+
+            Catch ex As Exception
+                MessageBox.Show("Error while getting the prescription: " & ex.Message)
+                Return 0
+            End Try
+        End Using
+    End Function
+
+
+
+
+
 #End Region
 
 End Class
