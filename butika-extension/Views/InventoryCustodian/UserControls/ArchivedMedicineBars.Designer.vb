@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class MedicineBars
+Partial Class ArchivedMedicineBars
     Inherits System.Windows.Forms.UserControl
 
     'UserControl overrides dispose to clean up the component list.
@@ -25,11 +25,9 @@ Partial Class MedicineBars
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         medicinebar_bg = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
-        medicineID = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        expirationDate = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        stockQuantity = New Guna.UI2.WinForms.Guna2HtmlLabel()
         manufacturerName = New Guna.UI2.WinForms.Guna2HtmlLabel()
         medicineName = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        medicineID = New Guna.UI2.WinForms.Guna2HtmlLabel()
         medicinebar_bg.SuspendLayout()
         SuspendLayout()
         ' 
@@ -39,8 +37,6 @@ Partial Class MedicineBars
         medicinebar_bg.BorderRadius = 6
         medicinebar_bg.BorderThickness = 1
         medicinebar_bg.Controls.Add(medicineID)
-        medicinebar_bg.Controls.Add(expirationDate)
-        medicinebar_bg.Controls.Add(stockQuantity)
         medicinebar_bg.Controls.Add(manufacturerName)
         medicinebar_bg.Controls.Add(medicineName)
         medicinebar_bg.CustomizableEdges = CustomizableEdges1
@@ -53,47 +49,8 @@ Partial Class MedicineBars
         medicinebar_bg.Margin = New Padding(7, 6, 7, 6)
         medicinebar_bg.Name = "medicinebar_bg"
         medicinebar_bg.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        medicinebar_bg.Size = New Size(905, 41)
-        medicinebar_bg.TabIndex = 0
-        ' 
-        ' medicineID
-        ' 
-        medicineID.AutoSize = False
-        medicineID.BackColor = Color.Transparent
-        medicineID.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
-        medicineID.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineID.Location = New Point(19, 12)
-        medicineID.Margin = New Padding(3, 2, 3, 2)
-        medicineID.Name = "medicineID"
-        medicineID.Size = New Size(42, 14)
-        medicineID.TabIndex = 4
-        medicineID.Text = "00"
-        ' 
-        ' expirationDate
-        ' 
-        expirationDate.AutoSize = False
-        expirationDate.BackColor = Color.Transparent
-        expirationDate.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
-        expirationDate.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        expirationDate.Location = New Point(695, 12)
-        expirationDate.Margin = New Padding(3, 2, 3, 2)
-        expirationDate.Name = "expirationDate"
-        expirationDate.Size = New Size(112, 14)
-        expirationDate.TabIndex = 3
-        expirationDate.Text = "2999/12/31"
-        ' 
-        ' stockQuantity
-        ' 
-        stockQuantity.AutoSize = False
-        stockQuantity.BackColor = Color.Transparent
-        stockQuantity.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
-        stockQuantity.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        stockQuantity.Location = New Point(595, 12)
-        stockQuantity.Margin = New Padding(3, 2, 3, 2)
-        stockQuantity.Name = "stockQuantity"
-        stockQuantity.Size = New Size(42, 14)
-        stockQuantity.TabIndex = 2
-        stockQuantity.Text = "00"
+        medicinebar_bg.Size = New Size(610, 41)
+        medicinebar_bg.TabIndex = 1
         ' 
         ' manufacturerName
         ' 
@@ -101,10 +58,10 @@ Partial Class MedicineBars
         manufacturerName.BackColor = Color.Transparent
         manufacturerName.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
         manufacturerName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        manufacturerName.Location = New Point(409, 12)
+        manufacturerName.Location = New Point(413, 12)
         manufacturerName.Margin = New Padding(3, 2, 3, 2)
         manufacturerName.Name = "manufacturerName"
-        manufacturerName.Size = New Size(179, 14)
+        manufacturerName.Size = New Size(171, 14)
         manufacturerName.TabIndex = 1
         manufacturerName.Text = "Manufacturer Name Here"
         ' 
@@ -114,31 +71,40 @@ Partial Class MedicineBars
         medicineName.BackColor = Color.Transparent
         medicineName.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
         medicineName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        medicineName.Location = New Point(70, 12)
+        medicineName.Location = New Point(87, 12)
         medicineName.Margin = New Padding(3, 2, 3, 2)
         medicineName.Name = "medicineName"
-        medicineName.Size = New Size(264, 14)
+        medicineName.Size = New Size(309, 14)
         medicineName.TabIndex = 0
         medicineName.Text = "Medicine Name Here"
         ' 
-        ' MedicineBars
+        ' medicineID
+        ' 
+        medicineID.AutoSize = False
+        medicineID.BackColor = Color.Transparent
+        medicineID.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
+        medicineID.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        medicineID.Location = New Point(18, 12)
+        medicineID.Margin = New Padding(3, 2, 3, 2)
+        medicineID.Name = "medicineID"
+        medicineID.Size = New Size(42, 14)
+        medicineID.TabIndex = 5
+        medicineID.Text = "00"
+        ' 
+        ' ArchivedMedicineBars
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         Controls.Add(medicinebar_bg)
-        Margin = New Padding(0, 0, 0, 4)
-        Name = "MedicineBars"
-        Size = New Size(907, 41)
+        Name = "ArchivedMedicineBars"
+        Size = New Size(610, 41)
         medicinebar_bg.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents medicinebar_bg As Guna.UI2.WinForms.Guna2CustomGradientPanel
-    Friend WithEvents medicineName As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents expirationDate As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents stockQuantity As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents manufacturerName As Guna.UI2.WinForms.Guna2HtmlLabel
+    Friend WithEvents medicineName As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents medicineID As Guna.UI2.WinForms.Guna2HtmlLabel
 
 End Class

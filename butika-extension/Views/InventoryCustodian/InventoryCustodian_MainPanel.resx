@@ -118,20 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dashboard_medicine_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABsAAAAeCAYAAADdGWXmAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAQhJREFUSEvdltEJgzAURTOCP3GZRjBZzGzQbuYIjuAILQmtvJfmwg3GfvTABXk5
-        3hCFWmOMMWNwiw1uH4N79k7qtWG6p31MuiiFixKN9decqJI9PcJjkI/aGdX/v5v9+p3FykL3WO8e+ajp
-        4qoTvntj+Xi7vT+qh5IIqB5KIqB6kJR+O+VaS2SPAkllQUtkjwJJZUFLZI8CSWiOoHwkoTmC8pGE5gjK
-        RxKaIygfSWiOoHwkoTmC8pEk562RPQoklQUtkT0KJJ355skeBSURUD2URED1jGHahLiU6wzqC+FvW7l+
-        cObdgHz/HfgwzPNgvVsrN7XHuzX1lXsokpBP6NUjbUi+L9Y2egHuhaMbNkbKtQAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="dashboard_logout_btn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAAAXNJREFUSEvtl9FtgzAQhhmhIzACI2SEjpANkg2aEbpBRsgIKNgoj1ZjU+LjgREy
+        DgAACw4BQL7hQQAAAXNJREFUSEvtl9FtgzAQhhmhIzACI2SEjpANkg2aEbpBRsgIKNgoj1ZjU+LjgREy
         QquDSjUHxgZbqA/9pP/FDncfibFJkiRJUoI8MF21HNRXSBiotmyqN6y5mALue1owOA91pH2c4F2MCoXn
         Sfs4IQXORa32a8JAvpu1brVIaa9ZzIvxZ6LzvrBG7v5FTFwiuRAvHFRmjg2IJZK3XaOuDtOqHczVImUg
         nzhnfbxjiSA5iIxpecLG5jiOmX0mZWKK2OAgMv7zjVhlthBBnDJLRHDB3VqRrk2h769WGV+RvsjvZ2Om

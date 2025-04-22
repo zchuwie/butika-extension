@@ -5,7 +5,8 @@ Imports butika.Models
 Public Class ViewMedicineBar
 
     Public Property MedicineInfo As Medicine
-    Private selectedImagePath As String = String.Empty
+    Private selectedImagePath As String
+    Dim imageName As String
 
     Private Sub exit_btn_Click(sender As Object, e As EventArgs) Handles exit_btn.Click
         Me.Close()
@@ -23,6 +24,8 @@ Public Class ViewMedicineBar
         RemoveHandler stock_clickable.Click, AddressOf Guna2CustomGradientPanel18_Click
         RemoveHandler edit_stock_btn.Click, AddressOf Guna2CustomGradientPanel18_Click
         RemoveHandler stock_label.Click, AddressOf Guna2CustomGradientPanel18_Click
+
+        reloadData()
     End Sub
 
     Private Sub ToggleEditMode(enabled As Boolean)
@@ -45,7 +48,7 @@ Public Class ViewMedicineBar
         edit_medicine_btn.Enabled = Not enabled
     End Sub
 
-    Private Sub LoadMedicineData(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Function reloadData()
         ToggleEditMode(False)
         RemoveHandler stock_clickable.Click, AddressOf Guna2CustomGradientPanel18_Click
         RemoveHandler edit_stock_btn.Click, AddressOf Guna2CustomGradientPanel18_Click
@@ -54,23 +57,22 @@ Public Class ViewMedicineBar
         medicine_id_lbl.Text = "Medicine ID# " + MedicineInfo.MedicineID.ToString()
 
         If MedicineInfo.MedicineDateAdded.HasValue Then
-            medicine_added_date_lbl.Text = "Date added: " & MedicineInfo.MedicineDateAdded.Value.ToString("yyyy-MM-dd HH:mm:ss")
+            medicine_added_date_lbl.Text = "Date added: " & MedicineInfo.MedicineDateAdded.Value.ToString("MMMM dd, yyyy")
         Else
-            medicine_added_date_lbl.Text = DateTime.Now
+            medicine_added_date_lbl.Text = "Date added: " & DateTime.Now.ToString("MMMM dd, yyyy")
         End If
 
         If MedicineInfo.MedicineLastUpdated.HasValue Then
-            medicine_updated_date_lbl.Text = "Last Updated: " & MedicineInfo.MedicineLastUpdated.Value.ToString("yyyy-MM-dd HH:mm:ss")
+            medicine_updated_date_lbl.Text = "Last Updated: " & MedicineInfo.MedicineLastUpdated.Value.ToString("MMMM dd, yyyy")
         Else
-            medicine_updated_date_lbl.Text = DateTime.Now
+            medicine_updated_date_lbl.Text = "Last Updated: " & DateTime.Now.ToString("MMMM dd, yyyy")
         End If
-
 
         prescription_cbox.Items.Add("No")
         prescription_cbox.Items.Add("Yes")
 
         If MedicineInfo IsNot Nothing Then
-            medicine_name_txtbox.Text = MedicineInfo.FormattedMedicineName
+            medicine_name_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineName)
             brand_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineBrand)
             dosage_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineDosage)
             manufacturer_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineManufacturer)
@@ -137,18 +139,30 @@ Public Class ViewMedicineBar
             medstatus_indicator.FillColor3 = Color.FromArgb(196, 218, 212)
         End If
 
+    End Function
+
+    Private Sub LoadMedicineData(sender As Object, e As EventArgs) Handles MyBase.Load
+        reloadData()
     End Sub
 
+
     Private Sub choose_img_btn_Click(sender As Object, e As EventArgs) Handles addimage_btn.Click
-        Using ofd As New OpenFileDialog()
-            ofd.Filter = "Image Files (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png"
-            If ofd.ShowDialog() = DialogResult.OK Then
-                selectedImagePath = ofd.FileName ' Store the selected image path
+        Try
+            Using openFileDialog As New OpenFileDialog()
+                openFileDialog.Filter = "Image Files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg"
+                If openFileDialog.ShowDialog() = DialogResult.OK Then
+                    selectedImagePath = openFileDialog.FileName ' Get the selected image's path
+                    imageName = MedicineInfo.MedicineID.ToString() + Path.GetFileName(selectedImagePath)
+
+                End If
                 addimage_btn.Image = Image.FromFile(selectedImagePath)
-                addimage_btn.SizeMode = PictureBoxSizeMode.Zoom
-            End If
-        End Using
+            End Using
+        Catch ex As Exception
+
+        End Try
     End Sub
+
+
 
     Private Async Sub UpdateMedicineButton_Click(sender As Object, e As EventArgs) Handles save_update_btn.Click
         ' Validation
@@ -170,22 +184,13 @@ Public Class ViewMedicineBar
             Return
         End If
 
-        ' Prepare image file
-        Dim finalImageName As String = MedicineInfo.MedicineImageName
-        If Not String.IsNullOrEmpty(selectedImagePath) Then
-            Dim imageFolderPath As String = Path.Combine(Application.StartupPath, "drug_images")
-            Dim originalFileName As String = Path.GetFileNameWithoutExtension(selectedImagePath)
-            Dim extension As String = Path.GetExtension(selectedImagePath)
-            Dim targetPath As String = Path.Combine(imageFolderPath, originalFileName & extension)
-            Dim index As Integer = 1
+        Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
+        Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.DrugPathName)
+        Dim isImageSaved As Boolean = ImageInsertion.SaveImageToFolder(selectedImagePath, imageName, destinationFolder)
 
-            While File.Exists(targetPath)
-                targetPath = Path.Combine(imageFolderPath, $"{originalFileName}({index}){extension}")
-                index += 1
-            End While
-
-            finalImageName = Path.GetFileName(targetPath)
-            File.Copy(selectedImagePath, targetPath, overwrite:=False) ' Copy the selected image to folder
+        If Not isImageSaved Then
+            Debug.WriteLine("Image has not been saved.")
+            Return
         End If
 
         Dim prescription As Integer
@@ -207,7 +212,7 @@ Public Class ViewMedicineBar
             .MedicinePrice = Math.Round(price, 2),
             .MedicineType = medtype_txtbox.Text,
             .MedicineExpirationDate = expdate_datetime.Value,
-            .MedicineImageName = finalImageName,
+            .MedicineImageName = imageName,
             .MedicineLastUpdated = DateTime.Now
         }
 
@@ -216,9 +221,8 @@ Public Class ViewMedicineBar
         Await repo.UpdateMedicine(updatedMedicine)
 
         ' Update the UI Image control (refresh the image after update)
-        If Not String.IsNullOrEmpty(finalImageName) Then
-            ' Assuming image is stored in "drug_images" folder
-            Dim imagePath As String = Path.Combine(Application.StartupPath, "drug_images", finalImageName)
+        If Not String.IsNullOrEmpty(imageName) Then
+            Dim imagePath As String = Path.Combine(destinationFolder, imageName)
             If File.Exists(imagePath) Then
                 addimage_btn.Image = Image.FromFile(imagePath)
                 addimage_btn.SizeMode = PictureBoxSizeMode.Zoom
@@ -227,13 +231,30 @@ Public Class ViewMedicineBar
 
         MessageBox.Show("Medicine updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.DialogResult = DialogResult.OK
-
-        Me.Close()
+        reloadData()
     End Sub
 
     Private Sub Guna2CustomGradientPanel18_Click(sender As Object, e As EventArgs) Handles stock_clickable.Click, edit_stock_btn.Click, stock_label.Click
         Dim stockForm As New StockRequestForm(MedicineInfo)
         stockForm.ShowDialog()
 
+    End Sub
+
+    Private Async Sub archive_medicine_btn_Click(sender As Object, e As EventArgs) Handles archive_medicine_btn.Click
+        If MessageBox.Show("Continue with archiving the medicine?", "Archive Medicine", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Dim medId = MedicineInfo.MedicineID
+
+            Dim repo As New MedicineRepository()
+            Dim arcSuccess As Boolean = Await repo.ArchiveMedicine(medId)
+
+            If arcSuccess Then
+                MessageBox.Show("Medicine archived successfully!")
+            Else
+                MessageBox.Show("Failed to archive medicine.")
+            End If
+
+            Me.Close()
+
+        End If
     End Sub
 End Class
