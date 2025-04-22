@@ -141,4 +141,32 @@ Public Class MedicinePage
         Next
 
     End Function
+
+    Private Async Sub MedSearch_TextChanged(sender As Object, e As EventArgs) Handles MedSearch.TextChanged
+        Dim medicineRepo As New MedicineRepository()
+
+        MedicineDisplayPanel.Controls.Clear()
+
+        Dim allMedicines As List(Of Medicine) = Await medicineRepo.SearchMedicine(MedSearch.Text)
+
+        Dim batchSize As Integer = 5
+
+        For i As Integer = 0 To allMedicines.Count - 1 Step batchSize
+            Dim batch = allMedicines.Skip(i).Take(batchSize).ToList()
+
+            For Each individualMedicine In batch
+                Dim card As New medItem(account)
+                card.Initialize(individualMedicine)
+
+                If individualMedicine.MedicinePrescription = 0 Then
+                    card.itemIdentifier.BackColor = System.Drawing.Color.Green
+                ElseIf individualMedicine.MedicinePrescription = 1 Then
+                    card.itemIdentifier.BackColor = System.Drawing.Color.Yellow
+                End If
+
+                MedicineDisplayPanel.Controls.Add(card)
+            Next
+
+        Next
+    End Sub
 End Class

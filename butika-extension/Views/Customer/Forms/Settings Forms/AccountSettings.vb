@@ -42,6 +42,10 @@ Public Class AccountSettings
 
         FillUpProfileInfo()
         FillUpContactInfo()
+
+        If account.IsVerified = True Then 'if verified
+            VerifyButton.Text = "You are already verified."
+        End If
     End Sub
 
 #Region "Functions"
@@ -314,8 +318,7 @@ Public Class AccountSettings
                 Dim verify3 As New VerifyStep3()
                 verify3.ShowDialog()
             ElseIf account.IsVerified = True Then 'if verified
-                Dim verified As New Verified()
-                verified.ShowDialog()
+                'do nothing
             End If
 
         End If
