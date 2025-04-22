@@ -7,47 +7,14 @@ Public Class MedicinePanel_InventoryCustodian
         Await loadMedicineBars()
     End Sub
 
-    Private Sub selectMedicineBtn_Click(sender As Object, e As EventArgs) Handles selectMedicineBtn.Click
-        selectMedicineBtn.Visible = False
-        selectMedicineBtn.Enabled = False
-
-        addMedicineBtn.Visible = False
-        addMedicineBtn.Enabled = False
-
-        cancelBtn.Enabled = True
-        cancelBtn.Visible = True
-
-        selectAllBtn.Visible = True
-        selectAllBtn.Enabled = True
-
-        archiveBtn.Visible = True
-        archiveBtn.Enabled = True
-    End Sub
-
-    Private Sub cancelBtn_Click(sender As Object, e As EventArgs) Handles cancelBtn.Click
-        selectMedicineBtn.Visible = True
-        selectMedicineBtn.Enabled = True
-
-        addMedicineBtn.Visible = True
-        addMedicineBtn.Enabled = True
-
-        cancelBtn.Enabled = False
-        cancelBtn.Visible = False
-
-        selectAllBtn.Visible = False
-        selectAllBtn.Enabled = False
-
-        archiveBtn.Visible = False
-        archiveBtn.Enabled = False
-    End Sub
 
     Private Sub addMedicineBtn_Click(sender As Object, e As EventArgs) Handles addMedicineBtn.Click
-        Dim frm As New AddMedicinePanel_InventoryCustodian()
+        Dim frm As New AddMedicinePanel_InventoryCustodian
         frm.ShowDialog()
     End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        Dim frm As New MedicineIndicators()
+        Dim frm As New MedicineIndicators
         frm.ShowDialog()
     End Sub
 
@@ -72,4 +39,38 @@ Public Class MedicinePanel_InventoryCustodian
         Next
     End Function
 
+
+    Private Async Sub search_textbox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles search_textbox.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            e.Handled = True ' Prevents ding sound and default behavior
+
+            MedicineBarsDisplay.Controls.Clear() ' Optional: clear previous results
+
+            Dim repo As New MedicineRepository()
+            Dim results = Await repo.SearchMedicines(search_textbox.Text.Trim())
+
+            Dim batchSize = 5
+
+            For i = 0 To results.Count - 1 Step batchSize
+                Dim batch = results.Skip(i).Take(batchSize).ToList()
+
+                For Each med In batch
+                    Dim control As New MedicineBars(med)
+                    MedicineBarsDisplay.Controls.Add(control)
+                Next
+
+                Await Task.Delay(50)
+            Next
+        End If
+
+    End Sub
+
+    Private Sub archivedMedBtn_Click(sender As Object, e As EventArgs) Handles archivedMedBtn.Click
+        Dim frm As New ArchivedMedicines
+        frm.ShowDialog()
+    End Sub
+
+    Private Async Sub refresh_btn_Click(sender As Object, e As EventArgs) Handles refresh_btn.Click
+        Await loadMedicineBars()
+    End Sub
 End Class

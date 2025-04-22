@@ -1,9 +1,7 @@
-﻿Imports System.Threading
-Imports butika.Helpers
+﻿Imports butika.Helpers
 Imports butika.Models
 
-
-Public Class MedicineBars
+Public Class ArchivedMedicineBars
 
     Public Property MedicineInfo As Medicine
 
@@ -16,8 +14,7 @@ Public Class MedicineBars
         medicineID.Text = med.MedicineID.ToString()
         medicineName.Text = HelperMethod.CapitalizeEachFirstWord(med.MedicineName)
         manufacturerName.Text = HelperMethod.CapitalizeEachFirstWord(med.MedicineManufacturer)
-        stockQuantity.Text = med.MedicineStock.ToString()
-        expirationDate.Text = med.MedicineExpirationDate.ToString()
+
 
         Me.MedicineInfo = med
 
@@ -33,8 +30,6 @@ Public Class MedicineBars
             medicineID.ForeColor = Color.White
             medicineName.ForeColor = Color.White
             manufacturerName.ForeColor = Color.White
-            stockQuantity.ForeColor = Color.White
-            expirationDate.ForeColor = Color.White
 
         ElseIf MedicineInfo.MedicineStock <= 30 AndAlso MedicineInfo.MedicineExpirationDate <= oneMonthFromNow Then
             ' Expiring soon + Medium stock
@@ -45,8 +40,6 @@ Public Class MedicineBars
             medicineID.ForeColor = Color.White
             medicineName.ForeColor = Color.White
             manufacturerName.ForeColor = Color.White
-            stockQuantity.ForeColor = Color.White
-            expirationDate.ForeColor = Color.White
 
         ElseIf MedicineInfo.MedicineStock <= 10 AndAlso MedicineInfo.MedicineExpirationDate > oneMonthFromNow Then
             ' Good expiry + Critically low stock
@@ -57,8 +50,6 @@ Public Class MedicineBars
             medicineID.ForeColor = Color.White
             medicineName.ForeColor = Color.White
             manufacturerName.ForeColor = Color.White
-            stockQuantity.ForeColor = Color.White
-            expirationDate.ForeColor = Color.White
 
         ElseIf MedicineInfo.MedicineStock <= 30 AndAlso MedicineInfo.MedicineExpirationDate > oneMonthFromNow Then
             ' Good expiry + Medium stock
@@ -69,8 +60,6 @@ Public Class MedicineBars
             medicineID.ForeColor = Color.White
             medicineName.ForeColor = Color.FromArgb(22, 66, 60)
             manufacturerName.ForeColor = Color.FromArgb(22, 66, 60)
-            stockQuantity.ForeColor = Color.FromArgb(22, 66, 60)
-            expirationDate.ForeColor = Color.FromArgb(22, 66, 60)
 
         ElseIf MedicineInfo.MedicineStock > 30 AndAlso MedicineInfo.MedicineExpirationDate <= today Then
             ' Expired + High stock
@@ -81,8 +70,6 @@ Public Class MedicineBars
             medicineID.ForeColor = Color.White
             medicineName.ForeColor = Color.White
             manufacturerName.ForeColor = Color.White
-            stockQuantity.ForeColor = Color.White
-            expirationDate.ForeColor = Color.White
 
         ElseIf MedicineInfo.MedicineStock > 30 AndAlso MedicineInfo.MedicineExpirationDate <= oneMonthFromNow Then
             ' Expiring soon + High stock
@@ -93,17 +80,33 @@ Public Class MedicineBars
             medicineID.ForeColor = Color.FromArgb(22, 66, 60)
             medicineName.ForeColor = Color.FromArgb(22, 66, 60)
             manufacturerName.ForeColor = Color.FromArgb(22, 66, 60)
-            stockQuantity.ForeColor = Color.FromArgb(22, 66, 60)
-            expirationDate.ForeColor = Color.FromArgb(22, 66, 60)
         End If
 
     End Sub
 
-    Private Sub UserControl_Click(sender As Object, e As EventArgs) Handles Me.Click
-        Dim viewForm As New ViewMedicineBar()
-        viewForm.MedicineInfo = MedicineInfo
 
-        viewForm.ShowDialog()
+
+    Private Async Function removeToArchive() As Task
+        Dim medId = MedicineInfo.MedicineID
+        If MessageBox.Show($"Continue with restoring the medicine?{vbCrLf}{vbCrLf}Medicine ID: {medId}{vbCrLf}Name: {HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineName)}{vbCrLf}Manufacturer: {HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineManufacturer)}",
+                            "Unarchive Medicine",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question) = DialogResult.Yes Then
+
+
+            Dim repo As New MedicineRepository
+            Dim arcSuccess = Await repo.RemoveToArchiveMedicine(medId)
+
+            If arcSuccess Then
+                MessageBox.Show("Medicine restored successfully!")
+            Else
+                MessageBox.Show("Failed to restore medicine.")
+            End If
+
+        End If
+    End Function
+
+    Private Async Sub ArchivedMedicineBars_Click(sender As Object, e As EventArgs) Handles MyBase.Click
+        Await removeToArchive
     End Sub
-
 End Class

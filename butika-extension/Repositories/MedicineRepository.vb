@@ -22,7 +22,8 @@ Public Class MedicineRepository
                     drug_stocks AS MedicineStock,
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
-                FROM drug_inventory"
+                FROM drug_inventory
+                WHERE isArchived = 0"
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -47,7 +48,7 @@ Public Class MedicineRepository
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
                 FROM drug_inventory
-                WHERE prescription_needed = 0"
+                WHERE prescription_needed = 0 && isArchived = 0"
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -72,7 +73,7 @@ Public Class MedicineRepository
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
                 FROM drug_inventory
-                WHERE prescription_needed = 1"
+                WHERE prescription_needed = 1 && isArchived = 0"
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -97,7 +98,7 @@ Public Class MedicineRepository
                     prescription_needed AS MedicinePrescription,
                     drug_stocks AS MedicineStock,
                     expiration_date AS MedicineExpirationDate
-                FROM drug_inventory"
+                FROM drug_inventory WHERE isArchived = 0"
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -149,8 +150,8 @@ Public Class MedicineRepository
         Using conn = DatabaseConnection.GetConnection()
             ' Updated SQL query with the correct column names from your table
             Dim query As String = "
-                INSERT INTO drug_inventory (drug_name, drug_brand, drug_dosage, drug_manufacturer, drug_description, drug_price, drug_type, prescription_needed, drug_stocks, expiration_date, drug_image)
-                VALUES (@MedicineName, @Brand, @Dosage, @Manufacturer, @Description, @Price, @MedicineType, @PrescriptionNeeded, @Stock, @ExpirationDate, @ImageName)"
+                INSERT INTO drug_inventory (drug_name, drug_brand, drug_dosage, drug_manufacturer, drug_description, drug_price, drug_type, prescription_needed, drug_stocks, expiration_date, drug_image, date_added)
+                VALUES (@MedicineName, @Brand, @Dosage, @Manufacturer, @Description, @Price, @MedicineType, @PrescriptionNeeded, @Stock, @ExpirationDate, @ImageName, @DateAdded)"
 
             ' Ensure the anonymous object has matching parameter names
             Await conn.ExecuteAsync(query, New With {
@@ -164,7 +165,8 @@ Public Class MedicineRepository
                     .PrescriptionNeeded = medicine.MedicinePrescription,
                     .Stock = medicine.MedicineStock,
                     .ExpirationDate = medicine.MedicineExpirationDate,
-                    .ImageName = medicine.MedicineImageName
+                    .ImageName = medicine.MedicineImageName,
+                    .DateAdded = medicine.MedicineDateAdded
                 })
 
             MessageBox.Show("Medicine added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -229,6 +231,116 @@ Public Class MedicineRepository
             Dim count As Integer = Await conn.ExecuteScalarAsync(Of Integer)(query, New With {.MedicineID = medicineId})
 
             Return count > 0
+        End Using
+    End Function
+
+    Public Async Function SearchMedicines(searchTerm As String) As Task(Of List(Of Medicine))
+        Using conn = DatabaseConnection.GetConnection()
+            Dim query As String = "
+            SELECT
+                drug_id AS MedicineID,
+                drug_name AS MedicineName,
+                drug_brand AS MedicineBrand,
+                drug_dosage AS MedicineDosage,
+                drug_manufacturer AS MedicineManufacturer,
+                drug_description AS MedicineDescription,
+                drug_price AS MedicinePrice,
+                drug_image AS MedicineImageName,
+                drug_type AS MedicineType,
+                prescription_needed AS MedicinePrescription,
+                drug_stocks AS MedicineStock,
+                expiration_date AS MedicineExpirationDate
+            FROM drug_inventory
+            WHERE 
+                (drug_name LIKE @Search OR
+                drug_brand LIKE @Search OR
+                drug_dosage LIKE @Search OR
+                drug_manufacturer LIKE @Search OR
+                drug_description LIKE @Search OR
+                drug_type LIKE @Search) && isArchived = 0
+        "
+
+            If String.IsNullOrWhiteSpace(searchTerm) Then
+                searchTerm = ""
+            End If
+
+            Dim param = New With {Key .Search = $"{searchTerm}%"}
+            Dim results = Await conn.QueryAsync(Of Medicine)(query, param)
+            Return results.ToList()
+        End Using
+    End Function
+
+
+
+    Public Async Function ArchiveMedicine(drugId As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Dim query As String = "
+            UPDATE drug_inventory
+            SET isArchived = 1, date_updated = GETDATE()
+            WHERE drug_id = @DrugID
+        "
+
+            Dim param = New With {Key .DrugID = drugId}
+            Dim rowsAffected = Await conn.ExecuteAsync(query, param)
+            Return rowsAffected > 0
+        End Using
+    End Function
+
+
+    Public Async Function RemoveToArchiveMedicine(drugId As Integer) As Task(Of Boolean)
+        Using conn = DatabaseConnection.GetConnection()
+            Dim query As String = "
+            UPDATE drug_inventory
+            SET isArchived = 0, date_updated = GETDATE()
+            WHERE drug_id = @DrugID
+        "
+
+            Dim param = New With {Key .DrugID = drugId}
+            Dim rowsAffected = Await conn.ExecuteAsync(query, param)
+            Return rowsAffected > 0
+        End Using
+    End Function
+
+
+    Public Async Function archivedMedicineBars() As Task(Of List(Of Medicine))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT
+                    drug_id AS MedicineID,
+                    drug_name AS MedicineName,
+                    drug_brand AS MedicineBrand,
+                    drug_dosage AS MedicineDosage,
+                    drug_manufacturer AS MedicineManufacturer,
+                    drug_description AS MedicineDescription,
+                    drug_price AS MedicinePrice,
+                    drug_image AS MedicineImageName,
+                    drug_type AS MedicineType,
+                    prescription_needed AS MedicinePrescription,
+                    drug_stocks AS MedicineStock,
+                    expiration_date AS MedicineExpirationDate
+                FROM drug_inventory WHERE isArchived = 1"
+            Dim result = Await conn.QueryAsync(Of Medicine)(query)
+            Return result.ToList()
+        End Using
+    End Function
+
+    Public Async Function GetAllStockReportsAsync() As Task(Of List(Of Medicine))
+        Using conn = DatabaseConnection.GetConnection()
+            Dim sql As String = "
+            SELECT 
+                sr.report_id as StockReportID,
+                sr.stockRequestStatus as StockRequestStatus,
+                sr.stockQuantityRequest as StockQuantityRequest,
+                sr.medicine_id as MedicineID,
+                sr.stockDateRequested as StockRequestedDate,
+                sr.stockDateUpdated as StockLastUpdated,
+                di.drug_name as MedicineName
+            FROM stockReport sr
+            LEFT JOIN drug_inventory di ON sr.medicine_id = di.drug_id"
+
+            Dim result = Await conn.QueryAsync(Of Medicine)(sql)
+            Return result.ToList()
         End Using
     End Function
 

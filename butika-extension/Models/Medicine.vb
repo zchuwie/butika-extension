@@ -1,4 +1,5 @@
 ﻿Imports butika.Helpers
+Imports butika.My
 
 Namespace Models
 
@@ -19,6 +20,7 @@ Namespace Models
         Public Property MedicineLastUpdated As DateTime?
         Public Property MedicineFullName As String
         Public Property MedicineTickBox As Boolean
+        Public Property MedicineArchived As Integer
 
 
         Public ReadOnly Property MedicineImagePath As String
@@ -40,8 +42,9 @@ Namespace Models
         End Property
 
 
-        Public Property StockRequestStatus As String
+        Public Property StockRequestStatus As Integer
         Public Property StockRequestedDate As DateTime?
+        Public Property StockReviewdDate As DateTime?
         Public Property StockQuantityRequest As Integer
         Public Property StockReportID As Integer
         Public Property StockLastUpdated As DateTime?
