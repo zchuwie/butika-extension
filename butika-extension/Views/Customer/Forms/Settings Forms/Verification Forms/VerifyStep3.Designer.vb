@@ -22,6 +22,8 @@ Partial Class VerifyStep3
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         ProgBar3 = New Panel()
         VerifySubtext = New Label()
         VerifyProfile = New Label()
@@ -29,6 +31,7 @@ Partial Class VerifyStep3
         Phase3Txt = New Label()
         VerifyPendingImg = New PictureBox()
         VerifiedIcon = New PictureBox()
+        CancelVerifyBtn = New Guna.UI2.WinForms.Guna2Button()
         CType(VerifyPendingImg, ComponentModel.ISupportInitialize).BeginInit()
         CType(VerifiedIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -106,12 +109,34 @@ Partial Class VerifyStep3
         VerifiedIcon.TabIndex = 91
         VerifiedIcon.TabStop = False
         ' 
+        ' CancelVerifyBtn
+        ' 
+        CancelVerifyBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelVerifyBtn.BorderRadius = 6
+        CancelVerifyBtn.BorderThickness = 1
+        CancelVerifyBtn.CustomizableEdges = CustomizableEdges1
+        CancelVerifyBtn.DisabledState.BorderColor = Color.DarkGray
+        CancelVerifyBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        CancelVerifyBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        CancelVerifyBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        CancelVerifyBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        CancelVerifyBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        CancelVerifyBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        CancelVerifyBtn.Location = New Point(786, 578)
+        CancelVerifyBtn.Name = "CancelVerifyBtn"
+        CancelVerifyBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        CancelVerifyBtn.Size = New Size(81, 35)
+        CancelVerifyBtn.TabIndex = 101
+        CancelVerifyBtn.Text = "Cancel"
+        CancelVerifyBtn.Visible = False
+        ' 
         ' VerifyStep3
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ClientSize = New Size(915, 649)
+        Controls.Add(CancelVerifyBtn)
         Controls.Add(VerifiedIcon)
         Controls.Add(VerifyPendingImg)
         Controls.Add(Phase3Txt)
@@ -136,4 +161,5 @@ Partial Class VerifyStep3
     Friend WithEvents Phase3Txt As Label
     Friend WithEvents VerifyPendingImg As PictureBox
     Friend WithEvents VerifiedIcon As PictureBox
+    Friend WithEvents CancelVerifyBtn As Guna.UI2.WinForms.Guna2Button
 End Class
