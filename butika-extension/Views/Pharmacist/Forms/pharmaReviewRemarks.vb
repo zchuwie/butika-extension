@@ -45,7 +45,7 @@ Public Class pharmaReviewRemarks
         usernameLbl.Text = prescription.Account.UserName
         prescription.PrescriptReviewDate = dateReview
         prescription.PrescriptionStatus = stats
-        prescription.PrescriptionRemarks = prescription.PrescriptionRemarks
+
 
         Dim isFormSuccess As Boolean = Await pharmarepo.UpdateRemarks(prescription)
         Me.Close()

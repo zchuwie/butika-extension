@@ -1,4 +1,5 @@
-﻿Imports butika.Models
+﻿Imports System.Threading
+Imports butika.Models
 
 Public Class pharmaViewPrescription
     Dim prescription As New Prescription()
@@ -11,7 +12,7 @@ Public Class pharmaViewPrescription
     Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
         Me.Close()
     End Sub
-    Private Sub LoadAllInformation(prescript As Prescription)
+    Private Async Sub LoadAllInformation(prescript As Prescription)
         usernameLbl.Text = prescript.Account.UserName
         prescriptNumLbl.Text = prescript.PrescriptionId
         patientnameTxt.Text = prescript.PatientName
@@ -41,8 +42,14 @@ Public Class pharmaViewPrescription
         End If
     End Sub
 
-    Private Sub pharmaViewPrescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub pharmaViewPrescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAllInformation(prescription)
+        Dim medicines As List(Of Medicine) = Await pharmarepo.GetItemIntoListBox(prescription.PrescriptionId, prescription.Account.UserID)
+        displayToApproved.Items.Clear()
+
+        For Each med In medicines
+            displayToApproved.Items.Add($"{med.MedicineName} | {med.MedicineBrand} | {med.MedicineDosage}")
+        Next
     End Sub
 
     Private Sub declineBtn_Click(sender As Object, e As EventArgs) Handles declineBtn.Click
@@ -63,6 +70,10 @@ Public Class pharmaViewPrescription
             prescription.PrescriptionRemarks = remark
 
             Dim isFormSuccess As Boolean = Await pharmarepo.UpdateRemarks(prescription)
+
+            If Not isFormSuccess Then
+                MessageBox.Show("Execution error.")
+            End If
         Else
             MessageBox.Show("Changes were not saved.")
         End If

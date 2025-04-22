@@ -1,9 +1,11 @@
-﻿Imports butika.Configurations
+﻿Imports System.Data.SqlClient
+Imports System.Data.SqlTypes
+Imports butika.Configurations
 Imports butika.Models
 Imports Dapper
+Imports Microsoft.Data.SqlClient
 Imports Microsoft.VisualBasic.ApplicationServices
 Public Class PharmaRepository
-    Dim transaction As New Transaction()
 
     ' pangdisplay ng lahat ng transaction
     Public Async Function GetAllTransactions() As Task(Of List(Of Transaction))
@@ -67,34 +69,38 @@ Public Class PharmaRepository
         Using conn = DatabaseConnection.GetConnection()
             Await conn.OpenAsync()
             Dim query = "
-                SELECT 
-                    up.prescription_id AS PrescriptionId,
-                    up.user_id AS UserID,
-                    up.patient_name AS PatientName,
-                    up.patient_age AS PatientAge,
-                    up.user_concern AS PatientConcern,
-                    up.doc_name AS DoctorName,
-                    up.doc_contact AS DoctorContact,
-                    up.clinic AS DoctorPlace,
-                    up.prescription_image AS PrescriptionImageName,
-                    up.remarks AS PrescriptionRemarks,
-                    up.status AS PrescriptionStatus,
-                    up.review_date AS PrescriptReviewDate,
-                    up.prescription_date AS PrescriptionDate,
-                    ua.username AS UserName
-                FROM userprescriptionform up
-                LEFT JOIN useraccount ua ON up.user_id = ua.user_id"
+            SELECT 
+                up.prescription_id AS PrescriptionId,
+                up.patient_name AS PatientName,
+                up.patient_age AS PatientAge,
+                up.user_concern AS PatientConcern,
+                up.doc_name AS DoctorName,
+                up.doc_contact AS DoctorContact,
+                up.clinic AS DoctorPlace,
+                up.prescription_image AS PrescriptionImageName,
+                up.remarks AS PrescriptionRemarks,
+                up.status AS PrescriptionStatus,
+                up.review_date AS PrescriptReviewDate,
+                up.prescription_date AS PrescriptionDate,
+                ua.username AS UserName,
+                ua.user_id AS UserID
+            FROM userprescriptionform up
+            LEFT JOIN useraccount ua ON up.user_id = ua.user_id
+            "
+
             Dim result = Await conn.QueryAsync(Of Prescription, Account, Prescription)(
-                query,
-                Function(pres, acc)
-                    pres.Account = acc
-                    Return pres
-                End Function,
-                splitOn:="UserName"
-            )
+            query,
+            Function(pres, acc)
+                pres.Account = acc
+                Return pres
+            End Function,
+            splitOn:="UserName"
+        )
+
             Return result.ToList()
         End Using
     End Function
+
 
     ' pangapprove sa prescription
     Public Async Function UpdateRemarks(prescription As Prescription) As Task(Of Boolean)
@@ -106,16 +112,15 @@ Public Class PharmaRepository
             SET remarks = @remarks,
                 review_date = @review_date,
                 status = @status
-            WHERE user_id = @user_id AND prescription_id = @prescription_id
-            "
+            WHERE user_id = @user_id AND prescription_id = @prescription_id"
 
             Dim param = New With {
-            .remarks = prescription.PrescriptionRemarks,
-            .status = prescription.PrescriptionStatus,
-            .review_date = DateTime.Now,
-            .user_id = prescription.Account.UserID,
-            .prescription_id = prescription.PrescriptionId
-            }
+                .remarks = prescription.PrescriptionRemarks,
+                .status = prescription.PrescriptionStatus,
+                .review_date = DateTime.Now,
+                .user_id = prescription.Account.UserID,
+                .prescription_id = prescription.PrescriptionId
+                }
 
             Dim result As Integer = Await conn.ExecuteAsync(query, param)
             Return result > 0
@@ -177,6 +182,7 @@ Public Class PharmaRepository
             Return If(result?.ToList(), New List(Of Transaction)())
         End Using
     End Function
+
     ' pangsort sa prescriptions
     Public Async Function SortPrescriptionAsc() As Task(Of List(Of Prescription))
         Using conn = DatabaseConnection.GetConnection()
@@ -301,6 +307,32 @@ Public Class PharmaRepository
                 query,
                 New With {.drug_name = $"%{medicine}%"}
             )
+            Return result.ToList()
+        End Using
+    End Function
+    ' para sa druglist lang
+    Public Async Function GetItemIntoListBox(prescription_id As Integer, userID As Integer) As Task(Of List(Of Medicine))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+
+            Dim query As String = "
+            SELECT 
+                med.drug_name AS MedicineName,
+                med.drug_brand AS MedicineBrand,
+                med.drug_dosage AS MedicineDosage
+            FROM usersCart uc
+            LEFT JOIN drug_inventory med ON med.drug_id = uc.drug_id
+            WHERE uc.user_id = @user_id AND uc.prescription_id = @prescription_id
+        "
+
+            Dim parameters = New With {
+                .user_id = userID,
+                .prescription_id = prescription_id
+            }
+
+            Dim result = Await conn.QueryAsync(Of Medicine)(query, parameters)
+            Debug.WriteLine("Rows returned from DB: " & result.Count())
+
             Return result.ToList()
         End Using
     End Function
