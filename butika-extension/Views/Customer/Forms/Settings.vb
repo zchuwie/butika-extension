@@ -43,7 +43,8 @@ Public Class Settings
         End If
     End Sub
 
-    Private Sub AccountBtn_Click(sender As Object, e As EventArgs) Handles AccountBtn.Click, AccountLbl.Click, AccountSubtext.Click
+    Private Async Sub AccountBtn_Click(sender As Object, e As EventArgs) Handles AccountBtn.Click, AccountLbl.Click, AccountSubtext.Click
+        account = Await accountRepo.populateDataThroughUserID(account.UserID)
         OpenFormInPanel(New AccountSettings(account))
 
         'For debugging
@@ -91,7 +92,8 @@ Public Class Settings
         End If
     End Sub
 
-    Private Sub SecurityLbl_Click(sender As Object, e As EventArgs) Handles SecurityLbl.Click, SecuritySubtext.Click, SecurityBtn.Click
+    Private Async Sub SecurityLbl_Click(sender As Object, e As EventArgs) Handles SecurityLbl.Click, SecuritySubtext.Click, SecurityBtn.Click
+        account = Await accountRepo.populateDataThroughUserID(account.UserID)
         OpenFormInPanel(New SecuritySettings(account))
 
         'For debugging

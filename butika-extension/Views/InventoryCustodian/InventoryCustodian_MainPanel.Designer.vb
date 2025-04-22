@@ -25,9 +25,9 @@ Partial Class InventoryCustodian_MainPanel
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InventoryCustodian_MainPanel))
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InventoryCustodian_MainPanel))
         Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -84,15 +84,18 @@ Partial Class InventoryCustodian_MainPanel
         Guna2Button2.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         Guna2Button2.Dock = DockStyle.Top
         Guna2Button2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Button2.FocusedColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Guna2Button2.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Guna2Button2.ForeColor = Color.White
+        Guna2Button2.Image = My.Resources.Resources.Group_1
         Guna2Button2.Location = New Point(0, 72)
         Guna2Button2.Margin = New Padding(3, 2, 3, 2)
         Guna2Button2.Name = "Guna2Button2"
+        Guna2Button2.Padding = New Padding(20, 0, 0, 0)
         Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Button2.Size = New Size(248, 36)
         Guna2Button2.TabIndex = 2
-        Guna2Button2.Text = "Reserve Button"
+        Guna2Button2.Text = "Stock Request"
         ' 
         ' dashboard_medicine_btn
         ' 
@@ -102,10 +105,11 @@ Partial Class InventoryCustodian_MainPanel
         dashboard_medicine_btn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
         dashboard_medicine_btn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
         dashboard_medicine_btn.Dock = DockStyle.Top
-        dashboard_medicine_btn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        dashboard_medicine_btn.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        dashboard_medicine_btn.FocusedColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         dashboard_medicine_btn.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
-        dashboard_medicine_btn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        dashboard_medicine_btn.Image = CType(resources.GetObject("dashboard_medicine_btn.Image"), Image)
+        dashboard_medicine_btn.ForeColor = Color.White
+        dashboard_medicine_btn.Image = My.Resources.Resources._icon__grid___2_
         dashboard_medicine_btn.Location = New Point(0, 36)
         dashboard_medicine_btn.Margin = New Padding(3, 2, 3, 2)
         dashboard_medicine_btn.Name = "dashboard_medicine_btn"

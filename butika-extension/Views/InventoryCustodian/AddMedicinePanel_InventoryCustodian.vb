@@ -17,16 +17,21 @@ Public Class AddMedicinePanel_InventoryCustodian
     Dim selectedImagePath As String
 
 
-    Private Sub chooseImageButton_Click(sender As Object, e As EventArgs) Handles addimage_btn.Click
-        Using openFileDialog As New OpenFileDialog()
-            openFileDialog.Filter = "Image Files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg"
-            If openFileDialog.ShowDialog() = DialogResult.OK Then
-                selectedImagePath = openFileDialog.FileName ' Get the selected image's path
-                imageName = medicine.MedicineID.ToString() + Path.GetFileName(selectedImagePath)
+    Private Sub chooseImageButton_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox12.Click
+        Try
+            Using openFileDialog As New OpenFileDialog
+                openFileDialog.Filter = "Image Files (*.jpg;*.png;*.jpeg)|*.jpg;*.png;*.jpeg"
+                If openFileDialog.ShowDialog = DialogResult.OK Then
+                    selectedImagePath = openFileDialog.FileName ' Get the selected image's path
+                    imageName = medicine.MedicineID.ToString + Path.GetFileName(selectedImagePath)
 
-            End If
-            addimage_btn.Image = Image.FromFile(selectedImagePath) ' Display the image in PictureBox
-        End Using
+                End If
+                Guna2PictureBox12.Image = Image.FromFile(selectedImagePath) ' Display the image in PictureBox 
+            End Using
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 
@@ -76,7 +81,8 @@ Public Class AddMedicinePanel_InventoryCustodian
         .MedicinePrice = price,
         .MedicineStock = stock,
         .MedicineExpirationDate = expdate_datetime.Value,
-        .MedicineImageName = imageName ' Assuming the image path is saved here
+        .MedicineImageName = imageName, ' Assuming the image path is saved here
+        .MedicineDateAdded = DateTime.Now
     }
         Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
         Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.DrugPathName)
@@ -101,12 +107,26 @@ Public Class AddMedicinePanel_InventoryCustodian
         price_txtbox.Clear()
         stock_txtbox.Clear()
         expdate_datetime.Value = DateTime.Now
-        addimage_btn.Image = My.Resources.Group_78
+        Guna2PictureBox12.Image = My.Resources.Group_78
         imageName = ""
 
     End Sub
 
     Private Sub AddMedicinePanel_InventoryCustodian_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         loadData()
+    End Sub
+
+    Private Sub clear_fields_btn_Click(sender As Object, e As EventArgs) Handles clear_fields_btn.Click
+        medicine_name_txtbox.Clear()
+        brand_txtbox.Clear()
+        dosage_txtbox.Clear()
+        manufacturer_txtbox.Clear()
+        description_txtbox.Clear()
+        medtype_txtbox.Clear()
+        price_txtbox.Clear()
+        stock_txtbox.Clear()
+        expdate_datetime.Value = DateTime.Now
+        Guna2PictureBox12.Image = My.Resources.Group_78
+        imageName = ""
     End Sub
 End Class
