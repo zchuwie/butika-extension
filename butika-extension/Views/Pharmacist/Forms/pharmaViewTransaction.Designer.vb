@@ -134,9 +134,9 @@ Partial Class pharmaViewTransaction
         ' flpItems
         ' 
         flpItems.AutoScroll = True
-        flpItems.Location = New Point(170, 145)
+        flpItems.Location = New Point(143, 150)
         flpItems.Name = "flpItems"
-        flpItems.Size = New Size(498, 268)
+        flpItems.Size = New Size(541, 268)
         flpItems.TabIndex = 18
         ' 
         ' pharmaViewTransaction

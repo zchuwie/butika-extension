@@ -36,6 +36,7 @@ Public Class PharmaRepository
     Public Async Function GetAllOrderMeds(transactionid As String) As Task(Of List(Of Transaction))
         Using conn = DatabaseConnection.GetConnection()
             Await conn.OpenAsync()
+
             Dim query = "
             SELECT 
                 uc.transaction_id AS TransactionID,
@@ -43,26 +44,35 @@ Public Class PharmaRepository
                 med.drug_name AS MedicineName,
                 med.drug_manufacturer AS MedicineManufacturer,
                 med.drug_price AS MedicinePrice,
-                uc.quantity AS Quantity
+                uc.quantity AS Quantity,
+                ua.user_id AS UserID,
+                ua.isVerified AS IsVerified
             FROM userscheckout uc
             LEFT JOIN drug_inventory med ON uc.drug_id = med.drug_id
+            LEFT JOIN usertransaction t ON uc.transaction_id = t.transaction_id
+            LEFT JOIN useraccount ua ON t.user_id = ua.user_id
             WHERE uc.transaction_id = @TransactionID
             "
 
-            Dim result = Await conn.QueryAsync(Of Transaction, Medicine, Cart, Transaction)(
-            query,
-            Function(tran, med, cart)
-                tran.Medicine = med
-                tran.Cart = cart
-                Return tran
-            End Function,
-            param:=New With {.TransactionID = transactionid},
-            splitOn:="MedicineID,Quantity"
+            Dim result = Await conn.QueryAsync(Of Transaction, Medicine, Cart, Account, Transaction)(
+                query,
+                Function(tran, med, cart, acc)
+                    tran.Medicine = med
+                    tran.Cart = cart
+                    tran.Account = acc
+                    Return tran
+                End Function,
+                param:=New With {.TransactionID = transactionid},
+                splitOn:="MedicineID,Quantity,UserID"
             )
+
+
+
 
             Return result.ToList()
         End Using
     End Function
+
 
     ' pang display sa mga prescriptions
     Public Async Function GetAllPrescriptions() As Task(Of List(Of Prescription))
@@ -103,29 +113,57 @@ Public Class PharmaRepository
 
 
     ' pangapprove sa prescription
-    Public Async Function UpdateRemarks(prescription As Prescription) As Task(Of Boolean)
+    Public Async Function PharmaAction(prescription As Prescription) As Task(Of Boolean)
         Using conn = DatabaseConnection.GetConnection()
             Await conn.OpenAsync()
 
-            Dim query As String = "
+            Dim queryRemarks As String = "
             UPDATE userprescriptionform
             SET remarks = @remarks,
                 review_date = @review_date,
                 status = @status
             WHERE user_id = @user_id AND prescription_id = @prescription_id"
 
+            Dim queryCart As String = "
+            UPDATE userscart
+            SET isApproved = @isApproved
+            WHERE user_id = @user_id AND prescription_id = @prescription_id"
+            If prescription Is Nothing Then
+                Debug.WriteLine("prescription is Nothing")
+            Else
+                If prescription.Account Is Nothing Then
+                    Debug.WriteLine("prescription.Account is Nothing")
+                Else
+                    Debug.WriteLine("UserID: " & prescription.Account.UserID)
+                End If
+
+                If prescription.Cart Is Nothing Then
+                    Debug.WriteLine("prescription.Cart is Nothing")
+                Else
+                    Debug.WriteLine("isApproved: " & prescription.Cart.isApproved)
+                End If
+
+                Debug.WriteLine("Remarks: " & prescription.PrescriptionRemarks)
+                Debug.WriteLine("Status: " & prescription.PrescriptionStatus)
+                Debug.WriteLine("PrescriptionID: " & prescription.PrescriptionId)
+            End If
+
             Dim param = New With {
                 .remarks = prescription.PrescriptionRemarks,
                 .status = prescription.PrescriptionStatus,
                 .review_date = DateTime.Now,
                 .user_id = prescription.Account.UserID,
-                .prescription_id = prescription.PrescriptionId
-                }
+                .prescription_id = prescription.PrescriptionId,
+                .isApproved = prescription.Cart.isApproved
+            }
 
-            Dim result As Integer = Await conn.ExecuteAsync(query, param)
-            Return result > 0
+            Dim result1 As Integer = Await conn.ExecuteAsync(queryRemarks, param)
+            Dim result2 As Integer = Await conn.ExecuteAsync(queryCart, param)
+
+            Return result1 > 0 AndAlso result2 > 0
         End Using
     End Function
+
 
     ' para sa sortings sa transactions
     Public Async Function SortAscendingDate() As Task(Of List(Of Transaction))

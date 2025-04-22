@@ -70,7 +70,7 @@ Partial Class pharmaDashTransac
         Controls.Add(dateLbl)
         Controls.Add(transacIdLbl)
         Name = "pharmaDashTransac"
-        Size = New Size(674, 35)
+        Size = New Size(670, 35)
         ResumeLayout(False)
         PerformLayout()
     End Sub

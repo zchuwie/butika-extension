@@ -3,6 +3,7 @@ Imports butika.Models
 
 Public Class pharmaViewPrescription
     Dim prescription As New Prescription()
+    Dim cart As New Cart()
     Dim pharmarepo As New PharmaRepository()
     Public Sub New(prescript As Prescription)
         Me.prescription = prescript
@@ -12,7 +13,7 @@ Public Class pharmaViewPrescription
     Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
         Me.Close()
     End Sub
-    Private Async Sub LoadAllInformation(prescript As Prescription)
+    Private Sub LoadAllInformation(prescript As Prescription)
         usernameLbl.Text = prescript.Account.UserName
         prescriptNumLbl.Text = prescript.PrescriptionId
         patientnameTxt.Text = prescript.PatientName
@@ -53,7 +54,7 @@ Public Class pharmaViewPrescription
     End Sub
 
     Private Sub declineBtn_Click(sender As Object, e As EventArgs) Handles declineBtn.Click
-        Dim viewRemarks As New pharmaReviewRemarks(prescription)
+        Dim viewRemarks As New pharmaReviewRemarks(prescription, Me)
         viewRemarks.ShowDialog()
     End Sub
 
@@ -63,13 +64,19 @@ Public Class pharmaViewPrescription
         If result = DialogResult.Yes Then
             Dim dateReview As DateTime = DateTime.Now
             Dim stats As Integer = 1
+            Dim isapproved As Integer = 1
             Dim remark As String = "Approved"
 
             prescription.PrescriptReviewDate = dateReview
             prescription.PrescriptionStatus = stats
             prescription.PrescriptionRemarks = remark
+            If prescription.Cart Is Nothing Then
+                prescription.Cart = New Cart()
+            End If
+            prescription.Cart.isApproved = isapproved
 
-            Dim isFormSuccess As Boolean = Await pharmarepo.UpdateRemarks(prescription)
+
+            Dim isFormSuccess As Boolean = Await pharmarepo.PharmaAction(prescription)
 
             If Not isFormSuccess Then
                 MessageBox.Show("Execution error.")

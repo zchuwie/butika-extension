@@ -24,34 +24,36 @@ Partial Class pharmaMedItem
     Private Sub InitializeComponent()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        medPanel = New Guna.UI2.WinForms.Guna2Panel()
         dosageLbl = New Label()
         manufacturerLbl = New Label()
         mednameLbl = New Label()
         medIdLbl = New Label()
-        Guna2Panel1.SuspendLayout()
+        medPanel.SuspendLayout()
         SuspendLayout()
         ' 
-        ' Guna2Panel1
+        ' medPanel
         ' 
-        Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel1.BorderRadius = 10
-        Guna2Panel1.BorderThickness = 3
-        Guna2Panel1.Controls.Add(dosageLbl)
-        Guna2Panel1.Controls.Add(manufacturerLbl)
-        Guna2Panel1.Controls.Add(mednameLbl)
-        Guna2Panel1.Controls.Add(medIdLbl)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges1
-        Guna2Panel1.Dock = DockStyle.Fill
-        Guna2Panel1.Location = New Point(0, 0)
-        Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Panel1.Size = New Size(964, 37)
-        Guna2Panel1.TabIndex = 0
+        medPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        medPanel.BorderRadius = 10
+        medPanel.BorderThickness = 3
+        medPanel.Controls.Add(dosageLbl)
+        medPanel.Controls.Add(manufacturerLbl)
+        medPanel.Controls.Add(mednameLbl)
+        medPanel.Controls.Add(medIdLbl)
+        medPanel.CustomizableEdges = CustomizableEdges1
+        medPanel.Dock = DockStyle.Fill
+        medPanel.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        medPanel.Location = New Point(0, 0)
+        medPanel.Name = "medPanel"
+        medPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        medPanel.Size = New Size(964, 37)
+        medPanel.TabIndex = 0
         ' 
         ' dosageLbl
         ' 
         dosageLbl.AutoSize = True
+        dosageLbl.BackColor = Color.Transparent
         dosageLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         dosageLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         dosageLbl.Location = New Point(834, 10)
@@ -63,6 +65,7 @@ Partial Class pharmaMedItem
         ' manufacturerLbl
         ' 
         manufacturerLbl.AutoSize = True
+        manufacturerLbl.BackColor = Color.Transparent
         manufacturerLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         manufacturerLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         manufacturerLbl.Location = New Point(565, 10)
@@ -74,6 +77,7 @@ Partial Class pharmaMedItem
         ' mednameLbl
         ' 
         mednameLbl.AutoSize = True
+        mednameLbl.BackColor = Color.Transparent
         mednameLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         mednameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         mednameLbl.Location = New Point(249, 10)
@@ -85,6 +89,7 @@ Partial Class pharmaMedItem
         ' medIdLbl
         ' 
         medIdLbl.AutoSize = True
+        medIdLbl.BackColor = Color.Transparent
         medIdLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         medIdLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         medIdLbl.Location = New Point(26, 10)
@@ -98,17 +103,17 @@ Partial Class pharmaMedItem
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Controls.Add(Guna2Panel1)
+        Controls.Add(medPanel)
         Cursor = Cursors.Hand
         Margin = New Padding(0, 3, 0, 0)
         Name = "pharmaMedItem"
         Size = New Size(964, 37)
-        Guna2Panel1.ResumeLayout(False)
-        Guna2Panel1.PerformLayout()
+        medPanel.ResumeLayout(False)
+        medPanel.PerformLayout()
         ResumeLayout(False)
     End Sub
 
-    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents medPanel As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dosageLbl As Label
     Friend WithEvents manufacturerLbl As Label
     Friend WithEvents mednameLbl As Label

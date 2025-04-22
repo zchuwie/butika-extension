@@ -57,7 +57,7 @@ Partial Class pharmaDashPrescript
         Controls.Add(statusLbl)
         Controls.Add(usernameLbl)
         Name = "pharmaDashPrescript"
-        Size = New Size(240, 35)
+        Size = New Size(234, 35)
         ResumeLayout(False)
         PerformLayout()
     End Sub
