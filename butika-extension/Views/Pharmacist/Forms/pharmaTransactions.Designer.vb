@@ -34,7 +34,6 @@ Partial Class pharmaTransactions
         Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         transactionLbl = New Label()
         transacidSearch = New Guna.UI2.WinForms.Guna2TextBox()
-        infoIcon = New PictureBox()
         allorderLbl = New Label()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -46,7 +45,6 @@ Partial Class pharmaTransactions
         infoManagerIcon = New ToolTip(components)
         flpTransaction = New FlowLayoutPanel()
         sortBtn = New Guna.UI2.WinForms.Guna2Button()
-        CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel2.SuspendLayout()
         SuspendLayout()
         ' 
@@ -86,17 +84,6 @@ Partial Class pharmaTransactions
         transacidSearch.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         transacidSearch.Size = New Size(137, 34)
         transacidSearch.TabIndex = 2
-        ' 
-        ' infoIcon
-        ' 
-        infoIcon.Cursor = Cursors.Hand
-        infoIcon.Image = CType(resources.GetObject("infoIcon.Image"), Image)
-        infoIcon.Location = New Point(988, 37)
-        infoIcon.Name = "infoIcon"
-        infoIcon.Size = New Size(20, 20)
-        infoIcon.SizeMode = PictureBoxSizeMode.CenterImage
-        infoIcon.TabIndex = 5
-        infoIcon.TabStop = False
         ' 
         ' allorderLbl
         ' 
@@ -232,13 +219,11 @@ Partial Class pharmaTransactions
         Controls.Add(Guna2Panel2)
         Controls.Add(Guna2Panel1)
         Controls.Add(allorderLbl)
-        Controls.Add(infoIcon)
         Controls.Add(transacidSearch)
         Controls.Add(transactionLbl)
         FormBorderStyle = FormBorderStyle.None
         Name = "pharmaTransactions"
         Text = "pharmaTransactions"
-        CType(infoIcon, ComponentModel.ISupportInitialize).EndInit()
         Guna2Panel2.ResumeLayout(False)
         Guna2Panel2.PerformLayout()
         ResumeLayout(False)
@@ -247,7 +232,6 @@ Partial Class pharmaTransactions
 
     Friend WithEvents transactionLbl As Label
     Friend WithEvents transacidSearch As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents infoIcon As PictureBox
     Friend WithEvents allorderLbl As Label
     Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel

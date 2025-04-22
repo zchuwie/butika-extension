@@ -5,9 +5,6 @@ Public Class pharmaTransactions
     Dim pharmarepo As New PharmaRepository()
     Dim allTransactions As List(Of Transaction)
     Private Async Sub pharmaTransactions_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        infoManagerIcon.SetToolTip(infoIcon, "View recorded transactions and their Transaction IDs. Click on a transaction to see detailed order information and confirm the medicines listed in the receipt.")
-        infoManagerIcon.ShowAlways = True
-
         Await LoadAllTransactions()
     End Sub
     Public Async Function LoadAllTransactions() As Task
@@ -59,4 +56,5 @@ Public Class pharmaTransactions
         End If
         DisplayTransactions(allTransactions)
     End Sub
+
 End Class

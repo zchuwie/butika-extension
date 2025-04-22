@@ -1,7 +1,9 @@
-﻿Imports butika.Models
+﻿Imports System.Threading
+Imports butika.Models
 
 Public Class pharmaViewPrescription
     Dim prescription As New Prescription()
+    Dim cart As New Cart()
     Dim pharmarepo As New PharmaRepository()
     Public Sub New(prescript As Prescription)
         Me.prescription = prescript
@@ -41,12 +43,18 @@ Public Class pharmaViewPrescription
         End If
     End Sub
 
-    Private Sub pharmaViewPrescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Async Sub pharmaViewPrescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAllInformation(prescription)
+        Dim medicines As List(Of Medicine) = Await pharmarepo.GetItemIntoListBox(prescription.PrescriptionId, prescription.Account.UserID)
+        displayToApproved.Items.Clear()
+
+        For Each med In medicines
+            displayToApproved.Items.Add($"{med.MedicineName} | {med.MedicineBrand} | {med.MedicineDosage}")
+        Next
     End Sub
 
     Private Sub declineBtn_Click(sender As Object, e As EventArgs) Handles declineBtn.Click
-        Dim viewRemarks As New pharmaReviewRemarks(prescription)
+        Dim viewRemarks As New pharmaReviewRemarks(prescription, Me)
         viewRemarks.ShowDialog()
     End Sub
 
@@ -56,13 +64,23 @@ Public Class pharmaViewPrescription
         If result = DialogResult.Yes Then
             Dim dateReview As DateTime = DateTime.Now
             Dim stats As Integer = 1
+            Dim isapproved As Integer = 1
             Dim remark As String = "Approved"
 
             prescription.PrescriptReviewDate = dateReview
             prescription.PrescriptionStatus = stats
             prescription.PrescriptionRemarks = remark
+            If prescription.Cart Is Nothing Then
+                prescription.Cart = New Cart()
+            End If
+            prescription.Cart.isApproved = isapproved
 
-            Dim isFormSuccess As Boolean = Await pharmarepo.UpdateRemarks(prescription)
+
+            Dim isFormSuccess As Boolean = Await pharmarepo.PharmaAction(prescription)
+
+            If Not isFormSuccess Then
+                MessageBox.Show("Execution error.")
+            End If
         Else
             MessageBox.Show("Changes were not saved.")
         End If

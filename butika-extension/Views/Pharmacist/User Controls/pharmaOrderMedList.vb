@@ -8,7 +8,6 @@ Public Class pharmaOrderMedList
 
         Dim medName As String = transac.Medicine.FormattedMedicineName
         Dim manufacturer As String = transac.Medicine.MedicineManufacturer
-
         If medName.Length > 24 Then
             medName = medName.Substring(0, 24) & "..."
         End If
@@ -20,5 +19,11 @@ Public Class pharmaOrderMedList
         mednameLbl.Text = medName
         manufacturerLbl.Text = manufacturer
         quantityLbl.Text = transac.Cart.Quantity.ToString()
+
+        If transac.Account?.IsVerified = True Then
+            priceLbl.Text = transac.Medicine.DiscountedPrice
+        Else
+            priceLbl.Text = transac.Medicine.MedicinePrice
+        End If
     End Sub
 End Class

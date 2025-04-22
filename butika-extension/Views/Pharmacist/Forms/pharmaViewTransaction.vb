@@ -3,6 +3,7 @@
 Public Class pharmaViewTransaction
     Dim transactions As New Transaction()
     Dim allOrderMeds As List(Of Transaction)
+    Dim transacRepo As New PharmaRepository()
     Public Sub New(transac As Transaction)
         Me.transactions = transac
 
@@ -14,7 +15,6 @@ Public Class pharmaViewTransaction
     Public Async Function LoadAllOrderMeds() As Task
         flpItems.Controls.Clear()
 
-        Dim transacRepo As New PharmaRepository()
         allOrderMeds = Await transacRepo.GetAllOrderMeds(transactions.TransactionID)
 
         Dim totalItem As Decimal = getTotalSumOfItems(allOrderMeds)
@@ -41,7 +41,12 @@ Public Class pharmaViewTransaction
         Dim itemList As New List(Of Decimal)()
 
         For Each item In totalItems
-            Dim itemPrice As Decimal = item.Medicine.MedicinePrice
+            Dim itemPrice As Decimal
+            If item.Account.IsVerified = True Then
+                itemPrice = item.Medicine.DiscountedPrice
+            Else
+                itemPrice = item.Medicine.MedicinePrice
+            End If
             Dim itemQuantity As Integer = item.Cart.Quantity
             Dim totalItemPrice As Decimal = itemPrice * itemQuantity
             itemList.Add(totalItemPrice)

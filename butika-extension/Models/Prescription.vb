@@ -15,6 +15,8 @@
         Public Property PrescriptReviewDate As DateTime?
         Public Property PrescriptionStatus As Integer
         Public Property Account As Account
+        Public Property Medicine As Medicine
+        Public Property Cart As Cart
 
         Public ReadOnly Property PresciptImagePath As String
             Get

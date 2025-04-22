@@ -25,9 +25,10 @@ Partial Class pharmaOrderMedList
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        manufacturerLbl = New Label()
         quantityLbl = New Label()
         mednameLbl = New Label()
-        manufacturerLbl = New Label()
+        priceLbl = New Label()
         Guna2Panel1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -36,6 +37,7 @@ Partial Class pharmaOrderMedList
         Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Panel1.BorderRadius = 10
         Guna2Panel1.BorderThickness = 3
+        Guna2Panel1.Controls.Add(priceLbl)
         Guna2Panel1.Controls.Add(manufacturerLbl)
         Guna2Panel1.Controls.Add(quantityLbl)
         Guna2Panel1.Controls.Add(mednameLbl)
@@ -44,15 +46,26 @@ Partial Class pharmaOrderMedList
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
         Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Panel1.Size = New Size(490, 35)
+        Guna2Panel1.Size = New Size(537, 35)
         Guna2Panel1.TabIndex = 0
+        ' 
+        ' manufacturerLbl
+        ' 
+        manufacturerLbl.AutoSize = True
+        manufacturerLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        manufacturerLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        manufacturerLbl.Location = New Point(241, 9)
+        manufacturerLbl.Name = "manufacturerLbl"
+        manufacturerLbl.Size = New Size(145, 16)
+        manufacturerLbl.TabIndex = 2
+        manufacturerLbl.Text = "Manufacturer haha..."
         ' 
         ' quantityLbl
         ' 
         quantityLbl.AutoSize = True
         quantityLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         quantityLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        quantityLbl.Location = New Point(415, 9)
+        quantityLbl.Location = New Point(397, 9)
         quantityLbl.Name = "quantityLbl"
         quantityLbl.Size = New Size(63, 16)
         quantityLbl.TabIndex = 1
@@ -63,22 +76,22 @@ Partial Class pharmaOrderMedList
         mednameLbl.AutoSize = True
         mednameLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         mednameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        mednameLbl.Location = New Point(20, 9)
+        mednameLbl.Location = New Point(17, 9)
         mednameLbl.Name = "mednameLbl"
         mednameLbl.Size = New Size(212, 16)
         mednameLbl.TabIndex = 0
         mednameLbl.Text = "Medicine Name hahahahaha..."
         ' 
-        ' manufacturerLbl
+        ' priceLbl
         ' 
-        manufacturerLbl.AutoSize = True
-        manufacturerLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        manufacturerLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        manufacturerLbl.Location = New Point(250, 9)
-        manufacturerLbl.Name = "manufacturerLbl"
-        manufacturerLbl.Size = New Size(145, 16)
-        manufacturerLbl.TabIndex = 2
-        manufacturerLbl.Text = "Manufacturer haha..."
+        priceLbl.AutoSize = True
+        priceLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
+        priceLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        priceLbl.Location = New Point(469, 9)
+        priceLbl.Name = "priceLbl"
+        priceLbl.Size = New Size(39, 16)
+        priceLbl.TabIndex = 3
+        priceLbl.Text = "Price"
         ' 
         ' pharmaOrderMedList
         ' 
@@ -87,7 +100,7 @@ Partial Class pharmaOrderMedList
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
         Name = "pharmaOrderMedList"
-        Size = New Size(490, 35)
+        Size = New Size(537, 35)
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
         ResumeLayout(False)
@@ -97,5 +110,6 @@ Partial Class pharmaOrderMedList
     Friend WithEvents quantityLbl As Label
     Friend WithEvents mednameLbl As Label
     Friend WithEvents manufacturerLbl As Label
+    Friend WithEvents priceLbl As Label
 
 End Class
