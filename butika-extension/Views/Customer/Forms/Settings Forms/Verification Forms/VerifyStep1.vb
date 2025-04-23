@@ -65,7 +65,7 @@ Public Class VerifyStep1
 
         MessageBox.Show("You have successfully subitted your ID. Please wait while your informatiaon is being verified.", "Success", MessageBoxButtons.OK)
 
-        Dim result As Boolean = Await accountRepo.SetPendingNum(account, 1)
+        Dim result As Boolean = Await accountRepo.SetPendingNumAndInputImage(account, 1, imageName)
         If result = False Then
             MsgBox("SetPendingNumToZero did not work properly [returned false]")
         End If
