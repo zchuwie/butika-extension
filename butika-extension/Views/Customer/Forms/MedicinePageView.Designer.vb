@@ -338,6 +338,7 @@ Partial Class MedicinePageView
         Controls.Add(Dosage)
         FormBorderStyle = FormBorderStyle.None
         Name = "MedicinePageView"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "MedicinePageView"
         CType(medicineImageBox, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

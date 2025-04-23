@@ -1,10 +1,12 @@
-﻿Imports System.Windows.Forms.VisualStyles
+﻿Imports System.Transactions
+Imports System.Windows.Forms.VisualStyles
 Imports butika.Models
 
 Public Class MedicinePageView
 
     Dim account As New Account()
     Dim medicine As New Medicine()
+    Dim isDirect As Boolean
 
     Public medicineQuantity As Integer = 1
 
@@ -98,7 +100,7 @@ Public Class MedicinePageView
             Quantity.Text = medicineQuantity.ToString()
 
             If account.IsVerified = True Then
-                Price.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+                Price.Text = "₱" & Convert.ToString(medicine.DiscountedPrice * medicineQuantity)
                 originalPrice.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
             Else
                 Price.Text = "₱" & Convert.ToString(medicine.DiscountedPrice * medicineQuantity)
@@ -112,15 +114,10 @@ Public Class MedicinePageView
     Private Async Sub BuyNowBtn_Click(sender As Object, e As EventArgs) Handles BuyNowBtn.Click
         Dim transactRepo As New TransactionRepository(account)
         Dim cartRepo As New CartRepository(account)
+        Dim prescriptRepo As New PrescriptionRepository(account)
+        Dim addToDirectCart As Integer
 
         If medicine.MedicinePrescription = 1 Then
-            Dim addToCart As Boolean = Await cartRepo.AddToCart(medicine.MedicineID, medicineQuantity)
-
-            If Not addToCart Then
-                MessageBox.Show("Cannot add to cart. Try Again")
-                Return
-            End If
-
             Dim result As DialogResult = MessageBox.Show(
             "You have checked out an item that needs a prescription. Do you want to proceed to the prescription form?",
             "Prescription Needed",
@@ -131,10 +128,28 @@ Public Class MedicinePageView
                 Return
             End If
 
-            Dim sf As New SubmitForm(account)
+            Dim sf As New SubmitForm(account, True)
             sf.ShowDialog()
-            Return
 
+            If sf.DidSubmitted Then
+                addToDirectCart = Await cartRepo.AddToDirectCart(medicine.MedicineID, medicineQuantity)
+
+                If addToDirectCart = 0 Then
+                    MessageBox.Show("Cannot add to cart. Try Again")
+                    Return
+                End If
+
+                Dim PrescriptionID As Integer = Await prescriptRepo.getPrescriptionID()
+                Dim isCartUpdated As Boolean = Await cartRepo.insertPrescriptionByCartID(PrescriptionID, addToDirectCart)
+
+                If Not isCartUpdated Then
+                    MessageBox.Show("Cannot add to cart. Try Again")
+                    Return
+                End If
+
+            End If
+
+            Return
         End If
 
         Dim uniqueTransactionID As String = Await transactRepo.GenerateUniqueTransactionID()
@@ -152,9 +167,27 @@ Public Class MedicinePageView
             Return
         End If
 
-        MessageBox.Show("Your item have been successfully bought")
+        If Not Await cartRepo.itemStockToReduce(medicine.MedicineID, medicineQuantity) Then
+            MessageBox.Show("Please try again.")
+            Debug.WriteLine("Error reducing stock items from the usersCart table.")
+            Return
+        End If
 
+        Dim totalItem = getTotalSumOfItems()
+
+        If MessageBox.Show("You have successfully checked out the item. Do you want to see the receipt?", "Checkout Successful", MessageBoxButtons.OKCancel) = DialogResult.OK Then
+            Dim receipt As New Receipt(account)
+            receipt.PdfReceipt(medicine, totalItem, medicineQuantity, uniqueTransactionID, account)
+            receipt.OpenPDF()
+        Else
+            MessageBox.Show("Have a good day ahead!", "Success", MessageBoxButtons.OK)
+        End If
 
 
     End Sub
+
+    Private Function getTotalSumOfItems() As Decimal
+        Dim itemTotal As Decimal = If(account.IsVerified, medicine.DiscountedPrice * medicineQuantity, medicine.MedicinePrice * medicineQuantity)
+        Return itemTotal
+    End Function
 End Class

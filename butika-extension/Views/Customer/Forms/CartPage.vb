@@ -235,7 +235,7 @@ Public Class CartPage
                     Return True
                 End If
 
-                Using sf As New SubmitForm(account)
+                Using sf As New SubmitForm(account, False)
                     sf.ShowDialog()
                 End Using
 
@@ -303,9 +303,9 @@ Public Class CartPage
             Dim itemPrice As Decimal
 
             If account.IsVerified = 1 Then
-                itemPrice = item.Medicine.MedicinePrice
-            Else
                 itemPrice = item.Medicine.DiscountedPrice
+            Else
+                itemPrice = item.Medicine.MedicinePrice
             End If
 
             Dim itemQuantity As Integer = item.Quantity
@@ -325,7 +325,7 @@ Public Class CartPage
 
     Private Async Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
         Dim cartRepo As New CartRepository(account)
-        Dim isDeleted = Await cartRepo.deleteTickedItemFromUsersCart
+        Dim isDeleted = Await cartRepo.deleteTickedItemFromUsersCart()
 
         If Not isDeleted Then
             MessageBox.Show("An error occured. Try again", "Uh oh")

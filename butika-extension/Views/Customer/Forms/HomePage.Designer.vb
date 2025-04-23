@@ -62,6 +62,7 @@ Partial Class HomePage
         PictureBox4 = New PictureBox()
         usernameLbl = New Label()
         amountLbl = New Label()
+        originalPrice = New Label()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         prescriptionsPnl.SuspendLayout()
@@ -345,7 +346,7 @@ Partial Class HomePage
         ' 
         ' usernameLbl
         ' 
-        usernameLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        usernameLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         usernameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         usernameLbl.Location = New Point(60, 28)
         usernameLbl.Name = "usernameLbl"
@@ -356,14 +357,26 @@ Partial Class HomePage
         ' 
         ' amountLbl
         ' 
-        amountLbl.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        amountLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         amountLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         amountLbl.Location = New Point(1091, 28)
         amountLbl.Name = "amountLbl"
         amountLbl.Size = New Size(96, 32)
         amountLbl.TabIndex = 16
-        amountLbl.Text = "Php 0.00"
+        amountLbl.Text = "PHP 0.00"
         amountLbl.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' originalPrice
+        ' 
+        originalPrice.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold Or FontStyle.Strikeout, GraphicsUnit.Point, CByte(0))
+        originalPrice.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        originalPrice.Location = New Point(1091, 60)
+        originalPrice.Name = "originalPrice"
+        originalPrice.Size = New Size(96, 32)
+        originalPrice.TabIndex = 17
+        originalPrice.Text = "PHP 0.00"
+        originalPrice.TextAlign = ContentAlignment.MiddleLeft
+        originalPrice.Visible = False
         ' 
         ' HomePage
         ' 
@@ -371,6 +384,7 @@ Partial Class HomePage
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1210, 720)
+        Controls.Add(originalPrice)
         Controls.Add(amountLbl)
         Controls.Add(usernameLbl)
         Controls.Add(PictureBox4)
@@ -433,4 +447,5 @@ Partial Class HomePage
     Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents usernameLbl As Label
     Friend WithEvents amountLbl As Label
+    Friend WithEvents originalPrice As Label
 End Class

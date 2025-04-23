@@ -67,7 +67,7 @@ Partial Class PrescriptionPage
         PrescInfoPanel.BorderStyle = BorderStyle.FixedSingle
         PrescInfoPanel.Location = New Point(388, 54)
         PrescInfoPanel.Name = "PrescInfoPanel"
-        PrescInfoPanel.Size = New Size(843, 607)
+        PrescInfoPanel.Size = New Size(780, 602)
         PrescInfoPanel.TabIndex = 14
         ' 
         ' prescriptionListPanel
@@ -93,6 +93,7 @@ Partial Class PrescriptionPage
         Controls.Add(MedIcon)
         FormBorderStyle = FormBorderStyle.None
         Name = "PrescriptionPage"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "PrescriptionPage"
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

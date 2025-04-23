@@ -22,7 +22,8 @@ Public Class MedicineRepository
                     drug_stocks AS MedicineStock,
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
-                FROM drug_inventory"
+                FROM drug_inventory
+                WHERE drug_stocks != 0 AND expiration_date >= GETDATE()"
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -47,7 +48,8 @@ Public Class MedicineRepository
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
                 FROM drug_inventory
-                WHERE prescription_needed = 0"
+                WHERE prescription_needed = 0
+                AND drug_stocks != 0 AND expiration_date >= GETDATE()"
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -72,7 +74,8 @@ Public Class MedicineRepository
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
                 FROM drug_inventory
-                WHERE prescription_needed = 1"
+                WHERE prescription_needed = 1
+                AND drug_stocks != 0 AND expiration_date >= GETDATE()"
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
