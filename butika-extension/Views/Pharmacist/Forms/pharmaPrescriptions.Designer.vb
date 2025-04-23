@@ -35,6 +35,7 @@ Partial Class pharmaPrescriptions
         Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
+        Label5 = New Label()
         Label4 = New Label()
         Label3 = New Label()
         Label2 = New Label()
@@ -51,7 +52,6 @@ Partial Class pharmaPrescriptions
         infoManagerIcon = New ToolTip(components)
         flpPrescript = New FlowLayoutPanel()
         sortBtn = New Guna.UI2.WinForms.Guna2Button()
-        Label5 = New Label()
         Guna2Panel2.SuspendLayout()
         CType(infoIcon, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -72,6 +72,18 @@ Partial Class pharmaPrescriptions
         Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Panel2.Size = New Size(972, 37)
         Guna2Panel2.TabIndex = 27
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
+        Label5.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold)
+        Label5.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        Label5.Location = New Point(235, 10)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(82, 18)
+        Label5.TabIndex = 4
+        Label5.Text = "Username"
         ' 
         ' Label4
         ' 
@@ -221,7 +233,7 @@ Partial Class pharmaPrescriptions
         flpPrescript.Location = New Point(36, 178)
         flpPrescript.Margin = New Padding(3, 0, 3, 3)
         flpPrescript.Name = "flpPrescript"
-        flpPrescript.Size = New Size(972, 530)
+        flpPrescript.Size = New Size(995, 530)
         flpPrescript.TabIndex = 0
         ' 
         ' sortBtn
@@ -241,18 +253,6 @@ Partial Class pharmaPrescriptions
         sortBtn.Size = New Size(150, 34)
         sortBtn.TabIndex = 34
         sortBtn.Text = "Ascending Date"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Century Gothic", 11.25F, FontStyle.Bold)
-        Label5.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Label5.Location = New Point(235, 10)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(82, 18)
-        Label5.TabIndex = 4
-        Label5.Text = "Username"
         ' 
         ' pharmaPrescriptions
         ' 

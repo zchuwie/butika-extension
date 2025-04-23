@@ -5,17 +5,12 @@ Public Class pharmaMedicines
     Dim pharmarepo As New PharmaRepository()
     Dim allMedicines As List(Of Medicine)
     Private Async Sub pharmaMedicines_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        infoManagerIcon.SetToolTip(infoIcon, "Browse the available medicines in stock. Click on an item to view its description, expiration date, manufacturer, and stock quantity.")
-        infoManagerIcon.ShowAlways = True
-
         Await LoadAllMedicine()
     End Sub
     Public Async Function LoadAllMedicine() As Task
-
-        allMedicines = Await medicineRepo.allMedicines()
+        allMedicines = Await pharmarepo.AllMedicines()
 
         Dim batchSize As Integer = 5
-
         For i As Integer = 0 To allMedicines.Count - 1 Step batchSize
             Dim batch = allMedicines.Skip(i).Take(batchSize).ToList()
 
@@ -30,7 +25,7 @@ Public Class pharmaMedicines
         Dim medSearch As String = medicineSearch.Text
 
         If String.IsNullOrWhiteSpace(medSearch) Then
-            allMedicines = Await medicineRepo.allMedicines()
+            allMedicines = Await pharmarepo.AllMedicines()
         Else
             allMedicines = Await pharmarepo.SearchMedicine(medSearch)
         End If

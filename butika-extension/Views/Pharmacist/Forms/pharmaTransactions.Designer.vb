@@ -184,7 +184,7 @@ Partial Class pharmaTransactions
         flpTransaction.Location = New Point(36, 181)
         flpTransaction.Margin = New Padding(3, 0, 3, 3)
         flpTransaction.Name = "flpTransaction"
-        flpTransaction.Size = New Size(972, 527)
+        flpTransaction.Size = New Size(995, 527)
         flpTransaction.TabIndex = 0
         ' 
         ' sortBtn

@@ -78,9 +78,9 @@ Partial Class HomePage
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(438, 16)
+        PictureBox1.Location = New Point(443, 28)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(90, 78)
+        PictureBox1.Size = New Size(80, 66)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -88,7 +88,7 @@ Partial Class HomePage
         ' PictureBox2
         ' 
         PictureBox2.Image = My.Resources.Resources.butika
-        PictureBox2.Location = New Point(534, 28)
+        PictureBox2.Location = New Point(529, 35)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(265, 57)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
@@ -102,7 +102,7 @@ Partial Class HomePage
         prescriptionsPnl.Controls.Add(totalPrescLbl)
         prescriptionsPnl.CustomizableEdges = CustomizableEdges1
         prescriptionsPnl.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        prescriptionsPnl.Location = New Point(494, 552)
+        prescriptionsPnl.Location = New Point(491, 185)
         prescriptionsPnl.Name = "prescriptionsPnl"
         prescriptionsPnl.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         prescriptionsPnl.Size = New Size(226, 117)
@@ -136,7 +136,7 @@ Partial Class HomePage
         ' 
         Label1.Font = New Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Label1.Location = New Point(319, 126)
+        Label1.Location = New Point(317, 95)
         Label1.Name = "Label1"
         Label1.Size = New Size(602, 29)
         Label1.TabIndex = 3
@@ -149,7 +149,7 @@ Partial Class HomePage
         Guna2Panel1.Controls.Add(totalTransacLbl)
         Guna2Panel1.CustomizableEdges = CustomizableEdges3
         Guna2Panel1.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel1.Location = New Point(30, 552)
+        Guna2Panel1.Location = New Point(27, 185)
         Guna2Panel1.Name = "Guna2Panel1"
         Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Panel1.Size = New Size(226, 117)
@@ -186,7 +186,7 @@ Partial Class HomePage
         Guna2Panel2.Controls.Add(cartProgressLbl)
         Guna2Panel2.CustomizableEdges = CustomizableEdges5
         Guna2Panel2.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel2.Location = New Point(262, 552)
+        Guna2Panel2.Location = New Point(259, 185)
         Guna2Panel2.Name = "Guna2Panel2"
         Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         Guna2Panel2.Size = New Size(226, 117)
@@ -223,7 +223,7 @@ Partial Class HomePage
         Guna2Panel3.Controls.Add(totalItemsLbl)
         Guna2Panel3.CustomizableEdges = CustomizableEdges7
         Guna2Panel3.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel3.Location = New Point(958, 552)
+        Guna2Panel3.Location = New Point(955, 185)
         Guna2Panel3.Name = "Guna2Panel3"
         Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         Guna2Panel3.Size = New Size(226, 117)
@@ -260,7 +260,7 @@ Partial Class HomePage
         Guna2Panel4.Controls.Add(pendingApprovalLbl)
         Guna2Panel4.CustomizableEdges = CustomizableEdges9
         Guna2Panel4.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Guna2Panel4.Location = New Point(726, 552)
+        Guna2Panel4.Location = New Point(723, 185)
         Guna2Panel4.Name = "Guna2Panel4"
         Guna2Panel4.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         Guna2Panel4.Size = New Size(226, 117)
@@ -293,7 +293,7 @@ Partial Class HomePage
         ' dashboardPctBx
         ' 
         dashboardPctBx.Image = My.Resources.Resources.welcomehere
-        dashboardPctBx.Location = New Point(188, 167)
+        dashboardPctBx.Location = New Point(188, 331)
         dashboardPctBx.Name = "dashboardPctBx"
         dashboardPctBx.Size = New Size(846, 312)
         dashboardPctBx.SizeMode = PictureBoxSizeMode.StretchImage
@@ -306,7 +306,7 @@ Partial Class HomePage
         carousel1.Cursor = Cursors.Hand
         carousel1.CustomizableEdges = CustomizableEdges11
         carousel1.FillColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        carousel1.Location = New Point(569, 485)
+        carousel1.Location = New Point(569, 649)
         carousel1.Name = "carousel1"
         carousel1.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         carousel1.Size = New Size(57, 8)
@@ -318,7 +318,7 @@ Partial Class HomePage
         carousel2.Cursor = Cursors.Hand
         carousel2.CustomizableEdges = CustomizableEdges13
         carousel2.FillColor = Color.Silver
-        carousel2.Location = New Point(632, 485)
+        carousel2.Location = New Point(632, 649)
         carousel2.Name = "carousel2"
         carousel2.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         carousel2.Size = New Size(57, 8)
@@ -327,7 +327,7 @@ Partial Class HomePage
         ' PictureBox3
         ' 
         PictureBox3.Image = My.Resources.Resources.account_icon
-        PictureBox3.Location = New Point(23, 28)
+        PictureBox3.Location = New Point(28, 28)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(31, 32)
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage

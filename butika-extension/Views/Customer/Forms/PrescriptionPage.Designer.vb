@@ -35,7 +35,7 @@ Partial Class PrescriptionPage
         MedSubtext.AutoSize = True
         MedSubtext.Font = New Font("Century Gothic", 9.75F)
         MedSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedSubtext.Location = New Point(113, 93)
+        MedSubtext.Location = New Point(94, 52)
         MedSubtext.Name = "MedSubtext"
         MedSubtext.Size = New Size(191, 17)
         MedSubtext.TabIndex = 11
@@ -46,7 +46,7 @@ Partial Class PrescriptionPage
         Medicines.AutoSize = True
         Medicines.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         Medicines.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Medicines.Location = New Point(109, 63)
+        Medicines.Location = New Point(94, 22)
         Medicines.Name = "Medicines"
         Medicines.Size = New Size(155, 28)
         Medicines.TabIndex = 10
@@ -55,9 +55,9 @@ Partial Class PrescriptionPage
         ' MedIcon
         ' 
         MedIcon.Image = My.Resources.Resources.prescription
-        MedIcon.Location = New Point(40, 55)
+        MedIcon.Location = New Point(24, 12)
         MedIcon.Name = "MedIcon"
-        MedIcon.Size = New Size(67, 57)
+        MedIcon.Size = New Size(64, 64)
         MedIcon.SizeMode = PictureBoxSizeMode.Zoom
         MedIcon.TabIndex = 12
         MedIcon.TabStop = False
@@ -65,18 +65,19 @@ Partial Class PrescriptionPage
         ' PrescInfoPanel
         ' 
         PrescInfoPanel.BorderStyle = BorderStyle.FixedSingle
-        PrescInfoPanel.Location = New Point(388, 54)
+        PrescInfoPanel.Location = New Point(388, 22)
         PrescInfoPanel.Name = "PrescInfoPanel"
-        PrescInfoPanel.Size = New Size(780, 602)
+        PrescInfoPanel.Size = New Size(820, 686)
         PrescInfoPanel.TabIndex = 14
         ' 
         ' prescriptionListPanel
         ' 
+        prescriptionListPanel.BorderStyle = BorderStyle.FixedSingle
         prescriptionListPanel.FlowDirection = FlowDirection.TopDown
-        prescriptionListPanel.Location = New Point(40, 137)
+        prescriptionListPanel.Location = New Point(24, 92)
         prescriptionListPanel.Name = "prescriptionListPanel"
         prescriptionListPanel.Padding = New Padding(18, 15, 18, 0)
-        prescriptionListPanel.Size = New Size(311, 519)
+        prescriptionListPanel.Size = New Size(344, 616)
         prescriptionListPanel.TabIndex = 27
         ' 
         ' PrescriptionPage
@@ -85,7 +86,7 @@ Partial Class PrescriptionPage
         AutoScaleMode = AutoScaleMode.Font
         AutoScroll = True
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        ClientSize = New Size(1210, 720)
+        ClientSize = New Size(1220, 720)
         Controls.Add(prescriptionListPanel)
         Controls.Add(PrescInfoPanel)
         Controls.Add(MedSubtext)

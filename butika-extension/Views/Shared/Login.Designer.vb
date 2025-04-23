@@ -271,7 +271,7 @@ Partial Class Login
         AutoScaleMode = AutoScaleMode.Font
         AutoSize = True
         AutoValidate = AutoValidate.EnablePreventFocusChange
-        BackColor = Color.FromArgb(CByte(217), CByte(217), CByte(217))
+        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1280, 720)
         Controls.Add(closeBtn)
         Controls.Add(PictureBox4)

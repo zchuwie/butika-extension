@@ -27,7 +27,6 @@ Partial Class Settings
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         ShoppingCart = New Label()
-        Divider = New Panel()
         SettingsPanel = New Panel()
         AccountBtn = New Guna.UI2.WinForms.Guna2Button()
         SecurityBtn = New Guna.UI2.WinForms.Guna2Button()
@@ -41,22 +40,13 @@ Partial Class Settings
         ' 
         ShoppingCart.AutoSize = True
         ShoppingCart.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
-        ShoppingCart.ForeColor = Color.FromArgb(22, 66, 60)
+        ShoppingCart.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ShoppingCart.Location = New Point(33, 49)
         ShoppingCart.Name = "ShoppingCart"
         ShoppingCart.Size = New Size(100, 28)
         ShoppingCart.TabIndex = 11
         ShoppingCart.Text = "Settings"
         ShoppingCart.TextAlign = ContentAlignment.MiddleCenter
-        ' 
-        ' Divider
-        ' 
-        Divider.BackColor = Color.FromArgb(22, 66, 60)
-        Divider.Location = New Point(234, 38)
-        Divider.Name = "Divider"
-        Divider.RightToLeft = RightToLeft.No
-        Divider.Size = New Size(2, 649)
-        Divider.TabIndex = 16
         ' 
         ' SettingsPanel
         ' 
@@ -72,9 +62,9 @@ Partial Class Settings
         AccountBtn.CustomizableEdges = CustomizableEdges1
         AccountBtn.DisabledState.BorderColor = Color.DarkGray
         AccountBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        AccountBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169)
-        AccountBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141)
-        AccountBtn.FillColor = Color.FromArgb(220, 229, 219)
+        AccountBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        AccountBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        AccountBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         AccountBtn.Font = New Font("Segoe UI", 9F)
         AccountBtn.ForeColor = Color.White
         AccountBtn.Image = My.Resources.Resources.editProfileUnpressed
@@ -91,9 +81,9 @@ Partial Class Settings
         SecurityBtn.CustomizableEdges = CustomizableEdges3
         SecurityBtn.DisabledState.BorderColor = Color.DarkGray
         SecurityBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        SecurityBtn.DisabledState.FillColor = Color.FromArgb(169, 169, 169)
-        SecurityBtn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141)
-        SecurityBtn.FillColor = Color.FromArgb(220, 229, 219)
+        SecurityBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        SecurityBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        SecurityBtn.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         SecurityBtn.Font = New Font("Segoe UI", 9F)
         SecurityBtn.ForeColor = Color.White
         SecurityBtn.Image = My.Resources.Resources.EditSecurityUnpressed
@@ -108,9 +98,9 @@ Partial Class Settings
         ' SecurityLbl
         ' 
         SecurityLbl.AutoSize = True
-        SecurityLbl.BackColor = Color.FromArgb(220, 229, 219)
+        SecurityLbl.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         SecurityLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
-        SecurityLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        SecurityLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SecurityLbl.Location = New Point(96, 167)
         SecurityLbl.Name = "SecurityLbl"
         SecurityLbl.Size = New Size(69, 19)
@@ -120,9 +110,9 @@ Partial Class Settings
         ' SecuritySubtext
         ' 
         SecuritySubtext.AutoSize = True
-        SecuritySubtext.BackColor = Color.FromArgb(220, 229, 219)
+        SecuritySubtext.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         SecuritySubtext.Font = New Font("Century Gothic", 6.75F)
-        SecuritySubtext.ForeColor = Color.FromArgb(22, 66, 60)
+        SecuritySubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SecuritySubtext.Location = New Point(98, 184)
         SecuritySubtext.Name = "SecuritySubtext"
         SecuritySubtext.Size = New Size(97, 13)
@@ -132,9 +122,9 @@ Partial Class Settings
         ' AccountLbl
         ' 
         AccountLbl.AutoSize = True
-        AccountLbl.BackColor = Color.FromArgb(220, 229, 219)
+        AccountLbl.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         AccountLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold)
-        AccountLbl.ForeColor = Color.FromArgb(22, 66, 60)
+        AccountLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AccountLbl.Location = New Point(96, 97)
         AccountLbl.Name = "AccountLbl"
         AccountLbl.Size = New Size(75, 19)
@@ -144,9 +134,9 @@ Partial Class Settings
         ' AccountSubtext
         ' 
         AccountSubtext.AutoSize = True
-        AccountSubtext.BackColor = Color.FromArgb(220, 229, 219)
+        AccountSubtext.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         AccountSubtext.Font = New Font("Century Gothic", 6.75F)
-        AccountSubtext.ForeColor = Color.FromArgb(22, 66, 60)
+        AccountSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AccountSubtext.Location = New Point(98, 114)
         AccountSubtext.Name = "AccountSubtext"
         AccountSubtext.Size = New Size(108, 13)
@@ -157,7 +147,7 @@ Partial Class Settings
         ' 
         AutoScaleDimensions = New SizeF(6F, 13F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.FromArgb(220, 229, 219)
+        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1210, 720)
         Controls.Add(AccountLbl)
         Controls.Add(AccountSubtext)
@@ -166,7 +156,6 @@ Partial Class Settings
         Controls.Add(SecurityBtn)
         Controls.Add(AccountBtn)
         Controls.Add(SettingsPanel)
-        Controls.Add(Divider)
         Controls.Add(ShoppingCart)
         Font = New Font("Microsoft Sans Serif", 8.25F)
         FormBorderStyle = FormBorderStyle.None
@@ -177,7 +166,6 @@ Partial Class Settings
     End Sub
 
     Friend WithEvents ShoppingCart As Label
-    Friend WithEvents Divider As Panel
     Friend WithEvents SettingsPanel As Panel
     Friend WithEvents AccountBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents SecurityBtn As Guna.UI2.WinForms.Guna2Button

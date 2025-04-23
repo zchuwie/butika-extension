@@ -118,19 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="infoIcon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAYNJREFUOE+1VMFRwzAQTAmeAQmelJAnY8mMJBdAOsAdQAfQAXRgOggdpISUoBJS
-        Qpg96YylSHY+7Iwf1ulWeyfdbjYFNMY0otev0um9dJ2XTp/jdxROjbLvdnlOFSASTp9mJJVP+VujTZ6f
-        QOL0mCCsPgjXDo15fOC4MO1WmHaQNlH9nrJECNd9RqKTNOslSac/mPTOqbckCCUUtMrfzxQBKCu0QHn0
-        dh4jtVyRabe0iE3ceGGeXuYJgLTqe1Jiuuc8Lqz+otxeH8JCVDctZKC+WX1ET3P1AL0ItMnpM10SNtbU
-        MfJSc7BK9BU/xF46HeCW1CoAbvpuRy2x6ge3Rf3JNzFwUNijfB5joNSpbf9AGG64VvI1hGnJ8VlcPM6I
-        awhF5KCLZbm1hDVCjCa3baqSZ7Okco2Q1cEHpsU/leX3CBsrHQZjoLzCyCbDXnWQiPA24ZVhf9XGUlLl
-        2UyREEyiHbDGfomhqJIxIJ3HcflT40WZS4ApRMV7MlsyXDXC0Zdm+xeezvTs6mmW1AAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
   <data name="medicineSearch.IconRight" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
@@ -141,7 +128,4 @@
         kFab4K1/dd8bfONvDX7+MJ8gqTYY8QnLi2ineq3xDgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="infoManagerIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>
