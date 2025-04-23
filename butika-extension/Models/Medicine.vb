@@ -22,7 +22,6 @@ Namespace Models
         Public Property MedicineTickBox As Boolean
         Public Property MedicineArchived As Integer
 
-
         Public ReadOnly Property MedicineImagePath As String
             Get
                 Return GetImagePath.DrugPathName + "\\" + MedicineImageName
@@ -37,7 +36,8 @@ Namespace Models
 
         Public ReadOnly Property DiscountedPrice As Decimal
             Get
-                Return MedicinePrice - (MedicinePrice * 0.2)
+                Dim discounted = MedicinePrice - (MedicinePrice * 0.2)
+                Return Math.Round(discounted, 2)
             End Get
         End Property
 
@@ -48,7 +48,6 @@ Namespace Models
         Public Property StockQuantityRequest As Integer
         Public Property StockReportID As Integer
         Public Property StockLastUpdated As DateTime?
-
 
     End Class
 End Namespace

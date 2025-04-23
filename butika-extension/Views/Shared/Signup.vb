@@ -34,14 +34,15 @@ Public Class Signup
 
         If String.IsNullOrEmpty(username) OrElse String.IsNullOrEmpty(email) OrElse
        String.IsNullOrEmpty(password) OrElse String.IsNullOrEmpty(confirmedPass) Then
-            MessageBox.Show("Please fill in all fields.")
+            MessageBox.Show("Looks like you missed something. Please fill out all required fields.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
             ClearTextFields()
             Return
         End If
 
         Dim existingAccount = Await accountRep.CheckDuplicate(username)
         If existingAccount Then
-            MessageBox.Show("Username already taken.")
+            MessageBox.Show("Username has been already taken. Use other username", "Existing account", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             ClearTextFields()
             Return
         End If
@@ -94,7 +95,4 @@ Public Class Signup
         PasswordTxtBox.Clear()
         ConfirmPasswordTxtBox.Clear()
     End Sub
-
-
-
 End Class

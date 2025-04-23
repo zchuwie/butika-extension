@@ -155,6 +155,7 @@ Partial Class Signup
         ConfirmPasswordTxtBox.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         ConfirmPasswordTxtBox.Size = New Size(490, 47)
         ConfirmPasswordTxtBox.TabIndex = 25
+        ConfirmPasswordTxtBox.UseSystemPasswordChar = True
         ' 
         ' Guna2HtmlLabel6
         ' 
@@ -191,6 +192,7 @@ Partial Class Signup
         PasswordTxtBox.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         PasswordTxtBox.Size = New Size(490, 47)
         PasswordTxtBox.TabIndex = 23
+        PasswordTxtBox.UseSystemPasswordChar = True
         ' 
         ' Guna2HtmlLabel5
         ' 
@@ -214,7 +216,7 @@ Partial Class Signup
         emailTxtBox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         emailTxtBox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         emailTxtBox.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        emailTxtBox.FocusedState.BorderColor = Color.Violet
+        emailTxtBox.FocusedState.BorderColor = Color.Transparent
         emailTxtBox.Font = New Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         emailTxtBox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         emailTxtBox.HoverState.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))

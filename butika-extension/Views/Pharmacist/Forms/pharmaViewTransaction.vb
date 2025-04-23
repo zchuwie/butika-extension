@@ -42,15 +42,21 @@ Public Class pharmaViewTransaction
 
         For Each item In totalItems
             Dim itemPrice As Decimal
-            If item.Account.IsVerified = True Then
+
+            If item.Account?.IsVerified = True AndAlso
+            item.Account.VerifiedDate.HasValue AndAlso
+            item.TransactionDate >= item.Account.VerifiedDate.Value Then
+
                 itemPrice = item.Medicine.DiscountedPrice
             Else
                 itemPrice = item.Medicine.MedicinePrice
             End If
+
             Dim itemQuantity As Integer = item.Cart.Quantity
             Dim totalItemPrice As Decimal = itemPrice * itemQuantity
             itemList.Add(totalItemPrice)
         Next
+
 
         Dim totalSum As Decimal = itemList.Sum()
         Return totalSum

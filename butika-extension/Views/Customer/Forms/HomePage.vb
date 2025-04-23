@@ -34,8 +34,8 @@ Public Class HomePage
         cartList = Await cartRepo.GetCartInfoForCheckOutPanel()
 
         If account.IsVerified = True Then
-            amountLbl.Text = "PHP" & getTotalSumOfItems(cartList, True).ToString()
-            originalPrice.Text = "PHP" & getTotalSumOfItems(cartList, False).ToString()
+            amountLbl.Text = "PHP" & getTotalSumOfItems(cartList, True).ToString("F2")
+            originalPrice.Text = "PHP" & getTotalSumOfItems(cartList, False).ToString("F2")
 
             If cartList.Count = 0 Then
                 originalPrice.Visible = False
@@ -43,7 +43,7 @@ Public Class HomePage
                 originalPrice.Visible = True
             End If
         Else
-            amountLbl.Text = "PHP" & getTotalSumOfItems(cartList, False).ToString()
+            amountLbl.Text = "PHP" & getTotalSumOfItems(cartList, False).ToString("F2")
         End If
 
     End Sub

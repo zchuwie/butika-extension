@@ -194,6 +194,7 @@ Partial Class SubmitForm
         ContactTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ContactTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         ContactTxtbox.Location = New Point(114, 305)
+        ContactTxtbox.MaxLength = 11
         ContactTxtbox.Name = "ContactTxtbox"
         ContactTxtbox.PlaceholderText = ""
         ContactTxtbox.SelectedText = ""
@@ -305,6 +306,7 @@ Partial Class SubmitForm
         PatientAgeTxtbox.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PatientAgeTxtbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         PatientAgeTxtbox.Location = New Point(80, 130)
+        PatientAgeTxtbox.MaxLength = 3
         PatientAgeTxtbox.Name = "PatientAgeTxtbox"
         PatientAgeTxtbox.PlaceholderText = ""
         PatientAgeTxtbox.SelectedText = ""

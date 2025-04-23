@@ -376,7 +376,6 @@ Partial Class PrescriptionForm
         ' itemsToApproved
         ' 
         itemsToApproved.AutoScroll = True
-        itemsToApproved.FlowDirection = FlowDirection.TopDown
         itemsToApproved.Location = New Point(449, 423)
         itemsToApproved.Name = "itemsToApproved"
         itemsToApproved.Size = New Size(278, 154)

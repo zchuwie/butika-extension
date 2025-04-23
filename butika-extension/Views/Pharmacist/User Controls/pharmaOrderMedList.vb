@@ -20,10 +20,14 @@ Public Class pharmaOrderMedList
         manufacturerLbl.Text = manufacturer
         quantityLbl.Text = transac.Cart.Quantity.ToString()
 
-        If transac.Account?.IsVerified = True Then
+        If transac.Account?.IsVerified = True AndAlso
+        transac.Account.VerifiedDate.HasValue AndAlso
+        transac.TransactionDate >= transac.Account.VerifiedDate.Value Then
+
             priceLbl.Text = transac.Medicine.DiscountedPrice
         Else
             priceLbl.Text = transac.Medicine.MedicinePrice
         End If
+
     End Sub
 End Class

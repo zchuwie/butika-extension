@@ -1,5 +1,7 @@
 ﻿Imports System.IO
+Imports butika.Helpers
 Imports butika.Models
+Imports Guna.UI2.WinForms
 Imports PdfSharp.Snippets.Drawing
 
 Public Class SubmitForm
@@ -41,8 +43,18 @@ Public Class SubmitForm
         Dim prescriptRepo As New PrescriptionRepository(account)
         Dim cartRepo As New CartRepository(account)
 
+        If Not AreInputsValid() Then
+            MessageBox.Show("Please fill in all required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If String.IsNullOrEmpty(selectedImagePath) OrElse Not File.Exists(selectedImagePath) Then
+            MessageBox.Show("Please upload an image before submitting the form.", "Image Required", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
         Dim pname As String = PatientNameTxtbox.Text
-        Dim age As String = PatientAgeTxtbox.Text
+        Dim age As String = PatientAgeTxtbox.Text.Trim()
         Dim dname As String = DocNameTxtbox.Text
         Dim clinic As String = ClinicTxtbox.Text
         Dim contact As String = ContactTxtbox.Text
@@ -116,4 +128,71 @@ Public Class SubmitForm
 
 
     End Sub
+
+#Region "Validation"
+
+    Private Sub PatientAgeTxtbox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles PatientAgeTxtbox.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True ' Block the key from being entered
+        End If
+    End Sub
+
+    Private Sub PatientAgeTxtbox_TextChanged(sender As Object, e As EventArgs) Handles PatientAgeTxtbox.TextChanged
+        With PatientAgeTxtbox
+            Dim input As String = .Text.Trim()
+
+            If String.IsNullOrEmpty(input) Then
+                .BorderColor = Color.Black
+                .FocusedState.BorderColor = Color.Black
+            ElseIf Not IsNumeric(input) Then
+                .BorderColor = Color.Red
+                .FocusedState.BorderColor = Color.Red
+            Else
+                Dim age As Integer = CInt(input)
+                Dim isValid As Boolean = age >= 0 AndAlso age <= 120
+
+                .BorderColor = If(isValid, Color.Black, Color.Red)
+                .FocusedState.BorderColor = If(isValid, Color.Black, Color.Red)
+            End If
+        End With
+
+    End Sub
+
+    Private Sub ContactTxtbox_TextChanged(sender As Object, e As EventArgs) Handles ContactTxtbox.TextChanged
+        With ContactTxtbox
+            Dim input As String = .Text.Trim()
+
+            If String.IsNullOrEmpty(input) Then
+                .BorderColor = Color.Black
+                .FocusedState.BorderColor = Color.Black
+            Else
+                Dim isValid As Boolean = InputValidation.isContactValid(input)
+
+                .BorderColor = If(isValid, Color.Black, Color.Red)
+                .FocusedState.BorderColor = If(isValid, Color.Black, Color.Red)
+            End If
+        End With
+
+    End Sub
+
+    Private Sub ContactTxtbox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ContactTxtbox.KeyPress
+        If Not Char.IsDigit(e.KeyChar) AndAlso Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True ' Block the key from being entered
+        End If
+    End Sub
+
+    Private Function AreInputsValid() As Boolean
+        If String.IsNullOrWhiteSpace(PatientNameTxtbox.Text) Then Return False
+        If String.IsNullOrWhiteSpace(PatientAgeTxtbox.Text) Then Return False
+        If String.IsNullOrWhiteSpace(DocNameTxtbox.Text) Then Return False
+        If String.IsNullOrWhiteSpace(ClinicTxtbox.Text) Then Return False
+        If String.IsNullOrWhiteSpace(ContactTxtbox.Text) Then Return False
+        If String.IsNullOrWhiteSpace(BriefInfoTextbox.Text) Then Return False
+        Return True
+    End Function
+
+
+#End Region
+
+
 End Class
