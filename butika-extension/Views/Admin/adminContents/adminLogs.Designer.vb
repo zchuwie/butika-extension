@@ -39,6 +39,8 @@ Partial Class adminLogs
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Label2 = New Label()
         Label1 = New Label()
         Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
@@ -54,8 +56,14 @@ Partial Class adminLogs
         adminLogsText = New RoundedButton()
         adminUserText = New RoundedButton()
         adminDashboardText = New RoundedButton()
+        Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
+        Label23 = New Label()
+        Label22 = New Label()
+        Label19 = New Label()
+        Label3 = New Label()
         Guna2Panel5.SuspendLayout()
         CType(userLogsTable, ComponentModel.ISupportInitialize).BeginInit()
+        Guna2Panel6.SuspendLayout()
         SuspendLayout()
         ' 
         ' Label2
@@ -344,12 +352,72 @@ Partial Class adminLogs
         adminDashboardText.UseVisualStyleBackColor = False
         adminDashboardText.Visible = False
         ' 
+        ' Guna2Panel6
+        ' 
+        Guna2Panel6.BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        Guna2Panel6.Controls.Add(Label23)
+        Guna2Panel6.Controls.Add(Label22)
+        Guna2Panel6.Controls.Add(Label19)
+        Guna2Panel6.Controls.Add(Label3)
+        Guna2Panel6.CustomizableEdges = CustomizableEdges15
+        Guna2Panel6.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        Guna2Panel6.Location = New Point(198, 28)
+        Guna2Panel6.Name = "Guna2Panel6"
+        Guna2Panel6.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        Guna2Panel6.Size = New Size(225, 36)
+        Guna2Panel6.TabIndex = 109
+        ' 
+        ' Label23
+        ' 
+        Label23.AutoSize = True
+        Label23.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label23.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Label23.Location = New Point(105, 19)
+        Label23.Name = "Label23"
+        Label23.Size = New Size(110, 13)
+        Label23.TabIndex = 87
+        Label23.Text = "4 = inventory custodian"
+        ' 
+        ' Label22
+        ' 
+        Label22.AutoSize = True
+        Label22.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label22.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Label22.Location = New Point(105, 4)
+        Label22.Name = "Label22"
+        Label22.Size = New Size(71, 13)
+        Label22.TabIndex = 86
+        Label22.Text = "3 = pharmacist"
+        ' 
+        ' Label19
+        ' 
+        Label19.AutoSize = True
+        Label19.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label19.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Label19.Location = New Point(9, 17)
+        Label19.Name = "Label19"
+        Label19.Size = New Size(48, 13)
+        Label19.TabIndex = 85
+        Label19.Text = "1 = admin"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        Label3.Location = New Point(9, 4)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(63, 13)
+        Label3.TabIndex = 84
+        Label3.Text = "0 = customer"
+        ' 
         ' adminLogs
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(231), CByte(245), CByte(240))
         ClientSize = New Size(1204, 714)
+        Controls.Add(Guna2Panel6)
         Controls.Add(adminStockText)
         Controls.Add(adminDiscountText)
         Controls.Add(adminLogsText)
@@ -369,6 +437,8 @@ Partial Class adminLogs
         Text = "adminLogs"
         Guna2Panel5.ResumeLayout(False)
         CType(userLogsTable, ComponentModel.ISupportInitialize).EndInit()
+        Guna2Panel6.ResumeLayout(False)
+        Guna2Panel6.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -388,4 +458,9 @@ Partial Class adminLogs
     Friend WithEvents adminLogsText As RoundedButton
     Friend WithEvents adminUserText As RoundedButton
     Friend WithEvents adminDashboardText As RoundedButton
+    Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label3 As Label
 End Class

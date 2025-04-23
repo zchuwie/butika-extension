@@ -30,8 +30,9 @@ Public Class adminDiscounts
             Dim relativePath As String = repo.GetVerificationImagePath(userId)
 
             If Not String.IsNullOrEmpty(relativePath) Then
-                Dim basePath As String = "C:\Visual Basic\butika-extension\butika-extension\Resources\"
-                Dim fullPath As String = Path.Combine(basePath, relativePath)
+                ' Get the base path to the "Resources" folder dynamically
+                Dim resourcesPath As String = Path.Combine(Directory.GetCurrentDirectory(), "Resources")
+                Dim fullPath As String = Path.Combine(resourcesPath, relativePath)
 
                 If File.Exists(fullPath) Then
                     Dim img As Image = Image.FromFile(fullPath)

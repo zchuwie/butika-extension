@@ -155,9 +155,9 @@ Public Class adminUser
                 Dim isNumeric As Boolean = Integer.TryParse(searchTerm, New Integer())
 
                 If isNumeric Then
-                    dv.RowFilter = String.Format("ID = {0} OR Username LIKE '%{1}%' OR Email LIKE '%{1}%' OR Status LIKE '%{1}%'", searchTerm, searchTerm)
+                    dv.RowFilter = String.Format("ID = {0} OR Username LIKE '%{1}%' OR Email LIKE '%{1}%'", searchTerm, searchTerm)
                 Else
-                    dv.RowFilter = String.Format("Username LIKE '%{0}%' OR Email LIKE '%{0}%' OR Status LIKE '%{0}%'", searchTerm)
+                    dv.RowFilter = String.Format("Username LIKE '%{0}%' OR Email LIKE '%{0}%'", searchTerm)
                 End If
 
                 userAccTable.DataSource = dv.ToTable()
