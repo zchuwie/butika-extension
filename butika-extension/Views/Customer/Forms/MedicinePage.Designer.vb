@@ -179,7 +179,7 @@ Partial Class MedicinePage
         ' SearchIcon
         ' 
         SearchIcon.Image = My.Resources.Resources.search
-        SearchIcon.Location = New Point(1124, 102)
+        SearchIcon.Location = New Point(1112, 102)
         SearchIcon.Name = "SearchIcon"
         SearchIcon.Size = New Size(17, 17)
         SearchIcon.SizeMode = PictureBoxSizeMode.Zoom

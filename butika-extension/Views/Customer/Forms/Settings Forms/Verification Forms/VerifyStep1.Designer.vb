@@ -121,7 +121,7 @@ Partial Class VerifyStep1
         SubmitIdBtn.CornerRadius = 8
         SubmitIdBtn.Font = New Font("Century Gothic", 10.75F, FontStyle.Bold)
         SubmitIdBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        SubmitIdBtn.Location = New Point(372, 473)
+        SubmitIdBtn.Location = New Point(363, 449)
         SubmitIdBtn.Name = "SubmitIdBtn"
         SubmitIdBtn.Size = New Size(157, 38)
         SubmitIdBtn.TabIndex = 97
@@ -144,7 +144,7 @@ Partial Class VerifyStep1
         ' 
         IdImgFileName.Font = New Font("Century Gothic", 8.75F)
         IdImgFileName.ForeColor = Color.White
-        IdImgFileName.Location = New Point(255, 431)
+        IdImgFileName.Location = New Point(255, 425)
         IdImgFileName.Name = "IdImgFileName"
         IdImgFileName.Size = New Size(392, 21)
         IdImgFileName.TabIndex = 99

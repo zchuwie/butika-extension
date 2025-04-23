@@ -322,8 +322,7 @@ Public Class AccountRepository
 
                 Dim query As String = "
                  UPDATE userAccount 
-                 SET 
-                        pendingVerify = @pendingVerify
+                 SET pendingVerify = @pendingVerify
                  WHERE user_id = @user_id;
                  "
 
@@ -332,6 +331,42 @@ Public Class AccountRepository
                 Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
                      .pendingVerify = value,
                      .user_id = acc.UserID
+                 })
+
+                If result <> 0 Then
+                    Return True
+                End If
+
+                Return False
+
+            Catch ex As Exception
+                Debug.WriteLine("Error updating password: " & ex.Message)
+                Return False
+            End Try
+        End Using
+    End Function
+
+    Public Async Function SetPendingNumAndInputImage(acc As Account, ByVal value As Integer, imageName As String) As Task(Of Boolean)
+
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim hash As New PasswordHashing(acc.Password)
+
+                Dim query As String = "
+                 UPDATE userAccount 
+                 SET 
+                 pendingVerify = @pendingVerify, image_verification = @image
+                 WHERE user_id = @user_id;
+                 "
+
+                Debug.WriteLine("password userid: " + acc.UserID.ToString())
+
+                Dim result As Boolean = Await conn.ExecuteAsync(query, New With {
+                     .pendingVerify = value,
+                     .user_id = acc.UserID,
+                     .image = imageName
                  })
 
                 If result <> 0 Then
