@@ -10,7 +10,6 @@ Public Class prescItem
         Me.account = acc
 
         InitializeComponent()
-
     End Sub
 
     Public Sub Initialize(prescript As Prescription)
@@ -18,13 +17,14 @@ Public Class prescItem
 
         PrescNo.Text = "Prescription No: " + prescript.PrescriptionId.ToString()
         DateSub.Text = "Date submitted: " + prescript.PrescriptionDate.ToString()
+        ClickAll()
         statusChecker()
     End Sub
 
     Public Sub statusChecker()
         If prescript.PrescriptionStatus = 0 Then
             Status.Text = "Pending"
-            Status.ForeColor = Color.Yellow
+            Status.ForeColor = Color.Olive
         ElseIf prescript.PrescriptionStatus = 1 Then
             Status.Text = "Approved"
             Status.ForeColor = Color.Green
@@ -40,5 +40,11 @@ Public Class prescItem
             Dim formDetails As New PrescriptionForm(account, prescript)
             mainForm.addPrescriptionUserToPanel(formDetails)
         End If
+    End Sub
+    Private Sub ClickAll()
+        AddHandler PrescNo.Click, Sub(sender, e) Call prescItem_Click(sender, e)
+        AddHandler DateSub.Click, Sub(sender, e) Call prescItem_Click(sender, e)
+        AddHandler StatusLbl.Click, Sub(sender, e) Call prescItem_Click(sender, e)
+        AddHandler Status.Click, Sub(sender, e) Call prescItem_Click(sender, e)
     End Sub
 End Class

@@ -48,6 +48,7 @@ Partial Class itemsToApprove
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Quantity)
         Controls.Add(medNameLbl)
         Name = "itemsToApprove"

@@ -80,14 +80,16 @@ Partial Class prescItem
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(StatusLbl)
         Controls.Add(DateSub)
         Controls.Add(PrescNo)
         Controls.Add(Status)
         CornerRadius = 8
         Cursor = Cursors.Hand
+        Margin = New Padding(0)
         Name = "prescItem"
-        Size = New Size(272, 98)
+        Size = New Size(334, 98)
         ResumeLayout(False)
         PerformLayout()
     End Sub

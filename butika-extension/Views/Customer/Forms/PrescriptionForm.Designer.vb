@@ -99,7 +99,7 @@ Partial Class PrescriptionForm
         ReviewDateLbl.AutoSize = True
         ReviewDateLbl.Font = New Font("Century Gothic", 9.75F)
         ReviewDateLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ReviewDateLbl.Location = New Point(269, 29)
+        ReviewDateLbl.Location = New Point(290, 29)
         ReviewDateLbl.Name = "ReviewDateLbl"
         ReviewDateLbl.Size = New Size(179, 17)
         ReviewDateLbl.TabIndex = 8
@@ -111,7 +111,7 @@ Partial Class PrescriptionForm
         ReviewDate.AutoSize = True
         ReviewDate.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         ReviewDate.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ReviewDate.Location = New Point(269, 49)
+        ReviewDate.Location = New Point(290, 49)
         ReviewDate.Name = "ReviewDate"
         ReviewDate.Size = New Size(94, 16)
         ReviewDate.TabIndex = 9
@@ -123,7 +123,7 @@ Partial Class PrescriptionForm
         RemarkLbl.AutoSize = True
         RemarkLbl.Font = New Font("Century Gothic", 9.75F)
         RemarkLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        RemarkLbl.Location = New Point(525, 29)
+        RemarkLbl.Location = New Point(552, 29)
         RemarkLbl.Name = "RemarkLbl"
         RemarkLbl.Size = New Size(150, 17)
         RemarkLbl.TabIndex = 10
@@ -135,7 +135,7 @@ Partial Class PrescriptionForm
         Remark.AutoSize = True
         Remark.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Remark.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Remark.Location = New Point(525, 49)
+        Remark.Location = New Point(552, 49)
         Remark.Name = "Remark"
         Remark.Size = New Size(94, 16)
         Remark.TabIndex = 11
@@ -383,7 +383,7 @@ Partial Class PrescriptionForm
         itemsToApproved.AutoScroll = True
         itemsToApproved.Location = New Point(498, 520)
         itemsToApproved.Name = "itemsToApproved"
-        itemsToApproved.Size = New Size(245, 153)
+        itemsToApproved.Size = New Size(285, 153)
         itemsToApproved.TabIndex = 40
         ' 
         ' Guna2Separator1
