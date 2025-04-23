@@ -2,6 +2,7 @@
 Imports butika.Configurations
 Imports butika.Models
 Imports Dapper
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class MedicineRepository
     Public Async Function allMedicines() As Task(Of List(Of Medicine))
@@ -175,6 +176,10 @@ Public Class MedicineRepository
                 })
 
             MessageBox.Show("Medicine added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Dim userID As Integer = SessionInfo.CurrentUserID
+            Dim userType As Integer = SessionInfo.CurrentUserType
+            Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType, customMessage:="Added a new medicine")
         End Using
 
 

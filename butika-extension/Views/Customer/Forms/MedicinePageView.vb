@@ -179,8 +179,12 @@ Public Class MedicinePageView
             Dim receipt As New Receipt(account)
             receipt.PdfReceipt(medicine, totalItem, medicineQuantity, uniqueTransactionID, account)
             receipt.OpenPDF()
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "Customer checked out medicine")
+
         Else
             MessageBox.Show("Have a good day ahead!", "Success", MessageBoxButtons.OK)
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "Customer checked out medicine")
+
         End If
 
 

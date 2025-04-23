@@ -11,12 +11,19 @@
         frm.Dock = DockStyle.Fill
         DisplayPanel_InventoryCustodian.Controls.Clear()
         DisplayPanel_InventoryCustodian.Controls.Add(frm)
-
         frm.Show()
     End Sub
 
-    Private Sub dashboard_logout_btn_Click(sender As Object, e As EventArgs) Handles dashboard_logout_btn.Click
+    Private Async Sub dashboard_logout_btn_Click(sender As Object, e As EventArgs) Handles dashboard_logout_btn.Click
         Me.Close()
+        Dim userID As Integer = SessionInfo.CurrentUserID
+        Dim userType As Integer = SessionInfo.CurrentUserType
+
+        Await AdminRepository.LogLogoutActivity(userID, userType)
+
+        SessionInfo.CurrentUserID = 0
+        SessionInfo.CurrentUserType = 0
+
         Dim frm As New Login
         frm.Show()
     End Sub

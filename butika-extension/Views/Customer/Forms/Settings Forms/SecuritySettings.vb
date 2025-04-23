@@ -102,6 +102,8 @@ Public Class SecuritySettings
 
         SaveBtn.Visible = False
         CancelBtn.Visible = False
+        Dim activityMessage As String = "password updated"
+        Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, activityMessage)
     End Function
 #End Region
 

@@ -47,8 +47,14 @@ Public Class pharmaMainPage
         OpenFormInPanel(New pharmaPrescriptions())
     End Sub
 
-    Private Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
+    Private Async Sub logoutBtn_Click(sender As Object, e As EventArgs) Handles logoutBtn.Click
         Dim loginForm As New Login()
+        Dim userID As Integer = SessionInfo.CurrentUserID
+        Dim userType As Integer = SessionInfo.CurrentUserType
+
+        ' Log the logout activity
+        Await AdminRepository.LogLogoutActivity(userID, userType)
+
         loginForm.Show()
         Me.Close()
     End Sub

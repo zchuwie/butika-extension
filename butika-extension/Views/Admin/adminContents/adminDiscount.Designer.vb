@@ -42,6 +42,8 @@ Partial Class adminDiscounts
         Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         discountTable = New Guna.UI2.WinForms.Guna2DataGridView()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        verifiedDate = New Label()
+        verifiedText = New Label()
         statusBtn = New Guna.UI2.WinForms.Guna2Button()
         Label5 = New Label()
         Label4 = New Label()
@@ -164,6 +166,8 @@ Partial Class adminDiscounts
         Guna2Panel1.BorderColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
         Guna2Panel1.BorderRadius = 20
         Guna2Panel1.BorderThickness = 1
+        Guna2Panel1.Controls.Add(verifiedDate)
+        Guna2Panel1.Controls.Add(verifiedText)
         Guna2Panel1.Controls.Add(statusBtn)
         Guna2Panel1.Controls.Add(Label5)
         Guna2Panel1.Controls.Add(Label4)
@@ -183,14 +187,36 @@ Partial Class adminDiscounts
         Guna2Panel1.Size = New Size(282, 563)
         Guna2Panel1.TabIndex = 55
         ' 
+        ' verifiedDate
+        ' 
+        verifiedDate.AutoSize = True
+        verifiedDate.BackColor = Color.Transparent
+        verifiedDate.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        verifiedDate.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        verifiedDate.Location = New Point(98, 540)
+        verifiedDate.Name = "verifiedDate"
+        verifiedDate.Size = New Size(10, 13)
+        verifiedDate.TabIndex = 92
+        verifiedDate.Text = "-"
+        ' 
+        ' verifiedText
+        ' 
+        verifiedText.AutoSize = True
+        verifiedText.BackColor = Color.Transparent
+        verifiedText.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        verifiedText.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        verifiedText.Location = New Point(19, 537)
+        verifiedText.Name = "verifiedText"
+        verifiedText.Size = New Size(80, 15)
+        verifiedText.TabIndex = 91
+        verifiedText.Text = "Verified Date:"
+        ' 
         ' statusBtn
         ' 
         statusBtn.BorderRadius = 5
         statusBtn.CustomizableEdges = CustomizableEdges3
-        statusBtn.DisabledState.BorderColor = Color.DarkGray
-        statusBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        statusBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        statusBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        statusBtn.DisabledState.FillColor = Color.FromArgb(CByte(107), CByte(156), CByte(137))
+        statusBtn.DisabledState.ForeColor = Color.White
         statusBtn.Enabled = False
         statusBtn.FillColor = Color.FromArgb(CByte(102), CByte(102), CByte(102))
         statusBtn.Font = New Font("Century Gothic", 9F)
@@ -508,4 +534,8 @@ Partial Class adminDiscounts
     Friend WithEvents adminLogsText As RoundedButton
     Friend WithEvents adminUserText As RoundedButton
     Friend WithEvents adminDashboardText As RoundedButton
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents verifiedDate As Label
+    Friend WithEvents verifiedText As Label
 End Class

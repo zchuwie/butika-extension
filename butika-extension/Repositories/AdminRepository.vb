@@ -80,42 +80,48 @@ Public Class AdminRepository
     End Function
 
     ' === Add column for user activity ===
-    Public Shared Async Function AddActivityLogAsync(userID As Integer, userType As Integer) As Task(Of Boolean)
+    Public Shared Async Function AddActivityLogAsync(userID As Integer, userType As Integer, Optional customMessage As String = "") As Task(Of Boolean)
         Try
-            Dim activityMessage As String = String.Empty
+            Dim activityMessage As String = customMessage
 
-            Select Case userType
-                Case 1
-                    activityMessage = "Admin logged in"
-                Case 2
-                    activityMessage = "Pharmacist logged in"
-                Case 3
-                    activityMessage = "Inventory Custodian logged in"
-                Case Else
-                    activityMessage = "User logged in"
-            End Select
+            If String.IsNullOrEmpty(activityMessage) Then
+                Select Case userType
+                    Case 1
+                        activityMessage = "admin logged in"
+                    Case 2
+                        activityMessage = "pharmacist logged in"
+                    Case 3
+                        activityMessage = "inventory Custodian logged in"
+                    Case Else
+                        activityMessage = "user logged in"
+                End Select
+            End If
 
-            Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) 
-                               VALUES (@Activity, @UserID, @DateTime)"
+            Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) VALUES (@Activity, @UserID, @DateTime)"
 
-            Dim parameters As New With {
-            Key .Activity = activityMessage,
-            Key .UserID = userID,
-            Key .DateTime = DateTime.Now
-        }
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
 
-            Using conn As SqlConnection = DatabaseConnection.GetConnection()
+                cmd.Parameters.AddWithValue("@Activity", activityMessage)
+                cmd.Parameters.AddWithValue("@UserID", userID)
+                cmd.Parameters.AddWithValue("@DateTime", DateTime.Now)
+
                 Await conn.OpenAsync()
-                Dim rowsAffected = Await conn.ExecuteAsync(query, parameters)
 
-                If rowsAffected = 1 Then
+                Debug.WriteLine("Executing query: " & cmd.CommandText)
+
+                Dim rowsAffected As Integer = Await cmd.ExecuteNonQueryAsync()
+
+                If rowsAffected > 0 Then
+                    Debug.WriteLine("Activity log inserted successfully.")
                     Return True
                 Else
+                    Debug.WriteLine("No rows affected.")
                     Return False
                 End If
             End Using
         Catch ex As Exception
-            Console.WriteLine("Error while adding activity log: " & ex.Message)
+            Debug.WriteLine("Error while adding activity log: " & ex.Message)
             Return False
         End Try
     End Function
@@ -163,6 +169,185 @@ Public Class AdminRepository
             Return 0
         End Try
     End Function
+
+    Public Shared Async Function AddMedicineAsync(medicineName As String, medicinePrice As Decimal) As Task(Of Boolean)
+        Try
+            Dim query As String = "INSERT INTO drug_inventory (drug_name, drug_price) VALUES (@medicineName, @medicinePrice)"
+
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+
+                cmd.Parameters.AddWithValue("@medicineName", medicineName)
+                cmd.Parameters.AddWithValue("@medicinePrice", medicinePrice)
+
+                Await conn.OpenAsync()
+                Dim rowsAffected As Integer = Await cmd.ExecuteNonQueryAsync()
+
+                If rowsAffected > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Error adding medicine: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Shared Async Function LogStockRequestActivity(userID As Integer, userType As Integer, stockRequestDetails As String) As Task(Of Boolean)
+        Try
+            Dim activityMessage As String = $"requested stock | {stockRequestDetails}"
+
+            Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) VALUES (@Activity, @UserID, @DateTime)"
+
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+
+                cmd.Parameters.AddWithValue("@Activity", activityMessage)
+                cmd.Parameters.AddWithValue("@UserID", userID)
+                cmd.Parameters.AddWithValue("@DateTime", DateTime.Now)
+
+                Await conn.OpenAsync()
+
+                Dim rowsAffected As Integer = Await cmd.ExecuteNonQueryAsync()
+
+                If rowsAffected > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        Catch ex As Exception
+            Debug.WriteLine("Error while logging stock request activity: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+
+    Public Shared Async Function LogMedicineArchiveActivity(userID As Integer, userType As Integer, medicineName As String) As Task(Of Boolean)
+        Try
+            Dim activityMessage As String = $"archived medicine | ID:{medicineName}"
+
+            Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) VALUES (@Activity, @UserID, @DateTime)"
+
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+
+                cmd.Parameters.AddWithValue("@Activity", activityMessage)
+                cmd.Parameters.AddWithValue("@UserID", userID)
+                cmd.Parameters.AddWithValue("@DateTime", DateTime.Now)
+
+                Await conn.OpenAsync()
+
+                Dim rowsAffected As Integer = Await cmd.ExecuteNonQueryAsync()
+
+                If rowsAffected > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End Using
+        Catch ex As Exception
+            Debug.WriteLine("Error while logging medicine archive activity: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Shared Async Function LogMedicineUpdateActivity(userID As Integer, userType As Integer, medicineName As String) As Task(Of Boolean)
+        Try
+            Dim activityMessage As String = $"updated medicine | ID:{medicineName}"
+
+            Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) VALUES (@Activity, @UserID, @DateTime)"
+
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+
+                cmd.Parameters.AddWithValue("@Activity", activityMessage)
+                cmd.Parameters.AddWithValue("@UserID", userID)
+                cmd.Parameters.AddWithValue("@DateTime", DateTime.Now)
+
+                Await conn.OpenAsync()
+                Dim rowsAffected As Integer = Await cmd.ExecuteNonQueryAsync()
+                Return rowsAffected > 0
+            End Using
+        Catch ex As Exception
+            Debug.WriteLine("Error while logging update activity: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Shared Async Function LogLogoutActivity(userID As Integer, userType As Integer) As Task(Of Boolean)
+        Try
+            Dim activityMessage As String = String.Empty
+
+            Select Case userType
+                Case 1 : activityMessage = "admin logged out"
+                Case 2 : activityMessage = "pharmacist logged out"
+                Case 3 : activityMessage = "inventory Custodian logged out"
+                Case Else : activityMessage = "user logged out"
+            End Select
+
+            Dim query As String = "INSERT INTO activity_log (activity, user_id, _datetime) VALUES (@Activity, @UserID, @DateTime)"
+
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+
+                cmd.Parameters.AddWithValue("@Activity", activityMessage)
+                cmd.Parameters.AddWithValue("@UserID", userID)
+                cmd.Parameters.AddWithValue("@DateTime", DateTime.Now)
+
+                Await conn.OpenAsync()
+                Dim rowsAffected = Await cmd.ExecuteNonQueryAsync()
+                Return rowsAffected > 0
+            End Using
+        Catch ex As Exception
+            Debug.WriteLine("Error logging logout activity: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Async Sub ApprovePrescription(prescriptionID As Integer)
+        Try
+            Dim query As String = "UPDATE prescriptions SET status = 'Approved' WHERE prescription_id = @ID"
+            Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+
+                cmd.Parameters.AddWithValue("@ID", prescriptionID)
+                Await conn.OpenAsync()
+                Await cmd.ExecuteNonQueryAsync()
+            End Using
+
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "Pharmacist approved a prescription")
+
+            MessageBox.Show("Prescription approved successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Error approving prescription: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Public Async Sub ProcessCheckout()
+        Try
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "checked out medicine")
+
+            MessageBox.Show("Checkout completed!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+        Catch ex As Exception
+            MessageBox.Show("Checkout failed: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Public Async Sub SubmitForm()
+        Try
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "Customer submitted a form")
+
+            MessageBox.Show("Form submitted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Failed to submit form: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
 
     ' === Activity Log DataTable ===
     Public Shared Async Function GetUserActivityDataAsync() As Task(Of DataTable)
@@ -261,9 +446,8 @@ Public Class AdminRepository
         End Try
     End Function
 
-    ' === User Status Pie Data ===
     Public Shared Async Function GetStockRequestStatusCountAsync() As Task(Of (pendingCount As Integer, approvedCount As Integer, declinedCount As Integer))
-        Dim query = "
+        Dim query As String = "
     SELECT 
         COUNT(CASE WHEN stockRequestStatus = 0 THEN 1 ELSE NULL END) AS Pending,
         COUNT(CASE WHEN stockRequestStatus = 1 THEN 1 ELSE NULL END) AS Approved,
@@ -273,21 +457,28 @@ Public Class AdminRepository
         Try
             Using conn As SqlConnection = DatabaseConnection.GetConnection(),
               cmd As New SqlCommand(query, conn)
-
                 Await conn.OpenAsync()
 
-                Dim result = Await cmd.ExecuteScalarAsync()
+                ' Using ExecuteReaderAsync to retrieve multiple columns of results
+                Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
+                    If Await reader.ReadAsync() Then
+                        ' Assuming the columns are returned in order: Pending, Approved, Declined
+                        Dim pendingCount As Integer = If(IsDBNull(reader("Pending")), 0, Convert.ToInt32(reader("Pending")))
+                        Dim approvedCount As Integer = If(IsDBNull(reader("Approved")), 0, Convert.ToInt32(reader("Approved")))
+                        Dim declinedCount As Integer = If(IsDBNull(reader("Declined")), 0, Convert.ToInt32(reader("Declined")))
 
-                ' Assuming the result is a tuple, handle it accordingly
-                Return (pendingCount:=result("Pending"), approvedCount:=result("Approved"), declinedCount:=result("Declined"))
+                        ' Return the counts as a tuple
+                        Return (pendingCount, approvedCount, declinedCount)
+                    End If
+                End Using
             End Using
         Catch ex As Exception
             Console.WriteLine("Error fetching stock request status: " & ex.Message)
         End Try
 
-        ' Return a default value if the query fails or no data found
         Return (0, 0, 0)
     End Function
+
 
 
     ' === Result Mapping Classes ===
@@ -488,19 +679,21 @@ Public Class AdminRepository
         dt.Columns.Add("Birth_Date", GetType(DateTime))
         dt.Columns.Add("Contact", GetType(String))
         dt.Columns.Add("Date_Joined", GetType(DateTime))
-        dt.Columns.Add("IsVerified", GetType(Boolean))
+        dt.Columns.Add("Status", GetType(Boolean))
+        dt.Columns.Add("Verified_Date", GetType(DateTime))
 
         Dim baseQuery As String = "
-        SELECT ua.user_id AS ID, 
-               ua.username AS Username, 
-               ua.fullname AS Fullname, 
-               ua.email AS Email, 
-               ua.birthdate AS Birth_Date, 
-               ua.contact AS Contact, 
-               ua.date_joined AS Date_Joined, 
-               ua.isVerified AS IsVerified 
-        FROM useraccount ua
-        WHERE ua.userType = 0"
+    SELECT ua.user_id AS ID, 
+           ua.username AS Username, 
+           ua.fullname AS Fullname, 
+           ua.email AS Email, 
+           ua.birthdate AS Birth_Date, 
+           ua.contact AS Contact, 
+           ua.date_joined AS Date_Joined, 
+           ua.isVerified AS Status,
+           ua.verifiedDate AS Verified_Date
+    FROM useraccount ua
+    WHERE ua.userType = 0"
 
         If statusFilter.HasValue Then
             baseQuery &= " AND ua.isVerified = @isVerified"
@@ -519,7 +712,8 @@ Public Class AdminRepository
                     While Await reader.ReadAsync()
                         dt.Rows.Add(reader("ID"), reader("Username"), reader("Fullname"), reader("Email"),
                                 reader("Birth_Date"), reader("Contact"), reader("Date_Joined"),
-                                Convert.ToBoolean(reader("IsVerified")))
+                                Convert.ToBoolean(reader("Status")),
+                                If(IsDBNull(reader("Verified_Date")), DBNull.Value, reader("Verified_Date")))
                     End While
                 End Using
             End Using
@@ -529,6 +723,31 @@ Public Class AdminRepository
 
         Return dt
     End Function
+
+    Public Shared Async Function UpdateUserVerificationStatusWithDateAsync(userId As Integer, isVerified As Boolean, Optional verifiedDate As DateTime? = Nothing) As Task
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection()
+                Await conn.OpenAsync()
+
+                Dim updateQuery As String = "
+                UPDATE useraccount 
+                SET isVerified = @isVerified, verifiedDate = @verifiedDate 
+                WHERE user_id = @userId"
+
+                Using cmd As New SqlCommand(updateQuery, conn)
+                    cmd.Parameters.AddWithValue("@isVerified", isVerified)
+                    cmd.Parameters.AddWithValue("@verifiedDate", If(verifiedDate.HasValue, verifiedDate.Value, DBNull.Value))
+                    cmd.Parameters.AddWithValue("@userId", userId)
+
+                    Await cmd.ExecuteNonQueryAsync()
+                End Using
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error updating verification: " & ex.Message)
+        End Try
+    End Function
+
+
 
     Public Shared Async Function UpdateUserVerificationStatusAsync(userId As Integer, isVerified As Boolean) As Task
         Dim query As String = "UPDATE useraccount SET isVerified = @isVerified WHERE user_id = @userId"
@@ -573,9 +792,11 @@ Public Class AdminRepository
 #End Region
 
 #Region "Stock"
-    Public Shared Async Function GetStockReportDataAsync() As Task(Of DataTable)
+    Public Shared Async Function GetStockReportDataAsync(Optional status As Integer? = Nothing) As Task(Of DataTable)
         Dim dt As New DataTable()
 
+        ' Define the columns
+        dt.Columns.Add("Report_ID", GetType(Integer))
         dt.Columns.Add("Medicine_ID", GetType(Integer))
         dt.Columns.Add("Request_Status", GetType(String))
         dt.Columns.Add("Requested_Quantity", GetType(Integer))
@@ -583,21 +804,32 @@ Public Class AdminRepository
         dt.Columns.Add("Date_Updated", GetType(DateTime))
 
         Dim query As String = "
-        SELECT medicine_id, stockRequestStatus, stockQuantityRequest, stockDateRequested, stockDateUpdated
-        FROM stockReport
+    SELECT report_id, medicine_id, stockRequestStatus, stockQuantityRequest, stockDateRequested, stockDateUpdated
+    FROM stockReport
     "
+
+        If status.HasValue Then
+            query &= " WHERE stockRequestStatus = @status"
+        End If
 
         Try
             Using conn As SqlConnection = DatabaseConnection.GetConnection(),
-                  cmd As New SqlCommand(query, conn)
+              cmd As New SqlCommand(query, conn)
+                If status.HasValue Then
+                    cmd.Parameters.AddWithValue("@status", status.Value)
+                End If
+
                 Await conn.OpenAsync()
                 Using reader As SqlDataReader = Await cmd.ExecuteReaderAsync()
                     While Await reader.ReadAsync()
-                        dt.Rows.Add(reader("medicine_id"),
-                                    reader("stockRequestStatus").ToString(),
-                                    Convert.ToInt32(reader("stockQuantityRequest")),
-                                    Convert.ToDateTime(reader("stockDateRequested")),
-                                    Convert.ToDateTime(reader("stockDateUpdated")))
+                        Dim reportId As Integer = If(IsDBNull(reader("report_id")), 0, Convert.ToInt32(reader("report_id")))
+                        Dim medicineId As Integer = If(IsDBNull(reader("medicine_id")), 0, Convert.ToInt32(reader("medicine_id")))
+                        Dim statusValue As String = If(IsDBNull(reader("stockRequestStatus")), "", Convert.ToInt32(reader("stockRequestStatus")).ToString())
+                        Dim quantity As Integer = If(IsDBNull(reader("stockQuantityRequest")), 0, Convert.ToInt32(reader("stockQuantityRequest")))
+                        Dim requestDate As DateTime = If(IsDBNull(reader("stockDateRequested")), DateTime.MinValue, Convert.ToDateTime(reader("stockDateRequested")))
+                        Dim updatedDate As DateTime = If(IsDBNull(reader("stockDateUpdated")), DateTime.MinValue, Convert.ToDateTime(reader("stockDateUpdated")))
+
+                        dt.Rows.Add(reportId, medicineId, statusValue, quantity, requestDate, updatedDate)
                     End While
                 End Using
             End Using
@@ -608,18 +840,29 @@ Public Class AdminRepository
         Return dt
     End Function
 
+
+
+
     Public Shared Async Function GetDrugInfoByIDAsync(drugId As Integer) As Task(Of DataRow)
         Dim dt As New DataTable()
 
         Dim query As String = "
-        SELECT drug_id, drug_name, drug_price, drug_manufacturer, drug_stocks, expiration_date
-        FROM drug_inventory
-        WHERE drug_id = @drugId
-    "
+SELECT 
+    drug_id, 
+    drug_name, 
+    drug_price, 
+    drug_manufacturer, 
+    drug_stocks, 
+    CAST(expiration_date AS DATE) AS expiration_date,
+    drug_image  -- Added drug_image column to query
+FROM drug_inventory
+WHERE drug_id = @drugId
+"
 
         Try
             Using conn As SqlConnection = DatabaseConnection.GetConnection(),
               cmd As New SqlCommand(query, conn)
+
                 cmd.Parameters.AddWithValue("@drugId", drugId)
 
                 Await conn.OpenAsync()
@@ -636,6 +879,21 @@ Public Class AdminRepository
         Else
             Return Nothing
         End If
+    End Function
+
+
+    Public Shared Async Function UpdateRequestStatusInDatabase(status As Integer, medicineId As Integer) As Task
+        Dim query As String = "UPDATE stockReport SET stockRequestStatus = @status, stockDateUpdated = @date WHERE medicine_id = @medicineId"
+
+        Using conn As SqlConnection = DatabaseConnection.GetConnection(),
+              cmd As New SqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@status", status)
+            cmd.Parameters.AddWithValue("@date", DateTime.Now)
+            cmd.Parameters.AddWithValue("@medicineId", medicineId)
+
+            Await conn.OpenAsync()
+            Await cmd.ExecuteNonQueryAsync()
+        End Using
     End Function
 #End Region
 
@@ -659,3 +917,9 @@ Public Class AdminRepository
     End Function
 
 End Class
+
+' === Session Module to store logged-in user info ===
+Module SessionInfo
+    Public Property CurrentUserID As Integer
+    Public Property CurrentUserType As Integer
+End Module

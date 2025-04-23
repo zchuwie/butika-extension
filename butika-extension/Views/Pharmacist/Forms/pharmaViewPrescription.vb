@@ -53,14 +53,14 @@ Public Class pharmaViewPrescription
         Next
     End Sub
 
-    Private Sub declineBtn_Click(sender As Object, e As EventArgs) Handles declineBtn.Click
+    Private Async Sub declineBtn_Click(sender As Object, e As EventArgs) Handles declineBtn.Click
         Dim viewRemarks As New pharmaReviewRemarks(prescription, Me)
+        Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, $"declined a prescription | ID:{prescriptNumLbl.Text} ")
         viewRemarks.ShowDialog()
     End Sub
 
     Private Async Sub approveBtn_Click(sender As Object, e As EventArgs) Handles approveBtn.Click
-        Dim result As DialogResult = MessageBox.Show("Do you want to approve the prescription?", "Confirmation",
-                                                     MessageBoxButtons.YesNo)
+        Dim result As DialogResult = MessageBox.Show("Do you want to approve the prescription?", "Confirmation", MessageBoxButtons.YesNo)
         If result = DialogResult.Yes Then
             Dim dateReview As DateTime = DateTime.Now
             Dim stats As Integer = 1
@@ -74,6 +74,8 @@ Public Class pharmaViewPrescription
                 prescription.Cart = New Cart()
             End If
             prescription.Cart.isApproved = isapproved
+
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, $"approved a prescription | ID:{prescriptNumLbl.Text} ")
 
 
             Dim isFormSuccess As Boolean = Await pharmarepo.PharmaAction(prescription)

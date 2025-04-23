@@ -140,10 +140,6 @@ Public Class adminUser
         userAccTable.DataSource = dt
     End Function
 
-    Private Async Sub searchBtn_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Async Sub searchText_TextChanged(sender As Object, e As EventArgs) Handles searchText.TextChanged
         Await resetLabel("-")
         AddressText.Text = ""
@@ -183,14 +179,6 @@ Public Class adminUser
         data5.Text = labelChange
         data6.Text = labelChange
     End Function
-
-    Private Sub AddressText_TextChanged(sender As Object, e As EventArgs) Handles AddressText.TextChanged
-
-    End Sub
-
-    Private Sub NumberText_TextChanged(sender As Object, e As EventArgs) Handles NumberText.TextChanged
-
-    End Sub
 
     Private Async Sub AddressText_KeyDown(sender As Object, e As KeyEventArgs) Handles AddressText.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -268,23 +256,51 @@ Public Class adminUser
         Dim username As String = createUsername.Text
         Dim password As String = createPassword.Text
 
+        If String.IsNullOrWhiteSpace(username) Or String.IsNullOrWhiteSpace(password) Then
+            MessageBox.Show("Username and Password cannot be empty.", "Validation Error")
+            Return
+        End If
+
         Dim hash As New PasswordHashing(password)
 
         Dim isUsernameExists As Boolean = Await accountRepo.CheckDuplicate(username)
 
         If isUsernameExists Then
-            MessageBox.Show("Username Exist")
+            MessageBox.Show("Username already exists.")
             Return
         End If
 
         Dim hashedPassword As String = hash.hashCombinedDisplay
 
         Await AdminRepository.AddNewAccount(username, createUserType, hashedPassword)
+
+        Dim uTyp As String
+        Select Case createUserType
+            Case 1
+                uTyp = "admin"
+            Case 2
+                uTyp = "pharmacist"
+            Case 3
+                uTyp = "inventory custodian"
+            Case Else
+                uTyp = "customer"
+        End Select
+
+        Dim activityMessage As String = $"created {uTyp} account"
+        Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, activityMessage)
+
+        createUsername.Clear()
+        createPassword.Clear()
+
         createPanel.Visible = False
-        MessageBox.Show("okay na pookie", "Confirmation")
+        MessageBox.Show("Successfully created an account", "Confirmation")
     End Sub
 
     Private Sub cancelAccount_Click(sender As Object, e As EventArgs) Handles cancelAccount.Click
+        createUsername.Clear()
+        createPassword.Clear()
+
         createPanel.Visible = False
     End Sub
+
 End Class

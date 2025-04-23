@@ -22,32 +22,34 @@ Partial Class adminStock
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim DataGridViewCellStyle1 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        statusBtn = New Guna.UI2.WinForms.Guna2Button()
+        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As DataGridViewCellStyle = New DataGridViewCellStyle()
+        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges33 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges34 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges31 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges32 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges35 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges36 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges39 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges40 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges37 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges38 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges45 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges46 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges41 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges42 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges43 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges44 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges47 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges48 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        approveBtn = New Guna.UI2.WinForms.Guna2Button()
         Label5 = New Label()
         verificationImage = New PictureBox()
         stockdata = New Label()
@@ -61,13 +63,13 @@ Partial Class adminStock
         allBtn = New Guna.UI2.WinForms.Guna2Button()
         verifiedBtn = New Guna.UI2.WinForms.Guna2Button()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
+        branddata = New Label()
         reqstatus = New Label()
-        Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        declineBtn = New Guna.UI2.WinForms.Guna2Button()
         reqdate = New Label()
         Label12 = New Label()
         pricedata = New Label()
         Label8 = New Label()
-        branddata = New Label()
         expirydata = New Label()
         reqstock = New Label()
         Label10 = New Label()
@@ -75,17 +77,18 @@ Partial Class adminStock
         Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Label2 = New Label()
         Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        inactiveShow = New Guna.UI2.WinForms.Guna2Button()
-        inactiveNum = New Label()
+        approvedShow = New Guna.UI2.WinForms.Guna2Button()
+        approvedLabel = New Label()
         Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Label4 = New Label()
+        declinedShow = New Guna.UI2.WinForms.Guna2Button()
+        declinedLabel = New Label()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         adminStockText = New RoundedButton()
         adminDiscountText = New RoundedButton()
         adminLogsText = New RoundedButton()
         adminUserText = New RoundedButton()
         adminDashboardText = New RoundedButton()
+        pendingBtn = New Guna.UI2.WinForms.Guna2Button()
         CType(verificationImage, ComponentModel.ISupportInitialize).BeginInit()
         CType(stockTable, ComponentModel.ISupportInitialize).BeginInit()
         Guna2Panel1.SuspendLayout()
@@ -94,39 +97,40 @@ Partial Class adminStock
         Guna2Panel3.SuspendLayout()
         SuspendLayout()
         ' 
-        ' statusBtn
+        ' approveBtn
         ' 
-        statusBtn.BorderRadius = 5
-        statusBtn.CustomizableEdges = CustomizableEdges1
-        statusBtn.DisabledState.BorderColor = Color.DarkGray
-        statusBtn.DisabledState.CustomBorderColor = Color.DarkGray
-        statusBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        statusBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        statusBtn.FillColor = Color.Green
-        statusBtn.Font = New Font("Century Gothic", 9F)
-        statusBtn.ForeColor = Color.Gray
-        statusBtn.Location = New Point(61, 346)
-        statusBtn.Name = "statusBtn"
-        statusBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        statusBtn.Size = New Size(31, 23)
-        statusBtn.TabIndex = 90
-        statusBtn.Text = "Pending"
+        approveBtn.BorderRadius = 5
+        approveBtn.CustomizableEdges = CustomizableEdges25
+        approveBtn.DisabledState.BorderColor = Color.DarkGray
+        approveBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        approveBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        approveBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        approveBtn.FillColor = Color.Green
+        approveBtn.Font = New Font("Century Gothic", 7F)
+        approveBtn.ForeColor = Color.White
+        approveBtn.Location = New Point(25, 344)
+        approveBtn.Name = "approveBtn"
+        approveBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges26
+        approveBtn.Size = New Size(75, 23)
+        approveBtn.TabIndex = 90
+        approveBtn.Text = "Approve"
+        approveBtn.Visible = False
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
         Label5.BackColor = Color.Transparent
-        Label5.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Label5.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label5.Location = New Point(15, 308)
         Label5.Name = "Label5"
-        Label5.Size = New Size(41, 15)
+        Label5.Size = New Size(42, 16)
         Label5.TabIndex = 84
         Label5.Text = "Status:"
         ' 
         ' verificationImage
         ' 
-        verificationImage.Location = New Point(52, 53)
+        verificationImage.Location = New Point(52, 52)
         verificationImage.Name = "verificationImage"
         verificationImage.Size = New Size(100, 100)
         verificationImage.TabIndex = 82
@@ -136,13 +140,14 @@ Partial Class adminStock
         ' 
         stockdata.AutoSize = True
         stockdata.BackColor = Color.Transparent
-        stockdata.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        stockdata.Font = New Font("Century Gothic", 8.25F)
         stockdata.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        stockdata.Location = New Point(95, 242)
+        stockdata.Location = New Point(99, 242)
         stockdata.Name = "stockdata"
-        stockdata.Size = New Size(10, 13)
+        stockdata.Size = New Size(11, 16)
         stockdata.TabIndex = 81
         stockdata.Text = "-"
+        stockdata.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' stockTable
         ' 
@@ -150,26 +155,26 @@ Partial Class adminStock
         stockTable.AllowUserToDeleteRows = False
         stockTable.AllowUserToResizeColumns = False
         stockTable.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = Color.White
-        stockTable.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = Color.White
+        stockTable.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         stockTable.BackgroundColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        DataGridViewCellStyle2.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle2.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        DataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        DataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True
-        stockTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        DataGridViewCellStyle5.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle5.ForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        DataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        DataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        DataGridViewCellStyle5.WrapMode = DataGridViewTriState.True
+        stockTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         stockTable.ColumnHeadersHeight = 20
-        DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = Color.White
-        DataGridViewCellStyle3.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        DataGridViewCellStyle3.ForeColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
-        DataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(CByte(231), CByte(229), CByte(255))
-        DataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
-        DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
-        stockTable.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = Color.White
+        DataGridViewCellStyle6.Font = New Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        DataGridViewCellStyle6.ForeColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
+        DataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(CByte(231), CByte(229), CByte(255))
+        DataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
+        DataGridViewCellStyle6.WrapMode = DataGridViewTriState.False
+        stockTable.DefaultCellStyle = DataGridViewCellStyle6
         stockTable.GridColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
         stockTable.Location = New Point(12, 14)
         stockTable.Name = "stockTable"
@@ -213,11 +218,13 @@ Partial Class adminStock
         ' 
         ' namedata
         ' 
+        namedata.Anchor = AnchorStyles.Top
         namedata.AutoSize = True
         namedata.BackColor = Color.Transparent
-        namedata.Font = New Font("Century Gothic", 8F)
+        namedata.Font = New Font("Century Gothic", 8.25F)
         namedata.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        namedata.Location = New Point(95, 156)
+        namedata.ImageAlign = ContentAlignment.TopLeft
+        namedata.Location = New Point(97, 159)
         namedata.Name = "namedata"
         namedata.Size = New Size(11, 16)
         namedata.TabIndex = 80
@@ -227,23 +234,24 @@ Partial Class adminStock
         ' 
         id.AutoSize = True
         id.BackColor = Color.Transparent
-        id.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        id.Font = New Font("Century Gothic", 8.25F)
         id.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        id.Location = New Point(95, 199)
+        id.Location = New Point(99, 199)
         id.Name = "id"
-        id.Size = New Size(10, 13)
+        id.Size = New Size(11, 16)
         id.TabIndex = 79
         id.Text = "-"
+        id.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label15
         ' 
         Label15.AutoSize = True
         Label15.BackColor = Color.Transparent
-        Label15.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label15.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Label15.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label15.Location = New Point(14, 242)
         Label15.Name = "Label15"
-        Label15.Size = New Size(81, 15)
+        Label15.Size = New Size(86, 16)
         Label15.TabIndex = 78
         Label15.Text = "Current stock:"
         ' 
@@ -251,11 +259,11 @@ Partial Class adminStock
         ' 
         Label13.AutoSize = True
         Label13.BackColor = Color.Transparent
-        Label13.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label13.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Label13.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label13.Location = New Point(14, 197)
         Label13.Name = "Label13"
-        Label13.Size = New Size(20, 15)
+        Label13.Size = New Size(22, 16)
         Label13.TabIndex = 76
         Label13.Text = "ID:"
         ' 
@@ -276,7 +284,7 @@ Partial Class adminStock
         allBtn.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         allBtn.BorderRadius = 1
         allBtn.BorderThickness = 1
-        allBtn.CustomizableEdges = CustomizableEdges3
+        allBtn.CustomizableEdges = CustomizableEdges27
         allBtn.DisabledState.BorderColor = Color.DarkGray
         allBtn.DisabledState.CustomBorderColor = Color.DarkGray
         allBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -286,7 +294,7 @@ Partial Class adminStock
         allBtn.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         allBtn.Location = New Point(854, 75)
         allBtn.Name = "allBtn"
-        allBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        allBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges28
         allBtn.Size = New Size(92, 23)
         allBtn.TabIndex = 105
         allBtn.Text = "All"
@@ -296,7 +304,7 @@ Partial Class adminStock
         verifiedBtn.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         verifiedBtn.BorderRadius = 1
         verifiedBtn.BorderThickness = 1
-        verifiedBtn.CustomizableEdges = CustomizableEdges5
+        verifiedBtn.CustomizableEdges = CustomizableEdges29
         verifiedBtn.DisabledState.BorderColor = Color.DarkGray
         verifiedBtn.DisabledState.CustomBorderColor = Color.DarkGray
         verifiedBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -306,7 +314,7 @@ Partial Class adminStock
         verifiedBtn.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         verifiedBtn.Location = New Point(0, 0)
         verifiedBtn.Name = "verifiedBtn"
-        verifiedBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        verifiedBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges30
         verifiedBtn.Size = New Size(90, 23)
         verifiedBtn.TabIndex = 99
         verifiedBtn.Text = "Approved"
@@ -316,85 +324,102 @@ Partial Class adminStock
         Guna2Panel1.BorderColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
         Guna2Panel1.BorderRadius = 20
         Guna2Panel1.BorderThickness = 1
+        Guna2Panel1.Controls.Add(branddata)
+        Guna2Panel1.Controls.Add(namedata)
         Guna2Panel1.Controls.Add(reqstatus)
-        Guna2Panel1.Controls.Add(Guna2Button3)
+        Guna2Panel1.Controls.Add(declineBtn)
         Guna2Panel1.Controls.Add(reqdate)
         Guna2Panel1.Controls.Add(Label12)
         Guna2Panel1.Controls.Add(pricedata)
         Guna2Panel1.Controls.Add(Label8)
-        Guna2Panel1.Controls.Add(branddata)
         Guna2Panel1.Controls.Add(expirydata)
         Guna2Panel1.Controls.Add(reqstock)
         Guna2Panel1.Controls.Add(Label10)
         Guna2Panel1.Controls.Add(Label11)
-        Guna2Panel1.Controls.Add(statusBtn)
+        Guna2Panel1.Controls.Add(approveBtn)
         Guna2Panel1.Controls.Add(Label5)
         Guna2Panel1.Controls.Add(verificationImage)
         Guna2Panel1.Controls.Add(stockdata)
-        Guna2Panel1.Controls.Add(namedata)
         Guna2Panel1.Controls.Add(id)
         Guna2Panel1.Controls.Add(Label15)
         Guna2Panel1.Controls.Add(Label13)
         Guna2Panel1.Controls.Add(Label3)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges9
+        Guna2Panel1.CustomizableEdges = CustomizableEdges33
         Guna2Panel1.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2Panel1.Location = New Point(964, 256)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges34
         Guna2Panel1.Size = New Size(202, 411)
         Guna2Panel1.TabIndex = 98
+        ' 
+        ' branddata
+        ' 
+        branddata.Anchor = AnchorStyles.Top
+        branddata.AutoSize = True
+        branddata.BackColor = Color.Transparent
+        branddata.Font = New Font("Century Gothic", 6F)
+        branddata.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        branddata.ImageAlign = ContentAlignment.TopLeft
+        branddata.Location = New Point(98, 173)
+        branddata.Name = "branddata"
+        branddata.Size = New Size(8, 12)
+        branddata.TabIndex = 98
+        branddata.Text = "-"
         ' 
         ' reqstatus
         ' 
         reqstatus.AutoSize = True
         reqstatus.BackColor = Color.Transparent
-        reqstatus.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        reqstatus.Font = New Font("Century Gothic", 8.25F)
         reqstatus.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         reqstatus.Location = New Point(119, 308)
         reqstatus.Name = "reqstatus"
-        reqstatus.Size = New Size(10, 13)
+        reqstatus.Size = New Size(11, 16)
         reqstatus.TabIndex = 104
         reqstatus.Text = "-"
+        reqstatus.TextAlign = ContentAlignment.MiddleLeft
         ' 
-        ' Guna2Button3
+        ' declineBtn
         ' 
-        Guna2Button3.BorderRadius = 5
-        Guna2Button3.CustomizableEdges = CustomizableEdges7
-        Guna2Button3.DisabledState.BorderColor = Color.DarkGray
-        Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
-        Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
-        Guna2Button3.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
-        Guna2Button3.FillColor = Color.Red
-        Guna2Button3.Font = New Font("Century Gothic", 9F)
-        Guna2Button3.ForeColor = Color.Gray
-        Guna2Button3.Location = New Point(97, 346)
-        Guna2Button3.Name = "Guna2Button3"
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges8
-        Guna2Button3.Size = New Size(31, 23)
-        Guna2Button3.TabIndex = 103
-        Guna2Button3.Text = "Pending"
+        declineBtn.BorderRadius = 5
+        declineBtn.CustomizableEdges = CustomizableEdges31
+        declineBtn.DisabledState.BorderColor = Color.DarkGray
+        declineBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        declineBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        declineBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        declineBtn.FillColor = Color.Red
+        declineBtn.Font = New Font("Century Gothic", 7F)
+        declineBtn.ForeColor = Color.White
+        declineBtn.Location = New Point(107, 344)
+        declineBtn.Name = "declineBtn"
+        declineBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges32
+        declineBtn.Size = New Size(75, 23)
+        declineBtn.TabIndex = 103
+        declineBtn.Text = "Decline"
+        declineBtn.Visible = False
         ' 
         ' reqdate
         ' 
         reqdate.AutoSize = True
         reqdate.BackColor = Color.Transparent
-        reqdate.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        reqdate.Font = New Font("Century Gothic", 8.25F)
         reqdate.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         reqdate.Location = New Point(119, 295)
         reqdate.Name = "reqdate"
-        reqdate.Size = New Size(10, 13)
+        reqdate.Size = New Size(11, 16)
         reqdate.TabIndex = 102
         reqdate.Text = "-"
+        reqdate.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label12
         ' 
         Label12.AutoSize = True
         Label12.BackColor = Color.Transparent
-        Label12.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Label12.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label12.Location = New Point(15, 293)
         Label12.Name = "Label12"
-        Label12.Size = New Size(80, 15)
+        Label12.Size = New Size(86, 16)
         Label12.TabIndex = 101
         Label12.Text = "Request date:"
         ' 
@@ -402,71 +427,62 @@ Partial Class adminStock
         ' 
         pricedata.AutoSize = True
         pricedata.BackColor = Color.Transparent
-        pricedata.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        pricedata.Font = New Font("Century Gothic", 8.25F)
         pricedata.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        pricedata.Location = New Point(95, 214)
+        pricedata.Location = New Point(99, 214)
         pricedata.Name = "pricedata"
-        pricedata.Size = New Size(10, 13)
+        pricedata.Size = New Size(11, 16)
         pricedata.TabIndex = 100
         pricedata.Text = "-"
+        pricedata.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label8
         ' 
         Label8.AutoSize = True
         Label8.BackColor = Color.Transparent
-        Label8.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Label8.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label8.Location = New Point(14, 212)
         Label8.Name = "Label8"
-        Label8.Size = New Size(38, 15)
+        Label8.Size = New Size(40, 16)
         Label8.TabIndex = 99
         Label8.Text = "Price:"
-        ' 
-        ' branddata
-        ' 
-        branddata.AutoSize = True
-        branddata.BackColor = Color.Transparent
-        branddata.Font = New Font("Century Gothic", 6F)
-        branddata.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        branddata.Location = New Point(98, 172)
-        branddata.Name = "branddata"
-        branddata.Size = New Size(8, 12)
-        branddata.TabIndex = 98
-        branddata.Text = "-"
         ' 
         ' expirydata
         ' 
         expirydata.AutoSize = True
         expirydata.BackColor = Color.Transparent
-        expirydata.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        expirydata.Font = New Font("Century Gothic", 8.25F)
         expirydata.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        expirydata.Location = New Point(95, 229)
+        expirydata.Location = New Point(99, 229)
         expirydata.Name = "expirydata"
-        expirydata.Size = New Size(10, 13)
+        expirydata.Size = New Size(11, 16)
         expirydata.TabIndex = 97
         expirydata.Text = "-"
+        expirydata.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' reqstock
         ' 
         reqstock.AutoSize = True
         reqstock.BackColor = Color.Transparent
-        reqstock.Font = New Font("Century Gothic", 6.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        reqstock.Font = New Font("Century Gothic", 8.25F)
         reqstock.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        reqstock.Location = New Point(118, 280)
+        reqstock.Location = New Point(119, 280)
         reqstock.Name = "reqstock"
-        reqstock.Size = New Size(10, 13)
+        reqstock.Size = New Size(11, 16)
         reqstock.TabIndex = 95
         reqstock.Text = "-"
+        reqstock.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Label10
         ' 
         Label10.AutoSize = True
         Label10.BackColor = Color.Transparent
-        Label10.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label10.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Label10.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label10.Location = New Point(14, 278)
         Label10.Name = "Label10"
-        Label10.Size = New Size(98, 15)
+        Label10.Size = New Size(106, 16)
         Label10.TabIndex = 92
         Label10.Text = "Requested stock:"
         ' 
@@ -474,11 +490,11 @@ Partial Class adminStock
         ' 
         Label11.AutoSize = True
         Label11.BackColor = Color.Transparent
-        Label11.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         Label11.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Label11.Location = New Point(14, 227)
         Label11.Name = "Label11"
-        Label11.Size = New Size(69, 15)
+        Label11.Size = New Size(75, 16)
         Label11.TabIndex = 91
         Label11.Text = "Expiry date:"
         ' 
@@ -488,11 +504,11 @@ Partial Class adminStock
         Guna2Panel5.BorderRadius = 20
         Guna2Panel5.BorderThickness = 1
         Guna2Panel5.Controls.Add(stockTable)
-        Guna2Panel5.CustomizableEdges = CustomizableEdges11
+        Guna2Panel5.CustomizableEdges = CustomizableEdges35
         Guna2Panel5.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2Panel5.Location = New Point(40, 104)
         Guna2Panel5.Name = "Guna2Panel5"
-        Guna2Panel5.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        Guna2Panel5.ShadowDecoration.CustomizableEdges = CustomizableEdges36
         Guna2Panel5.Size = New Size(906, 563)
         Guna2Panel5.TabIndex = 97
         ' 
@@ -512,107 +528,107 @@ Partial Class adminStock
         Guna2Panel2.BorderColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
         Guna2Panel2.BorderRadius = 20
         Guna2Panel2.BorderThickness = 1
-        Guna2Panel2.Controls.Add(inactiveShow)
-        Guna2Panel2.Controls.Add(inactiveNum)
+        Guna2Panel2.Controls.Add(approvedShow)
+        Guna2Panel2.Controls.Add(approvedLabel)
         Guna2Panel2.Controls.Add(verifiedBtn)
-        Guna2Panel2.CustomizableEdges = CustomizableEdges15
+        Guna2Panel2.CustomizableEdges = CustomizableEdges39
         Guna2Panel2.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2Panel2.Location = New Point(966, 104)
         Guna2Panel2.Name = "Guna2Panel2"
-        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        Guna2Panel2.ShadowDecoration.CustomizableEdges = CustomizableEdges40
         Guna2Panel2.Size = New Size(90, 130)
         Guna2Panel2.TabIndex = 106
         ' 
-        ' inactiveShow
+        ' approvedShow
         ' 
-        inactiveShow.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        inactiveShow.BorderRadius = 10
-        inactiveShow.CustomizableEdges = CustomizableEdges13
-        inactiveShow.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        inactiveShow.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        inactiveShow.DisabledState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        inactiveShow.DisabledState.Font = New Font("Century Gothic", 9F)
-        inactiveShow.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        inactiveShow.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
-        inactiveShow.Font = New Font("Century Gothic", 6.75F)
-        inactiveShow.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        inactiveShow.ImageAlign = HorizontalAlignment.Left
-        inactiveShow.Location = New Point(20, 88)
-        inactiveShow.Name = "inactiveShow"
-        inactiveShow.ShadowDecoration.CustomizableEdges = CustomizableEdges14
-        inactiveShow.Size = New Size(55, 19)
-        inactiveShow.TabIndex = 6
-        inactiveShow.Text = "Show"
+        approvedShow.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        approvedShow.BorderRadius = 10
+        approvedShow.CustomizableEdges = CustomizableEdges37
+        approvedShow.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        approvedShow.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        approvedShow.DisabledState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        approvedShow.DisabledState.Font = New Font("Century Gothic", 9F)
+        approvedShow.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        approvedShow.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
+        approvedShow.Font = New Font("Century Gothic", 6.75F)
+        approvedShow.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        approvedShow.ImageAlign = HorizontalAlignment.Left
+        approvedShow.Location = New Point(20, 88)
+        approvedShow.Name = "approvedShow"
+        approvedShow.ShadowDecoration.CustomizableEdges = CustomizableEdges38
+        approvedShow.Size = New Size(55, 19)
+        approvedShow.TabIndex = 6
+        approvedShow.Text = "Show"
         ' 
-        ' inactiveNum
+        ' approvedLabel
         ' 
-        inactiveNum.AutoSize = True
-        inactiveNum.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        inactiveNum.Font = New Font("Century Gothic", 24.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        inactiveNum.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        inactiveNum.Location = New Point(22, 38)
-        inactiveNum.Name = "inactiveNum"
-        inactiveNum.Size = New Size(53, 39)
-        inactiveNum.TabIndex = 2
-        inactiveNum.Text = "35"
-        inactiveNum.TextAlign = ContentAlignment.MiddleCenter
+        approvedLabel.AutoSize = True
+        approvedLabel.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        approvedLabel.Font = New Font("Century Gothic", 24.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        approvedLabel.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        approvedLabel.Location = New Point(22, 38)
+        approvedLabel.Name = "approvedLabel"
+        approvedLabel.Size = New Size(53, 39)
+        approvedLabel.TabIndex = 2
+        approvedLabel.Text = "35"
+        approvedLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Guna2Panel3
         ' 
         Guna2Panel3.BorderColor = Color.FromArgb(CByte(110), CByte(126), CByte(124))
         Guna2Panel3.BorderRadius = 20
         Guna2Panel3.BorderThickness = 1
-        Guna2Panel3.Controls.Add(Guna2Button1)
-        Guna2Panel3.Controls.Add(Label4)
+        Guna2Panel3.Controls.Add(declinedShow)
+        Guna2Panel3.Controls.Add(declinedLabel)
         Guna2Panel3.Controls.Add(Guna2Button2)
-        Guna2Panel3.CustomizableEdges = CustomizableEdges21
+        Guna2Panel3.CustomizableEdges = CustomizableEdges45
         Guna2Panel3.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
         Guna2Panel3.Location = New Point(1073, 105)
         Guna2Panel3.Name = "Guna2Panel3"
-        Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges22
+        Guna2Panel3.ShadowDecoration.CustomizableEdges = CustomizableEdges46
         Guna2Panel3.Size = New Size(90, 130)
         Guna2Panel3.TabIndex = 107
         ' 
-        ' Guna2Button1
+        ' declinedShow
         ' 
-        Guna2Button1.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Guna2Button1.BorderRadius = 10
-        Guna2Button1.CustomizableEdges = CustomizableEdges17
-        Guna2Button1.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Guna2Button1.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
-        Guna2Button1.DisabledState.Font = New Font("Century Gothic", 9F)
-        Guna2Button1.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Guna2Button1.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
-        Guna2Button1.Font = New Font("Century Gothic", 6.75F)
-        Guna2Button1.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Guna2Button1.ImageAlign = HorizontalAlignment.Left
-        Guna2Button1.Location = New Point(20, 88)
-        Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges18
-        Guna2Button1.Size = New Size(55, 19)
-        Guna2Button1.TabIndex = 6
-        Guna2Button1.Text = "Show"
+        declinedShow.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        declinedShow.BorderRadius = 10
+        declinedShow.CustomizableEdges = CustomizableEdges41
+        declinedShow.DisabledState.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        declinedShow.DisabledState.CustomBorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        declinedShow.DisabledState.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
+        declinedShow.DisabledState.Font = New Font("Century Gothic", 9F)
+        declinedShow.DisabledState.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        declinedShow.FillColor = Color.FromArgb(CByte(250), CByte(249), CByte(246))
+        declinedShow.Font = New Font("Century Gothic", 6.75F)
+        declinedShow.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        declinedShow.ImageAlign = HorizontalAlignment.Left
+        declinedShow.Location = New Point(20, 88)
+        declinedShow.Name = "declinedShow"
+        declinedShow.ShadowDecoration.CustomizableEdges = CustomizableEdges42
+        declinedShow.Size = New Size(55, 19)
+        declinedShow.TabIndex = 6
+        declinedShow.Text = "Show"
         ' 
-        ' Label4
+        ' declinedLabel
         ' 
-        Label4.AutoSize = True
-        Label4.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
-        Label4.Font = New Font("Century Gothic", 24.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
-        Label4.Location = New Point(22, 38)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(53, 39)
-        Label4.TabIndex = 2
-        Label4.Text = "35"
-        Label4.TextAlign = ContentAlignment.MiddleCenter
+        declinedLabel.AutoSize = True
+        declinedLabel.BackColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        declinedLabel.Font = New Font("Century Gothic", 24.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        declinedLabel.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        declinedLabel.Location = New Point(22, 38)
+        declinedLabel.Name = "declinedLabel"
+        declinedLabel.Size = New Size(53, 39)
+        declinedLabel.TabIndex = 2
+        declinedLabel.Text = "35"
+        declinedLabel.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' Guna2Button2
         ' 
         Guna2Button2.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Guna2Button2.BorderRadius = 1
         Guna2Button2.BorderThickness = 1
-        Guna2Button2.CustomizableEdges = CustomizableEdges19
+        Guna2Button2.CustomizableEdges = CustomizableEdges43
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -622,7 +638,7 @@ Partial Class adminStock
         Guna2Button2.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
         Guna2Button2.Location = New Point(0, 0)
         Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges20
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges44
         Guna2Button2.Size = New Size(90, 23)
         Guna2Button2.TabIndex = 99
         Guna2Button2.Text = "Declined"
@@ -702,12 +718,33 @@ Partial Class adminStock
         adminDashboardText.UseVisualStyleBackColor = False
         adminDashboardText.Visible = False
         ' 
+        ' pendingBtn
+        ' 
+        pendingBtn.BorderColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        pendingBtn.BorderRadius = 1
+        pendingBtn.BorderThickness = 1
+        pendingBtn.CustomizableEdges = CustomizableEdges47
+        pendingBtn.DisabledState.BorderColor = Color.DarkGray
+        pendingBtn.DisabledState.CustomBorderColor = Color.DarkGray
+        pendingBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
+        pendingBtn.DisabledState.ForeColor = Color.FromArgb(CByte(141), CByte(141), CByte(141))
+        pendingBtn.FillColor = Color.FromArgb(CByte(196), CByte(218), CByte(212))
+        pendingBtn.Font = New Font("Century Gothic", 9F)
+        pendingBtn.ForeColor = Color.FromArgb(CByte(13), CByte(40), CByte(36))
+        pendingBtn.Location = New Point(756, 75)
+        pendingBtn.Name = "pendingBtn"
+        pendingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges48
+        pendingBtn.Size = New Size(92, 23)
+        pendingBtn.TabIndex = 113
+        pendingBtn.Text = "Pending"
+        ' 
         ' adminStock
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(231), CByte(245), CByte(240))
         ClientSize = New Size(1204, 714)
+        Controls.Add(pendingBtn)
         Controls.Add(adminStockText)
         Controls.Add(adminDiscountText)
         Controls.Add(adminLogsText)
@@ -735,7 +772,7 @@ Partial Class adminStock
         ResumeLayout(False)
         PerformLayout()
     End Sub
-    Friend WithEvents statusBtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents approveBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label5 As Label
     Friend WithEvents verificationImage As PictureBox
     Friend WithEvents stockdata As Label
@@ -756,11 +793,11 @@ Partial Class adminStock
     Friend WithEvents Label11 As Label
     Friend WithEvents expirydata As Label
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents inactiveShow As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents inactiveNum As Label
+    Friend WithEvents approvedShow As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents approvedLabel As Label
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label4 As Label
+    Friend WithEvents declinedShow As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents declinedLabel As Label
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents branddata As Label
     Friend WithEvents pricedata As Label
@@ -768,10 +805,12 @@ Partial Class adminStock
     Friend WithEvents reqdate As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents reqstatus As Label
-    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents declineBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents adminStockText As RoundedButton
     Friend WithEvents adminDiscountText As RoundedButton
     Friend WithEvents adminLogsText As RoundedButton
     Friend WithEvents adminUserText As RoundedButton
     Friend WithEvents adminDashboardText As RoundedButton
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents pendingBtn As Guna.UI2.WinForms.Guna2Button
 End Class

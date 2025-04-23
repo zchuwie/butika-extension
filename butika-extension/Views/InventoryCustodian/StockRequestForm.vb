@@ -1,4 +1,5 @@
-﻿Imports butika.Models
+﻿Imports System.Security.Cryptography.X509Certificates
+Imports butika.Models
 
 Public Class StockRequestForm
 
@@ -71,6 +72,12 @@ Public Class StockRequestForm
                 MedicineInfo.StockQuantityRequest = Integer.Parse(stock_txtbox.Text)
                 Await medRep.SubmitStockRequest(MedicineInfo)
                 MessageBox.Show("Stock request submitted to admin.", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                Dim userID As Integer = SessionInfo.CurrentUserID
+                Dim userType As Integer = SessionInfo.CurrentUserType
+                Dim stockRequestDetails As String = $"Medicine ID:{MedicineInfo.MedicineID}"
+                Dim activityLogged As Boolean = Await AdminRepository.LogStockRequestActivity(userID, userType, stockRequestDetails)
+
                 Me.Close()
             End If
         End If

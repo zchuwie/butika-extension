@@ -21,6 +21,16 @@ Public Class UIHelper
         Next
     End Sub
 
+    Public Shared Sub CenterLabelsHorizontallyInPanels(ParamArray ctrls() As Control)
+        For Each ctrl As Control In ctrls
+            If ctrl.Parent IsNot Nothing AndAlso TypeOf ctrl.Parent Is Panel Then
+                ' Horizontal centering only
+                ctrl.Left = (ctrl.Parent.ClientSize.Width - ctrl.Width) \ 2
+            End If
+        Next
+    End Sub
+
+
     ' change button color and assets
     Public Shared Sub BtnColorChange(btn As Guna2Button, forecolor As Color, fillcolor As Color, image As Image)
         btn.FillColor = fillcolor

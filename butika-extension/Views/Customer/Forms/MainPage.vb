@@ -94,9 +94,13 @@ Public Class MainPage
         BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
 
-    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles LogoutBtn.Click
+    Private Async Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles LogoutBtn.Click
         'logout here
         Dim loginForm As New Login()
+        Dim userID As Integer = SessionInfo.CurrentUserID
+        Dim userType As Integer = SessionInfo.CurrentUserType
+
+        Await AdminRepository.LogLogoutActivity(userID, userType)
         loginForm.Show()
         Me.Close()
 
@@ -104,7 +108,6 @@ Public Class MainPage
         BtnColorChange(MedicineBtn, Color.FromArgb(22, 66, 60), My.Resources.pills)
         BtnColorChange(CartBtn, Color.FromArgb(22, 66, 60), My.Resources.cart1)
         BtnColorChange(PrescBtn, Color.FromArgb(22, 66, 60), My.Resources.notif)
-
         BtnColorChange(LogoutBtn, Color.FromArgb(220, 229, 219), My.Resources.pressedLogout1)
         BtnColorChange(SettingsBtn, Color.FromArgb(22, 66, 60), My.Resources.settings)
     End Sub
