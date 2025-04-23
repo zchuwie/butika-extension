@@ -22,36 +22,36 @@ Partial Class AccountSettings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges31 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges32 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges33 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges34 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges35 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges36 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges37 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges38 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges39 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges40 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges41 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges42 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges43 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges44 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges45 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges46 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges47 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges48 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges49 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges50 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges51 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges52 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges53 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges54 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges55 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges56 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges57 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges58 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges59 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges60 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges5 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges6 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges7 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges8 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges9 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges10 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges11 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges19 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges20 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges21 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges22 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges23 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges24 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges25 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges26 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges27 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges28 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges29 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges30 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         LastName = New Label()
         MiddleInitial = New Label()
         FirstName = New Label()
@@ -121,7 +121,7 @@ Partial Class AccountSettings
         ' LastNameTxtbox
         ' 
         LastNameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        LastNameTxtbox.CustomizableEdges = CustomizableEdges31
+        LastNameTxtbox.CustomizableEdges = CustomizableEdges1
         LastNameTxtbox.DefaultText = ""
         LastNameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         LastNameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -138,14 +138,14 @@ Partial Class AccountSettings
         LastNameTxtbox.Name = "LastNameTxtbox"
         LastNameTxtbox.PlaceholderText = ""
         LastNameTxtbox.SelectedText = ""
-        LastNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges32
+        LastNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         LastNameTxtbox.Size = New Size(190, 23)
         LastNameTxtbox.TabIndex = 41
         ' 
         ' MiddleInitialTxtbox
         ' 
         MiddleInitialTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MiddleInitialTxtbox.CustomizableEdges = CustomizableEdges33
+        MiddleInitialTxtbox.CustomizableEdges = CustomizableEdges3
         MiddleInitialTxtbox.DefaultText = ""
         MiddleInitialTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         MiddleInitialTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -162,14 +162,14 @@ Partial Class AccountSettings
         MiddleInitialTxtbox.Name = "MiddleInitialTxtbox"
         MiddleInitialTxtbox.PlaceholderText = ""
         MiddleInitialTxtbox.SelectedText = ""
-        MiddleInitialTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges34
+        MiddleInitialTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         MiddleInitialTxtbox.Size = New Size(190, 23)
         MiddleInitialTxtbox.TabIndex = 40
         ' 
         ' FirstNameTxtbox
         ' 
         FirstNameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        FirstNameTxtbox.CustomizableEdges = CustomizableEdges35
+        FirstNameTxtbox.CustomizableEdges = CustomizableEdges5
         FirstNameTxtbox.DefaultText = ""
         FirstNameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         FirstNameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -186,7 +186,7 @@ Partial Class AccountSettings
         FirstNameTxtbox.Name = "FirstNameTxtbox"
         FirstNameTxtbox.PlaceholderText = ""
         FirstNameTxtbox.SelectedText = ""
-        FirstNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges36
+        FirstNameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         FirstNameTxtbox.Size = New Size(190, 23)
         FirstNameTxtbox.TabIndex = 39
         ' 
@@ -257,7 +257,7 @@ Partial Class AccountSettings
         ' EmailTxtbox
         ' 
         EmailTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        EmailTxtbox.CustomizableEdges = CustomizableEdges37
+        EmailTxtbox.CustomizableEdges = CustomizableEdges7
         EmailTxtbox.DefaultText = ""
         EmailTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         EmailTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -274,14 +274,14 @@ Partial Class AccountSettings
         EmailTxtbox.Name = "EmailTxtbox"
         EmailTxtbox.PlaceholderText = ""
         EmailTxtbox.SelectedText = ""
-        EmailTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges38
+        EmailTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         EmailTxtbox.Size = New Size(229, 27)
         EmailTxtbox.TabIndex = 48
         ' 
         ' MobileNumberTxtbox
         ' 
         MobileNumberTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MobileNumberTxtbox.CustomizableEdges = CustomizableEdges39
+        MobileNumberTxtbox.CustomizableEdges = CustomizableEdges9
         MobileNumberTxtbox.DefaultText = ""
         MobileNumberTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         MobileNumberTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -299,7 +299,7 @@ Partial Class AccountSettings
         MobileNumberTxtbox.Name = "MobileNumberTxtbox"
         MobileNumberTxtbox.PlaceholderText = ""
         MobileNumberTxtbox.SelectedText = ""
-        MobileNumberTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges40
+        MobileNumberTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         MobileNumberTxtbox.Size = New Size(229, 27)
         MobileNumberTxtbox.TabIndex = 49
         ' 
@@ -332,9 +332,9 @@ Partial Class AccountSettings
         ApplyDiscountTxt.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         ApplyDiscountTxt.Location = New Point(28, 689)
         ApplyDiscountTxt.Name = "ApplyDiscountTxt"
-        ApplyDiscountTxt.Size = New Size(397, 17)
+        ApplyDiscountTxt.Size = New Size(393, 17)
         ApplyDiscountTxt.TabIndex = 60
-        ApplyDiscountTxt.Text = "To apply for a discount , verify your account using a valid ID."
+        ApplyDiscountTxt.Text = "To apply for a discount, verify your account using a valid ID."
         ' 
         ' ApplyForDiscountLbl
         ' 
@@ -363,7 +363,7 @@ Partial Class AccountSettings
         BirthdayPicker.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         BirthdayPicker.BorderThickness = 1
         BirthdayPicker.Checked = True
-        BirthdayPicker.CustomizableEdges = CustomizableEdges41
+        BirthdayPicker.CustomizableEdges = CustomizableEdges11
         BirthdayPicker.Enabled = False
         BirthdayPicker.FillColor = Color.FromArgb(CByte(220), CByte(240), CByte(240))
         BirthdayPicker.Font = New Font("Segoe UI", 9F)
@@ -372,7 +372,7 @@ Partial Class AccountSettings
         BirthdayPicker.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         BirthdayPicker.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         BirthdayPicker.Name = "BirthdayPicker"
-        BirthdayPicker.ShadowDecoration.CustomizableEdges = CustomizableEdges42
+        BirthdayPicker.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         BirthdayPicker.Size = New Size(190, 32)
         BirthdayPicker.TabIndex = 62
         BirthdayPicker.Value = New Date(2000, 1, 1, 0, 0, 0, 0)
@@ -402,7 +402,7 @@ Partial Class AccountSettings
         ' UsernameTxtbox
         ' 
         UsernameTxtbox.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        UsernameTxtbox.CustomizableEdges = CustomizableEdges43
+        UsernameTxtbox.CustomizableEdges = CustomizableEdges13
         UsernameTxtbox.DefaultText = ""
         UsernameTxtbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
         UsernameTxtbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
@@ -419,7 +419,7 @@ Partial Class AccountSettings
         UsernameTxtbox.Name = "UsernameTxtbox"
         UsernameTxtbox.PlaceholderText = ""
         UsernameTxtbox.SelectedText = ""
-        UsernameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges44
+        UsernameTxtbox.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         UsernameTxtbox.Size = New Size(190, 23)
         UsernameTxtbox.TabIndex = 64
         ' 
@@ -428,7 +428,7 @@ Partial Class AccountSettings
         CancelContactBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         CancelContactBtn.BorderRadius = 6
         CancelContactBtn.BorderThickness = 1
-        CancelContactBtn.CustomizableEdges = CustomizableEdges45
+        CancelContactBtn.CustomizableEdges = CustomizableEdges15
         CancelContactBtn.DisabledState.BorderColor = Color.DarkGray
         CancelContactBtn.DisabledState.CustomBorderColor = Color.DarkGray
         CancelContactBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -438,7 +438,7 @@ Partial Class AccountSettings
         CancelContactBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         CancelContactBtn.Location = New Point(683, 547)
         CancelContactBtn.Name = "CancelContactBtn"
-        CancelContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges46
+        CancelContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges16
         CancelContactBtn.Size = New Size(81, 35)
         CancelContactBtn.TabIndex = 77
         CancelContactBtn.Text = "Cancel"
@@ -449,7 +449,7 @@ Partial Class AccountSettings
         SaveContactBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SaveContactBtn.BorderRadius = 6
         SaveContactBtn.BorderThickness = 1
-        SaveContactBtn.CustomizableEdges = CustomizableEdges47
+        SaveContactBtn.CustomizableEdges = CustomizableEdges17
         SaveContactBtn.DisabledState.BorderColor = Color.DarkGray
         SaveContactBtn.DisabledState.CustomBorderColor = Color.DarkGray
         SaveContactBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -459,7 +459,7 @@ Partial Class AccountSettings
         SaveContactBtn.ForeColor = Color.White
         SaveContactBtn.Location = New Point(770, 547)
         SaveContactBtn.Name = "SaveContactBtn"
-        SaveContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges48
+        SaveContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges18
         SaveContactBtn.Size = New Size(81, 35)
         SaveContactBtn.TabIndex = 78
         SaveContactBtn.Text = "Save"
@@ -470,7 +470,7 @@ Partial Class AccountSettings
         EditProfileBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EditProfileBtn.BorderRadius = 6
         EditProfileBtn.BorderThickness = 1
-        EditProfileBtn.CustomizableEdges = CustomizableEdges49
+        EditProfileBtn.CustomizableEdges = CustomizableEdges19
         EditProfileBtn.DisabledState.BorderColor = Color.DarkGray
         EditProfileBtn.DisabledState.CustomBorderColor = Color.DarkGray
         EditProfileBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -480,7 +480,7 @@ Partial Class AccountSettings
         EditProfileBtn.ForeColor = Color.White
         EditProfileBtn.Location = New Point(769, 282)
         EditProfileBtn.Name = "EditProfileBtn"
-        EditProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges50
+        EditProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges20
         EditProfileBtn.Size = New Size(81, 35)
         EditProfileBtn.TabIndex = 82
         EditProfileBtn.Text = "Edit"
@@ -490,7 +490,7 @@ Partial Class AccountSettings
         EditContactBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         EditContactBtn.BorderRadius = 6
         EditContactBtn.BorderThickness = 1
-        EditContactBtn.CustomizableEdges = CustomizableEdges51
+        EditContactBtn.CustomizableEdges = CustomizableEdges21
         EditContactBtn.DisabledState.BorderColor = Color.DarkGray
         EditContactBtn.DisabledState.CustomBorderColor = Color.DarkGray
         EditContactBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -500,7 +500,7 @@ Partial Class AccountSettings
         EditContactBtn.ForeColor = Color.White
         EditContactBtn.Location = New Point(769, 502)
         EditContactBtn.Name = "EditContactBtn"
-        EditContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges52
+        EditContactBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges22
         EditContactBtn.Size = New Size(81, 35)
         EditContactBtn.TabIndex = 83
         EditContactBtn.Text = "Edit"
@@ -510,7 +510,7 @@ Partial Class AccountSettings
         SaveProfileBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         SaveProfileBtn.BorderRadius = 6
         SaveProfileBtn.BorderThickness = 1
-        SaveProfileBtn.CustomizableEdges = CustomizableEdges53
+        SaveProfileBtn.CustomizableEdges = CustomizableEdges23
         SaveProfileBtn.DisabledState.BorderColor = Color.DarkGray
         SaveProfileBtn.DisabledState.CustomBorderColor = Color.DarkGray
         SaveProfileBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -520,7 +520,7 @@ Partial Class AccountSettings
         SaveProfileBtn.ForeColor = Color.White
         SaveProfileBtn.Location = New Point(770, 331)
         SaveProfileBtn.Name = "SaveProfileBtn"
-        SaveProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges54
+        SaveProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges24
         SaveProfileBtn.Size = New Size(81, 35)
         SaveProfileBtn.TabIndex = 85
         SaveProfileBtn.Text = "Save"
@@ -531,7 +531,7 @@ Partial Class AccountSettings
         CancelProfileBtn.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         CancelProfileBtn.BorderRadius = 6
         CancelProfileBtn.BorderThickness = 1
-        CancelProfileBtn.CustomizableEdges = CustomizableEdges55
+        CancelProfileBtn.CustomizableEdges = CustomizableEdges25
         CancelProfileBtn.DisabledState.BorderColor = Color.DarkGray
         CancelProfileBtn.DisabledState.CustomBorderColor = Color.DarkGray
         CancelProfileBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -541,7 +541,7 @@ Partial Class AccountSettings
         CancelProfileBtn.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         CancelProfileBtn.Location = New Point(683, 331)
         CancelProfileBtn.Name = "CancelProfileBtn"
-        CancelProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges56
+        CancelProfileBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges26
         CancelProfileBtn.Size = New Size(81, 35)
         CancelProfileBtn.TabIndex = 84
         CancelProfileBtn.Text = "Cancel"
@@ -552,7 +552,8 @@ Partial Class AccountSettings
         VerifyButton.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         VerifyButton.BorderRadius = 6
         VerifyButton.BorderThickness = 1
-        VerifyButton.CustomizableEdges = CustomizableEdges57
+        VerifyButton.CustomizableEdges = CustomizableEdges27
+        VerifyButton.DefaultAutoSize = True
         VerifyButton.DisabledState.BorderColor = Color.DarkGray
         VerifyButton.DisabledState.CustomBorderColor = Color.DarkGray
         VerifyButton.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -562,17 +563,17 @@ Partial Class AccountSettings
         VerifyButton.ForeColor = Color.White
         VerifyButton.Location = New Point(26, 714)
         VerifyButton.Name = "VerifyButton"
-        VerifyButton.ShadowDecoration.CustomizableEdges = CustomizableEdges58
-        VerifyButton.Size = New Size(149, 29)
+        VerifyButton.ShadowDecoration.CustomizableEdges = CustomizableEdges28
+        VerifyButton.Size = New Size(67, 27)
         VerifyButton.TabIndex = 86
-        VerifyButton.Text = "Verify Account"
+        VerifyButton.Text = "Verify"
         ' 
         ' Guna2Button1
         ' 
         Guna2Button1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Button1.BorderRadius = 6
         Guna2Button1.BorderThickness = 1
-        Guna2Button1.CustomizableEdges = CustomizableEdges59
+        Guna2Button1.CustomizableEdges = CustomizableEdges29
         Guna2Button1.DisabledState.BorderColor = Color.DarkGray
         Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -582,7 +583,7 @@ Partial Class AccountSettings
         Guna2Button1.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         Guna2Button1.Location = New Point(560, 824)
         Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges60
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges30
         Guna2Button1.Size = New Size(81, 35)
         Guna2Button1.TabIndex = 87
         Guna2Button1.Text = "Cancel"

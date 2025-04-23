@@ -85,6 +85,35 @@ Public Class MedicineRepository
         End Using
     End Function
 
+    Public Async Function SearchMedicine(medicine As String) As Task(Of List(Of Medicine))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT 
+                    drug_id AS MedicineID,
+                    drug_name AS MedicineName,
+                    drug_brand AS MedicineBrand,
+                    drug_dosage AS MedicineDosage,
+                    drug_manufacturer AS MedicineManufacturer,
+                    drug_description AS MedicineDescription,
+                    drug_price AS MedicinePrice,
+                    drug_image AS MedicineImageName,
+                    drug_type AS MedicineType,
+                    prescription_needed AS MedicinePrescription,
+                    drug_stocks AS MedicineStock,
+                    expiration_date AS MedicineExpirationDate,
+                    isSelected AS MedicineTickBox
+                FROM drug_inventory
+                WHERE drug_name LIKE @drug_name"
+            Dim result = Await conn.QueryAsync(Of Medicine)(
+                query,
+                New With {.drug_name = $"{medicine.Trim}%"}
+            )
+            Debug.WriteLine($"Searching for: >{medicine}<")
+            Return result.ToList()
+        End Using
+    End Function
+
 #Region "Inventory Custodian"
 
     Public Async Function medicineBars() As Task(Of List(Of Medicine))
