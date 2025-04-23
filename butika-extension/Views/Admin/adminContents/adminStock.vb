@@ -1,5 +1,6 @@
 ﻿Imports butika.Configurations
 Imports Org.BouncyCastle.Asn1.Cmp
+Imports System.IO
 
 Public Class adminStock
     Private Async Sub adminStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,15 +22,22 @@ Public Class adminStock
 
             If drugInfos IsNot Nothing Then
                 Dim drugImageFileName As String = drugInfos("drug_image").ToString()
-                Dim imagePath As String = "C:\Visual Basic\butika-extension\butika-extension\Resources\drug_images\" & drugImageFileName
+                Dim drugFolderPath As String = GetImagePath.DrugPathName
 
-                If System.IO.File.Exists(imagePath) Then
-                    verificationImage.Image = Image.FromFile(imagePath)
-                    verificationImage.SizeMode = PictureBoxSizeMode.StretchImage
-                    verificationImage.Width = 100
-                    verificationImage.Height = 100
+                If Not String.IsNullOrEmpty(drugFolderPath) Then
+                    Dim imagePath As String = Path.Combine(drugFolderPath, drugImageFileName)
+
+                    If File.Exists(imagePath) Then
+                        verificationImage.Image = Image.FromFile(imagePath)
+                        verificationImage.SizeMode = PictureBoxSizeMode.StretchImage
+                        verificationImage.Width = 100
+                        verificationImage.Height = 100
+                    Else
+                        MessageBox.Show("Image file not found: " & imagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+                    End If
                 Else
-                    MessageBox.Show("Image file not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Drug image folder not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             End If
             Dim drugInfo As DataRow = Await AdminRepository.GetDrugInfoByIDAsync(medicineId)
@@ -41,11 +49,13 @@ Public Class adminStock
                 expirydata.Text = CType(drugInfo("expiration_date"), DateTime).ToString("yyyy-MM-dd")
                 stockdata.Text = drugInfo("drug_stocks").ToString()
 
+
                 UIHelper.CenterLabelsHorizontallyInPanels(namedata, branddata)
             End If
 
             reqstock.Text = row.Cells("Requested_Quantity").Value.ToString()
             reqdate.Text = Convert.ToDateTime(row.Cells("Request_Date").Value).ToShortDateString()
+            reportID.Text = row.Cells("Report_ID").Value.ToString()
             If row.Cells("Request_Status").Value IsNot Nothing Then
                 Dim requestStatus As Integer = Convert.ToInt32(row.Cells("Request_Status").Value)
                 Select Case requestStatus
@@ -89,6 +99,8 @@ Public Class adminStock
 
             MessageBox.Show("Request approved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, $"approved stock request | ID:{id.Text}")
+            Await AdminRepository.UpdateStockQuantityFromRequestAsync(Convert.ToInt32(reportID.Text))
+
         End If
     End Sub
 

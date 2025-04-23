@@ -840,9 +840,6 @@ Public Class AdminRepository
         Return dt
     End Function
 
-
-
-
     Public Shared Async Function GetDrugInfoByIDAsync(drugId As Integer) As Task(Of DataRow)
         Dim dt As New DataTable()
 
@@ -854,7 +851,7 @@ SELECT
     drug_manufacturer, 
     drug_stocks, 
     CAST(expiration_date AS DATE) AS expiration_date,
-    drug_image  -- Added drug_image column to query
+    drug_image
 FROM drug_inventory
 WHERE drug_id = @drugId
 "
@@ -881,7 +878,6 @@ WHERE drug_id = @drugId
         End If
     End Function
 
-
     Public Shared Async Function UpdateRequestStatusInDatabase(status As Integer, medicineId As Integer) As Task
         Dim query As String = "UPDATE stockReport SET stockRequestStatus = @status, stockDateUpdated = @date WHERE medicine_id = @medicineId"
 
@@ -895,6 +891,40 @@ WHERE drug_id = @drugId
             Await cmd.ExecuteNonQueryAsync()
         End Using
     End Function
+
+    Public Shared Async Function UpdateStockQuantityFromRequestAsync(reportId As Integer) As Task
+        ' Define the SQL query to update the drug stock based on the stock request
+        Dim query As String = "
+    UPDATE di
+    SET di.drug_stocks = di.drug_stocks + sr.stockQuantityRequest
+    FROM drug_inventory di
+    INNER JOIN stockReport sr ON di.drug_id = sr.medicine_id
+    WHERE sr.report_id = @reportId
+"
+
+        Try
+            Using conn As SqlConnection = DatabaseConnection.GetConnection()
+                Await conn.OpenAsync()
+
+                Using cmd As New SqlCommand(query, conn)
+                    cmd.Parameters.AddWithValue("@reportId", reportId)
+
+                    Dim rowsAffected As Integer = Await cmd.ExecuteNonQueryAsync()
+
+                    If rowsAffected > 0 Then
+                        Console.WriteLine($"Successfully updated {rowsAffected} row(s) in inventory.")
+                    Else
+                        Console.WriteLine("No rows were updated. Check the request ID and stock data.")
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Error updating inventory: " & ex.Message)
+        End Try
+    End Function
+
+
+
 #End Region
 
     Public Function GetVerificationImagePath(ID As String) As String
