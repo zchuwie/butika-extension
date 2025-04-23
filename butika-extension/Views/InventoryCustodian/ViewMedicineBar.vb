@@ -44,6 +44,8 @@ Public Class ViewMedicineBar
         save_update_btn.Enabled = enabled
         cancel_update_btn.Visible = enabled
         cancel_update_btn.Enabled = enabled
+        edit_stock_btn.Enabled = enabled
+        edit_stock_btn.Visible = enabled
         edit_medicine_btn.Visible = Not enabled
         edit_medicine_btn.Enabled = Not enabled
     End Sub
@@ -77,6 +79,7 @@ Public Class ViewMedicineBar
             dosage_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineDosage)
             manufacturer_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineManufacturer)
             description_txtbox.Text = MedicineInfo.MedicineDescription
+            stock_label.Text = MedicineInfo.MedicineStock.ToString()
             price_txtbox.Text = MedicineInfo.MedicinePrice.ToString("F2")
             medtype_txtbox.Text = HelperMethod.CapitalizeEachFirstWord(MedicineInfo.MedicineType)
             expdate_datetime.Value = MedicineInfo.MedicineExpirationDate
@@ -167,12 +170,12 @@ Public Class ViewMedicineBar
     Private Async Sub UpdateMedicineButton_Click(sender As Object, e As EventArgs) Handles save_update_btn.Click
         ' Validation
         If String.IsNullOrWhiteSpace(medicine_name_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(brand_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(dosage_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(manufacturer_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(description_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(price_txtbox.Text) OrElse
-           String.IsNullOrWhiteSpace(medtype_txtbox.Text) Then
+       String.IsNullOrWhiteSpace(brand_txtbox.Text) OrElse
+       String.IsNullOrWhiteSpace(dosage_txtbox.Text) OrElse
+       String.IsNullOrWhiteSpace(manufacturer_txtbox.Text) OrElse
+       String.IsNullOrWhiteSpace(description_txtbox.Text) OrElse
+       String.IsNullOrWhiteSpace(price_txtbox.Text) OrElse
+       String.IsNullOrWhiteSpace(medtype_txtbox.Text) Then
             MessageBox.Show("Please fill in all fields.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Return
         End If
@@ -184,56 +187,84 @@ Public Class ViewMedicineBar
             Return
         End If
 
-        Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
-        Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.DrugPathName)
-        Dim isImageSaved As Boolean = ImageInsertion.SaveImageToFolder(selectedImagePath, imageName, destinationFolder)
+        ' Determine final image name (use existing if no new image)
+        Dim finalImageName As String = MedicineInfo.MedicineImageName
+        If Not String.IsNullOrEmpty(selectedImagePath) Then
+            finalImageName = MedicineInfo.MedicineID.ToString() + Path.GetFileName(selectedImagePath)
+            Dim projectRoot As String = Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.FullName
+            Dim destinationFolder As String = Path.Combine(projectRoot, GetImagePath.DrugPathName)
+            Dim isImageSaved As Boolean = ImageInsertion.SaveImageToFolder(selectedImagePath, finalImageName, destinationFolder)
 
-        If Not isImageSaved Then
-            Debug.WriteLine("Image has not been saved.")
-            Return
-        End If
-
-        Dim prescription As Integer
-        If prescription_cbox.SelectedIndex = 0 Then
-            prescription = 0
-        Else
-            prescription = 1
-        End If
-
-        ' Create new updated model
-        Dim updatedMedicine As New Medicine With {
-            .MedicineID = MedicineInfo.MedicineID,
-            .MedicineName = medicine_name_txtbox.Text,
-            .MedicineBrand = brand_txtbox.Text,
-            .MedicineDosage = dosage_txtbox.Text,
-            .MedicineManufacturer = manufacturer_txtbox.Text,
-            .MedicineDescription = description_txtbox.Text,
-            .MedicinePrescription = prescription,
-            .MedicinePrice = Math.Round(price, 2),
-            .MedicineType = medtype_txtbox.Text,
-            .MedicineExpirationDate = expdate_datetime.Value,
-            .MedicineImageName = imageName,
-            .MedicineLastUpdated = DateTime.Now
-        }
-
-        ' Update database with new medicine details
-        Dim repo As New MedicineRepository()
-        Await repo.UpdateMedicine(updatedMedicine)
-
-        ' Update the UI Image control (refresh the image after update)
-        If Not String.IsNullOrEmpty(imageName) Then
-            Dim imagePath As String = Path.Combine(destinationFolder, imageName)
-            If File.Exists(imagePath) Then
-                addimage_btn.Image = Image.FromFile(imagePath)
-                addimage_btn.SizeMode = PictureBoxSizeMode.Zoom
+            If Not isImageSaved Then
+                Debug.WriteLine("Image has not been saved.")
+                Return
             End If
         End If
 
+        ' Handle prescription value
+        Dim prescription As Integer = If(prescription_cbox.SelectedIndex = 0, 0, 1)
+
+        ' Construct updated model
+        Dim updatedMedicine As New Medicine With {
+        .MedicineID = MedicineInfo.MedicineID,
+        .MedicineName = medicine_name_txtbox.Text,
+        .MedicineBrand = brand_txtbox.Text,
+        .MedicineDosage = dosage_txtbox.Text,
+        .MedicineManufacturer = manufacturer_txtbox.Text,
+        .MedicineDescription = description_txtbox.Text,
+        .MedicinePrescription = prescription,
+        .MedicinePrice = Math.Round(price, 2),
+        .MedicineType = medtype_txtbox.Text,
+        .MedicineExpirationDate = expdate_datetime.Value,
+        .MedicineImageName = finalImageName,
+        .MedicineLastUpdated = DateTime.Now
+    }
+
+        ' Compare with original to check for changes
+        Dim original = MedicineInfo
+        Dim isChanged As Boolean =
+        updatedMedicine.MedicineName <> original.MedicineName OrElse
+        updatedMedicine.MedicineBrand <> original.MedicineBrand OrElse
+        updatedMedicine.MedicineDosage <> original.MedicineDosage OrElse
+        updatedMedicine.MedicineManufacturer <> original.MedicineManufacturer OrElse
+        updatedMedicine.MedicineDescription <> original.MedicineDescription OrElse
+        updatedMedicine.MedicinePrescription <> original.MedicinePrescription OrElse
+        updatedMedicine.MedicinePrice <> original.MedicinePrice OrElse
+        updatedMedicine.MedicineType <> original.MedicineType OrElse
+        updatedMedicine.MedicineExpirationDate <> original.MedicineExpirationDate OrElse
+        updatedMedicine.MedicineImageName <> original.MedicineImageName
+
+        If Not isChanged Then
+            MessageBox.Show("Can't update. No info were changed.", "No Changes", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Return
+        End If
+
+        ' Ask for confirmation before updating
+        Dim confirmResult = MessageBox.Show("Are you sure you want to update the medicine details?", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If confirmResult <> DialogResult.Yes Then
+            Return
+        End If
+
+        ' Proceed with update
+        Dim repo As New MedicineRepository()
+        Await repo.UpdateMedicine(updatedMedicine)
+
+        ' Update UI image
+        Dim imagePath As String = Path.Combine(Application.StartupPath, "drug_images", finalImageName)
+        If File.Exists(imagePath) Then
+            addimage_btn.Image = Image.FromFile(imagePath)
+            addimage_btn.SizeMode = PictureBoxSizeMode.Zoom
+        End If
+
+        ' Show success message
         MessageBox.Show("Medicine updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.DialogResult = DialogResult.OK
+
+        ' Log activity
         Dim userID As Integer = SessionInfo.CurrentUserID
         Dim userType As Integer = SessionInfo.CurrentUserType
         Await AdminRepository.LogMedicineUpdateActivity(userID, userType, MedicineInfo.MedicineID)
+
         reloadData()
     End Sub
 
