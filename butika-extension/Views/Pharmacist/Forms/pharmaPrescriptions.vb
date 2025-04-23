@@ -31,10 +31,16 @@ Public Class pharmaPrescriptions
         infoManagerIcon.ShowAlways = True
 
         changeFilter(True, False, False)
-        Await LoadAllPrescriptions()
+        Await LoadAllPrescriptions(True, False, False)
     End Sub
-    Public Async Function LoadAllPrescriptions() As Task
-        allPrescriptions = Await prescriptRepo.GetAllPrescriptions()
+    Public Async Function LoadAllPrescriptions(all As Boolean, pending As Boolean, declined As Boolean) As Task
+        If all = True Then
+            allPrescriptions = Await prescriptRepo.GetAllPrescriptions()
+        ElseIf pending = True Then
+            allPrescriptions = Await prescriptRepo.GetAllPendingPRescriptions()
+        ElseIf declined = True Then
+            allPrescriptions = Await prescriptRepo.GetAllDeclinedPRescriptions()
+        End If
 
         Dim batchSize As Integer = 5
 
@@ -48,16 +54,19 @@ Public Class pharmaPrescriptions
 
     End Function
 
-    Private Sub allprescriptLbl_Click(sender As Object, e As EventArgs) Handles allprescriptLbl.Click
+    Private Async Sub allprescriptLbl_Click(sender As Object, e As EventArgs) Handles allprescriptLbl.Click
         changeFilter(True, False, False)
+        Await LoadAllPrescriptions(True, False, False)
     End Sub
 
-    Private Sub pendingLbl_Click(sender As Object, e As EventArgs) Handles pendingLbl.Click
+    Private Async Sub pendingLbl_Click(sender As Object, e As EventArgs) Handles pendingLbl.Click
         changeFilter(False, True, False)
+        Await LoadAllPrescriptions(False, True, False)
     End Sub
 
-    Private Sub declineLbl_Click(sender As Object, e As EventArgs) Handles declineLbl.Click
+    Private Async Sub declineLbl_Click(sender As Object, e As EventArgs) Handles declineLbl.Click
         changeFilter(False, False, True)
+        Await LoadAllPrescriptions(False, False, True)
     End Sub
 
     Private Async Sub sortBtn_Click(sender As Object, e As EventArgs) Handles sortBtn.Click

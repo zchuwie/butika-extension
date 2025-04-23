@@ -40,7 +40,6 @@ Partial Class pharmaDashPrescript
         ' statusLbl
         ' 
         statusLbl.AutoSize = True
-        statusLbl.Cursor = Cursors.Hand
         statusLbl.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         statusLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         statusLbl.Location = New Point(148, 10)

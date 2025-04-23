@@ -2,6 +2,13 @@
 
 Public Class pharmaDashboard
     Private mainPage As pharmaMainPage
+
+    Dim pharmarepo As New PharmaRepository()
+    Dim allPrescriptions As List(Of Prescription)
+    Dim allTransactions As List(Of Transaction)
+    Dim allMedicines As Integer
+    Dim allTransac As Integer
+    Dim allPrescript As Integer
     Public Sub New(mainForm As pharmaMainPage)
         InitializeComponent()
         Me.mainPage = mainForm
@@ -22,6 +29,12 @@ Public Class pharmaDashboard
 
         Await LoadAllTransactions()
         Await LoadAllPrescriptions()
+        allTransac = Await pharmarepo.totalTransaction()
+        totalTransacLbl.Text = allTransac.ToString()
+        allMedicines = Await pharmarepo.totalMedicines()
+        totalMedsLbl.Text = allMedicines.ToString()
+        allPrescript = Await pharmarepo.totalPrescriptions()
+        totalPrescriptLbl.Text = allPrescript.ToString()
     End Sub
 
     Private Sub goTransacPage_Click(sender As Object, e As EventArgs) Handles goTransacPage.Click
@@ -44,9 +57,7 @@ Public Class pharmaDashboard
 
     Public Async Function LoadAllPrescriptions() As Task
         flpPrescript.Controls.Clear()
-
-        Dim prescriptRepo As New PharmaRepository()
-        Dim allPrescriptions As List(Of Prescription) = Await prescriptRepo.GetAllPrescriptions()
+        allPrescriptions = Await pharmarepo.GetAllRecentPrescriptions()
 
         Dim batchSize As Integer = 5
 
@@ -65,9 +76,7 @@ Public Class pharmaDashboard
     End Function
     Public Async Function LoadAllTransactions() As Task
         flpTransac.Controls.Clear()
-
-        Dim transacRepo As New PharmaRepository()
-        Dim allTransactions As List(Of Transaction) = Await transacRepo.GetAllTransactions()
+        allTransactions = Await pharmarepo.GetAllRecentTransactions()
 
         Dim batchSize As Integer = 5
 
