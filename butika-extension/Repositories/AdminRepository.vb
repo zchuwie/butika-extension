@@ -893,29 +893,50 @@ WHERE drug_id = @drugId
     End Function
 
     Public Shared Async Function UpdateStockQuantityFromRequestAsync(reportId As Integer) As Task
-        ' Define the SQL query to update the drug stock based on the stock request
-        Dim query As String = "
+        ' First, save the current stock in stockReport.stockWhenRequested
+        Dim backupStockQuery As String = "
+    UPDATE sr
+    SET sr.stockWhenRequested = di.drug_stocks
+    FROM stockReport sr
+    INNER JOIN drug_inventory di ON sr.medicine_id = di.drug_id
+    WHERE sr.report_id = @reportId
+    "
+
+        ' Then, update the inventory with the new requested quantity
+        Dim updateStockQuery As String = "
     UPDATE di
-    SET di.drug_stocks = di.drug_stocks + sr.stockQuantityRequest
+    SET di.drug_stocks = sr.stockQuantityRequest
     FROM drug_inventory di
     INNER JOIN stockReport sr ON di.drug_id = sr.medicine_id
     WHERE sr.report_id = @reportId
-"
+    "
 
         Try
             Using conn As SqlConnection = DatabaseConnection.GetConnection()
                 Await conn.OpenAsync()
 
-                Using cmd As New SqlCommand(query, conn)
-                    cmd.Parameters.AddWithValue("@reportId", reportId)
+                Using transaction = conn.BeginTransaction()
 
-                    Dim rowsAffected As Integer = Await cmd.ExecuteNonQueryAsync()
+                    ' Step 1: Backup current stock
+                    Using backupCmd As New SqlCommand(backupStockQuery, conn, transaction)
+                        backupCmd.Parameters.AddWithValue("@reportId", reportId)
+                        Await backupCmd.ExecuteNonQueryAsync()
+                    End Using
 
-                    If rowsAffected > 0 Then
-                        Console.WriteLine($"Successfully updated {rowsAffected} row(s) in inventory.")
-                    Else
-                        Console.WriteLine("No rows were updated. Check the request ID and stock data.")
-                    End If
+                    ' Step 2: Update stock with requested quantity
+                    Using updateCmd As New SqlCommand(updateStockQuery, conn, transaction)
+                        updateCmd.Parameters.AddWithValue("@reportId", reportId)
+                        Dim rowsAffected As Integer = Await updateCmd.ExecuteNonQueryAsync()
+
+                        If rowsAffected > 0 Then
+                            Console.WriteLine($"Successfully updated {rowsAffected} row(s) in inventory.")
+                        Else
+                            Console.WriteLine("No rows were updated. Check the request ID and stock data.")
+                        End If
+                    End Using
+
+                    ' Commit both updates
+                    Await transaction.CommitAsync()
                 End Using
             End Using
         Catch ex As Exception

@@ -48,6 +48,7 @@ Namespace Models
         Public Property StockQuantityRequest As Integer
         Public Property StockReportID As Integer
         Public Property StockLastUpdated As DateTime?
+        Public Property StockWhenRequested As Integer
 
     End Class
 End Namespace

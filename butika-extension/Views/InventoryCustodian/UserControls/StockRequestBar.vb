@@ -13,22 +13,24 @@ Public Class StockRequestBar
     Private Sub LoadData(med As Medicine)
         medicineID.Text = MedicineInfo.MedicineID.ToString
         medicineName.Text = MedicineInfo.MedicineName
-        currentStockQuantity.Text = MedicineInfo.MedicineStock.ToString
         requestedStockQuantity.Text = MedicineInfo.StockQuantityRequest.ToString
         requestedDate.Text = MedicineInfo.StockRequestedDate
 
         If MedicineInfo.StockRequestedDate.HasValue Then
-            requestedDate.Text = MedicineInfo.StockRequestedDate.Value.ToString("yyyy-MM-dd")
+            requestedDate.Text = MedicineInfo.StockRequestedDate.Value.ToString("yyyy-MM-dd HH:mm")
         Else
             requestedDate.Text = "N/A"
         End If
 
         If MedicineInfo.StockRequestStatus = 0 Then
             requestStatus.Text = "Pending"
+            currentStockQuantity.Text = MedicineInfo.MedicineStock.ToString
         ElseIf MedicineInfo.StockRequestStatus = 1 Then
             requestStatus.Text = "Approved"
+            currentStockQuantity.Text = MedicineInfo.StockWhenRequested.ToString
         ElseIf MedicineInfo.StockRequestStatus = 2 Then
             requestStatus.Text = "Declined"
+            currentStockQuantity.Text = MedicineInfo.StockWhenRequested.ToString
         Else
             requestStatus.Text = "Unknown"
         End If

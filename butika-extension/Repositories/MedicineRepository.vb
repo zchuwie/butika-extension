@@ -296,7 +296,7 @@ Public Class MedicineRepository
                 drug_dosage LIKE @Search OR
                 drug_manufacturer LIKE @Search OR
                 drug_description LIKE @Search OR
-                drug_type LIKE @Search) && isArchived = 0
+                drug_type LIKE @Search) AND isArchived = 0
         "
 
             If String.IsNullOrWhiteSpace(searchTerm) Then
@@ -374,7 +374,9 @@ Public Class MedicineRepository
                 sr.medicine_id as MedicineID,
                 sr.stockDateRequested as StockRequestedDate,
                 sr.stockDateUpdated as StockLastUpdated,
-                di.drug_name as MedicineName
+                sr.stockWhenRequested as StockWhenRequested,
+                di.drug_name as MedicineName,
+                di.drug_stocks as MedicineStock
             FROM stockReport sr
             LEFT JOIN drug_inventory di ON sr.medicine_id = di.drug_id"
 

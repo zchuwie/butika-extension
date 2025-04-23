@@ -41,16 +41,28 @@ Public Class MedicinePanel_InventoryCustodian
 
 
     Private Async Sub search_textbox_KeyPress(sender As Object, e As KeyPressEventArgs) Handles search_textbox.KeyPress
-        If e.KeyChar = ChrW(Keys.Enter) Then
-            e.Handled = True ' Prevents ding sound and default behavior
+        ' Allow only letters and control keys (like Backspace)
+        If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsLetter(e.KeyChar) Then
+            e.Handled = True
+            Return
+        End If
 
-            MedicineBarsDisplay.Controls.Clear() ' Optional: clear previous results
+        ' If Enter key is pressed, run the search
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            e.Handled = True
+
+            ' Prevent search if the textbox is empty or whitespace
+            If String.IsNullOrWhiteSpace(search_textbox.Text) Then
+                MessageBox.Show("Please enter a medicine name to search.", "Search", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Return
+            End If
+
+            MedicineBarsDisplay.Controls.Clear() ' Clear previous results
 
             Dim repo As New MedicineRepository()
             Dim results = Await repo.SearchMedicines(search_textbox.Text.Trim())
 
             Dim batchSize = 5
-
             For i = 0 To results.Count - 1 Step batchSize
                 Dim batch = results.Skip(i).Take(batchSize).ToList()
 

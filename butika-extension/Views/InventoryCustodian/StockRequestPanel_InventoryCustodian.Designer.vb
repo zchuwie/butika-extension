@@ -23,7 +23,6 @@ Partial Class StockRequestPanel_InventoryCustodian
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(StockRequestPanel_InventoryCustodian))
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
@@ -37,11 +36,6 @@ Partial Class StockRequestPanel_InventoryCustodian
         Dim CustomizableEdges12 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges13 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges14 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges15 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges16 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges17 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges18 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         StockRequestStatusDisplay = New FlowLayoutPanel()
         SortingPanel = New Panel()
         Panel6 = New Panel()
@@ -55,32 +49,14 @@ Partial Class StockRequestPanel_InventoryCustodian
         Panel3 = New Panel()
         Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         nameSortingBtn = New Guna.UI2.WinForms.Guna2Button()
-        search_textbox = New Guna.UI2.WinForms.Guna2TextBox()
         Guna2HtmlLabel1 = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Panel1 = New Panel()
-        CType(Guna2PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SortingPanel.SuspendLayout()
         Panel6.SuspendLayout()
         Panel5.SuspendLayout()
         Panel4.SuspendLayout()
         Panel3.SuspendLayout()
         SuspendLayout()
-        ' 
-        ' Guna2PictureBox1
-        ' 
-        Guna2PictureBox1.BackColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Guna2PictureBox1.CustomizableEdges = CustomizableEdges1
-        Guna2PictureBox1.FillColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), Image)
-        Guna2PictureBox1.ImageRotate = 0F
-        Guna2PictureBox1.Location = New Point(897, 29)
-        Guna2PictureBox1.Margin = New Padding(3, 2, 3, 2)
-        Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Guna2PictureBox1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2PictureBox1.Size = New Size(28, 15)
-        Guna2PictureBox1.SizeMode = PictureBoxSizeMode.CenterImage
-        Guna2PictureBox1.TabIndex = 17
-        Guna2PictureBox1.TabStop = False
         ' 
         ' StockRequestStatusDisplay
         ' 
@@ -117,7 +93,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         ' 
         ' Guna2Button3
         ' 
-        Guna2Button3.CustomizableEdges = CustomizableEdges3
+        Guna2Button3.CustomizableEdges = CustomizableEdges1
         Guna2Button3.DisabledState.BorderColor = Color.DarkGray
         Guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button3.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -131,7 +107,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         Guna2Button3.Location = New Point(235, 0)
         Guna2Button3.Margin = New Padding(3, 2, 3, 2)
         Guna2Button3.Name = "Guna2Button3"
-        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Button3.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         Guna2Button3.Size = New Size(124, 22)
         Guna2Button3.TabIndex = 3
         Guna2Button3.Text = "Date Reviewed"
@@ -139,7 +115,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         ' 
         ' Guna2Button1
         ' 
-        Guna2Button1.CustomizableEdges = CustomizableEdges5
+        Guna2Button1.CustomizableEdges = CustomizableEdges3
         Guna2Button1.DisabledState.BorderColor = Color.DarkGray
         Guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button1.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -153,7 +129,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         Guna2Button1.Location = New Point(134, 0)
         Guna2Button1.Margin = New Padding(3, 2, 3, 2)
         Guna2Button1.Name = "Guna2Button1"
-        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges6
+        Guna2Button1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         Guna2Button1.Size = New Size(101, 22)
         Guna2Button1.TabIndex = 2
         Guna2Button1.Text = "Status"
@@ -161,7 +137,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         ' 
         ' expSortingBtn
         ' 
-        expSortingBtn.CustomizableEdges = CustomizableEdges7
+        expSortingBtn.CustomizableEdges = CustomizableEdges5
         expSortingBtn.DisabledState.BorderColor = Color.DarkGray
         expSortingBtn.DisabledState.CustomBorderColor = Color.DarkGray
         expSortingBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -175,7 +151,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         expSortingBtn.Location = New Point(0, 0)
         expSortingBtn.Margin = New Padding(3, 2, 3, 2)
         expSortingBtn.Name = "expSortingBtn"
-        expSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges8
+        expSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         expSortingBtn.Size = New Size(134, 22)
         expSortingBtn.TabIndex = 1
         expSortingBtn.Text = "Date Requested"
@@ -193,7 +169,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         ' 
         ' stockSortingBtn
         ' 
-        stockSortingBtn.CustomizableEdges = CustomizableEdges9
+        stockSortingBtn.CustomizableEdges = CustomizableEdges7
         stockSortingBtn.DisabledState.BorderColor = Color.DarkGray
         stockSortingBtn.DisabledState.CustomBorderColor = Color.DarkGray
         stockSortingBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -207,7 +183,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         stockSortingBtn.Location = New Point(0, 0)
         stockSortingBtn.Margin = New Padding(3, 2, 3, 2)
         stockSortingBtn.Name = "stockSortingBtn"
-        stockSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
+        stockSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         stockSortingBtn.Size = New Size(110, 22)
         stockSortingBtn.TabIndex = 1
         stockSortingBtn.Text = "Stock Request"
@@ -225,7 +201,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         ' 
         ' manuSortingBtn
         ' 
-        manuSortingBtn.CustomizableEdges = CustomizableEdges11
+        manuSortingBtn.CustomizableEdges = CustomizableEdges9
         manuSortingBtn.DisabledState.BorderColor = Color.DarkGray
         manuSortingBtn.DisabledState.CustomBorderColor = Color.DarkGray
         manuSortingBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -239,7 +215,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         manuSortingBtn.Location = New Point(0, 0)
         manuSortingBtn.Margin = New Padding(3, 2, 3, 2)
         manuSortingBtn.Name = "manuSortingBtn"
-        manuSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges12
+        manuSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges10
         manuSortingBtn.Size = New Size(105, 22)
         manuSortingBtn.TabIndex = 1
         manuSortingBtn.Text = "Current Stock"
@@ -258,7 +234,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         ' 
         ' Guna2Button2
         ' 
-        Guna2Button2.CustomizableEdges = CustomizableEdges13
+        Guna2Button2.CustomizableEdges = CustomizableEdges11
         Guna2Button2.DisabledState.BorderColor = Color.DarkGray
         Guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray
         Guna2Button2.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -272,7 +248,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         Guna2Button2.Location = New Point(74, 0)
         Guna2Button2.Margin = New Padding(3, 2, 3, 2)
         Guna2Button2.Name = "Guna2Button2"
-        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges14
+        Guna2Button2.ShadowDecoration.CustomizableEdges = CustomizableEdges12
         Guna2Button2.Size = New Size(138, 22)
         Guna2Button2.TabIndex = 1
         Guna2Button2.Text = "Name"
@@ -280,7 +256,7 @@ Partial Class StockRequestPanel_InventoryCustodian
         ' 
         ' nameSortingBtn
         ' 
-        nameSortingBtn.CustomizableEdges = CustomizableEdges15
+        nameSortingBtn.CustomizableEdges = CustomizableEdges13
         nameSortingBtn.DisabledState.BorderColor = Color.DarkGray
         nameSortingBtn.DisabledState.CustomBorderColor = Color.DarkGray
         nameSortingBtn.DisabledState.FillColor = Color.FromArgb(CByte(169), CByte(169), CByte(169))
@@ -294,34 +270,11 @@ Partial Class StockRequestPanel_InventoryCustodian
         nameSortingBtn.Location = New Point(0, 0)
         nameSortingBtn.Margin = New Padding(3, 2, 3, 2)
         nameSortingBtn.Name = "nameSortingBtn"
-        nameSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges16
+        nameSortingBtn.ShadowDecoration.CustomizableEdges = CustomizableEdges14
         nameSortingBtn.Size = New Size(74, 22)
         nameSortingBtn.TabIndex = 0
         nameSortingBtn.Text = "ID"
         nameSortingBtn.TextAlign = HorizontalAlignment.Left
-        ' 
-        ' search_textbox
-        ' 
-        search_textbox.BorderColor = Color.FromArgb(CByte(131), CByte(130), CByte(130))
-        search_textbox.BorderRadius = 13
-        search_textbox.CustomizableEdges = CustomizableEdges17
-        search_textbox.DefaultText = ""
-        search_textbox.DisabledState.BorderColor = Color.FromArgb(CByte(208), CByte(208), CByte(208))
-        search_textbox.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
-        search_textbox.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        search_textbox.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
-        search_textbox.FillColor = Color.FromArgb(CByte(224), CByte(224), CByte(224))
-        search_textbox.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        search_textbox.Font = New Font("Century Gothic", 9F)
-        search_textbox.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        search_textbox.IconRightSize = New Size(15, 15)
-        search_textbox.Location = New Point(482, 21)
-        search_textbox.Name = "search_textbox"
-        search_textbox.PlaceholderText = ""
-        search_textbox.SelectedText = ""
-        search_textbox.ShadowDecoration.CustomizableEdges = CustomizableEdges18
-        search_textbox.Size = New Size(452, 31)
-        search_textbox.TabIndex = 13
         ' 
         ' Guna2HtmlLabel1
         ' 
@@ -350,17 +303,14 @@ Partial Class StockRequestPanel_InventoryCustodian
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(245), CByte(247), CByte(244))
         ClientSize = New Size(1032, 720)
-        Controls.Add(Guna2PictureBox1)
         Controls.Add(StockRequestStatusDisplay)
         Controls.Add(SortingPanel)
-        Controls.Add(search_textbox)
         Controls.Add(Guna2HtmlLabel1)
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "StockRequestPanel_InventoryCustodian"
         StartPosition = FormStartPosition.CenterScreen
         Text = "StockRequestPanel_InventoryCustodian"
-        CType(Guna2PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         SortingPanel.ResumeLayout(False)
         Panel6.ResumeLayout(False)
         Panel5.ResumeLayout(False)
@@ -369,8 +319,6 @@ Partial Class StockRequestPanel_InventoryCustodian
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents StockRequestStatusDisplay As FlowLayoutPanel
     Friend WithEvents SortingPanel As Panel
     Friend WithEvents Panel6 As Panel
@@ -382,7 +330,6 @@ Partial Class StockRequestPanel_InventoryCustodian
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents nameSortingBtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents search_textbox As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Guna2HtmlLabel1 As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button

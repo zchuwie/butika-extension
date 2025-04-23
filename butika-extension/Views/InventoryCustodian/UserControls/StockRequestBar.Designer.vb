@@ -115,10 +115,10 @@ Partial Class StockRequestBar
         requestedDate.BackColor = Color.Transparent
         requestedDate.Font = New Font("Century Gothic", 8.5F, FontStyle.Bold)
         requestedDate.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        requestedDate.Location = New Point(531, 20)
+        requestedDate.Location = New Point(517, 20)
         requestedDate.Margin = New Padding(3, 2, 3, 2)
         requestedDate.Name = "requestedDate"
-        requestedDate.Size = New Size(79, 20)
+        requestedDate.Size = New Size(107, 20)
         requestedDate.TabIndex = 3
         requestedDate.Text = "2999/12/31"
         ' 
