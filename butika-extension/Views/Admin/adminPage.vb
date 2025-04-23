@@ -50,7 +50,13 @@ Partial Public Class adminPage
     End Sub
 
     ' Event handler for adminExit button click
-    Private Sub adminExit_Click(sender As Object, e As EventArgs) Handles adminExit.Click
+    Private Async Sub adminExit_Click(sender As Object, e As EventArgs) Handles adminExit.Click
+        Dim userID As Integer = SessionInfo.CurrentUserID
+        Dim userType As Integer = SessionInfo.CurrentUserType
+
+        Await AdminRepository.LogLogoutActivity(userID, userType)
+        SessionInfo.CurrentUserID = 0
+        SessionInfo.CurrentUserType = 0
         Dim loginForm As New Login()
         loginForm.Show()
         Me.Close()

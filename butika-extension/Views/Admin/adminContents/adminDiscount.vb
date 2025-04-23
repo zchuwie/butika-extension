@@ -16,15 +16,16 @@ Public Class adminDiscounts
 
     Private Sub discountTable_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles discountTable.CellClick
         If e.RowIndex >= 0 Then
-
             Dim selectedRow As DataGridViewRow = discountTable.Rows(e.RowIndex)
             Dim fullName As String = If(selectedRow.Cells("Fullname").Value IsNot DBNull.Value, selectedRow.Cells("Fullname").Value.ToString(), "N/A")
             Dim birthDate As DateTime
             Dim selectedId As Integer = Convert.ToInt32(selectedRow.Cells("ID").Value)
-            Dim isVerified As Object = selectedRow.Cells("IsVerified").Value
+            Dim Status As Object = selectedRow.Cells("Status").Value
+            Dim verifiedDateValue As Object = selectedRow.Cells("Verified_Date").Value
 
             Dim userId As String = discountTable.Rows(e.RowIndex).Cells("ID").Value.ToString()
 
+            ' Load image logic
             Dim repo As New AdminRepository()
             Dim relativePath As String = repo.GetVerificationImagePath(userId)
 
@@ -55,14 +56,15 @@ Public Class adminDiscounts
                 verificationImage.Visible = False
             End If
 
+            ' Set UI labels
+            id.Text = selectedId.ToString()
+            namedata.Text = fullName
+
             If selectedRow.Cells("Birth_Date").Value IsNot DBNull.Value Then
                 birthDate = Convert.ToDateTime(selectedRow.Cells("Birth_Date").Value)
             Else
                 birthDate = DateTime.MinValue
             End If
-
-            id.Text = selectedId.ToString()
-            namedata.Text = fullName
 
             If birthDate <> DateTime.MinValue Then
                 Dim userage As Integer = CalculateAge(birthDate)
@@ -71,19 +73,34 @@ Public Class adminDiscounts
                 age.Text = "N/A"
             End If
 
-            If isVerified Is DBNull.Value OrElse isVerified Is Nothing Then
+            ' Status + verified date visibility
+            If Status Is DBNull.Value OrElse Status Is Nothing Then
                 statusBtn.Text = "Unknown"
                 statusBtn.FillColor = ColorTranslator.FromHtml("#666666")
                 statusBtn.Enabled = False
+                verifiedText.Visible = False
+                verifiedDate.Visible = False
             Else
-                If Convert.ToBoolean(isVerified) Then
+                If Convert.ToBoolean(Status) Then
                     statusBtn.Text = "Verified"
                     statusBtn.FillColor = ColorTranslator.FromHtml("#6B9C89")
                     statusBtn.Enabled = True
+
+                    ' Set verified date if available
+                    If verifiedDateValue IsNot DBNull.Value Then
+                        verifiedText.Visible = True
+                        verifiedDate.Visible = True
+                        verifiedDate.Text = Convert.ToDateTime(verifiedDateValue).ToString("MMMM dd, yyyy")
+                    Else
+                        verifiedText.Visible = False
+                        verifiedDate.Visible = False
+                    End If
                 Else
                     statusBtn.Text = "Not Verified"
                     statusBtn.FillColor = ColorTranslator.FromHtml("#E44040")
                     statusBtn.Enabled = True
+                    verifiedText.Visible = False
+                    verifiedDate.Visible = False
                 End If
             End If
         End If
@@ -123,31 +140,28 @@ Public Class adminDiscounts
     End Sub
 
     Private Async Sub statusBtn_Click(sender As Object, e As EventArgs) Handles statusBtn.Click
-
         Dim userId As Integer = Convert.ToInt32(id.Text)
-
         Dim currentStatus As Boolean = Await AdminRepository.GetUserVerificationStatusAsync(userId)
 
-        Dim newStatus As Boolean = Not currentStatus
-
-        Await AdminRepository.UpdateUserVerificationStatusAsync(userId, newStatus)
-
-        If newStatus Then
+        If Not currentStatus Then
             Dim result As DialogResult = MessageBox.Show("Do you want to verify this customer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = DialogResult.Yes Then
+                Dim currentDate As DateTime = DateTime.Now
+
+                Await AdminRepository.UpdateUserVerificationStatusWithDateAsync(userId, True, currentDate)
+                Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, $"verified user | ID:{userId}")
+
+                ' UI updates
+                statusBtn.Enabled = False
                 statusBtn.Text = "Verified"
                 statusBtn.FillColor = ColorTranslator.FromHtml("#6B9C89")
-            End If
-        Else
-            Dim result As DialogResult = MessageBox.Show("Do you want to remove verification of this customer?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If result = DialogResult.Yes Then
-                statusBtn.Text = "Not Verified"
-                statusBtn.FillColor = ColorTranslator.FromHtml("#E44040")
+                verifiedText.Visible = True
+                verifiedDate.Visible = True
+                verifiedDate.Text = currentDate.ToString("MMMM dd, yyyy")
+
+                Await ReloadCustomerDataAsync()
             End If
         End If
-
-
-        Await ReloadCustomerDataAsync()
     End Sub
 
 

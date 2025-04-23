@@ -3,6 +3,8 @@ Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Login
     Dim accountRep As New AccountRepository()
+    Dim userId = SessionInfo.CurrentUserID
+    Dim userType = SessionInfo.CurrentUserType
 
     Private Async Sub loginBtn_Click(sender As Object, e As EventArgs) Handles loginBtn.Click
         Await LoginApproval()
@@ -26,60 +28,48 @@ Public Class Login
 
     Private Async Function LoginApproval() As Task
         loginBtn.Enabled = False
+
         Try
             Dim username As String = usernameTxtBox.Text
             Dim password As String = passwordTxtBox.Text
-
-            ' Get both user_id and userType from the Login function as a tuple
             Dim loginResult = Await accountRep.Login(username, password)
             Dim userID As Integer = loginResult.Item1
             Dim userType As Integer = loginResult.Item2
 
-            ' Check userID and route to respective pages based on userType
             If userID > 0 Then
-                If userType = 1 Then
-                    ' Admin user
-                    Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType)
-                    Dim dashboard As New adminPage()
-                    dashboard.Show()
-                    Me.Hide()
-                    loginBtn.Enabled = True
-                ElseIf userType = 2 Then
-                    ' Pharma user
-                    Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType)
-                    Dim dashboard As New pharmaMainPage()
-                    dashboard.Show()
-                    Me.Hide()
-                    loginBtn.Enabled = True
-                ElseIf userType = 3 Then
-                    ' Inventory Custodian user
-                    Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType)
-                    Dim dashboard As New InventoryCustodian_MainPanel()
-                    dashboard.Show()
-                    Me.Hide()
-                    loginBtn.Enabled = True
-                Else
-                    ' Regular user
-                    Dim activityLogged As Boolean = Await AdminRepository.AddActivityLogAsync(userID, userType)
-                    If activityLogged Then
-                        Dim customer As New MainPage(userID)
-                        customer.Show()
-                        Me.Hide()
-                        loginBtn.Enabled = True
-                    End If
-                End If
+                SessionInfo.CurrentUserID = userID
+                SessionInfo.CurrentUserType = userType
+
+                Await AdminRepository.AddActivityLogAsync(userID, userType)
+
+                Select Case userType
+                    Case 1
+                        Dim adminForm As New adminPage()
+                        adminForm.Show()
+                    Case 2
+                        Dim pharmaForm As New pharmaMainPage()
+                        pharmaForm.Show()
+                    Case 3
+                        Dim inventoryForm As New InventoryCustodian_MainPanel()
+                        inventoryForm.Show()
+                    Case Else
+                        Dim customerForm As New MainPage(userID)
+                        customerForm.Show()
+                End Select
+
+                Me.Hide()
             Else
-                ' Invalid credentials
-                MessageBox.Show("Your username or password is incorrect", "Incorrect", MessageBoxButtons.OK)
+                MessageBox.Show("Your username or password is incorrect.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 usernameTxtBox.Clear()
                 passwordTxtBox.Clear()
-                loginBtn.Enabled = True
             End If
+
         Catch ex As Exception
-            Debug.WriteLine("Error during login: " & ex.Message)
-            MessageBox.Show("An error occurred. Please try again.", "Error", MessageBoxButtons.OK)
+            MessageBox.Show("An error occurred during login: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
             loginBtn.Enabled = True
         End Try
     End Function
+
 
 End Class

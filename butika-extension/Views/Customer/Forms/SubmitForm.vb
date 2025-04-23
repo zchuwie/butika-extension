@@ -100,6 +100,8 @@ Public Class SubmitForm
         End If
 
         MessageBox.Show("You have successfully submitted a form. Please wait for the pharmacist to verify your medicines.", "Success", MessageBoxButtons.OK)
+        Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "Customer submitted a form")
+
         Me.Close()
 
     End Sub

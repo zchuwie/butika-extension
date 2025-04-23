@@ -205,10 +205,12 @@ Public Class CartPage
 
         If MessageBox.Show("You have successfully checked out the item. Do you want to see the receipt?", "Checkout Successful", MessageBoxButtons.OKCancel) = DialogResult.OK Then
             Dim receipt As New Receipt(account)
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "Customer checked out medicine")
             receipt.PdfReceipt(getDataReceipt, totalItem, transactionID, account)
             receipt.OpenPDF()
         Else
             MessageBox.Show("Have a good day ahead!", "Success", MessageBoxButtons.OK)
+            Await AdminRepository.AddActivityLogAsync(SessionInfo.CurrentUserID, SessionInfo.CurrentUserType, "Customer checked out medicine")
         End If
     End Sub
 

@@ -231,6 +231,9 @@ Public Class ViewMedicineBar
 
         MessageBox.Show("Medicine updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Me.DialogResult = DialogResult.OK
+        Dim userID As Integer = SessionInfo.CurrentUserID
+        Dim userType As Integer = SessionInfo.CurrentUserType
+        Await AdminRepository.LogMedicineUpdateActivity(userID, userType, MedicineInfo.MedicineID)
         reloadData()
     End Sub
 
@@ -249,6 +252,9 @@ Public Class ViewMedicineBar
 
             If arcSuccess Then
                 MessageBox.Show("Medicine archived successfully!")
+                Dim userID As Integer = SessionInfo.CurrentUserID
+                Dim userType As Integer = SessionInfo.CurrentUserType
+                Dim activityLogged As Boolean = Await AdminRepository.LogMedicineArchiveActivity(userID, userType, medId)
             Else
                 MessageBox.Show("Failed to archive medicine.")
             End If

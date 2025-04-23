@@ -106,8 +106,6 @@ Public Class adminDashboard
         stockRequestStatusPie.Update()
     End Function
 
-
-
     Public Sub ShowFormInPanel(form As Form)
         adminPage.ShowFormInPanel(form)
     End Sub
