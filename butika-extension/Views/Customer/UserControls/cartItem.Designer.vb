@@ -22,8 +22,8 @@ Partial Class cartItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         medicineImageBox = New PictureBox()
         indicatorPanel = New Guna.UI2.WinForms.Guna2Panel()
         Price = New Label()
@@ -33,6 +33,7 @@ Partial Class cartItem
         Manufacturer = New Label()
         Quantity = New Label()
         isSent = New Label()
+        unavailableLbl = New Label()
         CType(medicineImageBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -51,13 +52,13 @@ Partial Class cartItem
         ' 
         indicatorPanel.BackColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
         indicatorPanel.BorderRadius = 20
-        CustomizableEdges3.BottomRight = False
-        CustomizableEdges3.TopRight = False
-        indicatorPanel.CustomizableEdges = CustomizableEdges3
+        CustomizableEdges1.BottomRight = False
+        CustomizableEdges1.TopRight = False
+        indicatorPanel.CustomizableEdges = CustomizableEdges1
         indicatorPanel.Dock = DockStyle.Left
         indicatorPanel.Location = New Point(0, 0)
         indicatorPanel.Name = "indicatorPanel"
-        indicatorPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        indicatorPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
         indicatorPanel.Size = New Size(54, 136)
         indicatorPanel.TabIndex = 1
         ' 
@@ -143,17 +144,30 @@ Partial Class cartItem
         isSent.AutoSize = True
         isSent.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         isSent.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        isSent.Location = New Point(307, 9)
+        isSent.Location = New Point(287, 10)
         isSent.Name = "isSent"
         isSent.Size = New Size(220, 15)
         isSent.TabIndex = 10
         isSent.Text = "This item has already sent a prescription"
         isSent.Visible = False
         ' 
+        ' unavailableLbl
+        ' 
+        unavailableLbl.AutoSize = True
+        unavailableLbl.Font = New Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        unavailableLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        unavailableLbl.Location = New Point(318, 10)
+        unavailableLbl.Name = "unavailableLbl"
+        unavailableLbl.Size = New Size(167, 15)
+        unavailableLbl.TabIndex = 11
+        unavailableLbl.Text = "Product currently unavailable"
+        unavailableLbl.Visible = False
+        ' 
         ' cartItem
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        Controls.Add(unavailableLbl)
         Controls.Add(isSent)
         Controls.Add(Quantity)
         Controls.Add(Manufacturer)
@@ -179,5 +193,6 @@ Partial Class cartItem
     Friend WithEvents Manufacturer As Label
     Friend WithEvents Quantity As Label
     Friend WithEvents isSent As Label
+    Friend WithEvents unavailableLbl As Label
 
 End Class

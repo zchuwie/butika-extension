@@ -183,6 +183,7 @@ Public Class CartRepository
                     med.drug_brand AS MedicineBrand,        
                     med.drug_manufacturer AS MedicineManufacturer,
                     med.drug_description AS MedicineDescription,
+                    med.isArchived AS MedicineArchived,
                     med.drug_dosage AS MedicineDosage,
                     med.drug_price AS MedicinePrice,
                     med.drug_image AS MedicineImageName
@@ -230,7 +231,7 @@ Public Class CartRepository
                     med.drug_image AS MedicineImageName
                 FROM usersCart cart
                 LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                WHERE cart.user_id = @user_id AND cart.isApproved = @isApproved AND cart.isDeleted = 0"
+                WHERE cart.user_id = @user_id AND cart.isApproved = @isApproved AND cart.isDeleted = 0 AND med.isArchived = 0"
 
             Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
             sql,
@@ -269,7 +270,7 @@ Public Class CartRepository
                     med.drug_price AS MedicinePrice
                 FROM usersCart cart
                 LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
-                WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isDeleted = 0"
+                WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isDeleted = 0 AND cart.isApproved != 2"
 
             Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
             sql,
@@ -371,6 +372,7 @@ Public Class CartRepository
                             med.drug_id AS MedicineID,
                             med.drug_name AS MedicineName,
                             med.drug_brand AS MedicineBrand,
+                            med.isArchived AS MedicineArchived,
                             med.drug_price AS MedicinePrice                            
                         FROM usersCart cart
                         LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
@@ -467,7 +469,7 @@ Public Class CartRepository
             Try
                 Await conn.OpenAsync()
 
-                Dim query As String = "UPDATE usersCart SET prescription_id = @prescription_id WHERE isTicked = 1 AND user_id = @user_id AND isDeleted = 0"
+                Dim query As String = "UPDATE usersCart SET prescription_id = @prescription_id WHERE isTicked = 1 AND user_id = @user_id AND isDeleted = 0 AND prescription_id = 0"
 
                 ' Execute the query using Dapper
                 Await conn.ExecuteAsync(query, New With {.prescription_id = prescriptionID, .user_id = account.UserID})

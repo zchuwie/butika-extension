@@ -337,7 +337,7 @@ Partial Class HomePage
         ' PictureBox4
         ' 
         PictureBox4.Image = My.Resources.Resources.dtransactions_icon1
-        PictureBox4.Location = New Point(1054, 28)
+        PictureBox4.Location = New Point(1003, 28)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(31, 32)
         PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
@@ -350,7 +350,7 @@ Partial Class HomePage
         usernameLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         usernameLbl.Location = New Point(60, 28)
         usernameLbl.Name = "usernameLbl"
-        usernameLbl.Size = New Size(196, 32)
+        usernameLbl.Size = New Size(372, 32)
         usernameLbl.TabIndex = 15
         usernameLbl.Text = "Hello, user!"
         usernameLbl.TextAlign = ContentAlignment.MiddleLeft
@@ -359,9 +359,9 @@ Partial Class HomePage
         ' 
         amountLbl.Font = New Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         amountLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        amountLbl.Location = New Point(1091, 28)
+        amountLbl.Location = New Point(1040, 28)
         amountLbl.Name = "amountLbl"
-        amountLbl.Size = New Size(96, 32)
+        amountLbl.Size = New Size(144, 32)
         amountLbl.TabIndex = 16
         amountLbl.Text = "PHP 0.00"
         amountLbl.TextAlign = ContentAlignment.MiddleLeft
@@ -370,9 +370,9 @@ Partial Class HomePage
         ' 
         originalPrice.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold Or FontStyle.Strikeout, GraphicsUnit.Point, CByte(0))
         originalPrice.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        originalPrice.Location = New Point(1091, 60)
+        originalPrice.Location = New Point(1040, 60)
         originalPrice.Name = "originalPrice"
-        originalPrice.Size = New Size(96, 32)
+        originalPrice.Size = New Size(144, 32)
         originalPrice.TabIndex = 17
         originalPrice.Text = "PHP 0.00"
         originalPrice.TextAlign = ContentAlignment.MiddleLeft

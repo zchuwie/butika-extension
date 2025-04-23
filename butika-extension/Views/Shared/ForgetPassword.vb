@@ -29,12 +29,14 @@ Public Class ForgetPassword
         If Not isEmailValid Then
             invalidEmailLabel.Visible = True
             Debug.WriteLine("Email is not valid input")
+            getVerificationBtn.Text = "Get a verification code"
             getVerificationBtn.Enabled = True
             Return
         End If
 
         If Not doesEmailExists Then
             MessageBox.Show("You have no record of your email in the database.")
+            getVerificationBtn.Text = "Get a verification code"
             getVerificationBtn.Enabled = True
             Return
         End If

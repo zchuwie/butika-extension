@@ -25,11 +25,11 @@ Public Class MedicinePageView
         Stock.Text = medicine.MedicineStock
 
         If account.IsVerified = True Then
-            originalPrice.Text = "₱" + medicine.MedicinePrice.ToString()
-            Price.Text = "₱" + medicine.DiscountedPrice.ToString()
+            originalPrice.Text = "₱" + medicine.MedicinePrice.ToString("F2")
+            Price.Text = "₱" + medicine.DiscountedPrice.ToString("F2")
             originalPrice.Visible = True
         Else
-            Price.Text = "₱" + medicine.MedicinePrice.ToString()
+            Price.Text = "₱" + medicine.MedicinePrice.ToString("F2")
 
         End If
 
@@ -86,10 +86,10 @@ Public Class MedicinePageView
         Quantity.Text = medicineQuantity.ToString()
 
         If account.IsVerified = True Then
-            Price.Text = "₱" & Convert.ToString(medicine.DiscountedPrice * medicineQuantity)
-            originalPrice.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+            Price.Text = "₱" & (medicine.DiscountedPrice * medicineQuantity).ToString("F2")
+            originalPrice.Text = "₱" & (medicine.MedicinePrice * medicineQuantity).ToString("F2")
         Else
-            Price.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+            Price.Text = "₱" & (medicine.MedicinePrice * medicineQuantity).ToString("F2")
         End If
 
     End Sub
@@ -100,10 +100,10 @@ Public Class MedicinePageView
             Quantity.Text = medicineQuantity.ToString()
 
             If account.IsVerified = True Then
-                Price.Text = "₱" & Convert.ToString(medicine.DiscountedPrice * medicineQuantity)
-                originalPrice.Text = "₱" & Convert.ToString(medicine.MedicinePrice * medicineQuantity)
+                Price.Text = "₱" & (medicine.DiscountedPrice * medicineQuantity).ToString("F2")
+                originalPrice.Text = "₱" & (medicine.MedicinePrice * medicineQuantity).ToString("F2")
             Else
-                Price.Text = "₱" & Convert.ToString(medicine.DiscountedPrice * medicineQuantity)
+                Price.Text = "₱" & (medicine.DiscountedPrice * medicineQuantity).ToString("F2")
             End If
 
         Else

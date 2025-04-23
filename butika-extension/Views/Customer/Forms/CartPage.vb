@@ -85,12 +85,12 @@ Public Class CartPage
         End If
 
         If account.IsVerified = True Then
-            TotalPriceTxt.Text = "₱" & getTotalSumOfItems(cartOfSelectedItem, True).ToString()
-            Dim amountSaved As Decimal = getTotalSumOfItems(cartOfSelectedItem, False) - getTotalSumOfItems(cartOfSelectedItem, True).ToString()
+            TotalPriceTxt.Text = "₱" & getTotalSumOfItems(cartOfSelectedItem, True).ToString("F2")
+            Dim amountSaved As Decimal = getTotalSumOfItems(cartOfSelectedItem, False) - getTotalSumOfItems(cartOfSelectedItem, True).ToString("F2")
             originalPrice.Text = "You have saved " + "₱ " & amountSaved
             originalPrice.Visible = True
         Else
-            TotalPriceTxt.Text = "₱" & getTotalSumOfItems(cartOfSelectedItem, False).ToString()
+            TotalPriceTxt.Text = "₱" & getTotalSumOfItems(cartOfSelectedItem, False).ToString("F2")
         End If
 
     End Sub
@@ -188,6 +188,11 @@ Public Class CartPage
         Dim cartInfoInCheckout As List(Of Cart) = Await cartRepo.GetCartInfoForCheckOutPanel()
         If Not ValidateCartSelection(cartInfoInCheckout) Then Exit Sub
 
+        If HasArchivedMedicine(cartInfoInCheckout) Then
+            CheckOutBtnText(False)
+            Return
+        End If
+
         If Await HasPendingPrescriptions(cartInfoInCheckout, cartRepo) Then
             CheckOutBtnText(False)
             Return
@@ -247,6 +252,18 @@ Public Class CartPage
                 Return True
             End If
         End If
+        Return False
+    End Function
+
+    Private Function HasArchivedMedicine(cartItems As List(Of Cart)) As Boolean
+        If cartItems.Any(Function(item) item.Medicine.MedicineArchived = 1) Then
+            MessageBox.Show(
+             "You have checked out an item that has been currrently unavailable. You can remove it or wait for it to become available",
+             "Product Currently Unavaialble",
+             MessageBoxButtons.OK)
+            Return True
+        End If
+
         Return False
     End Function
 
@@ -325,14 +342,24 @@ Public Class CartPage
 
     Private Async Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
         Dim cartRepo As New CartRepository(account)
-        Dim isDeleted = Await cartRepo.deleteTickedItemFromUsersCart()
 
-        If Not isDeleted Then
-            MessageBox.Show("An error occured. Try again", "Uh oh")
-            Return
+        Dim result As DialogResult = MessageBox.Show("Do you want to approve the prescription?", "Confirmation",
+                                                     MessageBoxButtons.YesNo)
+
+        If result = DialogResult.Yes Then
+            Dim isDeleted = Await cartRepo.deleteTickedItemFromUsersCart()
+
+            If Not isDeleted Then
+                MessageBox.Show("An error occured. Try again", "Uh oh")
+                Return
+            End If
+
+            MessageBox.Show("Items have been deleted")
+            CartPage_Load(sender, e)
+        Else
+            MessageBox.Show("Deletion cancelled.")
         End If
 
-        MessageBox.Show("Items have been deleted")
-        CartPage_Load(sender, e)
+
     End Sub
 End Class

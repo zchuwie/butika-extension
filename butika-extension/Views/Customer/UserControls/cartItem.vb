@@ -11,7 +11,7 @@ Public Class cartItem
     Public Sub Initialize(cart As Cart)
         Me.cart = cart
 
-        isSent.Visible = If(cart.PrescriptionID <> 0, True, False)
+        SetTextIndicator()
 
         MedicineName.Text = cart.Medicine.FormattedMedicineName
         Manufacturer.Text = cart.Medicine.MedicineManufacturer
@@ -20,11 +20,11 @@ Public Class cartItem
         SelectItem.Checked = cart.isTicked
 
         If account.IsVerified = 1 Then
-            Total.Text = "₱" & (cart.Medicine.DiscountedPrice * cart.Quantity).ToString()
-            Price.Text = "₱" & cart.Medicine.DiscountedPrice.ToString()
+            Total.Text = "₱" & (cart.Medicine.DiscountedPrice * cart.Quantity).ToString("F2")
+            Price.Text = "₱" & cart.Medicine.DiscountedPrice.ToString("F2")
         Else
-            Total.Text = "₱" & (cart.Medicine.MedicinePrice * cart.Quantity).ToString()
-            Price.Text = "₱" & cart.Medicine.MedicinePrice.ToString()
+            Total.Text = "₱" & (cart.Medicine.MedicinePrice * cart.Quantity).ToString("F2")
+            Price.Text = "₱" & cart.Medicine.MedicinePrice.ToString("F2")
         End If
 
 
@@ -39,6 +39,11 @@ Public Class cartItem
     End Sub
 
     Private Sub CheckIndicatorPanel()
+        If cart.Medicine.MedicineArchived = 1 Then
+            indicatorPanel.BackColor = Color.DarkGray
+            Return
+        End If
+
         If cart.isApproved = 0 Then
             indicatorPanel.BackColor = Color.Yellow
         ElseIf cart.isApproved = 1 Then
@@ -47,4 +52,16 @@ Public Class cartItem
             indicatorPanel.BackColor = Color.Red
         End If
     End Sub
+
+    Private Sub SetTextIndicator()
+        If cart.Medicine.MedicineArchived = 1 Then
+            unavailableLbl.Visible = True
+            isSent.Visible = False
+            Exit Sub
+        End If
+
+        unavailableLbl.Visible = False
+        isSent.Visible = (cart.PrescriptionID <> 0)
+    End Sub
+
 End Class

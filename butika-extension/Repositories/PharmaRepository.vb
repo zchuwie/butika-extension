@@ -39,6 +39,7 @@ Public Class PharmaRepository
 
             Dim query = "
             SELECT 
+                t.transaction_date AS TransactionDate,
                 uc.transaction_id AS TransactionID,
                 med.drug_id AS MedicineID,
                 med.drug_name AS MedicineName,
@@ -46,7 +47,8 @@ Public Class PharmaRepository
                 med.drug_price AS MedicinePrice,
                 uc.quantity AS Quantity,
                 ua.user_id AS UserID,
-                ua.isVerified AS IsVerified
+                ua.isVerified AS IsVerified,
+                ua.verifiedDate AS VerifiedDate
             FROM userscheckout uc
             LEFT JOIN drug_inventory med ON uc.drug_id = med.drug_id
             LEFT JOIN usertransaction t ON uc.transaction_id = t.transaction_id
@@ -65,9 +67,6 @@ Public Class PharmaRepository
                 param:=New With {.TransactionID = transactionid},
                 splitOn:="MedicineID,Quantity,UserID"
             )
-
-
-
 
             Return result.ToList()
         End Using
@@ -374,4 +373,25 @@ Public Class PharmaRepository
             Return result.ToList()
         End Using
     End Function
+
+#Region "Dashboard Pharmacy"
+
+    Public Async Function totalTransaction() As Task(Of Integer)
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                Await conn.OpenAsync()
+
+                Dim query As String = "select COUNT(*) from usertransaction"
+                Dim result As Object = Await conn.ExecuteScalarAsync(query)
+
+                Return Convert.ToInt32(result)
+
+            Catch ex As Exception
+                MessageBox.Show("Error while getting the prescription: " & ex.Message)
+                Return 0
+            End Try
+        End Using
+    End Function
+
+#End Region
 End Class

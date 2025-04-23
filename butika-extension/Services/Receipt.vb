@@ -82,8 +82,8 @@ Friend Class Receipt
             End If
             gfx.DrawString($"{item.Medicine.MedicineName}", regtexts, darkgreen, New XRect(col1, tableTop, columnWidth, rowHeight), XStringFormats.TopLeft)
             gfx.DrawString($"{item.Quantity}", regtexts, darkgreen, New XRect(col2, tableTop, col3 - col2, rowHeight), XStringFormats.TopCenter)
-            gfx.DrawString($"{If(account.IsVerified, item.Medicine.DiscountedPrice, item.Medicine.MedicinePrice)}", regtexts, darkgreen, New XRect(col3, tableTop, col4 - col3, rowHeight), XStringFormats.TopCenter)
-            gfx.DrawString($"{If(account.IsVerified, item.Medicine.DiscountedPrice * item.Quantity, item.Medicine.MedicinePrice * item.Quantity)}", regtexts, darkgreen, New XRect(col4, tableTop, 70, rowHeight), XStringFormats.TopRight)
+            gfx.DrawString($"{If(account.IsVerified, item.Medicine.DiscountedPrice.ToString("F2"), item.Medicine.MedicinePrice.ToString("F2"))}", regtexts, darkgreen, New XRect(col3, tableTop, col4 - col3, rowHeight), XStringFormats.TopCenter)
+            gfx.DrawString($"{If(account.IsVerified, (item.Medicine.DiscountedPrice * item.Quantity).ToString("F2"), (item.Medicine.MedicinePrice * item.Quantity).ToString("F2"))}", regtexts, darkgreen, New XRect(col4, tableTop, 70, rowHeight), XStringFormats.TopRight)
 
             tableTop += rowHeight
             itemsOnPage += 1

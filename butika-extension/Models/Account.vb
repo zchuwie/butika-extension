@@ -14,6 +14,8 @@
         Public Property IsVerified As Boolean
         Public Property ImageVerification As String
         Public Property PendingVerify As Integer
+        Public Property VerifiedDate As DateTime?
+
 
     End Class
 End Namespace

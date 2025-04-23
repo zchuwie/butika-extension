@@ -12,7 +12,7 @@ Public Class pharmaDashTransac
         allOrderMeds = Await transacRepo.GetAllOrderMeds(transac.TransactionID)
         Dim totalItem As Decimal = getTotalSumOfItems(allOrderMeds)
         amountLbl.Text = $"Php {totalItem}"
-        dateLbl.Text = transac.TransactionDate
+        dateLbl.Text = transac.TransactionDate.ToString()
         transacIdLbl.Text = transac.TransactionID
         ClickAll()
     End Sub
