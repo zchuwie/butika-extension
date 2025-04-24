@@ -30,8 +30,10 @@ Public Class PrescriptionForm
         ReviewDate.Text = If(prescript.PrescriptReviewDate, "Under Review")
         If prescript.PrescriptionStatus = 1 Then
             Remark.Text = "Approved"
+            Status.Text = "Approved"
         ElseIf prescript.PrescriptionStatus = 2 Then
             Remark.Text = prescript.PrescriptionRemarks
+            Status.Text = "Declined"
         End If
 
     End Sub

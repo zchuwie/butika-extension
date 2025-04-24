@@ -104,7 +104,8 @@ Public Class MedicineRepository
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
                 FROM drug_inventory
-                WHERE drug_name LIKE @drug_name"
+                WHERE drug_name LIKE @drug_name
+                AND drug_stocks != 0 AND expiration_date >= GETDATE() AND isArchived = 0"
             Dim result = Await conn.QueryAsync(Of Medicine)(
                 query,
                 New With {.drug_name = $"{medicine.Trim}%"}

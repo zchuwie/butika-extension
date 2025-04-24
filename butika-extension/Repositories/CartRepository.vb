@@ -397,6 +397,49 @@ Public Class CartRepository
         End Using
     End Function
 
+    Public Async Function GetCartInfoForOverAllTicked() As Task(Of List(Of Cart))
+        Dim cartInfo As New List(Of Cart)()
+
+        Using conn = DatabaseConnection.GetConnection()
+            Try
+                ' Open the connection
+                Await conn.OpenAsync()
+
+                Dim sql As String = "
+                        SELECT 
+                            cart.cart_id AS CartID, 
+                            cart.user_id AS UserID, 
+                            cart.Quantity, 
+                            cart.isTicked, 
+                            cart.isApproved,
+                            med.drug_id AS MedicineID,
+                            med.drug_name AS MedicineName,
+                            med.drug_brand AS MedicineBrand,
+                            med.isArchived AS MedicineArchived,
+                            med.drug_price AS MedicinePrice                            
+                        FROM usersCart cart
+                        LEFT JOIN drug_inventory med ON med.drug_id = cart.drug_id
+                        WHERE cart.user_id = @user_id AND cart.isTicked = 1 AND cart.isDeleted = 0"
+
+                Dim result = Await conn.QueryAsync(Of Cart, Medicine, Cart)(
+                    sql,
+                    Function(cart, medicine)
+                        cart.Medicine = medicine
+                        Return cart
+                    End Function,
+                    param:=New With {.user_id = account.UserID},
+                    splitOn:="MedicineID"
+                )
+                cartInfo = result.ToList()
+
+                Return cartInfo
+            Catch ex As Exception
+                Debug.WriteLine("Error while retrieving cart info: " & ex.Message)
+                Return Nothing
+            End Try
+        End Using
+    End Function
+
     Public Async Function InsertIndividualTransactionToCheckout(transactionID As String, userCheckouts As List(Of Cart)) As Task(Of Boolean)
         Using conn = DatabaseConnection.GetConnection()
             Try

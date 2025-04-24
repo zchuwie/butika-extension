@@ -40,12 +40,8 @@ Partial Class MedicinePage
         OTCUnderline = New Guna.UI2.WinForms.Guna2Panel()
         PrescUnderline = New Guna.UI2.WinForms.Guna2Panel()
         MedIcon = New PictureBox()
-        SearchIcon = New PictureBox()
-        Information = New PictureBox()
         MedicineDisplayPanel = New FlowLayoutPanel()
         CType(MedIcon, ComponentModel.ISupportInitialize).BeginInit()
-        CType(SearchIcon, ComponentModel.ISupportInitialize).BeginInit()
-        CType(Information, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Medicines
@@ -178,26 +174,6 @@ Partial Class MedicinePage
         MedIcon.TabIndex = 9
         MedIcon.TabStop = False
         ' 
-        ' SearchIcon
-        ' 
-        SearchIcon.Image = My.Resources.Resources.search
-        SearchIcon.Location = New Point(1132, 97)
-        SearchIcon.Name = "SearchIcon"
-        SearchIcon.Size = New Size(17, 17)
-        SearchIcon.SizeMode = PictureBoxSizeMode.Zoom
-        SearchIcon.TabIndex = 14
-        SearchIcon.TabStop = False
-        ' 
-        ' Information
-        ' 
-        Information.Image = My.Resources.Resources.information
-        Information.Location = New Point(1167, 99)
-        Information.Name = "Information"
-        Information.Size = New Size(17, 17)
-        Information.SizeMode = PictureBoxSizeMode.Zoom
-        Information.TabIndex = 16
-        Information.TabStop = False
-        ' 
         ' MedicineDisplayPanel
         ' 
         MedicineDisplayPanel.AutoScroll = True
@@ -215,8 +191,6 @@ Partial Class MedicinePage
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(1220, 720)
         Controls.Add(MedicineDisplayPanel)
-        Controls.Add(Information)
-        Controls.Add(SearchIcon)
         Controls.Add(PrescUnderline)
         Controls.Add(OTCUnderline)
         Controls.Add(AllMedsUnderline)
@@ -233,8 +207,6 @@ Partial Class MedicinePage
         StartPosition = FormStartPosition.CenterScreen
         Text = "MedicinePage"
         CType(MedIcon, ComponentModel.ISupportInitialize).EndInit()
-        CType(SearchIcon, ComponentModel.ISupportInitialize).EndInit()
-        CType(Information, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -248,8 +220,6 @@ Partial Class MedicinePage
     Friend WithEvents OTCUnderline As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents PrescUnderline As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents MedIcon As PictureBox
-    Friend WithEvents SearchIcon As PictureBox
-    Friend WithEvents Information As PictureBox
     Friend WithEvents ManuCombo As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents MedicineDisplayPanel As FlowLayoutPanel
     Friend WithEvents MedItem1 As medItem
