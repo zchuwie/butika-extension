@@ -53,7 +53,7 @@ Partial Class MedicinePage
         Medicines.AutoSize = True
         Medicines.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         Medicines.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Medicines.Location = New Point(121, 22)
+        Medicines.Location = New Point(96, 22)
         Medicines.Name = "Medicines"
         Medicines.Size = New Size(132, 28)
         Medicines.TabIndex = 0
@@ -64,7 +64,7 @@ Partial Class MedicinePage
         MedSubtext.AutoSize = True
         MedSubtext.Font = New Font("Century Gothic", 9.75F)
         MedSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedSubtext.Location = New Point(122, 52)
+        MedSubtext.Location = New Point(97, 52)
         MedSubtext.Name = "MedSubtext"
         MedSubtext.Size = New Size(222, 17)
         MedSubtext.TabIndex = 1
@@ -76,7 +76,7 @@ Partial Class MedicinePage
         AllMeds.Cursor = Cursors.Hand
         AllMeds.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         AllMeds.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        AllMeds.Location = New Point(55, 98)
+        AllMeds.Location = New Point(39, 103)
         AllMeds.Name = "AllMeds"
         AllMeds.Size = New Size(64, 16)
         AllMeds.TabIndex = 2
@@ -87,8 +87,8 @@ Partial Class MedicinePage
         OverTheCounter.AutoSize = True
         OverTheCounter.Cursor = Cursors.Hand
         OverTheCounter.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        OverTheCounter.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        OverTheCounter.Location = New Point(131, 98)
+        OverTheCounter.ForeColor = Color.Gray
+        OverTheCounter.Location = New Point(115, 103)
         OverTheCounter.Name = "OverTheCounter"
         OverTheCounter.Size = New Size(119, 16)
         OverTheCounter.TabIndex = 3
@@ -99,8 +99,8 @@ Partial Class MedicinePage
         NeedsPrescription.AutoSize = True
         NeedsPrescription.Cursor = Cursors.Hand
         NeedsPrescription.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
-        NeedsPrescription.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        NeedsPrescription.Location = New Point(260, 98)
+        NeedsPrescription.ForeColor = Color.Gray
+        NeedsPrescription.Location = New Point(245, 102)
         NeedsPrescription.Name = "NeedsPrescription"
         NeedsPrescription.Size = New Size(128, 16)
         NeedsPrescription.TabIndex = 4
@@ -121,7 +121,7 @@ Partial Class MedicinePage
         MedSearch.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         MedSearch.Font = New Font("Century Gothic", 9.75F)
         MedSearch.HoverState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
-        MedSearch.Location = New Point(852, 98)
+        MedSearch.Location = New Point(860, 93)
         MedSearch.Name = "MedSearch"
         MedSearch.PlaceholderForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         MedSearch.PlaceholderText = "Search"
@@ -135,7 +135,7 @@ Partial Class MedicinePage
         AllMedsUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllMedsUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AllMedsUnderline.CustomizableEdges = CustomizableEdges3
-        AllMedsUnderline.Location = New Point(55, 115)
+        AllMedsUnderline.Location = New Point(39, 120)
         AllMedsUnderline.Name = "AllMedsUnderline"
         AllMedsUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges4
         AllMedsUnderline.Size = New Size(62, 4)
@@ -147,7 +147,8 @@ Partial Class MedicinePage
         OTCUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OTCUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         OTCUnderline.CustomizableEdges = CustomizableEdges5
-        OTCUnderline.Location = New Point(133, 115)
+        OTCUnderline.ForeColor = Color.Gray
+        OTCUnderline.Location = New Point(117, 120)
         OTCUnderline.Name = "OTCUnderline"
         OTCUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges6
         OTCUnderline.Size = New Size(115, 4)
@@ -159,7 +160,8 @@ Partial Class MedicinePage
         PrescUnderline.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PrescUnderline.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         PrescUnderline.CustomizableEdges = CustomizableEdges7
-        PrescUnderline.Location = New Point(264, 116)
+        PrescUnderline.ForeColor = Color.Gray
+        PrescUnderline.Location = New Point(249, 120)
         PrescUnderline.Name = "PrescUnderline"
         PrescUnderline.ShadowDecoration.CustomizableEdges = CustomizableEdges8
         PrescUnderline.Size = New Size(120, 4)
@@ -169,9 +171,9 @@ Partial Class MedicinePage
         ' MedIcon
         ' 
         MedIcon.Image = My.Resources.Resources.medIcon
-        MedIcon.Location = New Point(49, 12)
+        MedIcon.Location = New Point(24, 12)
         MedIcon.Name = "MedIcon"
-        MedIcon.Size = New Size(67, 64)
+        MedIcon.Size = New Size(64, 64)
         MedIcon.SizeMode = PictureBoxSizeMode.Zoom
         MedIcon.TabIndex = 9
         MedIcon.TabStop = False
@@ -179,7 +181,7 @@ Partial Class MedicinePage
         ' SearchIcon
         ' 
         SearchIcon.Image = My.Resources.Resources.search
-        SearchIcon.Location = New Point(1112, 102)
+        SearchIcon.Location = New Point(1132, 97)
         SearchIcon.Name = "SearchIcon"
         SearchIcon.Size = New Size(17, 17)
         SearchIcon.SizeMode = PictureBoxSizeMode.Zoom
@@ -189,7 +191,7 @@ Partial Class MedicinePage
         ' Information
         ' 
         Information.Image = My.Resources.Resources.information
-        Information.Location = New Point(1147, 104)
+        Information.Location = New Point(1167, 99)
         Information.Name = "Information"
         Information.Size = New Size(17, 17)
         Information.SizeMode = PictureBoxSizeMode.Zoom
@@ -200,10 +202,10 @@ Partial Class MedicinePage
         ' 
         MedicineDisplayPanel.AutoScroll = True
         MedicineDisplayPanel.BorderStyle = BorderStyle.FixedSingle
-        MedicineDisplayPanel.Location = New Point(49, 132)
+        MedicineDisplayPanel.Location = New Point(24, 146)
         MedicineDisplayPanel.Name = "MedicineDisplayPanel"
         MedicineDisplayPanel.Padding = New Padding(10)
-        MedicineDisplayPanel.Size = New Size(1121, 549)
+        MedicineDisplayPanel.Size = New Size(1173, 562)
         MedicineDisplayPanel.TabIndex = 0
         ' 
         ' MedicinePage

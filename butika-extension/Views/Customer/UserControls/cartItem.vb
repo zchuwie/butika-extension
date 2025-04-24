@@ -40,16 +40,16 @@ Public Class cartItem
 
     Private Sub CheckIndicatorPanel()
         If cart.Medicine.MedicineArchived = 1 Then
-            indicatorPanel.BackColor = Color.DarkGray
+            indicatorPanel.FillColor = Color.DarkGray
             Return
         End If
 
         If cart.isApproved = 0 Then
-            indicatorPanel.BackColor = Color.Yellow
+            indicatorPanel.FillColor = Color.Yellow
         ElseIf cart.isApproved = 1 Then
-            indicatorPanel.BackColor = Color.Green
+            indicatorPanel.FillColor = Color.Green
         ElseIf cart.isApproved = 2 Then
-            indicatorPanel.BackColor = Color.Red
+            indicatorPanel.FillColor = Color.Red
         End If
     End Sub
 

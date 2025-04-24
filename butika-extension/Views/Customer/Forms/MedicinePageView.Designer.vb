@@ -248,6 +248,7 @@ Partial Class MedicinePageView
         Quantity.DisabledState.FillColor = Color.FromArgb(CByte(226), CByte(226), CByte(226))
         Quantity.DisabledState.ForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
         Quantity.DisabledState.PlaceholderForeColor = Color.FromArgb(CByte(138), CByte(138), CByte(138))
+        Quantity.FillColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Quantity.FocusedState.BorderColor = Color.FromArgb(CByte(94), CByte(148), CByte(255))
         Quantity.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         Quantity.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
@@ -277,6 +278,7 @@ Partial Class MedicinePageView
         ' 
         BuyNowBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         BuyNowBtn.CornerRadius = 6
+        BuyNowBtn.Cursor = Cursors.Hand
         BuyNowBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         BuyNowBtn.ForeColor = Color.White
         BuyNowBtn.Location = New Point(565, 208)
@@ -290,6 +292,7 @@ Partial Class MedicinePageView
         ' 
         AddToCartBtn.BackColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         AddToCartBtn.CornerRadius = 6
+        AddToCartBtn.Cursor = Cursors.Hand
         AddToCartBtn.Font = New Font("Century Gothic", 9.75F, FontStyle.Bold)
         AddToCartBtn.ForeColor = Color.White
         AddToCartBtn.Location = New Point(565, 162)
@@ -316,6 +319,7 @@ Partial Class MedicinePageView
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         ClientSize = New Size(734, 269)
         Controls.Add(originalPrice)
         Controls.Add(BuyNowBtn)

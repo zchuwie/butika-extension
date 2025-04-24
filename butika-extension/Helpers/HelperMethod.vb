@@ -24,6 +24,9 @@ Namespace Helpers
                 e.SuppressKeyPress = True
                 control.Focus()
             End If
+            If TypeOf control Is Button Then
+                DirectCast(control, Button).PerformClick()
+            End If
         End Sub
 
         ' Pantawag sa ErrorProviders

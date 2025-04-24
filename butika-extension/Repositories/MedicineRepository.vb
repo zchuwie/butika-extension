@@ -24,7 +24,7 @@ Public Class MedicineRepository
                     expiration_date AS MedicineExpirationDate,
                     isSelected AS MedicineTickBox
                 FROM drug_inventory
-        WHERE drug_stocks != 0 AND expiration_date >= GETDATE() AND isArchived = 0"
+                WHERE drug_stocks != 0 AND expiration_date >= GETDATE() AND isArchived = 0"
         
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()

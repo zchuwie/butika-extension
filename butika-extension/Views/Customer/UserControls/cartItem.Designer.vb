@@ -24,6 +24,8 @@ Partial Class cartItem
     Private Sub InitializeComponent()
         Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         medicineImageBox = New PictureBox()
         indicatorPanel = New Guna.UI2.WinForms.Guna2Panel()
         Price = New Label()
@@ -34,6 +36,7 @@ Partial Class cartItem
         Quantity = New Label()
         isSent = New Label()
         unavailableLbl = New Label()
+        Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         CType(medicineImageBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -50,12 +53,15 @@ Partial Class cartItem
         ' 
         ' indicatorPanel
         ' 
-        indicatorPanel.BackColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
+        indicatorPanel.BackColor = Color.Transparent
+        indicatorPanel.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
         indicatorPanel.BorderRadius = 20
+        indicatorPanel.BorderThickness = 2
         CustomizableEdges1.BottomRight = False
         CustomizableEdges1.TopRight = False
         indicatorPanel.CustomizableEdges = CustomizableEdges1
         indicatorPanel.Dock = DockStyle.Left
+        indicatorPanel.FillColor = Color.FromArgb(CByte(228), CByte(64), CByte(64))
         indicatorPanel.Location = New Point(0, 0)
         indicatorPanel.Name = "indicatorPanel"
         indicatorPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
@@ -109,19 +115,18 @@ Partial Class cartItem
         ' 
         MedicineName.Font = New Font("Century Gothic", 11.75F, FontStyle.Bold)
         MedicineName.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        MedicineName.Location = New Point(175, 34)
+        MedicineName.Location = New Point(183, 51)
         MedicineName.Name = "MedicineName"
-        MedicineName.Size = New Size(152, 52)
+        MedicineName.Size = New Size(157, 68)
         MedicineName.TabIndex = 7
         MedicineName.Text = " Medicine Name"
-        MedicineName.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' Manufacturer
         ' 
         Manufacturer.AutoSize = True
         Manufacturer.Font = New Font("Century Gothic", 8.75F)
         Manufacturer.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        Manufacturer.Location = New Point(175, 86)
+        Manufacturer.Location = New Point(183, 34)
         Manufacturer.Name = "Manufacturer"
         Manufacturer.Size = New Size(89, 17)
         Manufacturer.TabIndex = 8
@@ -163,10 +168,24 @@ Partial Class cartItem
         unavailableLbl.Text = "Product currently unavailable"
         unavailableLbl.Visible = False
         ' 
+        ' Guna2Panel1
+        ' 
+        Guna2Panel1.BorderColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
+        Guna2Panel1.BorderRadius = 20
+        Guna2Panel1.BorderThickness = 2
+        Guna2Panel1.CustomizableEdges = CustomizableEdges3
+        Guna2Panel1.Dock = DockStyle.Fill
+        Guna2Panel1.Location = New Point(0, 0)
+        Guna2Panel1.Name = "Guna2Panel1"
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
+        Guna2Panel1.Size = New Size(757, 136)
+        Guna2Panel1.TabIndex = 12
+        ' 
         ' cartItem
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
+        BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(unavailableLbl)
         Controls.Add(isSent)
         Controls.Add(Quantity)
@@ -177,6 +196,7 @@ Partial Class cartItem
         Controls.Add(Price)
         Controls.Add(indicatorPanel)
         Controls.Add(medicineImageBox)
+        Controls.Add(Guna2Panel1)
         Name = "cartItem"
         Size = New Size(757, 136)
         CType(medicineImageBox, ComponentModel.ISupportInitialize).EndInit()
@@ -194,5 +214,6 @@ Partial Class cartItem
     Friend WithEvents Quantity As Label
     Friend WithEvents isSent As Label
     Friend WithEvents unavailableLbl As Label
+    Friend WithEvents Guna2Panel1 As Guna.UI2.WinForms.Guna2Panel
 
 End Class

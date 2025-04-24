@@ -46,7 +46,7 @@ Partial Class pharmaTransacItem
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
         Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        Guna2Panel1.Size = New Size(964, 37)
+        Guna2Panel1.Size = New Size(972, 37)
         Guna2Panel1.TabIndex = 1
         ' 
         ' dateLbl
@@ -100,8 +100,9 @@ Partial Class pharmaTransacItem
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
         Cursor = Cursors.Hand
+        Margin = New Padding(0, 3, 0, 0)
         Name = "pharmaTransacItem"
-        Size = New Size(964, 37)
+        Size = New Size(972, 37)
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
         ResumeLayout(False)

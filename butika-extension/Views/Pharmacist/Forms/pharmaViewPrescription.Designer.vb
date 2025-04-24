@@ -139,7 +139,7 @@ Partial Class pharmaViewPrescription
         ' 
         ' prescriptImage
         ' 
-        prescriptImage.Location = New Point(36, 247)
+        prescriptImage.Location = New Point(36, 241)
         prescriptImage.Name = "prescriptImage"
         prescriptImage.Size = New Size(196, 136)
         prescriptImage.TabIndex = 79
@@ -214,7 +214,7 @@ Partial Class pharmaViewPrescription
         ' 
         ' Guna2Separator5
         ' 
-        Guna2Separator5.Location = New Point(26, 231)
+        Guna2Separator5.Location = New Point(26, 225)
         Guna2Separator5.Name = "Guna2Separator5"
         Guna2Separator5.Size = New Size(302, 10)
         Guna2Separator5.TabIndex = 72

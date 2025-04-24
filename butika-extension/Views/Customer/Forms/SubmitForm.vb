@@ -16,6 +16,7 @@ Public Class SubmitForm
     Public Sub New(account As Account, isDirect As Boolean)
         Me.account = account
         Me.isDirect = isDirect
+
         InitializeComponent()
     End Sub
 
@@ -118,16 +119,12 @@ Public Class SubmitForm
 
     End Sub
 
-    Private Sub CancelBtn_Click(sender As Object, e As EventArgs) Handles CancelBtn.Click
-        Me.Close()
-    End Sub
-
     Private Async Sub SubmitForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim prescriptRepo As New PrescriptionRepository(account)
         DateSubmitted.Text = DateTime.Now.ToString("yyyy-MM-dd")
         Dim prescriptNumber = Await prescriptRepo.countPrescriptionOfUser()
         prescriptNumLbl.Text = "Prescription No. " + prescriptNumber.ToString()
-
+        ClickAll()
 
     End Sub
 
@@ -195,6 +192,11 @@ Public Class SubmitForm
 
 
 #End Region
+    Private Sub ClickAll()
+        AddHandler clickAnywhereLbl.Click, Sub(sender, e) Call imageView_Click(sender, e)
+    End Sub
 
-
+    Private Sub closeBtn_Click(sender As Object, e As EventArgs) Handles closeBtn.Click
+        Close()
+    End Sub
 End Class

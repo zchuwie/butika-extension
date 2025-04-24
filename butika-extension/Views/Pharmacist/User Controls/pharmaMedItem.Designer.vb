@@ -47,7 +47,7 @@ Partial Class pharmaMedItem
         medPanel.Location = New Point(0, 0)
         medPanel.Name = "medPanel"
         medPanel.ShadowDecoration.CustomizableEdges = CustomizableEdges2
-        medPanel.Size = New Size(964, 37)
+        medPanel.Size = New Size(972, 37)
         medPanel.TabIndex = 0
         ' 
         ' dosageLbl
@@ -107,7 +107,7 @@ Partial Class pharmaMedItem
         Cursor = Cursors.Hand
         Margin = New Padding(0, 3, 0, 0)
         Name = "pharmaMedItem"
-        Size = New Size(964, 37)
+        Size = New Size(972, 37)
         medPanel.ResumeLayout(False)
         medPanel.PerformLayout()
         ResumeLayout(False)

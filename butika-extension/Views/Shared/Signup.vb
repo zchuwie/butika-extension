@@ -95,4 +95,20 @@ Public Class Signup
         PasswordTxtBox.Clear()
         ConfirmPasswordTxtBox.Clear()
     End Sub
+
+    Private Sub usernameTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles usernameTxtBox.KeyDown
+        HelperMethod.KeyCode(e, emailTxtBox)
+    End Sub
+
+    Private Sub emailTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles emailTxtBox.KeyDown
+        HelperMethod.KeyCode(e, PasswordTxtBox)
+    End Sub
+
+    Private Sub PasswordTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles PasswordTxtBox.KeyDown
+        HelperMethod.KeyCode(e, ConfirmPasswordTxtBox)
+    End Sub
+
+    Private Sub ConfirmPasswordTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles ConfirmPasswordTxtBox.KeyDown
+        HelperMethod.KeyCode(e, signUpBtn)
+    End Sub
 End Class

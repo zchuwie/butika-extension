@@ -44,7 +44,7 @@ Partial Class pharmaDashTransac
         dateLbl.AutoSize = True
         dateLbl.Font = New Font("Century Gothic", 9F, FontStyle.Bold)
         dateLbl.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        dateLbl.Location = New Point(265, 10)
+        dateLbl.Location = New Point(259, 10)
         dateLbl.Name = "dateLbl"
         dateLbl.Size = New Size(34, 16)
         dateLbl.TabIndex = 1
@@ -70,7 +70,7 @@ Partial Class pharmaDashTransac
         Controls.Add(dateLbl)
         Controls.Add(transacIdLbl)
         Name = "pharmaDashTransac"
-        Size = New Size(668, 35)
+        Size = New Size(640, 35)
         ResumeLayout(False)
         PerformLayout()
     End Sub

@@ -22,8 +22,8 @@ Partial Class pharmaPrescriptItem
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim CustomizableEdges3 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
-        Dim CustomizableEdges4 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges1 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
+        Dim CustomizableEdges2 As Guna.UI2.WinForms.Suite.CustomizableEdges = New Guna.UI2.WinForms.Suite.CustomizableEdges()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(pharmaPrescriptItem))
         prescriptIdLbl = New Label()
         Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
@@ -56,12 +56,12 @@ Partial Class pharmaPrescriptItem
         Guna2Panel1.Controls.Add(dateLbl)
         Guna2Panel1.Controls.Add(patientLbl)
         Guna2Panel1.Controls.Add(prescriptIdLbl)
-        Guna2Panel1.CustomizableEdges = CustomizableEdges3
+        Guna2Panel1.CustomizableEdges = CustomizableEdges1
         Guna2Panel1.Dock = DockStyle.Fill
         Guna2Panel1.Location = New Point(0, 0)
         Guna2Panel1.Name = "Guna2Panel1"
-        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges4
-        Guna2Panel1.Size = New Size(964, 37)
+        Guna2Panel1.ShadowDecoration.CustomizableEdges = CustomizableEdges2
+        Guna2Panel1.Size = New Size(972, 37)
         Guna2Panel1.TabIndex = 2
         ' 
         ' usernameLbl
@@ -114,8 +114,9 @@ Partial Class pharmaPrescriptItem
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(220), CByte(229), CByte(219))
         Controls.Add(Guna2Panel1)
+        Margin = New Padding(0, 3, 0, 0)
         Name = "pharmaPrescriptItem"
-        Size = New Size(964, 37)
+        Size = New Size(972, 37)
         Guna2Panel1.ResumeLayout(False)
         Guna2Panel1.PerformLayout()
         CType(morePicture, ComponentModel.ISupportInitialize).EndInit()

@@ -1,4 +1,5 @@
-﻿Imports Microsoft.IdentityModel.Tokens
+﻿Imports butika.Helpers
+Imports Microsoft.IdentityModel.Tokens
 Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class Login
@@ -71,5 +72,11 @@ Public Class Login
         End Try
     End Function
 
+    Private Sub usernameTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles usernameTxtBox.KeyDown
+        HelperMethod.KeyCode(e, passwordTxtBox)
+    End Sub
 
+    Private Sub passwordTxtBox_KeyDown(sender As Object, e As KeyEventArgs) Handles passwordTxtBox.KeyDown
+        HelperMethod.KeyCode(e, loginBtn)
+    End Sub
 End Class

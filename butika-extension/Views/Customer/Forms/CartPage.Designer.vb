@@ -177,7 +177,7 @@ Partial Class CartPage
         CartSubtext.AutoSize = True
         CartSubtext.Font = New Font("Century Gothic", 9.75F)
         CartSubtext.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        CartSubtext.Location = New Point(126, 52)
+        CartSubtext.Location = New Point(95, 52)
         CartSubtext.Name = "CartSubtext"
         CartSubtext.Size = New Size(140, 17)
         CartSubtext.TabIndex = 11
@@ -188,7 +188,7 @@ Partial Class CartPage
         ShoppingCart.AutoSize = True
         ShoppingCart.Font = New Font("Century Gothic", 18F, FontStyle.Bold)
         ShoppingCart.ForeColor = Color.FromArgb(CByte(22), CByte(66), CByte(60))
-        ShoppingCart.Location = New Point(125, 22)
+        ShoppingCart.Location = New Point(94, 22)
         ShoppingCart.Name = "ShoppingCart"
         ShoppingCart.Size = New Size(178, 28)
         ShoppingCart.TabIndex = 10
@@ -197,9 +197,9 @@ Partial Class CartPage
         ' MedIcon
         ' 
         MedIcon.Image = My.Resources.Resources.cart
-        MedIcon.Location = New Point(49, 12)
+        MedIcon.Location = New Point(24, 12)
         MedIcon.Name = "MedIcon"
-        MedIcon.Size = New Size(67, 64)
+        MedIcon.Size = New Size(64, 64)
         MedIcon.SizeMode = PictureBoxSizeMode.Zoom
         MedIcon.TabIndex = 12
         MedIcon.TabStop = False
@@ -361,10 +361,10 @@ Partial Class CartPage
         CartPanel.AutoScroll = True
         CartPanel.BorderStyle = BorderStyle.FixedSingle
         CartPanel.FlowDirection = FlowDirection.TopDown
-        CartPanel.Location = New Point(32, 161)
+        CartPanel.Location = New Point(44, 171)
         CartPanel.Name = "CartPanel"
         CartPanel.Padding = New Padding(23, 0, 23, 0)
-        CartPanel.Size = New Size(818, 547)
+        CartPanel.Size = New Size(806, 537)
         CartPanel.TabIndex = 28
         CartPanel.WrapContents = False
         ' 
