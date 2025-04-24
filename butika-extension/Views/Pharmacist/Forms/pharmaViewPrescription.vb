@@ -5,6 +5,7 @@ Public Class pharmaViewPrescription
     Dim prescription As New Prescription()
     Dim cart As New Cart()
     Dim pharmarepo As New PharmaRepository()
+    Dim medicines As List(Of Medicine)
     Public Sub New(prescript As Prescription)
         Me.prescription = prescript
 
@@ -45,7 +46,7 @@ Public Class pharmaViewPrescription
 
     Private Async Sub pharmaViewPrescription_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LoadAllInformation(prescription)
-        Dim medicines As List(Of Medicine) = Await pharmarepo.GetItemIntoListBox(prescription.PrescriptionId, prescription.Account.UserID)
+        medicines = Await pharmarepo.GetItemIntoListBox(prescription.PrescriptionId, prescription.Account.UserID)
         displayToApproved.Items.Clear()
 
         For Each med In medicines
@@ -87,5 +88,11 @@ Public Class pharmaViewPrescription
             MessageBox.Show("Changes were not saved.")
         End If
         Me.Close()
+    End Sub
+
+    Private Sub prescriptImage_Click(sender As Object, e As EventArgs) Handles prescriptImage.Click
+        If prescriptImage.Image IsNot Nothing Then
+            UIHelper.ShowCenteredImagePreview(prescriptImage.Image, Me)
+        End If
     End Sub
 End Class

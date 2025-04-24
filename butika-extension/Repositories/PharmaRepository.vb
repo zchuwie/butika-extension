@@ -374,7 +374,7 @@ Public Class PharmaRepository
         End Using
     End Function
     ' pangsort sa prescriptions
-    Public Async Function SortPrescriptionAsc() As Task(Of List(Of Prescription))
+    Public Async Function SortAllPrescriptionAsc() As Task(Of List(Of Prescription))
         Using conn = DatabaseConnection.GetConnection()
             Await conn.OpenAsync()
             Dim query = "
@@ -393,7 +393,8 @@ Public Class PharmaRepository
                     up.status AS PrescriptionStatus,
                     up.review_date AS PrescriptReviewDate,
                     up.prescription_date AS PrescriptionDate,
-                    ua.username AS UserName
+                    ua.username AS UserName,
+                    ua.user_id AS UserID
                 FROM userprescriptionform up
                 LEFT JOIN useraccount ua ON up.user_id = ua.user_id
                 ORDER BY up.prescription_date ASC"
@@ -408,7 +409,7 @@ Public Class PharmaRepository
             Return result.ToList()
         End Using
     End Function
-    Public Async Function SortPrescriptionDesc() As Task(Of List(Of Prescription))
+    Public Async Function SortAllPrescriptionDesc() As Task(Of List(Of Prescription))
         Using conn = DatabaseConnection.GetConnection()
             Await conn.OpenAsync()
             Dim query = "
@@ -427,9 +428,154 @@ Public Class PharmaRepository
                     up.status AS PrescriptionStatus,
                     up.review_date AS PrescriptReviewDate,
                     up.prescription_date AS PrescriptionDate,
-                    ua.username AS UserName
+                    ua.username AS UserName,
+                    ua.user_id AS UserID
                 FROM userprescriptionform up
                 LEFT JOIN useraccount ua ON up.user_id = ua.user_id
+                ORDER BY up.prescription_date DESC"
+            Dim result = Await conn.QueryAsync(Of Prescription, Account, Prescription)(
+                query,
+                Function(pres, acc)
+                    pres.Account = acc
+                    Return pres
+                End Function,
+                splitOn:="UserName"
+            )
+            Return result.ToList()
+        End Using
+    End Function
+    Public Async Function SortPendingPrescriptionAsc() As Task(Of List(Of Prescription))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT 
+                    up.prescription_id AS PrescriptionId,
+                    up.user_id AS UserID,
+                    up.user_id AS UserID,
+                    up.patient_name AS PatientName,
+                    up.patient_age AS PatientAge,
+                    up.user_concern AS PatientConcern,
+                    up.doc_name AS DoctorName,
+                    up.doc_contact AS DoctorContact,
+                    up.clinic AS DoctorPlace,
+                    up.prescription_image AS PrescriptionImageName,
+                    up.remarks AS PrescriptionRemarks,
+                    up.status AS PrescriptionStatus,
+                    up.review_date AS PrescriptReviewDate,
+                    up.prescription_date AS PrescriptionDate,
+                    ua.username AS UserName,
+                    ua.user_id AS UserID
+                FROM userprescriptionform up
+                LEFT JOIN useraccount ua ON up.user_id = ua.user_id
+                WHERE up.status = 0
+                ORDER BY up.prescription_date ASC"
+            Dim result = Await conn.QueryAsync(Of Prescription, Account, Prescription)(
+                query,
+                Function(pres, acc)
+                    pres.Account = acc
+                    Return pres
+                End Function,
+                splitOn:="UserName"
+            )
+            Return result.ToList()
+        End Using
+    End Function
+    Public Async Function SortPendingPrescriptionDesc() As Task(Of List(Of Prescription))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT 
+                    up.prescription_id AS PrescriptionId,
+                    up.user_id AS UserID,
+                    up.user_id AS UserID,
+                    up.patient_name AS PatientName,
+                    up.patient_age AS PatientAge,
+                    up.user_concern AS PatientConcern,
+                    up.doc_name AS DoctorName,
+                    up.doc_contact AS DoctorContact,
+                    up.clinic AS DoctorPlace,
+                    up.prescription_image AS PrescriptionImageName,
+                    up.remarks AS PrescriptionRemarks,
+                    up.status AS PrescriptionStatus,
+                    up.review_date AS PrescriptReviewDate,
+                    up.prescription_date AS PrescriptionDate,
+                    ua.username AS UserName,
+                    ua.user_id AS UserID
+                FROM userprescriptionform up
+                LEFT JOIN useraccount ua ON up.user_id = ua.user_id
+                WHERE up.status = 0
+                ORDER BY up.prescription_date DESC"
+            Dim result = Await conn.QueryAsync(Of Prescription, Account, Prescription)(
+                query,
+                Function(pres, acc)
+                    pres.Account = acc
+                    Return pres
+                End Function,
+                splitOn:="UserName"
+            )
+            Return result.ToList()
+        End Using
+    End Function
+    Public Async Function SortDeclinedPrescriptionAsc() As Task(Of List(Of Prescription))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT 
+                    up.prescription_id AS PrescriptionId,
+                    up.user_id AS UserID,
+                    up.user_id AS UserID,
+                    up.patient_name AS PatientName,
+                    up.patient_age AS PatientAge,
+                    up.user_concern AS PatientConcern,
+                    up.doc_name AS DoctorName,
+                    up.doc_contact AS DoctorContact,
+                    up.clinic AS DoctorPlace,
+                    up.prescription_image AS PrescriptionImageName,
+                    up.remarks AS PrescriptionRemarks,
+                    up.status AS PrescriptionStatus,
+                    up.review_date AS PrescriptReviewDate,
+                    up.prescription_date AS PrescriptionDate,
+                    ua.username AS UserName,
+                    ua.user_id AS UserID
+                FROM userprescriptionform up
+                LEFT JOIN useraccount ua ON up.user_id = ua.user_id
+                WHERE up.status = 2
+                ORDER BY up.prescription_date ASC"
+            Dim result = Await conn.QueryAsync(Of Prescription, Account, Prescription)(
+                query,
+                Function(pres, acc)
+                    pres.Account = acc
+                    Return pres
+                End Function,
+                splitOn:="UserName"
+            )
+            Return result.ToList()
+        End Using
+    End Function
+    Public Async Function SortDeclinedPrescriptionDesc() As Task(Of List(Of Prescription))
+        Using conn = DatabaseConnection.GetConnection()
+            Await conn.OpenAsync()
+            Dim query = "
+                SELECT 
+                    up.prescription_id AS PrescriptionId,
+                    up.user_id AS UserID,
+                    up.user_id AS UserID,
+                    up.patient_name AS PatientName,
+                    up.patient_age AS PatientAge,
+                    up.user_concern AS PatientConcern,
+                    up.doc_name AS DoctorName,
+                    up.doc_contact AS DoctorContact,
+                    up.clinic AS DoctorPlace,
+                    up.prescription_image AS PrescriptionImageName,
+                    up.remarks AS PrescriptionRemarks,
+                    up.status AS PrescriptionStatus,
+                    up.review_date AS PrescriptReviewDate,
+                    up.prescription_date AS PrescriptionDate,
+                    ua.username AS UserName,
+                    ua.user_id AS UserID
+                FROM userprescriptionform up
+                LEFT JOIN useraccount ua ON up.user_id = ua.user_id
+                WHERE up.status = 2
                 ORDER BY up.prescription_date DESC"
             Dim result = Await conn.QueryAsync(Of Prescription, Account, Prescription)(
                 query,

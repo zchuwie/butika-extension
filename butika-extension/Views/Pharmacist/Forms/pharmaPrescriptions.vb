@@ -1,8 +1,11 @@
 ﻿Imports butika.Models
+Imports Guna.UI2.WinForms.Suite
 
 Public Class pharmaPrescriptions
     Dim prescriptRepo As New PharmaRepository()
     Dim allPrescriptions As List(Of Prescription)
+
+    Private currentFilter As String
     Private Sub changeFilter(allprescript As Boolean, pending As Boolean, declined As Boolean)
         allprescriptPnl.Visible = allprescript
         pendingPnl.Visible = pending
@@ -46,39 +49,49 @@ Public Class pharmaPrescriptions
 
         For i As Integer = 0 To allPrescriptions.Count - 1 Step batchSize
             Dim batch = allPrescriptions.Skip(i).Take(batchSize).ToList()
-
-            DisplayTransactions(allPrescriptions)
-
+            For Each indivPrescript In batch
+                Dim usc As New pharmaPrescriptItem()
+                usc.Initialize(indivPrescript)
+                flpPrescript.Controls.Add(usc)
+            Next
             Await Task.Delay(50)
         Next
-
     End Function
 
     Private Async Sub allprescriptLbl_Click(sender As Object, e As EventArgs) Handles allprescriptLbl.Click
+        currentFilter = "All"
         changeFilter(True, False, False)
         Await LoadAllPrescriptions(True, False, False)
     End Sub
 
     Private Async Sub pendingLbl_Click(sender As Object, e As EventArgs) Handles pendingLbl.Click
+        currentFilter = "Pending"
         changeFilter(False, True, False)
         Await LoadAllPrescriptions(False, True, False)
     End Sub
 
     Private Async Sub declineLbl_Click(sender As Object, e As EventArgs) Handles declineLbl.Click
+        currentFilter = "Declined"
         changeFilter(False, False, True)
         Await LoadAllPrescriptions(False, False, True)
     End Sub
 
     Private Async Sub sortBtn_Click(sender As Object, e As EventArgs) Handles sortBtn.Click
-        If sortBtn.Text = "Ascending Date" Then
-            sortBtn.Text = "Descending Date"
-            allPrescriptions = Await prescriptRepo.SortPrescriptionAsc()
-        ElseIf sortBtn.Text = "Descending Date" Then
-            sortBtn.Text = "Ascending Date"
-            allPrescriptions = Await prescriptRepo.SortPrescriptionDesc()
-        End If
+        Dim isAscending As Boolean = sortBtn.Text = "Ascending Date"
+
+        Select Case currentFilter
+            Case "All"
+                allPrescriptions = If(isAscending, Await prescriptRepo.SortAllPrescriptionAsc(), Await prescriptRepo.SortAllPrescriptionDesc())
+            Case "Pending"
+                allPrescriptions = If(isAscending, Await prescriptRepo.SortPendingPrescriptionAsc(), Await prescriptRepo.SortPendingPrescriptionDesc())
+            Case "Declined"
+                allPrescriptions = If(isAscending, Await prescriptRepo.SortDeclinedPrescriptionAsc(), Await prescriptRepo.SortDeclinedPrescriptionDesc())
+        End Select
+
+        sortBtn.Text = If(isAscending, "Descending Date", "Ascending Date")
         DisplayTransactions(allPrescriptions)
     End Sub
+
     Private Sub DisplayTransactions(prescriptions As List(Of Prescription))
         flpPrescript.Controls.Clear()
         For Each indivPrescript In prescriptions
