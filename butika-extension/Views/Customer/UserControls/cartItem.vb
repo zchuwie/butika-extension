@@ -19,7 +19,7 @@ Public Class cartItem
         Quantity.Text = cart.Quantity.ToString()
         SelectItem.Checked = cart.isTicked
 
-        If account.IsVerified = 1 Then
+        If account.IsVerified = True Then
             Total.Text = "₱" & (cart.Medicine.DiscountedPrice * cart.Quantity).ToString("F2")
             Price.Text = "₱" & cart.Medicine.DiscountedPrice.ToString("F2")
         Else
