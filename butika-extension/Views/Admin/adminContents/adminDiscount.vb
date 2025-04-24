@@ -27,7 +27,7 @@ Public Class adminDiscounts
 
             ' Load image logic
             Dim repo As New AdminRepository()
-            Dim relativePath As String = repo.GetVerificationImagePath(userId)
+            Dim relativePath As String = GetImagePath.IdImgPathName + "\\" + repo.GetVerificationImagePath(userId)
 
             If Not String.IsNullOrEmpty(relativePath) Then
                 ' Get the base path to the "Resources" folder dynamically
@@ -178,4 +178,7 @@ Public Class adminDiscounts
         End If
     End Sub
 
+    Private Sub discountTable_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles discountTable.CellContentClick
+
+    End Sub
 End Class
