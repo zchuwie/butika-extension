@@ -185,6 +185,13 @@ Public Class CartPage
 
         CheckOutBtnText(True)
 
+        Dim cartOverAllInfo As List(Of Cart) = Await cartRepo.GetCartInfoForOverAllTicked()
+
+        If HasDeclinedMedicine(cartOverAllInfo) Then
+            CheckOutBtnText(False)
+            Return
+        End If
+
         Dim cartInfoInCheckout As List(Of Cart) = Await cartRepo.GetCartInfoForCheckOutPanel()
         If Not ValidateCartSelection(cartInfoInCheckout) Then Exit Sub
 
@@ -197,6 +204,8 @@ Public Class CartPage
             CheckOutBtnText(False)
             Return
         End If
+
+
 
         Dim transactionID As String = Await transactRepo.GenerateUniqueTransactionID()
         If Not Await ProcessCheckoutData(cartRepo, transactRepo, cartInfoInCheckout, transactionID) Then Exit Sub
@@ -262,6 +271,18 @@ Public Class CartPage
             MessageBox.Show(
              "You have checked out an item that has been currrently unavailable. You can remove it or wait for it to become available",
              "Product Currently Unavaialble",
+             MessageBoxButtons.OK)
+            Return True
+        End If
+
+        Return False
+    End Function
+
+    Private Function HasDeclinedMedicine(cartItems As List(Of Cart)) As Boolean
+        If cartItems.Any(Function(item) item.isApproved = 2) Then
+            MessageBox.Show(
+             "You can't checked out an item that has been declined. You can remove it or wait for it to become available",
+             "Product Is Declined",
              MessageBoxButtons.OK)
             Return True
         End If
