@@ -141,7 +141,8 @@ Partial Class pharmaViewPrescription
         ' 
         prescriptImage.Location = New Point(36, 241)
         prescriptImage.Name = "prescriptImage"
-        prescriptImage.Size = New Size(196, 136)
+        prescriptImage.Size = New Size(196, 145)
+        prescriptImage.SizeMode = PictureBoxSizeMode.Zoom
         prescriptImage.TabIndex = 79
         prescriptImage.TabStop = False
         ' 

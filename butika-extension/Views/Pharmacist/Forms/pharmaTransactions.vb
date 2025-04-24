@@ -9,19 +9,18 @@ Public Class pharmaTransactions
     End Sub
     Public Async Function LoadAllTransactions() As Task
         flpTransaction.Controls.Clear()
-
         allTransactions = Await pharmarepo.GetAllTransactions()
 
         Dim batchSize As Integer = 5
-
         For i As Integer = 0 To allTransactions.Count - 1 Step batchSize
             Dim batch = allTransactions.Skip(i).Take(batchSize).ToList()
-
-            DisplayTransactions(allTransactions)
-
+            For Each indivTransac In batch
+                Dim usc As New pharmaTransacItem()
+                usc.Initialize(indivTransac)
+                flpTransaction.Controls.Add(usc)
+            Next
             Await Task.Delay(50)
         Next
-
     End Function
 
     Private Async Sub transacidSearch_TextChanged(sender As Object, e As EventArgs) Handles transacidSearch.TextChanged
