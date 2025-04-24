@@ -25,7 +25,7 @@ Public Class MedicineRepository
                     isSelected AS MedicineTickBox
                 FROM drug_inventory
                 WHERE drug_stocks != 0 AND expiration_date >= GETDATE() AND isArchived = 0"
-        
+
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -79,7 +79,7 @@ Public Class MedicineRepository
                 FROM drug_inventory
                 WHERE prescription_needed = 1
             AND drug_stocks != 0 AND expiration_date >= GETDATE() AND isArchived = 0"
-            
+
             Dim result = Await conn.QueryAsync(Of Medicine)(query)
             Return result.ToList()
         End Using
@@ -374,7 +374,7 @@ Public Class MedicineRepository
                 sr.stockQuantityRequest as StockQuantityRequest,
                 sr.medicine_id as MedicineID,
                 sr.stockDateRequested as StockRequestedDate,
-                sr.stockDateUpdated as StockLastUpdated,
+                sr.stockDateUpdated as StockReviewdDate,
                 sr.stockWhenRequested as StockWhenRequested,
                 di.drug_name as MedicineName,
                 di.drug_stocks as MedicineStock

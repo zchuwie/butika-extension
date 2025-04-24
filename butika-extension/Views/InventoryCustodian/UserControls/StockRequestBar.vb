@@ -36,7 +36,7 @@ Public Class StockRequestBar
         End If
 
         If MedicineInfo.StockReviewdDate.HasValue Then
-            reviewedDate.Text = MedicineInfo.StockReviewdDate.Value.ToString("yyyy-MM-dd")
+            reviewedDate.Text = MedicineInfo.StockReviewdDate.Value.ToString("yyyy-MM-dd HH:mm")
         Else
             reviewedDate.Text = "N/A"
         End If
