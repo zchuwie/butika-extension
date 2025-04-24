@@ -345,7 +345,7 @@ Public Class CartPage
     Private Async Sub DeleteBtn_Click(sender As Object, e As EventArgs) Handles DeleteBtn.Click
         Dim cartRepo As New CartRepository(account)
 
-        Dim result As DialogResult = MessageBox.Show("Do you want to approve the prescription?", "Confirmation",
+        Dim result As DialogResult = MessageBox.Show("Do you want to delete this item", "Confirmation",
                                                      MessageBoxButtons.YesNo)
 
         If result = DialogResult.Yes Then
