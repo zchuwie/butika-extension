@@ -59,18 +59,24 @@ Public Class pharmaPrescriptions
     End Function
 
     Private Async Sub allprescriptLbl_Click(sender As Object, e As EventArgs) Handles allprescriptLbl.Click
+        flpPrescript.Controls.Clear()
+
         currentFilter = "All"
         changeFilter(True, False, False)
         Await LoadAllPrescriptions(True, False, False)
     End Sub
 
     Private Async Sub pendingLbl_Click(sender As Object, e As EventArgs) Handles pendingLbl.Click
+        flpPrescript.Controls.Clear()
+
         currentFilter = "Pending"
         changeFilter(False, True, False)
         Await LoadAllPrescriptions(False, True, False)
     End Sub
 
     Private Async Sub declineLbl_Click(sender As Object, e As EventArgs) Handles declineLbl.Click
+        flpPrescript.Controls.Clear()
+
         currentFilter = "Declined"
         changeFilter(False, False, True)
         Await LoadAllPrescriptions(False, False, True)
